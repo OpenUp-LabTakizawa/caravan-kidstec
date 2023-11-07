@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://caravan-kidstec.com/">
     <picture>
-      <source media="(max-width: 600px)" srcset="https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/public/kodomo_tech_logo.webp" height="128">
-      <img src="https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/public/kodomo_tech_logo.webp" height="256">
+      <source media="(max-width: 600px)" srcset="./public/kodomo_tech_logo.webp" height="128">
+      <img src="./public/kodomo_tech_logo.webp" height="256">
     </picture>
     <h1 align="center">caravan-kidstec</h1>
   </a>

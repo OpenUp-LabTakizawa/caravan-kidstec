@@ -1,4 +1,13 @@
-<h1 align="center">caravan-kidstec</h1>
+<p align="center">
+  <a href="https://caravan-kidstec.com/">
+    <picture>
+      <source media="(max-width: 600px)" srcset="https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/public/kodomo_tech_logo.webp" height="128">
+      <img src="https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/public/kodomo_tech_logo.webp" height="256">
+    </picture>
+    <h1 align="center">caravan-kidstec</h1>
+  </a>
+</p>
+
 <p align="center">
   <a aria-label="bun" href="https://bun.sh/">
     <img alt="" src="https://img.shields.io/badge/-Bun-FBF0DF.svg?logo=bun&style=for-the-badge&labelColor=000000">

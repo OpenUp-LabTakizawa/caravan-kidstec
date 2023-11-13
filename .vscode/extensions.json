@@ -4,6 +4,7 @@
     "ms-azuretools.vscode-docker",
     "davidanson.vscode-markdownlint",
     "eamodio.gitlens",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "github.vscode-github-actions"
   ]
 }

@@ -29,7 +29,7 @@
   </a>
 </p>
 <p align="center">
-  <strong>Multi-experience program</strong> for parents and children to <strong>learn programming</strong> while having fun and interacting <strong>with nature!</strong>
+  Multi-experience program to learn programming with nature🌄
 </p>
 
 ## ⚒️ Usage

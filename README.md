@@ -32,7 +32,7 @@
   <strong>Multi-experience program</strong> for parents and children to <strong>learn programming</strong> while having fun and interacting <strong>with nature!</strong>
 </p>
 
-## Usage
+## ⚒️ Usage
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Bun](https://bun.sh/) installed on your computer. From your command line:
 
@@ -56,12 +56,12 @@ $ bun --bun run start
 $ bun --bun run lint
 ```
 
-## VSCode
+## ✍️ VSCode
 [VSCode](https://code.visualstudio.com/) is the recommended IDE for working on this project, as it has been configured.
 
 Once opening, you can run `Extensions: Show Recommended Extensions` to install the recommended extensions for good development is automatically configured.
 
-## Credits
+## 📦 Credits
 
 This software uses the following open source packages:
 
@@ -70,7 +70,7 @@ This software uses the following open source packages:
 - [Node.js](https://nodejs.org/)
 - [React](https://react.dev/)
 
-## License
+## 📄 License
 
 The Apache License Version 2.0 (2023) - [OpenUp-LabTakizawa](https://github.com/OpenUp-LabTakizawa).
 Please have a look at the [LICENSE](https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/LICENSE) for more details.

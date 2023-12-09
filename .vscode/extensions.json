@@ -1,10 +1,5 @@
 {
   "recommendations": [
-    "ms-vscode-remote.vscode-remote-extensionpack",
-    "ms-azuretools.vscode-docker",
-    "davidanson.vscode-markdownlint",
-    "eamodio.gitlens",
-    "editorconfig.editorconfig",
-    "github.vscode-github-actions"
+    "dbaeumer.vscode-eslint"
   ]
 }

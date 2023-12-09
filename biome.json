@@ -20,6 +20,8 @@
       "unsafeParameterDecoratorsEnabled": true
     },
     "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
       "indentStyle": "space"
     }
   },

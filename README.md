@@ -9,8 +9,11 @@
 </p>
 
 <p align="center">
+  <a aria-label="biome" href="https://biomejs.dev/">
+    <img src="https://img.shields.io/badge/-biome-F7B911.svg?logo=biome&style=for-the-badge&labelColor=000000" alt="biome">
+  </a>
   <a aria-label="bun" href="https://bun.sh/">
-    <img src="https://img.shields.io/badge/-Bun-FBF0DF.svg?logo=bun&style=for-the-badge&labelColor=000000" alt="bun">
+    <img src="https://img.shields.io/badge/-bun-FBF0DF.svg?logo=bun&style=for-the-badge&labelColor=000000" alt="bun">
   </a>
   <a aria-label="next.js" href="https://nextjs.org/">
     <img src="https://img.shields.io/badge/-next.js-000000.svg?logo=next.js&style=for-the-badge&labelColor=000000" alt="next.js">
@@ -22,7 +25,7 @@
     <img src="https://img.shields.io/badge/-tailwind css-06B6D4.svg?logo=tailwindcss&style=for-the-badge&labelColor=000000" alt="tailwindcss">
   </a>
   <a aria-label="typescript" href="https://www.typescriptlang.org/">
-    <img src="https://img.shields.io/badge/-TypeScript-3178C6.svg?logo=typescript&style=for-the-badge&labelColor=000000" alt="typescript">
+    <img src="https://img.shields.io/badge/-typescript-3178C6.svg?logo=typescript&style=for-the-badge&labelColor=000000" alt="typescript">
   </a>
   <a aria-label="vscode" href="https://code.visualstudio.com/">
     <img src="https://img.shields.io/badge/-visual studio code-007ACC.svg?logo=visualstudiocode&style=for-the-badge&labelColor=000000" alt="vscode">

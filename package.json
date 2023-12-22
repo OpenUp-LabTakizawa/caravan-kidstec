@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "^14.0.4",
     "react": "canary",
-    "react-dom": "canary",
-    "next": "canary"
+    "react-dom": "canary"
   },
   "devDependencies": {
     "@biomejs/biome": "nightly",

@@ -84,16 +84,19 @@ You can try out development containers with **[GitHub Codespaces](https://github
 
 <details>
 <summary>GitHub Codespaces</summary>
-Follow these steps to open this project in a Codespace:
-1. Click the <span style="background-color: #1F883D;"><> Code ▽</span> drop-down menu.
-2. Click on the **Codespaces** tab.
+  
+Follow these steps to open this project in a Codespace:  
+1. Click the **Code** drop-down menu.  
+2. Click on the **Codespaces** tab.  
 3. Click **Create codespace on main**.
 
 For more info, check out the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/creating-a-codespace#creating-a-codespace).
+
 </details>
 
 <details>
 <summary>VSCode Dev Containers</summary>
+  
 If you already have VSCode and [Docker](https://www.docker.com/) installed, you can click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/OpenUp-LabTakizawa/caravan-kidstec) to get started.  
 Clicking these links will cause VSCode to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
 
@@ -106,6 +109,7 @@ Follow these steps to open this project in a container using the VSCode Dev Cont
    - Clone this repository to your local filesystem.
    - Press <kbd>F1</kbd> and select the **Dev Containers: Open Folder in Container...** command.
    - Select the cloned copy of this folder, wait for the container to start, and try things out!
+
 </details>
 
 ## 🫶 Contribute

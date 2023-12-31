@@ -74,7 +74,8 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          push: ${{ github.repository_owner == env.REPOSITORY_OWNER }}
+          push: ${{ github.repository_owner == env.REPOSITORY_OWNER && github.event_name != 'pull_request_target' }}
+          load: ${{ github.event_name == 'pull_request_target' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=${{ env.REPOSITORY }}:main

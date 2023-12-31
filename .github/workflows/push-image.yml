@@ -11,6 +11,7 @@ on:
     paths:
       - "app/**"
       - "public/**"
+      - "bun.lockb"
       - "next.config.js"
       - "package.json"
       - "postcss.config.js"
@@ -22,6 +23,7 @@ on:
     paths:
       - "app/**"
       - "public/**"
+      - "bun.lockb"
       - "next.config.js"
       - "package.json"
       - "postcss.config.js"

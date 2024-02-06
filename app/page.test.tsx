@@ -24,6 +24,7 @@ test('a test', () => {
   expect(a[0]?.href).toEqual(
     'https://vercel.com/?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app',
   )
+  expect(a[0]?.target).toEqual('_blank')
 })
 
 test('Image test', () => {

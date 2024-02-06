@@ -66,6 +66,8 @@ jobs:
           images: |
             ${{ env.REPOSITORY }}
             ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_REPOSITORY }}
+          tags: |
+            type=ref,value=canary
 
       - name: Build and push
         uses: docker/build-push-action@v5

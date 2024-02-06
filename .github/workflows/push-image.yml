@@ -67,6 +67,8 @@ jobs:
             ${{ env.REPOSITORY }}
             ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_REPOSITORY }}
           tags: |
+            type=ref,event=tag
+            type=ref,event=pr,prefix=pr-
             type=raw,canary
 
       - name: Build and push

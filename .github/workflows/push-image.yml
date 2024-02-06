@@ -71,7 +71,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: ${{ github.event_name == 'pull_request_target' && 'linux/amd64,linux/arm64' }}
+          load: ${{ github.event_name == 'pull_request_target' }}
+          platforms: ${{ github.event_name == 'push' && 'linux/amd64,linux/arm64' }}
           push: ${{ github.event_name == 'push' && github.repository_owner == env.REPOSITORY_OWNER }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

@@ -71,14 +71,13 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          load: ${{ github.event_name == 'pull_request_target' }}
           platforms: ${{ github.event_name == 'push' && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
           push: ${{ github.event_name == 'push' && github.repository_owner == env.REPOSITORY_OWNER }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=registry,ref=${{ env.REPOSITORY }}:main
           cache-to: type=inline
-          outputs: ${{ github.event_name == 'push' && 'type=image,name=target,annotation-index.org.opencontainers.image.description=caravan-kidstec multi-arch image' || '.' }}
+          outputs: ${{ github.event_name == 'push' && 'type=image,name=target,annotation-index.org.opencontainers.image.description=caravan-kidstec multi-arch image' || 'type=docker' }}
           provenance: false
 
       - name: Docker Scout

@@ -19,6 +19,13 @@ test('p test', () => {
   )
 })
 
+test('a test', () => {
+  const a = document.querySelectorAll('a')
+  expect(a[0]?.href).toEqual(
+    'https://vercel.com/?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app',
+  )
+})
+
 test('Image test', () => {
   const img = document.querySelectorAll('img')
   expect(img[0]?.alt).toEqual('Vercel Logo')

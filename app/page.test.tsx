@@ -25,6 +25,7 @@ test('a test', () => {
     'https://vercel.com/?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app',
   )
   expect(a[0]?.target).toEqual('_blank')
+  expect(a[0]?.rel).toEqual('noopener noreferrer')
 })
 
 test('Image test', () => {

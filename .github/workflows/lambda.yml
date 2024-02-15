@@ -19,8 +19,8 @@ on:
 
 env:
   AWS_REGION: ap-northeast-1
-  ECR_REPOSITORY: dcrs
-  LAMBDA_FUNCTION_NAME: dcrs
+  ECR_REPOSITORY: caravan-kidstec
+  LAMBDA_FUNCTION_NAME: caravan-kidstec
 
 jobs:
   deploy:

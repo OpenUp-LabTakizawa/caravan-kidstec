@@ -10,6 +10,7 @@
     "lint": "bunx @biomejs/biome check --apply ."
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.1",
     "next": "canary",
     "react": "canary",
     "react-dom": "canary"
@@ -22,6 +23,7 @@
     "@types/node": "^20.11.25",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
+    "daisyui": "^4.7.3",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.2"

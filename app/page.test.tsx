@@ -6,15 +6,14 @@ render(<Home />)
 
 test('p test', () => {
   const p = document.querySelectorAll('p')
-  expect(p[0]?.innerText).toEqual('Get started by editing\u00A0app/page.tsx')
-  expect(p[1]?.innerText).toEqual(
+  expect(p[0]?.innerText).toEqual(
     'Find in-depth information about Next.js features and API.',
   )
-  expect(p[2]?.innerText).toEqual(
+  expect(p[1]?.innerText).toEqual(
     'Learn about Next.js in an interactive course with\u00A0quizzes!',
   )
-  expect(p[3]?.innerText).toEqual('Explore starter templates for Next.js.')
-  expect(p[4]?.innerText).toEqual(
+  expect(p[2]?.innerText).toEqual('Explore starter templates for Next.js.')
+  expect(p[3]?.innerText).toEqual(
     'Instantly deploy your Next.js site to a shareable URL with Vercel.',
   )
 })

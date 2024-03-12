@@ -86,7 +86,7 @@ const themeLists = [
 
 export function Navbar() {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
         <DropdownMenuForSP />
         <Link href="/" className="btn btn-ghost">

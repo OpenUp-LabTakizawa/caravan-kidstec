@@ -26,28 +26,24 @@ const siteInfo = [
 ]
 
 const navItems = [
-  { name: '最新情報', href: '/news', icon: NewspaperIcon, children: null },
+  { name: '最新情報', href: '/news', icon: NewspaperIcon },
   {
     name: '活動紹介',
     href: '/about-activity',
     icon: TruckIcon,
-    children: null,
   },
   {
     name: '過去の実績',
-    href: '/history',
     icon: SparklesIcon,
     children: history,
   },
   {
     name: 'サポーター/パートナー',
-    href: '/supporter-partner',
     icon: HeartIcon,
     children: area,
   },
   {
     name: 'お問い合わせ',
-    href: '/contact',
     icon: QuestionMarkCircleIcon,
     children: siteInfo,
   },
@@ -122,11 +118,20 @@ function DropdownMenuForSP() {
       <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
         {navItems.map((item) => (
           <li key={item.name}>
-            <Link href={item.href}>
-              <item.icon className="h-5 w-5" />
-              {item.name}
-            </Link>
-            {item.children && <ChildNavItems childNavItems={item.children} />}
+            {item.children ? (
+              <>
+                <Link href="#">
+                  <item.icon className="h-5 w-5" />
+                  {item.name}
+                </Link>
+                <ChildNavItems childNavItems={item.children} />
+              </>
+            ) : (
+              <Link href={item.href}>
+                <item.icon className="h-5 w-5" />
+                {item.name}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

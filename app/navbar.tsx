@@ -190,7 +190,7 @@ function ThemeLists() {
           テーマ
           <ChevronDownIcon className="h-5 w-5" />
         </div>
-        <ul className="dropdown-content z-[1] w-52 rounded-box bg-base-300 p-2 shadow-2xl">
+        <ul className="dropdown-content z-[1] h-52 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
           {themeLists.map((item) => (
             <li key={item.name}>
               <input

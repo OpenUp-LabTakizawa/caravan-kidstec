@@ -10,7 +10,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 
-const SITETITLE = 'こどもテックキャラバン'
+const SITE_TITLE = 'こどもテックキャラバン'
 
 const history = [
   { name: '第1回', href: '/history/first-activity' },
@@ -82,7 +82,7 @@ const themeLists = [
   { name: 'ディム', value: 'dim' },
   { name: 'ノール', value: 'nord' },
   { name: 'サンセット', value: 'sunset' },
-]
+] as const
 
 export function Navbar() {
   return (
@@ -99,7 +99,7 @@ export function Navbar() {
               width: '100%',
               height: 'auto',
             }}
-            alt={SITETITLE}
+            alt={SITE_TITLE}
           />
         </Link>
       </div>
@@ -118,7 +118,7 @@ function DropdownMenuForSP() {
       <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
         {navItems.map((item) => (
           <li key={item.name}>
-            {item.content ? (
+            {item.content && !item.href ? (
               <>
                 <Link href="#">
                   <item.icon className="h-5 w-5" />

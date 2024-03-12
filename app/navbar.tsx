@@ -35,17 +35,17 @@ const navItems = [
   {
     name: '過去の実績',
     icon: SparklesIcon,
-    children: history,
+    content: history,
   },
   {
     name: 'サポーター/パートナー',
     icon: HeartIcon,
-    children: area,
+    content: area,
   },
   {
     name: 'お問い合わせ',
     icon: QuestionMarkCircleIcon,
-    children: siteInfo,
+    content: siteInfo,
   },
 ]
 
@@ -118,13 +118,13 @@ function DropdownMenuForSP() {
       <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
         {navItems.map((item) => (
           <li key={item.name}>
-            {item.children ? (
+            {item.content ? (
               <>
                 <Link href="#">
                   <item.icon className="h-5 w-5" />
                   {item.name}
                 </Link>
-                <ChildNavItems childNavItems={item.children} />
+                <SubContent content={item.content} />
               </>
             ) : (
               <Link href={item.href}>
@@ -145,13 +145,13 @@ function NavItems() {
       <ul className="menu menu-horizontal px-1">
         {navItems.map((item) => (
           <li key={item.name}>
-            {item.children ? (
+            {item.content ? (
               <details>
                 <summary>
                   <item.icon className="h-5 w-5" />
                   {item.name}
                 </summary>
-                <ChildNavItems childNavItems={item.children} />
+                <SubContent content={item.content} />
               </details>
             ) : (
               <Link href={item.href}>
@@ -166,14 +166,14 @@ function NavItems() {
   )
 }
 
-function ChildNavItems({
-  childNavItems,
+function SubContent({
+  content,
 }: {
-  childNavItems: { name: string; href: string }[]
+  content: { name: string; href: string }[]
 }) {
   return (
     <ul className="p-2">
-      {childNavItems.map((item) => (
+      {content.map((item) => (
         <li key={item.name}>
           <Link href={item.href}>{item.name}</Link>
         </li>

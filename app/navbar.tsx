@@ -91,7 +91,7 @@ export function Navbar() {
         <DropdownMenuForSP />
         <Link href="/" className="btn btn-ghost">
           <Image
-            src="/logo_line.webp"
+            src="/kodomo_tec_logo_line.png"
             sizes="(max-width: 768px) 40vw, (max-width: 1024px) 20vw, (max-width: 1200px) 16vw, 20vw"
             width={100}
             height={100}

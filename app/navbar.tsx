@@ -1,3 +1,4 @@
+import logo from '@/public/caravan-kidstec_logo_line.webp'
 import {
   Bars3CenterLeftIcon,
   ChevronDownIcon,
@@ -89,16 +90,10 @@ export function Navbar() {
     <div className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
         <DropdownMenuForSP />
-        <Link href="/" className="btn btn-ghost">
+        <Link href="/" className="btn btn-ghost max-w-full">
           <Image
-            src="/caravan-kidstec_logo_line.webp"
+            src={logo}
             sizes="(max-width: 768px) 40vw, (max-width: 1024px) 20vw, (max-width: 1200px) 16vw, 20vw"
-            width={100}
-            height={100}
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
             alt={SITE_TITLE}
           />
         </Link>

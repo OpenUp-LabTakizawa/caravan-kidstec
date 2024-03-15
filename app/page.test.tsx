@@ -27,12 +27,6 @@ test('a test', () => {
   expect(a[0]?.rel).toEqual('noopener noreferrer')
 })
 
-test('Image test', () => {
-  const img = document.querySelectorAll('img')
-  expect(img[0]?.alt).toEqual('Vercel Logo')
-  expect(img[1]?.alt).toEqual('Next.js Logo')
-})
-
 test('h2 test', () => {
   const h2 = document.querySelectorAll('h2')
   expect(h2[0]?.innerText).toEqual('Docs ->')

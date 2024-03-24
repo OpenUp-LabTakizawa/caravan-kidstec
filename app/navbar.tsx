@@ -89,7 +89,7 @@ export function Navbar() {
   return (
     <div className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
-        <DropdownMenuForSP />
+        <DropdownMenu />
         <Link href="/" className="btn btn-ghost max-w-full">
           <Image
             src={logo}
@@ -104,7 +104,7 @@ export function Navbar() {
   )
 }
 
-function DropdownMenuForSP() {
+function DropdownMenu() {
   return (
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

@@ -7,6 +7,7 @@ import { Navbar } from './navbar'
 export const metadata: Metadata = {
   title: 'こどもテックキャラバン',
   description: 'こども向けマルチ体験ワークショップイベント',
+  metadataBase: new URL('https://caravan-kidstec.com'),
 }
 
 export default function RootLayout({

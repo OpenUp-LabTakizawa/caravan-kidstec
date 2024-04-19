@@ -95,6 +95,8 @@ jobs:
             type=ref,event=tag
             type=ref,event=pr,prefix=pr-
             type=raw,value=canary,enable=${{ env.IS_PUSH }}
+        env:
+          DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
 
       - name: Build and Push
         uses: docker/build-push-action@v5
@@ -102,18 +104,19 @@ jobs:
           context: .
           platforms: ${{ env.IS_PUSH && 'linux/amd64,linux/arm64' || 'linux/amd64' }}
           push: ${{ env.IS_PUSH }}
+          load: ${{ !env.IS_PUSH }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ env.REPOSITORY }}:canary
-          cache-to: type=inline
-          outputs: ${{ github.event_name == 'push' && 'type=image,name=target,annotation-index.org.opencontainers.image.description=caravan-kidstec multi-arch image' || 'type=docker' }}
+          annotations: ${{ steps.meta.outputs.annotations }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           provenance: false
 
-      - name: Update AWS Lambda Function
-        if: env.IS_PUSH
-        run: |
-          aws lambda update-function-code --function-name ${{ env.LAMBDA_FUNCTION_NAME }} \
-          --image-uri ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ steps.meta.outputs.version }}
+      # - name: Update AWS Lambda Function
+      #   if: env.IS_PUSH
+      #   run: |
+      #     aws lambda update-function-code --function-name ${{ env.LAMBDA_FUNCTION_NAME }} \
+      #     --image-uri ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ steps.meta.outputs.version }}
 
       - name: Docker Scout
         if: github.repository_owner == 'OpenUp-LabTakizawa' && github.event_name == 'pull_request_target'

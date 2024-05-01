@@ -6,51 +6,57 @@ import {
   NewspaperIcon,
   QuestionMarkCircleIcon,
   SparklesIcon,
+  TrophyIcon,
   TruckIcon,
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
+import type { Area } from '../interfaces/area'
+import type { NavbarItem } from '../interfaces/navbarItem'
+import type { Theme } from '../interfaces/theme'
 
 const SITE_TITLE = 'こどもテックキャラバン'
 
-const history = [
-  { name: '第1回', href: '/history/first-activity' },
-  { name: '第2回', href: '/history/second-activity' },
-  { name: '第3回', href: '/history/third-activity' },
+const area: Area[] = [
+  { name: '広島', eventTimes: 3, href: '/hiroshima', plan: true },
+  { name: '千葉', eventTimes: 0, href: '/chiba', plan: true },
 ]
-
-const area = [{ name: '広島エリア', href: '/supporter-partner/hiroshima' }]
 
 const siteInfo = [
   { name: 'FAQ', href: '/faq' },
   { name: '個人情報保護方針', href: '/privacy-policy' },
 ]
 
-const navItems = [
-  { name: '最新情報', href: '/news', icon: NewspaperIcon },
+const navItems: NavbarItem[] = [
+  { name: '最新情報', icon: NewspaperIcon, href: '#news' },
   {
     name: '活動紹介',
-    href: '/about-activity',
+    icon: SparklesIcon,
+    href: '#about',
+  },
+  {
+    name: '開催予定',
     icon: TruckIcon,
+    content: [...area],
   },
   {
     name: '過去の実績',
-    icon: SparklesIcon,
-    content: history,
+    icon: TrophyIcon,
+    content: [...area],
   },
   {
     name: 'サポーター/パートナー',
     icon: HeartIcon,
-    content: area,
+    content: [...area],
   },
   {
     name: 'お問い合わせ',
     icon: QuestionMarkCircleIcon,
-    content: siteInfo,
+    content: [...siteInfo],
   },
 ]
 
-const themeLists = [
+const themeList: Theme[] = [
   { name: 'デフォルト', value: 'light' },
   { name: 'ダーク', value: 'dark' },
   { name: 'カップケーキ', value: 'cupcake' },
@@ -91,46 +97,45 @@ export function Navbar() {
       <div className="navbar-start">
         <DropdownMenu />
         <Link href="/" className="btn btn-ghost max-w-full">
-          <Image
-            src={logo}
-            sizes="(max-width: 768px) 40vw, (max-width: 1024px) 20vw, (max-width: 1200px) 16vw, 20vw"
-            alt={SITE_TITLE}
-          />
+          <Image src={logo} sizes="100vw" alt={SITE_TITLE} />
         </Link>
       </div>
       <NavItems />
-      <ThemeLists />
+      <div className="navbar-end">
+        <ThemeList />
+      </div>
     </div>
   )
 }
 
 function DropdownMenu() {
   return (
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+    <details className="dropdown">
+      <summary tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <Bars3CenterLeftIcon className="h-7 w-7" />
-      </div>
+      </summary>
       <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
         {navItems.map((item) => (
           <li key={item.name}>
-            {item.content && !item.href ? (
-              <>
-                <Link href="#">
-                  <item.icon className="h-5 w-5" />
-                  {item.name}
-                </Link>
-                <SubContent content={item.content} />
-              </>
-            ) : (
+            {item.href && (
               <Link href={item.href}>
                 <item.icon className="h-5 w-5" />
                 {item.name}
               </Link>
             )}
+            {item.content && (
+              <>
+                <div>
+                  <item.icon className="h-5 w-5" />
+                  {item.name}
+                </div>
+                <SubContent content={item.content} />
+              </>
+            )}
           </li>
         ))}
       </ul>
-    </div>
+    </details>
   )
 }
 
@@ -140,7 +145,13 @@ function NavItems() {
       <ul className="menu menu-horizontal px-1">
         {navItems.map((item) => (
           <li key={item.name}>
-            {item.content ? (
+            {item.href && (
+              <Link href={item.href}>
+                <item.icon className="h-5 w-5" />
+                {item.name}
+              </Link>
+            )}
+            {item.content && (
               <details>
                 <summary>
                   <item.icon className="h-5 w-5" />
@@ -148,11 +159,6 @@ function NavItems() {
                 </summary>
                 <SubContent content={item.content} />
               </details>
-            ) : (
-              <Link href={item.href}>
-                <item.icon className="h-5 w-5" />
-                {item.name}
-              </Link>
             )}
           </li>
         ))}
@@ -177,28 +183,26 @@ function SubContent({
   )
 }
 
-function ThemeLists() {
+function ThemeList() {
   return (
-    <div className="navbar-end">
-      <div className="dropdown dropdown-end">
-        <div tabIndex={0} role="button" className="btn m-1">
-          テーマ
-          <ChevronDownIcon className="h-5 w-5" />
-        </div>
-        <ul className="dropdown-content z-[1] h-52 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
-          {themeLists.map((item) => (
-            <li key={item.name}>
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label={item.name}
-                value={item.value}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <details className="dropdown dropdown-end">
+      <summary tabIndex={0} role="button" className="btn m-1">
+        テーマ
+        <ChevronDownIcon className="h-5 w-5" />
+      </summary>
+      <ul className="dropdown-content z-[1] h-52 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
+        {themeList.map((theme) => (
+          <li key={theme.name}>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label={theme.name}
+              value={theme.value}
+            />
+          </li>
+        ))}
+      </ul>
+    </details>
   )
 }

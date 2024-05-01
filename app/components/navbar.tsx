@@ -106,12 +106,14 @@ export function Navbar() {
     <div className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
         <DropdownMenu />
-        <Link href="/" className="btn btn-ghost max-w-full">
+        <Link href="/" className="btn btn-ghost w-fit">
           <Image src={logo} sizes="100vw" alt={SITE_TITLE} />
         </Link>
       </div>
-      <NavItems />
-      <div className="navbar-end">
+      <div className="navbar-center hidden lg:flex">
+        <NavItems />
+      </div>
+      <div className="navbar-end w-3/12">
         <ThemeList />
       </div>
     </div>
@@ -151,29 +153,27 @@ function DropdownMenu() {
 
 function NavItems() {
   return (
-    <div className="navbar-center hidden lg:flex">
-      <ul className="menu menu-horizontal px-1">
-        {navItems.map((item) => (
-          <li key={item.name}>
-            {item.href && (
-              <Link href={item.href}>
+    <ul className="menu menu-horizontal p-0">
+      {navItems.map((item) => (
+        <li key={item.name}>
+          {item.href && (
+            <Link href={item.href}>
+              <item.icon className={`h-5 w-5 ${item.color}`} />
+              {item.name}
+            </Link>
+          )}
+          {item.content && (
+            <details>
+              <summary>
                 <item.icon className={`h-5 w-5 ${item.color}`} />
                 {item.name}
-              </Link>
-            )}
-            {item.content && (
-              <details>
-                <summary>
-                  <item.icon className={`h-5 w-5 ${item.color}`} />
-                  {item.name}
-                </summary>
-                <SubContent content={item.content} />
-              </details>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+              </summary>
+              <SubContent content={item.content} />
+            </details>
+          )}
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -196,7 +196,7 @@ function SubContent({
 function ThemeList() {
   return (
     <details className="dropdown dropdown-end">
-      <summary role="button" className="btn m-1">
+      <summary role="button" className="btn">
         テーマ
         <ChevronDownIcon className="h-5 w-5" />
       </summary>

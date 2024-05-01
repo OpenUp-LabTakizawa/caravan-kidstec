@@ -11,7 +11,7 @@ import {
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { NavbarItem } from '../interfaces/navbarItem'
+import type { Navigation } from '../interfaces/navigation'
 import type { SiteUrl } from '../interfaces/siteUrl'
 import type { Theme } from '../interfaces/theme'
 
@@ -34,7 +34,7 @@ const siteInfo: SiteUrl[] = [
   { name: '個人情報保護方針', href: '/privacy-policy' },
 ] as const
 
-const navItems: NavbarItem[] = [
+const navItems: Navigation[] = [
   {
     name: '最新情報',
     icon: NewspaperIcon,

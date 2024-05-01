@@ -11,21 +11,28 @@ import {
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { Area } from '../interfaces/area'
 import type { NavbarItem } from '../interfaces/navbarItem'
+import type { SiteUrl } from '../interfaces/siteUrl'
 import type { Theme } from '../interfaces/theme'
 
 const SITE_TITLE = 'こどもテックキャラバン'
 
-const area: Area[] = [
-  { name: '広島', eventTimes: 3, href: '/hiroshima', plan: true },
-  { name: '千葉', eventTimes: 0, href: '/chiba', plan: true },
-]
+const nextArea: SiteUrl[] = [
+  { name: '広島', href: '/hiroshima' },
+  { name: '千葉', href: '/chiba' },
+] as const
 
-const siteInfo = [
+const history: SiteUrl[] = [{ name: '広島', href: '/history' }] as const
+
+const helper: SiteUrl[] = [
+  { name: 'サポーター', href: '/supporter' },
+  { name: 'パートナー', href: '/partner' },
+] as const
+
+const siteInfo: SiteUrl[] = [
   { name: 'FAQ', href: '/faq' },
   { name: '個人情報保護方針', href: '/privacy-policy' },
-]
+] as const
 
 const navItems: NavbarItem[] = [
   {
@@ -44,19 +51,19 @@ const navItems: NavbarItem[] = [
     name: '開催予定',
     icon: TruckIcon,
     color: 'text-accent',
-    content: [...area],
+    content: [...nextArea],
   },
   {
     name: '過去の実績',
     icon: TrophyIcon,
     color: 'text-error',
-    content: [...area],
+    content: [...history],
   },
   {
     name: 'サポーター/パートナー',
     icon: HeartIcon,
     color: 'text-secondary',
-    content: [...area],
+    content: [...helper],
   },
   {
     name: 'お問い合わせ',
@@ -64,7 +71,7 @@ const navItems: NavbarItem[] = [
     color: 'text-info',
     content: [...siteInfo],
   },
-]
+] as const
 
 const themeList: Theme[] = [
   { name: 'デフォルト', value: 'light' },
@@ -113,7 +120,7 @@ export function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <NavItems />
       </div>
-      <div className="navbar-end w-3/12">
+      <div className="navbar-end lg:w-3/12">
         <ThemeList />
       </div>
     </div>

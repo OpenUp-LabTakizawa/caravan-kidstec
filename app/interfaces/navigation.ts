@@ -1,6 +1,6 @@
 import type React from 'react'
 
-export type NavbarItem = {
+export type Navigation = {
   name: string
   icon: React.ElementType
   color: string

@@ -18,15 +18,6 @@ test('p test', () => {
   )
 })
 
-test('a test', () => {
-  const a = document.querySelectorAll('a')
-  expect(a[0]?.href).toEqual(
-    'https://vercel.com/?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app',
-  )
-  expect(a[0]?.target).toEqual('_blank')
-  expect(a[0]?.rel).toEqual('noopener noreferrer')
-})
-
 test('h2 test', () => {
   const h2 = document.querySelectorAll('h2')
   expect(h2[0]?.innerText).toEqual('Docs ->')

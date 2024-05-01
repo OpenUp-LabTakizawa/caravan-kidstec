@@ -28,30 +28,40 @@ const siteInfo = [
 ]
 
 const navItems: NavbarItem[] = [
-  { name: '最新情報', icon: NewspaperIcon, href: '#news' },
+  {
+    name: '最新情報',
+    icon: NewspaperIcon,
+    color: 'text-primary',
+    href: '#news',
+  },
   {
     name: '活動紹介',
     icon: SparklesIcon,
+    color: 'text-warning',
     href: '#about',
   },
   {
     name: '開催予定',
     icon: TruckIcon,
+    color: 'text-accent',
     content: [...area],
   },
   {
     name: '過去の実績',
     icon: TrophyIcon,
+    color: 'text-error',
     content: [...area],
   },
   {
     name: 'サポーター/パートナー',
     icon: HeartIcon,
+    color: 'text-secondary',
     content: [...area],
   },
   {
     name: 'お問い合わせ',
     icon: QuestionMarkCircleIcon,
+    color: 'text-info',
     content: [...siteInfo],
   },
 ]
@@ -111,7 +121,7 @@ export function Navbar() {
 function DropdownMenu() {
   return (
     <details className="dropdown">
-      <summary tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+      <summary role="button" className="btn btn-ghost lg:hidden">
         <Bars3CenterLeftIcon className="h-7 w-7" />
       </summary>
       <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
@@ -119,14 +129,14 @@ function DropdownMenu() {
           <li key={item.name}>
             {item.href && (
               <Link href={item.href}>
-                <item.icon className="h-5 w-5" />
+                <item.icon className={`h-5 w-5 ${item.color}`} />
                 {item.name}
               </Link>
             )}
             {item.content && (
               <>
                 <div>
-                  <item.icon className="h-5 w-5" />
+                  <item.icon className={`h-5 w-5 ${item.color}`} />
                   {item.name}
                 </div>
                 <SubContent content={item.content} />
@@ -147,14 +157,14 @@ function NavItems() {
           <li key={item.name}>
             {item.href && (
               <Link href={item.href}>
-                <item.icon className="h-5 w-5" />
+                <item.icon className={`h-5 w-5 ${item.color}`} />
                 {item.name}
               </Link>
             )}
             {item.content && (
               <details>
                 <summary>
-                  <item.icon className="h-5 w-5" />
+                  <item.icon className={`h-5 w-5 ${item.color}`} />
                   {item.name}
                 </summary>
                 <SubContent content={item.content} />
@@ -186,7 +196,7 @@ function SubContent({
 function ThemeList() {
   return (
     <details className="dropdown dropdown-end">
-      <summary tabIndex={0} role="button" className="btn m-1">
+      <summary role="button" className="btn m-1">
         テーマ
         <ChevronDownIcon className="h-5 w-5" />
       </summary>

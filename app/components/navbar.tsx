@@ -202,12 +202,12 @@ function SubContent({
 
 function ThemeList() {
   return (
-    <details className="dropdown dropdown-end">
-      <summary role="button" className="btn">
+    <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn">
         テーマ
         <ChevronDownIcon className="h-5 w-5" />
-      </summary>
-      <ul className="dropdown-content z-[1] h-52 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
+      </div>
+      <ul className="dropdown-content z-[1] h-52 w-40 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
         {themeList.map((theme) => (
           <li key={theme.name}>
             <input
@@ -220,6 +220,6 @@ function ThemeList() {
           </li>
         ))}
       </ul>
-    </details>
+    </div>
   )
 }

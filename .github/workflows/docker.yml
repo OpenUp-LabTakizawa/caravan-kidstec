@@ -86,6 +86,7 @@ jobs:
 
       - name: Build and Push
         uses: docker/build-push-action@v5
+        id: push
         with:
           context: .
           platforms: ${{ fromJSON(env.IS_PUSH) && 'linux/amd64,linux/arm64' || 'linux/amd64' }}

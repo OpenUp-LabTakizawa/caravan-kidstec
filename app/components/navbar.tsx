@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
+import type React from 'react'
 import type { Navigation } from '../interfaces/navigation'
 import type { SiteUrl } from '../interfaces/siteUrl'
 import type { Theme } from '../interfaces/theme'
@@ -39,13 +40,13 @@ const navItems: Navigation[] = [
     name: '最新情報',
     icon: NewspaperIcon,
     color: 'text-primary',
-    href: '#news',
+    href: '/#news',
   },
   {
     name: '活動紹介',
     icon: SparklesIcon,
     color: 'text-warning',
-    href: '#about',
+    href: '/#about',
   },
   {
     name: '開催予定',
@@ -108,7 +109,7 @@ const themeList: Theme[] = [
   { name: 'サンセット', value: 'sunset' },
 ] as const
 
-export function Navbar() {
+export function Navbar(): React.JSX.Element {
   return (
     <div className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
@@ -127,7 +128,7 @@ export function Navbar() {
   )
 }
 
-function DropdownMenu() {
+function DropdownMenu(): React.JSX.Element {
   return (
     <details className="dropdown">
       <summary role="button" className="btn btn-ghost lg:hidden">
@@ -158,7 +159,7 @@ function DropdownMenu() {
   )
 }
 
-function NavItems() {
+function NavItems(): React.JSX.Element {
   return (
     <ul className="menu menu-horizontal p-0">
       {navItems.map((item) => (
@@ -200,7 +201,7 @@ function SubContent({
   )
 }
 
-function ThemeList() {
+function ThemeList(): React.JSX.Element {
   return (
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn">

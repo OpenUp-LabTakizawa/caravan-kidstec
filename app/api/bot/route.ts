@@ -15,7 +15,7 @@ export async function POST(request: Request): Promise<Response> {
   const events: webhook.Event[] = callbackRequest.events
 
   const results = await Promise.all(
-    events.map(async (event: webhook.Event) => {
+    events?.map(async (event: webhook.Event) => {
       try {
         await textEventHandler(event)
       } catch (error: unknown) {

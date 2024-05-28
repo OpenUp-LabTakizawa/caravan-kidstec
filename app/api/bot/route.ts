@@ -13,15 +13,10 @@ export function GET(): Response {
 }
 
 export async function POST(request: Request): Promise<Response> {
-  const callbackRequest: webhook.CallbackRequest =
-    request.body as unknown as webhook.CallbackRequest
-  const events: webhook.Event[] = callbackRequest.events
+  const req = await request.json()
 
-  if (events === undefined) {
-    return Response.json({
-      status: 'success',
-    })
-  }
+  const callbackRequest: webhook.CallbackRequest = req
+  const events: webhook.Event[] = callbackRequest.events
 
   const results = await Promise.all(
     events.map(async (event: webhook.Event) => {

@@ -1,6 +1,9 @@
 import { client } from '@/app/lib/line'
-import type { MessageAPIResponseBase, webhook } from '@line/bot-sdk'
-import { HTTPFetchError } from '@line/bot-sdk'
+import {
+  HTTPFetchError,
+  type MessageAPIResponseBase,
+  type webhook,
+} from '@line/bot-sdk'
 
 export function GET(): Response {
   return Response.json({
@@ -14,8 +17,14 @@ export async function POST(request: Request): Promise<Response> {
     request.body as unknown as webhook.CallbackRequest
   const events: webhook.Event[] = callbackRequest.events
 
+  if (events === undefined) {
+    return Response.json({
+      status: 'success',
+    })
+  }
+
   const results = await Promise.all(
-    events?.map(async (event: webhook.Event) => {
+    events.map(async (event: webhook.Event) => {
       try {
         await textEventHandler(event)
       } catch (error: unknown) {

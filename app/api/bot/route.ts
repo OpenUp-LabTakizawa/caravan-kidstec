@@ -2,6 +2,7 @@ import { client } from '@/app/lib/line'
 import {
   HTTPFetchError,
   type MessageAPIResponseBase,
+  validateSignature,
   type webhook,
 } from '@line/bot-sdk'
 
@@ -13,9 +14,18 @@ export function GET(): Response {
 }
 
 export async function POST(request: Request): Promise<Response> {
-  const req = await request.json()
+  const body = await request.arrayBuffer()
+  const buffer = Buffer.from(body)
 
-  const callbackRequest: webhook.CallbackRequest = req
+  const isValidSignature = middleware(request, buffer)
+  if (isValidSignature) {
+    return Response.json({
+      status: 'error',
+      message: isValidSignature,
+    })
+  }
+
+  const callbackRequest: webhook.CallbackRequest = JSON.parse(buffer.toString())
   const events: webhook.Event[] = callbackRequest.events
 
   const results = await Promise.all(
@@ -31,7 +41,6 @@ export async function POST(request: Request): Promise<Response> {
           console.error(error)
         }
 
-        // Return an error message.
         return Response.json({
           status: 'error',
         })
@@ -48,25 +57,38 @@ export async function POST(request: Request): Promise<Response> {
 async function textEventHandler(
   event: webhook.Event,
 ): Promise<MessageAPIResponseBase | undefined> {
-  // Check if for a text message
   if (event.type !== 'message' || event.message.type !== 'text') {
     return
   }
 
-  // Check if message is repliable
   if (!event.replyToken) {
     return
   }
 
-  // Create a new message.
-  // Reply to the user.
-  await client.replyMessage({
-    replyToken: event.replyToken,
-    messages: [
-      {
-        type: 'text',
-        text: event.message.text,
-      },
-    ],
-  })
+  if (event.message.text.includes('参加申込')) {
+    await client.replyMessage({
+      replyToken: event.replyToken,
+      messages: [
+        {
+          type: 'text',
+          text: '定員に達したため、\n申込受付を終了しました。\n次回募集をお待ち下さい。',
+        },
+      ],
+    })
+    return
+  }
+}
+
+function middleware(request: Request, buffer: Buffer): string {
+  const signature = request.headers.get('x-line-signature')
+  if (!signature) {
+    return 'No signature'
+  }
+
+  const secret = process.env.CHANNEL_SECRET || ''
+  if (!validateSignature(buffer, secret, signature)) {
+    return 'signature validation failed'
+  }
+
+  return ''
 }

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import type React from 'react'
 import { Footer } from './components/footer'
 import './globals.css'
-import { Navbar } from './components/navbar'
+import { Header } from './components/header'
 
 export const metadata: Metadata = {
   title: 'こどもテックキャラバン',
@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Navbar />
-        {children}
+        <Header />
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

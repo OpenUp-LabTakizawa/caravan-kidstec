@@ -1,4 +1,3 @@
-import logo from '@/public/caravan-kidstec_logo_line.webp'
 import {
   Bars3CenterLeftIcon,
   ChevronDownIcon,
@@ -109,22 +108,27 @@ const themeList: Theme[] = [
   { name: 'サンセット', value: 'sunset' },
 ] as const
 
-export function Navbar(): React.JSX.Element {
+export function Header(): React.JSX.Element {
   return (
-    <div className="navbar sticky top-0 z-[1] bg-base-100">
+    <header className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
         <DropdownMenu />
         <Link href="/" className="btn btn-ghost w-fit">
-          <Image src={logo} sizes="100vw" alt={SITE_TITLE} />
+          <Image
+            src="/caravan-kidstec_logo_line.webp"
+            width={200}
+            height={200}
+            alt={SITE_TITLE}
+          />
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <nav className="navbar-center hidden lg:flex">
         <NavItems />
-      </div>
+      </nav>
       <div className="navbar-end lg:w-3/12">
-        <ThemeList />
+        <ThemeController />
       </div>
-    </div>
+    </header>
   )
 }
 
@@ -132,29 +136,31 @@ function DropdownMenu(): React.JSX.Element {
   return (
     <details className="dropdown">
       <summary role="button" className="btn btn-ghost lg:hidden">
-        <Bars3CenterLeftIcon className="h-7 w-7" />
+        <Bars3CenterLeftIcon className="size-7" />
       </summary>
-      <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
-        {navItems.map((item) => (
-          <li key={item.name}>
-            {item.href && (
-              <Link href={item.href}>
-                <item.icon className={`h-5 w-5 ${item.color}`} />
-                {item.name}
-              </Link>
-            )}
-            {item.content && (
-              <>
-                <div>
-                  <item.icon className={`h-5 w-5 ${item.color}`} />
+      <nav>
+        <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+          {navItems.map((item) => (
+            <li key={item.name}>
+              {item.href && (
+                <Link href={item.href}>
+                  <item.icon className={`size-5 ${item.color}`} />
                   {item.name}
-                </div>
-                <SubContent content={item.content} />
-              </>
-            )}
-          </li>
-        ))}
-      </ul>
+                </Link>
+              )}
+              {item.content && (
+                <>
+                  <div>
+                    <item.icon className={`size-5 ${item.color}`} />
+                    {item.name}
+                  </div>
+                  <SubContent content={item.content} />
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
     </details>
   )
 }
@@ -166,14 +172,14 @@ function NavItems(): React.JSX.Element {
         <li key={item.name}>
           {item.href && (
             <Link href={item.href}>
-              <item.icon className={`h-5 w-5 ${item.color}`} />
+              <item.icon className={`size-5 ${item.color}`} />
               {item.name}
             </Link>
           )}
           {item.content && (
             <details>
               <summary>
-                <item.icon className={`h-5 w-5 ${item.color}`} />
+                <item.icon className={`size-5 ${item.color}`} />
                 {item.name}
               </summary>
               <SubContent content={item.content} />
@@ -201,12 +207,12 @@ function SubContent({
   )
 }
 
-function ThemeList(): React.JSX.Element {
+function ThemeController(): React.JSX.Element {
   return (
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn">
         テーマ
-        <ChevronDownIcon className="h-5 w-5" />
+        <ChevronDownIcon className="size-5" />
       </div>
       <ul className="dropdown-content z-[1] h-52 w-40 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
         {themeList.map((theme) => (

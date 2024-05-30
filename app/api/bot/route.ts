@@ -14,10 +14,10 @@ export function GET(): Response {
 }
 
 export async function POST(request: Request): Promise<Response> {
-  const body = await request.arrayBuffer()
-  const buffer = Buffer.from(body)
+  const body: ArrayBuffer = await request.arrayBuffer()
+  const buffer: Buffer = Buffer.from(body)
 
-  const isValidSignature = middleware(request, buffer)
+  const isValidSignature: string = middleware(request, buffer)
   if (isValidSignature) {
     return Response.json({
       status: 'error',
@@ -80,12 +80,12 @@ async function textEventHandler(
 }
 
 function middleware(request: Request, buffer: Buffer): string {
-  const signature = request.headers.get('x-line-signature')
+  const signature: string = request.headers.get('x-line-signature') || ''
   if (!signature) {
     return 'No signature'
   }
 
-  const secret = process.env.CHANNEL_SECRET || ''
+  const secret: string = process.env.CHANNEL_SECRET || ''
   if (!validateSignature(buffer, secret, signature)) {
     return 'signature validation failed'
   }

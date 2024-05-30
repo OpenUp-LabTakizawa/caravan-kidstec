@@ -3,6 +3,7 @@ import {
   ChevronDownIcon,
   HeartIcon,
   NewspaperIcon,
+  PaintBrushIcon,
   QuestionMarkCircleIcon,
   SparklesIcon,
   TrophyIcon,
@@ -210,8 +211,9 @@ function SubContent({
 function ThemeController(): React.JSX.Element {
   return (
     <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn">
-        テーマ
+      <div tabIndex={0} role="button" className="btn flex-nowrap p-2">
+        <PaintBrushIcon className="size-5 text-success" />
+        <span className="text-nowrap">テーマ</span>
         <ChevronDownIcon className="size-5" />
       </div>
       <ul className="dropdown-content z-[1] h-52 w-40 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">

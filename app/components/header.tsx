@@ -114,7 +114,7 @@ export function Header(): React.JSX.Element {
     <header className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
         <DropdownMenu />
-        <Link href="/" className="btn btn-ghost w-fit">
+        <Link href="/" className="btn btn-ghost w-fit tilt-shaking">
           <Image
             src="/caravan-kidstec_logo_line.webp"
             width={200}
@@ -211,12 +211,7 @@ function SubContent({
 function ThemeController(): React.JSX.Element {
   return (
     <div className="dropdown dropdown-end">
-      <div
-        tabIndex={0}
-        role="button"
-        className="btn flex-nowrap p-2"
-        style={{ animation: 'tilt-shaking 0.25s linear infinite' }}
-      >
+      <div tabIndex={0} role="button" className="btn flex-nowrap p-2">
         <PaintBrushIcon className="size-5 text-success" />
         <span className="text-nowrap">テーマ</span>
         <ChevronDownIcon className="size-5" />

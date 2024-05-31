@@ -211,7 +211,12 @@ function SubContent({
 function ThemeController(): React.JSX.Element {
   return (
     <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn flex-nowrap p-2">
+      <div
+        tabIndex={0}
+        role="button"
+        className="btn flex-nowrap p-2"
+        style={{ animation: 'tilt-shaking 0.25s linear infinite' }}
+      >
         <PaintBrushIcon className="size-5 text-success" />
         <span className="text-nowrap">テーマ</span>
         <ChevronDownIcon className="size-5" />

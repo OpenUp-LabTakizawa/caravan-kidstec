@@ -170,7 +170,7 @@ function NavItems(): React.JSX.Element {
   return (
     <ul className="menu menu-horizontal p-0">
       {navItems.map((item) => (
-        <li key={item.name}>
+        <li key={item.name} className="hover:scale-110">
           {item.href && (
             <Link href={item.href}>
               <item.icon className={`size-5 ${item.color}`} />

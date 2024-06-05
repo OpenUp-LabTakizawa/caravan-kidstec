@@ -1,4 +1,4 @@
-import type React from 'react'
+import type React from "react"
 
 export default function Home(): React.JSX.Element {
   return (
@@ -9,13 +9,13 @@ export default function Home(): React.JSX.Element {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h2 className={'mb-3 font-semibold text-2xl'}>
-          Docs{' '}
+        <h2 className={"mb-3 font-semibold text-2xl"}>
+          Docs{" "}
           <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
             -&gt;
           </span>
         </h2>
-        <p className={'m-0 max-w-[30ch] text-sm opacity-50'}>
+        <p className={"m-0 max-w-[30ch] text-sm opacity-50"}>
           Find in-depth information about Next.js features and API.
         </p>
       </a>
@@ -26,13 +26,13 @@ export default function Home(): React.JSX.Element {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h2 className={'mb-3 font-semibold text-2xl'}>
-          Learn{' '}
+        <h2 className={"mb-3 font-semibold text-2xl"}>
+          Learn{" "}
           <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
             -&gt;
           </span>
         </h2>
-        <p className={'m-0 max-w-[30ch] text-sm opacity-50'}>
+        <p className={"m-0 max-w-[30ch] text-sm opacity-50"}>
           Learn about Next.js in an interactive course with&nbsp;quizzes!
         </p>
       </a>
@@ -43,13 +43,13 @@ export default function Home(): React.JSX.Element {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h2 className={'mb-3 font-semibold text-2xl'}>
-          Templates{' '}
+        <h2 className={"mb-3 font-semibold text-2xl"}>
+          Templates{" "}
           <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
             -&gt;
           </span>
         </h2>
-        <p className={'m-0 max-w-[30ch] text-sm opacity-50'}>
+        <p className={"m-0 max-w-[30ch] text-sm opacity-50"}>
           Explore starter templates for Next.js.
         </p>
       </a>
@@ -60,13 +60,13 @@ export default function Home(): React.JSX.Element {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h2 className={'mb-3 font-semibold text-2xl'}>
-          Deploy{' '}
+        <h2 className={"mb-3 font-semibold text-2xl"}>
+          Deploy{" "}
           <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
             -&gt;
           </span>
         </h2>
-        <p className={'m-0 max-w-[30ch] text-sm opacity-50'}>
+        <p className={"m-0 max-w-[30ch] text-sm opacity-50"}>
           Instantly deploy your Next.js site to a shareable URL with Vercel.
         </p>
       </a>

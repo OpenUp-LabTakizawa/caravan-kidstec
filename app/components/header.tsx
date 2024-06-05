@@ -8,105 +8,105 @@ import {
   SwatchIcon,
   TrophyIcon,
   TruckIcon,
-} from '@heroicons/react/24/outline'
-import Image from 'next/image'
-import Link from 'next/link'
-import type React from 'react'
-import type { Navigation } from '../interfaces/navigation'
-import type { SiteUrl } from '../interfaces/siteUrl'
-import type { Theme } from '../interfaces/theme'
+} from "@heroicons/react/24/outline"
+import Image from "next/image"
+import Link from "next/link"
+import type React from "react"
+import type { Navigation } from "../interfaces/navigation"
+import type { SiteUrl } from "../interfaces/siteUrl"
+import type { Theme } from "../interfaces/theme"
 
-const SITE_TITLE = 'こどもテックキャラバン'
+const SITE_TITLE = "こどもテックキャラバン"
 
 const nextArea: SiteUrl[] = [
-  { name: '広島', href: '/hiroshima' },
-  { name: '千葉', href: '/chiba' },
+  { name: "広島", href: "/hiroshima" },
+  { name: "千葉", href: "/chiba" },
 ] as const
 
-const history: SiteUrl[] = [{ name: '広島', href: '/history' }] as const
+const history: SiteUrl[] = [{ name: "広島", href: "/history" }] as const
 
 const helper: SiteUrl[] = [
-  { name: 'サポーター', href: '/supporter' },
-  { name: 'パートナー', href: '/partner' },
+  { name: "サポーター", href: "/supporter" },
+  { name: "パートナー", href: "/partner" },
 ] as const
 
 const siteInfo: SiteUrl[] = [
-  { name: 'FAQ', href: '/faq' },
-  { name: '個人情報保護方針', href: '/privacy-policy' },
+  { name: "FAQ", href: "/faq" },
+  { name: "個人情報保護方針", href: "/privacy-policy" },
 ] as const
 
 const navItems: Navigation[] = [
   {
-    name: '最新情報',
+    name: "最新情報",
     icon: NewspaperIcon,
-    color: 'text-primary',
-    href: '/#news',
+    color: "text-primary",
+    href: "/#news",
   },
   {
-    name: '活動紹介',
+    name: "活動紹介",
     icon: SparklesIcon,
-    color: 'text-warning',
-    href: '/#about',
+    color: "text-warning",
+    href: "/#about",
   },
   {
-    name: '開催予定',
+    name: "開催予定",
     icon: TruckIcon,
-    color: 'text-accent',
+    color: "text-accent",
     content: [...nextArea],
   },
   {
-    name: '過去の実績',
+    name: "過去の実績",
     icon: TrophyIcon,
-    color: 'text-error',
+    color: "text-error",
     content: [...history],
   },
   {
-    name: 'サポーター/パートナー',
+    name: "サポーター/パートナー",
     icon: HeartIcon,
-    color: 'text-secondary',
+    color: "text-secondary",
     content: [...helper],
   },
   {
-    name: 'お問い合わせ',
+    name: "お問い合わせ",
     icon: QuestionMarkCircleIcon,
-    color: 'text-info',
+    color: "text-info",
     content: [...siteInfo],
   },
 ] as const
 
 const themeList: Theme[] = [
-  { name: 'デフォルト', value: 'light' },
-  { name: 'ダーク', value: 'dark' },
-  { name: 'カップケーキ', value: 'cupcake' },
-  { name: 'マルハナバチ', value: 'bumblebee' },
-  { name: 'エメラルド', value: 'emerald' },
-  { name: 'コーポレート', value: 'corporate' },
-  { name: 'シンセウェイブ', value: 'synthwave' },
-  { name: 'レトロ', value: 'retro' },
-  { name: 'サイバーパンク', value: 'cyberpunk' },
-  { name: 'バレンタイン', value: 'valentine' },
-  { name: 'ハロウィン', value: 'halloween' },
-  { name: 'ガーデン', value: 'garden' },
-  { name: 'フォレスト', value: 'forest' },
-  { name: 'アクア', value: 'aqua' },
-  { name: 'ローファイ', value: 'lofi' },
-  { name: 'パステル', value: 'pastel' },
-  { name: 'ファンタジー', value: 'fantasy' },
-  { name: 'ワイヤーフレーム', value: 'wireframe' },
-  { name: 'ブラック', value: 'black' },
-  { name: 'ラグジュアリー', value: 'luxury' },
-  { name: 'ドラキュラ', value: 'dracula' },
-  { name: 'CMYK', value: 'cmyk' },
-  { name: 'オータム', value: 'autumn' },
-  { name: 'ビジネス', value: 'business' },
-  { name: 'アシッド', value: 'acid' },
-  { name: 'レモネード', value: 'lemonade' },
-  { name: 'ナイト', value: 'night' },
-  { name: 'コーヒー', value: 'coffee' },
-  { name: 'ウィンター', value: 'winter' },
-  { name: 'ディム', value: 'dim' },
-  { name: 'ノール', value: 'nord' },
-  { name: 'サンセット', value: 'sunset' },
+  { name: "デフォルト", value: "light" },
+  { name: "ダーク", value: "dark" },
+  { name: "カップケーキ", value: "cupcake" },
+  { name: "マルハナバチ", value: "bumblebee" },
+  { name: "エメラルド", value: "emerald" },
+  { name: "コーポレート", value: "corporate" },
+  { name: "シンセウェイブ", value: "synthwave" },
+  { name: "レトロ", value: "retro" },
+  { name: "サイバーパンク", value: "cyberpunk" },
+  { name: "バレンタイン", value: "valentine" },
+  { name: "ハロウィン", value: "halloween" },
+  { name: "ガーデン", value: "garden" },
+  { name: "フォレスト", value: "forest" },
+  { name: "アクア", value: "aqua" },
+  { name: "ローファイ", value: "lofi" },
+  { name: "パステル", value: "pastel" },
+  { name: "ファンタジー", value: "fantasy" },
+  { name: "ワイヤーフレーム", value: "wireframe" },
+  { name: "ブラック", value: "black" },
+  { name: "ラグジュアリー", value: "luxury" },
+  { name: "ドラキュラ", value: "dracula" },
+  { name: "CMYK", value: "cmyk" },
+  { name: "オータム", value: "autumn" },
+  { name: "ビジネス", value: "business" },
+  { name: "アシッド", value: "acid" },
+  { name: "レモネード", value: "lemonade" },
+  { name: "ナイト", value: "night" },
+  { name: "コーヒー", value: "coffee" },
+  { name: "ウィンター", value: "winter" },
+  { name: "ディム", value: "dim" },
+  { name: "ノール", value: "nord" },
+  { name: "サンセット", value: "sunset" },
 ] as const
 
 export function Header(): React.JSX.Element {

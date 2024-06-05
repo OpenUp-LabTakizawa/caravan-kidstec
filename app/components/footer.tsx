@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import type React from 'react'
+import Image from "next/image"
+import Link from "next/link"
+import type React from "react"
 
 export function Footer(): React.JSX.Element {
   return (

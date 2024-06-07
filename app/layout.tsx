@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
 import type React from "react"
 import { Footer } from "./components/footer"
-import "./globals.css"
 import { Header } from "./components/header"
+import { ScrollToTop } from "./components/scrollToTop"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "こどもテックキャラバン",
@@ -19,8 +20,9 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Header />
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <main className="bg-gray-50 flex min-h-screen flex-col items-center justify-between p-24">
           {children}
+          <ScrollToTop />
         </main>
         <Footer />
       </body>

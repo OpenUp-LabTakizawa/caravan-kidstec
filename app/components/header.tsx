@@ -1,3 +1,8 @@
+"use client"
+
+import type { Navigation } from "@/app/interfaces/navigation"
+import type { SiteUrl } from "@/app/interfaces/siteUrl"
+import type { Theme } from "@/app/interfaces/theme"
 import {
   Bars3CenterLeftIcon,
   ChevronDownIcon,
@@ -12,9 +17,7 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
-import type { Navigation } from "../interfaces/navigation"
-import type { SiteUrl } from "../interfaces/siteUrl"
-import type { Theme } from "../interfaces/theme"
+import { useState } from "react"
 
 const SITE_TITLE = "こどもテックキャラバン"
 
@@ -110,8 +113,29 @@ const themeList: Theme[] = [
 ] as const
 
 export function Header(): React.JSX.Element {
+  const [scrollState, setScrollState] = useState<{
+    scrollY: number
+    isScrollDown: boolean
+  }>({ scrollY: 0, isScrollDown: false })
+  const headerHeight: number = 100
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
+      setScrollState({
+        scrollY: window.scrollY,
+        isScrollDown: scrollState.scrollY < window.scrollY,
+      })
+    })
+  }
+
   return (
-    <header className="navbar sticky top-0 z-[1] bg-base-100">
+    <header
+      className={`transition duration-400 ease bg-base-100 navbar sticky top-0 z-[1] ${
+        headerHeight < scrollState.scrollY && scrollState.isScrollDown
+          ? "-translate-y-20"
+          : "translate-y-0"
+      }`}
+    >
       <div className="navbar-start">
         <DropdownMenu />
         <Link href="/" className="btn btn-ghost w-fit tilt-shaking">

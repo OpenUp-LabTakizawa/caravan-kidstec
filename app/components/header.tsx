@@ -1,81 +1,17 @@
 "use client"
 
-import type { Navigation } from "@/app/interfaces/navigation"
-import type { SiteUrl } from "@/app/interfaces/siteUrl"
 import type { Theme } from "@/app/interfaces/theme"
+import { navItems } from "@/app/lib/constant"
+import { SITE_TITLE } from "@/app/lib/constant"
 import {
   Bars3CenterLeftIcon,
   ChevronDownIcon,
-  HeartIcon,
-  NewspaperIcon,
-  QuestionMarkCircleIcon,
-  SparklesIcon,
   SwatchIcon,
-  TrophyIcon,
-  TruckIcon,
 } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 import { useState } from "react"
-
-const SITE_TITLE = "こどもテックキャラバン"
-
-const nextArea: SiteUrl[] = [
-  { name: "広島", href: "/hiroshima" },
-  { name: "千葉", href: "/chiba" },
-] as const
-
-const history: SiteUrl[] = [{ name: "広島", href: "/history" }] as const
-
-const helper: SiteUrl[] = [
-  { name: "サポーター", href: "/supporter" },
-  { name: "パートナー", href: "/partner" },
-] as const
-
-const siteInfo: SiteUrl[] = [
-  { name: "FAQ", href: "/faq" },
-  { name: "個人情報保護方針", href: "/privacy-policy" },
-] as const
-
-const navItems: Navigation[] = [
-  {
-    name: "最新情報",
-    icon: NewspaperIcon,
-    color: "text-primary",
-    href: "/#news",
-  },
-  {
-    name: "活動紹介",
-    icon: SparklesIcon,
-    color: "text-warning",
-    href: "/#about",
-  },
-  {
-    name: "開催予定",
-    icon: TruckIcon,
-    color: "text-accent",
-    content: [...nextArea],
-  },
-  {
-    name: "過去の実績",
-    icon: TrophyIcon,
-    color: "text-error",
-    content: [...history],
-  },
-  {
-    name: "サポーター/パートナー",
-    icon: HeartIcon,
-    color: "text-secondary",
-    content: [...helper],
-  },
-  {
-    name: "お問い合わせ",
-    icon: QuestionMarkCircleIcon,
-    color: "text-info",
-    content: [...siteInfo],
-  },
-] as const
 
 const themeList: Theme[] = [
   { name: "デフォルト", value: "light" },
@@ -113,7 +49,7 @@ const themeList: Theme[] = [
 ] as const
 
 export function Header(): React.JSX.Element {
-  const [scrollState, setScrollState] = useState<{
+  const [scrollY, setScrollY] = useState<{
     scrollY: number
     isScrollDown: boolean
   }>({ scrollY: 0, isScrollDown: false })
@@ -121,9 +57,9 @@ export function Header(): React.JSX.Element {
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
-      setScrollState({
+      setScrollY({
         scrollY: window.scrollY,
-        isScrollDown: scrollState.scrollY < window.scrollY,
+        isScrollDown: scrollY.scrollY < window.scrollY,
       })
     })
   }
@@ -131,7 +67,7 @@ export function Header(): React.JSX.Element {
   return (
     <header
       className={`transition duration-400 ease bg-base-100 navbar sticky top-0 z-[1] ${
-        headerHeight < scrollState.scrollY && scrollState.isScrollDown
+        headerHeight < scrollY.scrollY && scrollY.isScrollDown
           ? "-translate-y-20"
           : "translate-y-0"
       }`}

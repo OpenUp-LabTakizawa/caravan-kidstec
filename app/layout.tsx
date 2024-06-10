@@ -4,9 +4,10 @@ import { Footer } from "./components/footer"
 import { Header } from "./components/header"
 import { ScrollToTop } from "./components/scrollToTop"
 import "./globals.css"
+import { SITE_TITLE } from "./lib/constant"
 
 export const metadata: Metadata = {
-  title: "こどもテックキャラバン",
+  title: SITE_TITLE,
   description: "こども向けマルチ体験ワークショップイベント",
   metadataBase: new URL("https://caravan-kidstec.com"),
 }

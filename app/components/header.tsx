@@ -66,7 +66,7 @@ export function Header(): React.JSX.Element {
 
   return (
     <header
-      className={`transition duration-400 ease bg-base-100 navbar sticky top-0 z-[1] ${
+      className={`transition duration-400 ease bg-base-100 navbar sticky top-0 z-10 ${
         headerHeight < scrollY.scrollY && scrollY.isScrollDown
           ? "-translate-y-20"
           : "translate-y-0"
@@ -100,7 +100,7 @@ function DropdownMenu(): React.JSX.Element {
         <Bars3CenterLeftIcon className="size-7" />
       </summary>
       <nav>
-        <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+        <ul className="menu menu-sm dropdown-content z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
           {navItems.map((item) => (
             <li key={item.name}>
               {item.href && (

@@ -5,41 +5,44 @@ import type React from "react"
 
 export function Footer(): React.JSX.Element {
   return (
-    <footer className="footer items-center bg-base-300 justify-center p-4 text-base-content gap-2">
-      <div className="grid grid-cols-3">
-        {navItems.map((item) => (
-          <nav key={item.name} className="flex flex-col">
-            {item.href && (
-              <h6 className="footer-title">
+    <footer className="bg-base-300 grid items-center justify-center p-4 text-base-content">
+      <nav>
+        <ul className="grid grid-cols-3 lg:grid-cols-6 menu p-0">
+          {navItems.map((item) => (
+            <li key={item.name}>
+              {item.href && (
                 <Link
                   href={item.href as string}
-                  className="flex link link-hover"
+                  className="break-keep link link-hover"
                 >
-                  <item.icon className={`size-5 mr-1 ${item.color}`} />
+                  <item.icon className={`size-5 ${item.color}`} />
                   {item.name}
                 </Link>
-              </h6>
-            )}
-            {item.content && (
-              <>
-                <h6 className="flex footer-title break-keep">
-                  <item.icon className={`size-5 mr-1 ${item.color}`} />
-                  {item.name}
-                </h6>
-                {item.content.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href as string}
-                    className="link link-hover block pb-1 mx-auto break-keep"
-                  >
+              )}
+              {item.content && (
+                <>
+                  <span className="break-keep">
+                    <item.icon className={`size-5 ${item.color}`} />
                     {item.name}
-                  </Link>
-                ))}
-              </>
-            )}
-          </nav>
-        ))}
-      </div>
+                  </span>
+                  <ul>
+                    {item.content.map((item) => (
+                      <li key={item.name}>
+                        <Link
+                          href={item.href as string}
+                          className="link link-hover"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
       <aside className="flex justify-between items-center gap-4 w-full">
         <p>
           Copyright © Open Up Group Inc. <br className="block sm:hidden" />

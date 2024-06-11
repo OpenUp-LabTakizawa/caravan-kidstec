@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Header />
-        <main className="bg-gray-50 flex min-h-screen flex-col items-center justify-between p-24">
+        <main className="bg-gray-50 p-4">
           {children}
           <ScrollToTop />
         </main>

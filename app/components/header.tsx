@@ -53,7 +53,7 @@ export function Header(): React.JSX.Element {
     scrollY: number
     isScrollDown: boolean
   }>({ scrollY: 0, isScrollDown: false })
-  const headerHeight: number = 100
+  const headerHeight: number = 50
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {

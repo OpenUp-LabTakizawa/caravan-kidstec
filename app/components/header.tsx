@@ -1,7 +1,7 @@
 "use client"
 
 import type { Theme } from "@/app/interfaces/theme"
-import { navItems } from "@/app/lib/constant"
+import { navigation } from "@/app/lib/constant"
 import { SITE_TITLE } from "@/app/lib/constant"
 import {
   Bars3CenterLeftIcon,
@@ -84,7 +84,7 @@ export function Header(): React.JSX.Element {
         </Link>
       </div>
       <nav className="navbar-center hidden lg:flex">
-        <NavItems />
+        <Navigation />
       </nav>
       <div className="navbar-end lg:w-3/12">
         <ThemeController />
@@ -101,7 +101,7 @@ function DropdownMenu(): React.JSX.Element {
       </summary>
       <nav>
         <ul className="menu menu-sm dropdown-content z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
-          {navItems.map((item) => (
+          {navigation.map((item) => (
             <li key={item.name}>
               {item.href && (
                 <Link href={item.href} className="font-bold">
@@ -126,10 +126,10 @@ function DropdownMenu(): React.JSX.Element {
   )
 }
 
-function NavItems(): React.JSX.Element {
+function Navigation(): React.JSX.Element {
   return (
     <ul className="menu menu-horizontal p-0">
-      {navItems.map((item) => (
+      {navigation.map((item) => (
         <li key={item.name} className="hover:scale-110">
           {item.href && (
             <Link href={item.href} className="font-bold">

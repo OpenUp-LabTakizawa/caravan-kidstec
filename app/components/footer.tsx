@@ -1,4 +1,4 @@
-import { navItems } from "@/app/lib/constant"
+import { navigation } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
@@ -8,7 +8,7 @@ export function Footer(): React.JSX.Element {
     <footer className="bg-base-300 grid items-center justify-center p-4 text-base-content">
       <nav>
         <ul className="grid grid-cols-3 lg:grid-cols-6 menu p-0">
-          {navItems.map((item) => (
+          {navigation.map((item) => (
             <li key={item.name}>
               {item.href && (
                 <Link

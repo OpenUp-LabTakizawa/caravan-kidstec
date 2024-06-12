@@ -26,7 +26,7 @@ const siteInfo: SiteUrl[] = [
   { name: "個人情報保護方針", href: "/privacy-policy" },
 ] as const
 
-export const navItems: Navigation[] = [
+export const navigation: Navigation[] = [
   {
     name: "最新情報",
     icon: NewspaperIcon,
@@ -97,4 +97,4 @@ export const carouselItems: Carousel[] = [
       second: "扉を開いた先に違う景色が\n見えると幸いです。",
     },
   },
-]
+] as const

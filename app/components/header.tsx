@@ -104,14 +104,14 @@ function DropdownMenu(): React.JSX.Element {
           {navItems.map((item) => (
             <li key={item.name}>
               {item.href && (
-                <Link href={item.href}>
+                <Link href={item.href} className="font-bold">
                   <item.icon className={`size-5 ${item.color}`} />
                   {item.name}
                 </Link>
               )}
               {item.content && (
                 <>
-                  <div>
+                  <div className="font-bold">
                     <item.icon className={`size-5 ${item.color}`} />
                     {item.name}
                   </div>
@@ -132,14 +132,14 @@ function NavItems(): React.JSX.Element {
       {navItems.map((item) => (
         <li key={item.name} className="hover:scale-110">
           {item.href && (
-            <Link href={item.href}>
+            <Link href={item.href} className="font-bold">
               <item.icon className={`size-5 ${item.color}`} />
               {item.name}
             </Link>
           )}
           {item.content && (
             <details>
-              <summary>
+              <summary className="font-bold">
                 <item.icon className={`size-5 ${item.color}`} />
                 {item.name}
               </summary>

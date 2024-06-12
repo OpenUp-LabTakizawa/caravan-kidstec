@@ -18,6 +18,24 @@
   animation: tilt-shaking 0.25s linear infinite;
 }
 
+.typing {
+  animation: typing 10s steps(20) infinite, blink .7s infinite;
+  border-right: .15em solid orange;
+  margin: auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
 @keyframes fade-out-down {
   from {
     opacity: 1;
@@ -67,5 +85,20 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  25% {
+    width: 100%;
+  }
+  75% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
   }
 }

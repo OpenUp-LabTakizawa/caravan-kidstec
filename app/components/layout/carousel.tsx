@@ -22,7 +22,7 @@ export function Carousel(): React.JSX.Element {
         slide += scrollWidth / carouselItems.length
       }
       carousel.scrollLeft = slide
-    }, 3000)
+    }, 6000)
     return () => window.clearInterval(interval)
   })
 

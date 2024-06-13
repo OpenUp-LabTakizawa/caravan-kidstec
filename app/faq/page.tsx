@@ -1,4 +1,4 @@
-import { Heading } from "@/app/components/heading"
+import { Heading } from "@/app/components/layout/heading"
 import type React from "react"
 
 export default function FAQ(): React.JSX.Element {

@@ -1,4 +1,4 @@
-import { Breadcrumb } from "@/app/components/breadcrumb"
+import { Breadcrumb } from "@/app/components/layout/breadcrumb"
 import type { Navigation } from "@/app/interfaces/navigation"
 import type { SiteUrl } from "@/app/interfaces/siteUrl"
 import { navigation } from "@/app/lib/constant"

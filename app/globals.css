@@ -19,7 +19,7 @@
 }
 
 .typing {
-  animation: typing 10s steps(20) infinite, blink .7s infinite;
+  animation: typing 6s steps(20) infinite, blink .7s infinite;
   border-right: .15em solid orange;
   margin: auto;
   overflow: hidden;
@@ -92,10 +92,10 @@
   0% {
     width: 0;
   }
-  25% {
+  20% {
     width: 100%;
   }
-  75% {
+  80% {
     width: 100%;
   }
   100% {

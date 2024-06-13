@@ -5,16 +5,19 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
-import { useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function Carousel(): React.JSX.Element {
+  const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
   let slide = 0
 
   useEffect(() => {
-    const carousel: HTMLDivElement = document.querySelector(
-      ".carousel",
-    ) as HTMLDivElement
-    const scrollWidth: number = carousel.scrollWidth as number
+    if (isMouseEnter) {
+      return
+    }
+    const carousel: HTMLDivElement = ref.current as HTMLDivElement
+    const scrollWidth: number = carousel.scrollWidth
     const interval = window.setInterval(() => {
       if (scrollWidth <= slide) {
         slide = 0
@@ -22,12 +25,17 @@ export function Carousel(): React.JSX.Element {
         slide += scrollWidth / carouselItems.length
       }
       carousel.scrollLeft = slide
-    }, 6000)
+    }, 3000)
     return () => window.clearInterval(interval)
   })
 
   return (
-    <section className="carousel rounded-box">
+    <section
+      ref={ref}
+      className="carousel rounded-box"
+      onMouseEnter={() => setIsMouseEnter(true)}
+      onMouseLeave={() => setIsMouseEnter(false)}
+    >
       {carouselItems.map((item, index) => (
         <div
           id={item.name}

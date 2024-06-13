@@ -70,7 +70,7 @@ export const carouselItems: Carousel[] = [
     name: "everyone_rowing",
     alt: "メガサップ",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/everyone_rowing.webp",
-    title: "こどもテックキャラバン\nin 広島",
+    title: "こどもテックキャラバン",
     content: {
       first: "広島の都市部・里山里海で\n自然体験を楽しみながら、",
       second: "プログラミングを学ぶ\nマルチ体験プログラムです。",
@@ -91,7 +91,7 @@ export const carouselItems: Carousel[] = [
     name: "girl_boy_river",
     alt: "お魚探し中…",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/girl_boy_river.webp",
-    title: "体験から好きを\n見つけよう！",
+    title: "好きを見つけよう！",
     content: {
       first: "このイベントが皆様の\n新しい扉となり、",
       second: "扉を開いた先に違う景色が\n見えると幸いです。",

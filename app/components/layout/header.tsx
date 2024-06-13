@@ -156,7 +156,7 @@ function SubContent({
   content,
 }: {
   content: { name: string; href: string }[]
-}) {
+}): React.JSX.Element {
   return (
     <ul className="p-2">
       {content.map((item) => (

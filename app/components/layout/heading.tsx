@@ -16,11 +16,13 @@ export function Heading({
   )[0] as SiteUrl
 
   return (
-    <section>
-      <div className="max-w-fit mx-auto">
-        <h1 className="typing font-bold text-3xl">{heading.name}</h1>
-      </div>
+    <section className="grid gap-6">
       <Breadcrumb crumb={crumb} href={href} />
+      <div className="max-w-fit mx-auto">
+        <h1 className={`font-bold typing text-4xl ${crumb.color}`}>
+          {heading.name}
+        </h1>
+      </div>
     </section>
   )
 }

@@ -48,7 +48,7 @@ export function Carousel(): React.JSX.Element {
               height={1000}
               width={1000}
               alt={item.alt}
-              className="rounded-box w-full h-full object-cover"
+              className="h-full object-cover rounded-box w-full"
             />
             <figcaption className="text-center">
               ※自然体験は開催時期により異なります

@@ -42,13 +42,18 @@ export function Carousel(): React.JSX.Element {
           key={item.name}
           className="carousel-item relative w-full"
         >
-          <Image
-            src={item.src}
-            height={1000}
-            width={1000}
-            alt={item.alt}
-            className="w-full"
-          />
+          <figure className="w-full">
+            <Image
+              src={item.src}
+              height={1000}
+              width={1000}
+              alt={item.alt}
+              className="rounded-box w-full h-full object-cover"
+            />
+            <figcaption className="text-center">
+              ※自然体験は開催時期により異なります
+            </figcaption>
+          </figure>
           <div className="absolute flex justify-between items-center transform -translate-y-1/2 left-5 right-5 top-1/2 bg-transparent">
             <Link
               href={`#${0 === index ? carouselItems[carouselItems.length - 1].name : carouselItems[index - 1].name}`}

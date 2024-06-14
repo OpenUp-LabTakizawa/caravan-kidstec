@@ -25,9 +25,7 @@ export function Breadcrumb({
           <crumb.icon className={`size-5 mr-1 ${crumb.color}`} />
           {crumb.name}
         </li>
-        <li>
-          <Link href={content.href}>{content.name}</Link>
-        </li>
+        <li>{content.name}</li>
       </ul>
     </div>
   )

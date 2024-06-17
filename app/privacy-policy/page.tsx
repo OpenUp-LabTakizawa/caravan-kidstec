@@ -1,5 +1,5 @@
-import { Divider } from "@/app/components/layout/divider"
 import { Heading } from "@/app/components/layout/heading"
+import { HashtagIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type React from "react"
 
@@ -16,7 +16,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
           【こどもテックキャラバン広島】
           （以下「本件」といいます。）へのご参加お申込みに必要な情報、また参加決定者の詳細情報においてお預かりする個人情報の取扱いについて、次のように管理し、保護に努めて参ります。
         </p>
-        <Divider />
+        <div className="divider">
+          <HashtagIcon className="size-10" />
+        </div>
         <article className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">１．</span>
@@ -40,7 +42,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
             </li>
           </ul>
         </article>
-        <Divider />
+        <div className="divider">
+          <HashtagIcon className="size-10" />
+        </div>
         <article className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">２．</span>
@@ -76,7 +80,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
             </p>
           </section>
         </article>
-        <Divider />
+        <div className="divider">
+          <HashtagIcon className="size-10" />
+        </div>
         <article className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">３．</span>
@@ -84,7 +90,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
           </h3>
           <p>本件について、要配慮個人情報をいただくことはございません。</p>
         </article>
-        <Divider />
+        <div className="divider">
+          <HashtagIcon className="size-10" />
+        </div>
         <article className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">４．</span>
@@ -100,7 +108,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
             また、お預かりしました個人情報は、法令及び本件運営管理の範囲内において管理・保管し、当社内規に基づく保存期間経過後は一切の個人情報を廃棄処理致します。
           </p>
         </article>
-        <Divider />
+        <div className="divider">
+          <HashtagIcon className="size-10" />
+        </div>
         <article className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">５．</span>
@@ -110,7 +120,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
             当社への個人情報の提出はあくまで任意のものですが、情報を提出いただかず運営に差し支えが生じる場合など、当社の判断で本件への参加をお断りする場合があります。
           </p>
         </article>
-        <Divider />
+        <div className="divider">
+          <HashtagIcon className="size-10" />
+        </div>
         <article className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">６．</span>
@@ -146,7 +158,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
             </p>
           </address>
         </article>
-        <Divider />
+        <div className="divider">
+          <HashtagIcon className="size-10" />
+        </div>
         <article className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">７．</span>

@@ -77,9 +77,9 @@ export const carouselItems: Carousel[] = [
     },
   },
   {
-    name: "checking",
-    alt: "ロボットチェック",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/checking.webp",
+    name: "teaching",
+    alt: "講義中…",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/teaching.webp",
     title: "ロボット X 自然体験",
     content: {
       first: "ロボット制作や自然体験など\n様々な挑戦ができます。",
@@ -95,6 +95,26 @@ export const carouselItems: Carousel[] = [
     content: {
       first: "このイベントが皆様の\n新しい扉となり、",
       second: "扉を開いた先に違う景色が\n見えると幸いです。",
+    },
+  },
+  {
+    name: "loupe_gather",
+    alt: "ロウソク作り",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/loupe_gather.webp",
+    title: "オリジナルロウソク作り",
+    content: {
+      first: "過去には、様々な色を\n組み合わせた自分だけの、",
+      second: "お洒落なロウソクも\n作成しました！",
+    },
+  },
+  {
+    name: "olive_grasp",
+    alt: "オリーブ体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_grasp.webp",
+    title: "オリーブ体験",
+    content: {
+      first: "オリーブ農家の方から\nオリーブオイルの",
+      second: "作り方を丁寧に\n楽しく学びました！",
     },
   },
 ] as const

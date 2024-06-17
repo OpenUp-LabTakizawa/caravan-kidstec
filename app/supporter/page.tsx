@@ -1,16 +1,16 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
-import { Divider } from "@/app/components/layout/divider"
 import { Heading } from "@/app/components/layout/heading"
+import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 
 export default function Supporter(): React.JSX.Element {
   return (
-    <article className="grid gap-6 sm:px-12">
+    <article className="grid gap-6 text-center sm:px-12">
       <Heading content="サポーター/パートナー" href="/supporter" />
       <section className="bg-base-200 grid gap-6 p-4">
-        <h2 className="font-bold text-xl text-center">
+        <h2 className="font-bold text-xl">
           <Link
             href="https://ichicommons.com/"
             target="_blank"
@@ -20,32 +20,26 @@ export default function Supporter(): React.JSX.Element {
           </Link>
         </h2>
         <Image
-          src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/ichi_social.webp"
+          src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/ichi_commons.webp"
           width={1000}
           height={1000}
-          alt="ichi_social"
-          className="w-full"
+          alt="ichi_commons"
+          className="w-full sm:max-h-60 sm:object-contain"
         />
-        <p className="font-semibold text-center">Vision</p>
-        <p className="font-bold leading-8 text-center text-xl">
+        <h3 className="flex font-semibold items-center justify-center text-xl">
+          <BuildingOffice2Icon className="size-5 mr-1" />
+          社会課題解決へのインフラ事業
+        </h3>
+        <p className="font-bold leading-8 text-xl">
           <SlideUp>
-            誰もが社会課題解決の
+            サステナビリティ活動で
             <br className="sm:hidden" />
-            主役になれる世界
-          </SlideUp>
-        </p>
-        <p className="font-semibold text-center">Mission</p>
-        <p className="font-bold leading-8 text-center text-xl slide-up">
-          <SlideUp>
-            社会課題の解決に取り組むすべての
-            <br className="sm:hidden" />
-            人や組織の共助共創を支える
+            企業も、社会も持続可能に
           </SlideUp>
         </p>
       </section>
-      <Divider />
       <section className="bg-base-200 grid gap-6 p-4">
-        <h2 className="font-bold text-xl text-center">
+        <h2 className="font-bold text-xl">
           <Link
             href="https://www.openupgroup.co.jp/"
             target="_blank"
@@ -59,41 +53,22 @@ export default function Supporter(): React.JSX.Element {
           width={1000}
           height={1000}
           alt="openup_logo"
-          className="w-full"
+          className="w-full sm:max-h-60 sm:object-contain"
         />
-        <h3 className="font-bold text-center text-xl">OPEN UP１%アクション</h3>
-        <p className="leading-10 text-center">
-          当社グループでは
-          <br className="md:hidden" />
-          <SlideUp className="font-bold">
-            「幸せな仕事を通じてひとりひとりの
+        <h3 className="flex font-semibold items-center justify-center text-xl">
+          <BuildingOffice2Icon className="size-5 mr-1" />
+          エンジニア派遣事業
+        </h3>
+        <p className="font-bold leading-8 text-xl">
+          <SlideUp>
+            幸せな仕事を通じて
             <br className="sm:hidden" />
-            可能性をひらく社会に」
+            ひとりひとりの可能性をひらく社会に
           </SlideUp>
-          を
-          <br className="md:hidden" />
-          パーパスに掲げています。
-        </p>
-        <p className="leading-10 text-center">
-          このパーパスの目指す社会に向けて
-          <br />
-          <SlideUp className="font-bold">
-            「子どもがモノづくりや自然を学ぶ機会を創出し、子どもの可能性をひらきたい」
-          </SlideUp>
-          そして
-          <br />
-          <SlideUp className="font-bold">
-            「社会課題の解決に向けて活動する人たちの新しい可能性をひらきたい」
-          </SlideUp>
-          との想いから
-          <br />
-          このワークショップのサポーターを続けてまいります。
-          <br className="sm:hidden" />
         </p>
       </section>
-      <Divider />
       <section className="bg-base-200 grid gap-6 p-4">
-        <h2 className="font-bold text-xl text-center">
+        <h2 className="font-bold text-xl">
           <Link href="https://www.tgn.co.jp/" target="_blank" className="link">
             株式会社テイクアンドギヴ・ニーズ
           </Link>
@@ -103,44 +78,34 @@ export default function Supporter(): React.JSX.Element {
           width={1000}
           height={1000}
           alt="T&G_new_design"
-          className="w-full"
+          className="w-full sm:max-h-60 sm:object-contain"
         />
-        <h3 className="font-bold text-center text-xl">
-          ホスピタリティ業界に
-          <br className="sm:hidden" />
-          イノベーションを起こし日本を躍動させる
+        <h3 className="flex font-semibold items-center justify-center text-xl">
+          <BuildingOffice2Icon className="size-5 mr-1" />
+          ホテルウェディング事業
         </h3>
-        <p className="font-semibold leading-5 text-center text-lg">
-          MISSION
-          <br />
-          <span className="text-xs">私たちの使命</span>
-        </p>
-        <p className="font-bold leading-8 text-center text-xl">
+        <p className="font-bold leading-8 text-xl">
           <SlideUp>
-            あそびごころとやさしさで、
+            ホスピタリティ業界に
             <br className="sm:hidden" />
-            人の心を人生を豊かにする
+            イノベーションを起こし日本を躍動させる
           </SlideUp>
         </p>
-        <p className="font-semibold leading-5 text-center text-lg">
-          VISION
+      </section>
+      <section className="bg-base-200 font-semibold grid gap-6 p-4 text-xl">
+        <p>
+          こどもテックキャラバンでは、
+          <br className="sm:hidden" />
+          様々な企業や団体が手を取り合い、
           <br />
-          <span className="text-xs">私たちのあるべき姿</span>
+          社会課題解決を目指しています。
         </p>
-        <p className="font-bold leading-8 text-center text-xl">
-          <SlideUp>
-            日本を代表するホスピタリティ業界の
-            <br className="sm:hidden" />
-            リーディングカンパニーになる
-          </SlideUp>
-        </p>
-        <p className="font-semibold leading-5 text-center text-lg">
-          VALUE
+        <p>
+          関わる全ての人が、学び、遊び、
+          <br className="sm:hidden" />
+          心沸き立つ可能性が
           <br />
-          <span className="text-xs">大切にする価値観</span>
-        </p>
-        <p className="font-bold leading-8 text-center text-xl">
-          <SlideUp>Creativity / Challenge /Kindness</SlideUp>
+          広がる社会を期待しています。
         </p>
       </section>
     </article>

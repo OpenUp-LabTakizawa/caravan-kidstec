@@ -13,6 +13,8 @@ export function Divider(): React.JSX.Element {
       for (const entry of entries) {
         if (entry.isIntersecting) {
           setIsShown(true)
+        } else {
+          setIsShown(false)
         }
       }
     })

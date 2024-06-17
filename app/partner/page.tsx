@@ -5,14 +5,12 @@ import type React from "react"
 
 export default function Partner(): React.JSX.Element {
   return (
-    <article className="grid gap-6 sm:px-12">
+    <article className="grid gap-6 text-center sm:px-12">
       <Heading content="サポーター/パートナー" href="/partner" />
       <section className="grid gap-6 p-4 sm:grid-cols-2">
-        <h2 className="font-bold text-2xl text-center sm:col-span-2">
-          広島エリア
-        </h2>
-        <section className="bg-base-200 grid gap-4 p-4 w-fit mx-auto">
-          <h3 className="font-bold text-center text-xl">
+        <h2 className="font-bold text-2xl sm:col-span-2">広島エリア</h2>
+        <section className="bg-base-200 grid gap-4 mx-auto p-4 w-fit">
+          <h3 className="font-bold text-xl">
             <Link href="https://bplab.biz/" target="_blank" className="link">
               BPL Inc.
             </Link>
@@ -25,8 +23,8 @@ export default function Partner(): React.JSX.Element {
             className="w-full sm:max-h-60 sm:object-contain"
           />
         </section>
-        <section className="bg-base-200 grid gap-4 p-4 w-fit mx-auto">
-          <h3 className="font-bold text-center text-xl">
+        <section className="bg-base-200 grid gap-4 mx-auto p-4 w-fit">
+          <h3 className="font-bold text-xl">
             <Link href="https://fuudo.jp/" target="_blank" className="link">
               一般社団法人 フウド
             </Link>
@@ -39,8 +37,8 @@ export default function Partner(): React.JSX.Element {
             className="w-full sm:max-h-60 sm:object-contain"
           />
         </section>
-        <section className="bg-base-200 grid gap-4 p-4 w-fit mx-auto">
-          <h3 className="font-bold text-center text-xl">
+        <section className="bg-base-200 grid gap-4 mx-auto p-4 w-fit">
+          <h3 className="font-bold text-xl">
             <Link
               href="https://sanken-hiroshima.org/"
               target="_blank"
@@ -59,8 +57,8 @@ export default function Partner(): React.JSX.Element {
             className="w-full sm:max-h-60 sm:object-contain"
           />
         </section>
-        <section className="bg-base-200 grid gap-4 p-4 w-fit mx-auto">
-          <h3 className="font-bold text-center text-xl">広島大学 さんけん部</h3>
+        <section className="bg-base-200 grid gap-4 mx-auto p-4 w-fit">
+          <h3 className="font-bold text-xl">広島大学 さんけん部</h3>
           <Image
             src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/sanken_club.webp"
             width={1000}

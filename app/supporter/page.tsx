@@ -16,7 +16,7 @@ export default function Supporter(): React.JSX.Element {
             target="_blank"
             className="link"
           >
-            ICHI COMMONS株式会社
+            ICHI COMMONS
           </Link>
         </h2>
         <Image
@@ -51,7 +51,7 @@ export default function Supporter(): React.JSX.Element {
             target="_blank"
             className="link"
           >
-            株式会社オープンアップグループ
+            オープンアップグループ
           </Link>
         </h2>
         <Image
@@ -95,7 +95,7 @@ export default function Supporter(): React.JSX.Element {
       <section className="bg-base-200 grid gap-6 p-4">
         <h2 className="font-bold text-2xl text-center">
           <Link href="https://www.tgn.co.jp/" target="_blank" className="link">
-            株式会社テイクアンドギヴ・ニーズ
+            テイクアンドギヴ・ニーズ
           </Link>
         </h2>
         <Image
@@ -112,7 +112,8 @@ export default function Supporter(): React.JSX.Element {
         </h3>
         <p className="font-semibold leading-5 text-center text-lg">
           MISSION
-          <p className="text-xs">私たちの使命</p>
+          <br />
+          <span className="text-xs">私たちの使命</span>
         </p>
         <p className="font-bold leading-8 text-center text-xl">
           <SlideUp>
@@ -123,7 +124,8 @@ export default function Supporter(): React.JSX.Element {
         </p>
         <p className="font-semibold leading-5 text-center text-lg">
           VISION
-          <p className="text-xs">私たちのあるべき姿</p>
+          <br />
+          <span className="text-xs">私たちのあるべき姿</span>
         </p>
         <p className="font-bold leading-8 text-center text-xl">
           <SlideUp>
@@ -134,7 +136,8 @@ export default function Supporter(): React.JSX.Element {
         </p>
         <p className="font-semibold leading-5 text-center text-lg">
           VALUE
-          <p className="text-xs">大切にする価値観</p>
+          <br />
+          <span className="text-xs">大切にする価値観</span>
         </p>
         <p className="font-bold leading-8 text-center text-xl">
           <SlideUp>Creativity / Challenge /Kindness</SlideUp>

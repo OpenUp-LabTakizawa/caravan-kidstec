@@ -1,10 +1,12 @@
 "use client"
 
-import { HashtagIcon } from "@heroicons/react/24/solid"
 import { useEffect, useRef, useState } from "react"
 import type React from "react"
 
-export function Divider(): React.JSX.Element {
+export function SlideUp({
+  children,
+  className,
+}: { children: React.ReactNode; className?: string }): React.JSX.Element {
   const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
   const [isShown, setIsShown] = useState(false)
 
@@ -31,8 +33,11 @@ export function Divider(): React.JSX.Element {
   })
 
   return (
-    <div ref={ref} className={`divider mx-auto${isShown ? " stretch" : ""}`}>
-      <HashtagIcon className="size-10" />
-    </div>
+    <span
+      ref={ref}
+      className={`inline-block opacity-0${className ? ` ${className}` : ""}${isShown ? " slide-up" : ""}`}
+    >
+      {children}
+    </span>
   )
 }

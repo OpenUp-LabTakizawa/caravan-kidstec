@@ -10,13 +10,13 @@ export default function Supporter(): React.JSX.Element {
     <article className="grid gap-6 sm:px-12">
       <Heading content="サポーター/パートナー" href="/supporter" />
       <section className="bg-base-200 grid gap-6 p-4">
-        <h2 className="font-bold text-2xl text-center">
+        <h2 className="font-bold text-xl text-center">
           <Link
             href="https://ichicommons.com/"
             target="_blank"
             className="link"
           >
-            ICHI COMMONS
+            ICHI COMMONS株式会社
           </Link>
         </h2>
         <Image
@@ -45,13 +45,13 @@ export default function Supporter(): React.JSX.Element {
       </section>
       <Divider />
       <section className="bg-base-200 grid gap-6 p-4">
-        <h2 className="font-bold text-2xl text-center">
+        <h2 className="font-bold text-xl text-center">
           <Link
             href="https://www.openupgroup.co.jp/"
             target="_blank"
             className="link"
           >
-            オープンアップグループ
+            株式会社オープンアップグループ
           </Link>
         </h2>
         <Image
@@ -93,9 +93,9 @@ export default function Supporter(): React.JSX.Element {
       </section>
       <Divider />
       <section className="bg-base-200 grid gap-6 p-4">
-        <h2 className="font-bold text-2xl text-center">
+        <h2 className="font-bold text-xl text-center">
           <Link href="https://www.tgn.co.jp/" target="_blank" className="link">
-            テイクアンドギヴ・ニーズ
+            株式会社テイクアンドギヴ・ニーズ
           </Link>
         </h2>
         <Image

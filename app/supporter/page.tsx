@@ -20,7 +20,7 @@ export default function Supporter(): React.JSX.Element {
           </Link>
         </h2>
         <Image
-          src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/ichi_commons.webp"
+          src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/ichi_commons.svg"
           width={1000}
           height={1000}
           alt="ichi_commons"

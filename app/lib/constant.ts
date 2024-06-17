@@ -18,8 +18,8 @@ const nextArea: SiteUrl[] = [
 ] as const
 const history: SiteUrl[] = [{ name: "広島", href: "/history" }] as const
 const helper: SiteUrl[] = [
-  { name: "サポーター", href: "/supporter" },
-  { name: "パートナー", href: "/partner" },
+  { name: "企業サポーター", href: "/supporter" },
+  { name: "地域パートナー", href: "/partner" },
 ] as const
 const siteInfo: SiteUrl[] = [
   { name: "FAQ", href: "/faq" },

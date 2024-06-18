@@ -151,7 +151,7 @@ export const HiroshimaPartners: Partner[] = [
     href: "https://bplab.biz/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/bpl_logo.svg",
     introduction:
-      "どこにいても、実際に稼げる職業、\n若者が憧れる職業をつくりを、\n地域全体を活性化していくことで、\nニッポンを元気にしていくことを\n志命としています。\n\n一緒に、地域を盛り上げていきませんか？",
+      "株式会社BPLは、ブランディング、\n経営・マーケティング、企画・運営など通して、\n地域の活性化につながる事業活動を\nおこなっております。\n\nどこにいても、実際に稼げる職業、\n若者が憧れる職業をつくりを、\n地域全体を活性化していくことで、\nニッポンを元気にしていくことを\n志命としています。\n\n一緒に、地域を盛り上げていきませんか？",
   },
   {
     name: "一般社団法人フウド",

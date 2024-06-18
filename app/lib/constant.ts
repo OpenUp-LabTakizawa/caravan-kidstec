@@ -1,7 +1,8 @@
 import type { Carousel } from "@/app/interfaces/carousel"
 import type { Navigation } from "@/app/interfaces/navigation"
-import type { Organization } from "@/app/interfaces/organization"
+import type { Partner } from "@/app/interfaces/partner"
 import type { SiteUrl } from "@/app/interfaces/siteUrl"
+import type { Supporter } from "@/app/interfaces/supporter"
 import {
   HeartIcon,
   NewspaperIcon,
@@ -120,37 +121,54 @@ export const carouselItems: Carousel[] = [
   },
 ] as const
 
-export const partners: Organization[] = [
+export const ChibaPartners: Partner[] = [
+  {
+    name: "クルックフィールズ",
+    href: "https://kurkkufields.jp/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/kurkkufields_logo.webp",
+    introduction:
+      "30haの広大な農場を舞台に\n繰り広げられる、消費や食のあり方を\n「農業」 「食」 「アート」の\n３つのコンテンツを軸に提案する、\nサステナブルファーム＆パーク\n「KURKKUFIELDS」。\n\n自然やアートに触れる\n様々なフィールドツアー、イベント、\n施設での宿泊体験などを通じて、\n人間本来の生きる喜びや、いのちのてざわり、\nそして持続可能な社会を\n実現していくためのヒントを\n共有出来ればと考えています。",
+  },
+  {
+    name: "CLASSROOM ADVENTURE",
+    href: "https://www.classroom-adventure.com/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/classroom-adventure_logo.svg",
+    introduction:
+      "ワクワクする学びを。\n学びのゲーミフィケーション\n(ゲームの要素を活かして楽しく学ぶこと。)に\n情熱を燃やし、情報検証の\n最前線に立つ慶応義塾大学の\n大学生が運営する団体です。\n\n「レイのブログ」とは真実を\n見つける力を全ての人へ。\n\n真実と噓を見分けるスキルを\n教育する今までにない\nメディアリテラシープログラムです。",
+  },
+  {
+    name: "griteen",
+    href: "https://griteen.com/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/griteen_logo.webp",
+    introduction:
+      "「griteen」は小学生・中学生の\n女の子と保護者様が一緒に学ぶ、\n子供向け/大人向けの\nプログラミングスクールです。\n\n女の子がプログラミングに\n興味を持つことができるような\n授業を提供し、理系へのハードルを\n取り払うことをサポートします。\n\n誰もが自ら考え行動することが\n必要となるこれからの社会で、\n女の子たちが自信を持ち、\n技術的なスキルとともにやり抜く力\n「Grit」を身につけることで、\n将来の選択肢が広がります。",
+  },
+]
+
+export const HiroshimaPartners: Partner[] = [
   {
     name: "BPL Inc.",
     href: "https://bplab.biz/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/bpl_logo.svg",
-    business: "地域まちづくり事業",
-    purpose: "地域をイノベーションの聖地へ",
+    introduction:
+      "どこにいても、実際に稼げる職業、\n若者が憧れる職業をつくりを、\n地域全体を活性化していくことで、\nニッポンを元気にしていくことを\n志命としています。\n\n一緒に、地域を盛り上げていきませんか？",
   },
   {
-    name: "一般社団法人 フウド",
+    name: "一般社団法人フウド",
     href: "https://fuudo.jp/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/fuudo_logo.webp",
-    business: "江田島市周辺の\n地域活性化事業",
-    purpose: "「縁」がつながる機会と\n場所を作っていく",
+    introduction:
+      "江田島市沖美町の移住交流\n拠点施設「フウド」を拠点に、\n島内外の人々の“縁”がつながる\n活動に取り組んでいます。\n\n移住のサポートや\n交流の場づくりに加え、\nビーチクリーン活動や\nマリンアクティビティの普及など、\n島の里海環境を生かした\n活動にも取り組んでいます。",
   },
   {
-    name: "NPO法人 三段峡・\n太田川流域研究会",
-    href: "https://sanken-hiroshima.org/",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/sanken_logo.webp",
-    business: "三段峡の保全と観光事業",
-    purpose: "100年後もあなたにとっての\n『ここ』が続いているために",
-  },
-  {
-    name: "広島大学 さんけん部",
+    name: "広島大学(さんけん部)",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/sanken_club_logo.webp",
-    business: "三段峡の保全と観光事業",
-    purpose: "100年後もあなたにとっての\n『ここ』が続いているために",
+    introduction:
+      "数多くの自然がある\n広島大学のキャンパスは、\n自然を学ぶ絶好のフィールドです。\n\n“さんけん”は調査や保全、\n環境教育を実施する団体です。\n\n皆さんと一緒に広島大学の\n自然の豊かさについて学びます。",
   },
 ]
 
-export const supporters: Organization[] = [
+export const supporters: Supporter[] = [
   {
     name: "ICHI COMMONS株式会社",
     href: "https://ichicommons.com/",

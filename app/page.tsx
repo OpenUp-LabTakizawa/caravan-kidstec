@@ -6,7 +6,7 @@ import type React from "react"
 
 export default function Home(): React.JSX.Element {
   return (
-    <article className="grid gap-6">
+    <article className="grid gap-6 text-center">
       <Carousel />
       <section className="bg-base-200 grid gap-6 items-center p-4 sm:grid-cols-4">
         <SlideUp className="whitespace-pre sm:col-span-4 sm:whitespace-normal">
@@ -25,7 +25,7 @@ export default function Home(): React.JSX.Element {
           alt="ミク"
           className="hidden w-full sm:block"
         />
-        <div className="grid gap-4 text-center sm:col-span-2">
+        <div className="grid gap-4 sm:col-span-2">
           <p>
             自然豊かな環境を感じるアクティビティと
             <br />
@@ -66,6 +66,13 @@ export default function Home(): React.JSX.Element {
           alt="カイ"
           className="hidden w-full sm:block"
         />
+      </section>
+      <section className="bg-base-200 grid gap-6 p-4">
+        <h2 className="font-bold text-2xl">
+          2024年7月
+          <br />
+          広島こどもテックキャラバン
+        </h2>
       </section>
     </article>
   )

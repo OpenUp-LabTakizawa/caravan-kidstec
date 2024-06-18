@@ -1,6 +1,7 @@
 import type { Carousel } from "@/app/interfaces/carousel"
 import type { Navigation } from "@/app/interfaces/navigation"
 import type { SiteUrl } from "@/app/interfaces/siteUrl"
+import type { Supporter } from "@/app/interfaces/supporter"
 import {
   HeartIcon,
   NewspaperIcon,
@@ -118,3 +119,27 @@ export const carouselItems: Carousel[] = [
     },
   },
 ] as const
+
+export const supporters: Supporter[] = [
+  {
+    name: "ICHI COMMONS株式会社",
+    href: "https://ichicommons.com/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/ichicommons_logo.svg",
+    business: "社会課題解決へのインフラ事業",
+    purpose: "サステナビリティ活動で\n企業も、社会も持続可能に",
+  },
+  {
+    name: "株式会社オープンアップグループ",
+    href: "https://www.openupgroup.co.jp/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/openup_logo.svg",
+    business: "エンジニア派遣事業",
+    purpose: "幸せな仕事を通じて\nひとりひとりの可能性をひらく社会に",
+  },
+  {
+    name: "株式会社テイクアンドギヴ・ニーズ",
+    href: "https://www.tgn.co.jp/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/take_and_give_needs_logo.svg",
+    business: "ホテルウェディング事業",
+    purpose: "ホスピタリティ業界に\nイノベーションを起こし日本を躍動させる",
+  },
+]

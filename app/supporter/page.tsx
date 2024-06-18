@@ -12,7 +12,7 @@ export default function Supporter(): React.JSX.Element {
       <Heading content="サポーター/パートナー" href="/supporter" />
       {supporters.map((item) => (
         <section key={item.name} className="bg-base-200 grid gap-6 p-4">
-          <Link href={item.href} target="_blank" className="link">
+          <Link href={item.href as string} target="_blank" className="link">
             <Image
               src={item.src}
               width={1000}
@@ -21,13 +21,11 @@ export default function Supporter(): React.JSX.Element {
               className="w-full sm:max-h-60 sm:object-contain"
             />
           </Link>
-          <h2
-            className={`flex font-semibold items-center justify-center text-2xl ${item.color}`}
-          >
+          <h2 className="flex font-semibold items-center justify-center text-lg">
             <BuildingOffice2Icon className="size-5 mr-1" />
             {item.business}
           </h2>
-          <p className="font-bold leading-8 text-lg">
+          <p className="font-bold leading-8 text-2xl text-info">
             <SlideUp className="whitespace-pre sm:whitespace-normal">
               {item.purpose}
             </SlideUp>

@@ -1,8 +1,7 @@
-export type Supporter = {
+export type Organization = {
   name: string
-  href: string
+  href?: string
   src: string
-  color: string
   business: string
   purpose: string
 }

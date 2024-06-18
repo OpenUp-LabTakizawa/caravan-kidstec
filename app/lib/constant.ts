@@ -21,7 +21,8 @@ const nextArea: SiteUrl[] = [
 const history: SiteUrl[] = [{ name: "広島", href: "/history" }] as const
 const helper: SiteUrl[] = [
   { name: "企業サポーター", href: "/supporter" },
-  { name: "地域パートナー", href: "/partner" },
+  { name: "千葉パートナー", href: "/partner/chiba" },
+  { name: "広島パートナー", href: "/partner/hiroshima" },
 ] as const
 const siteInfo: SiteUrl[] = [
   { name: "FAQ", href: "/faq" },
@@ -127,21 +128,21 @@ export const ChibaPartners: Partner[] = [
     href: "https://kurkkufields.jp/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/kurkkufields_logo.webp",
     introduction:
-      "30haの広大な農場を舞台に\n繰り広げられる、消費や食のあり方を\n「農業」 「食」 「アート」の\n３つのコンテンツを軸に提案する、\nサステナブルファーム＆パーク\n「KURKKUFIELDS」。\n\n自然やアートに触れる\n様々なフィールドツアー、イベント、\n施設での宿泊体験などを通じて、\n人間本来の生きる喜びや、いのちのてざわり、\nそして持続可能な社会を\n実現していくためのヒントを\n共有出来ればと考えています。",
+      "30haの広大な農場を\n舞台に繰り広げられる、\n消費や食のあり方を\n「農業」 「食」 「アート」の\n３つのコンテンツを軸に提案する、\nサステナブルファーム＆パーク\n「KURKKUFIELDS」。\n\n自然やアートに触れる\n様々なフィールドツアー、イベント、\n施設での宿泊体験などを通じて、\n人間本来の生きる喜びや、\nいのちのてざわり、\nそして持続可能な社会を\n実現していくためのヒントを\n共有出来ればと考えています。",
   },
   {
     name: "CLASSROOM ADVENTURE",
     href: "https://www.classroom-adventure.com/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/classroom-adventure_logo.svg",
     introduction:
-      "ワクワクする学びを。\n学びのゲーミフィケーション\n(ゲームの要素を活かして楽しく学ぶこと。)に\n情熱を燃やし、情報検証の\n最前線に立つ慶応義塾大学の\n大学生が運営する団体です。\n\n「レイのブログ」とは真実を\n見つける力を全ての人へ。\n\n真実と噓を見分けるスキルを\n教育する今までにない\nメディアリテラシープログラムです。",
+      "ワクワクする学びを。\n学びのゲーミフィケーション\n(ゲームの要素を活かして\n楽しく学ぶこと。)に\n情熱を燃やし、情報検証の\n最前線に立つ慶応義塾大学の\n大学生が運営する団体です。\n\n「レイのブログ」とは真実を\n見つける力を全ての人へ。\n\n真実と噓を見分けるスキルを\n教育する今までにない\nメディアリテラシープログラムです。",
   },
   {
     name: "ロボサバ",
     href: "https://robosava.jp/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/robot-survival_logo.webp",
     introduction:
-      "「つくる」 「学ぶ」 「競う」体験を通して\nクリエイティブな力を育む\n総合プロジェクト“ロボサバ”。\n\nロボット制作やプログラミングの基礎を学び、\nロボット競技大会で腕試し。\nIT教育だけでなく、人との関わりや達成感など、\n子どもが大きく成長できる、\n非常に意義深い企画です。",
+      "「つくる」 「学ぶ」 「競う」体験を通して\nクリエイティブな力を育む\n総合プロジェクト“ロボサバ”。\n\nロボット制作や\nプログラミングの基礎を学び、\nロボット競技大会で腕試し。\nIT教育だけでなく、\n人との関わりや達成感など、\n子どもが大きく成長できる、\n非常に意義深い企画です。",
   },
   {
     name: "griteen",
@@ -158,7 +159,7 @@ export const HiroshimaPartners: Partner[] = [
     href: "https://bplab.biz/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/bpl_logo.svg",
     introduction:
-      "株式会社BPLは、ブランディング、\n経営・マーケティング、企画・運営など通して、\n地域の活性化につながる事業活動を\nおこなっております。\n\nどこにいても、実際に稼げる職業、\n若者が憧れる職業をつくりを、\n地域全体を活性化していくことで、\nニッポンを元気にしていくことを\n志命としています。\n\n一緒に、地域を盛り上げていきませんか？",
+      "株式会社BPLは、ブランディング、\n経営・マーケティング、\n企画・運営など通して、\n地域の活性化につながる\n事業活動をおこなっております。\n\nどこにいても、実際に稼げる職業、\n若者が憧れる職業をつくりを、\n地域全体を活性化していくことで、\nニッポンを元気にしていくことを\n志命としています。",
   },
   {
     name: "一般社団法人フウド",
@@ -173,13 +174,6 @@ export const HiroshimaPartners: Partner[] = [
     introduction:
       "数多くの自然がある\n広島大学のキャンパスは、\n自然を学ぶ絶好のフィールドです。\n\n“さんけん”は調査や保全、\n環境教育を実施する団体です。\n\n皆さんと一緒に広島大学の\n自然の豊かさについて学びます。",
   },
-  {
-    name: "PCN仙台",
-    href: "http://sendai.pcn.club/",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/pcn-sendai_logo.webp",
-    introduction:
-      "「つくる」 「学ぶ」 「競う」体験を通して\nクリエイティブな力を育む\n総合プロジェクト“ロボサバ”。\n\nロボット制作やプログラミングの基礎を学び、\nロボット競技大会で腕試し。\nIT教育だけでなく、人との関わりや達成感など、\n子どもが大きく成長できる、\n非常に意義深い企画です。",
-  },
 ]
 
 export const supporters: Supporter[] = [
@@ -187,7 +181,7 @@ export const supporters: Supporter[] = [
     name: "ICHI COMMONS株式会社",
     href: "https://ichicommons.com/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/ichicommons_logo.svg",
-    business: "社会課題解決へのインフラ事業",
+    business: "社会課題解決への\nインフラ事業",
     purpose: "サステナビリティ活動で\n企業も、社会も持続可能に",
   },
   {

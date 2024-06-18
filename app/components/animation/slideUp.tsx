@@ -11,23 +11,25 @@ export function SlideUp({
   const [isShown, setIsShown] = useState(false)
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          setIsShown(true)
-        } else {
-          setIsShown(false)
+    if (window.IntersectionObserver) {
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setIsShown(true)
+          } else {
+            setIsShown(false)
+          }
         }
-      }
-    })
+      })
 
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => {
       if (ref.current) {
-        observer.unobserve(ref.current as HTMLDivElement)
+        observer.observe(ref.current)
+      }
+
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current as HTMLDivElement)
+        }
       }
     }
   })

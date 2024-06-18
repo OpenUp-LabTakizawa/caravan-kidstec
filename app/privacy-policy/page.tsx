@@ -27,7 +27,7 @@ export default function PrivacyPolicy(): React.JSX.Element {
           <p>
             当社は、お申込者様から収集した個人情報は以下に示す本件活動の目的で利用することとし、それ以外の目的に利用することは一切ありません。
           </p>
-          <ul className="grid gap-2 px-4 [&>li]:before:content-['・']">
+          <ul className="grid gap-2 list-disc px-8">
             <li>
               お申込者様を識別する為、氏名・年齢・学年・続柄などの情報を利用いたします。
             </li>
@@ -59,7 +59,7 @@ export default function PrivacyPolicy(): React.JSX.Element {
               <li>②本件実施に関する業務委託を行う場合</li>
             </ul>
             <p>a. 提供する個人情報の項目</p>
-            <ul className="px-4 [&>li]:before:content-['・']">
+            <ul className="list-disc px-8">
               <li>氏名</li>
               <li>住所</li>
               <li>年齢</li>
@@ -75,7 +75,7 @@ export default function PrivacyPolicy(): React.JSX.Element {
               書面にて直接またはデータ転送（Eメール、FAXを含む）
             </p>
             <p>c. 当該情報の提供を受ける者（組織）</p>
-            <ul className="px-4 [&>li]:before:content-['・']">
+            <ul className="list-disc px-8">
               <li>ICHI COMMONS株式会社</li>
               <li>NPO法人 三段峡・太田川流域研究会</li>
               <li>PCN仙台</li>

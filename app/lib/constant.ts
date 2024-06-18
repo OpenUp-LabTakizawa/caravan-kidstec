@@ -1,5 +1,6 @@
 import type { Carousel } from "@/app/interfaces/carousel"
 import type { Navigation } from "@/app/interfaces/navigation"
+import type { Partner } from "@/app/interfaces/partner"
 import type { SiteUrl } from "@/app/interfaces/siteUrl"
 import type { Supporter } from "@/app/interfaces/supporter"
 import {
@@ -119,6 +120,28 @@ export const carouselItems: Carousel[] = [
     },
   },
 ] as const
+
+export const partners: Partner[] = [
+  {
+    name: "BPL Inc.",
+    href: "https://bplab.biz/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/bpl_logo.svg",
+  },
+  {
+    name: "一般社団法人 フウド",
+    href: "https://fuudo.jp/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/fuudo_logo.webp",
+  },
+  {
+    name: "NPO法人 三段峡・\n太田川流域研究会",
+    href: "https://sanken-hiroshima.org/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/sanken_logo.webp",
+  },
+  {
+    name: "広島大学 さんけん部",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/sanken_club.webp",
+  },
+]
 
 export const supporters: Supporter[] = [
   {

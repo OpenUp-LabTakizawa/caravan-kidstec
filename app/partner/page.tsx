@@ -48,7 +48,7 @@ export default function Partner(): React.JSX.Element {
               <BuildingOffice2Icon className="size-5 mr-1" />
               {item.business}
             </h2>
-            <p className="font-bold leading-8 text-2xl text-info">
+            <p className="font-bold leading-8 text-xl text-info">
               <SlideUp className="whitespace-pre">{item.purpose}</SlideUp>
             </p>
           </section>
@@ -92,7 +92,7 @@ export default function Partner(): React.JSX.Element {
               <BuildingOffice2Icon className="size-5 mr-1" />
               {item.business}
             </h2>
-            <p className="font-bold leading-8 text-2xl text-info">
+            <p className="font-bold leading-8 text-xl text-info">
               <SlideUp className="whitespace-pre">{item.purpose}</SlideUp>
             </p>
           </section>

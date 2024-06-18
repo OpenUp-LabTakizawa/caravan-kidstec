@@ -130,18 +130,18 @@ export const ChibaPartners: Partner[] = [
       "30haの広大な農場を舞台に\n繰り広げられる、消費や食のあり方を\n「農業」 「食」 「アート」の\n３つのコンテンツを軸に提案する、\nサステナブルファーム＆パーク\n「KURKKUFIELDS」。\n\n自然やアートに触れる\n様々なフィールドツアー、イベント、\n施設での宿泊体験などを通じて、\n人間本来の生きる喜びや、いのちのてざわり、\nそして持続可能な社会を\n実現していくためのヒントを\n共有出来ればと考えています。",
   },
   {
-    name: "ロボサバ",
-    href: "https://robosava.jp/",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/robot-survival_logo.webp",
-    introduction:
-      "「つくる」 「学ぶ」 「競う」体験を通して\nクリエイティブな力を育む\n総合プロジェクト“ロボサバ”。\n\nロボット制作やプログラミングの基礎を学び、\nロボット競技大会で腕試し。\nIT教育だけでなく、人との関わりや達成感など、\n子どもが大きく成長できる、\n非常に意義深い企画です。",
-  },
-  {
     name: "CLASSROOM ADVENTURE",
     href: "https://www.classroom-adventure.com/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/classroom-adventure_logo.svg",
     introduction:
       "ワクワクする学びを。\n学びのゲーミフィケーション\n(ゲームの要素を活かして楽しく学ぶこと。)に\n情熱を燃やし、情報検証の\n最前線に立つ慶応義塾大学の\n大学生が運営する団体です。\n\n「レイのブログ」とは真実を\n見つける力を全ての人へ。\n\n真実と噓を見分けるスキルを\n教育する今までにない\nメディアリテラシープログラムです。",
+  },
+  {
+    name: "ロボサバ",
+    href: "https://robosava.jp/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/robot-survival_logo.webp",
+    introduction:
+      "「つくる」 「学ぶ」 「競う」体験を通して\nクリエイティブな力を育む\n総合プロジェクト“ロボサバ”。\n\nロボット制作やプログラミングの基礎を学び、\nロボット競技大会で腕試し。\nIT教育だけでなく、人との関わりや達成感など、\n子どもが大きく成長できる、\n非常に意義深い企画です。",
   },
   {
     name: "griteen",

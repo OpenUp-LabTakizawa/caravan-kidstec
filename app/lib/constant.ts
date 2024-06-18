@@ -130,6 +130,13 @@ export const ChibaPartners: Partner[] = [
       "30haの広大な農場を舞台に\n繰り広げられる、消費や食のあり方を\n「農業」 「食」 「アート」の\n３つのコンテンツを軸に提案する、\nサステナブルファーム＆パーク\n「KURKKUFIELDS」。\n\n自然やアートに触れる\n様々なフィールドツアー、イベント、\n施設での宿泊体験などを通じて、\n人間本来の生きる喜びや、いのちのてざわり、\nそして持続可能な社会を\n実現していくためのヒントを\n共有出来ればと考えています。",
   },
   {
+    name: "ロボサバ",
+    href: "https://robosava.jp/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/robot-survival_logo.webp",
+    introduction:
+      "「つくる」 「学ぶ」 「競う」体験を通して\nクリエイティブな力を育む\n総合プロジェクト“ロボサバ”。\n\nロボット制作やプログラミングの基礎を学び、\nロボット競技大会で腕試し。\nIT教育だけでなく、人との関わりや達成感など、\n子どもが大きく成長できる、\n非常に意義深い企画です。",
+  },
+  {
     name: "CLASSROOM ADVENTURE",
     href: "https://www.classroom-adventure.com/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/classroom-adventure_logo.svg",
@@ -165,6 +172,13 @@ export const HiroshimaPartners: Partner[] = [
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/sanken_club_logo.webp",
     introduction:
       "数多くの自然がある\n広島大学のキャンパスは、\n自然を学ぶ絶好のフィールドです。\n\n“さんけん”は調査や保全、\n環境教育を実施する団体です。\n\n皆さんと一緒に広島大学の\n自然の豊かさについて学びます。",
+  },
+  {
+    name: "PCN仙台",
+    href: "http://sendai.pcn.club/",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/pcn-sendai_logo.webp",
+    introduction:
+      "「つくる」 「学ぶ」 「競う」体験を通して\nクリエイティブな力を育む\n総合プロジェクト“ロボサバ”。\n\nロボット制作やプログラミングの基礎を学び、\nロボット競技大会で腕試し。\nIT教育だけでなく、人との関わりや達成感など、\n子どもが大きく成長できる、\n非常に意義深い企画です。",
   },
 ]
 

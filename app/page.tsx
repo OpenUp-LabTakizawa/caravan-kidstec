@@ -69,9 +69,9 @@ export default function Home(): React.JSX.Element {
       </section>
       <section className="bg-base-200 grid gap-6 p-4">
         <h2 className="font-bold text-2xl">
-          2024年7月
+          2024年8月
           <br />
-          広島こどもテックキャラバン
+          千葉こどもテックキャラバン
         </h2>
       </section>
     </article>

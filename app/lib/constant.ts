@@ -139,7 +139,7 @@ export const partners: Partner[] = [
   },
   {
     name: "広島大学 さんけん部",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/sanken_club.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/sanken_club_logo.webp",
   },
 ]
 
@@ -148,6 +148,7 @@ export const supporters: Supporter[] = [
     name: "ICHI COMMONS株式会社",
     href: "https://ichicommons.com/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/ichicommons_logo.svg",
+    color: "text-info",
     business: "社会課題解決へのインフラ事業",
     purpose: "サステナビリティ活動で\n企業も、社会も持続可能に",
   },
@@ -155,6 +156,7 @@ export const supporters: Supporter[] = [
     name: "株式会社オープンアップグループ",
     href: "https://www.openupgroup.co.jp/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/openup_logo.svg",
+    color: "text-orange-400",
     business: "エンジニア派遣事業",
     purpose: "幸せな仕事を通じて\nひとりひとりの可能性をひらく社会に",
   },
@@ -162,6 +164,7 @@ export const supporters: Supporter[] = [
     name: "株式会社テイクアンドギヴ・ニーズ",
     href: "https://www.tgn.co.jp/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/take_and_give_needs_logo.svg",
+    color: "text-primary",
     business: "ホテルウェディング事業",
     purpose: "ホスピタリティ業界に\nイノベーションを起こし日本を躍動させる",
   },

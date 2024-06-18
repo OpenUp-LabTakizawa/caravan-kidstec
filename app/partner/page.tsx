@@ -41,7 +41,7 @@ export default function Partner(): React.JSX.Element {
                 className="h-60 object-contain"
               />
             )}
-            <p className="flex font-semibold items-center justify-center text-lg whitespace-pre md:whitespace-normal">
+            <p className="flex font-semibold items-center justify-center whitespace-pre">
               {item.introduction}
             </p>
           </section>
@@ -79,7 +79,7 @@ export default function Partner(): React.JSX.Element {
                 className="h-60 object-contain"
               />
             )}
-            <p className="flex font-semibold items-center justify-center text-lg whitespace-pre md:whitespace-normal">
+            <p className="flex font-semibold items-center justify-center whitespace-pre">
               {item.introduction}
             </p>
           </section>

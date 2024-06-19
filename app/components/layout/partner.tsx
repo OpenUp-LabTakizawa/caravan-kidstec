@@ -7,7 +7,7 @@ export function Partner({ area }: { area: string }): React.JSX.Element {
   const partners = area === "Chiba" ? ChibaPartners : HiroshimaPartners
 
   return (
-    <section className="grid gap-6 text-xs">
+    <section className="grid gap-6 text-xs max-w-96 mx-auto">
       {partners.map((item) => (
         <section
           key={item.name}
@@ -21,7 +21,7 @@ export function Partner({ area }: { area: string }): React.JSX.Element {
             className="h-40 object-contain"
           />
           <div className="content-center gap-2 grid text-center">
-            <div className="flex items-center">
+            <div className="flex items-center w-64 mx-auto">
               <h2 className="outline font-semibold text-left text-nowrap text-sm w-fit">
                 {item.href ? (
                   <Link

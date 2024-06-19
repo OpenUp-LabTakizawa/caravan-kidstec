@@ -189,13 +189,13 @@ export const supporters: Supporter[] = [
     href: "https://www.openupgroup.co.jp/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/openup_logo.svg",
     business: "エンジニア派遣事業",
-    purpose: "幸せな仕事を通じて\nひとりひとりの可能性をひらく社会に",
+    purpose: "幸せな仕事を通じて\nひとりひとりの可能性を\nひらく社会に",
   },
   {
     name: "株式会社テイクアンドギヴ・ニーズ",
     href: "https://www.tgn.co.jp/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/take_and_give_needs_logo.svg",
     business: "ホテルウェディング事業",
-    purpose: "ホスピタリティ業界に\nイノベーションを起こし日本を躍動させる",
+    purpose: "ホスピタリティ業界に\nイノベーションを起こし\n日本を躍動させる",
   },
 ]

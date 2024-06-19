@@ -162,7 +162,7 @@ export const HiroshimaPartners: Partner[] = [
       "株式会社BPLは、ブランディング、\n経営・マーケティング、\n企画・運営など通して、\n地域の活性化につながる\n事業活動をおこなっております。\n\nどこにいても、実際に稼げる職業、\n若者が憧れる職業をつくりを、\n地域全体を活性化していくことで、\nニッポンを元気にしていくことを\n志命としています。",
   },
   {
-    name: "一般社団法人フウド",
+    name: "一般社団法人 フウド",
     href: "https://fuudo.jp/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/fuudo_logo.webp",
     introduction:

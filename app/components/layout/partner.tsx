@@ -11,17 +11,17 @@ export function Partner({ area }: { area: string }): React.JSX.Element {
       {partners.map((item) => (
         <section
           key={item.name}
-          className="bg-base-200 gap-1 grid grid-cols-5 items-center min-h-60 mx-auto p-4 w-fit"
+          className={`bg-base-200 gap-1 grid grid-cols-3 items-center mx-auto p-4 w-fit ${area === "Chiba" ? "min-h-80" : "min-h-60"}`}
         >
           <Image
             src={item.src}
             width={1000}
             height={1000}
             alt={item.name}
-            className="col-span-2 h-40 object-contain"
+            className="col-span-1 h-40 object-contain"
           />
-          <div className="col-span-3 grid gap-2 text-center">
-            <h2 className="font-semibold text-xs">
+          <div className="col-span-2 grid gap-2 text-center">
+            <h2 className="font-semibold text-sm">
               {item.href ? (
                 <Link
                   href={item.href}

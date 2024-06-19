@@ -11,7 +11,7 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 const themeList: Theme[] = [
   { name: "デフォルト", value: "light" },
@@ -94,8 +94,18 @@ export function Header(): React.JSX.Element {
 }
 
 function DropdownMenu(): React.JSX.Element {
+  const ref: React.RefObject<HTMLDetailsElement> =
+    useRef<HTMLDetailsElement>(null)
+  if (typeof window !== "undefined") {
+    window.addEventListener("click", () => {
+      if (ref.current) {
+        ref.current.open = false
+      }
+    })
+  }
+
   return (
-    <details className="dropdown">
+    <details ref={ref} className="dropdown">
       <summary role="button" className="btn btn-ghost lg:hidden">
         <Bars3CenterLeftIcon className="size-7" />
       </summary>

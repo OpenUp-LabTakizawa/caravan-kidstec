@@ -142,7 +142,7 @@ export const ChibaPartners: Partner[] = [
     href: "https://robosava.jp/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/robot-survival_logo.webp",
     introduction:
-      "「つくる」 「学ぶ」 「競う」体験を通して\nクリエイティブな力を育む\n総合プロジェクト“ロボサバ”。\n\nロボット制作や\nプログラミングの基礎を学び、\nロボット競技大会で腕試し。\nIT教育だけでなく、\n人との関わりや達成感など、\n子どもが大きく成長できる、\n非常に意義深い企画です。",
+      "「つくる」 「学ぶ」 「競う」\n体験を通して\nクリエイティブな力を育む\n総合プロジェクト“ロボサバ”。\n\nロボット制作や\nプログラミングの基礎を学び、\nロボット競技大会で腕試し。\nIT教育だけでなく、\n人との関わりや達成感など、\n子どもが大きく成長できる、\n非常に意義深い企画です。",
   },
   {
     name: "griteen",

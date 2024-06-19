@@ -7,7 +7,7 @@ export function Footer(): React.JSX.Element {
   return (
     <footer className="bg-base-300 grid items-center justify-center p-4 text-base-content">
       <nav>
-        <ul className="grid grid-cols-2 lg:grid-cols-6 menu p-0">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 menu p-0">
           {navigation.map((item) => (
             <li key={item.name}>
               {item.href && (

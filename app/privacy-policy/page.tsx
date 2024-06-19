@@ -8,12 +8,10 @@ export default function PrivacyPolicy(): React.JSX.Element {
     <article className="grid gap-6 sm:px-12">
       <Heading content="お問い合わせ" href="/privacy-policy" />
       <section className="bg-base-200 grid gap-4 leading-7 p-4 text-sm">
-        <h2 className="font-bold text-2xl text-center">
-          【広島】 個人情報保護方針
-        </h2>
+        <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
         <p>
           株式会社オープンアップグループ（以下「当社」といいます。）は、イベント
-          【こどもテックキャラバン広島】
+          【こどもテックキャラバン】
           （以下「本件」といいます。）へのご参加お申込みに必要な情報、また参加決定者の詳細情報においてお預かりする個人情報の取扱いについて、次のように管理し、保護に努めて参ります。
         </p>
         <div className="divider">
@@ -82,7 +80,7 @@ export default function PrivacyPolicy(): React.JSX.Element {
               <li>一般社団法人 フウド</li>
               <li>株式会社BPL</li>
               <li>株式会社テイクアンドギヴ・ニーズ</li>
-              <li>広島大学 さんけん部</li>
+              <li>広島大学（さんけん部）</li>
             </ul>
             <p>d. 個人情報の取扱いに関する契約</p>
             <p className="px-4">

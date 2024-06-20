@@ -13,7 +13,7 @@ export function Partner({
       {partners.map((item) => (
         <section
           key={item.name}
-          className="bg-base-200 gap-2 grid items-center text-center p-4 rounded shadow-lg"
+          className="bg-base-200 gap-2 grid items-center text-center p-4 rounded-box shadow-lg"
         >
           <Image
             src={item.src}

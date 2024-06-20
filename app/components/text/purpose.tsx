@@ -6,7 +6,7 @@ export function Purpose(): React.JSX.Element {
     <>
       <h3>先程のパターンA（文字サイズ小、太さ普通）</h3>
       <section className="hero bg-[url('/handshake.webp')] bg-contain bg-no-repeat text-sm">
-        <div className="hero-overlay bg-gray-50 bg-opacity-80" />
+        <div className="hero-overlay bg-base-100 bg-opacity-80" />
         <div className="hero-content grid text-center">
           <p className="">
             こどもテックキャラバンでは、
@@ -27,7 +27,7 @@ export function Purpose(): React.JSX.Element {
       <Divider />
       <h3>先程のパターンC（文字サイズ小、太さ大）</h3>
       <section className="hero bg-[url('/handshake.webp')] bg-contain bg-no-repeat text-sm">
-        <div className="hero-overlay bg-gray-50 bg-opacity-80" />
+        <div className="hero-overlay bg-base-100 bg-opacity-80" />
         <div className="font-bold hero-content grid text-center">
           <p>
             こどもテックキャラバンでは、
@@ -48,9 +48,9 @@ export function Purpose(): React.JSX.Element {
       <Divider />
       <h3>グレーパターンA：rgb(107 114 128)</h3>
       <section className="hero bg-[url('/handshake.webp')] bg-contain bg-no-repeat text-sm">
-        <div className="hero-overlay bg-gray-50 bg-opacity-80" />
+        <div className="hero-overlay bg-base-100 bg-opacity-80" />
         <div className="hero-content grid text-center text-gray-500">
-          <p className="">
+          <p>
             こどもテックキャラバンでは、
             <br />
             様々な企業や団体が手を取り合い、
@@ -69,7 +69,7 @@ export function Purpose(): React.JSX.Element {
       <Divider />
       <h3>グレーパターンC：rgb(107 114 128)</h3>
       <section className="hero bg-[url('/handshake.webp')] bg-contain bg-no-repeat text-sm">
-        <div className="hero-overlay bg-gray-50 bg-opacity-80" />
+        <div className="hero-overlay bg-base-100 bg-opacity-80" />
         <div className="font-bold hero-content grid text-center text-gray-500">
           <p>
             こどもテックキャラバンでは、
@@ -90,9 +90,9 @@ export function Purpose(): React.JSX.Element {
       <Divider />
       <h3>グレー2パターンA：rgb(55 65 81)</h3>
       <section className="hero bg-[url('/handshake.webp')] bg-contain bg-no-repeat text-sm">
-        <div className="hero-overlay bg-gray-50 bg-opacity-80" />
+        <div className="hero-overlay bg-base-100 bg-opacity-80" />
         <div className="hero-content grid text-center text-gray-700">
-          <p className="">
+          <p>
             こどもテックキャラバンでは、
             <br />
             様々な企業や団体が手を取り合い、
@@ -111,7 +111,7 @@ export function Purpose(): React.JSX.Element {
       <Divider />
       <h3>グレー2パターンC：rgb(55 65 81)</h3>
       <section className="hero bg-[url('/handshake.webp')] bg-contain bg-no-repeat text-sm">
-        <div className="hero-overlay bg-gray-50 bg-opacity-80" />
+        <div className="hero-overlay bg-base-100 bg-opacity-80" />
         <div className="font-bold hero-content grid text-center text-gray-700">
           <p>
             こどもテックキャラバンでは、

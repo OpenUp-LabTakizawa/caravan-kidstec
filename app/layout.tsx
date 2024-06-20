@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Noto_Sans_JP } from "next/font/google"
+import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from "next/font/google"
 import type React from "react"
 import { ScrollToTop } from "./components/button/scrollToTop"
 import { Footer } from "./components/layout/footer"
@@ -7,9 +7,16 @@ import { Header } from "./components/layout/header"
 import "./globals.css"
 import { SITE_TITLE } from "./lib/constant"
 
-const notoSansJp = Noto_Sans_JP({
+const zenMaruGothic = Zen_Maru_Gothic({
   weight: ["400", "700"],
   subsets: ["latin"],
+  variable: "--font-zen-maru-gothic",
+})
+
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-zen-kaku-gothic-new",
 })
 
 export const metadata: Metadata = {
@@ -24,8 +31,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ja" className={notoSansJp.className}>
-      <body>
+    <html
+      lang="ja"
+      className={`${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
+    >
+      <body className="font-[family-name:var(--font-zen-kaku-gothic-new)]">
         <Header />
         <main className="p-4">
           {children}

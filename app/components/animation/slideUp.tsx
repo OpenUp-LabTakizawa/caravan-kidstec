@@ -6,7 +6,10 @@ import type React from "react"
 export function SlideUp({
   children,
   className,
-}: { children: React.ReactNode; className?: string }): React.JSX.Element {
+}: Readonly<{
+  children: React.ReactNode
+  className?: string
+}>): React.JSX.Element {
   const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
   const [isShown, setIsShown] = useState(false)
 

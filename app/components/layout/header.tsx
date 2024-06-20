@@ -80,6 +80,7 @@ export function Header(): React.JSX.Element {
             width={200}
             height={200}
             alt={SITE_TITLE}
+            priority={true}
           />
         </Link>
       </div>
@@ -96,6 +97,7 @@ export function Header(): React.JSX.Element {
 function DropdownMenu(): React.JSX.Element {
   const ref: React.RefObject<HTMLDetailsElement> =
     useRef<HTMLDetailsElement>(null)
+
   if (typeof window !== "undefined") {
     window.addEventListener("click", () => {
       if (ref.current) {

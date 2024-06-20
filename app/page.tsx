@@ -76,22 +76,6 @@ export default function Home(): React.JSX.Element {
             <span className="font-extrabold text-3xl text-primary">千葉</span>で
             <span className="text-error">開催決定！</span>
           </h2>
-          <div className="grid sm:grid-cols-2">
-            <Image
-              src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/content/202408_chiba_face.webp"
-              width={1000}
-              height={1000}
-              alt="2024/08/千葉チラシ表"
-              className="w-full"
-            />
-            <Image
-              src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/content/202408_chiba_back.webp"
-              width={1000}
-              height={1000}
-              alt="2024/08/千葉チラシ裏"
-              className="w-full"
-            />
-          </div>
         </section>
       </article>
     </>

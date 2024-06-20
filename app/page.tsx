@@ -11,7 +11,7 @@ export default function Home(): React.JSX.Element {
       <Banner />
       <article className="grid gap-6 text-center">
         <Carousel />
-        <section className="bg-base-200 grid gap-6 items-center p-4 rounded-box shadow-lg sm:grid-cols-4">
+        <section className="grid gap-6 items-center p-4 sm:grid-cols-4">
           <SlideUp className="whitespace-pre sm:col-span-4 sm:whitespace-normal">
             <Image
               src="/caravan-kidstec_logo_line.webp"
@@ -28,11 +28,15 @@ export default function Home(): React.JSX.Element {
             alt="ミク"
             className="hidden w-full sm:block"
           />
-          <div className="grid gap-4 sm:col-span-2">
+          <div className="font-bold grid gap-4 leading-7 tracking-[.29em] sm:col-span-2">
             <p>
-              自然豊かな環境を感じるアクティビティと
+              自然豊かな環境を感じる
               <br />
-              ロボット製作とプログラミングを楽しく学びます。
+              アクティビティと
+              <br />
+              ロボット製作とプログラミングを
+              <br />
+              楽しく学びます。
             </p>
             <p>
               最終日には学んだ知識を使って
@@ -45,10 +49,13 @@ export default function Home(): React.JSX.Element {
               >
                 ロボサバ大会
               </Link>
-              で仲間と競います！
+              で<br />
+              仲間と競います！
             </p>
             <p>
-              最初はプログラミングもわからない子でも、
+              最初はプログラミングも
+              <br />
+              わからない子でも、
               <br />
               ロボットの動きをコントロールする
               <br />
@@ -60,7 +67,11 @@ export default function Home(): React.JSX.Element {
               <br />
               あふれていることに驚くはずです。
             </p>
-            <p>楽しむ、学ぶ、競うを満喫するイベントです！</p>
+            <p>
+              楽しむ、学ぶ、競うを
+              <br />
+              満喫するイベントです！
+            </p>
           </div>
           <Image
             src="/kai.webp"

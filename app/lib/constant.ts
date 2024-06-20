@@ -151,7 +151,7 @@ export const ChibaPartners: Partner[] = [
     introduction:
       "「griteen」は小学生・中学生の女の子と保護者様が一緒に学ぶ、\n子供向け/大人向けのプログラミングスクールです。\n\n女の子がプログラミングに興味を持つことができるような\n授業を提供し、理系へのハードルを取り払うことをサポートします。\n\n誰もが自ら考え行動することが必要となるこれからの社会で、\n女の子たちが自信を持ち、技術的なスキルとともにやり抜く力\n「Grit」を身につけることで、将来の選択肢が広がります。",
   },
-]
+] as const
 
 export const HiroshimaPartners: Partner[] = [
   {
@@ -174,7 +174,7 @@ export const HiroshimaPartners: Partner[] = [
     introduction:
       "数多くの自然がある広島大学のキャンパスは、\n自然を学ぶ絶好のフィールドです。\n\n“さんけん”は調査や保全、環境教育を実施する団体です。\n\n皆さんと一緒に広島大学の自然の豊かさについて学びます。",
   },
-]
+] as const
 
 export const supporters: Supporter[] = [
   {
@@ -198,4 +198,4 @@ export const supporters: Supporter[] = [
     business: "ホテルウェディング事業",
     purpose: "ホスピタリティ業界に\nイノベーションを起こし\n日本を躍動させる",
   },
-]
+] as const

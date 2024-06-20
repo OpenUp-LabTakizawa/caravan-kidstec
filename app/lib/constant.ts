@@ -33,7 +33,7 @@ export const navigation: Navigation[] = [
   {
     name: "最新情報",
     icon: NewspaperIcon,
-    color: "text-primary",
+    color: "text-teal-400",
     href: "/#news",
   },
   {
@@ -45,7 +45,7 @@ export const navigation: Navigation[] = [
   {
     name: "開催予定",
     icon: TruckIcon,
-    color: "text-accent",
+    color: "text-orange-400",
     content: [...nextArea],
   },
   {
@@ -57,7 +57,7 @@ export const navigation: Navigation[] = [
   {
     name: "サポーター/パートナー",
     icon: HeartIcon,
-    color: "text-secondary",
+    color: "text-sky-400",
     content: [...helper],
   },
   {

@@ -138,13 +138,6 @@ export const ChibaPartners: Partner[] = [
       "ワクワクする学びを。 学びのゲーミフィケーション\n(ゲームの要素を活かして楽しく学ぶこと。)に情熱を燃やし、\n情報検証の最前線に立つ慶応義塾大学の\n大学生が運営する団体です。\n\n「レイのブログ」とは真実を見つける力を全ての人へ。\n真実と噓を見分けるスキルを教育する\n今までにないメディアリテラシープログラムです。",
   },
   {
-    name: "ロボサバ",
-    href: "https://robosava.jp/",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/robot-survival_logo.webp",
-    introduction:
-      "「つくる」 「学ぶ」 「競う」体験を通して\nクリエイティブな力を育む総合プロジェクト“ロボサバ”。\n\nロボット制作やプログラミングの基礎を学び、\nロボット競技大会で腕試し。\n\nIT教育だけでなく、人との関わりや達成感など、\n子どもが大きく成長できる、非常に意義深い企画です。",
-  },
-  {
     name: "griteen",
     href: "https://griteen.com/",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/griteen_logo.webp",

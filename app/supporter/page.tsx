@@ -14,7 +14,7 @@ export default function Supporter(): React.JSX.Element {
       {supporters.map((item) => (
         <section
           key={item.name}
-          className="bg-base-200 gap-1 grid grid-cols-3 items-center min-h-32 p-4 sm:grid-cols-2"
+          className="bg-base-200 gap-1 grid grid-cols-3 items-center min-h-32 p-4 rounded shadow-lg sm:grid-cols-2"
         >
           <Image
             src={item.src}

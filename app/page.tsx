@@ -11,7 +11,7 @@ export default function Home(): React.JSX.Element {
       <Banner />
       <article className="grid gap-6 text-center">
         <Carousel />
-        <section className="bg-base-200 grid gap-6 items-center p-4 sm:grid-cols-4">
+        <section className="bg-base-200 grid gap-6 items-center p-4 rounded-box shadow-lg sm:grid-cols-4">
           <SlideUp className="whitespace-pre sm:col-span-4 sm:whitespace-normal">
             <Image
               src="/caravan-kidstec_logo_line.webp"
@@ -70,7 +70,10 @@ export default function Home(): React.JSX.Element {
             className="hidden w-full sm:block"
           />
         </section>
-        <section id="news" className="bg-base-200 grid gap-6 p-4">
+        <section
+          id="news"
+          className="bg-base-200 grid gap-6 p-4 rounded-box shadow-lg"
+        >
           <h2 className="font-bold leading-10 text-2xl">
             2024年8月
             <span className="font-extrabold text-3xl text-primary">千葉</span>で

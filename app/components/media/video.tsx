@@ -7,7 +7,7 @@ export function Video({ src }: Readonly<{ src: string }>): React.JSX.Element {
       muted={true}
       playsInline={true}
       preload="auto"
-      className="mx-auto w-full"
+      className="mx-auto rounded-box shadow-lg w-full"
     >
       <source src={`${src}.webm`} type="video/webm" />
       <source src={`${src}.mp4`} type="video/mp4" />

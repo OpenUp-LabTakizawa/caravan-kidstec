@@ -7,7 +7,7 @@ export default function PrivacyPolicy(): React.JSX.Element {
   return (
     <article className="grid gap-6 sm:px-12">
       <Heading content="お問い合わせ" href="/privacy-policy" />
-      <section className="bg-base-200 grid gap-4 leading-7 p-4 text-sm">
+      <section className="bg-base-200 grid gap-4 leading-7 p-4 rounded-box text-sm">
         <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
         <p>
           株式会社オープンアップグループ（以下「当社」といいます。）は、イベント

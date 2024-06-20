@@ -66,7 +66,7 @@ export function Header(): React.JSX.Element {
 
   return (
     <header
-      className={`transition duration-400 ease bg-base-100 navbar sticky top-0 z-10 ${
+      className={`bg-base-100 transition duration-400 ease navbar sticky top-0 z-10 ${
         headerHeight < scrollY.scrollY && scrollY.isScrollDown
           ? "-translate-y-20"
           : "translate-y-0"

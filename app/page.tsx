@@ -4,11 +4,13 @@ import {
   Carousel,
   ReviewCarousel,
 } from "@/app/components/layout/carousel"
+import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 import { Banner } from "./components/layout/banner"
 import { Video } from "./components/media/video"
+import { ChibaEvents } from "./lib/constant"
 
 export default function Home(): React.JSX.Element {
   return (
@@ -71,8 +73,60 @@ export default function Home(): React.JSX.Element {
           </p>
         </div>
       </section>
+      <section id="news" className="grid gap-4">
+        <Image
+          src={"/temp_event_thumbnail.webp"}
+          width={1000}
+          height={1000}
+          alt="こどもテックキャラバン"
+          className="w-full"
+        />
+        <div className="bg-amber-50 grid mx-auto w-max">
+          <span className="bg-sky-400 font-bold justify-self-start p-1">
+            開催日時
+          </span>
+          <ul>
+            {ChibaEvents.map((item) => (
+              <li key={item.venue.name} className="grid gap-1 border-b p-2">
+                <p className="decoration-4 decoration-sky-400 underline">
+                  2024年
+                  <span className="font-bold text-2xl">{item.date.month}</span>
+                  月<span className="font-bold text-2xl">{item.date.day}</span>
+                  日{"("}
+                  <span className="font-bold text-xl">{item.date.weekday}</span>
+                  {")"}
+                </p>
+                <div className="flex gap-2 items-center mx-auto">
+                  <p className="badge badge-outline">場所</p>
+                  <p>
+                    <strong>{item.venue.name}</strong>
+                    <br />
+                    {item.venue.address}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
+          <p>
+            <Link href="/area/chiba" className="link link-info">
+              応募要項
+            </Link>
+            をご確認の上、
+            <br />
+            応募画面へお進み下さい。
+          </p>
+          <button type="button" className="bg-[#00C300] btn text-lg text-white">
+            LINEで簡単応募する！
+            <ArrowRightIcon className="size-5" />
+          </button>
+        </div>
+      </section>
       <section className="grid gap-4">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">まなぶ</h2>
+        <h2 className="font-bold font-zenMaruGothic text-3xl text-orange-400">
+          まなぶ
+        </h2>
         <Link href="https://robosava.jp/" target="_blank">
           <figure className="w-full">
             <Image
@@ -88,17 +142,17 @@ export default function Home(): React.JSX.Element {
           </figure>
         </Link>
       </section>
-      <section id="news" className="grid gap-4">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">あそぶ</h2>
+      <section id="about" className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl text-orange-400">
+          あそぶ
+        </h2>
         <CardCarousel />
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <div id="about">
-        <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
-      </div>
+      <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
     </article>
   )
 }

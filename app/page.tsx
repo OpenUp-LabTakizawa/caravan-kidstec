@@ -88,7 +88,7 @@ export default function Home(): React.JSX.Element {
           </figure>
         </Link>
       </section>
-      <section className="grid gap-4">
+      <section id="news" className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">あそぶ</h2>
         <CardCarousel />
       </section>
@@ -96,7 +96,9 @@ export default function Home(): React.JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
+      <div id="about">
+        <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
+      </div>
     </article>
   )
 }

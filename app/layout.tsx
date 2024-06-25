@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="ja"
       className={`${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
     >
-      <body className="font-[family-name:var(--font-zen-kaku-gothic-new)]">
+      <body className="font-zenKakuGothicNew">
         <Header />
         <main className="text-xs sm:px-12">
           {children}

@@ -7,7 +7,7 @@ export default function PartnerLayout({
   children: React.ReactNode
 }>) {
   return (
-    <article className="grid gap-6 text-center text-sm sm:px-12">
+    <article className="grid gap-6 p-4 text-center">
       {children}
       <Purpose />
     </article>

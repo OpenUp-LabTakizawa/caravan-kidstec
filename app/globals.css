@@ -28,7 +28,7 @@
 
 .typing {
   animation: typing 6s steps(20) infinite, blink .7s infinite;
-  border-right: .15em solid orange;
+  border-right: .15em solid rgb(251 146 60);
   margin: auto;
   overflow: hidden;
   white-space: nowrap;
@@ -40,7 +40,7 @@
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: rgb(251 146 60);
   }
 }
 

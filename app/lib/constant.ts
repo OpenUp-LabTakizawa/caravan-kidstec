@@ -14,50 +14,52 @@ import {
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
 
-const nextArea: SiteUrl[] = [
-  { name: "広島", href: "/hiroshima" },
-  { name: "千葉", href: "/chiba" },
+const area: SiteUrl[] = [
+  { name: "広島", href: "/area/hiroshima" },
+  { name: "千葉", href: "/area/chiba" },
 ] as const
-const history: SiteUrl[] = [{ name: "広島", href: "/history" }] as const
+const history: SiteUrl[] = [
+  { name: "広島", href: "/history/hiroshima" },
+] as const
 const helper: SiteUrl[] = [
-  { name: "企業サポーター", href: "/supporter" },
+  { name: "企業サポーター", href: "/supporter/company" },
   { name: "千葉パートナー", href: "/partner/chiba" },
   { name: "広島パートナー", href: "/partner/hiroshima" },
 ] as const
 const siteInfo: SiteUrl[] = [
-  { name: "FAQ", href: "/faq" },
-  { name: "個人情報保護方針", href: "/privacy-policy" },
+  { name: "FAQ", href: "/contact/faq" },
+  { name: "個人情報保護方針", href: "/contact/privacy-policy" },
 ] as const
 
 export const navigation: Navigation[] = [
   {
     name: "最新情報",
     icon: NewspaperIcon,
-    color: "text-teal-400",
+    color: "text-info",
     href: "/#news",
   },
   {
     name: "活動紹介",
     icon: SparklesIcon,
-    color: "text-warning",
+    color: "text-yellow-400",
     href: "/#about",
   },
   {
     name: "開催予定",
     icon: TruckIcon,
-    color: "text-orange-400",
-    content: [...nextArea],
+    color: "text-teal-400",
+    content: [...area],
   },
   {
     name: "過去の実績",
     icon: TrophyIcon,
-    color: "text-error",
+    color: "text-orange-400",
     content: [...history],
   },
   {
     name: "サポーター/パートナー",
     icon: HeartIcon,
-    color: "text-sky-400",
+    color: "text-rose-400",
     content: [...helper],
   },
   {

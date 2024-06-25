@@ -1,52 +1,12 @@
 "use client"
 
-import type { Theme } from "@/app/interfaces/theme"
 import { navigation } from "@/app/lib/constant"
 import { SITE_TITLE } from "@/app/lib/constant"
-import {
-  Bars3CenterLeftIcon,
-  ChevronDownIcon,
-  SwatchIcon,
-} from "@heroicons/react/24/outline"
+import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 import { useRef, useState } from "react"
-
-const themeList: Theme[] = [
-  { name: "デフォルト", value: "light" },
-  { name: "ダーク", value: "dark" },
-  { name: "カップケーキ", value: "cupcake" },
-  { name: "マルハナバチ", value: "bumblebee" },
-  { name: "エメラルド", value: "emerald" },
-  { name: "コーポレート", value: "corporate" },
-  { name: "シンセウェイブ", value: "synthwave" },
-  { name: "レトロ", value: "retro" },
-  { name: "サイバーパンク", value: "cyberpunk" },
-  { name: "バレンタイン", value: "valentine" },
-  { name: "ハロウィン", value: "halloween" },
-  { name: "ガーデン", value: "garden" },
-  { name: "フォレスト", value: "forest" },
-  { name: "アクア", value: "aqua" },
-  { name: "ローファイ", value: "lofi" },
-  { name: "パステル", value: "pastel" },
-  { name: "ファンタジー", value: "fantasy" },
-  { name: "ワイヤーフレーム", value: "wireframe" },
-  { name: "ブラック", value: "black" },
-  { name: "ラグジュアリー", value: "luxury" },
-  { name: "ドラキュラ", value: "dracula" },
-  { name: "CMYK", value: "cmyk" },
-  { name: "オータム", value: "autumn" },
-  { name: "ビジネス", value: "business" },
-  { name: "アシッド", value: "acid" },
-  { name: "レモネード", value: "lemonade" },
-  { name: "ナイト", value: "night" },
-  { name: "コーヒー", value: "coffee" },
-  { name: "ウィンター", value: "winter" },
-  { name: "ディム", value: "dim" },
-  { name: "ノール", value: "nord" },
-  { name: "サンセット", value: "sunset" },
-] as const
 
 export function Header(): React.JSX.Element {
   const [scrollY, setScrollY] = useState<{
@@ -73,7 +33,6 @@ export function Header(): React.JSX.Element {
       }`}
     >
       <div className="navbar-start">
-        <DropdownMenu />
         <Link href="/" className="btn btn-ghost w-fit tilt-shaking">
           <Image
             src="/caravan-kidstec_logo_line.webp"
@@ -87,8 +46,8 @@ export function Header(): React.JSX.Element {
       <nav className="navbar-center hidden lg:flex">
         <Navigation />
       </nav>
-      <div className="navbar-end lg:w-3/12">
-        <ThemeController />
+      <div className="navbar-end lg:hidden">
+        <DropdownMenu />
       </div>
     </header>
   )
@@ -107,9 +66,9 @@ function DropdownMenu(): React.JSX.Element {
   }
 
   return (
-    <details ref={ref} className="dropdown">
+    <details ref={ref} className="dropdown dropdown-end">
       <summary role="button" className="btn btn-ghost lg:hidden">
-        <Bars3CenterLeftIcon className="size-7" />
+        <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>
         <ul className="menu menu-sm dropdown-content z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
@@ -177,30 +136,5 @@ function SubContent({
         </li>
       ))}
     </ul>
-  )
-}
-
-function ThemeController(): React.JSX.Element {
-  return (
-    <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn flex-nowrap p-2">
-        <SwatchIcon className="size-5 text-success" />
-        <span className="text-nowrap">テーマ</span>
-        <ChevronDownIcon className="size-5" />
-      </div>
-      <ul className="dropdown-content z-[1] h-52 w-40 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
-        {themeList.map((theme) => (
-          <li key={theme.name}>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label={theme.name}
-              value={theme.value}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
   )
 }

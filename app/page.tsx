@@ -7,91 +7,69 @@ import { Banner } from "./components/layout/banner"
 
 export default function Home(): React.JSX.Element {
   return (
-    <>
+    <article className="grid gap-6 text-base text-center">
       <Banner />
-      <article className="grid gap-6 text-center">
-        <Carousel />
-        <section className="grid gap-6 items-center p-4 sm:grid-cols-4">
-          <SlideUp className="whitespace-pre sm:col-span-4 sm:whitespace-normal">
-            <Image
-              src="/caravan-kidstec_logo_line.webp"
-              width={1000}
-              height={1000}
-              alt="こどもテックキャラバン"
-              className="w-full"
-            />
-          </SlideUp>
+      <Carousel />
+      <section className="p-4 text-center">
+        <SlideUp className="pb-4">
           <Image
-            src="/miku.webp"
+            src="/caravan-kidstec_logo_line.webp"
             width={1000}
             height={1000}
-            alt="ミク"
-            className="hidden w-full sm:block"
+            alt="こどもテックキャラバン"
+            className="w-full"
           />
-          <div className="font-bold grid gap-4 leading-7 tracking-[.29em] sm:col-span-2">
-            <p>
-              自然豊かな環境を感じる
-              <br />
-              アクティビティと
-              <br />
-              ロボット製作とプログラミングを
-              <br />
-              楽しく学びます。
-            </p>
-            <p>
-              最終日には学んだ知識を使って
-              <br />
-              ロボットを動かす
-              <Link
-                href="https://robosava.jp/"
-                target="_blank"
-                className="link link-primary"
-              >
-                ロボサバ大会
-              </Link>
-              で<br />
-              仲間と競います！
-            </p>
-            <p>
-              最初はプログラミングも
-              <br />
-              わからない子でも、
-              <br />
-              ロボットの動きをコントロールする
-              <br />
-              驚きや楽しさに夢中になります。
-            </p>
-            <p>女の子でも大丈夫です！</p>
-            <p>
-              そして、身近に広島の豊かな自然が
-              <br />
-              あふれていることに驚くはずです。
-            </p>
-            <p>
-              楽しむ、学ぶ、競うを
-              <br />
-              満喫するイベントです！
-            </p>
-          </div>
-          <Image
-            src="/kai.webp"
-            width={1000}
-            height={1000}
-            alt="カイ"
-            className="hidden w-full sm:block"
-          />
-        </section>
-        <section
-          id="news"
-          className="bg-base-200 grid gap-6 p-4 rounded-box shadow-lg"
-        >
-          <h2 className="font-bold leading-10 text-2xl">
-            2024年8月
-            <span className="font-extrabold text-3xl text-primary">千葉</span>で
-            <span className="text-error">開催決定！</span>
-          </h2>
-        </section>
-      </article>
-    </>
+        </SlideUp>
+        <div className="font-bold grid gap-4 leading-7 tracking-[.29em] sm:col-span-2">
+          <p>
+            自然豊かな環境を感じる
+            <br className="sm:hidden" />
+            アクティビティと
+            <br />
+            ロボット製作とプログラミングを
+            <br className="sm:hidden" />
+            楽しく学びます。
+          </p>
+          <p>
+            最終日には学んだ知識を使って
+            <br />
+            ロボットを動かす
+            <Link
+              href="https://robosava.jp/"
+              target="_blank"
+              className="link link-info"
+            >
+              ロボサバ大会
+            </Link>
+            で<br className="sm:hidden" />
+            仲間と競います！
+          </p>
+          <p>
+            最初はプログラミングも
+            <br className="sm:hidden" />
+            わからない子でも、
+            <br />
+            ロボットの動きをコントロールする
+            <br />
+            驚きや楽しさに夢中になります。
+          </p>
+          <p>女の子でも大丈夫です！</p>
+          <p>
+            そして、身近に広島の豊かな自然が
+            <br />
+            あふれていることに驚くはずです。
+          </p>
+          <p>
+            楽しむ、学ぶ、競うを
+            <br />
+            満喫するイベントです！
+          </p>
+        </div>
+      </section>
+      <section
+        id="news"
+        className="bg-base-200 grid gap-6 p-4 rounded-box shadow-lg"
+      />
+    </article>
   )
 }

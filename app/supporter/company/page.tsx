@@ -9,8 +9,8 @@ import type React from "react"
 
 export default function Supporter(): React.JSX.Element {
   return (
-    <article className="grid gap-6 text-xs sm:px-12">
-      <Heading content="サポーター/パートナー" href="/supporter" />
+    <article className="grid gap-6 p-4">
+      <Heading content="サポーター/パートナー" href="/supporter/company" />
       {supporters.map((item) => (
         <section
           key={item.name}

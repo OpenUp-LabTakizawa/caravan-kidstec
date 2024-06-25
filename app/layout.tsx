@@ -37,7 +37,7 @@ export default function RootLayout({
     >
       <body className="font-[family-name:var(--font-zen-kaku-gothic-new)]">
         <Header />
-        <main>
+        <main className="text-xs sm:px-12">
           {children}
           <ScrollToTop />
         </main>

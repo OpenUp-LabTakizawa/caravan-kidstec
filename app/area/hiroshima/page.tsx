@@ -4,9 +4,9 @@ import type React from "react"
 
 export default function Hiroshima(): React.JSX.Element {
   return (
-    <article className="grid gap-6 text-center text-xs sm:px-12">
-      <Heading content="開催予定" href="/hiroshima" />
+    <>
+      <Heading content="開催予定" href="/area/hiroshima" />
       <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
-    </article>
+    </>
   )
 }

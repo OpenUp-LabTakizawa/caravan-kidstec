@@ -1,4 +1,4 @@
-import type { Carousel } from "@/app/interfaces/carousel"
+import type { CardCarousel, Carousel } from "@/app/interfaces/carousel"
 import type { Navigation } from "@/app/interfaces/navigation"
 import type { Partner } from "@/app/interfaces/partner"
 import type { SiteUrl } from "@/app/interfaces/siteUrl"
@@ -100,6 +100,57 @@ export const carouselItems: Carousel[] = [
     alt: "オリーブ体験",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_grasp.webp",
     title: "オリーブ体験",
+  },
+] as const
+
+export const cardCarouselItems: CardCarousel[] = [
+  {
+    alt: "ロボット制作",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/soldering.webp",
+    category: "イベント",
+    title: "前半：ロボット制作\n後半：サマーキャンプ",
+    date: "2024年7月6日(土) 10:00~17:00",
+    tags: ["広島", "ロボット制作", "自然体験"],
+  },
+  {
+    alt: "プログラミング体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/sup_on_the_sea.webp",
+    category: "イベント",
+    title: "前半：プログラミング体験\n後半：江田島の海でSUP体験",
+    date: "2024年7月13日(土) 10:00~17:00",
+    tags: ["広島", "プログラミング", "自然体験"],
+  },
+  {
+    alt: "結婚式体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/walking_bouquet.webp",
+    category: "イベント",
+    title: "午前：ロボサバ大会\n午後：結婚式体験",
+    date: "2024年7月20日(土) 10:00~17:00",
+    tags: ["広島", "ロボサバ", "結婚式体験"],
+  },
+  {
+    alt: "ロボット制作",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/brothers.webp",
+    category: "イベント",
+    title: "午前：ロボット制作\n午後：自然の循環",
+    date: "2024年8月0日(土) 10:00~17:00",
+    tags: ["千葉", "ロボット制作", "自然体験"],
+  },
+  {
+    alt: "プログラミング体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/content/rays-blog_girl.webp",
+    category: "イベント",
+    title: "午前：プログラミング体験\n午後：謎解き体験！",
+    date: "2024年8月0日(土) 10:00~17:00",
+    tags: ["千葉", "プログラミング", "情報教育"],
+  },
+  {
+    alt: "ロボサバ大会",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/final_stage/course_challenge.webp",
+    category: "イベント",
+    title: "午前：ロボサバ大会\n午後：結婚式体験",
+    date: "2024年9月0日(土) 10:00~17:00",
+    tags: ["千葉", "ロボサバ", "結婚式体験"],
   },
 ] as const
 

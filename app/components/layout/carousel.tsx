@@ -1,6 +1,6 @@
 "use client"
 
-import { carouselItems } from "@/app/lib/constant"
+import { cardCarouselItems, carouselItems } from "@/app/lib/constant"
 import Image from "next/image"
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
@@ -55,5 +55,44 @@ export function Carousel(): React.JSX.Element {
         </div>
       ))}
     </section>
+  )
+}
+
+export function CardCarousel(): React.JSX.Element {
+  return (
+    <div className="carousel carousel-center max-w-screen space-x-4 p-4">
+      {cardCarouselItems.map((item) => (
+        <div key={item.alt} className="carousel-item rounded-box w-72">
+          <div className="card shadow-lg w-96">
+            <Image
+              src={item.src}
+              width={1000}
+              height={1000}
+              alt={item.alt}
+              className="h-60 object-cover rounded-t-2xl"
+            />
+            <div className="card-body p-0 py-8 relative">
+              <span className="absolute bg-rose-400 font-bold left-0 px-2 py-1 text-white text-xs top-0">
+                {item.category}
+              </span>
+              <h3 className="card-title mx-auto text-lg whitespace-pre">
+                {item.title}
+              </h3>
+              <p className="font-semibold text-sm">{item.date}</p>
+              <div className="card-actions justify-center">
+                {item.tags.map((tag) => (
+                  <div
+                    key={tag}
+                    className="badge badge-outline bg-base-200 text-xs"
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   )
 }

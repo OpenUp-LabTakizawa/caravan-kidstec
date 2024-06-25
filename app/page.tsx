@@ -1,13 +1,14 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
-import { Carousel } from "@/app/components/layout/carousel"
+import { CardCarousel, Carousel } from "@/app/components/layout/carousel"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 import { Banner } from "./components/layout/banner"
+import { Video } from "./components/media/video"
 
 export default function Home(): React.JSX.Element {
   return (
-    <article className="grid gap-6 text-base text-center">
+    <article className="grid gap-6 pb-4 text-base text-center">
       <Banner />
       <Carousel />
       <section className="p-4 text-center">
@@ -66,10 +67,31 @@ export default function Home(): React.JSX.Element {
           </p>
         </div>
       </section>
-      <section
-        id="news"
-        className="bg-base-200 grid gap-6 p-4 rounded-box shadow-lg"
-      />
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">まなぶ</h2>
+        <Link href="https://robosava.jp/" target="_blank">
+          <figure className="w-full">
+            <Image
+              src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/logo/robot-survival_logo.webp"
+              height={1000}
+              width={1000}
+              alt="ロボサバ"
+              className="object-contain w-full"
+            />
+            <figcaption className="bg-base-200 font-bold py-1 text-center">
+              プログラミング体験
+            </figcaption>
+          </figure>
+        </Link>
+      </section>
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">あそぶ</h2>
+        <CardCarousel />
+      </section>
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
+      </section>
+      <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
     </article>
   )
 }

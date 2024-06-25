@@ -4,3 +4,12 @@ export type Carousel = {
   src: string
   title: string
 }
+
+export type CardCarousel = {
+  alt: string
+  src: string
+  category: string
+  title: string
+  date: string
+  tags: string[]
+}

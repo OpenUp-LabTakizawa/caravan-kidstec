@@ -75,31 +75,26 @@ export const carouselItems: Carousel[] = [
     name: "everyone_rowing",
     alt: "メガサップ",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/everyone_rowing.webp",
-    title: "こどもテックキャラバン",
   },
   {
     name: "teaching",
     alt: "講義中…",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/teaching.webp",
-    title: "ロボット X 自然体験",
   },
   {
     name: "girl_boy_river",
     alt: "お魚探し中…",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/girl_boy_river.webp",
-    title: "好きを見つけよう！",
   },
   {
     name: "loupe_gather",
     alt: "ロウソク作り",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/loupe_gather.webp",
-    title: "オリジナルロウソク作り",
   },
   {
     name: "olive_grasp",
     alt: "オリーブ体験",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_grasp.webp",
-    title: "オリーブ体験",
   },
 ] as const
 

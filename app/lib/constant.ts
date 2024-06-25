@@ -99,7 +99,7 @@ export const carouselItems: Carousel[] = [
 
 export const cardCarouselItems: CardCarousel[] = [
   {
-    alt: "ロボット制作",
+    alt: "はんだ付け",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/soldering.webp",
     category: "イベント",
     color: "bg-rose-400",
@@ -108,7 +108,7 @@ export const cardCarouselItems: CardCarousel[] = [
     tags: ["広島", "ロボット制作", "自然体験"],
   },
   {
-    alt: "プログラミング体験",
+    alt: "SUP体験",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/sup_on_the_sea.webp",
     category: "イベント",
     color: "bg-rose-400",
@@ -135,7 +135,7 @@ export const cardCarouselItems: CardCarousel[] = [
     tags: ["千葉", "ロボット制作", "自然体験"],
   },
   {
-    alt: "プログラミング体験",
+    alt: "謎解き体験！",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/content/rays-blog_girl.webp",
     category: "イベント",
     color: "bg-rose-400",

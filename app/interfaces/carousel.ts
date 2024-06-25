@@ -3,5 +3,4 @@ export type Carousel = {
   alt: string
   src: string
   title: string
-  content: { first: string; second: string }
 }

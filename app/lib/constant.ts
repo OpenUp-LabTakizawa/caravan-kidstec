@@ -15,6 +15,7 @@ import {
   TrophyIcon,
   TruckIcon,
 } from "@heroicons/react/24/outline"
+import type { EventInfo } from "../interfaces/eventInfo"
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
 
@@ -73,6 +74,75 @@ export const navigation: Navigation[] = [
     content: [...siteInfo],
   },
 ] as const
+
+export const squareNavigation: Navigation[] = [
+  {
+    name: "千葉",
+    icon: NewspaperIcon,
+    color: "text-info",
+    href: "/#news",
+  },
+  {
+    name: "広島",
+    icon: SparklesIcon,
+    color: "text-yellow-400",
+    href: "/#about",
+  },
+  {
+    name: "FAQ",
+    icon: QuestionMarkCircleIcon,
+    color: "text-info",
+    content: [...siteInfo],
+  },
+  {
+    name: "イベント",
+    icon: TrophyIcon,
+    color: "text-orange-400",
+    content: [...history],
+  },
+  {
+    name: "サポーター/パートナー",
+    icon: HeartIcon,
+    color: "text-rose-400",
+    content: [...helper],
+  },
+] as const
+
+export const ChibaEvents: EventInfo[] = [
+  {
+    date: {
+      month: "8",
+      day: "0",
+      weekday: "土",
+    },
+    venue: {
+      name: "クルックフィールズ",
+      address: "千葉県木更津市矢那2503",
+    },
+  },
+  {
+    date: {
+      month: "8",
+      day: "0",
+      weekday: "土",
+    },
+    venue: {
+      name: "東京虎ノ門グローバルスクエア",
+      address: "東京都港区虎ノ門1-3-1",
+    },
+  },
+  {
+    date: {
+      month: "9",
+      day: "0",
+      weekday: "土",
+    },
+    venue: {
+      name: "アーセンティア迎賓館 柏",
+      address: "千葉県柏市柏251-1",
+    },
+  },
+]
 
 export const carouselItems: Carousel[] = [
   {

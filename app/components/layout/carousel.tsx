@@ -1,6 +1,10 @@
 "use client"
 
-import { cardCarouselItems, carouselItems } from "@/app/lib/constant"
+import {
+  cardCarouselItems,
+  carouselItems,
+  reviewCarouselItems,
+} from "@/app/lib/constant"
 import Image from "next/image"
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
@@ -35,11 +39,7 @@ export function Carousel(): React.JSX.Element {
       onMouseLeave={() => setIsMouseEnter(false)}
     >
       {carouselItems.map((item) => (
-        <div
-          id={item.name}
-          key={item.name}
-          className="carousel-item relative w-full"
-        >
+        <div key={item.alt} className="carousel-item relative w-full">
           <figure className="w-full">
             <Image
               src={item.src}
@@ -72,7 +72,9 @@ export function CardCarousel(): React.JSX.Element {
               className="h-60 object-cover rounded-t-2xl"
             />
             <div className="card-body p-0 py-8 relative">
-              <span className="absolute bg-rose-400 font-bold left-0 px-2 py-1 text-white text-xs top-0">
+              <span
+                className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${item.color}`}
+              >
                 {item.category}
               </span>
               <h3 className="card-title mx-auto text-lg whitespace-pre">
@@ -89,6 +91,30 @@ export function CardCarousel(): React.JSX.Element {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export function ReviewCarousel(): React.JSX.Element {
+  return (
+    <div className="carousel carousel-center max-w-screen space-x-4 p-4">
+      {reviewCarouselItems.map((item) => (
+        <div key={item.alt} className="carousel-item rounded-box w-72">
+          <div className="card shadow-lg w-96">
+            <Image
+              src={item.src}
+              width={1000}
+              height={1000}
+              alt={item.alt}
+              className="h-60 object-cover rounded-t-2xl"
+            />
+            <div className="card-body p-2">
+              <h3 className="card-title mx-auto text-lg">{item.title}</h3>
+              <p className="text-sm whitespace-pre">{item.description}</p>
             </div>
           </div>
         </div>

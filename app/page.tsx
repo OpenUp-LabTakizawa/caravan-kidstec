@@ -1,5 +1,9 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
-import { CardCarousel, Carousel } from "@/app/components/layout/carousel"
+import {
+  CardCarousel,
+  Carousel,
+  ReviewCarousel,
+} from "@/app/components/layout/carousel"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
@@ -90,6 +94,7 @@ export default function Home(): React.JSX.Element {
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
+        <ReviewCarousel />
       </section>
       <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
     </article>

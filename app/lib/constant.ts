@@ -1,4 +1,8 @@
-import type { CardCarousel, Carousel } from "@/app/interfaces/carousel"
+import type {
+  CardCarousel,
+  Carousel,
+  ReviewCarousel,
+} from "@/app/interfaces/carousel"
 import type { Navigation } from "@/app/interfaces/navigation"
 import type { Partner } from "@/app/interfaces/partner"
 import type { SiteUrl } from "@/app/interfaces/siteUrl"
@@ -72,27 +76,22 @@ export const navigation: Navigation[] = [
 
 export const carouselItems: Carousel[] = [
   {
-    name: "everyone_rowing",
     alt: "メガサップ",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/everyone_rowing.webp",
   },
   {
-    name: "teaching",
     alt: "講義中…",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/teaching.webp",
   },
   {
-    name: "girl_boy_river",
     alt: "お魚探し中…",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/girl_boy_river.webp",
   },
   {
-    name: "loupe_gather",
     alt: "ロウソク作り",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/loupe_gather.webp",
   },
   {
-    name: "olive_grasp",
     alt: "オリーブ体験",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_grasp.webp",
   },
@@ -103,6 +102,7 @@ export const cardCarouselItems: CardCarousel[] = [
     alt: "ロボット制作",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/soldering.webp",
     category: "イベント",
+    color: "bg-rose-400",
     title: "前半：ロボット制作\n後半：サマーキャンプ",
     date: "2024年7月6日(土) 10:00~17:00",
     tags: ["広島", "ロボット制作", "自然体験"],
@@ -111,6 +111,7 @@ export const cardCarouselItems: CardCarousel[] = [
     alt: "プログラミング体験",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/sup_on_the_sea.webp",
     category: "イベント",
+    color: "bg-rose-400",
     title: "前半：プログラミング体験\n後半：江田島の海でSUP体験",
     date: "2024年7月13日(土) 10:00~17:00",
     tags: ["広島", "プログラミング", "自然体験"],
@@ -119,6 +120,7 @@ export const cardCarouselItems: CardCarousel[] = [
     alt: "結婚式体験",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/walking_bouquet.webp",
     category: "イベント",
+    color: "bg-rose-400",
     title: "午前：ロボサバ大会\n午後：結婚式体験",
     date: "2024年7月20日(土) 10:00~17:00",
     tags: ["広島", "ロボサバ", "結婚式体験"],
@@ -127,6 +129,7 @@ export const cardCarouselItems: CardCarousel[] = [
     alt: "ロボット制作",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/brothers.webp",
     category: "イベント",
+    color: "bg-rose-400",
     title: "午前：ロボット制作\n午後：自然の循環",
     date: "2024年8月0日(土) 10:00~17:00",
     tags: ["千葉", "ロボット制作", "自然体験"],
@@ -135,6 +138,7 @@ export const cardCarouselItems: CardCarousel[] = [
     alt: "プログラミング体験",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/content/rays-blog_girl.webp",
     category: "イベント",
+    color: "bg-rose-400",
     title: "午前：プログラミング体験\n午後：謎解き体験！",
     date: "2024年8月0日(土) 10:00~17:00",
     tags: ["千葉", "プログラミング", "情報教育"],
@@ -143,9 +147,48 @@ export const cardCarouselItems: CardCarousel[] = [
     alt: "ロボサバ大会",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/final_stage/course_challenge.webp",
     category: "イベント",
+    color: "bg-rose-400",
     title: "午前：ロボサバ大会\n午後：結婚式体験",
     date: "2024年9月0日(土) 10:00~17:00",
     tags: ["千葉", "ロボサバ", "結婚式体験"],
+  },
+] as const
+
+export const reviewCarouselItems: ReviewCarousel[] = [
+  {
+    alt: "メガサップ",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/everyone_rowing.webp",
+    title: "至れり尽せりで大変驚きました。",
+    description:
+      "子供だけでなく、\n親も色々と学ばせてもらえて\nありがたかったです。\n\nスタッフの方々が、\n生き生きされていたのが印象的で、\n今回のイベントに子どもを\n参加させてよかったです。\n（第3回広島 小6、小4）",
+  },
+  {
+    alt: "講義中…",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/teaching.webp",
+    title: "とても有意義な体験でした。",
+    description:
+      "子供だけでなく、\n親も満足できるという、\n他のイベントでは\n経験したことのない\nイベントでした。\n\n次回も是非是非\n参加させて頂きたいです。\n（第3回広島 小4）",
+  },
+  {
+    alt: "お魚探し中…",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/girl_boy_river.webp",
+    title: "ありがとうございました。",
+    description:
+      "縁あって参加させていただき、\n沢山の経験を得ることが出来ました。\n\n学校でははみ出し気味の子供が、\n楽しそうに取り組んでいて、\n親としては嬉しく見守りました。\n\nありがとうございました。\n（第3回広島 小5）",
+  },
+  {
+    alt: "ロウソク作り",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/loupe_gather.webp",
+    title: "充実した3日間を過ごせました。",
+    description:
+      "子供たち二人共、とても充実した\n3日間を過ごせました。\n\nまた次回も\nチャレンジしたいと思います！\n（第3回広島 中2、小4）",
+  },
+  {
+    alt: "オリーブ体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_grasp.webp",
+    title: "本格的で期待以上でした。",
+    description:
+      "プログラミングもアクティビティも\n本格的で期待以上でした。\n\nとても良かったので\n他の子にも体験させてあげたい。\n\n広島育ちですが、\n江田島、三段峡どちらも\nいったことがなかったので、\n行けて良かったです。\n（第2回広島 小5）",
   },
 ] as const
 

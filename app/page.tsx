@@ -125,7 +125,7 @@ export default function Home(): React.JSX.Element {
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl text-orange-400">
-          まなぶ
+          プログラミング体験
         </h2>
         <Link href="https://robosava.jp/" target="_blank">
           <figure className="w-full">
@@ -144,7 +144,7 @@ export default function Home(): React.JSX.Element {
       </section>
       <section id="about" className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl text-orange-400">
-          あそぶ
+          過去のイベント
         </h2>
         <CardCarousel />
       </section>

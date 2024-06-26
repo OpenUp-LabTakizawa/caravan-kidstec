@@ -10,6 +10,14 @@
   animation: fade-in-up 1.5s;
 }
 
+.scroll-left {
+  animation: scroll-left 40s linear infinite;
+}
+
+.scroll-right {
+  animation: scroll-right 80s linear infinite;
+}
+
 .scroll-up {
   animation: scroll-up 1.5s infinite;
 }
@@ -63,6 +71,24 @@
   100% {
     opacity: 1;
     transform: translatey(0);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-19rem * 6));
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(calc(-19rem * 10));
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 

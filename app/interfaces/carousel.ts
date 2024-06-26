@@ -14,8 +14,7 @@ export type CardCarousel = {
 }
 
 export type ReviewCarousel = {
-  alt: string
-  src: string
-  title: string
   description: string
+  area: string
+  user: string
 }

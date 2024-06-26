@@ -46,7 +46,7 @@ export default function Chiba(): React.JSX.Element {
           </ul>
         </div>
         <div className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
-          <p>
+          <p className="font-semibold">
             <Link href="/area/chiba" className="link link-info">
               応募要項
             </Link>

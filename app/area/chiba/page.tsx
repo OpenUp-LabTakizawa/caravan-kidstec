@@ -54,10 +54,15 @@ export default function Chiba(): React.JSX.Element {
             <br />
             応募画面へお進み下さい。
           </p>
-          <button type="button" className="bg-[#00C300] btn text-lg text-white">
-            LINEで簡単応募する！
-            <ArrowRightIcon className="size-5" />
-          </button>
+          <Link href="https://lin.ee/nWiS1Sq">
+            <button
+              type="button"
+              className="bg-[#00C300] btn text-lg text-white"
+            >
+              LINEで簡単応募する！
+              <ArrowRightIcon className="size-5" />
+            </button>
+          </Link>
         </div>
       </section>
       <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />

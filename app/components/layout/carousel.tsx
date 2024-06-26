@@ -32,28 +32,25 @@ export function Carousel(): React.JSX.Element {
   })
 
   return (
-    <section
-      ref={ref}
-      className="carousel rounded-box"
-      onMouseEnter={() => setIsMouseEnter(true)}
-      onMouseLeave={() => setIsMouseEnter(false)}
-    >
-      {carouselItems.map((item) => (
-        <div key={item.alt} className="carousel-item relative w-full">
-          <figure className="w-full">
-            <Image
-              src={item.src}
-              height={1000}
-              width={1000}
-              alt={item.alt}
-              className="h-full object-cover rounded-box shadow-lg w-full"
-            />
-            <figcaption className="text-center">
-              ※自然体験は開催時期により異なります
-            </figcaption>
-          </figure>
-        </div>
-      ))}
+    <section>
+      <div
+        ref={ref}
+        className="carousel rounded-box shadow-lg w-full"
+        onMouseEnter={() => setIsMouseEnter(true)}
+        onMouseLeave={() => setIsMouseEnter(false)}
+      >
+        {carouselItems.map((item) => (
+          <Image
+            key={item.alt}
+            src={item.src}
+            height={1000}
+            width={1000}
+            alt={item.alt}
+            className="aspect-square carousel-item object-cover"
+          />
+        ))}
+      </div>
+      <p className="text-center">※自然体験は開催時期により異なります</p>
     </section>
   )
 }

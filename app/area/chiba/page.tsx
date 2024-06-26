@@ -12,7 +12,7 @@ export default function Chiba(): React.JSX.Element {
       <Heading content="開催予定" href="/area/chiba" />
       <section id="news" className="grid gap-4">
         <Image
-          src={"/temp_event_thumbnail.webp"}
+          src={"/202409_chiba.webp"}
           width={1000}
           height={1000}
           alt="こどもテックキャラバン"

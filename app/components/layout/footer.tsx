@@ -45,13 +45,22 @@ export function Footer(): React.JSX.Element {
           Copyright © Open Up Group Inc. <br className="block sm:hidden" />
           All rights reserved.
         </p>
+        <Link href="https://lin.ee/LuSqIls">
+          <Image
+            src="/line_add_friends.webp"
+            width={36}
+            height={36}
+            alt="友だち追加"
+            className="border-0 h-10 w-20"
+          />
+        </Link>
         <Link
           href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec"
           target="_blank"
         >
           <Image
             src="/github-mark.svg"
-            width={24}
+            width={48}
             height={24}
             alt="GitHub"
             className="size-8"

@@ -46,7 +46,7 @@ export function Carousel(): React.JSX.Element {
             height={1000}
             width={1000}
             alt={item.alt}
-            className="aspect-square carousel-item object-cover"
+            className="aspect-square carousel-item object-cover w-full"
           />
         ))}
       </div>

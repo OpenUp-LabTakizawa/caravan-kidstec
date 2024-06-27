@@ -1,8 +1,9 @@
 "use client"
 
+import type { ScheduleCarousel } from "@/app/interfaces/carousel"
 import {
-  cardCarouselItems,
   carouselItems,
+  eventCarouselItems,
   reviewCarouselItems,
 } from "@/app/lib/constant"
 import Image from "next/image"
@@ -55,20 +56,74 @@ export function Carousel(): React.JSX.Element {
   )
 }
 
-export function CardCarousel(): React.JSX.Element {
+export function PlanCarousel({
+  carouselItems,
+}: Readonly<{ carouselItems: ScheduleCarousel[] }>): React.JSX.Element {
   return (
-    <div className="carousel max-w-screen snap-none space-x-4 p-4">
-      <div className="flex gap-4 scroll-left">
-        <Carousels />
-        <Carousels />
+    <div className="carousel max-w-screen overflow-hidden snap-none space-x-4 p-4">
+      <div className="flex gap-4 schedule-scroll-left">
+        <CarouselItems />
+        <CarouselItems />
       </div>
     </div>
   )
 
-  function Carousels(): React.JSX.Element {
+  function CarouselItems(): React.JSX.Element {
     return (
       <>
-        {cardCarouselItems.map((item) => (
+        {carouselItems.map((item, index) => (
+          <div key={item.alt} className="carousel-item rounded-box w-72">
+            <div className="card shadow-lg w-96">
+              <Image
+                src={item.src}
+                width={1000}
+                height={1000}
+                alt={item.alt}
+                className="h-60 object-cover rounded-t-2xl"
+              />
+              <div className="card-body p-0 py-8 relative">
+                <span
+                  className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${item.color}`}
+                >
+                  Day {index + 1}
+                </span>
+                <h3 className="card-title mx-auto text-lg whitespace-pre">
+                  {item.title}
+                </h3>
+                <p className="font-semibold text-sm">{item.date}</p>
+                <div className="card-actions justify-center">
+                  {item.tags.map((tag) => (
+                    <div
+                      key={tag}
+                      className="badge badge-outline bg-base-200 text-xs"
+                    >
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </>
+    )
+  }
+}
+
+export function EventCarousel(): React.JSX.Element {
+  return (
+    <div className="carousel max-w-screen overflow-hidden snap-none space-x-4 p-4">
+      <div className="flex gap-4 scroll-left">
+        <CarouselItems />
+        <CarouselItems />
+      </div>
+    </div>
+  )
+
+  function CarouselItems(): React.JSX.Element {
+    return (
+      <>
+        {eventCarouselItems.map((item) => (
           <div key={item.alt} className="carousel-item rounded-box w-72">
             <div className="card shadow-lg w-96">
               <Image
@@ -111,13 +166,13 @@ export function ReviewCarousel(): React.JSX.Element {
   return (
     <div className="carousel max-w-screen overflow-hidden snap-none space-x-4 p-4">
       <div className="flex gap-4 scroll-right">
-        <Carousels />
-        <Carousels />
+        <CarouselItems />
+        <CarouselItems />
       </div>
     </div>
   )
 
-  function Carousels(): React.JSX.Element {
+  function CarouselItems(): React.JSX.Element {
     return (
       <>
         {reviewCarouselItems.map((item) => (

@@ -3,7 +3,7 @@ export type Carousel = {
   src: string
 }
 
-export type CardCarousel = {
+export type EventCarousel = {
   alt: string
   src: string
   category: string
@@ -17,4 +17,13 @@ export type ReviewCarousel = {
   description: string
   area: string
   user: string
+}
+
+export type ScheduleCarousel = {
+  alt: string
+  src: string
+  color: string
+  title: string
+  date: string
+  tags: string[]
 }

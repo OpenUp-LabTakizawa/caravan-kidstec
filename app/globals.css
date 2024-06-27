@@ -14,6 +14,14 @@
   animation: fade-in-up 1.5s;
 }
 
+.schedule-scroll-left {
+  animation: schedule-scroll-left 20s linear infinite;
+}
+
+.schedule-scroll-left:hover {
+  animation-play-state: paused;
+}
+
 .scroll-left {
   animation: scroll-left 40s linear infinite;
 }
@@ -93,6 +101,15 @@
   100% {
     opacity: 1;
     transform: translatey(0);
+  }
+}
+
+@keyframes schedule-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-19rem * 3));
   }
 }
 

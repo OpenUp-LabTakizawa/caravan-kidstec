@@ -1,7 +1,8 @@
 import type {
-  CardCarousel,
   Carousel,
+  EventCarousel,
   ReviewCarousel,
+  ScheduleCarousel,
 } from "@/app/interfaces/carousel"
 import type { Navigation } from "@/app/interfaces/navigation"
 import type { Partner } from "@/app/interfaces/partner"
@@ -111,8 +112,8 @@ export const squareNavigation: Navigation[] = [
 export const ChibaEvents: EventInfo[] = [
   {
     date: {
-      month: "8",
-      day: "0",
+      month: "9",
+      day: "14",
       weekday: "土",
     },
     venue: {
@@ -122,8 +123,8 @@ export const ChibaEvents: EventInfo[] = [
   },
   {
     date: {
-      month: "8",
-      day: "0",
+      month: "9",
+      day: "21",
       weekday: "土",
     },
     venue: {
@@ -134,12 +135,48 @@ export const ChibaEvents: EventInfo[] = [
   {
     date: {
       month: "9",
-      day: "0",
+      day: "22",
+      weekday: "日",
+    },
+    venue: {
+      name: "ヴィクトリアガーデン恵比寿迎賓館",
+      address: "東京都渋谷区恵比寿南1-14-20",
+    },
+  },
+] as const
+
+export const HiroshimaEvents: EventInfo[] = [
+  {
+    date: {
+      month: "7",
+      day: "6",
       weekday: "土",
     },
     venue: {
-      name: "アーセンティア迎賓館 柏",
-      address: "千葉県柏市柏251-1",
+      name: "広島大学東広島キャンパス",
+      address: "広島県東広島市鏡山1-3-2",
+    },
+  },
+  {
+    date: {
+      month: "7",
+      day: "13",
+      weekday: "土",
+    },
+    venue: {
+      name: "能美市民センター",
+      address: "広島県江田島市能美町中町4859-9",
+    },
+  },
+  {
+    date: {
+      month: "7",
+      day: "20",
+      weekday: "土",
+    },
+    venue: {
+      name: "アーククラブ迎賓館福山",
+      address: "広島県福山市西町1-6-28",
     },
   },
 ] as const
@@ -167,12 +204,12 @@ export const carouselItems: Carousel[] = [
   },
 ] as const
 
-export const cardCarouselItems: CardCarousel[] = [
+export const eventCarouselItems: EventCarousel[] = [
   {
     alt: "はんだ付け",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/soldering.webp",
     category: "イベント",
-    color: "bg-rose-400",
+    color: "bg-teal-400",
     title: "前半：ロボット制作\n後半：サマーキャンプ",
     date: "2024年7月6日(土) 10:00~17:00",
     tags: ["広島", "ロボット制作", "自然体験"],
@@ -181,7 +218,7 @@ export const cardCarouselItems: CardCarousel[] = [
     alt: "SUP体験",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/sup_on_the_sea.webp",
     category: "イベント",
-    color: "bg-rose-400",
+    color: "bg-info",
     title: "前半：プログラミング体験\n後半：江田島の海でSUP体験",
     date: "2024年7月13日(土) 10:00~17:00",
     tags: ["広島", "プログラミング", "自然体験"],
@@ -201,7 +238,7 @@ export const cardCarouselItems: CardCarousel[] = [
     category: "イベント",
     color: "bg-rose-400",
     title: "午前：ロボット制作\n午後：自然の循環",
-    date: "2024年8月0日(土) 10:00~17:00",
+    date: "2024年9月14日(土) 10:00~17:00",
     tags: ["千葉", "ロボット制作", "自然体験"],
   },
   {
@@ -210,7 +247,7 @@ export const cardCarouselItems: CardCarousel[] = [
     category: "イベント",
     color: "bg-rose-400",
     title: "午前：プログラミング体験\n午後：謎解き体験！",
-    date: "2024年8月0日(土) 10:00~17:00",
+    date: "2024年9月21日(土) 10:00~17:00",
     tags: ["千葉", "プログラミング", "情報教育"],
   },
   {
@@ -219,8 +256,62 @@ export const cardCarouselItems: CardCarousel[] = [
     category: "イベント",
     color: "bg-rose-400",
     title: "午前：ロボサバ大会\n午後：結婚式体験",
-    date: "2024年9月0日(土) 10:00~17:00",
+    date: "2024年9月22日(日) 10:00~17:00",
     tags: ["千葉", "ロボサバ", "結婚式体験"],
+  },
+] as const
+
+export const ChibaCarouselItems: ScheduleCarousel[] = [
+  {
+    alt: "ロボット制作",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/brothers.webp",
+    color: "bg-teal-400",
+    title: "午前：ロボット制作\n午後：自然の循環",
+    date: "2024年9月14日(土) 10:00~17:00",
+    tags: ["ロボット制作", "自然体験"],
+  },
+  {
+    alt: "謎解き体験！",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/content/rays-blog_girl.webp",
+    color: "bg-info",
+    title: "午前：プログラミング体験\n午後：謎解き体験！",
+    date: "2024年9月21日(土) 10:00~17:00",
+    tags: ["プログラミング", "情報教育"],
+  },
+  {
+    alt: "ロボサバ大会",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/final_stage/course_challenge.webp",
+    color: "bg-rose-400",
+    title: "午前：ロボサバ大会\n午後：結婚式体験",
+    date: "2024年9月22日(日) 10:00~17:00",
+    tags: ["ロボサバ", "結婚式体験"],
+  },
+] as const
+
+export const HiroshimaCarouselItems: ScheduleCarousel[] = [
+  {
+    alt: "はんだ付け",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/soldering.webp",
+    color: "bg-teal-400",
+    title: "前半：ロボット制作\n後半：サマーキャンプ",
+    date: "2024年7月6日(土) 10:00~17:00",
+    tags: ["ロボット制作", "自然体験"],
+  },
+  {
+    alt: "SUP体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/sup_on_the_sea.webp",
+    color: "bg-info",
+    title: "前半：プログラミング体験\n後半：江田島の海でSUP体験",
+    date: "2024年7月13日(土) 10:00~17:00",
+    tags: ["プログラミング", "自然体験"],
+  },
+  {
+    alt: "結婚式体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/walking_bouquet.webp",
+    color: "bg-rose-400",
+    title: "午前：ロボサバ大会\n午後：結婚式体験",
+    date: "2024年7月20日(土) 10:00~17:00",
+    tags: ["ロボサバ", "結婚式体験"],
   },
 ] as const
 

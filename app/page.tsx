@@ -1,7 +1,7 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
 import {
-  CardCarousel,
   Carousel,
+  EventCarousel,
   ReviewCarousel,
 } from "@/app/components/layout/carousel"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
@@ -128,7 +128,7 @@ export default function Home(): React.JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl text-orange-400">
           過去のイベント
         </h2>
-        <CardCarousel />
+        <EventCarousel />
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>

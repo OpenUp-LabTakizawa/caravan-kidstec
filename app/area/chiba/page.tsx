@@ -1,6 +1,8 @@
+import { PlanCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { Video } from "@/app/components/media/video"
 import { ChibaEvents } from "@/app/lib/constant"
+import { ChibaCarouselItems } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
@@ -10,7 +12,7 @@ export default function Chiba(): React.JSX.Element {
   return (
     <>
       <Heading content="開催予定" href="/area/chiba" />
-      <section id="news" className="grid gap-4">
+      <section className="grid gap-4">
         <Image
           src={"/202409_chiba.webp"}
           width={1000}
@@ -64,6 +66,10 @@ export default function Chiba(): React.JSX.Element {
             </button>
           </Link>
         </div>
+      </section>
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
+        <PlanCarousel carouselItems={ChibaCarouselItems} />
       </section>
       <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
     </>

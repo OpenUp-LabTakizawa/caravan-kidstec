@@ -142,7 +142,7 @@ export const ChibaEvents: EventInfo[] = [
       address: "千葉県柏市柏251-1",
     },
   },
-]
+] as const
 
 export const carouselItems: Carousel[] = [
   {

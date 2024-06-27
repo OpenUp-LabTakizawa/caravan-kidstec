@@ -84,7 +84,7 @@ export default function Home(): React.JSX.Element {
         <Link href="https://lin.ee/nWiS1Sq">
           <button type="button" className="bg-[#00C300] btn text-lg text-white">
             LINEで簡単応募する！
-            <ArrowRightIcon className="size-5" />
+            <ArrowRightIcon className="arrow-right size-5" />
           </button>
         </Link>
       </section>

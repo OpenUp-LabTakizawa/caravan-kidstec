@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.arrow-right {
+  animation: arrow-right 1.5s infinite;
+}
+
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }
@@ -48,6 +52,16 @@
   margin: auto;
   overflow: hidden;
   white-space: nowrap;
+}
+
+@keyframes arrow-right {
+  0%,
+  40% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translatex(8px);
+  }
 }
 
 @keyframes blink {

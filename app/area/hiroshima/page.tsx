@@ -1,9 +1,8 @@
+import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { PlanCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { Video } from "@/app/components/media/video"
 import { HiroshimaCarouselItems, HiroshimaEvents } from "@/app/lib/constant"
-import Image from "next/image"
-import Link from "next/link"
 import type React from "react"
 
 export default function Hiroshima(): React.JSX.Element {
@@ -50,15 +49,7 @@ export default function Hiroshima(): React.JSX.Element {
             <br />
             次回開催の通知を受け取れます。
           </p>
-          <Link href="https://lin.ee/LuSqIls" className="w-fit mx-auto">
-            <Image
-              src="/line_add_friends.webp"
-              width={1000}
-              height={1000}
-              alt="友だち追加"
-              className="border-0 h-12 w-32"
-            />
-          </Link>
+          <LineAddFriends />
         </div>
       </section>
       <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />

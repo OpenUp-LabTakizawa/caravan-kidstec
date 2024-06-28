@@ -56,7 +56,7 @@ export default function Chiba(): React.JSX.Element {
             <br />
             応募画面へお進み下さい。
           </p>
-          <Link href="https://lin.ee/nWiS1Sq">
+          <Link href="https://lin.ee/a1BRnXT">
             <button
               type="button"
               className="bg-[#00C300] btn text-lg text-white"

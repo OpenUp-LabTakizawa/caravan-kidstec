@@ -1,4 +1,3 @@
-import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { navigation } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
@@ -46,21 +45,18 @@ export function Footer(): React.JSX.Element {
           Copyright © Open Up Group Inc. <br className="block sm:hidden" />
           All rights reserved.
         </p>
-        <div className="flex gap-4">
-          <LineAddFriends />
-          <Link
-            href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec"
-            target="_blank"
-          >
-            <Image
-              src="/github-mark.svg"
-              width={24}
-              height={24}
-              alt="GitHub"
-              className="size-8"
-            />
-          </Link>
-        </div>
+        <Link
+          href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec"
+          target="_blank"
+        >
+          <Image
+            src="/github-mark.svg"
+            width={24}
+            height={24}
+            alt="GitHub"
+            className="size-8"
+          />
+        </Link>
       </aside>
     </footer>
   )

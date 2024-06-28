@@ -70,7 +70,7 @@ export default function Home(): React.JSX.Element {
           </p>
         </div>
       </section>
-      <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
+      <section id="news" className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <p className="font-semibold">
           2024年<span className="text-xl">9</span>月
           <span className="text-xl">14</span>日・
@@ -87,7 +87,7 @@ export default function Home(): React.JSX.Element {
           </button>
         </Link>
       </section>
-      <section className="gap-2 grid grid-cols-2">
+      <section id="about" className="gap-2 grid grid-cols-2">
         <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-3xl text-orange-400">
           プログラミング体験
         </h2>

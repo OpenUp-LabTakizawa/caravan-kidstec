@@ -71,12 +71,13 @@ export default function Home(): React.JSX.Element {
       </section>
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <p className="font-semibold">
+          2024年9月14日・21日・22日、
           <br />
-          応募画面へお進み下さい。
+          <span className="text-teal-400">千葉・東京エリア</span>で開催決定！
         </p>
         <Link href="https://lin.ee/nWiS1Sq">
           <button type="button" className="bg-info btn text-lg text-white">
-            内容はこちら
+            内容・応募はこちら
             <ArrowRightIcon className="arrow-right size-5" />
           </button>
         </Link>

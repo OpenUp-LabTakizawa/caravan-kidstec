@@ -1,5 +1,5 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
-import { Carousel } from "@/app/components/layout/carousel"
+import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
@@ -72,9 +72,13 @@ export default function Home(): React.JSX.Element {
       </section>
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <p className="font-semibold">
-          2024年9月14日・21日・22日、
+          2024年<span className="text-xl">9</span>月
+          <span className="text-xl">14</span>日・
+          <span className="text-xl">21</span>日・
+          <span className="text-xl">22</span>日、
           <br />
-          <span className="text-rose-400">千葉・東京エリア</span>で開催決定！
+          <span className="text-lg text-rose-400">千葉・東京エリア</span>
+          で開催決定！
         </p>
         <Link href="https://lin.ee/nWiS1Sq">
           <button type="button" className="bg-info btn text-lg text-white">
@@ -94,6 +98,10 @@ export default function Home(): React.JSX.Element {
           自然学習
         </h2>
         <PanelTile panelItems={NaturePanelItems} />
+      </section>
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
+        <ReviewCarousel />
       </section>
       <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
     </article>

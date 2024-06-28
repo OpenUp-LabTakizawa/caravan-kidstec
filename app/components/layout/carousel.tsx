@@ -123,13 +123,13 @@ export function ReviewCarousel(): React.JSX.Element {
         {reviewCarouselItems.map((item) => (
           <div
             key={item.description}
-            className="carousel-item rounded-box w-52"
+            className="bg-amber-50 carousel-item rounded-box w-56"
           >
             <div className="card shadow-lg w-96">
               <div className="card-body p-2">
                 <p className="text-sm whitespace-pre">{item.description}</p>
-                <p className="items-center text-sm whitespace-pre">
-                  <ChatBubbleOvalLeftEllipsisIcon className="inline text-info size-8 mr-1" />
+                <p className="flex items-center justify-center text-sm whitespace-pre">
+                  <ChatBubbleOvalLeftEllipsisIcon className="text-info size-6 mr-1" />
                   {item.area} {item.user}
                 </p>
               </div>

@@ -1,4 +1,4 @@
-import { LineAddFriends } from "@/app/components/button/lineAddFriends"
+import { HiroshimaLine } from "@/app/components/button/hiroshimaLine"
 import { PlanCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { Video } from "@/app/components/media/video"
@@ -49,7 +49,7 @@ export default function Hiroshima(): React.JSX.Element {
             <br />
             次回開催の通知を受け取れます。
           </p>
-          <LineAddFriends />
+          <HiroshimaLine />
         </div>
       </section>
       <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />

@@ -1,10 +1,10 @@
 import type {
   Carousel,
-  EventCarousel,
   ReviewCarousel,
   ScheduleCarousel,
 } from "@/app/interfaces/carousel"
 import type { Navigation } from "@/app/interfaces/navigation"
+import type { Panel } from "@/app/interfaces/panel"
 import type { Partner } from "@/app/interfaces/partner"
 import type { SiteUrl } from "@/app/interfaces/siteUrl"
 import type { Supporter } from "@/app/interfaces/supporter"
@@ -109,6 +109,142 @@ export const squareNavigation: Navigation[] = [
   },
 ] as const
 
+export const carouselItems: Carousel[] = [
+  {
+    alt: "プログラミング体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/basic_programming.webp",
+  },
+  {
+    alt: "サップ体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/sea_circle.webp",
+  },
+  {
+    alt: "オリーブ体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_smile.webp",
+  },
+  {
+    alt: "自然学習",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/fallen_a_leaf.webp",
+  },
+  {
+    alt: "ブーケ作成",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/flower_arrangement.webp",
+  },
+  {
+    alt: "結婚式体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/wedding_bouquet.webp",
+  },
+] as const
+
+export const TechPanelItems: Panel[] = [
+  {
+    alt: "ロボサバ",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/final_stage/course_challenge.webp",
+  },
+  {
+    alt: "はんだ付け",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/soldering.webp",
+  },
+  {
+    alt: "IchigoJam",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/teaching.webp",
+  },
+  {
+    alt: "センサー制御",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/final_stage/course_challenge.webp",
+  },
+  {
+    alt: "ロボット制作",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/checking.webp",
+  },
+] as const
+
+export const NaturePanelItems: Panel[] = [
+  {
+    alt: "SUP in 江田島",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/mega_sap_group.webp",
+  },
+  {
+    alt: "オリーブ作り",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_grasp.webp",
+  },
+  {
+    alt: "ロウソク作り",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/candle_making.webp",
+  },
+  {
+    alt: "餅つき体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/making_rice_cake.webp",
+  },
+  {
+    alt: "ブーケ作り",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/many_flowers.webp",
+  },
+] as const
+
+export const reviewCarouselItems: ReviewCarousel[] = [
+  {
+    description:
+      "ロボットを使った\nプログラミングは、\n子供の興味を惹いて\nとても楽しそうでした。\nプログラミングだけでなく\nロボット作成やハンダ付けも\n楽しかったみたいです。\n自分一人で作成する\n達成感が味わえる講習が\n良かったのだと思いました。",
+    area: "第1回 広島",
+    user: "小4",
+  },
+  {
+    description:
+      "プログラミング教育が\n小学校で必修となりましたが、\n学校の授業では体験できない\nプログラミングを楽しく学び、\n海・山での自然も同時に\n体験できたことは、\n子供の良い思い出、\n貴重な体験となりました。\nこの夏で子供が少し\n成長できたところを\n身近で見ることができたのは\n親にとっても貴重な体験でした。",
+    area: "第1回 広島",
+    user: "小5",
+  },
+  {
+    description:
+      "プログラミングもアクティビティも\n本格的で期待以上でした。\n\nとても良かったので\n他の子にも体験させてあげたい。\n\n広島育ちですが、\n江田島、三段峡どちらも\nいったことがなかったので、\n行けて良かったです。",
+    area: "第2回 広島",
+    user: "小5",
+  },
+  {
+    description:
+      "上の子はより色々な経験を通して\n自信をもって社会と関わりを\n持っていけると感じた。\n下の子も新たに興味を\n持てたことがあったり、\n色々な経験ができてよかった。",
+    area: "第2回 広島",
+    user: "小5、小6",
+  },
+  {
+    description:
+      "子どもも親も色々な経験、\n体験をすることが出来て、\n楽しかったです！！\n多くの子供たちに\nこういった体験が\nできることを願っています。",
+    area: "第2回 広島",
+    user: "小6",
+  },
+  {
+    description:
+      "ロボサバスタッフや\n広島大学の学生などと\n色々なお話ができて\n子供たちも良い刺激に\nなったようです。\n子供たちの興味が広がって\n良い体験ができたと思います。",
+    area: "第2回 広島",
+    user: "小5、中1",
+  },
+  {
+    description:
+      "とても有意義な体験でした。\n子供だけでなく、\n親も満足できるという、\n他のイベントでは\n経験したことのない\nイベントでした。\n\n次回も是非是非\n参加させて頂きたいです。",
+    area: "第3回 広島",
+    user: "小4",
+  },
+  {
+    description:
+      "縁あって参加させていただき、\n沢山の経験を得ることが出来ました。\n\n学校でははみ出し気味の子供が、\n楽しそうに取り組んでいて、\n親としては嬉しく見守りました。\n\nありがとうございました。",
+    area: "第3回 広島",
+    user: "小5",
+  },
+  {
+    description:
+      "至れり尽くせりで大変驚きました。\n子供だけでなく、\n親も色々と学ばせてもらえて\nありがたかったです。\n\nスタッフの方々が、\n生き生きされていたのが印象的で、\n今回のイベントに子どもを\n参加させてよかったです。",
+    area: "第3回 広島",
+    user: "小4、小6",
+  },
+  {
+    description:
+      "子供たち二人共、とても充実した\n3日間を過ごせました。\n\nまた次回も\nチャレンジしたいと思います！",
+    area: "第3回 広島",
+    user: "小4、中2",
+  },
+] as const
+
 export const ChibaEvents: EventInfo[] = [
   {
     date: {
@@ -181,90 +317,6 @@ export const HiroshimaEvents: EventInfo[] = [
   },
 ] as const
 
-export const carouselItems: Carousel[] = [
-  {
-    alt: "プログラミング体験",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/basic_programming.webp",
-  },
-  {
-    alt: "サップ体験",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/sea_circle.webp",
-  },
-  {
-    alt: "オリーブ体験",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_smile.webp",
-  },
-  {
-    alt: "自然学習",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/fallen_a_leaf.webp",
-  },
-  {
-    alt: "ブーケ作成",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/flower_arrangement.webp",
-  },
-  {
-    alt: "結婚式体験",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/wedding_bouquet.webp",
-  },
-] as const
-
-export const eventCarouselItems: EventCarousel[] = [
-  {
-    alt: "はんだ付け",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/soldering.webp",
-    category: "ロボット制作",
-    color: "bg-teal-400",
-    title: "前半：ロボット制作\n後半：サマーキャンプ",
-    date: "2024年7月6日(土) 10:00~17:00",
-    tags: ["広島", "ロボット制作", "はんだ付け"],
-  },
-  {
-    alt: "SUP体験",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/sup_on_the_sea.webp",
-    category: "イベント",
-    color: "bg-info",
-    title: "前半：プログラミング体験\n後半：江田島の海でSUP体験",
-    date: "2024年7月13日(土) 10:00~17:00",
-    tags: ["広島", "プログラミング", "自然体験"],
-  },
-  {
-    alt: "結婚式体験",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/walking_bouquet.webp",
-    category: "イベント",
-    color: "bg-rose-400",
-    title: "午前：ロボサバ大会\n午後：結婚式体験",
-    date: "2024年7月20日(土) 10:00~17:00",
-    tags: ["広島", "ロボサバ", "結婚式体験"],
-  },
-  {
-    alt: "ロボット制作",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/brothers.webp",
-    category: "イベント",
-    color: "bg-rose-400",
-    title: "午前：ロボット制作\n午後：自然の循環",
-    date: "2024年9月14日(土) 10:00~17:00",
-    tags: ["千葉", "ロボット制作", "自然体験"],
-  },
-  {
-    alt: "謎解き体験！",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/content/rays-blog_girl.webp",
-    category: "イベント",
-    color: "bg-rose-400",
-    title: "午前：プログラミング体験\n午後：謎解き体験！",
-    date: "2024年9月21日(土) 10:00~17:00",
-    tags: ["千葉", "プログラミング", "情報教育"],
-  },
-  {
-    alt: "ロボサバ大会",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/final_stage/course_challenge.webp",
-    category: "イベント",
-    color: "bg-rose-400",
-    title: "午前：ロボサバ大会\n午後：結婚式体験",
-    date: "2024年9月22日(日) 10:00~17:00",
-    tags: ["千葉", "ロボサバ", "結婚式体験"],
-  },
-] as const
-
 export const ChibaCarouselItems: ScheduleCarousel[] = [
   {
     alt: "ロボット制作",
@@ -272,7 +324,7 @@ export const ChibaCarouselItems: ScheduleCarousel[] = [
     color: "bg-teal-400",
     title: "午前：ロボット制作\n午後：自然の循環",
     date: "2024年9月14日(土) 10:00~17:00",
-    tags: ["ロボット制作", "自然体験"],
+    tags: ["ロボット制作", "自然学習"],
   },
   {
     alt: "謎解き体験！",
@@ -299,7 +351,7 @@ export const HiroshimaCarouselItems: ScheduleCarousel[] = [
     color: "bg-teal-400",
     title: "前半：ロボット制作\n後半：サマーキャンプ",
     date: "2024年7月6日(土) 10:00~17:00",
-    tags: ["ロボット制作", "自然体験"],
+    tags: ["ロボット制作", "自然学習"],
   },
   {
     alt: "SUP体験",
@@ -307,78 +359,15 @@ export const HiroshimaCarouselItems: ScheduleCarousel[] = [
     color: "bg-info",
     title: "前半：プログラミング体験\n後半：江田島の海でSUP体験",
     date: "2024年7月13日(土) 10:00~17:00",
-    tags: ["プログラミング", "自然体験"],
+    tags: ["プログラミング", "自然学習"],
   },
   {
     alt: "結婚式体験",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/walking_bouquet.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/wrapping_bouquet.webp",
     color: "bg-rose-400",
     title: "午前：ロボサバ大会\n午後：結婚式体験",
     date: "2024年7月20日(土) 10:00~17:00",
     tags: ["ロボサバ", "結婚式体験"],
-  },
-] as const
-
-export const reviewCarouselItems: ReviewCarousel[] = [
-  {
-    description:
-      "ロボットを使った\nプログラミングは、\n子供の興味を惹いて\nとても楽しそうでした。\nプログラミングだけでなく\nロボット作成やハンダ付けも\n楽しかったみたいです。\n自分一人で作成する\n達成感が味わえる講習が\n良かったのだと思いました。",
-    area: "第1回 広島",
-    user: "小4",
-  },
-  {
-    description:
-      "プログラミング教育が\n小学校で必修となりましたが、\n学校の授業では体験できない\nプログラミングを楽しく学び、\n海・山での自然も同時に\n体験できたことは、\n子供の良い思い出、\n貴重な体験となりました。\nこの夏で子供が少し\n成長できたところを\n身近で見ることができたのは\n親にとっても貴重な体験でした。",
-    area: "第1回 広島",
-    user: "小5",
-  },
-  {
-    description:
-      "プログラミングもアクティビティも\n本格的で期待以上でした。\n\nとても良かったので\n他の子にも体験させてあげたい。\n\n広島育ちですが、\n江田島、三段峡どちらも\nいったことがなかったので、\n行けて良かったです。",
-    area: "第2回 広島",
-    user: "小5",
-  },
-  {
-    description:
-      "上の子はより色々な経験を通して\n自信をもって社会と関わりを\n持っていけると感じた。\n下の子も新たに興味を\n持てたことがあったり、\n色々な経験ができてよかった。",
-    area: "第2回 広島",
-    user: "小5、小6",
-  },
-  {
-    description:
-      "子どもも親も色々な経験、\n体験をすることが出来て、\n楽しかったです！！\n多くの子供たちに\nこういった体験が\nできることを願っています。",
-    area: "第2回 広島",
-    user: "小6",
-  },
-  {
-    description:
-      "ロボサバスタッフや\n広島大学の学生などと\n色々なお話ができて\n子供たちも良い刺激に\nなったようです。\n子供たちの興味が広がって\n良い体験ができたと思います。",
-    area: "第2回 広島",
-    user: "小5、中1",
-  },
-  {
-    description:
-      "とても有意義な体験でした。\n子供だけでなく、\n親も満足できるという、\n他のイベントでは\n経験したことのない\nイベントでした。\n\n次回も是非是非\n参加させて頂きたいです。",
-    area: "第3回 広島",
-    user: "小4",
-  },
-  {
-    description:
-      "縁あって参加させていただき、\n沢山の経験を得ることが出来ました。\n\n学校でははみ出し気味の子供が、\n楽しそうに取り組んでいて、\n親としては嬉しく見守りました。\n\nありがとうございました。",
-    area: "第3回 広島",
-    user: "小5",
-  },
-  {
-    description:
-      "至れり尽くせりで大変驚きました。\n子供だけでなく、\n親も色々と学ばせてもらえて\nありがたかったです。\n\nスタッフの方々が、\n生き生きされていたのが印象的で、\n今回のイベントに子どもを\n参加させてよかったです。",
-    area: "第3回 広島",
-    user: "小4、小6",
-  },
-  {
-    description:
-      "子供たち二人共、とても充実した\n3日間を過ごせました。\n\nまた次回も\nチャレンジしたいと思います！",
-    area: "第3回 広島",
-    user: "小4、中2",
   },
 ] as const
 

@@ -1,3 +1,4 @@
+import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { navigation } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
@@ -46,22 +47,14 @@ export function Footer(): React.JSX.Element {
           All rights reserved.
         </p>
         <div className="flex gap-4">
-          <Link href="https://lin.ee/LuSqIls">
-            <Image
-              src="/line_add_friends.webp"
-              width={1000}
-              height={1000}
-              alt="友だち追加"
-              className="border-0 h-8 w-28"
-            />
-          </Link>
+          <LineAddFriends />
           <Link
             href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec"
             target="_blank"
           >
             <Image
               src="/github-mark.svg"
-              width={48}
+              width={24}
               height={24}
               alt="GitHub"
               className="size-8"

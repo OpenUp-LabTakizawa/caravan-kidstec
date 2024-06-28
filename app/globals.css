@@ -30,8 +30,8 @@
   animation-play-state: paused;
 }
 
-.scroll-right {
-  animation: scroll-right 80s linear infinite;
+.review-scroll-left {
+  animation: review-scroll-left 80s linear infinite;
 }
 
 .scroll-right:hover {
@@ -122,12 +122,12 @@
   }
 }
 
-@keyframes scroll-right {
+@keyframes review-scroll-left {
   0% {
-    transform: translateX(calc(-19rem * 10));
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(calc(-19rem * 10));
   }
 }
 

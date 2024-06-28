@@ -183,24 +183,28 @@ export const HiroshimaEvents: EventInfo[] = [
 
 export const carouselItems: Carousel[] = [
   {
-    alt: "メガサップ",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/everyone_rowing.webp",
+    alt: "プログラミング体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/basic_programming.webp",
   },
   {
-    alt: "講義中…",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/teaching.webp",
-  },
-  {
-    alt: "お魚探し中…",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/girl_boy_river.webp",
-  },
-  {
-    alt: "ロウソク作り",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/loupe_gather.webp",
+    alt: "サップ体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/sea_circle.webp",
   },
   {
     alt: "オリーブ体験",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_grasp.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_smile.webp",
+  },
+  {
+    alt: "自然学習",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/fallen_a_leaf.webp",
+  },
+  {
+    alt: "ブーケ作成",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/flower_arrangement.webp",
+  },
+  {
+    alt: "結婚式体験",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/wedding_bouquet.webp",
   },
 ] as const
 
@@ -208,11 +212,11 @@ export const eventCarouselItems: EventCarousel[] = [
   {
     alt: "はんだ付け",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/eda_island/soldering.webp",
-    category: "イベント",
+    category: "ロボット制作",
     color: "bg-teal-400",
     title: "前半：ロボット制作\n後半：サマーキャンプ",
     date: "2024年7月6日(土) 10:00~17:00",
-    tags: ["広島", "ロボット制作", "自然体験"],
+    tags: ["広島", "ロボット制作", "はんだ付け"],
   },
   {
     alt: "SUP体験",

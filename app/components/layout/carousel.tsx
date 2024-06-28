@@ -109,7 +109,7 @@ export function PlanCarousel({
 
 export function ReviewCarousel(): React.JSX.Element {
   return (
-    <div className="carousel max-w-screen overflow-hidden snap-none space-x-4 p-4">
+    <div className="carousel max-w-screen snap-none space-x-4 p-4">
       <div className="flex gap-4 review-scroll-left">
         <CarouselItems />
         <CarouselItems />
@@ -123,7 +123,7 @@ export function ReviewCarousel(): React.JSX.Element {
         {reviewCarouselItems.map((item) => (
           <div
             key={item.description}
-            className="carousel-item rounded-box w-72"
+            className="carousel-item rounded-box w-52"
           >
             <div className="card shadow-lg w-96">
               <div className="card-body p-2">

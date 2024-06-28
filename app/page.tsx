@@ -80,7 +80,7 @@ export default function Home(): React.JSX.Element {
           <span className="text-lg text-rose-400">千葉・東京エリア</span>
           で開催決定！
         </p>
-        <Link href="https://lin.ee/nWiS1Sq">
+        <Link href="/area/chiba">
           <button type="button" className="bg-info btn text-lg text-white">
             内容・応募はこちら
             <ArrowRightIcon className="arrow-right size-5" />

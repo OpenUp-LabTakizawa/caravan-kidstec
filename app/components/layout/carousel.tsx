@@ -2,6 +2,7 @@
 
 import type { ScheduleCarousel } from "@/app/interfaces/carousel"
 import { carouselItems, reviewCarouselItems } from "@/app/lib/constant"
+import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
@@ -127,8 +128,10 @@ export function ReviewCarousel(): React.JSX.Element {
             <div className="card shadow-lg w-96">
               <div className="card-body p-2">
                 <p className="text-sm whitespace-pre">{item.description}</p>
-                <p className="text-sm whitespace-pre">{item.area}</p>
-                <p className="text-sm whitespace-pre">{item.user}</p>
+                <p className="items-center text-sm whitespace-pre">
+                  <ChatBubbleOvalLeftEllipsisIcon className="inline text-info size-8 mr-1" />
+                  {item.area} {item.user}
+                </p>
               </div>
             </div>
           </div>

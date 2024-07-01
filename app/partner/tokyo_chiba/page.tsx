@@ -7,7 +7,7 @@ import type React from "react"
 export default function Chiba(): React.JSX.Element {
   return (
     <>
-      <Heading content={PARTNER.name} name={TOKYO_CHIBA.name} />
+      <Heading navigation={PARTNER} content={TOKYO_CHIBA} />
       <Partner area={TOKYO_CHIBA.name} />
     </>
   )

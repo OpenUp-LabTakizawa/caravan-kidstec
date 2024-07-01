@@ -130,7 +130,7 @@ export function ReviewCarousel(): React.JSX.Element {
                 <p className="text-sm whitespace-pre">{item.description}</p>
                 <p className="flex items-center justify-center text-sm whitespace-pre">
                   <ChatBubbleOvalLeftEllipsisIcon className="text-info size-6 mr-1" />
-                  {item.area} {item.user}
+                  {item.areaAndUser}
                 </p>
               </div>
             </div>

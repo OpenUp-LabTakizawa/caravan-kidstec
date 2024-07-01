@@ -6,7 +6,7 @@ import type React from "react"
 export default function PrivacyPolicy(): React.JSX.Element {
   return (
     <>
-      <Heading content="お問い合わせ" href="/contact/privacy-policy" />
+      <Heading content="お問い合わせ" href="/privacy-policy" />
       <section className="bg-base-200 grid gap-4 leading-7 p-4 rounded-box text-sm">
         <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
         <p>

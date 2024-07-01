@@ -3,111 +3,103 @@ import type {
   ReviewCarousel,
   ScheduleCarousel,
 } from "@/app/interfaces/carousel"
+import type { EventInfo } from "@/app/interfaces/eventInfo"
 import type { Navigation } from "@/app/interfaces/navigation"
 import type { Panel } from "@/app/interfaces/panel"
 import type { Partner } from "@/app/interfaces/partner"
-import type { SiteUrl } from "@/app/interfaces/siteUrl"
 import type { Supporter } from "@/app/interfaces/supporter"
 import {
+  GlobeAsiaAustraliaIcon,
   HeartIcon,
-  NewspaperIcon,
   QuestionMarkCircleIcon,
-  SparklesIcon,
   TrophyIcon,
   TruckIcon,
 } from "@heroicons/react/24/outline"
-import type { EventInfo } from "../interfaces/eventInfo"
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
-
-const area: SiteUrl[] = [
-  { name: "広島", href: "/area/hiroshima" },
-  { name: "千葉", href: "/area/chiba" },
-] as const
-const history: SiteUrl[] = [
-  { name: "広島", href: "/history/hiroshima" },
-] as const
-const helper: SiteUrl[] = [
-  { name: "企業サポーター", href: "/supporter/company" },
-  { name: "千葉パートナー", href: "/partner/chiba" },
-  { name: "広島パートナー", href: "/partner/hiroshima" },
-] as const
-const siteInfo: SiteUrl[] = [
-  { name: "FAQ", href: "/contact/faq" },
-  { name: "個人情報保護方針", href: "/contact/privacy-policy" },
-] as const
+export const TOKYO_CHIBA: string = "東京・千葉"
+export const HIROSHIMA: string = "広島"
+export const CHIBA_LINE_LINK: string = "https://lin.ee/a1BRnXT"
+export const HIROSHIMA_LINE_LINK: string = "https://lin.ee/LuSqIls"
 
 export const navigation: Navigation[] = [
   {
-    name: "最新情報",
-    icon: NewspaperIcon,
-    color: "text-info",
-    href: "/#news",
-  },
-  {
-    name: "活動紹介",
-    icon: SparklesIcon,
-    color: "text-yellow-400",
-    href: "/#about",
-  },
-  {
     name: "開催予定",
     icon: TruckIcon,
-    color: "text-teal-400",
-    content: [...area],
+    color: "text-orange-400",
+    href: "/area",
+    content: [
+      { name: TOKYO_CHIBA, href: "/tokyo_chiba" },
+      { name: HIROSHIMA, href: "/hiroshima" },
+    ],
   },
   {
     name: "過去の実績",
     icon: TrophyIcon,
-    color: "text-orange-400",
-    content: [...history],
+    color: "text-yellow-400",
+    href: "/history",
+    content: [{ name: HIROSHIMA, href: "/hiroshima" }],
   },
   {
-    name: "サポーター/パートナー",
+    name: "サポーター",
+    icon: GlobeAsiaAustraliaIcon,
+    color: "text-teal-400",
+    href: "/supporter",
+  },
+  {
+    name: "パートナー",
     icon: HeartIcon,
     color: "text-rose-400",
-    content: [...helper],
+    href: "/partner",
+    content: [
+      { name: TOKYO_CHIBA, href: "/tokyo_chiba" },
+      { name: HIROSHIMA, href: "/hiroshima" },
+    ],
   },
   {
     name: "お問い合わせ",
     icon: QuestionMarkCircleIcon,
     color: "text-info",
-    content: [...siteInfo],
+    href: "/contact",
+    content: [
+      { name: "FAQ", href: "/faq" },
+      { name: "個人情報保護方針", href: "/privacy-policy" },
+    ],
   },
 ] as const
 
-export const squareNavigation: Navigation[] = [
-  {
-    name: "千葉",
-    icon: NewspaperIcon,
-    color: "text-info",
-    href: "/#news",
-  },
-  {
-    name: "広島",
-    icon: SparklesIcon,
-    color: "text-yellow-400",
-    href: "/#about",
-  },
-  {
-    name: "FAQ",
-    icon: QuestionMarkCircleIcon,
-    color: "text-info",
-    content: [...siteInfo],
-  },
-  {
-    name: "イベント",
-    icon: TrophyIcon,
-    color: "text-orange-400",
-    content: [...history],
-  },
-  {
-    name: "サポーター/パートナー",
-    icon: HeartIcon,
-    color: "text-rose-400",
-    content: [...helper],
-  },
-] as const
+// export const squareNavigation: Navigation[] = [
+//   {
+//     name: "千葉",
+//     icon: NewspaperIcon,
+//     color: "text-info",
+//     href: "/#news",
+//   },
+//   {
+//     name: "広島",
+//     icon: SparklesIcon,
+//     color: "text-yellow-400",
+//     href: "/#about",
+//   },
+//   {
+//     name: "FAQ",
+//     icon: QuestionMarkCircleIcon,
+//     color: "text-info",
+//     content: [...siteInfo],
+//   },
+//   {
+//     name: "イベント",
+//     icon: TrophyIcon,
+//     color: "text-orange-400",
+//     content: [...history],
+//   },
+//   {
+//     name: "サポーター/パートナー",
+//     icon: HeartIcon,
+//     color: "text-rose-400",
+//     content: [...helper],
+//   },
+// ] as const
 
 export const carouselItems: Carousel[] = [
   {
@@ -124,7 +116,7 @@ export const carouselItems: Carousel[] = [
   },
   {
     alt: "自然学習",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/fallen_a_leaf.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/check_a_leaf.webp",
   },
   {
     alt: "ブーケ作成",
@@ -139,7 +131,7 @@ export const carouselItems: Carousel[] = [
 export const TechPanelItems: Panel[] = [
   {
     alt: "ロボサバ",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/final_stage/course_challenge.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/brothers.webp",
   },
   {
     alt: "はんだ付け",
@@ -147,15 +139,15 @@ export const TechPanelItems: Panel[] = [
   },
   {
     alt: "IchigoJam",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/teaching.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/basic_programming.webp",
   },
   {
     alt: "センサー制御",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/final_stage/course_challenge.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/pointing_out.webp",
   },
   {
     alt: "ロボット制作",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/checking.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/peace_sign.webp",
   },
 ] as const
 
@@ -166,19 +158,19 @@ export const NaturePanelItems: Panel[] = [
   },
   {
     alt: "オリーブオイル手作り体験",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_grasp.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/eda_island/olive_pouring.webp",
   },
   {
     alt: "ロウソク作り",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/candle_making.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/wrapping_a_leaf.webp",
   },
   {
     alt: "餅つき",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/making_rice_cake.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202307/sandankyo/writing.webp",
   },
   {
     alt: "ブーケ作り",
-    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/many_flowers.webp",
+    src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/wedding/flower_arrangement.webp",
   },
 ] as const
 

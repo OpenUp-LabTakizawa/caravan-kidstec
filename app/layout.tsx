@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
+      className={`scroll-smooth ${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
     >
       <body className="font-zenKakuGothicNew">
         <Header />

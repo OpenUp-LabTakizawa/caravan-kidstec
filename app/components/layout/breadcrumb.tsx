@@ -5,10 +5,8 @@ import type React from "react"
 
 export function Breadcrumb({
   crumb,
-  href,
-}: Readonly<{ crumb: Navigation; href: string }>): React.JSX.Element {
-  const content = crumb.content?.filter((item) => item.href === href)[0]
-
+  name,
+}: Readonly<{ crumb: Navigation; name?: string }>): React.JSX.Element {
   return (
     <div className="text-sm breadcrumbs">
       <ul>
@@ -22,7 +20,7 @@ export function Breadcrumb({
           <crumb.icon className={`size-5 mr-1 ${crumb.color}`} />
           {crumb.name}
         </li>
-        {content && <li>{content.name}</li>}
+        {name && <li>{name}</li>}
       </ul>
     </div>
   )

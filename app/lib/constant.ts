@@ -17,49 +17,58 @@ import {
 } from "@heroicons/react/24/outline"
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
-export const TOKYO_CHIBA: Content = { name: "東京・千葉", href: "/tokyo_chiba" }
-export const HIROSHIMA: Content = { name: "広島", href: "/hiroshima" }
-export const CHIBA_LINE_LINK: string = "https://lin.ee/a1BRnXT"
+export const TOKYO_CHIBA_LINE_LINK: string = "https://lin.ee/a1BRnXT"
 export const HIROSHIMA_LINE_LINK: string = "https://lin.ee/LuSqIls"
 
+export const TOKYO_CHIBA: Content = { name: "東京・千葉", href: "/tokyo_chiba" }
+export const HIROSHIMA: Content = { name: "広島", href: "/hiroshima" }
+export const FAQ: Content = { name: "FAQ", href: "/faq" }
+export const PRIVACY_POLICY: Content = {
+  name: "個人情報保護方針",
+  href: "/privacy-policy",
+}
+
+export const AREA: Navigation = {
+  name: "開催予定",
+  icon: TruckIcon,
+  color: "text-orange-400",
+  href: "/area",
+  content: [TOKYO_CHIBA, HIROSHIMA],
+}
+export const HISTORY: Navigation = {
+  name: "過去の実績",
+  icon: TrophyIcon,
+  color: "text-yellow-400",
+  href: "/history",
+  content: [HIROSHIMA],
+}
+export const SUPPORTER: Navigation = {
+  name: "サポーター",
+  icon: GlobeAsiaAustraliaIcon,
+  color: "text-teal-400",
+  href: "/supporter",
+}
+export const PARTNER: Navigation = {
+  name: "パートナー",
+  icon: HeartIcon,
+  color: "text-rose-400",
+  href: "/partner",
+  content: [TOKYO_CHIBA, HIROSHIMA],
+}
+export const CONTACT: Navigation = {
+  name: "お問い合わせ",
+  icon: QuestionMarkCircleIcon,
+  color: "text-info",
+  href: "/contact",
+  content: [FAQ, PRIVACY_POLICY],
+}
+
 export const navigation: Navigation[] = [
-  {
-    name: "開催予定",
-    icon: TruckIcon,
-    color: "text-orange-400",
-    href: "/area",
-    content: [TOKYO_CHIBA, HIROSHIMA],
-  },
-  {
-    name: "過去の実績",
-    icon: TrophyIcon,
-    color: "text-yellow-400",
-    href: "/history",
-    content: [HIROSHIMA],
-  },
-  {
-    name: "サポーター",
-    icon: GlobeAsiaAustraliaIcon,
-    color: "text-teal-400",
-    href: "/supporter",
-  },
-  {
-    name: "パートナー",
-    icon: HeartIcon,
-    color: "text-rose-400",
-    href: "/partner",
-    content: [TOKYO_CHIBA, HIROSHIMA],
-  },
-  {
-    name: "お問い合わせ",
-    icon: QuestionMarkCircleIcon,
-    color: "text-info",
-    href: "/contact",
-    content: [
-      { name: "FAQ", href: "/faq" },
-      { name: "個人情報保護方針", href: "/privacy-policy" },
-    ],
-  },
+  AREA,
+  HISTORY,
+  SUPPORTER,
+  PARTNER,
+  CONTACT,
 ] as const
 
 // export const squareNavigation: Navigation[] = [
@@ -231,7 +240,7 @@ export const reviewCarouselItems: ReviewCarousel[] = [
   },
 ] as const
 
-export const ChibaEvents: EventInfo[] = [
+export const TokyoChibaEvents: EventInfo[] = [
   {
     date: {
       month: "9",
@@ -303,7 +312,7 @@ export const HiroshimaEvents: EventInfo[] = [
   },
 ] as const
 
-export const ChibaCarouselItems: ScheduleCarousel[] = [
+export const TokyoChibaCarouselItems: ScheduleCarousel[] = [
   {
     alt: "ロボット制作",
     src: "https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/202311/sandankyo/brothers.webp",
@@ -357,7 +366,7 @@ export const HiroshimaCarouselItems: ScheduleCarousel[] = [
   },
 ] as const
 
-export const ChibaPartners: Partner[] = [
+export const TokyoChibaPartners: Partner[] = [
   {
     name: "クルックフィールズ",
     href: "https://kurkkufields.jp/",

@@ -2,13 +2,18 @@ import { HiroshimaLine } from "@/app/components/button/hiroshimaLine"
 import { PlanCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { Video } from "@/app/components/media/video"
-import { HiroshimaCarouselItems, HiroshimaEvents } from "@/app/lib/constant"
+import {
+  AREA,
+  HIROSHIMA,
+  HiroshimaCarouselItems,
+  HiroshimaEvents,
+} from "@/app/lib/constant"
 import type React from "react"
 
 export default function Hiroshima(): React.JSX.Element {
   return (
     <>
-      <Heading content="開催予定" href="/hiroshima" />
+      <Heading content={AREA.name} name={HIROSHIMA.name} />
       <section className="grid gap-4">
         <div className="bg-amber-50 grid mx-auto w-max">
           <span className="bg-sky-400 font-bold justify-self-start p-1">

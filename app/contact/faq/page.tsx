@@ -1,6 +1,7 @@
 import { Heading } from "@/app/components/layout/heading"
+import { CONTACT, FAQ } from "@/app/lib/constant"
 import type React from "react"
 
-export default function FAQ(): React.JSX.Element {
-  return <Heading content="お問い合わせ" href="/faq" />
+export default function Faq(): React.JSX.Element {
+  return <Heading content={CONTACT.name} name={FAQ.name} />
 }

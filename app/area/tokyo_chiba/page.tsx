@@ -1,8 +1,13 @@
 import { PlanCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { Video } from "@/app/components/media/video"
-import { ChibaEvents } from "@/app/lib/constant"
-import { ChibaCarouselItems } from "@/app/lib/constant"
+import {
+  AREA,
+  TOKYO_CHIBA,
+  TOKYO_CHIBA_LINE_LINK,
+  TokyoChibaCarouselItems,
+  TokyoChibaEvents,
+} from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
@@ -11,7 +16,7 @@ import type React from "react"
 export default function Chiba(): React.JSX.Element {
   return (
     <>
-      <Heading content="開催予定" href="/tokyo_chiba" />
+      <Heading content={AREA.name} name={TOKYO_CHIBA.name} />
       <section className="grid gap-4">
         <Image
           src={"/202409_chiba.webp"}
@@ -25,7 +30,7 @@ export default function Chiba(): React.JSX.Element {
             開催日時
           </span>
           <ul>
-            {ChibaEvents.map((item) => (
+            {TokyoChibaEvents.map((item) => (
               <li key={item.venue.name} className="grid gap-1 border-b p-2">
                 <p className="decoration-4 decoration-sky-400 underline">
                   2024年
@@ -56,7 +61,7 @@ export default function Chiba(): React.JSX.Element {
             <br />
             応募画面へお進み下さい。
           </p>
-          <Link href="https://lin.ee/a1BRnXT">
+          <Link href={TOKYO_CHIBA_LINE_LINK}>
             <button
               type="button"
               className="bg-[#00C300] btn text-lg text-white"
@@ -69,7 +74,7 @@ export default function Chiba(): React.JSX.Element {
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
-        <PlanCarousel carouselItems={ChibaCarouselItems} />
+        <PlanCarousel carouselItems={TokyoChibaCarouselItems} />
       </section>
       <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
     </>

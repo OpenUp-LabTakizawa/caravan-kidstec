@@ -87,7 +87,7 @@ export default function Home(): React.JSX.Element {
           </button>
         </Link>
       </section>
-      <section id="about" className="gap-2 grid grid-cols-2">
+      <section className="gap-2 grid grid-cols-2">
         <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-3xl text-orange-400">
           プログラミング体験
         </h2>

@@ -1,11 +1,11 @@
-import { CHIBA_LINE_LINK } from "@/app/lib/constant"
+import { TOKYO_CHIBA_LINE_LINK } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 
 export function ChibaLine(): React.JSX.Element {
   return (
-    <Link href={CHIBA_LINE_LINK} className="w-fit mx-auto">
+    <Link href={TOKYO_CHIBA_LINE_LINK} className="w-fit mx-auto">
       <Image
         src="/line_add_friends.webp"
         width={232}

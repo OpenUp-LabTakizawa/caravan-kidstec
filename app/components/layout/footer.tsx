@@ -10,31 +10,30 @@ export function Footer(): React.JSX.Element {
         <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 menu p-0">
           {navigation.map((item) => (
             <li key={item.name}>
-              {item.href && (
-                <Link
-                  href={item.href as string}
-                  className="font-bold link-hover"
-                >
-                  <item.icon className={`size-5 ${item.color}`} />
-                  {item.name}
-                </Link>
-              )}
-              {item.content && (
+              {item.content ? (
                 <>
                   <span className="font-bold">
                     <item.icon className={`size-5 ${item.color}`} />
                     {item.name}
                   </span>
                   <ul>
-                    {item.content.map((item) => (
-                      <li key={item.name}>
-                        <Link href={item.href as string} className="link-hover">
-                          {item.name}
+                    {item.content.map((child) => (
+                      <li key={child.name}>
+                        <Link
+                          href={item.href + child.href}
+                          className="link-hover"
+                        >
+                          {child.name}
                         </Link>
                       </li>
                     ))}
                   </ul>
                 </>
+              ) : (
+                <Link href={item.href} className="font-bold link-hover">
+                  <item.icon className={`size-5 ${item.color}`} />
+                  {item.name}
+                </Link>
               )}
             </li>
           ))}

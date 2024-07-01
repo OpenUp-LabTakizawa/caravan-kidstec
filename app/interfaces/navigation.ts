@@ -4,6 +4,6 @@ export type Navigation = {
   name: string
   icon: React.ElementType
   color: string
-  href?: string
+  href: string
   content?: { name: string; href: string }[]
 }

@@ -11,7 +11,7 @@ import type React from "react"
 export default function Chiba(): React.JSX.Element {
   return (
     <>
-      <Heading content="開催予定" href="/area/chiba" />
+      <Heading content="開催予定" href="/tokyo_chiba" />
       <section className="grid gap-4">
         <Image
           src={"/202409_chiba.webp"}

@@ -8,7 +8,7 @@ import type React from "react"
 export default function Hiroshima(): React.JSX.Element {
   return (
     <>
-      <Heading content="開催予定" href="/area/hiroshima" />
+      <Heading content="開催予定" href="/hiroshima" />
       <section className="grid gap-4">
         <div className="bg-amber-50 grid mx-auto w-max">
           <span className="bg-sky-400 font-bold justify-self-start p-1">

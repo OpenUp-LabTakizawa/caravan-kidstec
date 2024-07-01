@@ -13,7 +13,7 @@ import type React from "react"
 export default function Hiroshima(): React.JSX.Element {
   return (
     <>
-      <Heading content={AREA.name} name={HIROSHIMA.name} />
+      <Heading navigation={AREA} content={HIROSHIMA} />
       <section className="grid gap-4">
         <div className="bg-amber-50 grid mx-auto w-max">
           <span className="bg-sky-400 font-bold justify-self-start p-1">

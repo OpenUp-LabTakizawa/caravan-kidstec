@@ -16,7 +16,7 @@ import type React from "react"
 export default function Chiba(): React.JSX.Element {
   return (
     <>
-      <Heading content={AREA.name} name={TOKYO_CHIBA.name} />
+      <Heading navigation={AREA} content={TOKYO_CHIBA} />
       <section className="grid gap-4">
         <Image
           src={"/202409_chiba.webp"}

@@ -6,7 +6,7 @@ import type React from "react"
 export default function Hiroshima(): React.JSX.Element {
   return (
     <>
-      <Heading content={PARTNER.name} name={HIROSHIMA.name} />
+      <Heading navigation={PARTNER} content={HIROSHIMA} />
       <Partner area={HIROSHIMA.name} />
     </>
   )

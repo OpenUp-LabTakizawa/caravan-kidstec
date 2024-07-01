@@ -10,7 +10,7 @@ import type React from "react"
 export default function Supporter(): React.JSX.Element {
   return (
     <article className="grid gap-6 p-4">
-      <Heading content={SUPPORTER.name} />
+      <Heading navigation={SUPPORTER} />
       {supporters.map((item) => (
         <section
           key={item.name}

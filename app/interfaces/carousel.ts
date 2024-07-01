@@ -15,8 +15,7 @@ export type EventCarousel = {
 
 export type ReviewCarousel = {
   description: string
-  area: string
-  user: string
+  areaAndUser: string
 }
 
 export type ScheduleCarousel = {

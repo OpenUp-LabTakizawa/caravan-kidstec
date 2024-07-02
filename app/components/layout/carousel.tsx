@@ -56,11 +56,19 @@ export function Carousel(): React.JSX.Element {
 export function PlanCarousel({
   carouselItems,
 }: Readonly<{ carouselItems: ScheduleCarousel[] }>): React.JSX.Element {
+  const [innerWidth, setInnerWidth] = useState<number>(0)
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("resize", () => {
+      setInnerWidth(window.innerWidth)
+    })
+  }
+
   return (
-    <div className="carousel max-w-screen overflow-hidden snap-none space-x-4 p-4">
+    <div className="carousel max-w-full mx-auto p-4 snap-none space-x-4">
       <div className="flex gap-4 schedule-scroll-left">
         <CarouselItems />
-        <CarouselItems />
+        {innerWidth < 896 && <CarouselItems />}
       </div>
     </div>
   )
@@ -70,7 +78,7 @@ export function PlanCarousel({
       <>
         {carouselItems.map((item, index) => (
           <div key={item.alt} className="carousel-item rounded-box w-72">
-            <div className="card shadow-lg w-96">
+            <div className="card shadow-lg">
               <Image
                 src={item.src}
                 width={1000}
@@ -78,7 +86,7 @@ export function PlanCarousel({
                 alt={item.alt}
                 className="h-60 object-cover rounded-t-2xl"
               />
-              <div className="card-body p-0 py-8 relative">
+              <div className="bg-amber-50 card-body p-0 py-8 relative">
                 <span
                   className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${item.color}`}
                 >
@@ -123,9 +131,9 @@ export function ReviewCarousel(): React.JSX.Element {
         {reviewCarouselItems.map((item) => (
           <div
             key={item.description}
-            className="bg-amber-50 carousel-item rounded-box w-56"
+            className="carousel-item rounded-box"
           >
-            <div className="card shadow-lg w-96">
+            <div className="bg-amber-50 card shadow-lg w-56">
               <div className="card-body p-2">
                 <p className="text-sm whitespace-pre">{item.description}</p>
                 <p className="flex items-center justify-center text-sm whitespace-pre">

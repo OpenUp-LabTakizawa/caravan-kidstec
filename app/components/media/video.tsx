@@ -1,3 +1,5 @@
+import type React from "react"
+
 export function Video({ src }: Readonly<{ src: string }>): React.JSX.Element {
   return (
     <video

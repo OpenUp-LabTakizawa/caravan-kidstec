@@ -64,6 +64,10 @@ export function PlanCarousel({
     })
   }
 
+  useEffect(() => {
+    setInnerWidth(window.innerWidth)
+  }, [])
+
   return (
     <div className="carousel max-w-full mx-auto p-4 snap-none space-x-4">
       <div className="flex gap-4 schedule-scroll-left">
@@ -129,10 +133,7 @@ export function ReviewCarousel(): React.JSX.Element {
     return (
       <>
         {reviewCarouselItems.map((item) => (
-          <div
-            key={item.description}
-            className="carousel-item rounded-box"
-          >
+          <div key={item.description} className="carousel-item rounded-box">
             <div className="bg-amber-50 card shadow-lg w-56">
               <div className="card-body p-2">
                 <p className="text-sm whitespace-pre">{item.description}</p>

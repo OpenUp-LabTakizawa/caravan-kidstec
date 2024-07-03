@@ -123,12 +123,10 @@ export default function Home(): React.JSX.Element {
         <p className="font-semibold">
           2024年<span className="text-xl">9</span>月
           {TokyoChibaEvents.map((event, index) => (
-            <>
-              <span key={event.venue.name} className="text-xl">
-                {event.date.day}
-              </span>
+            <span key={event.venue.name}>
+              <span className="text-xl">{event.date.day}</span>日
               {index === TokyoChibaEvents.length - 1 ? "、" : "・"}
-            </>
+            </span>
           ))}
           <br />
           <span className="text-lg text-rose-400">{TOKYO_CHIBA.name}</span>

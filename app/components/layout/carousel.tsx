@@ -71,11 +71,9 @@ export function PlanCarousel({
   }, [])
 
   return (
-    <div className="carousel max-w-full mx-auto p-4 snap-none space-x-4">
-      <div className="flex gap-4 schedule-scroll-left">
-        <CarouselItems />
-        {innerWidth < 896 && <CarouselItems />}
-      </div>
+    <div className="carousel max-w-min mx-auto overflow-hidden p-4 schedule-scroll-left snap-none space-x-4 w-full">
+      <CarouselItems />
+      {innerWidth < 896 && <CarouselItems />}
     </div>
   )
 
@@ -124,8 +122,8 @@ export function PlanCarousel({
 
 export function ReviewCarousel(): React.JSX.Element {
   return (
-    <div className="carousel max-w-screen snap-none space-x-4 p-4">
-      <div className="flex gap-4 review-scroll-left">
+    <div className="carousel overflow-hidden p-4 review-scroll-left snap-none space-x-4">
+      <div className="flex gap-4">
         <CarouselItems />
         <CarouselItems />
       </div>

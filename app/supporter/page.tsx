@@ -2,6 +2,7 @@ import { SlideUp } from "@/app/components/animation/slideUp"
 import { Heading } from "@/app/components/layout/heading"
 import { Purpose } from "@/app/components/text/purpose"
 import { SUPPORTER, supporters } from "@/app/lib/constant"
+import { cloudfrontLoader } from "@/app/lib/loader"
 import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
@@ -17,6 +18,7 @@ export default function Supporter(): React.JSX.Element {
           className="bg-base-200 gap-1 grid grid-cols-3 items-center min-h-32 p-4 rounded-box shadow-lg sm:grid-cols-2"
         >
           <Image
+            loader={cloudfrontLoader}
             src={item.src}
             width={1000}
             height={1000}

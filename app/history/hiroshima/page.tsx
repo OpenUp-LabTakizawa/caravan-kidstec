@@ -8,7 +8,7 @@ export default function History(): React.JSX.Element {
   return (
     <>
       <Heading navigation={HISTORY} content={HIROSHIMA} />
-      <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
+      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
     </>
   )
 }

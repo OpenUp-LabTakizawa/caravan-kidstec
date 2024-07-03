@@ -1,5 +1,6 @@
 import { HiroshimaPartners, TokyoChibaPartners } from "@/app/lib/constant"
 import { TOKYO_CHIBA } from "@/app/lib/constant"
+import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
@@ -18,6 +19,7 @@ export function Partner({
           className="bg-base-200 gap-2 grid items-center text-center p-4 rounded-box shadow-lg"
         >
           <Image
+            loader={cloudfrontLoader}
             src={item.src}
             width={1000}
             height={1000}

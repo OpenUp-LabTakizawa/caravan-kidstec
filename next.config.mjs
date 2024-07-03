@@ -6,7 +6,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "caravan-kidstec.s3.ap-northeast-1.amazonaws.com",
+        hostname: "dk75m1tgsot44.cloudfront.net",
         port: "",
         pathname: "**",
       },

@@ -35,7 +35,7 @@ export function Header(): React.JSX.Element {
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost w-fit tilt-shaking">
           <Image
-            src="/caravan-kidstec_logo_line.webp"
+            src="/caravan-kidstec_logo_line.avif"
             width={200}
             height={200}
             alt={SITE_TITLE}

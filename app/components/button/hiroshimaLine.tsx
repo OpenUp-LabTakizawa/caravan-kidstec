@@ -7,7 +7,7 @@ export function HiroshimaLine(): React.JSX.Element {
   return (
     <Link href={HIROSHIMA_LINE_LINK} className="w-fit mx-auto">
       <Image
-        src="/line_add_friends.webp"
+        src="/line_add_friends.avif"
         width={232}
         height={72}
         alt="友だち追加"

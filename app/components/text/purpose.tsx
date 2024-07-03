@@ -5,7 +5,7 @@ export function Purpose(): React.JSX.Element {
   return (
     <section className="hero text-sm max-h-min">
       <Image
-        src="/handshake.webp"
+        src="/handshake.avif"
         alt="handshake"
         width={1000}
         height={1000}

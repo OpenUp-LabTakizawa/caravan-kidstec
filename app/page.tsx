@@ -21,7 +21,7 @@ export default function Home(): React.JSX.Element {
       <section className="p-4 text-center">
         <SlideUp className="pb-4">
           <Image
-            src="/caravan-kidstec_logo_line.webp"
+            src="/caravan-kidstec_logo_line.avif"
             width={1000}
             height={1000}
             alt="こどもテックキャラバン"

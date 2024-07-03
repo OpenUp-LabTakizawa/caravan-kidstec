@@ -1,7 +1,9 @@
 <p align="center">
   <a href="https://caravan-kidstec.com/">
     <picture>
-      <source srcset="./public/caravan-kidstec_logo.webp" media="(max-width: 600px)" height="128">
+      <source srcset="./public/caravan-kidstec_logo.avif" media="(max-width: 600px)" height="128" type="image/avif">
+      <source srcset="./public/caravan-kidstec_logo.webp" media="(max-width: 600px)" height="128" type="image/webp">
+      <source srcset="./public/caravan-kidstec_logo.avif" height="256" type="image/avif">
       <img src="./public/caravan-kidstec_logo.webp" alt="caravan-kidstec_logo" height="256">
     </picture>
     <h1 align="center">caravan-kidstec</h1>

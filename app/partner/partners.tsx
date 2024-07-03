@@ -38,7 +38,7 @@ export function Partners({
               )}
             </h2>
             <div
-              className={`grid items-center my-auto ${partners[0].name === "BPL Inc." ? "h-40" : "h-30"}`}
+              className={`grid items-center my-auto ${partners[0].name === "BPL Inc." ? "h-30" : "h-40"}`}
             >
               <p className="whitespace-pre">{item.introduction}</p>
             </div>

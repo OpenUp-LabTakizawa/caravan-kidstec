@@ -14,25 +14,25 @@
   animation: fade-in-up 1.5s;
 }
 
-.schedule-scroll-left {
+.schedule-scroll-left .carousel-item {
   animation: schedule-scroll-left 20s linear infinite;
 }
 
+.schedule-scroll-left:hover .carousel-item {
+  animation-play-state: paused;
+}
+
 @media (min-width: 896px) {
-  .schedule-scroll-left {
+  .schedule-scroll-left .carousel-item {
     animation: none;
   }
 }
 
-.schedule-scroll-left:hover {
-  animation-play-state: paused;
-}
-
-.review-scroll-left {
+.review-scroll-left .carousel-item {
   animation: review-scroll-left 80s linear infinite;
 }
 
-.review-scroll-left:hover {
+.review-scroll-left:hover .carousel-item {
   animation-play-state: paused;
 }
 

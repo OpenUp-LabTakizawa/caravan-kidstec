@@ -19,7 +19,7 @@ export default function Chiba(): React.JSX.Element {
       <Heading navigation={AREA} content={TOKYO_CHIBA} />
       <section className="grid gap-4">
         <Image
-          src={"/202409_chiba.webp"}
+          src={"/202409_chiba.avif"}
           width={1000}
           height={1000}
           alt="こどもテックキャラバン"

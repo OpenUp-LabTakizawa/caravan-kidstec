@@ -34,7 +34,7 @@ export default function Supporter(): React.JSX.Element {
               {item.business}
             </p>
             <p className="font-bold text-info">
-              <SlideUp className="whitespace-pre sm:whitespace-normal">
+              <SlideUp className="whitespace-pre lg:whitespace-normal">
                 {item.purpose}
               </SlideUp>
             </p>

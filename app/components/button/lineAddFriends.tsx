@@ -1,11 +1,12 @@
-import { HIROSHIMA_LINE_LINK } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 
-export function HiroshimaLine(): React.JSX.Element {
+export function LineAddFriends({
+  linkLink,
+}: { linkLink: string }): React.JSX.Element {
   return (
-    <Link href={HIROSHIMA_LINE_LINK} className="w-fit mx-auto">
+    <Link href={linkLink} className="w-fit mx-auto">
       <Image
         src="/line_add_friends.avif"
         width={232}

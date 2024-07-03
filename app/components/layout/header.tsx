@@ -1,7 +1,6 @@
 "use client"
 
-import { navigation } from "@/app/lib/constant"
-import { SITE_TITLE } from "@/app/lib/constant"
+import { SITE_TITLE, navigation } from "@/app/lib/constant"
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"

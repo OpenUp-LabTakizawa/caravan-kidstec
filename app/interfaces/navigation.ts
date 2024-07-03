@@ -8,6 +8,13 @@ export type Navigation = {
   content?: Content[]
 }
 
+export type NavigationSquare = {
+  name: string
+  icon: string | React.ElementType
+  color: string
+  href: string
+}
+
 export type Content = {
   name: string
   href: string

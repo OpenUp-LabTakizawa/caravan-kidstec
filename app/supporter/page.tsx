@@ -1,14 +1,39 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
 import { Heading } from "@/app/components/layout/heading"
 import { Purpose } from "@/app/components/text/purpose"
-import { SUPPORTER, supporters } from "@/app/lib/constant"
+import type { Supporter } from "@/app/interfaces/supporter"
+import { SUPPORTER } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 
-export default function Supporter(): React.JSX.Element {
+export default function SupporterPage(): React.JSX.Element {
+  const supporters: Supporter[] = [
+    {
+      name: "ICHI COMMONS株式会社",
+      href: "https://ichicommons.com/",
+      src: "/logo/ichicommons_logo.svg",
+      business: "社会課題解決への\nインフラ事業",
+      purpose: "サステナビリティ活動で\n企業も、社会も持続可能に",
+    },
+    {
+      name: "株式会社オープンアップグループ",
+      href: "https://www.openupgroup.co.jp/",
+      src: "/logo/openup_logo.svg",
+      business: "エンジニア派遣事業",
+      purpose: "幸せな仕事を通じて\nひとりひとりの可能性を\nひらく社会に",
+    },
+    {
+      name: "株式会社テイクアンドギヴ・ニーズ",
+      href: "https://www.tgn.co.jp/",
+      src: "/logo/take_and_give_needs_logo.svg",
+      business: "ホテルウェディング事業",
+      purpose: "ホスピタリティ業界に\nイノベーションを起こし\n日本を躍動させる",
+    },
+  ] as const
+
   return (
     <article className="grid gap-6 p-4">
       <Heading navigation={SUPPORTER} />

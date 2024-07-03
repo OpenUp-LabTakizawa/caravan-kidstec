@@ -1,16 +1,12 @@
-import { HiroshimaPartners, TokyoChibaPartners } from "@/app/lib/constant"
-import { TOKYO_CHIBA } from "@/app/lib/constant"
+import type { Partner } from "@/app/interfaces/partner"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 
-export function Partner({
-  area,
-}: Readonly<{ area: string }>): React.JSX.Element {
-  const partners =
-    area === TOKYO_CHIBA.name ? TokyoChibaPartners : HiroshimaPartners
-
+export function Partners({
+  partners,
+}: Readonly<{ partners: Partner[] }>): React.JSX.Element {
   return (
     <section className="grid gap-6 text-xs max-w-96 mx-auto">
       {partners.map((item) => (
@@ -42,7 +38,7 @@ export function Partner({
               )}
             </h2>
             <div
-              className={`grid items-center my-auto ${area === "TokyoChiba" ? "h-40" : "h-30"}`}
+              className={`grid items-center my-auto ${partners[0].name === "BPL Inc." ? "h-40" : "h-30"}`}
             >
               <p className="whitespace-pre">{item.introduction}</p>
             </div>

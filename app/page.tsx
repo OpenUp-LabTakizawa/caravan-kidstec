@@ -1,19 +1,63 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
-import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
+import { Carousel } from "@/app/components/layout/carousel"
+import { Video } from "@/app/components/media/video"
+import type { Picture } from "@/app/interfaces/picture"
+import type { Review } from "@/app/interfaces/review"
+import { AREA, TOKYO_CHIBA, TokyoChibaEvents } from "@/app/lib/constant"
+import { cloudfrontLoader } from "@/app/lib/loader"
+import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/outline"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
-import { PanelTile } from "./components/layout/panelTile"
-import { Video } from "./components/media/video"
-import {
-  AREA,
-  NaturePanelItems,
-  TOKYO_CHIBA,
-  TechPanelItems,
-} from "./lib/constant"
 
 export default function Home(): React.JSX.Element {
+  const techPictures: Picture[] = [
+    {
+      alt: "兄弟で楽しくプログラミング",
+      src: "/202311/sandankyo/brothers.avif",
+    },
+    {
+      alt: "はんだ付けに集中",
+      src: "/202307/eda_island/soldering.avif",
+    },
+    {
+      alt: "黒画面と格闘中…",
+      src: "/202307/sandankyo/basic_programming.avif",
+    },
+    {
+      alt: "サポーターと一緒に勉強",
+      src: "/202311/sandankyo/pointing_out.avif",
+    },
+    {
+      alt: "自分のロボットにピース",
+      src: "/202311/sandankyo/peace_sign.avif",
+    },
+  ] as const
+
+  const naturePictures: Picture[] = [
+    {
+      alt: "SUP",
+      src: "/202307/eda_island/mega_sap_group.avif",
+    },
+    {
+      alt: "オリーブオイル手作り体験",
+      src: "/202311/eda_island/olive_pouring.avif",
+    },
+    {
+      alt: "綺麗な落ち葉",
+      src: "/202311/sandankyo/wrapping_a_leaf.avif",
+    },
+    {
+      alt: "メモ",
+      src: "/202307/sandankyo/writing.avif",
+    },
+    {
+      alt: "ブーケ作り",
+      src: "/202311/wedding/flower_arrangement.avif",
+    },
+  ] as const
+
   return (
     <article className="grid gap-6 pb-4 text-base text-center">
       {/* <Banner /> */}
@@ -78,9 +122,14 @@ export default function Home(): React.JSX.Element {
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <p className="font-semibold">
           2024年<span className="text-xl">9</span>月
-          <span className="text-xl">14</span>日・
-          <span className="text-xl">21</span>日・
-          <span className="text-xl">22</span>日、
+          {TokyoChibaEvents.map((event, index) => (
+            <>
+              <span key={event.venue.name} className="text-xl">
+                {event.date.day}
+              </span>
+              {index === TokyoChibaEvents.length - 1 ? "、" : "・"}
+            </>
+          ))}
           <br />
           <span className="text-lg text-rose-400">{TOKYO_CHIBA.name}</span>
           で開催決定！
@@ -96,19 +145,141 @@ export default function Home(): React.JSX.Element {
         <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-3xl text-orange-400">
           プログラミング体験
         </h2>
-        <PanelTile panelItems={TechPanelItems} />
+        <PanelTile pictures={techPictures} />
       </section>
       <section className="grid grid-cols-2 gap-4">
         <h2 className="col-span-2 font-bold font-zenMaruGothic text-3xl text-teal-400">
           自然学習
         </h2>
-        <PanelTile panelItems={NaturePanelItems} />
+        <PanelTile pictures={naturePictures} />
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
+      {/* <section className="grid grid-cols-2 gap-4">
+        <div>
+          <Image
+            src="/caravan-kidstec_logo_line.avif"
+            width={1000}
+            height={1000}
+            alt="こどもテックキャラバン"
+            className="w-full"
+          />
+        </div>
+      </section> */}
     </article>
+  )
+}
+
+function ReviewCarousel(): React.JSX.Element {
+  return (
+    <div className="carousel overflow-hidden p-4 review-scroll-left snap-none space-x-4">
+      <div className="flex gap-4">
+        <Reviews />
+        <Reviews />
+      </div>
+    </div>
+  )
+
+  function Reviews(): React.JSX.Element {
+    const reviews: Review[] = [
+      {
+        description:
+          "ロボットを使った\nプログラミングは、\n子供の興味を惹いて\nとても楽しそうでした。\n\nプログラミングだけでなく\nロボット作成やハンダ付けも\n楽しかったみたいです。\n\n自分一人で作成する\n達成感が味わえる講習が\n良かったのだと思いました。",
+        areaAndUser: "第1回 広島 小4",
+      },
+      {
+        description:
+          "プログラミング教育が\n小学校で必修となりましたが、\n学校の授業では体験できない\nプログラミングを楽しく学び、\n海・山での自然も同時に\n体験できたことは、\n子供の良い思い出、\n貴重な体験となりました。\nこの夏で子供が少し\n成長できたところを\n身近で見ることができたのは\n親にとっても貴重な体験でした。",
+        areaAndUser: "第1回 広島 小5",
+      },
+      {
+        description:
+          "プログラミングも\nアクティビティも\n本格的で期待以上でした。\n\nとても良かったので\n他の子にも\n体験させてあげたい。\n\n広島育ちですが、\n江田島、三段峡どちらも\nいったことがなかったので、\n行けて良かったです。",
+        areaAndUser: "第2回 広島 小5",
+      },
+      {
+        description:
+          "上の子はより\n色々な経験を通して\n自信をもって\n社会と関わりを\n持っていけると感じた。\n\n下の子も新たに興味を\n持てたことがあったり、\n色々な経験が\nできてよかった。",
+        areaAndUser: "第2回 広島 小5、小6",
+      },
+      {
+        description:
+          "子どもも親も\n色々な経験、\n体験をすることが出来て、\n楽しかったです！！\n\n多くの子供たちに\nこういった体験が\nできることを\n願っています。",
+        areaAndUser: "第2回 広島 小6",
+      },
+      {
+        description:
+          "ロボサバスタッフや\n広島大学の学生などと\n色々なお話ができて\n子供たちも良い刺激に\nなったようです。\n\n子供たちの興味が\n広がって良い体験が\nできたと思います。",
+        areaAndUser: "第2回 広島 小5、中1",
+      },
+      {
+        description:
+          "とても有意義な\n体験でした。\n子供だけでなく、\n親も満足できるという、\n他のイベントでは\n経験したことのない\nイベントでした。\n\n次回も是非是非\n参加させて\n頂きたいです。",
+        areaAndUser: "第3回 広島 小4",
+      },
+      {
+        description:
+          "縁あって\n参加させていただき、\n沢山の経験を\n得ることが出来ました。\n\n学校でははみ出し気味の\n子供が、楽しそうに\n取り組んでいて、\n親としては\n嬉しく見守りました。\n\nありがとうございました。",
+        areaAndUser: "第3回 広島 小5",
+      },
+      {
+        description:
+          "至れり尽くせりで\n大変驚きました。\n子供だけでなく、\n親も色々と\n学ばせてもらえて\nありがたかったです。\nスタッフの方々が、\n生き生きされて\nいたのが印象的で、\n今回のイベントに\n子どもを参加させて\nよかったです。",
+        areaAndUser: "第3回 広島 小4、小6",
+      },
+      {
+        description:
+          "子供たち二人共、\nとても充実した\n3日間を過ごせました。\n\nまた次回も\nチャレンジしたいと\n思います！",
+        areaAndUser: "第3回 広島 小4、中2",
+      },
+    ] as const
+
+    return (
+      <>
+        {reviews.map((item) => (
+          <div key={item.description} className="carousel-item rounded-box">
+            <div className="bg-amber-50 card shadow-lg w-56">
+              <div className="card-body p-2">
+                <p className="text-sm whitespace-pre">{item.description}</p>
+                <p className="flex items-center justify-center text-sm whitespace-pre">
+                  <ChatBubbleOvalLeftEllipsisIcon className="text-info size-6 mr-1" />
+                  {item.areaAndUser}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </>
+    )
+  }
+}
+
+function PanelTile({
+  pictures,
+}: Readonly<{ pictures: Picture[] }>): React.JSX.Element {
+  return (
+    <>
+      {pictures.map((item, index) => (
+        <figure
+          key={item.alt}
+          className={`w-full${index === 0 ? " col-span-2" : ""}`}
+        >
+          <Image
+            loader={cloudfrontLoader}
+            src={item.src}
+            height={1000}
+            width={1000}
+            alt={item.alt}
+            className={`object-contain w-full${index !== 0 ? " aspect-square object-cover" : ""}`}
+          />
+          <figcaption className="bg-base-200 font-bold py-1 text-center">
+            {item.alt}
+          </figcaption>
+        </figure>
+      ))}
+    </>
   )
 }

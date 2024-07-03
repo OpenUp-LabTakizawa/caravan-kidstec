@@ -1,14 +1,40 @@
 "use client"
 
-import type { ScheduleCarousel } from "@/app/interfaces/carousel"
-import { carouselItems, reviewCarouselItems } from "@/app/lib/constant"
+import type { Picture } from "@/app/interfaces/picture"
+import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
-import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
 
 export function Carousel(): React.JSX.Element {
+  const pictures: Picture[] = [
+    {
+      alt: "プログラミング体験",
+      src: "/202307/sandankyo/basic_programming.avif",
+    },
+    {
+      alt: "サップ体験",
+      src: "/202307/eda_island/sea_circle.avif",
+    },
+    {
+      alt: "オリーブ体験",
+      src: "/202311/eda_island/olive_smile.avif",
+    },
+    {
+      alt: "自然学習",
+      src: "/202311/sandankyo/check_a_leaf.avif",
+    },
+    {
+      alt: "ブーケ作成",
+      src: "/202311/wedding/flower_arrangement.avif",
+    },
+    {
+      alt: "結婚式体験",
+      src: "/202311/wedding/wedding_bouquet.avif",
+    },
+  ] as const
+
   const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
   const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
   let slide = 0
@@ -23,7 +49,7 @@ export function Carousel(): React.JSX.Element {
       if (scrollWidth <= slide) {
         slide = 0
       } else {
-        slide += scrollWidth / carouselItems.length
+        slide += scrollWidth / pictures.length
       }
       carousel.scrollLeft = slide
     }, 3000)
@@ -38,7 +64,7 @@ export function Carousel(): React.JSX.Element {
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
       >
-        {carouselItems.map((item) => (
+        {pictures.map((item) => (
           <Image
             key={item.alt}
             loader={cloudfrontLoader}
@@ -55,9 +81,9 @@ export function Carousel(): React.JSX.Element {
   )
 }
 
-export function PlanCarousel({
-  carouselItems,
-}: Readonly<{ carouselItems: ScheduleCarousel[] }>): React.JSX.Element {
+export function ScheduleCarousel({
+  schedules,
+}: Readonly<{ schedules: Schedule[] }>): React.JSX.Element {
   const [innerWidth, setInnerWidth] = useState<number>(0)
 
   if (typeof window !== "undefined") {
@@ -72,15 +98,15 @@ export function PlanCarousel({
 
   return (
     <div className="carousel max-w-min mx-auto overflow-hidden p-4 schedule-scroll-left snap-none space-x-4 w-full">
-      <CarouselItems />
-      {innerWidth < 896 && <CarouselItems />}
+      <Schedules />
+      {innerWidth < 896 && <Schedules />}
     </div>
   )
 
-  function CarouselItems(): React.JSX.Element {
+  function Schedules(): React.JSX.Element {
     return (
       <>
-        {carouselItems.map((item, index) => (
+        {schedules.map((item, index) => (
           <div key={item.alt} className="carousel-item rounded-box w-72">
             <div className="card shadow-lg">
               <Image
@@ -111,37 +137,6 @@ export function PlanCarousel({
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </>
-    )
-  }
-}
-
-export function ReviewCarousel(): React.JSX.Element {
-  return (
-    <div className="carousel overflow-hidden p-4 review-scroll-left snap-none space-x-4">
-      <div className="flex gap-4">
-        <CarouselItems />
-        <CarouselItems />
-      </div>
-    </div>
-  )
-
-  function CarouselItems(): React.JSX.Element {
-    return (
-      <>
-        {reviewCarouselItems.map((item) => (
-          <div key={item.description} className="carousel-item rounded-box">
-            <div className="bg-amber-50 card shadow-lg w-56">
-              <div className="card-body p-2">
-                <p className="text-sm whitespace-pre">{item.description}</p>
-                <p className="flex items-center justify-center text-sm whitespace-pre">
-                  <ChatBubbleOvalLeftEllipsisIcon className="text-info size-6 mr-1" />
-                  {item.areaAndUser}
-                </p>
               </div>
             </div>
           </div>

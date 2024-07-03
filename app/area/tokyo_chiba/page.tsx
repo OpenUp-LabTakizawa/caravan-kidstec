@@ -76,7 +76,7 @@ export default function Chiba(): React.JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <PlanCarousel carouselItems={TokyoChibaCarouselItems} />
       </section>
-      <Video src="https://caravan-kidstec.s3.ap-northeast-1.amazonaws.com/movie/202312" />
+      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
     </>
   )
 }

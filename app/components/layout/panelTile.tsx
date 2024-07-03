@@ -1,4 +1,5 @@
 import type { Panel } from "@/app/interfaces/panel"
+import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import type React from "react"
 
@@ -13,6 +14,7 @@ export function PanelTile({
           className={`w-full${index === 0 ? " col-span-2" : ""}`}
         >
           <Image
+            loader={cloudfrontLoader}
             src={item.src}
             height={1000}
             width={1000}

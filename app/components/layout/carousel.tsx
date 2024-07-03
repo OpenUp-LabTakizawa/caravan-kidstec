@@ -2,6 +2,7 @@
 
 import type { ScheduleCarousel } from "@/app/interfaces/carousel"
 import { carouselItems, reviewCarouselItems } from "@/app/lib/constant"
+import { cloudfrontLoader } from "@/app/lib/loader"
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import type React from "react"
@@ -40,6 +41,7 @@ export function Carousel(): React.JSX.Element {
         {carouselItems.map((item) => (
           <Image
             key={item.alt}
+            loader={cloudfrontLoader}
             src={item.src}
             height={1000}
             width={1000}
@@ -84,6 +86,7 @@ export function PlanCarousel({
           <div key={item.alt} className="carousel-item rounded-box w-72">
             <div className="card shadow-lg">
               <Image
+                loader={cloudfrontLoader}
                 src={item.src}
                 width={1000}
                 height={1000}

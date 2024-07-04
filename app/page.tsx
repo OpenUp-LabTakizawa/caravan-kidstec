@@ -3,7 +3,7 @@ import { Carousel } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
-import { AREA, TOKYO_CHIBA, TokyoChibaEvents } from "@/app/lib/constant"
+import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_SCHEDULES } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/outline"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
@@ -121,11 +121,12 @@ export default function Home(): React.JSX.Element {
       </section>
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <p className="font-semibold">
-          2024年<span className="text-xl">9</span>月
-          {TokyoChibaEvents.map((event, index) => (
-            <span key={event.venue.name}>
-              <span className="text-xl">{event.date.day}</span>日
-              {index === TokyoChibaEvents.length - 1 ? "、" : "・"}
+          2024年
+          <span className="text-xl">{TOKYO_CHIBA_SCHEDULES[0].date[0]}</span>月
+          {TOKYO_CHIBA_SCHEDULES.map((schedule, index) => (
+            <span key={schedule.alt}>
+              <span className="text-xl">{schedule.date[1]}</span>日
+              {index === TOKYO_CHIBA_SCHEDULES.length - 1 ? "、" : "・"}
             </span>
           ))}
           <br />

@@ -3,6 +3,8 @@ export type Schedule = {
   src: string
   color: string
   title: string
-  date: string
+  date: [string, string, string]
+  venue: string
+  address: string
   tags: string[]
 }

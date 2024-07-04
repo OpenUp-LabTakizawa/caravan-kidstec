@@ -1,9 +1,9 @@
-import type { EventInfo } from "@/app/interfaces/eventInfo"
 import type {
   Content,
   Navigation,
   NavigationSquare,
 } from "@/app/interfaces/navigation"
+import type { Schedule } from "@/app/interfaces/schedule"
 import {
   GlobeAsiaAustraliaIcon,
   HeartIcon,
@@ -94,38 +94,35 @@ export const squareNavigation: NavigationSquare[] = [
   },
 ] as const
 
-export const TokyoChibaEvents: EventInfo[] = [
+export const TOKYO_CHIBA_SCHEDULES: Schedule[] = [
   {
-    date: {
-      month: "9",
-      day: "14",
-      weekday: "土",
-    },
-    venue: {
-      name: "クルックフィールズ",
-      address: "千葉県木更津市矢那2503",
-    },
+    alt: "ロボット制作",
+    src: "/202311/sandankyo/brothers.avif",
+    color: "bg-teal-400",
+    title: "午前：ロボット制作\n午後：自然の循環",
+    date: ["9", "14", "土"],
+    venue: "クルックフィールズ",
+    address: "千葉県木更津市矢那2503",
+    tags: ["ロボット制作", "自然学習"],
   },
   {
-    date: {
-      month: "9",
-      day: "21",
-      weekday: "土",
-    },
-    venue: {
-      name: "東京虎ノ門グローバルスクエア",
-      address: "東京都港区虎ノ門1-3-1",
-    },
+    alt: "謎解き体験！",
+    src: "/content/rays-blog_girl.avif",
+    color: "bg-info",
+    title: "午前：プログラミング体験\n午後：謎解き体験！",
+    date: ["9", "21", "土"],
+    venue: "東京虎ノ門グローバルスクエア",
+    address: "東京都港区虎ノ門1-3-1",
+    tags: ["プログラミング", "情報教育"],
   },
   {
-    date: {
-      month: "9",
-      day: "22",
-      weekday: "日",
-    },
-    venue: {
-      name: "ヴィクトリアガーデン恵比寿迎賓館",
-      address: "東京都渋谷区恵比寿南1-14-20",
-    },
+    alt: "ロボサバ大会",
+    src: "/202307/final_stage/course_challenge.avif",
+    color: "bg-rose-400",
+    title: "午前：ロボサバ大会\n午後：結婚式体験",
+    date: ["9", "22", "日"],
+    venue: "ヴィクトリアガーデン恵比寿迎賓館",
+    address: "東京都渋谷区恵比寿南1-14-20",
+    tags: ["ロボサバ", "結婚式体験"],
   },
 ] as const

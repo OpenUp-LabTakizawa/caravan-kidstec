@@ -126,7 +126,10 @@ export function ScheduleCarousel({
                 <h3 className="card-title mx-auto text-lg whitespace-pre">
                   {item.title}
                 </h3>
-                <p className="font-semibold text-sm">{item.date}</p>
+                <p className="font-semibold text-sm">
+                  2024年{item.date[0]}月{item.date[1]}日({item.date[2]})
+                  10:00~17:00
+                </p>
                 <div className="card-actions justify-center">
                   {item.tags.map((tag) => (
                     <div

@@ -1,4 +1,4 @@
-# syntax=docker.io/docker/dockerfile-upstream:1.8.1-labs
+# syntax=docker.io/docker/dockerfile-upstream:1.9.0-rc1-labs
 FROM oven/bun:canary AS base
 WORKDIR /usr/src/app
 
@@ -12,8 +12,8 @@ COPY . .
 RUN bun test
 RUN bun run build
 
-FROM gcr.io/distroless/nodejs22-debian12:nonroot
-WORKDIR /app
+FROM oven/bun:distroless
+WORKDIR /usr/src/app
 COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.3 /lambda-adapter /opt/extensions/lambda-adapter
 
 COPY --from=builder /usr/src/app/public ./public
@@ -22,4 +22,4 @@ COPY --from=builder /usr/src/app/.next/static ./.next/static
 
 EXPOSE 3000
 ENV AWS_LWA_ENABLE_COMPRESSION=true AWS_LWA_INVOKE_MODE=response_stream HOSTNAME=0.0.0.0 PORT=3000
-CMD ["server.js"]
+ENTRYPOINT ["bun", "server.js"]

@@ -70,13 +70,13 @@ export const navigation: Navigation[] = [
 export const squareNavigation: NavigationSquare[] = [
   {
     name: TOKYO_CHIBA.name,
-    icon: "kai_icon.avif",
+    icon: "/miku_icon.avif",
     color: AREA.color,
     href: AREA.href + TOKYO_CHIBA.href,
   },
   {
     name: HIROSHIMA.name,
-    icon: "miku_icon.avif",
+    icon: "/kai_icon.avif",
     color: SUPPORTER.color,
     href: AREA.href + HIROSHIMA.href,
   },

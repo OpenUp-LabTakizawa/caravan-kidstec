@@ -1,21 +1,37 @@
+import { ScrollToTop } from "@/app/components/button/scrollToTop"
+import { Footer } from "@/app/components/layout/footer"
+import { Header } from "@/app/components/layout/header"
 import type { Metadata } from "next"
-import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from "next/font/google"
 import type React from "react"
-import { ScrollToTop } from "./components/button/scrollToTop"
-import { Footer } from "./components/layout/footer"
-import { Header } from "./components/layout/header"
 import "./globals.css"
-import { SITE_TITLE } from "./lib/constant"
+import { SITE_TITLE } from "@/app/lib/constant"
+import localFont from "next/font/local"
 
-const zenMaruGothic = Zen_Maru_Gothic({
-  weight: ["400", "700"],
-  subsets: ["latin"],
+const zenMaruGothic = localFont({
+  src: [
+    {
+      path: "./fonts/ZenMaruGothic-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "./fonts/ZenMaruGothic-Bold.ttf",
+      weight: "700",
+    },
+  ],
   variable: "--font-zen-maru-gothic",
 })
 
-const zenKakuGothicNew = Zen_Kaku_Gothic_New({
-  weight: ["400", "700"],
-  subsets: ["latin"],
+const zenKakuGothicNew = localFont({
+  src: [
+    {
+      path: "./fonts/ZenKakuGothicNew-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "./fonts/ZenKakuGothicNew-Bold.ttf",
+      weight: "700",
+    },
+  ],
   variable: "--font-zen-kaku-gothic-new",
 })
 

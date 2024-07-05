@@ -1,5 +1,6 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
 import { Carousel } from "@/app/components/layout/carousel"
+import { Navigation } from "@/app/components/layout/navigation"
 import { Video } from "@/app/components/media/video"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
@@ -14,47 +15,54 @@ import type React from "react"
 export default function Home(): React.JSX.Element {
   const techPictures: Picture[] = [
     {
-      alt: "兄弟で楽しくプログラミング",
-      src: "/202311/sandankyo/brothers.avif",
+      alt: "はじめてのはんだづけにどきどき",
+      src: "/202207/eda_island/soldering.avif",
     },
     {
-      alt: "はんだ付けに集中",
-      src: "/202307/eda_island/soldering.avif",
+      alt: "ロボット作りに挑戦！",
+      src: "/202311/eda_island/using_nipper.avif",
     },
     {
-      alt: "黒画面と格闘中…",
-      src: "/202307/sandankyo/basic_programming.avif",
-    },
-    {
-      alt: "サポーターと一緒に勉強",
-      src: "/202311/sandankyo/pointing_out.avif",
-    },
-    {
-      alt: "自分のロボットにピース",
+      alt: "自分で作ったロボットの完成！",
       src: "/202311/sandankyo/peace_sign.avif",
+    },
+    {
+      alt: "親子で協力しながらプログラミング！上手に動くかな？",
+      src: "/202311/wedding/mother_check.avif",
+    },
+    {
+      alt: "最終日のロボサバ大会！優勝目指そう！",
+      src: "/202311/wedding/switch_on.avif",
     },
   ] as const
 
   const naturePictures: Picture[] = [
     {
-      alt: "SUP",
+      alt: "マリンスポーツで楽しい思い出！",
       src: "/202307/eda_island/mega_sap_group.avif",
     },
     {
-      alt: "オリーブオイル手作り体験",
+      alt: "手作りのオリーブオイル、最初はまだ赤い！",
       src: "/202311/eda_island/olive_pouring.avif",
     },
     {
-      alt: "綺麗な落ち葉",
-      src: "/202311/sandankyo/wrapping_a_leaf.avif",
-    },
-    {
-      alt: "メモ",
+      alt: "三段峡の自然に興味津々！",
       src: "/202307/sandankyo/writing.avif",
     },
+  ] as const
+
+  const weddingPictures: Picture[] = [
     {
-      alt: "ブーケ作り",
-      src: "/202311/wedding/flower_arrangement.avif",
+      alt: "蝶ネクタイをつけて入場！素敵！",
+      src: "/202311/wedding/boys_march.avif",
+    },
+    {
+      alt: "ブーケで使うお花選び、どれにするか決まったかな？",
+      src: "/202311/wedding/select_flowers.avif",
+    },
+    {
+      alt: "ラッピングも自分で挑戦！",
+      src: "/202311/wedding/pouring_water.avif",
     },
   ] as const
 
@@ -152,22 +160,18 @@ export default function Home(): React.JSX.Element {
         </h2>
         <PanelTile pictures={naturePictures} />
       </section>
+      <section className="grid grid-cols-2 gap-4">
+        <h2 className="col-span-2 font-bold font-zenMaruGothic text-3xl text-rose-400">
+          結婚式体験
+        </h2>
+        <PanelTile pictures={weddingPictures} />
+      </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
-      {/* <section className="grid grid-cols-2 gap-4">
-        <div>
-          <Image
-            src="/caravan-kidstec_logo_line.avif"
-            width={1000}
-            height={1000}
-            alt="こどもテックキャラバン"
-            className="w-full"
-          />
-        </div>
-      </section> */}
+      <Navigation />
     </article>
   )
 }

@@ -36,6 +36,10 @@
   animation-play-state: paused;
 }
 
+.rotate-y {
+  animation: rotate-y 1.5s;
+}
+
 .scroll-up {
   animation: scroll-up 1.5s infinite;
 }
@@ -117,6 +121,15 @@
   }
   100% {
     transform: translateX(calc(-19rem * 10));
+  }
+}
+
+@keyframes rotate-y {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
   }
 }
 

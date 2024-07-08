@@ -10,7 +10,7 @@ export default function Hiroshima(): React.JSX.Element {
   const schedules: Schedule[] = [
     {
       alt: "はんだ付け",
-      src: "/202307/eda_island/soldering.avif",
+      src: "/202207/eda_island/soldering.avif",
       color: "bg-teal-400",
       title: "前半：ロボット制作\n後半：サマーキャンプ",
       date: ["7", "6", "土"],

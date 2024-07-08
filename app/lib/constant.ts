@@ -77,20 +77,20 @@ export const squareNavigation: NavigationSquare[] = [
   {
     name: HIROSHIMA.name,
     icon: "/kai_icon.avif",
-    color: SUPPORTER.color,
+    color: PARTNER.color,
     href: AREA.href + HIROSHIMA.href,
   },
   {
-    name: PARTNER.name,
-    icon: PARTNER.icon,
-    color: PARTNER.color,
-    href: PARTNER.href,
+    name: SUPPORTER.name,
+    icon: SUPPORTER.icon,
+    color: SUPPORTER.color,
+    href: SUPPORTER.href,
   },
   {
     name: FAQ.name,
     icon: CONTACT.icon,
     color: CONTACT.color,
-    href: FAQ.href,
+    href: CONTACT.href + FAQ.href,
   },
 ] as const
 

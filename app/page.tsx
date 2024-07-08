@@ -23,15 +23,15 @@ export default function Home(): React.JSX.Element {
       src: "/202311/eda_island/using_nipper.avif",
     },
     {
-      alt: "自分で作ったロボットの完成！",
+      alt: "自分で作った\nロボットの完成！",
       src: "/202311/sandankyo/peace_sign.avif",
     },
     {
-      alt: "親子で協力しながらプログラミング！上手に動くかな？",
+      alt: "親子で協力しながら\nプログラミング！\n上手に動くかな？",
       src: "/202311/wedding/mother_check.avif",
     },
     {
-      alt: "最終日のロボサバ大会！優勝目指そう！",
+      alt: "最終日のロボサバ大会！\n優勝目指そう！",
       src: "/202311/wedding/switch_on.avif",
     },
   ] as const
@@ -42,11 +42,11 @@ export default function Home(): React.JSX.Element {
       src: "/202307/eda_island/mega_sap_group.avif",
     },
     {
-      alt: "手作りのオリーブオイル、最初はまだ赤い！",
+      alt: "手作りのオリーブオイル、\n最初はまだ赤い！",
       src: "/202311/eda_island/olive_pouring.avif",
     },
     {
-      alt: "三段峡の自然に興味津々！",
+      alt: "三段峡の自然に\n興味津々！",
       src: "/202307/sandankyo/writing.avif",
     },
   ] as const
@@ -57,11 +57,11 @@ export default function Home(): React.JSX.Element {
       src: "/202311/wedding/boys_march.avif",
     },
     {
-      alt: "ブーケで使うお花選び、どれにするか決まったかな？",
+      alt: "ブーケで使うお花選び、\nどれにするか\n決まったかな？",
       src: "/202311/wedding/select_flowers.avif",
     },
     {
-      alt: "ラッピングも自分で挑戦！",
+      alt: "ラッピングも\n自分で挑戦！",
       src: "/202311/wedding/pouring_water.avif",
     },
   ] as const
@@ -176,6 +176,33 @@ export default function Home(): React.JSX.Element {
   )
 }
 
+function PanelTile({
+  pictures,
+}: Readonly<{ pictures: Picture[] }>): React.JSX.Element {
+  return (
+    <>
+      {pictures.map((item, index) => (
+        <figure
+          key={item.alt}
+          className={`w-full${index === 0 ? " col-span-2" : ""}`}
+        >
+          <Image
+            loader={cloudfrontLoader}
+            src={item.src}
+            height={1000}
+            width={1000}
+            alt={item.alt}
+            className={`object-contain w-full${index !== 0 ? " aspect-square object-cover" : ""}`}
+          />
+          <figcaption className="bg-base-200 font-bold py-1 text-center whitespace-pre">
+            {item.alt}
+          </figcaption>
+        </figure>
+      ))}
+    </>
+  )
+}
+
 function ReviewCarousel(): React.JSX.Element {
   return (
     <div className="carousel overflow-hidden p-4 review-scroll-left snap-none space-x-4">
@@ -258,31 +285,4 @@ function ReviewCarousel(): React.JSX.Element {
       </>
     )
   }
-}
-
-function PanelTile({
-  pictures,
-}: Readonly<{ pictures: Picture[] }>): React.JSX.Element {
-  return (
-    <>
-      {pictures.map((item, index) => (
-        <figure
-          key={item.alt}
-          className={`w-full${index === 0 ? " col-span-2" : ""}`}
-        >
-          <Image
-            loader={cloudfrontLoader}
-            src={item.src}
-            height={1000}
-            width={1000}
-            alt={item.alt}
-            className={`object-contain w-full${index !== 0 ? " aspect-square object-cover" : ""}`}
-          />
-          <figcaption className="bg-base-200 font-bold py-1 text-center">
-            {item.alt}
-          </figcaption>
-        </figure>
-      ))}
-    </>
-  )
 }

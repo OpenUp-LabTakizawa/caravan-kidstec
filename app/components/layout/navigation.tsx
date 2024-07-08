@@ -3,14 +3,14 @@
 import { squareNavigation } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
-import { type MutableRefObject, useEffect, useRef } from "react"
+import { type MutableRefObject, useLayoutEffect, useRef } from "react"
 
 export function Navigation() {
   const ref: MutableRefObject<Map<string, HTMLAnchorElement>> = useRef<
     Map<string, HTMLAnchorElement>
   >(new Map<string, HTMLAnchorElement>())
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window.IntersectionObserver) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {

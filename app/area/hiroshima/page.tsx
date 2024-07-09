@@ -21,7 +21,7 @@ export default function Hiroshima(): React.JSX.Element {
     {
       alt: "SUP体験",
       src: "/202307/eda_island/sup_on_the_sea.avif",
-      color: "bg-info",
+      color: "bg-sky-400",
       title: "前半：プログラミング体験\n後半：江田島の海でSUP体験",
       date: ["7", "13", "土"],
       venue: "能美市民センター",

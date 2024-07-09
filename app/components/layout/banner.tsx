@@ -6,12 +6,12 @@ export function Banner() {
   return (
     <Link
       href={AREA.href + TOKYO_CHIBA.href}
-      className="bg-info overflow-hidden"
+      className="bg-sky-400 overflow-hidden"
     >
       <p className="banner flex items-center text-nowrap">
         【新着情報】<strong className={AREA.color}>{TOKYO_CHIBA.name}</strong>
         エリアで募集中！
-        <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+        <ArrowTopRightOnSquareIcon className="size-5" />
       </p>
     </Link>
   )

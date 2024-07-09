@@ -60,7 +60,7 @@ export default function SupporterPage(): React.JSX.Element {
               <BuildingOffice2Icon className="size-5 mr-1" />
               {item.business}
             </p>
-            <p className="font-bold text-info">
+            <p className="font-bold text-sky-400">
               <SlideUp className="whitespace-pre lg:whitespace-normal">
                 {item.purpose}
               </SlideUp>

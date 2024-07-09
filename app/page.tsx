@@ -1,4 +1,5 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
+import { Banner } from "@/app/components/layout/banner"
 import { Carousel } from "@/app/components/layout/carousel"
 import { Navigation } from "@/app/components/layout/navigation"
 import { Video } from "@/app/components/media/video"
@@ -7,11 +8,11 @@ import type { Review } from "@/app/interfaces/review"
 import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_SCHEDULES } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import {
+  ArrowRightIcon,
   ChatBubbleOvalLeftEllipsisIcon,
   UserCircleIcon,
   UserIcon,
 } from "@heroicons/react/24/outline"
-import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
@@ -72,7 +73,7 @@ export default function Home(): React.JSX.Element {
 
   return (
     <article className="grid gap-6 pb-4 text-base text-center">
-      {/* <Banner /> */}
+      <Banner />
       <Carousel />
       <section className="p-4 text-center">
         <SlideUp className="pb-4">

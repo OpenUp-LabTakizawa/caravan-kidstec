@@ -102,7 +102,7 @@ export default function Home(): React.JSX.Element {
             <Link
               href="https://robosava.jp/"
               target="_blank"
-              className="link link-info"
+              className="link text-sky-400"
             >
               ロボサバ大会
             </Link>

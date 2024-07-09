@@ -12,11 +12,15 @@ export function Heading({
       <Breadcrumb navigation={navigation} content={content} />
       <div className="max-w-fit mx-auto">
         {content && navigation.content?.includes(content) ? (
-          <h1 className={`font-bold typing text-4xl ${navigation.color}`}>
+          <h1
+            className={`font-bold font-zenMaruGothic typing text-4xl ${navigation.color}`}
+          >
             {content.name}
           </h1>
         ) : (
-          <h1 className={`font-bold typing text-4xl ${navigation.color}`}>
+          <h1
+            className={`font-bold font-zenMaruGothic typing text-4xl ${navigation.color}`}
+          >
             {navigation.name}
           </h1>
         )}
@@ -34,7 +38,7 @@ function Breadcrumb({
       <ul>
         <li>
           <Link href="/">
-            <HomeIcon className="size-5 mr-1 text-primary" />
+            <HomeIcon className="size-5 mr-1 text-sky-400" />
             ホーム
           </Link>
         </li>

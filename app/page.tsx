@@ -147,7 +147,7 @@ export default function Home(): React.JSX.Element {
           で開催決定！
         </p>
         <Link href={AREA.href + TOKYO_CHIBA.href}>
-          <button type="button" className="bg-info btn text-lg text-white">
+          <button type="button" className="bg-sky-400 btn text-lg text-white">
             内容・応募はこちら
             <ArrowRightIcon className="arrow-right size-5" />
           </button>
@@ -289,7 +289,7 @@ function ReviewCarousel(): React.JSX.Element {
               <div className="card-body p-2">
                 <p className="text-sm whitespace-pre">{item.description}</p>
                 <p className="flex items-center justify-center text-sm whitespace-pre">
-                  <ChatBubbleOvalLeftEllipsisIcon className="text-info size-6 mr-1" />
+                  <ChatBubbleOvalLeftEllipsisIcon className="text-sky-400 size-6 mr-1" />
                   {item.areaAndUser}
                 </p>
               </div>
@@ -363,7 +363,7 @@ function ReviewCarousel(): React.JSX.Element {
               <div className="card-body p-2">
                 <p className="text-sm whitespace-pre">{item.description}</p>
                 <p className="flex items-center justify-center text-sm whitespace-pre">
-                  <ChatBubbleOvalLeftEllipsisIcon className="text-info size-6 mr-1" />
+                  <ChatBubbleOvalLeftEllipsisIcon className="text-sky-400 size-6 mr-1" />
                   {item.areaAndUser}
                 </p>
               </div>

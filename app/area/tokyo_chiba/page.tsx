@@ -1,3 +1,4 @@
+import { SlideUp } from "@/app/components/animation/slideUp"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { Video } from "@/app/components/media/video"
@@ -7,7 +8,10 @@ import {
   TOKYO_CHIBA_LINE_LINK,
   TOKYO_CHIBA_SCHEDULES,
 } from "@/app/lib/constant"
-import { ArrowRightIcon } from "@heroicons/react/24/solid"
+import {
+  ArrowRightIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
@@ -34,7 +38,10 @@ export default function Chiba(): React.JSX.Element {
                 <p className="decoration-4 decoration-sky-400 underline">
                   2024年
                   <span className="font-bold text-2xl">{item.date[0]}</span>月
-                  <span className="font-bold text-2xl">{item.date[1]}</span>日(
+                  <SlideUp className="decoration-4 decoration-sky-400 font-bold text-2xl underline">
+                    {item.date[1]}
+                  </SlideUp>
+                  日(
                   <span className="font-bold text-xl">{item.date[2]}</span>)
                 </p>
                 <div className="flex gap-2 items-center mx-auto">
@@ -72,6 +79,19 @@ export default function Chiba(): React.JSX.Element {
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleCarousel schedules={TOKYO_CHIBA_SCHEDULES} />
+      </section>
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
+        <div className="alert bg-sky-400 gap-1 grid grid-rows-2 grid-flow-col justify-items-center max-w-fit mx-auto shadow-lg text-base">
+          <InformationCircleIcon className="row-span-2 size-10" />
+          <p>
+            <span className="decoration-4 decoration-orange-400 font-bold underline">
+              募集は先着順
+            </span>
+            になります。
+          </p>
+          <p>定員に達し次第、募集を終了します。</p>
+        </div>
       </section>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
     </>

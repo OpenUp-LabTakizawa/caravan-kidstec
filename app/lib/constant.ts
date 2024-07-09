@@ -54,7 +54,7 @@ export const PARTNER: Navigation = {
 export const CONTACT: Navigation = {
   name: "お問い合わせ",
   icon: QuestionMarkCircleIcon,
-  color: "text-info",
+  color: "text-sky-400",
   href: "/contact",
   content: [FAQ, PRIVACY_POLICY],
 }
@@ -108,7 +108,7 @@ export const TOKYO_CHIBA_SCHEDULES: Schedule[] = [
   {
     alt: "謎解き体験！",
     src: "/content/rays-blog_girl.avif",
-    color: "bg-info",
+    color: "bg-sky-400",
     title: "午前：プログラミング体験\n午後：謎解き体験！",
     date: ["9", "21", "土"],
     venue: "東京虎ノ門グローバルスクエア",

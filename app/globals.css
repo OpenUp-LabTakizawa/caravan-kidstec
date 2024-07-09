@@ -6,6 +6,10 @@
   animation: arrow-right 1.5s infinite;
 }
 
+.banner {
+  animation: banner 10s linear infinite;
+}
+
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }
@@ -71,6 +75,15 @@
   }
   20% {
     transform: translatex(8px);
+  }
+}
+
+@keyframes banner {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 

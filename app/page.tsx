@@ -24,7 +24,7 @@ export default function Home(): React.JSX.Element {
       src: "/202207/eda_island/soldering.avif",
     },
     {
-      alt: "ロボット作りに挑戦！",
+      alt: "ロボット作りに挑戦！\n\n",
       src: "/202311/eda_island/using_nipper.avif",
     },
     {
@@ -36,7 +36,7 @@ export default function Home(): React.JSX.Element {
       src: "/202311/wedding/mother_check.avif",
     },
     {
-      alt: "最終日のロボサバ大会！\n優勝目指そう！",
+      alt: "最終日のロボサバ大会！\n優勝目指そう！\n\n",
       src: "/202311/wedding/switch_on.avif",
     },
   ] as const
@@ -66,7 +66,7 @@ export default function Home(): React.JSX.Element {
       src: "/202311/wedding/select_flowers.avif",
     },
     {
-      alt: "ラッピングも\n自分で挑戦！",
+      alt: "ラッピングも\n自分で挑戦！\n\n",
       src: "/202311/wedding/pouring_water.avif",
     },
   ] as const
@@ -187,19 +187,16 @@ function PanelTile({
   return (
     <>
       {pictures.map((item, index) => (
-        <figure
-          key={item.alt}
-          className={`w-full${index === 0 ? " col-span-2" : ""}`}
-        >
+        <figure key={item.alt} className={`${index === 0 ? "col-span-2" : ""}`}>
           <Image
             loader={cloudfrontLoader}
             src={item.src}
             height={1000}
             width={1000}
             alt={item.alt}
-            className={`object-contain w-full${index !== 0 ? " aspect-square object-cover" : ""}`}
+            className="w-full"
           />
-          <figcaption className="bg-base-200 font-bold py-1 text-center whitespace-pre">
+          <figcaption className="bg-amber-50 font-bold self-stretch text-center whitespace-pre">
             {item.alt}
           </figcaption>
         </figure>

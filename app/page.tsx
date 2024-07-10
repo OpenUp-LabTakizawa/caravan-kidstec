@@ -3,7 +3,7 @@ import { Banner } from "@/app/components/layout/banner"
 import { Carousel } from "@/app/components/layout/carousel"
 import { Navigation } from "@/app/components/layout/navigation"
 import { Video } from "@/app/components/media/video"
-import type { Picture } from "@/app/interfaces/picture"
+import type { Panel } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
 import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_SCHEDULES } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
@@ -18,14 +18,15 @@ import Link from "next/link"
 import type React from "react"
 
 export default function Home(): React.JSX.Element {
-  const techPictures: Picture[] = [
+  const techPanels: Panel[] = [
     {
       alt: "はじめてのはんだづけにどきどき",
       src: "/202207/eda_island/soldering.avif",
     },
     {
-      alt: "ロボット作りに挑戦！\n\n",
+      alt: "ロボット作りに挑戦！",
       src: "/202311/eda_island/using_nipper.avif",
+      height: "h-12",
     },
     {
       alt: "自分で作った\nロボットの完成！",
@@ -34,14 +35,16 @@ export default function Home(): React.JSX.Element {
     {
       alt: "親子で協力しながら\nプログラミング！\n上手に動くかな？",
       src: "/202311/wedding/mother_check.avif",
+      height: "h-20",
     },
     {
-      alt: "最終日のロボサバ大会！\n優勝目指そう！\n\n",
+      alt: "最終日のロボサバ大会！\n優勝目指そう！",
       src: "/202311/wedding/switch_on.avif",
+      height: "h-20",
     },
   ] as const
 
-  const naturePictures: Picture[] = [
+  const naturePanels: Panel[] = [
     {
       alt: "マリンスポーツで楽しい思い出！",
       src: "/202307/eda_island/mega_sap_group.avif",
@@ -56,7 +59,7 @@ export default function Home(): React.JSX.Element {
     },
   ] as const
 
-  const weddingPictures: Picture[] = [
+  const weddingPanels: Panel[] = [
     {
       alt: "蝶ネクタイをつけて入場！　素敵！",
       src: "/202311/wedding/boys_march.avif",
@@ -64,10 +67,12 @@ export default function Home(): React.JSX.Element {
     {
       alt: "ブーケで使うお花選び、\nどれにするか\n決まったかな？",
       src: "/202311/wedding/select_flowers.avif",
+      height: "h-20",
     },
     {
-      alt: "ラッピングも\n自分で挑戦！\n\n",
+      alt: "ラッピングも\n自分で挑戦！",
       src: "/202311/wedding/pouring_water.avif",
+      height: "h-20",
     },
   ] as const
 
@@ -157,19 +162,19 @@ export default function Home(): React.JSX.Element {
         <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-3xl text-orange-400">
           プログラミング体験
         </h2>
-        <PanelTile pictures={techPictures} />
+        <PanelTile panels={techPanels} />
       </section>
       <section className="grid grid-cols-2 gap-4">
         <h2 className="col-span-2 font-bold font-zenMaruGothic text-3xl text-teal-400">
           自然学習
         </h2>
-        <PanelTile pictures={naturePictures} />
+        <PanelTile panels={naturePanels} />
       </section>
       <section className="grid grid-cols-2 gap-4">
         <h2 className="col-span-2 font-bold font-zenMaruGothic text-3xl text-rose-400">
           結婚式体験
         </h2>
-        <PanelTile pictures={weddingPictures} />
+        <PanelTile panels={weddingPanels} />
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
@@ -182,11 +187,11 @@ export default function Home(): React.JSX.Element {
 }
 
 function PanelTile({
-  pictures,
-}: Readonly<{ pictures: Picture[] }>): React.JSX.Element {
+  panels,
+}: Readonly<{ panels: Panel[] }>): React.JSX.Element {
   return (
     <>
-      {pictures.map((item, index) => (
+      {panels.map((item, index) => (
         <figure key={item.alt} className={`${index === 0 ? "col-span-2" : ""}`}>
           <Image
             loader={cloudfrontLoader}
@@ -196,7 +201,9 @@ function PanelTile({
             alt={item.alt}
             className="w-full"
           />
-          <figcaption className="bg-amber-50 font-bold self-stretch text-center whitespace-pre">
+          <figcaption
+            className={`bg-amber-50 font-bold grid items-center text-center whitespace-pre${item.height ? ` ${item.height}` : ""}`}
+          >
             {item.alt}
           </figcaption>
         </figure>

@@ -1,4 +1,4 @@
-import { Purpose } from "@/app/components/text/purpose"
+import { Purpose } from "@/app/components/layout/purpose"
 import type React from "react"
 
 export default function PartnerLayout({

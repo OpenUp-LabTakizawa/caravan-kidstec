@@ -1,7 +1,9 @@
 import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
+import { Register } from "@/app/components/layout/register"
 import { Video } from "@/app/components/media/video"
+import type { Guideline } from "@/app/interfaces/guideline"
 import type { Schedule } from "@/app/interfaces/schedule"
 import { AREA, HIROSHIMA, HIROSHIMA_LINE_LINK } from "@/app/lib/constant"
 import type React from "react"
@@ -39,6 +41,10 @@ export default function Hiroshima(): React.JSX.Element {
       tags: ["ロボサバ", "結婚式体験"],
     },
   ] as const
+  const guideline: Guideline = {
+    participantsNumber: "１０組程",
+    deadline: "２０２４年６月２９日",
+  }
 
   return (
     <>
@@ -70,10 +76,6 @@ export default function Hiroshima(): React.JSX.Element {
           </ul>
         </div>
       </section>
-      <section className="grid gap-4">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
-        <ScheduleCarousel schedules={schedules} />
-      </section>
       <section>
         <div className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
           <p className="font-semibold">
@@ -84,6 +86,14 @@ export default function Hiroshima(): React.JSX.Element {
           <LineAddFriends linkLink={HIROSHIMA_LINE_LINK} />
         </div>
       </section>
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
+        <ScheduleCarousel schedules={schedules} />
+      </section>
+      <Register guideline={guideline} />
+      <div className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
+        <LineAddFriends linkLink={HIROSHIMA_LINE_LINK} />
+      </div>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
     </>
   )

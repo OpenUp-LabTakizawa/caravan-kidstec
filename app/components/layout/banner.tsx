@@ -32,25 +32,44 @@ export function Banner() {
     hoursRef.current.style.setProperty("--value", String(hoursCounter))
     minutesRef.current.style.setProperty("--value", String(minutesCounter))
     secondsRef.current.style.setProperty("--value", String(secondsCounter))
+    if (
+      secondsCounter === 0 &&
+      minutesCounter === 0 &&
+      hoursCounter === 0 &&
+      daysCounter === 0
+    ) {
+      return
+    }
 
     const interval = setInterval(() => {
-      secondsCounter = secondsCounter === 0 ? 60 : secondsCounter - 1
-      if (secondsCounter === 0 && 0 < minutesCounter) {
-        minutesCounter--
-      }
+      secondsCounter = secondsCounter === 0 ? 59 : secondsCounter - 1
       secondsRef.current.style.setProperty("--value", String(secondsCounter))
 
-      minutesCounter = minutesCounter < 0 ? 60 : minutesCounter
-      if (minutesCounter === 0 && 0 < hoursCounter) {
-        hoursCounter--
+      if (minutesCounter === 0 && hoursCounter === 0 && daysCounter === 0) {
+        return
       }
-      minutesRef.current.style.setProperty("--value", String(minutesCounter))
+      if (secondsCounter === 59) {
+        minutesCounter = minutesCounter === 0 ? 59 : minutesCounter - 1
+        minutesRef.current.style.setProperty("--value", String(minutesCounter))
+      }
 
-      hoursCounter = hoursCounter < 0 ? 24 : hoursCounter
-      if (hoursCounter === 0 && 0 < daysCounter) {
-        daysCounter--
+      if (hoursCounter === 0 && daysCounter === 0) {
+        return
       }
-      hoursRef.current.style.setProperty("--value", String(hoursCounter))
+      if (secondsCounter === 59 && minutesCounter === 59) {
+        hoursCounter = hoursCounter === 0 ? 23 : hoursCounter - 1
+        hoursRef.current.style.setProperty("--value", String(hoursCounter))
+      }
+
+      if (
+        secondsCounter === 59 &&
+        minutesCounter === 59 &&
+        hoursCounter === 23 &&
+        0 < daysCounter
+      ) {
+        daysCounter--
+        daysRef.current.style.setProperty("--value", String(daysCounter))
+      }
     }, 1000)
 
     return () => clearInterval(interval)

@@ -11,7 +11,6 @@ import {
   ArrowRightIcon,
   ChatBubbleOvalLeftEllipsisIcon,
   UserCircleIcon,
-  UserIcon,
 } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
@@ -363,7 +362,7 @@ function ReviewCarousel(): React.JSX.Element {
         {reviews.map((item) => (
           <div key={item.description} className="carousel-item rounded-box">
             <div className="bg-amber-50 card shadow-lg w-56 -z-20">
-              <UserIcon className="absolute size-full object-cover opacity-20 text-teal-400 -z-10" />
+              <UserCircleIcon className="absolute size-full object-cover opacity-20 text-teal-400 -z-10" />
               <div className="card-body p-2">
                 <p className="text-sm whitespace-pre">{item.description}</p>
                 <p className="flex items-center justify-center text-sm whitespace-pre">

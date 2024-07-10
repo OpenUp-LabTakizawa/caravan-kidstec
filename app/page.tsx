@@ -17,6 +17,7 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
+import { Navigation2 } from "./components/layout/navigation2"
 
 export default function Home(): React.JSX.Element {
   const techPanels: Panel[] = [
@@ -183,6 +184,7 @@ export default function Home(): React.JSX.Element {
       </section>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
       <Navigation />
+      <Navigation2 />
     </article>
   )
 }

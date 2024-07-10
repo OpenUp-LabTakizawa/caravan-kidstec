@@ -75,7 +75,7 @@ export function Banner() {
       </p>
       <div className="flex gap-5 mx-auto max-w-fit">
         <div>
-          残り
+          応募期限まで
           <span className="countdown font-mono mx-2 text-4xl">
             <span ref={daysRef} />
           </span>

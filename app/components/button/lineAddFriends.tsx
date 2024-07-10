@@ -12,7 +12,7 @@ export function LineAddFriends({
         width={232}
         height={72}
         alt="友だち追加"
-        className="border-0 w-auto"
+        className="border-0 shadow-lg w-auto"
       />
     </Link>
   )

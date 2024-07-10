@@ -4,7 +4,7 @@ import { HISTORY } from "@/app/lib/constant"
 import { HIROSHIMA } from "@/app/lib/constant"
 import type React from "react"
 
-export default function History(): React.JSX.Element {
+export default function Hiroshima(): React.JSX.Element {
   return (
     <>
       <Heading navigation={HISTORY} content={HIROSHIMA} />

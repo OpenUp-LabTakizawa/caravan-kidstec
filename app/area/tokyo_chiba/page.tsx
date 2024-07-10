@@ -157,8 +157,11 @@ export default function Chiba(): React.JSX.Element {
 
 function LineRegister(): React.JSX.Element {
   return (
-    <Link href={TOKYO_CHIBA_LINE_LINK}>
-      <button type="button" className="bg-[#00C300] btn text-lg text-white">
+    <Link href={TOKYO_CHIBA_LINE_LINK} className="">
+      <button
+        type="button"
+        className="bg-[#00C300] btn shadow-lg text-lg text-white"
+      >
         LINEで簡単応募する！
         <ArrowRightIcon className="arrow-right size-5" />
       </button>

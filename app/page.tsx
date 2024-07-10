@@ -154,7 +154,10 @@ export default function Home(): React.JSX.Element {
           で開催決定！
         </p>
         <Link href={AREA.href + TOKYO_CHIBA.href}>
-          <button type="button" className="bg-sky-400 btn text-lg text-white">
+          <button
+            type="button"
+            className="bg-sky-400 btn shadow-lg text-lg text-white"
+          >
             内容・応募はこちら
             <ArrowRightIcon className="arrow-right size-5" />
           </button>

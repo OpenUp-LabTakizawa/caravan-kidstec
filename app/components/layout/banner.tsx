@@ -34,30 +34,23 @@ export function Banner() {
     secondsRef.current.style.setProperty("--value", String(secondsCounter))
 
     const interval = setInterval(() => {
-      if (secondsCounter > 0) {
-        secondsCounter--
-      } else if (secondsCounter === 0) {
-        secondsCounter = 60
+      secondsCounter = secondsCounter === 0 ? 60 : secondsCounter - 1
+      if (secondsCounter === 0 && 0 < minutesCounter) {
         minutesCounter--
       }
       secondsRef.current.style.setProperty("--value", String(secondsCounter))
 
-      if (minutesCounter === 0) {
-        minutesCounter = 60
+      minutesCounter = minutesCounter < 0 ? 60 : minutesCounter
+      if (minutesCounter === 0 && 0 < hoursCounter) {
         hoursCounter--
       }
       minutesRef.current.style.setProperty("--value", String(minutesCounter))
 
-      if (hoursCounter === 0) {
-        hoursCounter = 24
+      hoursCounter = hoursCounter < 0 ? 24 : hoursCounter
+      if (hoursCounter === 0 && 0 < daysCounter) {
         daysCounter--
       }
       hoursRef.current.style.setProperty("--value", String(hoursCounter))
-
-      if (daysCounter === 0) {
-        daysCounter = 0
-      }
-      daysRef.current.style.setProperty("--value", String(daysCounter))
     }, 1000)
 
     return () => clearInterval(interval)
@@ -75,7 +68,7 @@ export function Banner() {
       </p>
       <div className="flex gap-5 mx-auto max-w-fit">
         <div>
-          応募期限まで
+          応募期限残り
           <span className="countdown font-mono mx-2 text-4xl">
             <span ref={daysRef} />
           </span>

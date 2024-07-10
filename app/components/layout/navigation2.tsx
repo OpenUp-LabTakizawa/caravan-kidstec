@@ -1,14 +1,55 @@
 "use client"
 
-import { panelNavigation } from "@/app/lib/constant"
+import type { NavigationPanel } from "@/app/interfaces/navigation"
+import {
+  AREA,
+  CONTACT,
+  FAQ,
+  HIROSHIMA,
+  PARTNER,
+  SUPPORTER,
+  TOKYO_CHIBA,
+} from "@/app/lib/constant"
+import {
+  GlobeAsiaAustraliaIcon,
+  QuestionMarkCircleIcon,
+  RocketLaunchIcon,
+  StarIcon,
+} from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import { type MutableRefObject, useLayoutEffect, useRef } from "react"
 
-export function Navigation() {
+export function Navigation2() {
   const ref: MutableRefObject<Map<string, HTMLAnchorElement>> = useRef<
     Map<string, HTMLAnchorElement>
   >(new Map<string, HTMLAnchorElement>())
+  const panelNavigation: NavigationPanel[] = [
+    {
+      name: TOKYO_CHIBA.name,
+      icon: StarIcon,
+      color: AREA.color,
+      href: AREA.href + TOKYO_CHIBA.href,
+    },
+    {
+      name: HIROSHIMA.name,
+      icon: RocketLaunchIcon,
+      color: PARTNER.color,
+      href: AREA.href + HIROSHIMA.href,
+    },
+    {
+      name: SUPPORTER.name,
+      icon: GlobeAsiaAustraliaIcon,
+      color: SUPPORTER.color,
+      href: SUPPORTER.href,
+    },
+    {
+      name: FAQ.name,
+      icon: QuestionMarkCircleIcon,
+      color: CONTACT.color,
+      href: CONTACT.href + FAQ.href,
+    },
+  ] as const
 
   useLayoutEffect(() => {
     if (window.IntersectionObserver) {

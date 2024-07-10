@@ -1,13 +1,15 @@
 import type {
   Content,
   Navigation,
-  NavigationSquare,
+  NavigationPanel,
 } from "@/app/interfaces/navigation"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
   GlobeAsiaAustraliaIcon,
   HeartIcon,
   QuestionMarkCircleIcon,
+  RocketLaunchIcon,
+  StarIcon,
   TrophyIcon,
   TruckIcon,
 } from "@heroicons/react/24/outline"
@@ -67,16 +69,16 @@ export const navigation: Navigation[] = [
   CONTACT,
 ] as const
 
-export const squareNavigation: NavigationSquare[] = [
+export const panelNavigation: NavigationPanel[] = [
   {
     name: TOKYO_CHIBA.name,
-    icon: "/miku_icon.avif",
+    icon: StarIcon,
     color: AREA.color,
     href: AREA.href + TOKYO_CHIBA.href,
   },
   {
     name: HIROSHIMA.name,
-    icon: "/kai_icon.avif",
+    icon: RocketLaunchIcon,
     color: PARTNER.color,
     href: AREA.href + HIROSHIMA.href,
   },

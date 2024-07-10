@@ -1,6 +1,6 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
 import { Heading } from "@/app/components/layout/heading"
-import { Purpose } from "@/app/components/text/purpose"
+import { Purpose } from "@/app/components/layout/purpose"
 import type { Supporter } from "@/app/interfaces/supporter"
 import { SUPPORTER } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"

@@ -10,7 +10,7 @@
     "lint": "bunx biome check --write"
   },
   "dependencies": {
-    "@heroicons/react": "^2.1.4",
+    "@heroicons/react": "^2.1.5",
     "@line/bot-sdk": "^9.2.2",
     "next": "canary",
     "react": "canary",

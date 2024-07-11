@@ -82,7 +82,7 @@ export function Banner() {
     >
       <p className="banner flex items-center text-nowrap">
         【新着情報】<strong className={AREA.color}>{TOKYO_CHIBA.name}</strong>
-        エリアで募集中！
+        で参加者を募集中！
         <ArrowTopRightOnSquareIcon className="size-5" />
       </p>
       <div className="flex gap-3 mx-auto max-w-fit">

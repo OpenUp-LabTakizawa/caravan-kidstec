@@ -1,11 +1,12 @@
+import { Register } from "@/app/area/register"
+import { Schedules } from "@/app/area/schedules"
 import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
-import { Register } from "@/app/components/layout/register"
 import { Video } from "@/app/components/media/video"
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Schedule } from "@/app/interfaces/schedule"
-import { AREA, HIROSHIMA, HIROSHIMA_LINE_LINK } from "@/app/lib/constant"
+import { AREA, HIROSHIMA } from "@/app/lib/constant"
 import type React from "react"
 
 export default function Hiroshima(): React.JSX.Element {
@@ -49,52 +50,30 @@ export default function Hiroshima(): React.JSX.Element {
   return (
     <>
       <Heading navigation={AREA} content={HIROSHIMA} />
-      <section className="grid gap-4">
-        <div className="bg-amber-50 grid mx-auto w-max">
-          <span className="bg-sky-400 font-bold justify-self-start p-1">
-            開催日時
-          </span>
-          <ul>
-            {schedules.map((item) => (
-              <li key={item.alt} className="grid gap-1 border-b p-2">
-                <p className="decoration-4 decoration-sky-400 underline">
-                  2024年
-                  <span className="font-bold text-2xl">{item.date[0]}</span>月
-                  <span className="font-bold text-2xl">{item.date[1]}</span>日(
-                  <span className="font-bold text-xl">{item.date[2]}</span>)
-                </p>
-                <div className="flex gap-2 items-center mx-auto">
-                  <p className="badge badge-outline">場所</p>
-                  <p>
-                    <strong>{item.venue}</strong>
-                    <br />
-                    {item.address}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-      <section>
-        <div className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
-          <p className="font-semibold">
-            公式LINEアカウントから、
-            <br />
-            次回開催の通知を受け取れます。
-          </p>
-          <LineAddFriends linkLink={HIROSHIMA_LINE_LINK} />
-        </div>
-      </section>
+      <Schedules schedules={schedules} />
+      <LineRegister />
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleCarousel schedules={schedules} />
       </section>
       <Register guideline={guideline} />
-      <div className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
-        <LineAddFriends linkLink={HIROSHIMA_LINE_LINK} />
-      </div>
+      <LineRegister />
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
     </>
+  )
+}
+
+function LineRegister(): React.JSX.Element {
+  const lineLink: string = "https://lin.ee/LuSqIls"
+
+  return (
+    <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
+      <p className="font-semibold">
+        公式LINEアカウントから、
+        <br />
+        次回開催の通知を受け取れます。
+      </p>
+      <LineAddFriends linkLink={lineLink} />
+    </section>
   )
 }

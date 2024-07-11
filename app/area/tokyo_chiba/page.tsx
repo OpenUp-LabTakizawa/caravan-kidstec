@@ -1,19 +1,48 @@
-import { SlideUp } from "@/app/components/animation/slideUp"
+import { Register } from "@/app/area/register"
+import { Schedules } from "@/app/area/schedules"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
-import { Register } from "@/app/components/layout/register"
 import { Video } from "@/app/components/media/video"
 import type { Guideline } from "@/app/interfaces/guideline"
-import {
-  AREA,
-  TOKYO_CHIBA,
-  TOKYO_CHIBA_LINE_LINK,
-  TOKYO_CHIBA_SCHEDULES,
-} from "@/app/lib/constant"
+import type { Schedule } from "@/app/interfaces/schedule"
+import { AREA, TOKYO_CHIBA } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
+
+export const schedules: Schedule[] = [
+  {
+    alt: "ロボット制作",
+    src: "/202311/sandankyo/brothers.avif",
+    color: "bg-teal-400",
+    title: "午前：ロボット制作\n午後：自然の循環",
+    date: ["9", "14", "土"],
+    venue: "クルックフィールズ",
+    address: "千葉県木更津市矢那2503",
+    tags: ["ロボット制作", "自然学習"],
+  },
+  {
+    alt: "謎解き体験！",
+    src: "/content/rays-blog_girl.avif",
+    color: "bg-sky-400",
+    title: "午前：プログラミング体験\n午後：謎解き体験！",
+    date: ["9", "21", "土"],
+    venue: "東京虎ノ門グローバルスクエア",
+    address: "東京都港区虎ノ門1-3-1",
+    tags: ["プログラミング", "情報教育"],
+  },
+  {
+    alt: "ロボサバ大会",
+    src: "/202307/final_stage/course_challenge.avif",
+    color: "bg-rose-400",
+    title: "午前：ロボサバ大会\n午後：結婚式体験",
+    date: ["9", "22", "日"],
+    venue: "ヴィクトリアガーデン恵比寿迎賓館",
+    address: "東京都渋谷区恵比寿南1-14-20",
+    tags: ["ロボサバ", "結婚式体験"],
+  },
+] as const
 
 export default function TokyoChiba(): React.JSX.Element {
   const guideline: Guideline = {
@@ -24,70 +53,43 @@ export default function TokyoChiba(): React.JSX.Element {
   return (
     <>
       <Heading navigation={AREA} content={TOKYO_CHIBA} />
-      <section className="grid gap-4">
-        <Image
-          src={"/202409_chiba.avif"}
-          width={1000}
-          height={1000}
-          alt="こどもテックキャラバン"
-          className="w-full"
-        />
-        <div className="bg-amber-50 grid mx-auto w-max">
-          <span className="bg-sky-400 font-bold justify-self-start p-1">
-            開催日時
-          </span>
-          <ul>
-            {TOKYO_CHIBA_SCHEDULES.map((item) => (
-              <li key={item.alt} className="grid gap-1 border-b p-2">
-                <p className="decoration-4 decoration-sky-400 underline">
-                  2024年
-                  <span className="font-bold text-2xl">{item.date[0]}</span>月
-                  <SlideUp className="decoration-4 decoration-sky-400 font-bold text-2xl underline">
-                    {item.date[1]}
-                  </SlideUp>
-                  日(
-                  <span className="font-bold text-xl">{item.date[2]}</span>)
-                </p>
-                <div className="flex gap-2 items-center mx-auto">
-                  <p className="badge badge-outline">場所</p>
-                  <p>
-                    <strong>{item.venue}</strong>
-                    <br />
-                    {item.address}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
-          <p className="font-semibold">
-            <Link href="/area/chiba" className="link text-sky-400">
-              応募要項
-            </Link>
-            をご確認の上、
-            <br />
-            応募画面へお進み下さい。
-          </p>
-          <LineRegister />
-        </div>
+      <Image
+        src={"/202409_chiba.avif"}
+        width={1000}
+        height={1000}
+        alt="こどもテックキャラバン"
+        className="w-full"
+      />
+      <Schedules schedules={schedules} />
+      <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
+        <p className="font-semibold">
+          <Link href="/area/chiba" className="link text-sky-400">
+            応募要項
+          </Link>
+          をご確認の上、
+          <br />
+          応募画面へお進み下さい。
+        </p>
+        <LineRegister />
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
-        <ScheduleCarousel schedules={TOKYO_CHIBA_SCHEDULES} />
+        <ScheduleCarousel schedules={schedules} />
       </section>
       <Register guideline={guideline} />
-      <div className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
+      <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <LineRegister />
-      </div>
+      </section>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
     </>
   )
 }
 
 function LineRegister(): React.JSX.Element {
+  const lineLink: string = "https://lin.ee/a1BRnXT"
+
   return (
-    <Link href={TOKYO_CHIBA_LINE_LINK} className="">
+    <Link href={lineLink}>
       <button
         type="button"
         className="bg-[#00C300] btn shadow-lg text-lg text-white"

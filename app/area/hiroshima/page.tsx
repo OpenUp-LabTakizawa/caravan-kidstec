@@ -3,6 +3,7 @@ import { Schedules } from "@/app/area/schedules"
 import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
+import { AreaNavigation } from "@/app/components/layout/navigation"
 import { Video } from "@/app/components/media/video"
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Schedule } from "@/app/interfaces/schedule"
@@ -62,6 +63,7 @@ export default function Hiroshima(): React.JSX.Element {
       <Register guideline={guideline} />
       <LineRegister lineLink={guideline.lineLink} />
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
+      <AreaNavigation content={HIROSHIMA} />
     </>
   )
 }

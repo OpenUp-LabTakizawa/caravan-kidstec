@@ -1,12 +1,12 @@
-import { schedules } from "@/app/area/tokyo_chiba/page"
 import { SlideUp } from "@/app/components/animation/slideUp"
 import { Banner } from "@/app/components/layout/banner"
 import { Carousel } from "@/app/components/layout/carousel"
 import { Navigation } from "@/app/components/layout/navigation"
+import { Navigation2 } from "@/app/components/layout/navigation2"
 import { Video } from "@/app/components/media/video"
 import type { Panel } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
-import { AREA, TOKYO_CHIBA } from "@/app/lib/constant"
+import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_SCHEDULES } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import {
   ArrowRightIcon,
@@ -18,7 +18,6 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
-import { Navigation2 } from "./components/layout/navigation2"
 
 export default function Home(): React.JSX.Element {
   const techPanels: Panel[] = [
@@ -143,11 +142,11 @@ export default function Home(): React.JSX.Element {
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <p className="font-semibold">
           2024年
-          <span className="text-xl">{schedules[0].date[0]}</span>月
-          {schedules.map((schedule, index) => (
+          <span className="text-xl">{TOKYO_CHIBA_SCHEDULES[0].date[0]}</span>月
+          {TOKYO_CHIBA_SCHEDULES.map((schedule, index) => (
             <span key={schedule.alt}>
               <span className="text-xl">{schedule.date[1]}</span>日
-              {index === schedules.length - 1 ? "、" : "・"}
+              {index === TOKYO_CHIBA_SCHEDULES.length - 1 ? "、" : "・"}
             </span>
           ))}
           <br />

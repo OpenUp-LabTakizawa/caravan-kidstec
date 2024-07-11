@@ -45,27 +45,30 @@ export default function Hiroshima(): React.JSX.Element {
   const guideline: Guideline = {
     participantsNumber: "１０組程",
     deadline: "２０２４年６月２９日",
+    lineLink: "https://lin.ee/LuSqIls",
+    botImage: "/miku_icon.avif",
+    userImage: "/kai_icon.avif",
   }
 
   return (
     <>
       <Heading navigation={AREA} content={HIROSHIMA} />
       <Schedules schedules={schedules} />
-      <LineRegister />
+      <LineRegister lineLink={guideline.lineLink} />
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleCarousel schedules={schedules} />
       </section>
       <Register guideline={guideline} />
-      <LineRegister />
+      <LineRegister lineLink={guideline.lineLink} />
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
     </>
   )
 }
 
-function LineRegister(): React.JSX.Element {
-  const lineLink: string = "https://lin.ee/LuSqIls"
-
+function LineRegister({
+  lineLink,
+}: Readonly<{ lineLink: string }>): React.JSX.Element {
   return (
     <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
       <p className="font-semibold">

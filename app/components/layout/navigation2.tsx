@@ -19,8 +19,9 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import { type MutableRefObject, useLayoutEffect, useRef } from "react"
+import type React from "react"
 
-export function Navigation2() {
+export function Navigation2(): React.JSX.Element {
   const ref: MutableRefObject<Map<string, HTMLAnchorElement>> = useRef<
     Map<string, HTMLAnchorElement>
   >(new Map<string, HTMLAnchorElement>())

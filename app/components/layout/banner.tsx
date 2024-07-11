@@ -4,8 +4,9 @@ import { AREA, TOKYO_CHIBA } from "@/app/lib/constant"
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import { type MutableRefObject, useEffect, useRef } from "react"
+import type React from "react"
 
-export function Banner() {
+export function Banner(): React.JSX.Element {
   const daysRef: MutableRefObject<HTMLSpanElement> =
     useRef<HTMLSpanElement>() as MutableRefObject<HTMLSpanElement>
   const hoursRef: MutableRefObject<HTMLSpanElement> =

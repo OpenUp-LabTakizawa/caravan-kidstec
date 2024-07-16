@@ -2,7 +2,6 @@ import { SlideUp } from "@/app/components/animation/slideUp"
 import { Banner } from "@/app/components/layout/banner"
 import { Carousel } from "@/app/components/layout/carousel"
 import { Navigation } from "@/app/components/layout/navigation"
-import { Navigation2 } from "@/app/components/layout/navigation2"
 import { Video } from "@/app/components/media/video"
 import type { Panel } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
@@ -185,7 +184,6 @@ export default function Home(): React.JSX.Element {
       </section>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
       <Navigation />
-      <Navigation2 />
     </article>
   )
 }

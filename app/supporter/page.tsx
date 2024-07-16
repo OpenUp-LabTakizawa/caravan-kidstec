@@ -62,9 +62,7 @@ export default function SupporterPage(): React.JSX.Element {
                 {item.business}
               </p>
               <p className="font-bold text-sky-400">
-                <SlideUp className="whitespace-pre lg:whitespace-normal">
-                  {item.purpose}
-                </SlideUp>
+                <SlideUp className="whitespace-pre">{item.purpose}</SlideUp>
               </p>
             </div>
           </section>

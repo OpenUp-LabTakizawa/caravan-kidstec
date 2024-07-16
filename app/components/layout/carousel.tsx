@@ -84,22 +84,10 @@ export function Carousel(): React.JSX.Element {
 export function ScheduleCarousel({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): React.JSX.Element {
-  const [innerWidth, setInnerWidth] = useState<number>(0)
-
-  if (typeof window !== "undefined") {
-    window.addEventListener("resize", () => {
-      setInnerWidth(window.innerWidth)
-    })
-  }
-
-  useEffect(() => {
-    setInnerWidth(window.innerWidth)
-  }, [])
-
   return (
     <div className="carousel max-w-min mx-auto overflow-hidden p-4 schedule-scroll-left snap-none space-x-4 w-full">
       <Schedules />
-      {innerWidth < 896 && <Schedules />}
+      <Schedules />
     </div>
   )
 
@@ -107,7 +95,7 @@ export function ScheduleCarousel({
     return (
       <>
         {schedules.map((item, index) => (
-          <div key={item.alt} className="carousel-item rounded-box w-72">
+          <div key={item.alt} className="carousel-item rounded-box w-60">
             <div className="card shadow-lg">
               <Image
                 loader={cloudfrontLoader}

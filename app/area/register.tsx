@@ -132,7 +132,7 @@ export function Register({
               >
                 LINE公式アカウント
               </Link>
-              を<br />
+              を<br className="block sm:hidden" />
               友達追加してトーク画面へ
             </p>
             <LineAddFriends linkLink={guideline.lineLink} />
@@ -146,7 +146,7 @@ export function Register({
             </span>
             <p>
               トーク画面メニューの
-              <br />
+              <br className="block sm:hidden" />
               <span className="font-bold">「参加申込はこちら」</span>をタップ
             </p>
           </li>
@@ -159,42 +159,6 @@ export function Register({
             </span>
             <p>会話に沿って必要事項を入力</p>
           </li>
-          {/* <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
-            <span className="absolute bg-sky-400 flex font-bold items-center left-0 top-0 pr-1">
-              <CheckIcon className="size-5 mr-1" />3
-            </span>
-            <p>会話に沿って必要事項を入力、例えば…</p>
-            <div className="chat chat-start ml-1">
-              <div className="chat-image avatar">
-                <div className="w-10 rounded-full">
-                  <Image
-                    src={guideline.botImage}
-                    width={1000}
-                    height={1000}
-                    alt="公式LINE"
-                  />
-                </div>
-              </div>
-              <div className="chat-bubble">
-                お子様の参加人数を
-                <br />
-                教えて下さい。
-              </div>
-            </div>
-            <div className="chat chat-end mr-1">
-              <div className="chat-image avatar">
-                <div className="w-10 rounded-full">
-                  <Image
-                    src={guideline.userImage}
-                    width={1000}
-                    height={1000}
-                    alt="ユーザー"
-                  />
-                </div>
-              </div>
-              <div className="bg-[#00C300] chat-bubble text-black">２人</div>
-            </div>
-          </li> */}
           <li>
             <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
           </li>
@@ -207,7 +171,7 @@ export function Register({
               <br />
               <br />
               担当者よりご参加の確定、及び、
-              <br />
+              <br className="block sm:hidden" />
               その他ご連絡をさせて頂きます。
             </p>
           </li>

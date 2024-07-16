@@ -46,12 +46,6 @@
   animation-play-state: paused;
 }
 
-@media (min-width: 896px) {
-  .schedule-scroll-left .carousel-item {
-    animation: none;
-  }
-}
-
 .review-scroll-left .carousel-item {
   animation: review-scroll-left 80s linear infinite;
 }
@@ -172,7 +166,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-19rem * 3));
+    transform: translateX(calc(-16rem * 3));
   }
 }
 

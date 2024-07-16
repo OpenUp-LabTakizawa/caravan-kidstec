@@ -10,7 +10,7 @@ import {
 } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
-import { type MutableRefObject, useLayoutEffect, useRef } from "react"
+import { type MutableRefObject, useEffect, useRef } from "react"
 import type React from "react"
 
 export function Navigation(): React.JSX.Element {
@@ -18,7 +18,7 @@ export function Navigation(): React.JSX.Element {
     Map<string, HTMLAnchorElement>
   >(new Map<string, HTMLAnchorElement>())
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (window.IntersectionObserver) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -36,14 +36,6 @@ export function Navigation(): React.JSX.Element {
       if (ref.current?.values()) {
         for (const node of ref.current.values()) {
           observer.observe(node)
-        }
-      }
-
-      return () => {
-        if (ref.current?.values()) {
-          for (const node of ref.current.values()) {
-            observer.unobserve(node)
-          }
         }
       }
     }
@@ -110,7 +102,7 @@ export function AreaNavigation({
     Map<string, HTMLAnchorElement>
   >(new Map<string, HTMLAnchorElement>())
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (window.IntersectionObserver) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -128,14 +120,6 @@ export function AreaNavigation({
       if (ref.current?.values()) {
         for (const node of ref.current.values()) {
           observer.observe(node)
-        }
-      }
-
-      return () => {
-        if (ref.current?.values()) {
-          for (const node of ref.current.values()) {
-            observer.unobserve(node)
-          }
         }
       }
     }

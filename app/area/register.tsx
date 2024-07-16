@@ -4,7 +4,6 @@ import {
   ChevronDoubleDownIcon,
   InformationCircleIcon,
 } from "@heroicons/react/24/outline"
-import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 import { LineAddFriends } from "../components/button/lineAddFriends"
@@ -14,7 +13,7 @@ export function Register({
 }: Readonly<{ guideline: Guideline }>): React.JSX.Element {
   return (
     <>
-      <section className="grid gap-4">
+      <section className="grid gap-4 px-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
         <div className="alert bg-sky-400 gap-1 grid grid-rows-2 grid-flow-col justify-items-center max-w-fit mx-auto shadow-lg text-base">
           <InformationCircleIcon className="row-span-2 size-10" />
@@ -89,7 +88,7 @@ export function Register({
           </tbody>
         </table>
       </section>
-      <section className="grid gap-4">
+      <section className="grid gap-4 px-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
         <ul className="gap-2 grid text-sm">
           <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
@@ -127,6 +126,12 @@ export function Register({
             <span className="absolute bg-sky-400 flex font-bold items-center left-0 top-0 pr-1">
               <CheckIcon className="size-5 mr-1" />3
             </span>
+            <p>会話に沿って必要事項を入力</p>
+          </li>
+          {/* <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
+            <span className="absolute bg-sky-400 flex font-bold items-center left-0 top-0 pr-1">
+              <CheckIcon className="size-5 mr-1" />3
+            </span>
             <p>会話に沿って必要事項を入力、例えば…</p>
             <div className="chat chat-start ml-1">
               <div className="chat-image avatar">
@@ -158,7 +163,7 @@ export function Register({
               </div>
               <div className="bg-[#00C300] chat-bubble text-black">２人</div>
             </div>
-          </li>
+          </li> */}
           <li>
             <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
           </li>

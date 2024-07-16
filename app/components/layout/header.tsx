@@ -101,10 +101,18 @@ function Navigation(): React.JSX.Element {
   >(new Map<string, HTMLDetailsElement>())
 
   if (typeof window !== "undefined") {
-    window.addEventListener("click", () => {
+    window.addEventListener("click", (event) => {
       if (ref.current?.values()) {
         for (const node of ref.current.values()) {
-          node.open = false
+          const rect = node.getBoundingClientRect()
+          if (
+            rect.left > event.clientX ||
+            rect.right < event.clientX ||
+            rect.top > event.clientY ||
+            rect.bottom < event.clientY
+          ) {
+            node.open = false
+          }
         }
       }
     })

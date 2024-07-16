@@ -1,4 +1,3 @@
-import { SlideUp } from "@/app/components/animation/slideUp"
 import type { Schedule } from "@/app/interfaces/schedule"
 import type React from "react"
 
@@ -18,9 +17,9 @@ export function Schedules({
             <p className="decoration-4 decoration-sky-400 underline">
               2024年
               <span className="font-bold text-2xl">{item.date[0]}</span>月
-              <SlideUp className="decoration-4 decoration-sky-400 font-bold text-2xl underline">
+              <span className="decoration-4 decoration-sky-400 font-bold text-2xl underline">
                 {item.date[1]}
-              </SlideUp>
+              </span>
               日(
               <span className="font-bold text-xl">{item.date[2]}</span>)
             </p>

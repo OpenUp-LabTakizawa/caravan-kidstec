@@ -18,6 +18,12 @@
   animation: banner 10s linear infinite;
 }
 
+.blue-shine {
+  background: linear-gradient(to right, #38bdf8 50%, #e0f2fe 60%, #38bdf8 70%);
+  background-size: 600% 100%;
+  animation: shine 20s infinite linear;
+}
+
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }
@@ -26,10 +32,10 @@
   animation: fade-in-up 1.5s;
 }
 
-.green_shine {
+.green-shine {
   background: linear-gradient(to right, #00c300 50%, #abf1b5 60%, #00c300 70%);
   background-size: 600% 100%;
-  animation: green_shine 20s infinite linear;
+  animation: shine 20s infinite linear;
 }
 
 .schedule-scroll-left .carousel-item {
@@ -149,7 +155,7 @@
   }
 }
 
-@keyframes green_shine {
+@keyframes shine {
   0% {
     background-position-x: 400%;
   }

@@ -1,3 +1,4 @@
+import type { Guideline } from "@/app/interfaces/guideline"
 import type {
   Content,
   Navigation,
@@ -92,6 +93,14 @@ export const panelNavigation: NavigationPanel[] = [
     href: CONTACT.href + FAQ.href,
   },
 ] as const
+
+export const TOKYO_CHIBA_GUIDELINE: Guideline = {
+  participantsNumber: "２０組程",
+  deadline: "２０２４年８月３１日",
+  lineLink: "https://lin.ee/a1BRnXT",
+  botImage: "/kai_icon.avif",
+  userImage: "/miku_icon.avif",
+}
 
 export const TOKYO_CHIBA_SCHEDULES: Schedule[] = [
   {

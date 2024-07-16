@@ -1,7 +1,6 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
-import { Banner } from "@/app/components/layout/banner"
+import { Banner, Banner1, Banner2 } from "@/app/components/layout/banner"
 import { Carousel } from "@/app/components/layout/carousel"
-import { Navigation } from "@/app/components/layout/navigation"
 import { Video } from "@/app/components/media/video"
 import type { Panel } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
@@ -74,6 +73,8 @@ export default function Home(): React.JSX.Element {
   return (
     <article className="grid gap-6 pb-4 text-base text-center">
       <Banner />
+      <Banner1 />
+      <Banner2 />
       <Carousel />
       <section className="p-4 text-center">
         <SlideUp className="pb-4">
@@ -149,7 +150,7 @@ export default function Home(): React.JSX.Element {
         <Link href={AREA.href + TOKYO_CHIBA.href}>
           <button
             type="button"
-            className="bg-sky-400 btn shadow-lg text-lg text-white w-full"
+            className="bg-sky-400 blue-shine btn shadow-lg text-lg text-white w-full"
           >
             内容・応募はこちら
             <ArrowRightIcon className="arrow-right size-5" />
@@ -179,7 +180,6 @@ export default function Home(): React.JSX.Element {
         <ReviewCarousel />
       </section>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
-      <Navigation />
     </article>
   )
 }

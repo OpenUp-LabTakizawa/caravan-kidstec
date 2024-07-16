@@ -3,22 +3,18 @@ import { Schedules } from "@/app/area/schedules"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { AreaNavigation } from "@/app/components/layout/navigation"
-import type { Guideline } from "@/app/interfaces/guideline"
-import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_SCHEDULES } from "@/app/lib/constant"
+import {
+  AREA,
+  TOKYO_CHIBA,
+  TOKYO_CHIBA_GUIDELINE,
+  TOKYO_CHIBA_SCHEDULES,
+} from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 
 export default function TokyoChiba(): React.JSX.Element {
-  const guideline: Guideline = {
-    participantsNumber: "２０組程",
-    deadline: "２０２４年８月３１日",
-    lineLink: "https://lin.ee/a1BRnXT",
-    botImage: "/kai_icon.avif",
-    userImage: "/miku_icon.avif",
-  }
-
   return (
     <>
       <Heading navigation={AREA} content={TOKYO_CHIBA} />
@@ -39,15 +35,15 @@ export default function TokyoChiba(): React.JSX.Element {
           <br />
           応募画面へお進み下さい。
         </p>
-        <LineRegister lineLink={guideline.lineLink} />
+        <LineRegister lineLink={TOKYO_CHIBA_GUIDELINE.lineLink} />
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleCarousel schedules={TOKYO_CHIBA_SCHEDULES} />
       </section>
-      <Register guideline={guideline} />
+      <Register guideline={TOKYO_CHIBA_GUIDELINE} />
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
-        <LineRegister lineLink={guideline.lineLink} />
+        <LineRegister lineLink={TOKYO_CHIBA_GUIDELINE.lineLink} />
       </section>
       <AreaNavigation content={TOKYO_CHIBA} />
     </>
@@ -61,7 +57,7 @@ function LineRegister({
     <Link href={lineLink}>
       <button
         type="button"
-        className="bg-[#00C300] btn shadow-lg green_shine text-lg text-white"
+        className="bg-[#00C300] btn shadow-lg green-shine text-lg text-white"
       >
         LINEで簡単応募する！
         <ArrowRightIcon className="arrow-right size-5" />

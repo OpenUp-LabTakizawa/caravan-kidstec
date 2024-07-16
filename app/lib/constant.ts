@@ -1,16 +1,10 @@
 import type { Guideline } from "@/app/interfaces/guideline"
-import type {
-  Content,
-  Navigation,
-  NavigationPanel,
-} from "@/app/interfaces/navigation"
+import type { Content, Navigation } from "@/app/interfaces/navigation"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
   GlobeAsiaAustraliaIcon,
   HeartIcon,
   QuestionMarkCircleIcon,
-  RocketLaunchIcon,
-  StarIcon,
   TrophyIcon,
   TruckIcon,
 } from "@heroicons/react/24/outline"
@@ -65,33 +59,6 @@ export const navigation: Navigation[] = [
   SUPPORTER,
   PARTNER,
   CONTACT,
-] as const
-
-export const panelNavigation: NavigationPanel[] = [
-  {
-    name: TOKYO_CHIBA.name,
-    icon: StarIcon,
-    color: AREA.color,
-    href: AREA.href + TOKYO_CHIBA.href,
-  },
-  {
-    name: HIROSHIMA.name,
-    icon: RocketLaunchIcon,
-    color: PARTNER.color,
-    href: AREA.href + HIROSHIMA.href,
-  },
-  {
-    name: SUPPORTER.name,
-    icon: SUPPORTER.icon,
-    color: SUPPORTER.color,
-    href: SUPPORTER.href,
-  },
-  {
-    name: FAQ.name,
-    icon: CONTACT.icon,
-    color: CONTACT.color,
-    href: CONTACT.href + FAQ.href,
-  },
 ] as const
 
 export const TOKYO_CHIBA_GUIDELINE: Guideline = {

@@ -23,7 +23,7 @@ export function Schedules({
               日(
               <span className="font-bold text-xl">{item.date[2]}</span>)
             </p>
-            <p>10：00 ～ 17：00（予定）</p>
+            <p>10：00&nbsp;～&nbsp;17：00（予定）</p>
             <div className="flex gap-2 items-center mx-auto">
               <p className="badge badge-outline">場所</p>
               <p>

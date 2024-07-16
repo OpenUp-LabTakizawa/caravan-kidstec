@@ -3,7 +3,7 @@ import { Schedules } from "@/app/area/schedules"
 import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
-import { AreaNavigation } from "@/app/components/layout/navigation"
+import { Navigation } from "@/app/components/layout/navigation"
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Schedule } from "@/app/interfaces/schedule"
 import { AREA, HIROSHIMA } from "@/app/lib/constant"
@@ -61,7 +61,7 @@ export default function Hiroshima(): React.JSX.Element {
       </section>
       <Register guideline={guideline} />
       <LineRegister lineLink={guideline.lineLink} />
-      <AreaNavigation content={HIROSHIMA} />
+      <Navigation content={HIROSHIMA} />
     </>
   )
 }

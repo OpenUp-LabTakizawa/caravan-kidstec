@@ -2,7 +2,7 @@ import { Register } from "@/app/area/register"
 import { Schedules } from "@/app/area/schedules"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
-import { AreaNavigation } from "@/app/components/layout/navigation"
+import { Navigation } from "@/app/components/layout/navigation"
 import {
   AREA,
   TOKYO_CHIBA,
@@ -45,7 +45,7 @@ export default function TokyoChiba(): React.JSX.Element {
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <LineRegister lineLink={TOKYO_CHIBA_GUIDELINE.lineLink} />
       </section>
-      <AreaNavigation content={TOKYO_CHIBA} />
+      <Navigation content={TOKYO_CHIBA} />
     </>
   )
 }

@@ -7,7 +7,7 @@ export default function PartnerLayout({
   children: React.ReactNode
 }>): React.JSX.Element {
   return (
-    <article className="grid gap-6 p-4 text-center">
+    <article className="grid gap-6 pb-4 text-center">
       {children}
       <Purpose />
     </article>

@@ -8,7 +8,7 @@ export function Heading({
   content,
 }: Readonly<{ navigation: Navigation; content?: Content }>): React.JSX.Element {
   return (
-    <section className="grid gap-6">
+    <section className="grid gap-6 pl-4">
       <Breadcrumb navigation={navigation} content={content} />
       <div className="max-w-fit mx-auto">
         {content && navigation.content?.includes(content) ? (

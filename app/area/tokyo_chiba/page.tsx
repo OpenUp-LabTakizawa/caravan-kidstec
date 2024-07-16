@@ -3,7 +3,6 @@ import { Schedules } from "@/app/area/schedules"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { AreaNavigation } from "@/app/components/layout/navigation"
-import { Video } from "@/app/components/media/video"
 import type { Guideline } from "@/app/interfaces/guideline"
 import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_SCHEDULES } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
@@ -50,7 +49,6 @@ export default function TokyoChiba(): React.JSX.Element {
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <LineRegister lineLink={guideline.lineLink} />
       </section>
-      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
       <AreaNavigation content={TOKYO_CHIBA} />
     </>
   )

@@ -5,7 +5,7 @@ import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
-import { useRef, useState } from "react"
+import { type MutableRefObject, useRef, useState } from "react"
 
 export function Header(): React.JSX.Element {
   const [scrollY, setScrollY] = useState<{
@@ -96,12 +96,33 @@ function DropdownMenu(): React.JSX.Element {
 }
 
 function Navigation(): React.JSX.Element {
+  const ref: MutableRefObject<Map<string, HTMLDetailsElement>> = useRef<
+    Map<string, HTMLDetailsElement>
+  >(new Map<string, HTMLDetailsElement>())
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("click", () => {
+      if (ref.current?.values()) {
+        for (const node of ref.current.values()) {
+          node.open = false
+        }
+      }
+    })
+  }
+
   return (
     <ul className="menu menu-horizontal p-0">
       {navigation.map((item) => (
         <li key={item.name} className="hover:scale-110">
           {item.content ? (
-            <details>
+            <details
+              ref={(node: HTMLDetailsElement) => {
+                ref.current.set(item.name, node)
+                return () => {
+                  ref.current.delete(item.name)
+                }
+              }}
+            >
               <summary className="font-bold">
                 <item.icon className={`size-5 ${item.color}`} />
                 {item.name}

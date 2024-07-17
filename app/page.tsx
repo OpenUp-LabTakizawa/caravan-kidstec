@@ -194,82 +194,72 @@ function PanelTile({
 }
 
 function ReviewCarousel(): React.JSX.Element {
+  const reviews: Review[] = [
+    {
+      description:
+        "ロボットを使った\nプログラミングは、\n子供の興味を惹いて\nとても楽しそうでした。\n\nプログラミングだけでなく\nロボット作成やハンダ付けも\n楽しかったみたいです。\n\n自分一人で作成する\n達成感が味わえる講習が\n良かったのだと思いました。",
+      areaAndUser: "第1回 広島 小4",
+    },
+    {
+      description:
+        "プログラミング教育が\n小学校で必修となりましたが、\n学校の授業では体験できない\nプログラミングを楽しく学び、\n海・山での自然も同時に\n体験できたことは、\n子供の良い思い出、\n貴重な体験となりました。\nこの夏で子供が少し\n成長できたところを\n身近で見ることができたのは\n親にとっても貴重な体験でした。",
+      areaAndUser: "第1回 広島 小5",
+    },
+    {
+      description:
+        "プログラミングも\nアクティビティも\n本格的で期待以上でした。\n\nとても良かったので\n他の子にも\n体験させてあげたい。\n\n広島育ちですが、\n江田島、三段峡どちらも\nいったことがなかったので、\n行けて良かったです。",
+      areaAndUser: "第2回 広島 小5",
+    },
+    {
+      description:
+        "上の子はより\n色々な経験を通して\n自信をもって\n社会と関わりを\n持っていけると感じた。\n\n下の子も新たに興味を\n持てたことがあったり、\n色々な経験が\nできてよかった。",
+      areaAndUser: "第2回 広島 小5、小6",
+    },
+    {
+      description:
+        "子どもも親も\n色々な経験、\n体験をすることが出来て、\n楽しかったです！！\n\n多くの子供たちに\nこういった体験が\nできることを\n願っています。",
+      areaAndUser: "第2回 広島 小6",
+    },
+    {
+      description:
+        "ロボサバスタッフや\n広島大学の学生などと\n色々なお話ができて\n子供たちも良い刺激に\nなったようです。\n\n子供たちの興味が\n広がって良い体験が\nできたと思います。",
+      areaAndUser: "第2回 広島 小5、中1",
+    },
+    {
+      description:
+        "とても有意義な\n体験でした。\n子供だけでなく、\n親も満足できるという、\n他のイベントでは\n経験したことのない\nイベントでした。\n\n次回も是非是非\n参加させて\n頂きたいです。",
+      areaAndUser: "第3回 広島 小4",
+    },
+    {
+      description:
+        "縁あって\n参加させていただき、\n沢山の経験を\n得ることが出来ました。\n\n学校でははみ出し気味の\n子供が、楽しそうに\n取り組んでいて、\n親としては\n嬉しく見守りました。\n\nありがとうございました。",
+      areaAndUser: "第3回 広島 小5",
+    },
+    {
+      description:
+        "至れり尽くせりで\n大変驚きました。\n子供だけでなく、\n親も色々と\n学ばせてもらえて\nありがたかったです。\nスタッフの方々が、\n生き生きされて\nいたのが印象的で、\n今回のイベントに\n子どもを参加させて\nよかったです。",
+      areaAndUser: "第3回 広島 小4、小6",
+    },
+    {
+      description:
+        "子供たち二人共、\nとても充実した\n3日間を過ごせました。\n\nまた次回も\nチャレンジしたいと\n思います！",
+      areaAndUser: "第3回 広島 小4、中2",
+    },
+  ] as const
+
   return (
     <div className="carousel space-x-4">
-      <Reviews />
+      {reviews.map((item) => (
+        <div key={item.description} className="carousel-item">
+          <div className="bg-blue-100 content-between gap-2 grid h-full p-2 rounded-2xl shadow-lg w-56">
+            <p className="my-auto text-sm whitespace-pre">{item.description}</p>
+            <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
+              <UserCircleIcon className="text-rose-400 size-6 mr-1" />
+              {item.areaAndUser}
+            </p>
+          </div>
+        </div>
+      ))}
     </div>
   )
-
-  function Reviews(): React.JSX.Element {
-    const reviews: Review[] = [
-      {
-        description:
-          "ロボットを使った\nプログラミングは、\n子供の興味を惹いて\nとても楽しそうでした。\n\nプログラミングだけでなく\nロボット作成やハンダ付けも\n楽しかったみたいです。\n\n自分一人で作成する\n達成感が味わえる講習が\n良かったのだと思いました。",
-        areaAndUser: "第1回 広島 小4",
-      },
-      {
-        description:
-          "プログラミング教育が\n小学校で必修となりましたが、\n学校の授業では体験できない\nプログラミングを楽しく学び、\n海・山での自然も同時に\n体験できたことは、\n子供の良い思い出、\n貴重な体験となりました。\nこの夏で子供が少し\n成長できたところを\n身近で見ることができたのは\n親にとっても貴重な体験でした。",
-        areaAndUser: "第1回 広島 小5",
-      },
-      {
-        description:
-          "プログラミングも\nアクティビティも\n本格的で期待以上でした。\n\nとても良かったので\n他の子にも\n体験させてあげたい。\n\n広島育ちですが、\n江田島、三段峡どちらも\nいったことがなかったので、\n行けて良かったです。",
-        areaAndUser: "第2回 広島 小5",
-      },
-      {
-        description:
-          "上の子はより\n色々な経験を通して\n自信をもって\n社会と関わりを\n持っていけると感じた。\n\n下の子も新たに興味を\n持てたことがあったり、\n色々な経験が\nできてよかった。",
-        areaAndUser: "第2回 広島 小5、小6",
-      },
-      {
-        description:
-          "子どもも親も\n色々な経験、\n体験をすることが出来て、\n楽しかったです！！\n\n多くの子供たちに\nこういった体験が\nできることを\n願っています。",
-        areaAndUser: "第2回 広島 小6",
-      },
-      {
-        description:
-          "ロボサバスタッフや\n広島大学の学生などと\n色々なお話ができて\n子供たちも良い刺激に\nなったようです。\n\n子供たちの興味が\n広がって良い体験が\nできたと思います。",
-        areaAndUser: "第2回 広島 小5、中1",
-      },
-      {
-        description:
-          "とても有意義な\n体験でした。\n子供だけでなく、\n親も満足できるという、\n他のイベントでは\n経験したことのない\nイベントでした。\n\n次回も是非是非\n参加させて\n頂きたいです。",
-        areaAndUser: "第3回 広島 小4",
-      },
-      {
-        description:
-          "縁あって\n参加させていただき、\n沢山の経験を\n得ることが出来ました。\n\n学校でははみ出し気味の\n子供が、楽しそうに\n取り組んでいて、\n親としては\n嬉しく見守りました。\n\nありがとうございました。",
-        areaAndUser: "第3回 広島 小5",
-      },
-      {
-        description:
-          "至れり尽くせりで\n大変驚きました。\n子供だけでなく、\n親も色々と\n学ばせてもらえて\nありがたかったです。\nスタッフの方々が、\n生き生きされて\nいたのが印象的で、\n今回のイベントに\n子どもを参加させて\nよかったです。",
-        areaAndUser: "第3回 広島 小4、小6",
-      },
-      {
-        description:
-          "子供たち二人共、\nとても充実した\n3日間を過ごせました。\n\nまた次回も\nチャレンジしたいと\n思います！",
-        areaAndUser: "第3回 広島 小4、中2",
-      },
-    ] as const
-
-    return (
-      <>
-        {reviews.map((item) => (
-          <div key={item.description} className="carousel-item">
-            <div className="bg-blue-100 content-between gap-2 grid h-full p-2 rounded-2xl shadow-lg w-56">
-              <p className="my-auto text-sm whitespace-pre">
-                {item.description}
-              </p>
-              <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
-                <UserCircleIcon className="text-rose-400 size-6 mr-1" />
-                {item.areaAndUser}
-              </p>
-            </div>
-          </div>
-        ))}
-      </>
-    )
-  }
 }

@@ -86,52 +86,44 @@ export function ScheduleCarousel({
 }: Readonly<{ schedules: Schedule[] }>): React.JSX.Element {
   return (
     <div className="carousel space-x-4">
-      <Schedules />
-    </div>
-  )
-
-  function Schedules(): React.JSX.Element {
-    return (
-      <>
-        {schedules.map((item, index) => (
-          <div key={item.alt} className="carousel-item rounded-box w-60">
-            <div className="card shadow-lg">
-              <Image
-                loader={cloudfrontLoader}
-                src={item.src}
-                width={1000}
-                height={1000}
-                alt={item.alt}
-                className="h-60 object-cover rounded-t-2xl"
-              />
-              <div className="bg-amber-50 card-body p-0 py-8 relative">
-                <span
-                  className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${item.color}`}
-                >
-                  Day {index + 1}
-                </span>
-                <h3 className="card-title mx-auto text-lg whitespace-pre">
-                  {item.title}
-                </h3>
-                <p className="font-semibold text-sm">
-                  2024年{item.date[0]}月{item.date[1]}日({item.date[2]})
-                  10:00~17:00
-                </p>
-                <div className="card-actions justify-center">
-                  {item.tags.map((tag) => (
-                    <div
-                      key={tag}
-                      className="badge badge-outline bg-base-200 text-xs"
-                    >
-                      {tag}
-                    </div>
-                  ))}
-                </div>
+      {schedules.map((item, index) => (
+        <div key={item.alt} className="carousel-item rounded-box w-60">
+          <div className="card shadow-lg">
+            <Image
+              loader={cloudfrontLoader}
+              src={item.src}
+              width={1000}
+              height={1000}
+              alt={item.alt}
+              className="h-60 object-cover rounded-t-2xl"
+            />
+            <div className="bg-amber-50 card-body p-0 py-8 relative">
+              <span
+                className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${item.color}`}
+              >
+                Day {index + 1}
+              </span>
+              <h3 className="card-title mx-auto text-lg whitespace-pre">
+                {item.title}
+              </h3>
+              <p className="font-semibold text-sm">
+                2024年{item.date[0]}月{item.date[1]}日({item.date[2]})
+                10:00~17:00
+              </p>
+              <div className="card-actions justify-center">
+                {item.tags.map((tag) => (
+                  <div
+                    key={tag}
+                    className="badge badge-outline bg-base-200 text-xs"
+                  >
+                    {tag}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        ))}
-      </>
-    )
-  }
+        </div>
+      ))}
+    </div>
+  )
 }

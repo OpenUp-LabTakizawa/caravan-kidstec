@@ -85,8 +85,7 @@ export function ScheduleCarousel({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): React.JSX.Element {
   return (
-    <div className="carousel max-w-min mx-auto overflow-hidden p-4 schedule-scroll-left snap-none space-x-4 w-full">
-      <Schedules />
+    <div className="carousel space-x-4">
       <Schedules />
     </div>
   )

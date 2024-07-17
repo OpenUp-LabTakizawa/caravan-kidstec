@@ -195,11 +195,8 @@ function PanelTile({
 
 function ReviewCarousel(): React.JSX.Element {
   return (
-    <div className="carousel overflow-hidden p-4 review-scroll-left snap-none space-x-4">
-      <div className="flex gap-4">
-        <Reviews />
-        <Reviews />
-      </div>
+    <div className="carousel space-x-4">
+      <Reviews />
     </div>
   )
 

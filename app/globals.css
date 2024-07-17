@@ -18,12 +18,6 @@
   animation: banner 10s linear infinite;
 }
 
-.blue-shine {
-  background: linear-gradient(to right, #38bdf8 50%, #e0f2fe 60%, #38bdf8 70%);
-  background-size: 600% 100%;
-  animation: shine 20s infinite linear;
-}
-
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }

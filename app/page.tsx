@@ -1,12 +1,12 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
-import { Banner, Banner1, Banner2 } from "@/app/components/layout/banner"
+import { Banner } from "@/app/components/layout/banner"
 import { Carousel } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import type { Panel } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
-import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_SCHEDULES } from "@/app/lib/constant"
+import { AREA, TOKYO_CHIBA } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
-import { ArrowRightIcon, UserCircleIcon } from "@heroicons/react/24/outline"
+import { UserCircleIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
@@ -73,8 +73,6 @@ export default function Home(): React.JSX.Element {
   return (
     <article className="grid gap-6 pb-4 text-base text-center">
       <Banner />
-      <Banner1 />
-      <Banner2 />
       <Carousel />
       <section className="p-4 text-center">
         <SlideUp className="pb-4">
@@ -133,30 +131,15 @@ export default function Home(): React.JSX.Element {
           </p>
         </div>
       </section>
-      <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-full">
-        <p className="font-semibold">
-          2024年
-          <span className="text-xl">{TOKYO_CHIBA_SCHEDULES[0].date[0]}</span>月
-          {TOKYO_CHIBA_SCHEDULES.map((schedule, index) => (
-            <span key={schedule.alt}>
-              <span className="text-xl">{schedule.date[1]}</span>日
-              {index === TOKYO_CHIBA_SCHEDULES.length - 1 ? "、" : "・"}
-            </span>
-          ))}
-          <br />
-          <span className="text-lg text-rose-400">{TOKYO_CHIBA.name}</span>
-          で開催決定！
-        </p>
-        <Link href={AREA.href + TOKYO_CHIBA.href}>
-          <button
-            type="button"
-            className="bg-sky-400 blue-shine btn shadow-lg text-lg text-white w-full"
-          >
-            内容・応募はこちら
-            <ArrowRightIcon className="arrow-right size-5" />
-          </button>
-        </Link>
-      </section>
+      <Link href={AREA.href + TOKYO_CHIBA.href}>
+        <Image
+          src="/202410_event_banner.avif"
+          width={1000}
+          height={1000}
+          alt="イベント詳細はこちら"
+          className="w-full"
+        />
+      </Link>
       <section className="gap-2 grid grid-cols-2">
         <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-3xl text-orange-400">
           プログラミング体験

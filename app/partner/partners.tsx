@@ -12,7 +12,7 @@ export function Partners({
       {partners.map((item) => (
         <section
           key={item.name}
-          className="bg-base-200 gap-2 grid items-center text-center p-4 rounded-box shadow-lg"
+          className="bg-base-200 gap-2 grid items-center p-4 rounded-box shadow-lg"
         >
           <Image
             loader={cloudfrontLoader}
@@ -22,7 +22,7 @@ export function Partners({
             alt={item.name}
             className="h-40 object-contain"
           />
-          <div className="content-center gap-2 grid text-center">
+          <div className="content-center gap-2 grid">
             <h2 className="font-semibold text-sm">
               {item.href ? (
                 <Link

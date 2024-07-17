@@ -1,6 +1,5 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
 import { Heading } from "@/app/components/layout/heading"
-import { Purpose } from "@/app/components/layout/purpose"
 import type { Supporter } from "@/app/interfaces/supporter"
 import { SUPPORTER } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
@@ -35,7 +34,7 @@ export default function SupporterPage(): React.JSX.Element {
   ] as const
 
   return (
-    <article className="grid gap-6 pb-4">
+    <>
       <Heading navigation={SUPPORTER} />
       <section className="grid gap-6 px-4">
         {supporters.map((item) => (
@@ -68,7 +67,6 @@ export default function SupporterPage(): React.JSX.Element {
           </section>
         ))}
       </section>
-      <Purpose />
-    </article>
+    </>
   )
 }

@@ -25,36 +25,6 @@ function Details({
   return (
     <section className="grid gap-4 px-4">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
-      <div className="alert bg-sky-400 gap-1 grid grid-flow-col max-w-fit mx-auto shadow-lg text-base">
-        <InformationCircleIcon className="row-span-2 size-10" />
-        <p>
-          <span className="decoration-4 decoration-orange-400 font-bold underline">
-            募集は先着順
-          </span>
-          になります。
-        </p>
-        <p>定員に達し次第、募集を終了します。</p>
-      </div>
-      <div className="bg-sky-400 gap-1 grid grid-flow-col items-center mx-auto p-4 rounded-2xl shadow-lg text-base text-white">
-        <InformationCircleIcon className="row-span-2 size-10" />
-        <p>
-          <span className="decoration-4 decoration-orange-400 font-bold underline">
-            募集は先着順
-          </span>
-          になります。
-        </p>
-        <p>定員に達し次第、募集を終了します。</p>
-      </div>
-      <div className="bg-sky-400 gap-1 grid grid-flow-col items-center mx-auto p-4 rounded-2xl shadow-lg text-base text-white">
-        <InformationCircleIcon className="row-span-2 size-10" />
-        <p>
-          <span className="decoration-4 decoration-orange-400 font-bold underline text-black">
-            募集は先着順
-          </span>
-          になります。
-        </p>
-        <p>定員に達し次第、募集を終了します。</p>
-      </div>
       <div className="bg-sky-300 gap-1 grid grid-flow-col items-center mx-auto p-4 rounded-2xl shadow-lg text-base">
         <InformationCircleIcon className="row-span-2 size-10" />
         <p>

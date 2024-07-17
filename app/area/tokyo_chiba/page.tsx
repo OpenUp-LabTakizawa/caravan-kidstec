@@ -34,7 +34,7 @@ export default function TokyoChiba(): React.JSX.Element {
     },
     {
       alt: "ロボサバ大会",
-      src: "/202307/m-plaza/course_challenge.avif",
+      src: "/202306/m-plaza/course_challenge.avif",
       color: "bg-rose-400",
       title: "午前：ロボサバ大会\n午後：結婚式体験",
       date: ["9", "22", "日"],

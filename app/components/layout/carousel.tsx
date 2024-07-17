@@ -11,11 +11,11 @@ export function Carousel(): React.JSX.Element {
   const pictures: Picture[] = [
     {
       alt: "プログラミング体験",
-      src: "/202307/sandankyo/basic_programming.avif",
+      src: "/202306/sandankyo/basic_programming.avif",
     },
     {
       alt: "サップ体験",
-      src: "/202307/eda_island/sea_circle.avif",
+      src: "/202306/eda_island/sea_circle.avif",
     },
     {
       alt: "オリーブ体験",

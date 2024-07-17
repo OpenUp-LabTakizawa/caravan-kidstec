@@ -41,7 +41,7 @@ export default function Home(): React.JSX.Element {
   const naturePanels: Panel[] = [
     {
       alt: "マリンスポーツで楽しい思い出！",
-      src: "/202307/eda_island/mega_sap_group.avif",
+      src: "/202306/eda_island/mega_sap_group.avif",
     },
     {
       alt: "手作りのオリーブオイル、\n最初はまだ赤い！",
@@ -49,7 +49,7 @@ export default function Home(): React.JSX.Element {
     },
     {
       alt: "三段峡の自然に\n興味津々！",
-      src: "/202307/sandankyo/writing.avif",
+      src: "/202306/sandankyo/writing.avif",
     },
   ] as const
 

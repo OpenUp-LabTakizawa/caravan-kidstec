@@ -1,5 +1,5 @@
+import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
-import { LineRegister } from "@/app/components/layout/lineRegister"
 import { Video } from "@/app/components/media/video"
 import { HISTORY } from "@/app/lib/constant"
 import { HIROSHIMA, HIROSHIMA_LINE } from "@/app/lib/constant"

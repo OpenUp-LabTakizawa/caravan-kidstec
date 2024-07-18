@@ -1,5 +1,6 @@
 import { Register } from "@/app/area/register"
 import { Schedules } from "@/app/area/schedules"
+import { LineApply } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { Navigation } from "@/app/components/layout/navigation"
@@ -10,7 +11,6 @@ import {
   TOKYO_CHIBA_GUIDELINE,
   TOKYO_CHIBA_LINE,
 } from "@/app/lib/constant"
-import { ArrowRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
@@ -69,7 +69,7 @@ export default function TokyoChiba(): React.JSX.Element {
           <br />
           応募画面へお進み下さい。
         </p>
-        <LineRegister lineLink={TOKYO_CHIBA_LINE} />
+        <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
@@ -77,25 +77,9 @@ export default function TokyoChiba(): React.JSX.Element {
       </section>
       <Register guideline={TOKYO_CHIBA_GUIDELINE} />
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
-        <LineRegister lineLink={TOKYO_CHIBA_LINE} />
+        <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
       <Navigation content={TOKYO_CHIBA} />
     </>
-  )
-}
-
-function LineRegister({
-  lineLink,
-}: Readonly<{ lineLink: string }>): React.JSX.Element {
-  return (
-    <Link href={lineLink}>
-      <button
-        type="button"
-        className="bg-[#00C300] btn shadow-lg green-shine text-lg text-white"
-      >
-        LINEで簡単応募する！
-        <ArrowRightIcon className="arrow-right size-5" />
-      </button>
-    </Link>
   )
 }

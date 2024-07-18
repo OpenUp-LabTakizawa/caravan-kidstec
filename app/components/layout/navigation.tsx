@@ -2,7 +2,6 @@
 
 import type { Menu, NavigationPanel } from "@/app/interfaces/navigation"
 import { CONTACT, FAQ, PARTNER, SUPPORTER } from "@/app/lib/constant"
-import Image from "next/image"
 import Link from "next/link"
 import { type MutableRefObject, useEffect, useRef } from "react"
 import type React from "react"
@@ -10,7 +9,7 @@ import type React from "react"
 export function Navigation({
   menu,
 }: Readonly<{ menu: Menu }>): React.JSX.Element {
-  const panelNavigation: NavigationPanel[] = [
+  const panels: NavigationPanel[] = [
     {
       name: FAQ.name,
       icon: CONTACT.icon,
@@ -59,7 +58,7 @@ export function Navigation({
 
   return (
     <section className="gap-4 flex justify-items-center">
-      {panelNavigation.map((item) => (
+      {panels.map((item) => (
         <Link
           key={item.name}
           ref={(node: HTMLAnchorElement) => {
@@ -71,19 +70,7 @@ export function Navigation({
           href={item.href}
           className="shadow-lg w-full"
         >
-          {typeof item.icon === "string" ? (
-            <Image
-              src={item.icon}
-              width={1000}
-              height={1000}
-              alt={item.name}
-              className="h-28 mx-auto object-contain w-fit"
-            />
-          ) : (
-            <item.icon
-              className={`h-28 mx-auto object-contain ${item.color}`}
-            />
-          )}
+          <item.icon className={`h-28 mx-auto object-contain ${item.color}`} />
           <p className={`mx-auto w-fit ${item.color}`}>{item.name}</p>
         </Link>
       ))}

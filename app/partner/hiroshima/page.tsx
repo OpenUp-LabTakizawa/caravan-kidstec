@@ -22,6 +22,7 @@ export default function Hiroshima(): React.JSX.Element {
     },
     {
       name: "広島大学(さんけん部)",
+      href: "https://www.instagram.com/hu_sankenbu/",
       src: "/logo/sanken_club_logo.avif",
       introduction:
         "数多くの自然がある広島大学のキャンパスは、\n自然を学ぶ絶好のフィールドです。\n\n“さんけん”は調査や保全、環境教育を実施する団体です。\n\n皆さんと一緒に広島大学の自然の豊かさについて学びます。",

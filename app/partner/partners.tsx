@@ -24,18 +24,14 @@ export function Partners({
           />
           <div className="content-center gap-2 grid">
             <h2 className="font-semibold text-sm">
-              {item.href ? (
-                <Link
-                  href={item.href}
-                  target="_blank"
-                  className="link"
-                  rel="noopener noreferrer"
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                item.name
-              )}
+              <Link
+                href={item.href}
+                target="_blank"
+                className="link"
+                rel="noopener noreferrer"
+              >
+                {item.name}
+              </Link>
             </h2>
             <div
               className={`grid items-center my-auto ${partners[0].name === "BPL Inc." ? "h-30" : "h-40"}`}

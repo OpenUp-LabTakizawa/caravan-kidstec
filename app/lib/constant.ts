@@ -1,5 +1,5 @@
 import type { Guideline } from "@/app/interfaces/guideline"
-import type { Menu, Navigation } from "@/app/interfaces/navigation"
+import type { Menu, Submenu } from "@/app/interfaces/menu"
 import {
   GlobeAsiaAustraliaIcon,
   HeartIcon,
@@ -11,51 +11,51 @@ import {
 export const SITE_TITLE: string = "こどもテックキャラバン"
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
-export const HIROSHIMA: Menu = { name: "広島", href: "/hiroshima" }
-export const TOKYO_CHIBA: Menu = { name: "東京・千葉", href: "/tokyo_chiba" }
-export const FAQ: Menu = { name: "FAQ", href: "/faq" }
-export const PRIVACY_POLICY: Menu = {
+export const HIROSHIMA: Submenu = { name: "広島", href: "/hiroshima" }
+export const TOKYO_CHIBA: Submenu = { name: "東京・千葉", href: "/tokyo_chiba" }
+export const FAQ: Submenu = { name: "FAQ", href: "/faq" }
+export const PRIVACY_POLICY: Submenu = {
   name: "個人情報保護方針",
   href: "/privacy-policy",
 }
 
-export const AREA: Navigation = {
+export const AREA: Menu = {
   name: "開催予定",
   icon: TruckIcon,
   color: "text-orange-400",
   href: "/area",
-  menu: [TOKYO_CHIBA, HIROSHIMA],
+  submenus: [TOKYO_CHIBA, HIROSHIMA],
 }
-export const HISTORY: Navigation = {
+export const HISTORY: Menu = {
   name: "過去の実績",
   icon: TrophyIcon,
   color: "text-yellow-400",
   href: "/history",
-  menu: [HIROSHIMA],
+  submenus: [HIROSHIMA],
 }
-export const SUPPORTER: Navigation = {
+export const SUPPORTER: Menu = {
   name: "サポーター",
   icon: GlobeAsiaAustraliaIcon,
   color: "text-teal-400",
   href: "/supporter",
-  menu: [],
+  submenus: [],
 }
-export const PARTNER: Navigation = {
+export const PARTNER: Menu = {
   name: "パートナー",
   icon: HeartIcon,
   color: "text-rose-400",
   href: "/partner",
-  menu: [TOKYO_CHIBA, HIROSHIMA],
+  submenus: [TOKYO_CHIBA, HIROSHIMA],
 }
-export const CONTACT: Navigation = {
+export const CONTACT: Menu = {
   name: "お問い合わせ",
   icon: QuestionMarkCircleIcon,
   color: "text-sky-400",
   href: "/contact",
-  menu: [FAQ, PRIVACY_POLICY],
+  submenus: [FAQ, PRIVACY_POLICY],
 }
 
-export const navigation: Navigation[] = [
+export const NAVIGATION: Menu[] = [
   AREA,
   HISTORY,
   SUPPORTER,

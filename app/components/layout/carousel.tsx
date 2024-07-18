@@ -7,7 +7,7 @@ import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import type React from "react"
-import { useEffect, useRef, useState } from "react"
+import { type RefObject, useEffect, useRef, useState } from "react"
 
 export function Carousel(): React.JSX.Element {
   const pictures: Picture[] = [
@@ -37,7 +37,7 @@ export function Carousel(): React.JSX.Element {
     },
   ] as const
 
-  const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
   const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
   let slide = 0
 
@@ -66,14 +66,14 @@ export function Carousel(): React.JSX.Element {
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
       >
-        {pictures.map((item) => (
+        {pictures.map((picture) => (
           <Image
-            key={item.alt}
+            key={picture.alt}
             loader={cloudfrontLoader}
-            src={item.src}
+            src={picture.src}
             height={1000}
             width={1000}
-            alt={item.alt}
+            alt={picture.alt}
             className="aspect-square carousel-item object-cover w-full"
           />
         ))}
@@ -136,7 +136,7 @@ export function ReviewCarousel(): React.JSX.Element {
       areaAndUser: "第3回 広島 小4、中2",
     },
   ] as const
-  const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (window.IntersectionObserver) {
@@ -164,13 +164,15 @@ export function ReviewCarousel(): React.JSX.Element {
 
   return (
     <div className="carousel space-x-4">
-      {reviews.map((item) => (
-        <div key={item.description} className="carousel-item">
+      {reviews.map((review) => (
+        <div key={review.description} className="carousel-item">
           <div className="bg-blue-100 content-between gap-2 grid h-full p-2 rounded-2xl shadow-lg w-56">
-            <p className="my-auto text-sm whitespace-pre">{item.description}</p>
+            <p className="my-auto text-sm whitespace-pre">
+              {review.description}
+            </p>
             <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
               <UserCircleIcon className="text-rose-400 size-6 mr-1" />
-              {item.areaAndUser}
+              {review.areaAndUser}
             </p>
           </div>
         </div>
@@ -182,7 +184,7 @@ export function ReviewCarousel(): React.JSX.Element {
 export function ScheduleCarousel({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): React.JSX.Element {
-  const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (window.IntersectionObserver) {
@@ -210,32 +212,32 @@ export function ScheduleCarousel({
 
   return (
     <div className="carousel space-x-4">
-      {schedules.map((item, index) => (
-        <div key={item.alt} className="carousel-item rounded-box w-60">
+      {schedules.map((schedule, index) => (
+        <div key={schedule.alt} className="carousel-item rounded-box w-60">
           <div className="card shadow-lg">
             <Image
               loader={cloudfrontLoader}
-              src={item.src}
+              src={schedule.src}
               width={1000}
               height={1000}
-              alt={item.alt}
+              alt={schedule.alt}
               className="h-60 object-cover rounded-t-2xl"
             />
             <div className="bg-amber-50 card-body p-0 py-8 relative">
               <span
-                className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${item.color}`}
+                className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${schedule.color}`}
               >
                 Day {index + 1}
               </span>
               <h3 className="card-title mx-auto text-lg whitespace-pre">
-                {item.title}
+                {schedule.title}
               </h3>
               <p className="font-semibold text-sm">
-                2024年{item.date[0]}月{item.date[1]}日({item.date[2]})
-                10:00~17:00
+                2024年{schedule.date[0]}月{schedule.date[1]}日(
+                {schedule.date[2]}) 10:00~17:00
               </p>
               <div className="card-actions justify-center">
-                {item.tags.map((tag) => (
+                {schedule.tags.map((tag) => (
                   <div
                     key={tag}
                     className="badge badge-outline bg-base-200 text-xs"

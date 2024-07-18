@@ -1,4 +1,4 @@
-import { navigation } from "@/app/lib/constant"
+import { NAVIGATION } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
@@ -8,27 +8,27 @@ export function Footer(): React.JSX.Element {
     <footer className="bg-base-300 grid items-center justify-center p-4 text-base-content">
       <nav>
         <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 menu p-0">
-          {navigation.map((item) => (
-            <li key={item.name}>
-              {item.menu.length === 0 ? (
-                <Link href={item.href} className="font-bold link-hover">
-                  <item.icon className={`size-5 ${item.color}`} />
-                  {item.name}
+          {NAVIGATION.map((menu) => (
+            <li key={menu.name}>
+              {menu.submenus.length === 0 ? (
+                <Link href={menu.href} className="font-bold link-hover">
+                  <menu.icon className={`size-5 ${menu.color}`} />
+                  {menu.name}
                 </Link>
               ) : (
                 <>
                   <span className="font-bold">
-                    <item.icon className={`size-5 ${item.color}`} />
-                    {item.name}
+                    <menu.icon className={`size-5 ${menu.color}`} />
+                    {menu.name}
                   </span>
                   <ul>
-                    {item.menu.map((child) => (
-                      <li key={child.name}>
+                    {menu.submenus.map((submenu) => (
+                      <li key={submenu.name}>
                         <Link
-                          href={item.href + child.href}
+                          href={menu.href + submenu.href}
                           className="link-hover"
                         >
-                          {child.name}
+                          {submenu.name}
                         </Link>
                       </li>
                     ))}

@@ -31,7 +31,7 @@ export default function Hiroshima(): React.JSX.Element {
 
   return (
     <>
-      <Heading navigation={PARTNER} menu={HIROSHIMA} />
+      <Heading menu={PARTNER} submenu={HIROSHIMA} />
       <Partners partners={partners} />
     </>
   )

@@ -5,7 +5,7 @@ import type React from "react"
 
 export function LineAddFriends({
   linkLink,
-}: { linkLink: string }): React.JSX.Element {
+}: Readonly<{ linkLink: string }>): React.JSX.Element {
   return (
     <Link href={linkLink} className="mx-auto">
       <Image

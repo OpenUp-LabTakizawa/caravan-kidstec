@@ -3,7 +3,7 @@ import { Schedules } from "@/app/area/schedules"
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
-import { Navigation } from "@/app/components/layout/navigation"
+import { MenuPanels } from "@/app/components/layout/menuPanel"
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Schedule } from "@/app/interfaces/schedule"
 import { AREA, HIROSHIMA, HIROSHIMA_LINE } from "@/app/lib/constant"
@@ -50,7 +50,7 @@ export default function Hiroshima(): React.JSX.Element {
 
   return (
     <>
-      <Heading navigation={AREA} menu={HIROSHIMA} />
+      <Heading menu={AREA} submenu={HIROSHIMA} />
       <Schedules schedules={schedules} />
       <LineRegister lineLink={HIROSHIMA_LINE} />
       <section className="grid gap-4">
@@ -59,7 +59,7 @@ export default function Hiroshima(): React.JSX.Element {
       </section>
       <Register guideline={guideline} />
       <LineRegister lineLink={HIROSHIMA_LINE} />
-      <Navigation menu={HIROSHIMA} />
+      <MenuPanels submenu={HIROSHIMA} />
     </>
   )
 }

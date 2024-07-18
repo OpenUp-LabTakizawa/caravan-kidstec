@@ -7,13 +7,11 @@ import type React from "react"
 export default function PrivacyPolicy(): React.JSX.Element {
   return (
     <>
-      <Heading navigation={CONTACT} menu={PRIVACY_POLICY} />
+      <Heading menu={CONTACT} submenu={PRIVACY_POLICY} />
       <section className="bg-base-200 grid gap-4 leading-7 m-4 p-4 rounded-box text-sm">
         <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
         <p>
-          株式会社オープンアップグループ（以下「当社」といいます。）は、イベント
-          【こどもテックキャラバン】
-          （以下「本件」といいます。）へのご参加お申込みに必要な情報、また参加決定者の詳細情報においてお預かりする個人情報の取扱いについて、次のように管理し、保護に努めて参ります。
+          株式会社オープンアップグループ（以下「当社」といいます。）は、イベント&nbsp;【こどもテックキャラバン】&nbsp;（以下「本件」といいます。）へのご参加お申込みに必要な情報、また参加決定者の詳細情報においてお預かりする個人情報の取扱いについて、次のように管理し、保護に努めて参ります。
         </p>
         <div className="divider">
           <HashtagIcon className="size-10" />
@@ -57,7 +55,7 @@ export default function PrivacyPolicy(): React.JSX.Element {
               <li>①本件実施に関する業務提携を行う場合</li>
               <li>②本件実施に関する業務委託を行う場合</li>
             </ul>
-            <p>a. 提供する個人情報の項目</p>
+            <p>a.&nbsp;提供する個人情報の項目</p>
             <ul className="list-disc px-8">
               <li>氏名</li>
               <li>住所</li>
@@ -69,11 +67,11 @@ export default function PrivacyPolicy(): React.JSX.Element {
               <li>家族構成</li>
               <li>運営に必要な備考情報</li>
             </ul>
-            <p>b. 提供の手段・方法</p>
+            <p>b.&nbsp;提供の手段・方法</p>
             <p className="px-4">
               書面にて直接またはデータ転送（Eメール、FAXを含む）
             </p>
-            <p>c. 当該情報の提供を受ける者（組織）</p>
+            <p>c.&nbsp;当該情報の提供を受ける者（組織）</p>
             <ul className="list-disc px-8">
               <li>ICHI COMMONS株式会社</li>
               <li>NPO法人 三段峡・太田川流域研究会</li>
@@ -83,7 +81,7 @@ export default function PrivacyPolicy(): React.JSX.Element {
               <li>株式会社テイクアンドギヴ・ニーズ</li>
               <li>広島大学（さんけん部）</li>
             </ul>
-            <p>d. 個人情報の取扱いに関する契約</p>
+            <p>d.&nbsp;個人情報の取扱いに関する契約</p>
             <p className="px-4">
               提供する個人情報の取扱いに関しては、機密保持及び管理責任の所在を明らかにする契約を上記組織と締結しております。
             </p>

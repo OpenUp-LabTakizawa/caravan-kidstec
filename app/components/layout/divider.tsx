@@ -1,11 +1,11 @@
 "use client"
 
 import { HashtagIcon } from "@heroicons/react/24/solid"
-import { useEffect, useRef } from "react"
+import { type RefObject, useEffect, useRef } from "react"
 import type React from "react"
 
 export function Divider(): React.JSX.Element {
-  const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (window.IntersectionObserver) {

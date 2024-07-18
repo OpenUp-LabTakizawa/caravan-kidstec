@@ -1,11 +1,12 @@
 "use client"
 
-import { SITE_TITLE, navigation } from "@/app/lib/constant"
+import type { Submenu } from "@/app/interfaces/menu"
+import { NAVIGATION, SITE_TITLE } from "@/app/lib/constant"
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
-import { type MutableRefObject, useRef, useState } from "react"
+import { type MutableRefObject, type RefObject, useRef, useState } from "react"
 
 export function Header(): React.JSX.Element {
   const [scrollY, setScrollY] = useState<{
@@ -53,8 +54,7 @@ export function Header(): React.JSX.Element {
 }
 
 function DropdownMenu(): React.JSX.Element {
-  const ref: React.RefObject<HTMLDetailsElement> =
-    useRef<HTMLDetailsElement>(null)
+  const ref: RefObject<HTMLDetailsElement> = useRef<HTMLDetailsElement>(null)
 
   if (typeof window !== "undefined") {
     window.addEventListener("click", () => {
@@ -71,20 +71,20 @@ function DropdownMenu(): React.JSX.Element {
       </summary>
       <nav>
         <ul className="menu menu-sm dropdown-content z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
-          {navigation.map((item) => (
-            <li key={item.name}>
-              {item.menu.length === 0 ? (
-                <Link href={item.href} className="font-bold">
-                  <item.icon className={`size-5 ${item.color}`} />
-                  {item.name}
+          {NAVIGATION.map((menu) => (
+            <li key={menu.name}>
+              {menu.submenus.length === 0 ? (
+                <Link href={menu.href} className="font-bold">
+                  <menu.icon className={`size-5 ${menu.color}`} />
+                  {menu.name}
                 </Link>
               ) : (
                 <>
                   <div className="font-bold">
-                    <item.icon className={`size-5 ${item.color}`} />
-                    {item.name}
+                    <menu.icon className={`size-5 ${menu.color}`} />
+                    {menu.name}
                   </div>
-                  <Menu menu={item.menu} href={item.href} />
+                  <Menu submenus={menu.submenus} href={menu.href} />
                 </>
               )}
             </li>
@@ -120,27 +120,27 @@ function Navigation(): React.JSX.Element {
 
   return (
     <ul className="menu menu-horizontal p-0">
-      {navigation.map((item) => (
-        <li key={item.name} className="hover:scale-110">
-          {item.menu.length === 0 ? (
-            <Link href={item.href} className="font-bold">
-              <item.icon className={`size-5 ${item.color}`} />
-              {item.name}
+      {NAVIGATION.map((menu) => (
+        <li key={menu.name} className="hover:scale-110">
+          {menu.submenus.length === 0 ? (
+            <Link href={menu.href} className="font-bold">
+              <menu.icon className={`size-5 ${menu.color}`} />
+              {menu.name}
             </Link>
           ) : (
             <details
               ref={(node: HTMLDetailsElement) => {
-                ref.current.set(item.name, node)
+                ref.current.set(menu.name, node)
                 return () => {
-                  ref.current.delete(item.name)
+                  ref.current.delete(menu.name)
                 }
               }}
             >
               <summary className="font-bold">
-                <item.icon className={`size-5 ${item.color}`} />
-                {item.name}
+                <menu.icon className={`size-5 ${menu.color}`} />
+                {menu.name}
               </summary>
-              <Menu menu={item.menu} href={item.href} />
+              <Menu submenus={menu.submenus} href={menu.href} />
             </details>
           )}
         </li>
@@ -150,17 +150,17 @@ function Navigation(): React.JSX.Element {
 }
 
 function Menu({
-  menu,
+  submenus,
   href,
 }: {
-  menu: { name: string; href: string }[]
+  submenus: Submenu[]
   href: string
 }): React.JSX.Element {
   return (
     <ul className="p-2">
-      {menu.map((item) => (
-        <li key={item.name}>
-          <Link href={href + item.href}>{item.name}</Link>
+      {submenus.map((submenu) => (
+        <li key={submenu.name}>
+          <Link href={href + submenu.href}>{submenu.name}</Link>
         </li>
       ))}
     </ul>

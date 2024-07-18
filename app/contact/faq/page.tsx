@@ -3,5 +3,5 @@ import { CONTACT, FAQ } from "@/app/lib/constant"
 import type React from "react"
 
 export default function Faq(): React.JSX.Element {
-  return <Heading navigation={CONTACT} menu={FAQ} />
+  return <Heading menu={CONTACT} submenu={FAQ} />
 }

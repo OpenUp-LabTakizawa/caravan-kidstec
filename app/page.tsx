@@ -171,20 +171,23 @@ function PanelTile({
 }: Readonly<{ panels: Panel[] }>): React.JSX.Element {
   return (
     <>
-      {panels.map((item, index) => (
-        <figure key={item.alt} className={`${index === 0 ? "col-span-2" : ""}`}>
+      {panels.map((panel, index) => (
+        <figure
+          key={panel.alt}
+          className={`${index === 0 ? "col-span-2" : ""}`}
+        >
           <Image
             loader={cloudfrontLoader}
-            src={item.src}
+            src={panel.src}
             height={1000}
             width={1000}
-            alt={item.alt}
+            alt={panel.alt}
             className="w-full"
           />
           <figcaption
-            className={`bg-amber-50 font-bold grid items-center text-center whitespace-pre${item.height ? ` ${item.height}` : ""}`}
+            className={`bg-amber-50 font-bold grid items-center text-center whitespace-pre${panel.height ? ` ${panel.height}` : ""}`}
           >
-            {item.alt}
+            {panel.alt}
           </figcaption>
         </figure>
       ))}

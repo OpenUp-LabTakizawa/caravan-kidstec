@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { type RefObject, useEffect, useRef, useState } from "react"
 import type React from "react"
 
 export function SlideUp({
@@ -10,7 +10,7 @@ export function SlideUp({
   children: React.ReactNode
   className?: string
 }>): React.JSX.Element {
-  const ref: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
   const [isShown, setIsShown] = useState(false)
 
   useEffect(() => {

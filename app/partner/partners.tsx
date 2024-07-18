@@ -9,34 +9,34 @@ export function Partners({
 }: Readonly<{ partners: Partner[] }>): React.JSX.Element {
   return (
     <section className="grid gap-6 text-xs max-w-96 mx-auto">
-      {partners.map((item) => (
+      {partners.map((partner) => (
         <section
-          key={item.name}
+          key={partner.name}
           className="bg-base-200 gap-2 grid items-center p-4 rounded-box shadow-lg"
         >
           <Image
             loader={cloudfrontLoader}
-            src={item.src}
+            src={partner.src}
             width={1000}
             height={1000}
-            alt={item.name}
+            alt={partner.name}
             className="h-40 object-contain"
           />
           <div className="content-center gap-2 grid">
             <h2 className="font-semibold text-sm">
               <Link
-                href={item.href}
+                href={partner.href}
                 target="_blank"
                 className="link"
                 rel="noopener noreferrer"
               >
-                {item.name}
+                {partner.name}
               </Link>
             </h2>
             <div
               className={`grid items-center my-auto ${partners[0].name === "BPL Inc." ? "h-30" : "h-40"}`}
             >
-              <p className="whitespace-pre">{item.introduction}</p>
+              <p className="whitespace-pre">{partner.introduction}</p>
             </div>
           </div>
         </section>

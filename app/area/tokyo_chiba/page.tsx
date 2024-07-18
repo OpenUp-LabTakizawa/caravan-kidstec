@@ -3,7 +3,7 @@ import { Schedules } from "@/app/area/schedules"
 import { LineApply } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
-import { Navigation } from "@/app/components/layout/navigation"
+import { MenuPanels } from "@/app/components/layout/menuPanel"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
   AREA,
@@ -51,7 +51,7 @@ export default function TokyoChiba(): React.JSX.Element {
 
   return (
     <>
-      <Heading navigation={AREA} menu={TOKYO_CHIBA} />
+      <Heading menu={AREA} submenu={TOKYO_CHIBA} />
       <Image
         src={"/202409_tokyo_chiba.avif"}
         width={1000}
@@ -79,7 +79,7 @@ export default function TokyoChiba(): React.JSX.Element {
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
-      <Navigation menu={TOKYO_CHIBA} />
+      <MenuPanels submenu={TOKYO_CHIBA} />
     </>
   )
 }

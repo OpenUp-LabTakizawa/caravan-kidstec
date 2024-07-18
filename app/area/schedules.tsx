@@ -12,24 +12,24 @@ export function Schedules({
         開催日時
       </span>
       <ul>
-        {schedules.map((item) => (
-          <li key={item.alt} className="grid gap-1 border-b p-2">
+        {schedules.map((schedule) => (
+          <li key={schedule.alt} className="grid gap-1 border-b p-2">
             <p className="decoration-4 decoration-sky-400 underline">
               2024年
-              <span className="font-bold text-2xl">{item.date[0]}</span>月
+              <span className="font-bold text-2xl">{schedule.date[0]}</span>月
               <span className="decoration-4 decoration-sky-400 font-bold text-2xl underline">
-                {item.date[1]}
+                {schedule.date[1]}
               </span>
               日(
-              <span className="font-bold text-xl">{item.date[2]}</span>)
+              <span className="font-bold text-xl">{schedule.date[2]}</span>)
             </p>
             <p>10：00&nbsp;～&nbsp;17：00（予定）</p>
             <div className="flex gap-2 items-center mx-auto">
               <p className="badge badge-outline">場所</p>
               <p>
-                <strong>{item.venue}</strong>
+                <strong>{schedule.venue}</strong>
                 <br />
-                {item.address}
+                {schedule.address}
               </p>
             </div>
           </li>

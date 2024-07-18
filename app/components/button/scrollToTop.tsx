@@ -3,10 +3,10 @@
 import { ChevronDoubleUpIcon } from "@heroicons/react/24/solid"
 import { useEffect, useRef, useState } from "react"
 import type React from "react"
+import type { RefObject } from "react"
 
 export function ScrollToTop(): React.JSX.Element {
-  const ref: React.RefObject<HTMLButtonElement> =
-    useRef<HTMLButtonElement>(null)
+  const ref: RefObject<HTMLButtonElement> = useRef<HTMLButtonElement>(null)
   const scrollBtn: HTMLButtonElement = ref.current as HTMLButtonElement
   const [scrollY, setScrollY] = useState<number>(0)
   const [isScrollDown, setIsScrollDown] = useState<boolean>(false)

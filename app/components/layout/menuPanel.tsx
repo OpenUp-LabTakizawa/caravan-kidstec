@@ -1,15 +1,15 @@
 "use client"
 
-import type { Menu, NavigationPanel } from "@/app/interfaces/navigation"
+import type { MenuPanel, Submenu } from "@/app/interfaces/menu"
 import { CONTACT, FAQ, PARTNER, SUPPORTER } from "@/app/lib/constant"
 import Link from "next/link"
 import { type MutableRefObject, useEffect, useRef } from "react"
 import type React from "react"
 
-export function Navigation({
-  menu,
-}: Readonly<{ menu: Menu }>): React.JSX.Element {
-  const panels: NavigationPanel[] = [
+export function MenuPanels({
+  submenu,
+}: Readonly<{ submenu: Submenu }>): React.JSX.Element {
+  const panels: MenuPanel[] = [
     {
       name: FAQ.name,
       icon: CONTACT.icon,
@@ -23,10 +23,10 @@ export function Navigation({
       href: SUPPORTER.href,
     },
     {
-      name: menu.name + PARTNER.name,
+      name: submenu.name + PARTNER.name,
       icon: PARTNER.icon,
       color: PARTNER.color,
-      href: PARTNER.href + menu.href,
+      href: PARTNER.href + submenu.href,
     },
   ] as const
   const ref: MutableRefObject<Map<string, HTMLAnchorElement>> = useRef<
@@ -58,20 +58,22 @@ export function Navigation({
 
   return (
     <section className="gap-4 flex justify-items-center">
-      {panels.map((item) => (
+      {panels.map((panel) => (
         <Link
-          key={item.name}
+          key={panel.name}
           ref={(node: HTMLAnchorElement) => {
-            ref.current.set(item.name, node)
+            ref.current.set(panel.name, node)
             return () => {
-              ref.current.delete(item.name)
+              ref.current.delete(panel.name)
             }
           }}
-          href={item.href}
+          href={panel.href}
           className="shadow-lg w-full"
         >
-          <item.icon className={`h-28 mx-auto object-contain ${item.color}`} />
-          <p className={`mx-auto w-fit ${item.color}`}>{item.name}</p>
+          <panel.icon
+            className={`h-28 mx-auto object-contain ${panel.color}`}
+          />
+          <p className={`mx-auto w-fit ${panel.color}`}>{panel.name}</p>
         </Link>
       ))}
     </section>

@@ -4,7 +4,12 @@ import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { Navigation } from "@/app/components/layout/navigation"
 import type { Schedule } from "@/app/interfaces/schedule"
-import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_GUIDELINE } from "@/app/lib/constant"
+import {
+  AREA,
+  TOKYO_CHIBA,
+  TOKYO_CHIBA_GUIDELINE,
+  TOKYO_CHIBA_LINE,
+} from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
@@ -34,7 +39,7 @@ export default function TokyoChiba(): React.JSX.Element {
     },
     {
       alt: "ロボサバ大会",
-      src: "/202306/m-plaza/course_challenge.avif",
+      src: "/202206/eda_island/course_challenge.avif",
       color: "bg-rose-400",
       title: "午前：ロボサバ大会\n午後：結婚式体験",
       date: ["9", "22", "日"],
@@ -64,7 +69,7 @@ export default function TokyoChiba(): React.JSX.Element {
           <br />
           応募画面へお進み下さい。
         </p>
-        <LineRegister lineLink={TOKYO_CHIBA_GUIDELINE.lineLink} />
+        <LineRegister lineLink={TOKYO_CHIBA_LINE} />
       </section>
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
@@ -72,7 +77,7 @@ export default function TokyoChiba(): React.JSX.Element {
       </section>
       <Register guideline={TOKYO_CHIBA_GUIDELINE} />
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
-        <LineRegister lineLink={TOKYO_CHIBA_GUIDELINE.lineLink} />
+        <LineRegister lineLink={TOKYO_CHIBA_LINE} />
       </section>
       <Navigation content={TOKYO_CHIBA} />
     </>

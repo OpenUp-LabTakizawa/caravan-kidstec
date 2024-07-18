@@ -9,8 +9,10 @@ import {
 } from "@heroicons/react/24/outline"
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
-export const TOKYO_CHIBA: Content = { name: "東京・千葉", href: "/tokyo_chiba" }
+export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
+export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
 export const HIROSHIMA: Content = { name: "広島", href: "/hiroshima" }
+export const TOKYO_CHIBA: Content = { name: "東京・千葉", href: "/tokyo_chiba" }
 export const FAQ: Content = { name: "FAQ", href: "/faq" }
 export const PRIVACY_POLICY: Content = {
   name: "個人情報保護方針",
@@ -63,7 +65,5 @@ export const navigation: Navigation[] = [
 export const TOKYO_CHIBA_GUIDELINE: Guideline = {
   participantsNumber: "２０組程",
   deadline: "２０２４年８月３１日",
-  lineLink: "https://lin.ee/a1BRnXT",
-  botImage: "/kai_icon.avif",
-  userImage: "/miku_icon.avif",
+  lineLink: TOKYO_CHIBA_LINE,
 }

@@ -10,7 +10,7 @@ export type Navigation = {
 
 export type NavigationPanel = {
   name: string
-  icon: string | React.ElementType
+  icon: React.ElementType
   color: string
   href: string
 }

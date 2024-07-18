@@ -9,19 +9,27 @@ export default function Hiroshima(): React.JSX.Element {
   return (
     <>
       <Heading navigation={HISTORY} menu={HIROSHIMA} />
-      <h2 className="font-bold font-zenMaruGothic text-3xl">
-        第１回&nbsp;2022年6月
-      </h2>
-      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202206" />
-      <h2 className="font-bold font-zenMaruGothic text-3xl">
-        第２回&nbsp;2023年6月
-      </h2>
-      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202306" />
-      <h2 className="font-bold font-zenMaruGothic text-3xl">
-        第３回&nbsp;2023年11月
-      </h2>
-      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202311" />
-      <LineRegister lineLink={HIROSHIMA_LINE} />
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">
+          第１回&nbsp;2022年6月
+        </h2>
+        <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202206" />
+      </section>
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">
+          第２回&nbsp;2023年6月
+        </h2>
+        <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202306" />
+      </section>
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">
+          第３回&nbsp;2023年11月
+        </h2>
+        <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202311" />
+      </section>
+      <section className="grid gap-4">
+        <LineRegister lineLink={HIROSHIMA_LINE} />
+      </section>
     </>
   )
 }

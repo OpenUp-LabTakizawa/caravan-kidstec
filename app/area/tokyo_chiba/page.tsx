@@ -53,7 +53,7 @@ export default function TokyoChiba(): React.JSX.Element {
     <>
       <Heading navigation={AREA} menu={TOKYO_CHIBA} />
       <Image
-        src={"/202409_chiba.avif"}
+        src={"/202409_tokyo_chiba.avif"}
         width={1000}
         height={1000}
         alt="こどもテックキャラバン"

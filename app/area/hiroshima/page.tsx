@@ -1,19 +1,19 @@
 import { Register } from "@/app/area/register"
 import { Schedules } from "@/app/area/schedules"
-import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
+import { LineRegister } from "@/app/components/layout/lineRegister"
 import { Navigation } from "@/app/components/layout/navigation"
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Schedule } from "@/app/interfaces/schedule"
-import { AREA, HIROSHIMA } from "@/app/lib/constant"
+import { AREA, HIROSHIMA, HIROSHIMA_LINE } from "@/app/lib/constant"
 import type React from "react"
 
 export default function Hiroshima(): React.JSX.Element {
   const schedules: Schedule[] = [
     {
       alt: "はんだ付け",
-      src: "/202206/eda_island/soldering.avif",
+      src: "/202311/eda_island/soldering.avif",
       color: "bg-teal-400",
       title: "前半：ロボット制作\n後半：サマーキャンプ",
       date: ["7", "6", "土"],
@@ -23,7 +23,7 @@ export default function Hiroshima(): React.JSX.Element {
     },
     {
       alt: "SUP体験",
-      src: "/202306/eda_island/sup_on_the_sea.avif",
+      src: "/202206/eda_island/sup_on_the_sea.avif",
       color: "bg-sky-400",
       title: "前半：プログラミング体験\n後半：江田島の海でSUP体験",
       date: ["7", "13", "土"],
@@ -45,38 +45,21 @@ export default function Hiroshima(): React.JSX.Element {
   const guideline: Guideline = {
     participantsNumber: "１０組程",
     deadline: "２０２４年６月２９日",
-    lineLink: "https://lin.ee/LuSqIls",
-    botImage: "/miku_icon.avif",
-    userImage: "/kai_icon.avif",
+    lineLink: HIROSHIMA_LINE,
   }
 
   return (
     <>
       <Heading navigation={AREA} content={HIROSHIMA} />
       <Schedules schedules={schedules} />
-      <LineRegister lineLink={guideline.lineLink} />
+      <LineRegister lineLink={HIROSHIMA_LINE} />
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleCarousel schedules={schedules} />
       </section>
       <Register guideline={guideline} />
-      <LineRegister lineLink={guideline.lineLink} />
+      <LineRegister lineLink={HIROSHIMA_LINE} />
       <Navigation content={HIROSHIMA} />
     </>
-  )
-}
-
-function LineRegister({
-  lineLink,
-}: Readonly<{ lineLink: string }>): React.JSX.Element {
-  return (
-    <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
-      <p className="font-semibold">
-        公式LINEアカウントから、
-        <br />
-        次回開催の通知を受け取れます。
-      </p>
-      <LineAddFriends linkLink={lineLink} />
-    </section>
   )
 }

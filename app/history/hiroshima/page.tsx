@@ -1,7 +1,8 @@
 import { Heading } from "@/app/components/layout/heading"
+import { LineRegister } from "@/app/components/layout/lineRegister"
 import { Video } from "@/app/components/media/video"
 import { HISTORY } from "@/app/lib/constant"
-import { HIROSHIMA } from "@/app/lib/constant"
+import { HIROSHIMA, HIROSHIMA_LINE } from "@/app/lib/constant"
 import type React from "react"
 
 export default function Hiroshima(): React.JSX.Element {
@@ -20,6 +21,7 @@ export default function Hiroshima(): React.JSX.Element {
         第３回&nbsp;2023年11月
       </h2>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202311" />
+      <LineRegister lineLink={HIROSHIMA_LINE} />
     </>
   )
 }

@@ -73,19 +73,19 @@ function DropdownMenu(): React.JSX.Element {
         <ul className="menu menu-sm dropdown-content z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
           {navigation.map((item) => (
             <li key={item.name}>
-              {item.content ? (
+              {item.menu.length === 0 ? (
+                <Link href={item.href} className="font-bold">
+                  <item.icon className={`size-5 ${item.color}`} />
+                  {item.name}
+                </Link>
+              ) : (
                 <>
                   <div className="font-bold">
                     <item.icon className={`size-5 ${item.color}`} />
                     {item.name}
                   </div>
-                  <SubContent content={item.content} href={item.href} />
+                  <Menu menu={item.menu} href={item.href} />
                 </>
-              ) : (
-                <Link href={item.href} className="font-bold">
-                  <item.icon className={`size-5 ${item.color}`} />
-                  {item.name}
-                </Link>
               )}
             </li>
           ))}
@@ -122,7 +122,12 @@ function Navigation(): React.JSX.Element {
     <ul className="menu menu-horizontal p-0">
       {navigation.map((item) => (
         <li key={item.name} className="hover:scale-110">
-          {item.content ? (
+          {item.menu.length === 0 ? (
+            <Link href={item.href} className="font-bold">
+              <item.icon className={`size-5 ${item.color}`} />
+              {item.name}
+            </Link>
+          ) : (
             <details
               ref={(node: HTMLDetailsElement) => {
                 ref.current.set(item.name, node)
@@ -135,13 +140,8 @@ function Navigation(): React.JSX.Element {
                 <item.icon className={`size-5 ${item.color}`} />
                 {item.name}
               </summary>
-              <SubContent content={item.content} href={item.href} />
+              <Menu menu={item.menu} href={item.href} />
             </details>
-          ) : (
-            <Link href={item.href} className="font-bold">
-              <item.icon className={`size-5 ${item.color}`} />
-              {item.name}
-            </Link>
           )}
         </li>
       ))}
@@ -149,16 +149,16 @@ function Navigation(): React.JSX.Element {
   )
 }
 
-function SubContent({
-  content,
+function Menu({
+  menu,
   href,
 }: {
-  content: { name: string; href: string }[]
+  menu: { name: string; href: string }[]
   href: string
 }): React.JSX.Element {
   return (
     <ul className="p-2">
-      {content.map((item) => (
+      {menu.map((item) => (
         <li key={item.name}>
           <Link href={href + item.href}>{item.name}</Link>
         </li>

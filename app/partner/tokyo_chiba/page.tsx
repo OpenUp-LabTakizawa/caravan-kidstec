@@ -32,7 +32,7 @@ export default function TokyoChiba(): React.JSX.Element {
 
   return (
     <>
-      <Heading navigation={PARTNER} content={TOKYO_CHIBA} />
+      <Heading navigation={PARTNER} menu={TOKYO_CHIBA} />
       <Partners partners={partners} />
     </>
   )

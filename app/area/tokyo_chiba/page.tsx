@@ -51,7 +51,7 @@ export default function TokyoChiba(): React.JSX.Element {
 
   return (
     <>
-      <Heading navigation={AREA} content={TOKYO_CHIBA} />
+      <Heading navigation={AREA} menu={TOKYO_CHIBA} />
       <Image
         src={"/202409_chiba.avif"}
         width={1000}
@@ -79,7 +79,7 @@ export default function TokyoChiba(): React.JSX.Element {
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
-      <Navigation content={TOKYO_CHIBA} />
+      <Navigation menu={TOKYO_CHIBA} />
     </>
   )
 }

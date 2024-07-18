@@ -27,7 +27,7 @@ export function ScrollToTop(): React.JSX.Element {
     }
   })
 
-  function scrollToTop() {
+  function scrollToTop(): void {
     scrollBtn.classList.remove("fade-in-up")
     scrollBtn.classList.add("fade-out-down")
     window.scrollTo({ top: 0, behavior: "smooth" })

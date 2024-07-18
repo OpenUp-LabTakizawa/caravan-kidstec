@@ -8,7 +8,7 @@ import type React from "react"
 export default function Hiroshima(): React.JSX.Element {
   return (
     <>
-      <Heading navigation={HISTORY} content={HIROSHIMA} />
+      <Heading navigation={HISTORY} menu={HIROSHIMA} />
       <h2 className="font-bold font-zenMaruGothic text-3xl">
         第１回&nbsp;2022年6月
       </h2>

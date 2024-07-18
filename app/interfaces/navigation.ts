@@ -5,7 +5,7 @@ export type Navigation = {
   icon: React.ElementType
   color: string
   href: string
-  content?: Content[]
+  menu: Menu[]
 }
 
 export type NavigationPanel = {
@@ -15,7 +15,7 @@ export type NavigationPanel = {
   href: string
 }
 
-export type Content = {
+export type Menu = {
   name: string
   href: string
 }

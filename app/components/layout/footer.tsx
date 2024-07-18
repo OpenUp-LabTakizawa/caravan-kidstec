@@ -10,14 +10,19 @@ export function Footer(): React.JSX.Element {
         <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 menu p-0">
           {navigation.map((item) => (
             <li key={item.name}>
-              {item.content ? (
+              {item.menu.length === 0 ? (
+                <Link href={item.href} className="font-bold link-hover">
+                  <item.icon className={`size-5 ${item.color}`} />
+                  {item.name}
+                </Link>
+              ) : (
                 <>
                   <span className="font-bold">
                     <item.icon className={`size-5 ${item.color}`} />
                     {item.name}
                   </span>
                   <ul>
-                    {item.content.map((child) => (
+                    {item.menu.map((child) => (
                       <li key={child.name}>
                         <Link
                           href={item.href + child.href}
@@ -29,11 +34,6 @@ export function Footer(): React.JSX.Element {
                     ))}
                   </ul>
                 </>
-              ) : (
-                <Link href={item.href} className="font-bold link-hover">
-                  <item.icon className={`size-5 ${item.color}`} />
-                  {item.name}
-                </Link>
               )}
             </li>
           ))}

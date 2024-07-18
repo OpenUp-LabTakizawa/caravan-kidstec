@@ -50,7 +50,7 @@ export default function Hiroshima(): React.JSX.Element {
 
   return (
     <>
-      <Heading navigation={AREA} content={HIROSHIMA} />
+      <Heading navigation={AREA} menu={HIROSHIMA} />
       <Schedules schedules={schedules} />
       <LineRegister lineLink={HIROSHIMA_LINE} />
       <section className="grid gap-4">
@@ -59,7 +59,7 @@ export default function Hiroshima(): React.JSX.Element {
       </section>
       <Register guideline={guideline} />
       <LineRegister lineLink={HIROSHIMA_LINE} />
-      <Navigation content={HIROSHIMA} />
+      <Navigation menu={HIROSHIMA} />
     </>
   )
 }

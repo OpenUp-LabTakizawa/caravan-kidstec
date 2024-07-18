@@ -1,6 +1,6 @@
 "use client"
 
-import type { Content, NavigationPanel } from "@/app/interfaces/navigation"
+import type { Menu, NavigationPanel } from "@/app/interfaces/navigation"
 import { CONTACT, FAQ, PARTNER, SUPPORTER } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
@@ -8,8 +8,8 @@ import { type MutableRefObject, useEffect, useRef } from "react"
 import type React from "react"
 
 export function Navigation({
-  content,
-}: Readonly<{ content: Content }>): React.JSX.Element {
+  menu,
+}: Readonly<{ menu: Menu }>): React.JSX.Element {
   const panelNavigation: NavigationPanel[] = [
     {
       name: FAQ.name,
@@ -24,10 +24,10 @@ export function Navigation({
       href: SUPPORTER.href,
     },
     {
-      name: content.name + PARTNER.name,
+      name: menu.name + PARTNER.name,
       icon: PARTNER.icon,
       color: PARTNER.color,
-      href: PARTNER.href + content.href,
+      href: PARTNER.href + menu.href,
     },
   ] as const
   const ref: MutableRefObject<Map<string, HTMLAnchorElement>> = useRef<

@@ -14,7 +14,7 @@ export default function Home(): React.JSX.Element {
   const techPanels: Panel[] = [
     {
       alt: "はじめてのはんだづけにどきどき",
-      src: "/202207/eda_island/soldering.avif",
+      src: "/202206/eda_island/soldering.avif",
     },
     {
       alt: "ロボット作りに挑戦！",

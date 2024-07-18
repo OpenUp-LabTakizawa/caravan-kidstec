@@ -15,7 +15,7 @@ export default function Hiroshima(): React.JSX.Element {
       <h2 className="font-bold font-zenMaruGothic text-3xl">
         第３回&nbsp;2023年11月
       </h2>
-      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
+      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202311" />
     </>
   )
 }

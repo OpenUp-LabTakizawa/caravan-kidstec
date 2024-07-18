@@ -161,7 +161,7 @@ export default function Home(): React.JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202312" />
+      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202311" />
     </article>
   )
 }

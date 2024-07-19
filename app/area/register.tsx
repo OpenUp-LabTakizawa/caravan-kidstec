@@ -1,3 +1,4 @@
+import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import type { Guideline } from "@/app/interfaces/guideline"
 import {
   CheckIcon,
@@ -6,7 +7,6 @@ import {
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import type React from "react"
-import { LineAddFriends } from "../components/button/lineAddFriends"
 
 export function Register({
   guideline,

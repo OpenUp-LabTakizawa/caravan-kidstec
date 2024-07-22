@@ -1,46 +1,39 @@
 "use client"
 
-import { type RefObject, useEffect, useRef, useState } from "react"
-import type React from "react"
+import {
+  type JSX,
+  type ReactNode,
+  type RefObject,
+  useEffect,
+  useRef,
+} from "react"
 
 export function SlideUp({
   children,
   className,
-}: Readonly<{
-  children: React.ReactNode
-  className?: string
-}>): React.JSX.Element {
-  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-  const [isShown, setIsShown] = useState(false)
+}: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
+  const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
     if (window.IntersectionObserver) {
       const observer = new IntersectionObserver((entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setIsShown(true)
+            entry.target.classList.add("slide-up")
           } else {
-            setIsShown(false)
+            entry.target.classList.remove("slide-up")
           }
         }
       })
 
-      if (ref.current) {
-        observer.observe(ref.current)
-      }
-
-      return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current as HTMLDivElement)
-        }
-      }
+      observer.observe(ref.current as HTMLSpanElement)
     }
   })
 
   return (
     <span
       ref={ref}
-      className={`inline-block opacity-0${className ? ` ${className}` : ""}${isShown ? " slide-up" : ""}`}
+      className={`inline-block opacity-0${className ? ` ${className}` : ""}`}
     >
       {children}
     </span>

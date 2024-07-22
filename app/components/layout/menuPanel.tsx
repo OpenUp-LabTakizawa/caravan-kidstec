@@ -3,12 +3,11 @@
 import type { MenuPanel, Submenu } from "@/app/interfaces/menu"
 import { CONTACT, FAQ, PARTNER, SUPPORTER } from "@/app/lib/constant"
 import Link from "next/link"
-import { type MutableRefObject, useEffect, useRef } from "react"
-import type React from "react"
+import { type JSX, type RefObject, useEffect, useRef } from "react"
 
 export function MenuPanels({
   submenu,
-}: Readonly<{ submenu: Submenu }>): React.JSX.Element {
+}: Readonly<{ submenu: Submenu }>): JSX.Element {
   const panels: MenuPanel[] = [
     {
       name: FAQ.name,
@@ -29,7 +28,7 @@ export function MenuPanels({
       href: PARTNER.href + submenu.href,
     },
   ] as const
-  const ref: MutableRefObject<Map<string, HTMLAnchorElement>> = useRef<
+  const ref: RefObject<Map<string, HTMLAnchorElement>> = useRef<
     Map<string, HTMLAnchorElement>
   >(new Map<string, HTMLAnchorElement>())
 
@@ -62,9 +61,9 @@ export function MenuPanels({
         <Link
           key={panel.name}
           ref={(node: HTMLAnchorElement) => {
-            ref.current.set(panel.name, node)
+            ref.current?.set(panel.name, node)
             return () => {
-              ref.current.delete(panel.name)
+              ref.current?.delete(panel.name)
             }
           }}
           href={panel.href}

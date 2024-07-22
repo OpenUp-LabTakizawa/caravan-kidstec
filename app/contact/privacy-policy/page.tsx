@@ -1,10 +1,10 @@
+import { Divider } from "@/app/components/layout/divider"
 import { Heading } from "@/app/components/layout/heading"
 import { CONTACT, PRIVACY_POLICY } from "@/app/lib/constant"
-import { HashtagIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
-export default function PrivacyPolicy(): React.JSX.Element {
+export default function PrivacyPolicy(): JSX.Element {
   return (
     <>
       <Heading menu={CONTACT} submenu={PRIVACY_POLICY} />
@@ -13,10 +13,8 @@ export default function PrivacyPolicy(): React.JSX.Element {
         <p>
           株式会社オープンアップグループ（以下「当社」といいます。）は、イベント&nbsp;【こどもテックキャラバン】&nbsp;（以下「本件」といいます。）へのご参加お申込みに必要な情報、また参加決定者の詳細情報においてお預かりする個人情報の取扱いについて、次のように管理し、保護に努めて参ります。
         </p>
-        <div className="divider">
-          <HashtagIcon className="size-10" />
-        </div>
-        <article className="grid gap-4">
+        <Divider />
+        <section className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">１．</span>
             個人情報の収集、及び、利用目的
@@ -38,11 +36,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
               次回以降の同様のイベント開催のお知らせをする為に、電話番号、メールアドレス、住所等の連絡手段を利用させていただく場合がございます。
             </li>
           </ul>
-        </article>
-        <div className="divider">
-          <HashtagIcon className="size-10" />
-        </div>
-        <article className="grid gap-4">
+        </section>
+        <Divider />
+        <section className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">２．</span>
             収集したお申込者様の個人情報の第三者への提供、及び、外部への預託について
@@ -94,21 +90,17 @@ export default function PrivacyPolicy(): React.JSX.Element {
               上記１）、２）以外、お申込者様からの同意がない限り、第三者へ提供、外部へ預託することはいたしません。
             </p>
           </section>
-        </article>
-        <div className="divider">
-          <HashtagIcon className="size-10" />
-        </div>
-        <article className="grid gap-4">
+        </section>
+        <Divider />
+        <section className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">３．</span>
             要配慮個人情報の取得について
           </h3>
           <p>本件について、要配慮個人情報をいただくことはございません。</p>
-        </article>
-        <div className="divider">
-          <HashtagIcon className="size-10" />
-        </div>
-        <article className="grid gap-4">
+        </section>
+        <Divider />
+        <section className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">４．</span>
             個人情報の管理方法
@@ -122,11 +114,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
             <br />
             また、お預かりしました個人情報は、法令及び本件運営管理の範囲内において管理・保管し、当社内規に基づく保存期間経過後は一切の個人情報を廃棄処理致します。
           </p>
-        </article>
-        <div className="divider">
-          <HashtagIcon className="size-10" />
-        </div>
-        <article className="grid gap-4">
+        </section>
+        <Divider />
+        <section className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">５．</span>
             個人情報の提出に関して
@@ -134,11 +124,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
           <p>
             当社への個人情報の提出はあくまで任意のものですが、情報を提出いただかず運営に差し支えが生じる場合など、当社の判断で本件への参加をお断りする場合があります。
           </p>
-        </article>
-        <div className="divider">
-          <HashtagIcon className="size-10" />
-        </div>
-        <article className="grid gap-4">
+        </section>
+        <Divider />
+        <section className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">６．</span>
             個人情報に関する権利について
@@ -172,11 +160,9 @@ export default function PrivacyPolicy(): React.JSX.Element {
               グループ管理部長
             </p>
           </address>
-        </article>
-        <div className="divider">
-          <HashtagIcon className="size-10" />
-        </div>
-        <article className="grid gap-4">
+        </section>
+        <Divider />
+        <section className="grid gap-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">７．</span>
             個人情報取り扱いについての同意の確認
@@ -184,7 +170,7 @@ export default function PrivacyPolicy(): React.JSX.Element {
           <p>
             本サイトにおいて、お申込者様から同意の意思を経てお申し込み頂いた事で、上記１～6について同意を得たものと致します。
           </p>
-        </article>
+        </section>
       </section>
     </>
   )

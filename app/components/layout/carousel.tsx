@@ -6,10 +6,9 @@ import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
-import type React from "react"
-import { type RefObject, useEffect, useRef, useState } from "react"
+import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
-export function Carousel(): React.JSX.Element {
+export function Carousel(): JSX.Element {
   const pictures: Picture[] = [
     {
       alt: "プログラミング体験",
@@ -83,7 +82,7 @@ export function Carousel(): React.JSX.Element {
   )
 }
 
-export function ReviewCarousel(): React.JSX.Element {
+export function ReviewCarousel(): JSX.Element {
   const reviews: Review[] = [
     {
       description:
@@ -183,7 +182,7 @@ export function ReviewCarousel(): React.JSX.Element {
 
 export function ScheduleCarousel({
   schedules,
-}: Readonly<{ schedules: Schedule[] }>): React.JSX.Element {
+}: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -227,14 +226,14 @@ export function ScheduleCarousel({
               <span
                 className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${schedule.color}`}
               >
-                Day {index + 1}
+                Day&nbsp;{index + 1}
               </span>
               <h3 className="card-title mx-auto text-lg whitespace-pre">
                 {schedule.title}
               </h3>
               <p className="font-semibold text-sm">
                 2024年{schedule.date[0]}月{schedule.date[1]}日(
-                {schedule.date[2]}) 10:00~17:00
+                {schedule.date[2]})&nbsp;10:00~17:00
               </p>
               <div className="card-actions justify-center">
                 {schedule.tags.map((tag) => (

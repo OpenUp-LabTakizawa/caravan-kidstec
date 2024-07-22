@@ -2,7 +2,7 @@ import { ScrollToTop } from "@/app/components/button/scrollToTop"
 import { Footer } from "@/app/components/layout/footer"
 import { Header } from "@/app/components/layout/header"
 import type { Metadata } from "next"
-import type React from "react"
+import type { JSX, ReactNode } from "react"
 import "./globals.css"
 import { SITE_TITLE } from "@/app/lib/constant"
 import localFont from "next/font/local"
@@ -43,9 +43,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>): React.JSX.Element {
+}: Readonly<{ children: ReactNode }>): JSX.Element {
   return (
     <html
       lang="ja"

@@ -1,9 +1,9 @@
 import Image from "next/image"
-import type React from "react"
+import type { JSX } from "react"
 
-export function Purpose(): React.JSX.Element {
+export function Purpose(): JSX.Element {
   return (
-    <section className="hero text-sm max-h-min">
+    <section className="hero max-h-min text-sm">
       <Image
         src="/handshake.avif"
         alt="handshake"

@@ -1,11 +1,10 @@
 import { Heading } from "@/app/components/layout/heading"
 import type { Partner } from "@/app/interfaces/partner"
-import { TOKYO_CHIBA } from "@/app/lib/constant"
-import { PARTNER } from "@/app/lib/constant"
+import { PARTNER, TOKYO_CHIBA } from "@/app/lib/constant"
 import { Partners } from "@/app/partner/partners"
-import type React from "react"
+import type { JSX } from "react"
 
-export default function TokyoChiba(): React.JSX.Element {
+export default function TokyoChiba(): JSX.Element {
   const partners: Partner[] = [
     {
       name: "クルックフィールズ",

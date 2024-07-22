@@ -2,11 +2,11 @@ import type { Partner } from "@/app/interfaces/partner"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
 export function Partners({
   partners,
-}: Readonly<{ partners: Partner[] }>): React.JSX.Element {
+}: Readonly<{ partners: Partner[] }>): JSX.Element {
   return (
     <section className="grid gap-6 text-xs max-w-96 mx-auto">
       {partners.map((partner) => (

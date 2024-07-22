@@ -6,9 +6,9 @@ import { cloudfrontLoader } from "@/app/lib/loader"
 import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
-export default function SupporterPage(): React.JSX.Element {
+export default function SupporterPage(): JSX.Element {
   const supporters: Supporter[] = [
     {
       name: "ICHI COMMONS株式会社",

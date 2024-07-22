@@ -1,11 +1,11 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
 export function LineAddFriends({
   linkLink,
-}: Readonly<{ linkLink: string }>): React.JSX.Element {
+}: Readonly<{ linkLink: string }>): JSX.Element {
   return (
     <Link href={linkLink} className="mx-auto">
       <Image
@@ -21,7 +21,7 @@ export function LineAddFriends({
 
 export function LineApply({
   lineLink,
-}: Readonly<{ lineLink: string }>): React.JSX.Element {
+}: Readonly<{ lineLink: string }>): JSX.Element {
   return (
     <Link href={lineLink}>
       <button
@@ -37,7 +37,7 @@ export function LineApply({
 
 export function LineRegister({
   lineLink,
-}: Readonly<{ lineLink: string }>): React.JSX.Element {
+}: Readonly<{ lineLink: string }>): JSX.Element {
   return (
     <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
       <p className="font-semibold">

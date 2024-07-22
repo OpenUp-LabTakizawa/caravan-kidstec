@@ -5,10 +5,9 @@ import { NAVIGATION, SITE_TITLE } from "@/app/lib/constant"
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
-import type React from "react"
-import { type MutableRefObject, type RefObject, useRef, useState } from "react"
+import { type JSX, type RefObject, useRef, useState } from "react"
 
-export function Header(): React.JSX.Element {
+export function Header(): JSX.Element {
   const [scrollY, setScrollY] = useState<{
     scrollY: number
     isScrollDown: boolean
@@ -53,7 +52,7 @@ export function Header(): React.JSX.Element {
   )
 }
 
-function DropdownMenu(): React.JSX.Element {
+function DropdownMenu(): JSX.Element {
   const ref: RefObject<HTMLDetailsElement> = useRef<HTMLDetailsElement>(null)
 
   if (typeof window !== "undefined") {
@@ -95,8 +94,8 @@ function DropdownMenu(): React.JSX.Element {
   )
 }
 
-function Navigation(): React.JSX.Element {
-  const ref: MutableRefObject<Map<string, HTMLDetailsElement>> = useRef<
+function Navigation(): JSX.Element {
+  const ref: RefObject<Map<string, HTMLDetailsElement>> = useRef<
     Map<string, HTMLDetailsElement>
   >(new Map<string, HTMLDetailsElement>())
 
@@ -130,9 +129,9 @@ function Navigation(): React.JSX.Element {
           ) : (
             <details
               ref={(node: HTMLDetailsElement) => {
-                ref.current.set(menu.name, node)
+                ref.current?.set(menu.name, node)
                 return () => {
-                  ref.current.delete(menu.name)
+                  ref.current?.delete(menu.name)
                 }
               }}
             >
@@ -152,10 +151,7 @@ function Navigation(): React.JSX.Element {
 function Menu({
   submenus,
   href,
-}: {
-  submenus: Submenu[]
-  href: string
-}): React.JSX.Element {
+}: { submenus: Submenu[]; href: string }): JSX.Element {
   return (
     <ul className="p-2">
       {submenus.map((submenu) => (

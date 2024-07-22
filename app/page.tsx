@@ -1,16 +1,15 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
 import { Banner } from "@/app/components/layout/banner"
-import { Carousel } from "@/app/components/layout/carousel"
-import { ReviewCarousel } from "@/app/components/layout/carousel"
+import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import type { Panel } from "@/app/interfaces/picture"
 import { AREA, TOKYO_CHIBA } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
-export default function Home(): React.JSX.Element {
+export default function Home(): JSX.Element {
   const techPanels: Panel[] = [
     {
       alt: "はじめてのはんだづけにどきどき",
@@ -166,9 +165,7 @@ export default function Home(): React.JSX.Element {
   )
 }
 
-function PanelTile({
-  panels,
-}: Readonly<{ panels: Panel[] }>): React.JSX.Element {
+function PanelTile({ panels }: Readonly<{ panels: Panel[] }>): JSX.Element {
   return (
     <>
       {panels.map((panel, index) => (

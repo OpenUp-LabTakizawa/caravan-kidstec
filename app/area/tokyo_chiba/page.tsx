@@ -13,9 +13,9 @@ import {
 } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
-export default function TokyoChiba(): React.JSX.Element {
+export default function TokyoChiba(): JSX.Element {
   const schedules: Schedule[] = [
     {
       alt: "ロボット制作",

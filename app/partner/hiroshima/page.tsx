@@ -2,9 +2,9 @@ import { Heading } from "@/app/components/layout/heading"
 import type { Partner } from "@/app/interfaces/partner"
 import { HIROSHIMA, PARTNER } from "@/app/lib/constant"
 import { Partners } from "@/app/partner/partners"
-import type React from "react"
+import type { JSX } from "react"
 
-export default function Hiroshima(): React.JSX.Element {
+export default function Hiroshima(): JSX.Element {
   const partners: Partner[] = [
     {
       name: "BPL Inc.",

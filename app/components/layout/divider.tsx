@@ -1,10 +1,17 @@
 "use client"
 
 import { HashtagIcon } from "@heroicons/react/24/solid"
-import { type RefObject, useEffect, useRef } from "react"
-import type React from "react"
+import { type JSX, type RefObject, useEffect, useRef } from "react"
 
-export function Divider(): React.JSX.Element {
+export function Divider(): JSX.Element {
+  return (
+    <div className="divider">
+      <HashtagIcon className="size-10" />
+    </div>
+  )
+}
+
+export function StretchDivider(): JSX.Element {
   const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -19,14 +26,10 @@ export function Divider(): React.JSX.Element {
         }
       })
 
-      if (ref.current) {
-        observer.observe(ref.current)
-      }
+      observer.observe(ref.current as HTMLDivElement)
 
       return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current as HTMLDivElement)
-        }
+        observer.unobserve(ref.current as HTMLDivElement)
       }
     }
   })

@@ -6,11 +6,11 @@ import {
   InformationCircleIcon,
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
 export function Register({
   guideline,
-}: Readonly<{ guideline: Guideline }>): React.JSX.Element {
+}: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
     <>
       <Details guideline={guideline} />
@@ -21,7 +21,7 @@ export function Register({
 
 function Details({
   guideline,
-}: Readonly<{ guideline: Guideline }>): React.JSX.Element {
+}: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
     <section className="grid gap-4 px-4">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
@@ -103,7 +103,7 @@ function Details({
 
 function Procedure({
   guideline,
-}: Readonly<{ guideline: Guideline }>): React.JSX.Element {
+}: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
     <section className="grid gap-4 px-4">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>

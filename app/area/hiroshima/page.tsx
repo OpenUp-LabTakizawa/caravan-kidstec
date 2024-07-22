@@ -7,9 +7,9 @@ import { MenuPanels } from "@/app/components/layout/menuPanel"
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Schedule } from "@/app/interfaces/schedule"
 import { AREA, HIROSHIMA, HIROSHIMA_LINE } from "@/app/lib/constant"
-import type React from "react"
+import type { JSX } from "react"
 
-export default function Hiroshima(): React.JSX.Element {
+export default function Hiroshima(): JSX.Element {
   const schedules: Schedule[] = [
     {
       alt: "はんだ付け",

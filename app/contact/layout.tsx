@@ -1,9 +1,7 @@
-import type React from "react"
+import type { JSX, ReactNode } from "react"
 
 export default function ContactLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>): React.JSX.Element {
+}: Readonly<{ children: ReactNode }>): JSX.Element {
   return <article className="grid gap-6">{children}</article>
 }

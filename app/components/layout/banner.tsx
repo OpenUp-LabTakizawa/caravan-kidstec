@@ -3,18 +3,13 @@
 import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_GUIDELINE } from "@/app/lib/constant"
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import Link from "next/link"
-import { type MutableRefObject, useEffect, useRef } from "react"
-import type React from "react"
+import { type JSX, type RefObject, useEffect, useRef } from "react"
 
-export function Banner(): React.JSX.Element {
-  const daysRef: MutableRefObject<HTMLSpanElement> =
-    useRef<HTMLSpanElement>() as MutableRefObject<HTMLSpanElement>
-  const hoursRef: MutableRefObject<HTMLSpanElement> =
-    useRef<HTMLSpanElement>() as MutableRefObject<HTMLSpanElement>
-  const minutesRef: MutableRefObject<HTMLSpanElement> =
-    useRef<HTMLSpanElement>() as MutableRefObject<HTMLSpanElement>
-  const secondsRef: MutableRefObject<HTMLSpanElement> =
-    useRef<HTMLSpanElement>() as MutableRefObject<HTMLSpanElement>
+export function Banner(): JSX.Element {
+  const daysRef: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
+  const hoursRef: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
+  const minutesRef: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
+  const secondsRef: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
   const applyLimitDate: Date = new Date("2024-08-31")
   const differenceInMilliseconds =
     applyLimitDate.getTime() - new Date().getTime()
@@ -29,10 +24,10 @@ export function Banner(): React.JSX.Element {
   let daysCounter = Math.floor(differenceInDays)
 
   useEffect(() => {
-    daysRef.current.style.setProperty("--value", String(daysCounter))
-    hoursRef.current.style.setProperty("--value", String(hoursCounter))
-    minutesRef.current.style.setProperty("--value", String(minutesCounter))
-    secondsRef.current.style.setProperty("--value", String(secondsCounter))
+    daysRef.current?.style.setProperty("--value", String(daysCounter))
+    hoursRef.current?.style.setProperty("--value", String(hoursCounter))
+    minutesRef.current?.style.setProperty("--value", String(minutesCounter))
+    secondsRef.current?.style.setProperty("--value", String(secondsCounter))
     if (
       secondsCounter === 0 &&
       minutesCounter === 0 &&
@@ -44,14 +39,14 @@ export function Banner(): React.JSX.Element {
 
     const interval = setInterval(() => {
       secondsCounter = secondsCounter === 0 ? 59 : secondsCounter - 1
-      secondsRef.current.style.setProperty("--value", String(secondsCounter))
+      secondsRef.current?.style.setProperty("--value", String(secondsCounter))
 
       if (minutesCounter === 0 && hoursCounter === 0 && daysCounter === 0) {
         return
       }
       if (secondsCounter === 59) {
         minutesCounter = minutesCounter === 0 ? 59 : minutesCounter - 1
-        minutesRef.current.style.setProperty("--value", String(minutesCounter))
+        minutesRef.current?.style.setProperty("--value", String(minutesCounter))
       }
 
       if (hoursCounter === 0 && daysCounter === 0) {
@@ -59,7 +54,7 @@ export function Banner(): React.JSX.Element {
       }
       if (secondsCounter === 59 && minutesCounter === 59) {
         hoursCounter = hoursCounter === 0 ? 23 : hoursCounter - 1
-        hoursRef.current.style.setProperty("--value", String(hoursCounter))
+        hoursRef.current?.style.setProperty("--value", String(hoursCounter))
       }
 
       if (
@@ -69,7 +64,7 @@ export function Banner(): React.JSX.Element {
         0 < daysCounter
       ) {
         daysCounter--
-        daysRef.current.style.setProperty("--value", String(daysCounter))
+        daysRef.current?.style.setProperty("--value", String(daysCounter))
       }
     }, 1000)
 

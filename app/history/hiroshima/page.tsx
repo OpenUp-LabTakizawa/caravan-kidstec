@@ -3,9 +3,9 @@ import { Heading } from "@/app/components/layout/heading"
 import { Video } from "@/app/components/media/video"
 import { HISTORY } from "@/app/lib/constant"
 import { HIROSHIMA, HIROSHIMA_LINE } from "@/app/lib/constant"
-import type React from "react"
+import type { JSX } from "react"
 
-export default function Hiroshima(): React.JSX.Element {
+export default function Hiroshima(): JSX.Element {
   return (
     <>
       <Heading menu={HISTORY} submenu={HIROSHIMA} />

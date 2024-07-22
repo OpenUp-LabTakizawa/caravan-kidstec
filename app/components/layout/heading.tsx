@@ -1,12 +1,12 @@
 import type { Menu, Submenu } from "@/app/interfaces/menu"
 import { HomeIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
 export function Heading({
   menu,
   submenu,
-}: Readonly<{ menu: Menu; submenu?: Submenu }>): React.JSX.Element {
+}: Readonly<{ menu: Menu; submenu?: Submenu }>): JSX.Element {
   return (
     <section className="grid gap-6 pl-4">
       <Breadcrumb menu={menu} submenu={submenu} />
@@ -26,7 +26,7 @@ export function Heading({
 function Breadcrumb({
   menu,
   submenu,
-}: Readonly<{ menu: Menu; submenu?: Submenu }>): React.JSX.Element {
+}: Readonly<{ menu: Menu; submenu?: Submenu }>): JSX.Element {
   return (
     <div className="text-sm breadcrumbs">
       <ul>

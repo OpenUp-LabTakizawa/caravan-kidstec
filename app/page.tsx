@@ -151,16 +151,14 @@ export default function Home(): JSX.Element {
         </h2>
         <div className="font-bold grid gap-4 text-sm">
           <p>
-            このプロジェクトでは
+            このプロジェクトでは、
             <br />
-            様々な人との出会いや、
-            <br />
-            今までにない体験等、
+            新しい出会いや学び、発見など、
             <br />
             心沸き立つ瞬間があります。
           </p>
           <p>
-            家族や仲間と一緒に感動体験を
+            家族や仲間と一緒に、感動体験を
             <br />
             共有出来る新しい発見もあります。
           </p>

@@ -10,15 +10,11 @@ export function Heading({
   return (
     <section className="grid gap-6 pl-4">
       <Breadcrumb menu={menu} submenu={submenu} />
-      <div className="max-w-fit mx-auto">
-        <h1
-          className={`font-bold font-zenMaruGothic typing text-4xl ${menu.color}`}
-        >
-          {submenu && menu.submenus?.includes(submenu)
-            ? submenu.name
-            : menu.name}
-        </h1>
-      </div>
+      <h1
+        className={`font-bold font-zenMaruGothic max-w-fit mx-auto typing text-4xl ${menu.color}`}
+      >
+        {submenu && menu.submenus?.includes(submenu) ? submenu.name : menu.name}
+      </h1>
     </section>
   )
 }

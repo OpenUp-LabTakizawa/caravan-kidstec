@@ -65,7 +65,7 @@
 }
 
 .typing {
-  animation: typing 6s steps(20) infinite, blink .7s infinite;
+  animation: typing 8s steps(40) infinite, blink .7s infinite;
   border-right: .15em solid rgb(251 146 60);
   margin: auto;
   overflow: hidden;
@@ -223,8 +223,8 @@
   100% {
     width: 0;
   }
-  20%,
-  80% {
+  30%,
+  70% {
     width: 100%;
   }
 }

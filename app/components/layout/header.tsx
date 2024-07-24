@@ -5,7 +5,7 @@ import { NAVIGATION, SITE_TITLE } from "@/app/lib/constant"
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
-import { type JSX, type RefObject, useRef, useState } from "react"
+import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
 export function Header(): JSX.Element {
   const [scrollY, setScrollY] = useState<{
@@ -43,7 +43,7 @@ export function Header(): JSX.Element {
         </Link>
       </div>
       <nav className="navbar-center hidden lg:flex">
-        <Navigation />
+        <Navigation isScrollDown={scrollY.isScrollDown} />
       </nav>
       <div className="navbar-end lg:hidden">
         <DropdownMenu />
@@ -94,12 +94,20 @@ function DropdownMenu(): JSX.Element {
   )
 }
 
-function Navigation(): JSX.Element {
+function Navigation({
+  isScrollDown,
+}: Readonly<{ isScrollDown: boolean }>): JSX.Element {
   const ref: RefObject<Map<string, HTMLDetailsElement>> = useRef<
     Map<string, HTMLDetailsElement>
   >(new Map<string, HTMLDetailsElement>())
 
-  if (typeof window !== "undefined") {
+  useEffect(() => {
+    if (isScrollDown && ref.current?.values()) {
+      for (const node of ref.current.values()) {
+        node.open = false
+      }
+    }
+
     window.addEventListener("click", (event) => {
       if (ref.current?.values()) {
         for (const node of ref.current.values()) {
@@ -115,7 +123,7 @@ function Navigation(): JSX.Element {
         }
       }
     })
-  }
+  })
 
   return (
     <ul className="menu menu-horizontal p-0">

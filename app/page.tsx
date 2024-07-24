@@ -154,7 +154,7 @@ export default function Home(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">
           わたしたちの想い
         </h2>
-        <div className="font-bold grid gap-4 leading-7 tracking-[.29em]">
+        <div className="font-bold grid gap-4 text-sm">
           <p>
             このプロジェクトでは
             <br />
@@ -163,6 +163,13 @@ export default function Home(): JSX.Element {
             今までにない体験等、
             <br />
             心沸き立つ瞬間があります。
+          </p>
+          <p>
+            また、「キャラバン」を通じて、
+            <br />
+            家族や仲間と一緒に感動体験を
+            <br />
+            共有出来る新しい発見もあります。
           </p>
           <p>
             このイベントが皆様の

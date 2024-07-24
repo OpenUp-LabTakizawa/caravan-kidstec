@@ -35,7 +35,7 @@ function Details({
         </p>
         <p>定員に達し次第、募集を終了します。</p>
       </div>
-      <table className="border-2 border-sky-400 table text-center">
+      <table className="border-2 border-sky-400 mx-auto table text-center w-96">
         <tbody>
           <tr>
             <th>募集人数</th>
@@ -107,7 +107,7 @@ function Procedure({
   return (
     <section className="grid gap-4 px-4">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
-      <ul className="gap-2 grid text-sm">
+      <ul className="gap-2 grid mx-auto text-sm w-96">
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
           <span className="absolute bg-sky-400 flex font-bold items-center left-0 top-0 pr-1">
             <CheckIcon className="size-5 mr-1" />1
@@ -119,7 +119,7 @@ function Procedure({
             >
               LINE公式アカウント
             </Link>
-            を<br className="block sm:hidden" />
+            を<br />
             友達追加してトーク画面へ
           </p>
           <LineAddFriends linkLink={guideline.lineLink} />
@@ -133,7 +133,7 @@ function Procedure({
           </span>
           <p>
             トーク画面メニューの
-            <br className="block sm:hidden" />
+            <br />
             <span className="font-bold">「参加申込はこちら」</span>をタップ
           </p>
         </li>
@@ -155,10 +155,10 @@ function Procedure({
           </span>
           <p>
             全て回答して<span className="font-bold">申込完了！</span>
-            <br />
-            <br />
+          </p>
+          <p>
             担当者よりご参加の確定、及び、
-            <br className="block sm:hidden" />
+            <br />
             その他ご連絡をさせて頂きます。
           </p>
         </li>

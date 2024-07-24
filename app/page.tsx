@@ -82,50 +82,39 @@ export default function Home(): JSX.Element {
             className="w-full"
           />
         </SlideUp>
-        <div className="font-bold grid gap-4 leading-7 tracking-[.29em] sm:col-span-2">
+        <div className="font-bold grid gap-4 leading-7 tracking-[.29em]">
           <p>
-            自然豊かな環境を感じる
-            <br className="sm:hidden" />
-            アクティビティと
+            プログラミング体験と
             <br />
-            ロボット製作とプログラミングを
-            <br className="sm:hidden" />
-            楽しく学びます。
+            体験学習をかけあわせた
+            <br />
+            親子参加型のイベントです。
           </p>
           <p>
-            最終日には学んだ知識を使って
+            プログラミング体験は、
             <br />
-            ロボットを動かす
-            <Link
-              href="https://robosava.jp/"
-              target="_blank"
-              className="link text-sky-400"
-            >
-              ロボサバ大会
-            </Link>
-            で<br className="sm:hidden" />
-            仲間と競います！
+            ロボットを作って、
+            <br />
+            自分で動かせるように！
           </p>
           <p>
-            最初はプログラミングも
-            <br className="sm:hidden" />
-            わからない子でも、
+            最終日は大会を開き、
             <br />
-            ロボットの動きをコントロールする
-            <br />
-            驚きや楽しさに夢中になります。
-          </p>
-          <p>女の子でも大丈夫です！</p>
-          <p>
-            そして、身近に広島の豊かな自然が
-            <br />
-            あふれていることに驚くはずです。
+            みんなで競います。
           </p>
           <p>
-            <span className="text-orange-400">楽しむ、学ぶ、競う</span>
-            を
+            体験学習は毎回変わります。
             <br />
-            満喫するイベントです！
+            過去には自然学習や結婚式体験で
+            <br />
+            楽しく学んできました。
+          </p>
+          <p>
+            <span className="text-orange-400">楽しく学び、楽しく遊び、</span>
+            <br />
+            親子でたくさんの経験と
+            <br />
+            思い出を作りましょう！
           </p>
         </div>
       </section>
@@ -161,6 +150,43 @@ export default function Home(): JSX.Element {
         <ReviewCarousel />
       </section>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202311" />
+      <section className="grid gap-4">
+        <h2 className="font-bold font-zenMaruGothic text-3xl">メッセージ</h2>
+        <div className="font-bold grid gap-4 leading-7 tracking-[.29em]">
+          <p>
+            このプロジェクトには
+            <br />
+            色々な想いがあります。
+          </p>
+          <p>
+            豊かな自然や様々な人との出会い、
+            <br />
+            今までにない体験等、
+            <br />
+            心沸き立つ瞬間があります。
+          </p>
+          <p>
+            また大人にとっても
+            <br />
+            新しい発見があり、
+            <br />
+            この「キャラバン」を通じて
+            <br />
+            家族、そして、仲間との
+            <br />
+            感動体験を一緒に体感出来ます。
+          </p>
+          <p>
+            このイベントが皆様の
+            <br />
+            新しい可能性となり、
+            <br />
+            扉を開いた先に
+            <br />
+            違う景色が見えると幸いです。
+          </p>
+        </div>
+      </section>
     </article>
   )
 }

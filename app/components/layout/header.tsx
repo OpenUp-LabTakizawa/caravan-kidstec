@@ -25,7 +25,7 @@ export function Header(): JSX.Element {
 
   return (
     <header
-      className={`bg-base-100 transition duration-400 ease navbar sticky top-0 z-10 ${
+      className={`bg-base-100 transition duration-400 ease navbar sticky top-0 z-20 ${
         headerHeight < scrollY.scrollY && scrollY.isScrollDown
           ? "-translate-y-20"
           : "translate-y-0"

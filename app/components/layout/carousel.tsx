@@ -5,6 +5,7 @@ import type { Review } from "@/app/interfaces/review"
 import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
+import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
@@ -142,9 +143,11 @@ export function ReviewCarousel(): JSX.Element {
       const observer = new IntersectionObserver((entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("stretch")
+            setTimeout(() => {
+              entry.target.classList.add("opacity-0")
+            }, 3000)
           } else {
-            entry.target.classList.remove("stretch")
+            entry.target.classList.remove("opacity-0")
           }
         }
       })
@@ -162,7 +165,8 @@ export function ReviewCarousel(): JSX.Element {
   })
 
   return (
-    <div className="carousel space-x-4">
+    <div className="carousel relative space-x-4">
+      <ScrollRightHint ref={ref} />
       {reviews.map((review) => (
         <div key={review.description} className="carousel-item">
           <div className="bg-blue-100 content-between gap-2 grid h-full p-2 rounded-2xl shadow-lg w-56">
@@ -190,9 +194,11 @@ export function ScheduleCarousel({
       const observer = new IntersectionObserver((entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("stretch")
+            setTimeout(() => {
+              entry.target.classList.add("opacity-0")
+            }, 3000)
           } else {
-            entry.target.classList.remove("stretch")
+            entry.target.classList.remove("opacity-0")
           }
         }
       })
@@ -210,7 +216,8 @@ export function ScheduleCarousel({
   })
 
   return (
-    <div className="carousel space-x-4">
+    <div className="carousel relative space-x-4">
+      <ScrollRightHint ref={ref} />
       {schedules.map((schedule, index) => (
         <div key={schedule.alt} className="carousel-item rounded-box w-60">
           <div className="card shadow-lg">
@@ -249,6 +256,22 @@ export function ScheduleCarousel({
           </div>
         </div>
       ))}
+    </div>
+  )
+}
+
+function ScrollRightHint({
+  ref,
+}: Readonly<{ ref: RefObject<HTMLDivElement> }>): JSX.Element {
+  return (
+    <div
+      ref={ref}
+      className="absolute bg-black/60 pt-20 text-white right-1/3 top-1/2 -translate-y-1/2 z-10"
+    >
+      <ChevronRightIcon className="scroll-right size-20" />
+      <ChevronRightIcon className="scroll-right size-20" />
+      <ChevronRightIcon className="scroll-right size-20" />
+      <span className="px-2 text-xs">右スクロール</span>
     </div>
   )
 }

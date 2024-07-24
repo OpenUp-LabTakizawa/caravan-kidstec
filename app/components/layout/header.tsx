@@ -46,22 +46,35 @@ export function Header(): JSX.Element {
         <Navigation isScrollDown={scrollY.isScrollDown} />
       </nav>
       <div className="navbar-end lg:hidden">
-        <DropdownMenu />
+        <DropdownMenu isScrollDown={scrollY.isScrollDown} />
       </div>
     </header>
   )
 }
 
-function DropdownMenu(): JSX.Element {
+function DropdownMenu({
+  isScrollDown,
+}: Readonly<{ isScrollDown: boolean }>): JSX.Element {
   const ref: RefObject<HTMLDetailsElement> = useRef<HTMLDetailsElement>(null)
 
-  if (typeof window !== "undefined") {
+  useEffect(() => {
+    if (isScrollDown && ref.current) {
+      ref.current.open = false
+    }
+
     window.addEventListener("click", () => {
       if (ref.current) {
         ref.current.open = false
       }
     })
-  }
+    return () => {
+      window.removeEventListener("click", () => {
+        if (ref.current) {
+          ref.current.open = false
+        }
+      })
+    }
+  })
 
   return (
     <details ref={ref} className="dropdown dropdown-end">
@@ -108,22 +121,26 @@ function Navigation({
       }
     }
 
-    window.addEventListener("click", (event) => {
-      if (ref.current?.values()) {
-        for (const node of ref.current.values()) {
-          const rect = node.getBoundingClientRect()
-          if (
-            rect.left > event.clientX ||
-            rect.right < event.clientX ||
-            rect.top > event.clientY ||
-            rect.bottom < event.clientY
-          ) {
-            node.open = false
-          }
+    window.addEventListener("click", (event) => CloseSummary(event))
+    return () =>
+      window.removeEventListener("click", (event) => CloseSummary(event))
+  })
+
+  function CloseSummary(event: MouseEvent): void {
+    if (ref.current?.values()) {
+      for (const node of ref.current.values()) {
+        const rect = node.getBoundingClientRect()
+        if (
+          rect.left > event.clientX ||
+          rect.right < event.clientX ||
+          rect.top > event.clientY ||
+          rect.bottom < event.clientY
+        ) {
+          node.open = false
         }
       }
-    })
-  })
+    }
+  }
 
   return (
     <ul className="menu menu-horizontal p-0">

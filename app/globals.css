@@ -32,22 +32,6 @@
   animation: shine 20s infinite linear;
 }
 
-.schedule-scroll-left .carousel-item {
-  animation: schedule-scroll-left 20s linear infinite;
-}
-
-.schedule-scroll-left:hover .carousel-item {
-  animation-play-state: paused;
-}
-
-.review-scroll-left .carousel-item {
-  animation: review-scroll-left 80s linear infinite;
-}
-
-.review-scroll-left:hover .carousel-item {
-  animation-play-state: paused;
-}
-
 .rotate-y {
   animation: rotate-y 1.5s;
 }
@@ -152,24 +136,6 @@
   }
   100% {
     background-position-x: -400%;
-  }
-}
-
-@keyframes schedule-scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-16rem * 3));
-  }
-}
-
-@keyframes review-scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-19rem * 10));
   }
 }
 

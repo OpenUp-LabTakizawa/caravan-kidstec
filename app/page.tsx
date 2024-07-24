@@ -97,11 +97,11 @@ export default function Home(): JSX.Element {
             <br />
             自分で動かせるように！
           </p>
-          <p>
+          {/* <p>
             最終日は大会を開き、
             <br />
             みんなで競います。
-          </p>
+          </p> */}
           <p>
             体験学習は毎回変わります。
             <br />
@@ -151,37 +151,30 @@ export default function Home(): JSX.Element {
       </section>
       <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202311" />
       <section className="grid gap-4">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">メッセージ</h2>
+        <h2 className="font-bold font-zenMaruGothic text-3xl">
+          わたしたちの想い
+        </h2>
         <div className="font-bold grid gap-4 leading-7 tracking-[.29em]">
           <p>
-            このプロジェクトには
+            このプロジェクトでは
             <br />
-            色々な想いがあります。
-          </p>
-          <p>
-            豊かな自然や様々な人との出会い、
+            様々な人との出会いや、
             <br />
             今までにない体験等、
             <br />
             心沸き立つ瞬間があります。
           </p>
           <p>
-            また大人にとっても
+            また、「キャラバン」を通じて、
             <br />
-            新しい発見があり、
+            家族や仲間と一緒に感動体験を
             <br />
-            この「キャラバン」を通じて
-            <br />
-            家族、そして、仲間との
-            <br />
-            感動体験を一緒に体感出来ます。
+            共有出来る新しい発見もあります。
           </p>
           <p>
             このイベントが皆様の
             <br />
-            新しい可能性となり、
-            <br />
-            扉を開いた先に
+            新しい可能性を開き、
             <br />
             違う景色が見えると幸いです。
           </p>

@@ -232,8 +232,8 @@ export function ScheduleCarousel({
                 {schedule.title}
               </h3>
               <p className="font-semibold text-sm">
-                2024年{schedule.date[0]}月{schedule.date[1]}日(
-                {schedule.date[2]})&nbsp;10:00~17:00
+                2024年{schedule.date.month}月{schedule.date.day}日(
+                {schedule.date.dayOfWeek})&nbsp;10:00~17:00
               </p>
               <div className="card-actions justify-center">
                 {schedule.tags.map((tag) => (

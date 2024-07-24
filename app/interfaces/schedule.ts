@@ -3,7 +3,7 @@ export type Schedule = {
   src: string
   color: string
   title: string
-  date: [string, string, string]
+  date: { month: string; day: string; dayOfWeek: string }
   venue: string
   address: string
   tags: string[]

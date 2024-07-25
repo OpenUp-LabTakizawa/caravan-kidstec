@@ -5,8 +5,8 @@ export function Schedules({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   return (
-    <section className="bg-amber-50 grid mx-auto w-max">
-      <span className="bg-sky-400 font-bold justify-self-start p-1">
+    <section className="bg-amber-50 grid mx-auto relative">
+      <span className="absolute bg-sky-400 font-bold justify-self-start left-0 p-1 top-0">
         開催日時
       </span>
       <ul>

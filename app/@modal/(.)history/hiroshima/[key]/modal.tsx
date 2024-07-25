@@ -29,7 +29,7 @@ export function Modal({
         <button
           type="button"
           onClick={router.back}
-          className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 hover:scale-110"
+          className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
           aria-label="閉じる"
         >
           <XMarkIcon />

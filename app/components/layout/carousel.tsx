@@ -135,6 +135,20 @@ export function ReviewCarousel(): JSX.Element {
         "子供たち二人共、\nとても充実した\n3日間を過ごせました。\n\nまた次回も\nチャレンジしたいと\n思います！",
       areaAndUser: "第3回 広島 小4、中2",
     },
+    {
+      description: "本当に素敵な体験を\nすることができました。",
+      areaAndUser: "第4回 広島 小5",
+    },
+    {
+      description:
+        "最初から最後まで子供自身が\n「やれた!できた!」の気持ちを\n少しでも感じられるように\n応援&フォローをしてくださり、\n本当にありがとうございました。\n特にハンダ付け、プロの技術の\nおかげでふさがってしまった穴を\nあけて下さり「自分のもの」で\n挑戦することができたことに\nとても感謝しています。\nお料理もすごくおいしかったです。\n幸せになりました！",
+      areaAndUser: "第4回 広島 小2、小5",
+    },
+    {
+      description:
+        "とても素晴らしい体験を\nありがとうございました。\n\nまた次回も\n参加したいと思います。\n\n皆様お疲れ様でした。",
+      areaAndUser: "第4回 広島 小5、中2",
+    },
   ] as const
   const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 

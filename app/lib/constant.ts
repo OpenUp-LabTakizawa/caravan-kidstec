@@ -24,7 +24,7 @@ export const AREA: Menu = {
   icon: TruckIcon,
   color: "text-orange-400",
   href: "/area",
-  submenus: [TOKYO_CHIBA, HIROSHIMA],
+  submenus: [TOKYO_CHIBA],
 }
 export const HISTORY: Menu = {
   name: "過去の実績",

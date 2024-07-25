@@ -150,37 +150,9 @@ export function ReviewCarousel(): JSX.Element {
       areaAndUser: "第4回 広島 小5、中2",
     },
   ] as const
-  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("opacity-0")
-            }, 3000)
-          } else {
-            entry.target.classList.remove("opacity-0")
-          }
-        }
-      })
-
-      if (ref.current) {
-        observer.observe(ref.current)
-      }
-
-      return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current as HTMLDivElement)
-        }
-      }
-    }
-  })
-
   return (
     <div className="carousel relative space-x-4">
-      <ScrollRightHint ref={ref} />
+      <ScrollRightHint />
       {reviews.map((review) => (
         <div key={review.description} className="carousel-item">
           <div className="bg-blue-100 content-between gap-2 grid h-full p-2 rounded-2xl shadow-lg w-56">
@@ -201,37 +173,9 @@ export function ReviewCarousel(): JSX.Element {
 export function ScheduleCarousel({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
-  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("opacity-0")
-            }, 3000)
-          } else {
-            entry.target.classList.remove("opacity-0")
-          }
-        }
-      })
-
-      if (ref.current) {
-        observer.observe(ref.current)
-      }
-
-      return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current as HTMLDivElement)
-        }
-      }
-    }
-  })
-
   return (
     <div className="carousel relative space-x-4">
-      <ScrollRightHint ref={ref} />
+      <ScrollRightHint />
       {schedules.map((schedule, index) => (
         <div key={schedule.alt} className="carousel-item rounded-box w-60">
           <div className="card shadow-lg">
@@ -277,37 +221,9 @@ export function ScheduleCarousel({
 export function ScheduleCarousel2({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
-  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("opacity-0")
-            }, 3000)
-          } else {
-            entry.target.classList.remove("opacity-0")
-          }
-        }
-      })
-
-      if (ref.current) {
-        observer.observe(ref.current)
-      }
-
-      return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current as HTMLDivElement)
-        }
-      }
-    }
-  })
-
   return (
     <div className="carousel relative space-x-4">
-      <ScrollRightHint ref={ref} />
+      <ScrollRightHint />
       {schedules.map((schedule, index) => (
         <div key={schedule.alt} className="carousel-item rounded-box w-60">
           <div className="card shadow-lg">
@@ -354,9 +270,35 @@ export function ScheduleCarousel2({
   )
 }
 
-function ScrollRightHint({
-  ref,
-}: Readonly<{ ref: RefObject<HTMLDivElement> }>): JSX.Element {
+function ScrollRightHint(): JSX.Element {
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (window.IntersectionObserver) {
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("opacity-0")
+            }, 3000)
+          } else {
+            entry.target.classList.remove("opacity-0")
+          }
+        }
+      })
+
+      if (ref.current) {
+        observer.observe(ref.current)
+      }
+
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current as HTMLDivElement)
+        }
+      }
+    }
+  })
+
   return (
     <div
       ref={ref}

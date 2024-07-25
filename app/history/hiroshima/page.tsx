@@ -1,40 +1,41 @@
 import { LineRegister } from "@/app/components/button/lineAddFriends"
-import { ScheduleCarousel } from "@/app/components/layout/carousel"
+import { ScheduleCarousel2 } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
-import { Video } from "@/app/components/media/video"
-import { Schedules } from "@/app/history/schedules"
 import type { Schedule } from "@/app/interfaces/schedule"
-import { HIROSHIMA, HIROSHIMA_LINE, HISTORY } from "@/app/lib/constant"
+import {
+  HIROSHIMA,
+  HIROSHIMA_HISTORY,
+  HIROSHIMA_LINE,
+  HISTORY,
+} from "@/app/lib/constant"
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
+import Link from "next/link"
 import type { JSX } from "react"
 
 export default function Hiroshima(): JSX.Element {
   return (
     <>
       <Heading menu={HISTORY} submenu={HIROSHIMA} />
-      <section className="grid gap-4">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">
-          第１回&nbsp;2022年6月
-        </h2>
-        <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202206" />
-      </section>
-      <section className="grid gap-4">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">
-          第２回&nbsp;2023年6月
-        </h2>
-        <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202306" />
-      </section>
-      <section className="grid gap-4">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">
-          第３回&nbsp;2023年11月
-        </h2>
-        <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202311" />
-      </section>
-      <section className="grid gap-4">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">
-          第４回&nbsp;2024年7月
-        </h2>
-        <ForthEvent />
-      </section>
+      {HIROSHIMA_HISTORY.map((history) => (
+        <section key={history.date} className="grid gap-4">
+          <h2 className="font-bold font-zenMaruGothic text-3xl">
+            {history.title}
+          </h2>
+          {history === HIROSHIMA_HISTORY[3] ? (
+            <ForthEvent />
+          ) : (
+            <Link href={`/history/hiroshima/${history.date}`}>
+              <button
+                type="button"
+                className="bg-sky-400 blue-shine btn shadow-lg text-lg text-white w-full"
+              >
+                イベント動画を視聴する
+                <ArrowTopRightOnSquareIcon className="arrow-top-right size-5" />
+              </button>
+            </Link>
+          )}
+        </section>
+      ))}
       <section className="grid gap-4">
         <LineRegister lineLink={HIROSHIMA_LINE} />
       </section>
@@ -78,10 +79,10 @@ function ForthEvent(): JSX.Element {
 
   return (
     <>
-      <Schedules schedules={schedules} />
+      {/* <Schedules schedules={schedules} /> */}
       <section className="grid gap-4">
         <h3 className="font-bold text-2xl">スケジュール</h3>
-        <ScheduleCarousel schedules={schedules} />
+        <ScheduleCarousel2 schedules={schedules} />
       </section>
     </>
   )

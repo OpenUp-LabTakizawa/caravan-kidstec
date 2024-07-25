@@ -10,12 +10,22 @@
   animation: arrow-right 1.5s infinite;
 }
 
+.arrow-top-right {
+  animation: arrow-top-right 1.5s infinite;
+}
+
 .arrow-up {
   animation: arrow-up 1.5s infinite;
 }
 
 .banner {
   animation: banner 10s linear infinite;
+}
+
+.blue-shine {
+  background: linear-gradient(to right, #38bdf8 50%, #e0f2fe 60%, #38bdf8 70%);
+  background-size: 600% 100%;
+  animation: shine 20s infinite linear;
 }
 
 .fade-out-down {
@@ -34,6 +44,10 @@
 
 .rotate-y {
   animation: rotate-y 1.5s;
+}
+
+.rotate-z {
+  animation: rotate-z 2s infinite;
 }
 
 .scroll-right {
@@ -90,6 +104,16 @@
   }
   20% {
     transform: translatex(8px);
+  }
+}
+
+@keyframes arrow-top-right {
+  0%,
+  40% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(8px, -8px);
   }
 }
 
@@ -150,6 +174,15 @@
   }
   100% {
     transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotate-z {
+  0% {
+    transform: rotatez(0deg);
+  }
+  100% {
+    transform: rotatez(-360deg);
   }
 }
 

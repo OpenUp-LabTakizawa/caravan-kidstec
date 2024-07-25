@@ -274,6 +274,86 @@ export function ScheduleCarousel({
   )
 }
 
+export function ScheduleCarousel2({
+  schedules,
+}: Readonly<{ schedules: Schedule[] }>): JSX.Element {
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (window.IntersectionObserver) {
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("opacity-0")
+            }, 3000)
+          } else {
+            entry.target.classList.remove("opacity-0")
+          }
+        }
+      })
+
+      if (ref.current) {
+        observer.observe(ref.current)
+      }
+
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current as HTMLDivElement)
+        }
+      }
+    }
+  })
+
+  return (
+    <div className="carousel relative space-x-4">
+      <ScrollRightHint ref={ref} />
+      {schedules.map((schedule, index) => (
+        <div key={schedule.alt} className="carousel-item rounded-box w-60">
+          <div className="card shadow-lg">
+            <Image
+              loader={cloudfrontLoader}
+              src={schedule.src}
+              width={1000}
+              height={1000}
+              alt={schedule.alt}
+              className="h-60 object-cover rounded-t-2xl"
+            />
+            <div className="bg-amber-50 card-body p-0 py-8 relative">
+              <span
+                className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${schedule.color}`}
+              >
+                Day&nbsp;{index + 1}
+              </span>
+              <h3 className="card-title mx-auto text-lg whitespace-pre">
+                {schedule.title}
+              </h3>
+              <p className="font-semibold text-sm">
+                2024年{schedule.date.month}月{schedule.date.day}日(
+                {schedule.date.dayOfWeek})
+              </p>
+              <p className="text-sm">
+                <span className="badge badge-outline badge-xs mr-1">場所</span>
+                {schedule.venue}
+              </p>
+              <div className="card-actions justify-center">
+                {schedule.tags.map((tag) => (
+                  <div
+                    key={tag}
+                    className="badge badge-outline bg-base-200 text-xs"
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function ScrollRightHint({
   ref,
 }: Readonly<{ ref: RefObject<HTMLDivElement> }>): JSX.Element {

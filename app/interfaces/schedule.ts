@@ -8,3 +8,8 @@ export type Schedule = {
   address: string
   tags: string[]
 }
+
+export type EventDate = {
+  date: string
+  title: string
+}

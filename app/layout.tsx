@@ -43,7 +43,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: ReactNode }>): JSX.Element {
+  modal,
+}: Readonly<{ children: ReactNode; modal: ReactNode }>): JSX.Element {
   return (
     <html
       lang="ja"
@@ -53,6 +54,7 @@ export default function RootLayout({
         <Header />
         <main className="max-w-screen-md mx-auto text-xs sm:px-12 lg:text-base">
           {children}
+          {modal}
           <ScrollToTop />
         </main>
         <Footer />

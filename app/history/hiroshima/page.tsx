@@ -1,5 +1,6 @@
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
+import { MenuPanels } from "@/app/components/layout/menuPanel"
 import { Programs } from "@/app/history/programs"
 import {
   HIROSHIMA,
@@ -37,6 +38,7 @@ export default function Hiroshima(): JSX.Element {
       <section className="grid gap-4">
         <LineRegister lineLink={HIROSHIMA_LINE} />
       </section>
+      <MenuPanels submenu={HIROSHIMA} />
     </>
   )
 }

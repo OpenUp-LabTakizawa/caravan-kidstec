@@ -1,6 +1,6 @@
 import { LineRegister } from "@/app/components/button/lineAddFriends"
-import { ScheduleCarousel2 } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
+import { Schedules } from "@/app/history/schedules"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
   HIROSHIMA,
@@ -77,13 +77,5 @@ function ForthEvent(): JSX.Element {
     },
   ] as const
 
-  return (
-    <>
-      {/* <Schedules schedules={schedules} /> */}
-      <section className="grid gap-4">
-        <h3 className="font-bold text-2xl">スケジュール</h3>
-        <ScheduleCarousel2 schedules={schedules} />
-      </section>
-    </>
-  )
+  return <Schedules schedules={schedules} />
 }

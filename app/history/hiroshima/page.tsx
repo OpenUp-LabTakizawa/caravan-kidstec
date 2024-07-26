@@ -1,7 +1,6 @@
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
 import { Programs } from "@/app/history/programs"
-import type { Program } from "@/app/interfaces/schedule"
 import {
   HIROSHIMA,
   HIROSHIMA_HISTORY,
@@ -21,9 +20,7 @@ export default function Hiroshima(): JSX.Element {
           <h2 className="font-bold font-zenMaruGothic text-3xl">
             {history.title}
           </h2>
-          {history.programs && (
-            <Programs programs={history.programs as Program[]} />
-          )}
+          {history.programs && <Programs programs={history.programs} />}
           {history !== HIROSHIMA_HISTORY[3] && (
             <Link href={`/history/hiroshima/${history.href}`}>
               <button

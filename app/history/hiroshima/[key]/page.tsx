@@ -21,7 +21,7 @@ export default function HiroshimaVideo({
         href={HISTORY.href + HIROSHIMA.href}
         className="btn max-w-fit mx-auto"
       >
-        <ArrowUturnLeftIcon className="size-6 rotate-z" />
+        <ArrowUturnLeftIcon className="rotate-z size-6" />
         過去の実績に戻る
       </Link>
     </>

@@ -9,7 +9,13 @@ export type Schedule = {
   tags: string[]
 }
 
+export type Program = {
+  date: { year: string; month: string; day: string; dayOfWeek: string }
+  venue: string
+}
+
 export type EventDate = {
-  date: string
+  href: string
   title: string
+  programs?: Program[]
 }

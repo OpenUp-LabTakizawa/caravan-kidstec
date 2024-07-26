@@ -8,7 +8,7 @@ export default function HiroshimaModal({
   params: { key },
 }: Readonly<{ params: { key: string } }>): JSX.Element {
   const history: EventDate = HIROSHIMA_HISTORY.find(
-    (history) => history.date === key,
+    (history) => history.href === key,
   ) as EventDate
 
   return (

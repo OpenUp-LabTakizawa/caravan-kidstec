@@ -15,6 +15,14 @@ export type MenuPanel = {
   href: string
 }
 
+export type MenuPanel2 = {
+  name: string
+  textColor: string
+  bgColor: string
+  href: string
+  text: string
+}
+
 export type Submenu = {
   name: string
   href: string

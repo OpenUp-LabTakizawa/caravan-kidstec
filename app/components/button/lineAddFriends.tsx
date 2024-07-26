@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from "@heroicons/react/24/outline"
+import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"

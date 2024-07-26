@@ -197,8 +197,8 @@ export function ScheduleCarousel({
                 {schedule.title}
               </h3>
               <p className="font-semibold text-sm">
-                2024年{schedule.date.month}月{schedule.date.day}日(
-                {schedule.date.dayOfWeek})&nbsp;10:00~17:00
+                {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
+                日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
               </p>
               <div className="card-actions justify-center">
                 {schedule.tags.map((tag) => (
@@ -245,8 +245,8 @@ export function ScheduleCarousel2({
                 {schedule.title}
               </h3>
               <p className="font-semibold text-sm">
-                2024年{schedule.date.month}月{schedule.date.day}日(
-                {schedule.date.dayOfWeek})
+                {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
+                日({schedule.date.dayOfWeek})
               </p>
               <p className="text-sm">
                 <span className="badge badge-outline badge-xs mr-1">場所</span>

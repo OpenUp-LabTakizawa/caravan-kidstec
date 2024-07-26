@@ -13,7 +13,7 @@ export function Schedules({
         {schedules.map((schedule) => (
           <li key={schedule.alt} className="grid gap-1 border-b p-2">
             <p className="decoration-4 decoration-sky-400 underline">
-              2024年
+              {schedule.date.year}年
               <span className="font-bold text-2xl">{schedule.date.month}</span>
               月
               <span className="decoration-4 decoration-sky-400 font-bold text-2xl underline">

@@ -54,6 +54,11 @@
   animation: rotate-z 2s infinite;
 }
 
+.rotate-z-45 {
+  animation: rotate-z-45 1s;
+  transform-origin: right;
+}
+
 .scroll-right {
   position: absolute;
   opacity: 0;
@@ -197,6 +202,16 @@
   }
   100% {
     transform: rotatez(-360deg);
+  }
+}
+
+@keyframes rotate-z-45 {
+  0%,
+  20% {
+    transform: rotatez(45deg);
+  }
+  100% {
+    transform: rotatez(0deg);
   }
 }
 

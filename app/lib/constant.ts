@@ -103,6 +103,29 @@ export const TOKYO_CHIBA_GUIDELINE: Guideline = {
 //   },
 // ] as const
 
+const HIROSHIMA_FIRST_PROGRAMS: Program[] = [
+  {
+    date: { year: "2022", month: "6", day: "18", dayOfWeek: "土" },
+    venue: "三段峡ホテル",
+  },
+  {
+    date: { year: "2022", month: "6", day: "19", dayOfWeek: "日" },
+    venue: "イノベーション・ハブ・ひろしまCamps",
+  },
+  {
+    date: { year: "2022", month: "7", day: "2", dayOfWeek: "土" },
+    venue: "三段峡ホテル",
+  },
+  {
+    date: { year: "2022", month: "7", day: "23", dayOfWeek: "土" },
+    venue: "能美市民センター",
+  },
+  {
+    date: { year: "2022", month: "7", day: "30", dayOfWeek: "土" },
+    venue: "イノベーション・ハブ・ひろしまCamps",
+  },
+] as const
+
 const HIROSHIMA_SECOND_PROGRAMS: Program[] = [
   {
     date: { year: "2023", month: "5", day: "27", dayOfWeek: "木" },
@@ -156,6 +179,7 @@ export const HIROSHIMA_HISTORY: EventDate[] = [
   {
     href: "202206",
     title: "第１回 2022年6月",
+    programs: HIROSHIMA_FIRST_PROGRAMS,
   },
   {
     href: "202306",

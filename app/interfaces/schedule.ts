@@ -17,5 +17,5 @@ export type Program = {
 export type EventDate = {
   href: string
   title: string
-  programs?: Program[]
+  programs: Program[]
 }

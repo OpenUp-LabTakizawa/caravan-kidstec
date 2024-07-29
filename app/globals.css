@@ -10,6 +10,10 @@
   animation: arrow-right 1.5s infinite;
 }
 
+.arrow-back-right {
+  animation: arrow-back-right 1.5s infinite;
+}
+
 .arrow-top-right {
   animation: arrow-top-right 1.5s infinite;
 }
@@ -104,6 +108,16 @@
   }
   20% {
     transform: translatex(8px);
+  }
+}
+
+@keyframes arrow-back-right {
+  0%,
+  40% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translatex(-8px);
   }
 }
 

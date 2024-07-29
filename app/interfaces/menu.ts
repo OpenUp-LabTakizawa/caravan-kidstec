@@ -10,15 +10,7 @@ export type Menu = {
 
 export type MenuPanel = {
   name: string
-  icon: ElementType
-  color: string
-  href: string
-}
-
-export type MenuPanel2 = {
-  name: string
-  textColor: string
-  bgColor: string
+  color: { bg: string; border: string; text: string }
   href: string
   text: string
 }

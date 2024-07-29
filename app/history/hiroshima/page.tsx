@@ -21,7 +21,7 @@ export default function Hiroshima(): JSX.Element {
           <h2 className="font-bold font-zenMaruGothic text-3xl">
             {history.title}
           </h2>
-          {history.programs && <Programs programs={history.programs} />}
+          <Programs programs={history.programs} />
           {history !== HIROSHIMA_HISTORY[3] && (
             <Link href={`/history/hiroshima/${history.href}`}>
               <button

@@ -17,25 +17,34 @@ export default function Hiroshima(): JSX.Element {
     <>
       <Heading menu={HISTORY} submenu={HIROSHIMA} />
       {HIROSHIMA_HISTORY.map((history) => (
-        <section key={history.href} className="grid gap-4">
+        <section key={history.href} className="gap-4 grid">
           <h2 className="font-bold font-zenMaruGothic text-3xl">
             {history.title}
           </h2>
-          <Programs programs={history.programs} />
-          {history !== HIROSHIMA_HISTORY[3] && (
-            <Link href={`/history/hiroshima/${history.href}`}>
-              <button
-                type="button"
-                className="bg-sky-400 blue-shine btn shadow-lg text-lg text-white w-full"
-              >
-                イベント動画を視聴する
-                <ArrowTopRightOnSquareIcon className="arrow-top-right size-5" />
-              </button>
-            </Link>
-          )}
+          <details className="collapse collapse-arrow">
+            <summary className="bg-amber-50 collapse-title text-xl">
+              イベント情報
+            </summary>
+            <Programs programs={history.programs} />
+            {history !== HIROSHIMA_HISTORY[1] &&
+              history !== HIROSHIMA_HISTORY[4] && (
+                <Link
+                  href={`/history/hiroshima/${history.href}`}
+                  className="pt-2"
+                >
+                  <button
+                    type="button"
+                    className="bg-sky-400 blue-shine btn rounded-2xl shadow-lg text-lg text-white w-full"
+                  >
+                    イベント動画を視聴する
+                    <ArrowTopRightOnSquareIcon className="arrow-top-right size-5" />
+                  </button>
+                </Link>
+              )}
+          </details>
         </section>
       ))}
-      <section className="grid gap-4">
+      <section className="gap-4 grid">
         <LineRegister lineLink={HIROSHIMA_LINE} />
       </section>
       <MenuPanels submenu={HIROSHIMA} />

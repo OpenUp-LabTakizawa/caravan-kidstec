@@ -128,25 +128,6 @@ const HIROSHIMA_FIRST_PROGRAMS: Program[] = [
 
 const HIROSHIMA_SECOND_PROGRAMS: Program[] = [
   {
-    date: { year: "2022", month: "11", day: "19", dayOfWeek: "土" },
-    venue: "広島県立総合体育館",
-  },
-  {
-    date: { year: "2022", month: "11", day: "26", dayOfWeek: "土" },
-    venue: "江田島市鹿川交流プラザ",
-  },
-  {
-    date: { year: "2022", month: "12", day: "3", dayOfWeek: "土" },
-    venue: "三段峡ホテル",
-  },
-  {
-    date: { year: "2022", month: "12", day: "17", dayOfWeek: "土" },
-    venue: "広島市内",
-  },
-] as const
-
-const HIROSHIMA_THIRD_PROGRAMS: Program[] = [
-  {
     date: { year: "2023", month: "5", day: "27", dayOfWeek: "木" },
     venue: "ひと・まちプラザ",
   },
@@ -164,7 +145,7 @@ const HIROSHIMA_THIRD_PROGRAMS: Program[] = [
   },
 ] as const
 
-const HIROSHIMA_FOURTH_PROGRAMS: Program[] = [
+const HIROSHIMA_THIRD_PROGRAMS: Program[] = [
   {
     date: { year: "2023", month: "11", day: "23", dayOfWeek: "木" },
     venue: "コミュニティスペース「フウド」",
@@ -179,7 +160,7 @@ const HIROSHIMA_FOURTH_PROGRAMS: Program[] = [
   },
 ] as const
 
-const HIROSHIMA_FIFTH_PROGRAMS: Program[] = [
+const HIROSHIMA_FOURTH_PROGRAMS: Program[] = [
   {
     date: { year: "2024", month: "7", day: "6", dayOfWeek: "土" },
     venue: "広島大学東広島キャンパス",
@@ -201,23 +182,18 @@ export const HIROSHIMA_HISTORY: EventDate[] = [
     programs: HIROSHIMA_FIRST_PROGRAMS,
   },
   {
-    href: "202211",
-    title: "第２回 2022年11月",
+    href: "202306",
+    title: "第２回 2023年6月",
     programs: HIROSHIMA_SECOND_PROGRAMS,
   },
   {
-    href: "202306",
-    title: "第３回 2023年6月",
+    href: "202311",
+    title: "第３回 2023年11月",
     programs: HIROSHIMA_THIRD_PROGRAMS,
   },
   {
-    href: "202311",
-    title: "第４回 2023年11月",
-    programs: HIROSHIMA_FOURTH_PROGRAMS,
-  },
-  {
     href: "202407",
-    title: "第５回 2024年7月",
-    programs: HIROSHIMA_FIFTH_PROGRAMS,
+    title: "第４回 2024年7月",
+    programs: HIROSHIMA_FOURTH_PROGRAMS,
   },
 ]

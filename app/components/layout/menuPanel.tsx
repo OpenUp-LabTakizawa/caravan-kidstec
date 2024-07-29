@@ -4,7 +4,7 @@ import type { MenuPanel, Submenu } from "@/app/interfaces/menu"
 import { CONTACT, FAQ, PARTNER, SUPPORTER } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
-import type { JSX } from "react"
+import { type JSX, type RefObject, useEffect, useRef } from "react"
 
 export function MenuPanels({
   submenu,
@@ -41,12 +41,44 @@ export function MenuPanels({
       text: "地域イベンター",
     },
   ] as const
+  const ref: RefObject<Map<string, HTMLAnchorElement>> = useRef<
+    Map<string, HTMLAnchorElement>
+  >(new Map<string, HTMLAnchorElement>())
+
+  useEffect(() => {
+    if (window.IntersectionObserver) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          const delay = index * 100
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("rotate-z-45")
+            }, delay)
+          } else {
+            entry.target.classList.remove("rotate-z-45")
+          }
+        })
+      })
+
+      if (ref.current?.values()) {
+        for (const node of ref.current.values()) {
+          observer.observe(node)
+        }
+      }
+    }
+  })
 
   return (
     <section className="gap-4 flex justify-items-center">
       {panels.map((panel) => (
         <Link
           key={panel.name}
+          ref={(node: HTMLAnchorElement) => {
+            ref.current?.set(panel.name, node)
+            return () => {
+              ref.current?.delete(panel.name)
+            }
+          }}
           href={panel.href}
           className={`border-2 rounded-lg shadow-lg w-full ${panel.color.border}`}
         >

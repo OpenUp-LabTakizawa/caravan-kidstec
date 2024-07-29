@@ -40,15 +40,19 @@
   animation: fade-in-up 1.5s;
 }
 
+.flip-horizontal {
+  transform: scale(-1, 1);
+}
+
 .green-shine {
   background: linear-gradient(to right, #00c300 50%, #abf1b5 60%, #00c300 70%);
   background-size: 600% 100%;
   animation: shine 20s infinite linear;
 }
 
-.rotate-y {
+/* .rotate-y {
   animation: rotate-y 1.5s;
-}
+} */
 
 .rotate-z {
   animation: rotate-z 2s infinite;
@@ -187,14 +191,14 @@
   }
 }
 
-@keyframes rotate-y {
+/* @keyframes rotate-y {
   0% {
     transform: rotateY(0deg);
   }
   100% {
     transform: rotateY(360deg);
   }
-}
+} */
 
 @keyframes rotate-z {
   0% {

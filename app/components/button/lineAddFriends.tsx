@@ -1,13 +1,34 @@
+"use client"
+
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
-import type { JSX } from "react"
+import { type JSX, type RefObject, useEffect, useRef } from "react"
 
 export function LineAddFriends({
   linkLink,
 }: Readonly<{ linkLink: string }>): JSX.Element {
+  const ref: RefObject<HTMLAnchorElement> = useRef<HTMLAnchorElement>(null)
+
+  useEffect(() => {
+    if (window.IntersectionObserver) {
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-bounce")
+            setTimeout(() => {
+              entry.target.classList.remove("animate-bounce")
+            }, 2500)
+          }
+        }
+      })
+
+      observer.observe(ref.current as HTMLAnchorElement)
+    }
+  })
+
   return (
-    <Link href={linkLink} className="mx-auto hover:animate-bounce">
+    <Link ref={ref} href={linkLink} className="mx-auto">
       <Image
         src="/line_add_friends.avif"
         width={232}
@@ -22,11 +43,30 @@ export function LineAddFriends({
 export function LineApply({
   lineLink,
 }: Readonly<{ lineLink: string }>): JSX.Element {
+  const ref: RefObject<HTMLAnchorElement> = useRef<HTMLAnchorElement>(null)
+
+  useEffect(() => {
+    if (window.IntersectionObserver) {
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-bounce")
+            setTimeout(() => {
+              entry.target.classList.remove("animate-bounce")
+            }, 2500)
+          }
+        }
+      })
+
+      observer.observe(ref.current as HTMLAnchorElement)
+    }
+  })
+
   return (
-    <Link href={lineLink}>
+    <Link ref={ref} href={lineLink}>
       <button
         type="button"
-        className="bg-[#00C300] btn green-shine jump-shaking shadow-lg text-lg text-white"
+        className="bg-[#00C300] btn green-shine shadow-lg text-lg text-white"
       >
         LINEで簡単応募する！
         <ArrowRightIcon className="arrow-right size-5" />

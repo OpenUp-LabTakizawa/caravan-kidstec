@@ -1,7 +1,7 @@
 "use client"
 
 import type { MenuPanel, Submenu } from "@/app/interfaces/menu"
-import { FAQ, PARTNER, PRIVACY_POLICY, SUPPORTER } from "@/app/lib/constant"
+import { PARTNER, PRIVACY_POLICY, Q_AND_A, SUPPORTER } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -12,7 +12,7 @@ export function EventPanels({
 }: Readonly<{ menuHref: string; submenu: Submenu }>): JSX.Element {
   const panels: MenuPanel[] = [
     {
-      name: FAQ.name,
+      name: Q_AND_A.name,
       color: {
         bg: "bg-sky-400",
         border: "border-sky-400",
@@ -20,7 +20,7 @@ export function EventPanels({
         text: "text-sky-400",
         textHover: "group-hover:text-sky-400",
       },
-      href: menuHref + submenu.href + FAQ.href,
+      href: menuHref + submenu.href + Q_AND_A.href,
       text: "よくある質問",
     },
     {
@@ -92,7 +92,7 @@ export function HistoryPanels({
 }: Readonly<{ menuHref: string; submenu: Submenu }>): JSX.Element {
   const panels: MenuPanel[] = [
     {
-      name: FAQ.name,
+      name: Q_AND_A.name,
       color: {
         bg: "bg-sky-400",
         border: "border-sky-400",
@@ -100,7 +100,7 @@ export function HistoryPanels({
         text: "text-sky-400",
         textHover: "group-hover:text-sky-400",
       },
-      href: menuHref + submenu.href + FAQ.href,
+      href: menuHref + submenu.href + Q_AND_A.href,
       text: "よくある質問",
     },
     {

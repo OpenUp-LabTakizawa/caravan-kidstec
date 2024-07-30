@@ -1,4 +1,4 @@
-export type Faq = {
+export type QandA = {
   question: string
   answer: string
 }

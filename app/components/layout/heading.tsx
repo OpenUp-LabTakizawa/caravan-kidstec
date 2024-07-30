@@ -26,7 +26,7 @@ export function Heading({
     <section className="grid gap-6 pl-4">
       <Breadcrumb menu={menu} submenu={submenu} title={eventDate?.title} />
       <h1
-        className={`font-bold font-zenMaruGothic max-w-fit mx-auto typing text-4xl ${menu.color}`}
+        className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${menu.color}`}
       >
         {getTitle()}
       </h1>

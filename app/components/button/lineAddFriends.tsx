@@ -7,7 +7,7 @@ export function LineAddFriends({
   linkLink,
 }: Readonly<{ linkLink: string }>): JSX.Element {
   return (
-    <Link href={linkLink} className="mx-auto">
+    <Link href={linkLink} className="mx-auto hover:animate-bounce">
       <Image
         src="/line_add_friends.avif"
         width={232}
@@ -26,7 +26,7 @@ export function LineApply({
     <Link href={lineLink}>
       <button
         type="button"
-        className="bg-[#00C300] btn shadow-lg green-shine text-lg text-white"
+        className="bg-[#00C300] btn green-shine jump-shaking shadow-lg text-lg text-white"
       >
         LINEで簡単応募する！
         <ArrowRightIcon className="arrow-right size-5" />

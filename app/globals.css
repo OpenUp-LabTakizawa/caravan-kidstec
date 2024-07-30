@@ -32,6 +32,45 @@
   animation: shine 20s infinite linear;
 }
 
+.box-rose-shadow {
+  background: linear-gradient(#fff, #fff 50%, #fb7185 50%, #fb7185);
+  background-size: 100% 200%;
+  box-shadow: #fff 4px 4px 0 0, #fb7185 4px 4px 0 2px;
+  transition: .5s;
+}
+
+.box-rose-shadow:hover {
+  background-position: 100% 100%;
+  box-shadow: #fff 2px 2px 0 0, #fb7185 2px 2px 0 2px;
+  transform: translate(2px, 2px);
+}
+
+.box-sky-shadow {
+  background: linear-gradient(#fff, #fff 50%, #38bdf8 50%, #38bdf8);
+  background-size: 100% 200%;
+  box-shadow: #fff 4px 4px 0 0, #38bdf8 4px 4px 0 2px;
+  transition: .5s;
+}
+
+.box-sky-shadow:hover {
+  background-position: 100% 100%;
+  box-shadow: #fff 2px 2px 0 0, #38bdf8 2px 2px 0 2px;
+  transform: translate(2px, 2px);
+}
+
+.box-teal-shadow {
+  background: linear-gradient(#fff, #fff 50%, #2dd4bf 50%, #2dd4bf);
+  background-size: 100% 200%;
+  box-shadow: #fff 4px 4px 0 0, #2dd4bf 4px 4px 0 2px;
+  transition: .5s;
+}
+
+.box-teal-shadow:hover {
+  background-position: 100% 100%;
+  box-shadow: #fff 2px 2px 0 0, #2dd4bf 2px 2px 0 2px;
+  transform: translate(2px, 2px);
+}
+
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }

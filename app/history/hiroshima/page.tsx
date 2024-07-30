@@ -15,9 +15,9 @@ import type { JSX } from "react"
 export default function Hiroshima(): JSX.Element {
   return (
     <>
-      <Heading menu={HISTORY} submenu={HIROSHIMA} />
+      <Heading menu={HISTORY} submenus={[HIROSHIMA]} />
       {HIROSHIMA_HISTORY.map((history) => (
-        <section key={history.href} className="gap-4 grid">
+        <section key={history.href} className="gap-4 grid text-center">
           <h2 className="font-bold font-zenMaruGothic text-3xl">
             {history.title}
           </h2>
@@ -28,7 +28,7 @@ export default function Hiroshima(): JSX.Element {
             <Programs programs={history.programs} />
             {history !== HIROSHIMA_HISTORY[3] && (
               <Link
-                href={`/history/hiroshima/${history.href}`}
+                href={`${HISTORY.href}${HIROSHIMA.href}/movie${history.href}`}
                 className="pt-2"
               >
                 <button
@@ -46,7 +46,7 @@ export default function Hiroshima(): JSX.Element {
       <section className="gap-4 grid">
         <LineRegister lineLink={HIROSHIMA_LINE} />
       </section>
-      <MenuPanels submenu={HIROSHIMA} />
+      <MenuPanels menuHref={HISTORY.href} submenu={HIROSHIMA} />
     </>
   )
 }

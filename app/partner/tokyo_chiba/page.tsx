@@ -31,7 +31,7 @@ export default function TokyoChiba(): JSX.Element {
 
   return (
     <>
-      <Heading menu={PARTNER} submenu={TOKYO_CHIBA} />
+      <Heading menu={PARTNER} submenus={[TOKYO_CHIBA]} />
       <Partners partners={partners} />
     </>
   )

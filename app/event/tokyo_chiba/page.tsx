@@ -1,12 +1,12 @@
-import { Register } from "@/app/area/register"
-import { Schedules } from "@/app/area/schedules"
 import { LineApply } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { MenuPanels } from "@/app/components/layout/menuPanel"
+import { Register } from "@/app/event/register"
+import { Schedules } from "@/app/event/schedules"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
-  AREA,
+  EVENT,
   TOKYO_CHIBA,
   TOKYO_CHIBA_GUIDELINE,
   TOKYO_CHIBA_LINE,
@@ -51,7 +51,7 @@ export default function TokyoChiba(): JSX.Element {
 
   return (
     <>
-      <Heading menu={AREA} submenu={TOKYO_CHIBA} />
+      <Heading menu={EVENT} submenus={[TOKYO_CHIBA]} />
       <Image
         src={"/202409_tokyo_chiba.avif"}
         width={1000}
@@ -60,9 +60,12 @@ export default function TokyoChiba(): JSX.Element {
         className="w-full"
       />
       <Schedules schedules={schedules} />
-      <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
+      <section className="bg-amber-50 grid gap-1 mx-auto p-4 text-center w-max">
         <p className="font-semibold">
-          <Link href="/area/chiba" className="link text-sky-400">
+          <Link
+            href={`${EVENT.href}${TOKYO_CHIBA.href}#details`}
+            className="link text-sky-400"
+          >
             応募要項
           </Link>
           をご確認の上、
@@ -71,7 +74,7 @@ export default function TokyoChiba(): JSX.Element {
         </p>
         <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
-      <section className="grid gap-4">
+      <section className="grid gap-4 text-center">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleCarousel schedules={schedules} />
       </section>
@@ -79,7 +82,7 @@ export default function TokyoChiba(): JSX.Element {
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
-      <MenuPanels submenu={TOKYO_CHIBA} />
+      <MenuPanels menuHref={EVENT.href} submenu={TOKYO_CHIBA} />
     </>
   )
 }

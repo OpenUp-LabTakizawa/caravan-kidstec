@@ -1,13 +1,13 @@
 import { Divider } from "@/app/components/layout/divider"
 import { Heading } from "@/app/components/layout/heading"
-import { CONTACT, PRIVACY_POLICY } from "@/app/lib/constant"
+import { HIROSHIMA, HISTORY, PRIVACY_POLICY } from "@/app/lib/constant"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export default function PrivacyPolicy(): JSX.Element {
   return (
     <>
-      <Heading menu={CONTACT} submenu={PRIVACY_POLICY} />
+      <Heading menu={HISTORY} submenus={[HIROSHIMA, PRIVACY_POLICY]} />
       <section className="bg-base-200 grid gap-4 leading-7 m-4 p-4 rounded-box text-sm">
         <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
         <p>
@@ -69,12 +69,13 @@ export default function PrivacyPolicy(): JSX.Element {
             </p>
             <p>c.&nbsp;当該情報の提供を受ける者（組織）</p>
             <ul className="list-disc px-8">
-              <li>CLASSROOM ADVENTURE</li>
               <li>ICHI COMMONS株式会社</li>
+              <li>NPO法人 三段峡・太田川流域研究会</li>
               <li>PCN仙台</li>
-              <li>クルックフィールズ</li>
-              <li>株式会社Griteen</li>
+              <li>一般社団法人 フウド</li>
+              <li>株式会社BPL</li>
               <li>株式会社テイクアンドギヴ・ニーズ</li>
+              <li>広島大学（さんけん部）</li>
             </ul>
             <p>d.&nbsp;個人情報の取扱いに関する契約</p>
             <p className="px-4">

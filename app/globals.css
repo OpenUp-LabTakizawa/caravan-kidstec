@@ -32,6 +32,19 @@
   animation: shine 20s infinite linear;
 }
 
+.box-orange-shadow {
+  background: linear-gradient(#fff, #fff 50%, #fb923c 50%, #fb923c);
+  background-size: 100% 200%;
+  box-shadow: #fff 4px 4px 0 0, #fb923c 4px 4px 0 2px;
+  transition: .5s;
+}
+
+.box-orange-shadow:hover {
+  background-position: 100% 100%;
+  box-shadow: #fff 2px 2px 0 0, #fb923c 2px 2px 0 2px;
+  transform: translate(2px, 2px);
+}
+
 .box-rose-shadow {
   background: linear-gradient(#fff, #fff 50%, #fb7185 50%, #fb7185);
   background-size: 100% 200%;

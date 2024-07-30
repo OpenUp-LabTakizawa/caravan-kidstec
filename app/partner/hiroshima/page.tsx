@@ -31,7 +31,7 @@ export default function Hiroshima(): JSX.Element {
 
   return (
     <>
-      <Heading menu={PARTNER} submenu={HIROSHIMA} />
+      <Heading menu={PARTNER} submenus={[HIROSHIMA]} />
       <Partners partners={partners} />
     </>
   )

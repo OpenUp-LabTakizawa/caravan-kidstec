@@ -1,5 +1,5 @@
 import { SlideUp } from "@/app/components/animation/slideUp"
-import { Banner } from "@/app/components/layout/banner"
+import { Banner } from "@/app/components/button/banner"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import type { Panel } from "@/app/interfaces/picture"

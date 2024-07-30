@@ -1,15 +1,7 @@
-import { AreaLineRegister } from "@/app/components/button/lineAddFriends"
+import { ChatBubble } from "@/app/components/layout/chatBubble"
 import { Heading } from "@/app/components/layout/heading"
 import type { Faq } from "@/app/interfaces/faq"
-import {
-  EVENT,
-  FAQ,
-  HIROSHIMA,
-  HIROSHIMA_LINE,
-  TOKYO_CHIBA,
-  TOKYO_CHIBA_LINE,
-} from "@/app/lib/constant"
-import Image from "next/image"
+import { EVENT, FAQ, TOKYO_CHIBA, TOKYO_CHIBA_LINE } from "@/app/lib/constant"
 import type { JSX } from "react"
 
 export default function Faqs(): JSX.Element {
@@ -134,75 +126,8 @@ export default function Faqs(): JSX.Element {
           <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-3xl text-center">
             {section.title}
           </h2>
-          <ChatBubble faqs={section.faqs} />
+          <ChatBubble lineLink={TOKYO_CHIBA_LINE} faqs={section.faqs} />
         </section>
-      ))}
-    </>
-  )
-}
-
-function ChatBubble({ faqs }: Readonly<{ faqs: Faq[] }>): JSX.Element {
-  return (
-    <>
-      {faqs.map((faq) => (
-        <>
-          <div key={faq.question} className="chat chat-start">
-            <div className="chat-image avatar">
-              <div className="w-10 rounded-full">
-                <Image
-                  src="/kai_icon.avif"
-                  width={1000}
-                  height={1000}
-                  alt="カイ"
-                  className="w-full"
-                />
-              </div>
-            </div>
-            <span className="bg-teal-400 chat-bubble min-h-0 mt-5 text-black">
-              {faq.question}
-            </span>
-          </div>
-          <div key={faq.answer} className="chat chat-end">
-            <div className="chat-image avatar">
-              <div className="w-10 rounded-full">
-                <Image
-                  src="/miku_icon.avif"
-                  width={1000}
-                  height={1000}
-                  alt="ミク"
-                  className="flip-horizontal w-full"
-                />
-              </div>
-            </div>
-            <span className="bg-orange-400 chat-bubble min-h-0 text-black whitespace-pre">
-              {faq.answer}
-            </span>
-          </div>
-          {faq.question === "１年でイベントは何回実施しますか？" && (
-            <div className="flex">
-              <AreaLineRegister
-                area={TOKYO_CHIBA.name}
-                lineLink={TOKYO_CHIBA_LINE}
-              />
-              <AreaLineRegister
-                area={HIROSHIMA.name}
-                lineLink={HIROSHIMA_LINE}
-              />
-            </div>
-          )}
-          {faq.question === "ロボットを改造しても良いですか？" && (
-            <div className="flex">
-              <AreaLineRegister
-                area={TOKYO_CHIBA.name}
-                lineLink={TOKYO_CHIBA_LINE}
-              />
-              <AreaLineRegister
-                area={HIROSHIMA.name}
-                lineLink={HIROSHIMA_LINE}
-              />
-            </div>
-          )}
-        </>
       ))}
     </>
   )

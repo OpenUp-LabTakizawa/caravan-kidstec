@@ -1,7 +1,7 @@
 import { LineApply } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
-import { MenuPanels } from "@/app/components/layout/menuPanel"
+import { EventPanels } from "@/app/components/layout/menuPanel"
 import { Register } from "@/app/event/register"
 import { Schedules } from "@/app/event/schedules"
 import type { Schedule } from "@/app/interfaces/schedule"
@@ -61,7 +61,7 @@ export default function TokyoChiba(): JSX.Element {
       />
       <Schedules schedules={schedules} />
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 text-center w-max">
-        <p className="font-semibold">
+        <p className="font-semibold mb-2">
           <Link
             href={`${EVENT.href}${TOKYO_CHIBA.href}#details`}
             className="link text-sky-400"
@@ -82,7 +82,7 @@ export default function TokyoChiba(): JSX.Element {
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
         <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
-      <MenuPanels menuHref={EVENT.href} submenu={TOKYO_CHIBA} />
+      <EventPanels menuHref={EVENT.href} submenu={TOKYO_CHIBA} />
     </>
   )
 }

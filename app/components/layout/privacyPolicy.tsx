@@ -4,7 +4,9 @@ import { HIROSHIMA, HISTORY, PRIVACY_POLICY } from "@/app/lib/constant"
 import Link from "next/link"
 import type { JSX } from "react"
 
-export default function PrivacyPolicy(): JSX.Element {
+export function PrivacyPolicy({
+  organizations,
+}: Readonly<{ organizations: string[] }>): JSX.Element {
   return (
     <>
       <Heading menu={HISTORY} submenus={[HIROSHIMA, PRIVACY_POLICY]} />
@@ -69,13 +71,9 @@ export default function PrivacyPolicy(): JSX.Element {
             </p>
             <p>c.&nbsp;当該情報の提供を受ける者（組織）</p>
             <ul className="list-disc px-8">
-              <li>ICHI COMMONS株式会社</li>
-              <li>NPO法人 三段峡・太田川流域研究会</li>
-              <li>PCN仙台</li>
-              <li>一般社団法人 フウド</li>
-              <li>株式会社BPL</li>
-              <li>株式会社テイクアンドギヴ・ニーズ</li>
-              <li>広島大学（さんけん部）</li>
+              {organizations.map((organization) => (
+                <li key={organization}>{organization}</li>
+              ))}
             </ul>
             <p>d.&nbsp;個人情報の取扱いに関する契約</p>
             <p className="px-4">

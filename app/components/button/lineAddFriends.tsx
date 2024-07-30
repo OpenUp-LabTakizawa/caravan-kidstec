@@ -79,7 +79,7 @@ export function LineRegister({
   lineLink,
 }: Readonly<{ lineLink: string }>): JSX.Element {
   return (
-    <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
+    <section className="bg-amber-50 grid gap-1 mx-auto p-4 text-center w-max">
       <p className="font-semibold">
         LINE公式アカウントから、
         <br />

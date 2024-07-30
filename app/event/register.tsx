@@ -23,7 +23,7 @@ function Details({
   guideline,
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
-    <section className="grid gap-4 px-4">
+    <section id="details" className="grid gap-4 px-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
       <div className="bg-sky-300 gap-1 grid grid-flow-col items-center mx-auto p-4 rounded-2xl shadow-lg text-base">
         <InformationCircleIcon className="row-span-2 size-10" />
@@ -105,7 +105,7 @@ function Procedure({
   guideline,
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
-    <section className="grid gap-4 px-4">
+    <section className="grid gap-4 px-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
       <ul className="gap-2 grid mx-auto text-sm w-96">
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">

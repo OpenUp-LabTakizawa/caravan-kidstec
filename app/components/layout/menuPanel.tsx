@@ -1,14 +1,15 @@
 "use client"
 
 import type { MenuPanel, Submenu } from "@/app/interfaces/menu"
-import { CONTACT, FAQ, PARTNER, SUPPORTER } from "@/app/lib/constant"
+import { FAQ, PARTNER, PRIVACY_POLICY, SUPPORTER } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export function MenuPanels({
+  menuHref,
   submenu,
-}: Readonly<{ submenu: Submenu }>): JSX.Element {
+}: Readonly<{ menuHref: string; submenu: Submenu }>): JSX.Element {
   const panels: MenuPanel[] = [
     {
       name: FAQ.name,
@@ -16,11 +17,23 @@ export function MenuPanels({
         bg: "bg-sky-400",
         border: "border-sky-400",
         shadow: "box-sky-shadow",
-        text: CONTACT.color,
+        text: "text-sky-400",
         textHover: "group-hover:text-sky-400",
       },
-      href: CONTACT.href + FAQ.href,
+      href: menuHref + submenu.href + FAQ.href,
       text: "よくある質問",
+    },
+    {
+      name: PRIVACY_POLICY.name,
+      color: {
+        bg: "bg-orange-400",
+        border: "border-orange-400",
+        shadow: "box-orange-shadow",
+        text: "text-orange-400",
+        textHover: "group-hover:text-orange-400",
+      },
+      href: menuHref + submenu.href + PRIVACY_POLICY.href,
+      text: "プライバシーポリシー",
     },
     {
       name: SUPPORTER.name,
@@ -47,8 +60,9 @@ export function MenuPanels({
       text: "地域イベンター",
     },
   ] as const
+
   return (
-    <section className="gap-4 flex justify-items-center mr-2">
+    <section className="gap-4 grid grid-cols-2 justify-items-center mr-2 text-center">
       {panels.map((panel) => (
         <Link
           key={panel.name}

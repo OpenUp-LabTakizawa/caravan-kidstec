@@ -15,7 +15,7 @@ export default function HiroshimaVideo({
 
   return (
     <>
-      <Heading eventDate={eventDate} menu={HISTORY} submenu={HIROSHIMA} />
+      <Heading eventDate={eventDate} menu={HISTORY} submenus={[HIROSHIMA]} />
       <Video src={`https://dk75m1tgsot44.cloudfront.net/movie/${key}`} />
       <Link
         href={HISTORY.href + HIROSHIMA.href}

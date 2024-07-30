@@ -2,10 +2,10 @@ import { AreaLineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
 import type { Faq } from "@/app/interfaces/faq"
 import {
-  CONTACT,
   FAQ,
   HIROSHIMA,
   HIROSHIMA_LINE,
+  HISTORY,
   TOKYO_CHIBA,
   TOKYO_CHIBA_LINE,
 } from "@/app/lib/constant"
@@ -125,7 +125,7 @@ export default function Faqs(): JSX.Element {
 
   return (
     <>
-      <Heading menu={CONTACT} submenu={FAQ} />
+      <Heading menu={HISTORY} submenus={[HIROSHIMA, FAQ]} />
       {sections.map((section) => (
         <section
           key={section.title}

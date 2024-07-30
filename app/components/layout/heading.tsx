@@ -5,28 +5,29 @@ import Link from "next/link"
 import type { JSX } from "react"
 
 export function Heading({
-  eventDate,
   menu,
-  submenu,
+  eventDate,
+  submenus,
 }: Readonly<{
-  eventDate?: EventDate
   menu: Menu
-  submenu?: Submenu
+  eventDate?: EventDate
+  submenus?: Submenu[]
 }>): JSX.Element {
   function getTitle(): string {
     if (eventDate) {
       return eventDate.title
     }
-    return submenu && menu.submenus?.includes(submenu)
-      ? submenu.name
-      : menu.name
+    if (submenus) {
+      return submenus[submenus.length - 1].name
+    }
+    return menu.name
   }
 
   return (
     <section className="grid gap-6 pl-4">
-      <Breadcrumb menu={menu} submenu={submenu} title={eventDate?.title} />
+      <Breadcrumb menu={menu} submenus={submenus} title={eventDate?.title} />
       <h1
-        className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${menu.color}`}
+        className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${submenus?.length === 2 ? "text-sky-400" : menu.color}`}
       >
         {getTitle()}
       </h1>
@@ -36,9 +37,13 @@ export function Heading({
 
 function Breadcrumb({
   menu,
-  submenu,
+  submenus,
   title,
-}: Readonly<{ menu: Menu; submenu?: Submenu; title?: string }>): JSX.Element {
+}: Readonly<{
+  menu: Menu
+  submenus?: Submenu[]
+  title?: string
+}>): JSX.Element {
   return (
     <div className="text-sm breadcrumbs">
       <ul>
@@ -52,10 +57,14 @@ function Breadcrumb({
           <menu.icon className={`size-5 mr-1 ${menu.color}`} />
           {menu.name}
         </li>
-        {submenu && menu.submenus?.includes(submenu) && (
-          <li>
-            <Link href={menu.href + submenu.href}>{submenu.name}</Link>
-          </li>
+        {submenus?.map((submenu, index) =>
+          index === submenus.length - 1 ? (
+            <li key={submenu.name}>{submenu.name}</li>
+          ) : (
+            <li key={submenu.name}>
+              <Link href={menu.href + submenu.href}>{submenu.name}</Link>
+            </li>
+          ),
         )}
         {title && <li>{title}</li>}
       </ul>

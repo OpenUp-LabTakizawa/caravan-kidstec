@@ -3,7 +3,7 @@ import { Banner } from "@/app/components/layout/banner"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import type { Panel } from "@/app/interfaces/picture"
-import { AREA, TOKYO_CHIBA } from "@/app/lib/constant"
+import { EVENT, TOKYO_CHIBA } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
@@ -113,7 +113,7 @@ export default function Home(): JSX.Element {
           </p>
         </div>
       </section>
-      <Link href={AREA.href + TOKYO_CHIBA.href}>
+      <Link href={EVENT.href + TOKYO_CHIBA.href}>
         <Image
           src="/202410_event_banner.avif"
           width={1000}

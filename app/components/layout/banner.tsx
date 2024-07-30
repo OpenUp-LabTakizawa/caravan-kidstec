@@ -1,6 +1,6 @@
 "use client"
 
-import { AREA, TOKYO_CHIBA, TOKYO_CHIBA_GUIDELINE } from "@/app/lib/constant"
+import { EVENT, TOKYO_CHIBA, TOKYO_CHIBA_GUIDELINE } from "@/app/lib/constant"
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import { type JSX, type RefObject, useEffect, useRef } from "react"
@@ -73,12 +73,12 @@ export function Banner(): JSX.Element {
 
   return (
     <Link
-      href={AREA.href + TOKYO_CHIBA.href}
+      href={EVENT.href + TOKYO_CHIBA.href}
       className="bg-sky-300 overflow-hidden"
     >
       <p className="banner inline-flex items-center text-nowrap">
         【新着情報】
-        <strong className={AREA.color}>{TOKYO_CHIBA.name}</strong>
+        <strong className={EVENT.color}>{TOKYO_CHIBA.name}</strong>
         で参加者を募集中！&nbsp;応募期限は
         <strong>{TOKYO_CHIBA_GUIDELINE.deadline}</strong>
         まで&nbsp;

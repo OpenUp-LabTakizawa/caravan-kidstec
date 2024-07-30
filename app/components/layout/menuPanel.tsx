@@ -47,44 +47,11 @@ export function MenuPanels({
       text: "地域イベンター",
     },
   ] as const
-  // const ref: RefObject<Map<string, HTMLAnchorElement>> = useRef<
-  //   Map<string, HTMLAnchorElement>
-  // >(new Map<string, HTMLAnchorElement>())
-
-  // useEffect(() => {
-  //   if (window.IntersectionObserver) {
-  //     const observer = new IntersectionObserver((entries) => {
-  //       entries.forEach((entry, index) => {
-  //         const delay = index * 100
-  //         if (entry.isIntersecting) {
-  //           setTimeout(() => {
-  //             entry.target.classList.add("rotate-z-45")
-  //           }, delay)
-  //         } else {
-  //           entry.target.classList.remove("rotate-z-45")
-  //         }
-  //       })
-  //     })
-
-  //     if (ref.current?.values()) {
-  //       for (const node of ref.current.values()) {
-  //         observer.observe(node)
-  //       }
-  //     }
-  //   }
-  // })
-
   return (
     <section className="gap-4 flex justify-items-center mr-2">
       {panels.map((panel) => (
         <Link
           key={panel.name}
-          // ref={(node: HTMLAnchorElement) => {
-          //   ref.current?.set(panel.name, node)
-          //   return () => {
-          //     ref.current?.delete(panel.name)
-          //   }
-          // }}
           href={panel.href}
           className={`border-2 group rounded-lg shadow-lg w-full hover:text-white ${panel.color.border} ${panel.color.shadow}`}
         >

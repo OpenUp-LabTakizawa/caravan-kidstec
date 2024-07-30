@@ -1,14 +1,15 @@
 import { ChatBubble } from "@/app/components/layout/chatBubble"
 import { Heading } from "@/app/components/layout/heading"
-import type { Submenu } from "@/app/interfaces/menu"
+import type { Menu, Submenu } from "@/app/interfaces/menu"
 import type { QandA } from "@/app/interfaces/qAndA"
-import { EVENT, Q_AND_A } from "@/app/lib/constant"
+import { Q_AND_A } from "@/app/lib/constant"
 import type { JSX } from "react"
 
 export function QandAs({
   lineLink,
+  menu,
   submenu,
-}: Readonly<{ lineLink: string; submenu: Submenu }>): JSX.Element {
+}: Readonly<{ lineLink: string; menu: Menu; submenu: Submenu }>): JSX.Element {
   const targetUsers: QandA[] = [
     {
       question: "参加者の対象年齢は何歳からでしょうか？",
@@ -121,7 +122,7 @@ export function QandAs({
 
   return (
     <>
-      <Heading menu={EVENT} submenus={[submenu, Q_AND_A]} />
+      <Heading menu={menu} submenus={[submenu, Q_AND_A]} />
       {sections.map((section) => (
         <section
           key={section.title}

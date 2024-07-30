@@ -190,6 +190,18 @@ function ChatBubble({ faqs }: Readonly<{ faqs: Faq[] }>): JSX.Element {
               />
             </div>
           )}
+          {faq.question === "ロボットを改造しても良いですか？" && (
+            <div className="flex">
+              <AreaLineRegister
+                area={TOKYO_CHIBA.name}
+                lineLink={TOKYO_CHIBA_LINE}
+              />
+              <AreaLineRegister
+                area={HIROSHIMA.name}
+                lineLink={HIROSHIMA_LINE}
+              />
+            </div>
+          )}
         </>
       ))}
     </>

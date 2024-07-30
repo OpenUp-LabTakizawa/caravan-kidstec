@@ -11,16 +11,15 @@ export function Footer(): JSX.Element {
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (
-                <Link href={menu.href} className="font-bold link-hover">
-                  <menu.icon className={`size-5 ${menu.color}`} />
+                <Link
+                  href={menu.href}
+                  className="font-bold link-hover justify-center"
+                >
                   {menu.name}
                 </Link>
               ) : (
                 <>
-                  <span className="font-bold">
-                    <menu.icon className={`size-5 ${menu.color}`} />
-                    {menu.name}
-                  </span>
+                  <span className="font-bold justify-center">{menu.name}</span>
                   <ul>
                     {menu.submenus.map((submenu) => (
                       <li key={submenu.name}>

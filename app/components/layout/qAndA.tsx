@@ -1,11 +1,15 @@
 import { ChatBubble } from "@/app/components/layout/chatBubble"
 import { Heading } from "@/app/components/layout/heading"
-import type { Faq } from "@/app/interfaces/faq"
-import { FAQ, HIROSHIMA, HIROSHIMA_LINE, HISTORY } from "@/app/lib/constant"
+import type { Submenu } from "@/app/interfaces/menu"
+import type { QandA } from "@/app/interfaces/qAndA"
+import { EVENT, Q_AND_A } from "@/app/lib/constant"
 import type { JSX } from "react"
 
-export default function Faqs(): JSX.Element {
-  const targetUsers: Faq[] = [
+export function QandAs({
+  lineLink,
+  submenu,
+}: Readonly<{ lineLink: string; submenu: Submenu }>): JSX.Element {
+  const targetUsers: QandA[] = [
     {
       question: "参加者の対象年齢は何歳からでしょうか？",
       answer: "小学４年生 ～ 中学２年生のお子様と\nそのご家族が参加対象です。",
@@ -20,7 +24,7 @@ export default function Faqs(): JSX.Element {
     },
   ]
 
-  const venueAndParking: Faq[] = [
+  const venueAndParking: QandA[] = [
     {
       question: "会場内は飲食可能ですか？",
       answer:
@@ -41,7 +45,7 @@ export default function Faqs(): JSX.Element {
     },
   ]
 
-  const eventDate: Faq[] = [
+  const eventDate: QandA[] = [
     {
       question: "１年でイベントは何回実施しますか？",
       answer:
@@ -63,7 +67,7 @@ export default function Faqs(): JSX.Element {
     },
   ]
 
-  const changeOrCancel: Faq[] = [
+  const changeOrCancel: QandA[] = [
     {
       question: "1日だけ、キャンセル出来ますか？",
       answer:
@@ -85,7 +89,7 @@ export default function Faqs(): JSX.Element {
     },
   ]
 
-  const robot: Faq[] = [
+  const robot: QandA[] = [
     {
       question: "ロボットを改造しても良いですか？",
       answer: "以下の規定を守れば、\n自由に改造出来ます。",
@@ -95,29 +99,29 @@ export default function Faqs(): JSX.Element {
   const sections = [
     {
       title: "参加対象者",
-      faqs: targetUsers,
+      qAndAs: targetUsers,
     },
     {
       title: "会場と駐車場",
-      faqs: venueAndParking,
+      qAndAs: venueAndParking,
     },
     {
       title: "開催日程",
-      faqs: eventDate,
+      qAndAs: eventDate,
     },
     {
       title: "変更・キャンセル",
-      faqs: changeOrCancel,
+      qAndAs: changeOrCancel,
     },
     {
       title: "ロボット",
-      faqs: robot,
+      qAndAs: robot,
     },
   ]
 
   return (
     <>
-      <Heading menu={HISTORY} submenus={[HIROSHIMA, FAQ]} />
+      <Heading menu={EVENT} submenus={[submenu, Q_AND_A]} />
       {sections.map((section) => (
         <section
           key={section.title}
@@ -126,7 +130,7 @@ export default function Faqs(): JSX.Element {
           <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-3xl text-center">
             {section.title}
           </h2>
-          <ChatBubble lineLink={HIROSHIMA_LINE} faqs={section.faqs} />
+          <ChatBubble lineLink={lineLink} qAndAs={section.qAndAs} />
         </section>
       ))}
     </>

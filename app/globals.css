@@ -58,10 +58,10 @@
   animation: rotate-z 2s infinite;
 }
 
-.rotate-z-45 {
+/* .rotate-z-45 {
   animation: rotate-z-45 1s;
   transform-origin: right;
-}
+} */
 
 .scroll-right {
   position: absolute;
@@ -209,7 +209,7 @@
   }
 }
 
-@keyframes rotate-z-45 {
+/* @keyframes rotate-z-45 {
   0%,
   20% {
     transform: rotatez(45deg);
@@ -217,7 +217,7 @@
   100% {
     transform: rotatez(0deg);
   }
-}
+} */
 
 @keyframes scroll-right {
   25% {

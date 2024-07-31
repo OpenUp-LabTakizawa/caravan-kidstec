@@ -27,10 +27,7 @@ export function StretchDivider(): JSX.Element {
       })
 
       observer.observe(ref.current as HTMLDivElement)
-
-      return () => {
-        observer.unobserve(ref.current as HTMLDivElement)
-      }
+      return () => observer.disconnect()
     }
   })
 

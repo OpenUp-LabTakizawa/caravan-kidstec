@@ -8,7 +8,7 @@ import {
   useRef,
 } from "react"
 
-export function FadeInUp({
+export function OpacityZero({
   children,
   className,
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
@@ -19,9 +19,11 @@ export function FadeInUp({
       const observer = new IntersectionObserver((entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-up")
+            setTimeout(() => {
+              entry.target.classList.add("opacity-0")
+            }, 3000)
           } else {
-            entry.target.classList.remove("fade-in-up")
+            entry.target.classList.remove("opacity-0")
           }
         }
       })
@@ -32,10 +34,7 @@ export function FadeInUp({
   })
 
   return (
-    <span
-      ref={ref}
-      className={`inline-block opacity-0${className ? ` ${className}` : ""}`}
-    >
+    <span ref={ref} className={`${className ? ` ${className}` : ""}`}>
       {children}
     </span>
   )

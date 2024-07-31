@@ -1,77 +1,42 @@
-"use client"
-
+import { Bounce } from "@/app/components/animation/bounce"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
-import { type JSX, type RefObject, useEffect, useRef } from "react"
+import type { JSX } from "react"
 
 export function LineAddFriends({
   linkLink,
 }: Readonly<{ linkLink: string }>): JSX.Element {
-  const ref: RefObject<HTMLAnchorElement> = useRef<HTMLAnchorElement>(null)
-
-  useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-bounce")
-            setTimeout(() => {
-              entry.target.classList.remove("animate-bounce")
-            }, 2500)
-          }
-        }
-      })
-
-      observer.observe(ref.current as HTMLAnchorElement)
-    }
-  })
-
   return (
-    <Link ref={ref} href={linkLink} className="mx-auto">
-      <Image
-        src="/line_add_friends.avif"
-        width={232}
-        height={72}
-        alt="友だち追加"
-        className="border-0 mx-auto shadow-lg w-auto"
-      />
-    </Link>
+    <Bounce>
+      <Link href={linkLink} className="mx-auto">
+        <Image
+          src="/line_add_friends.avif"
+          width={232}
+          height={72}
+          alt="友だち追加"
+          className="border-0 mx-auto shadow-lg w-auto"
+        />
+      </Link>
+    </Bounce>
   )
 }
 
 export function LineApply({
   lineLink,
 }: Readonly<{ lineLink: string }>): JSX.Element {
-  const ref: RefObject<HTMLAnchorElement> = useRef<HTMLAnchorElement>(null)
-
-  useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-bounce")
-            setTimeout(() => {
-              entry.target.classList.remove("animate-bounce")
-            }, 2500)
-          }
-        }
-      })
-
-      observer.observe(ref.current as HTMLAnchorElement)
-    }
-  })
-
   return (
-    <Link ref={ref} href={lineLink}>
-      <button
-        type="button"
-        className="bg-[#00C300] btn green-shine shadow-lg text-lg text-white"
-      >
-        LINEで簡単応募する！
-        <ArrowRightIcon className="arrow-right size-5" />
-      </button>
-    </Link>
+    <Bounce>
+      <Link href={lineLink}>
+        <button
+          type="button"
+          className="bg-[#00C300] btn green-shine shadow-lg text-lg text-white"
+        >
+          LINEで簡単応募する！
+          <ArrowRightIcon className="arrow-right size-5" />
+        </button>
+      </Link>
+    </Bounce>
   )
 }
 

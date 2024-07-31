@@ -1,9 +1,7 @@
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
-import {
-  HistoryPanels,
-  HistoryPictures,
-} from "@/app/components/layout/menuPanel"
+import { HistoryPanels } from "@/app/components/layout/menuPanel"
+import { HistoryPictures } from "@/app/components/layout/pictureTile"
 import { Programs } from "@/app/history/programs"
 import {
   HIROSHIMA,

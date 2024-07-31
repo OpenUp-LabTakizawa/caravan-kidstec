@@ -1,5 +1,6 @@
 import type { Menu, Submenu } from "@/app/interfaces/menu"
 import type { EventDate } from "@/app/interfaces/schedule"
+import { HIROSHIMA, TOKYO_CHIBA } from "@/app/lib/constant"
 import { HomeIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -57,15 +58,15 @@ function Breadcrumb({
           <menu.icon className={`size-5 mr-1 ${menu.color}`} />
           {menu.name}
         </li>
-        {submenus?.map((submenu, index) =>
-          index === submenus.length - 1 ? (
-            <li key={submenu.name}>{submenu.name}</li>
-          ) : (
+        {submenus?.map((submenu) =>
+          submenu === HIROSHIMA || submenu === TOKYO_CHIBA ? (
             <li key={submenu.name}>
               <Link href={menu.href + submenu.href} className="link">
                 {submenu.name}
               </Link>
             </li>
+          ) : (
+            <li key={submenu.name}>{submenu.name}</li>
           ),
         )}
         {title && <li>{title}</li>}

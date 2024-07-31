@@ -5,10 +5,10 @@ import type { JSX } from "react"
 import { Modal } from "./modal"
 
 export default function HiroshimaModal({
-  params: { key },
-}: Readonly<{ params: { key: string } }>): JSX.Element {
+  params: { href },
+}: Readonly<{ params: { href: string } }>): JSX.Element {
   const history: EventDate = HIROSHIMA_HISTORY.find(
-    (history) => history.href.split("/").pop() === key,
+    (history) => history.href.split("/").pop() === href,
   ) as EventDate
 
   return (
@@ -16,7 +16,7 @@ export default function HiroshimaModal({
       <h2 className="font-bold font-zenMaruGothic mb-5 text-3xl text-center">
         {history.title}
       </h2>
-      <Video src={`https://dk75m1tgsot44.cloudfront.net/movie/${key}`} />
+      <Video src={`https://dk75m1tgsot44.cloudfront.net/movie/${href}`} />
     </Modal>
   )
 }

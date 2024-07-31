@@ -18,12 +18,9 @@ export default function Hiroshima(): JSX.Element {
       <Heading menu={HISTORY} submenus={[HIROSHIMA]} />
       {HIROSHIMA_HISTORY.map((history) => (
         <section key={history.href} className="gap-4 grid text-center">
-          <h2 className="font-bold font-zenMaruGothic text-3xl">
-            {history.title}
-          </h2>
           <details className="collapse collapse-arrow">
-            <summary className="bg-amber-50 collapse-title text-xl">
-              イベント情報
+            <summary className="bg-amber-50 collapse-title font-bold font-zenMaruGothic text-3xl">
+              {history.title}
             </summary>
             <Programs programs={history.programs} />
             {history !== HIROSHIMA_HISTORY[3] && (

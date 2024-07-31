@@ -144,7 +144,10 @@ export default function Home(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <Video src="https://dk75m1tgsot44.cloudfront.net/movie/202311" />
+      <Video
+        src="https://dk75m1tgsot44.cloudfront.net/movie/202311"
+        controls={false}
+      />
       <section className="grid gap-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">
           わたしたちの想い

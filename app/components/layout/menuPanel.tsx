@@ -1,10 +1,13 @@
 "use client"
 
 import type { MenuPanel, Submenu } from "@/app/interfaces/menu"
+import type { Picture } from "@/app/interfaces/picture"
 import { PARTNER, PRIVACY_POLICY, Q_AND_A, SUPPORTER } from "@/app/lib/constant"
+import { cloudfrontLoader } from "@/app/lib/loader"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
+import Image from "next/image"
 import Link from "next/link"
-import type { JSX } from "react"
+import { type JSX, type RefObject, useEffect, useRef } from "react"
 
 export function EventPanels({
   menuHref,
@@ -151,5 +154,58 @@ export function HistoryPanels({
         </Link>
       ))}
     </section>
+  )
+}
+
+export function HistoryPictures({
+  pictures,
+}: Readonly<{ pictures: Picture[] }>): JSX.Element {
+  const ref: RefObject<Map<string, HTMLImageElement>> = useRef<
+    Map<string, HTMLImageElement>
+  >(new Map<string, HTMLImageElement>())
+
+  useEffect(() => {
+    if (window.IntersectionObserver) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          const delay = index * 200
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("zoom-in")
+            }, delay)
+          } else {
+            entry.target.classList.remove("zoom-in")
+          }
+        })
+      })
+
+      if (ref.current?.values()) {
+        for (const node of ref.current.values()) {
+          observer.observe(node)
+        }
+      }
+    }
+  })
+
+  return (
+    <div className="grid grid-cols-3">
+      {pictures.map((picture) => (
+        <Image
+          key={picture.alt}
+          ref={(node: HTMLImageElement) => {
+            ref.current?.set(picture.alt, node)
+            return () => {
+              ref.current?.delete(picture.alt)
+            }
+          }}
+          loader={cloudfrontLoader}
+          src={picture.src}
+          height={1000}
+          width={1000}
+          alt={picture.alt}
+          className="w-full"
+        />
+      ))}
+    </div>
   )
 }

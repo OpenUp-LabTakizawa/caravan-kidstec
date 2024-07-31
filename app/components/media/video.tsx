@@ -1,9 +1,12 @@
 import type { JSX } from "react"
 
-export function Video({ src }: Readonly<{ src: string }>): JSX.Element {
+export function Video({
+  src,
+  controls = true,
+}: Readonly<{ src: string; controls?: boolean }>): JSX.Element {
   return (
     <video
-      controls={true}
+      controls={controls}
       autoPlay={true}
       loop={true}
       muted={true}

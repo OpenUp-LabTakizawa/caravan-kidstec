@@ -8,7 +8,7 @@ import {
   useRef,
 } from "react"
 
-export function SlideUp({
+export function FadeInUp({
   children,
   className,
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
@@ -19,9 +19,9 @@ export function SlideUp({
       const observer = new IntersectionObserver((entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("slide-up")
+            entry.target.classList.add("fade-in-up")
           } else {
-            entry.target.classList.remove("slide-up")
+            entry.target.classList.remove("fade-in-up")
           }
         }
       })

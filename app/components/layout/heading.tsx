@@ -48,7 +48,7 @@ function Breadcrumb({
     <div className="text-sm breadcrumbs">
       <ul>
         <li>
-          <Link href="/">
+          <Link href="/" className="link">
             <HomeIcon className="size-5 mr-1 text-sky-400" />
             ホーム
           </Link>
@@ -62,7 +62,9 @@ function Breadcrumb({
             <li key={submenu.name}>{submenu.name}</li>
           ) : (
             <li key={submenu.name}>
-              <Link href={menu.href + submenu.href}>{submenu.name}</Link>
+              <Link href={menu.href + submenu.href} className="link">
+                {submenu.name}
+              </Link>
             </li>
           ),
         )}

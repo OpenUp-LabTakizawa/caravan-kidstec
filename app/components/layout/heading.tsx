@@ -1,5 +1,4 @@
 import type { Menu, Submenu } from "@/app/interfaces/menu"
-import type { EventDate } from "@/app/interfaces/schedule"
 import { HIROSHIMA, TOKYO_CHIBA } from "@/app/lib/constant"
 import { HomeIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
@@ -7,16 +6,16 @@ import type { JSX } from "react"
 
 export function Heading({
   menu,
-  eventDate,
   submenus,
+  title,
 }: Readonly<{
   menu: Menu
-  eventDate?: EventDate
   submenus?: Submenu[]
+  title?: string
 }>): JSX.Element {
   function getTitle(): string {
-    if (eventDate) {
-      return eventDate.title
+    if (title) {
+      return title
     }
     if (submenus) {
       return submenus[submenus.length - 1].name
@@ -26,7 +25,7 @@ export function Heading({
 
   return (
     <section className="grid gap-6 pl-4">
-      <Breadcrumb menu={menu} submenus={submenus} title={eventDate?.title} />
+      <Breadcrumb menu={menu} submenus={submenus} title={title} />
       <h1
         className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${submenus?.length === 2 ? "text-sky-400" : menu.color}`}
       >

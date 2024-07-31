@@ -4,7 +4,7 @@ import { HIROSHIMA_HISTORY } from "@/app/lib/constant"
 import type { JSX } from "react"
 import { Modal } from "./modal"
 
-export default function HiroshimaModal({
+export default function HiroshimaMovie({
   params: { href },
 }: Readonly<{ params: { href: string } }>): JSX.Element {
   const history: EventDate = HIROSHIMA_HISTORY.find(

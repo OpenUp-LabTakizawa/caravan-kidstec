@@ -1,5 +1,6 @@
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Menu, Submenu } from "@/app/interfaces/menu"
+import type { Picture } from "@/app/interfaces/picture"
 import type { EventDate, Program } from "@/app/interfaces/schedule"
 import {
   GlobeAsiaAustraliaIcon,
@@ -150,3 +151,30 @@ export const HIROSHIMA_HISTORY: EventDate[] = [
     programs: HIROSHIMA_FOURTH_PROGRAMS,
   },
 ]
+
+export const HIROSHIMA_PICTURES: Picture[] = [
+  {
+    alt: "writing",
+    src: "/202206/sandankyo/writing.avif",
+  },
+  {
+    alt: "using_nipper",
+    src: "/202311/eda_island/using_nipper.avif",
+  },
+  {
+    alt: "peace_sign",
+    src: "/202311/sandankyo/peace_sign.avif",
+  },
+  {
+    alt: "mother_check",
+    src: "/202311/wedding/mother_check.avif",
+  },
+  {
+    alt: "switch_on",
+    src: "/202311/wedding/switch_on.avif",
+  },
+  {
+    alt: "olive_pouring",
+    src: "/202311/eda_island/olive_pouring.avif",
+  },
+] as const

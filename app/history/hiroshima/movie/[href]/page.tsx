@@ -6,7 +6,7 @@ import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
 
-export default function HiroshimaVideo({
+export default function HiroshimaMovie({
   params: { href },
 }: Readonly<{ params: { href: string } }>): JSX.Element {
   const eventDate: EventDate = HIROSHIMA_HISTORY.find(
@@ -15,7 +15,7 @@ export default function HiroshimaVideo({
 
   return (
     <>
-      <Heading eventDate={eventDate} menu={HISTORY} submenus={[HIROSHIMA]} />
+      <Heading menu={HISTORY} submenus={[HIROSHIMA]} title={eventDate.title} />
       <Video src={`https://dk75m1tgsot44.cloudfront.net/movie/${href}`} />
       <Link
         href={HISTORY.href + HIROSHIMA.href}

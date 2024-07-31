@@ -19,7 +19,7 @@ export default function Hiroshima(): JSX.Element {
       {HIROSHIMA_HISTORY.map((history) => (
         <section key={history.href} className="gap-4 grid text-center">
           <details className="collapse collapse-arrow">
-            <summary className="bg-amber-50 collapse-title font-bold font-zenMaruGothic text-3xl">
+            <summary className="bg-amber-50 collapse-title font-bold font-zenMaruGothic min-h-0 text-2xl">
               {history.title}
             </summary>
             <Programs programs={history.programs} />
@@ -32,7 +32,7 @@ export default function Hiroshima(): JSX.Element {
                   type="button"
                   className="bg-sky-400 blue-shine btn rounded-2xl shadow-lg text-lg text-white w-full"
                 >
-                  イベント動画を視聴する
+                  イベントの様子はこちら！
                   <ArrowTopRightOnSquareIcon className="arrow-top-right size-5" />
                 </button>
               </Link>

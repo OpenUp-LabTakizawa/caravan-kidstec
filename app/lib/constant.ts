@@ -13,7 +13,7 @@ export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
 export const HIROSHIMA: Submenu = { name: "広島", href: "/hiroshima" }
 export const TOKYO_CHIBA: Submenu = { name: "東京・千葉", href: "/tokyo_chiba" }
-export const Q_AND_A: Submenu = { name: "Q&A", href: "/q_and_a" }
+export const Q_AND_A: Submenu = { name: "Q&A", href: "/q-and-a" }
 export const PRIVACY_POLICY: Submenu = {
   name: "個人情報保護方針",
   href: "/privacy-policy",

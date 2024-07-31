@@ -2,7 +2,7 @@ import { ChatBubble } from "@/app/components/layout/chatBubble"
 import { Heading } from "@/app/components/layout/heading"
 import type { Menu, Submenu } from "@/app/interfaces/menu"
 import type { QandA } from "@/app/interfaces/qAndA"
-import { Q_AND_A } from "@/app/lib/constant"
+import { FAQ } from "@/app/lib/constant"
 import type { JSX } from "react"
 
 export function QandAs({
@@ -122,7 +122,7 @@ export function QandAs({
 
   return (
     <>
-      <Heading menu={menu} submenus={[submenu, Q_AND_A]} />
+      <Heading menu={menu} submenus={[submenu, FAQ]} />
       {sections.map((section) => (
         <section
           key={section.title}

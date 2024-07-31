@@ -2,21 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.zoom-in {
-  animation: zoom-in 1s;
-}
-
-@keyframes zoom-in {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  30%,
-  70% {
-    transform: scale(1.1);
-  }
-}
-
 .arrow-down {
   animation: arrow-down 1.5s infinite;
 }
@@ -119,6 +104,10 @@
 
 .rotate-z {
   animation: rotate-z 2s infinite;
+}
+
+.scale-up-down {
+  animation: scale-up-down 1s;
 }
 
 .scroll-right {
@@ -255,6 +244,17 @@
   }
   100% {
     transform: rotatez(-360deg);
+  }
+}
+
+@keyframes scale-up-down {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  30%,
+  70% {
+    transform: scale(1.1);
   }
 }
 

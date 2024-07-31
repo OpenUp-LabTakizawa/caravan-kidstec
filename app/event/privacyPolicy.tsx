@@ -1,15 +1,17 @@
 import { Divider } from "@/app/components/layout/divider"
 import { Heading } from "@/app/components/layout/heading"
-import { HIROSHIMA, HISTORY, PRIVACY_POLICY } from "@/app/lib/constant"
+import type { Submenu } from "@/app/interfaces/menu"
+import { EVENT, PRIVACY_POLICY } from "@/app/lib/constant"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export function PrivacyPolicy({
+  submenu,
   organizations,
-}: Readonly<{ organizations: string[] }>): JSX.Element {
+}: Readonly<{ submenu: Submenu; organizations: string[] }>): JSX.Element {
   return (
     <>
-      <Heading menu={HISTORY} submenus={[HIROSHIMA, PRIVACY_POLICY]} />
+      <Heading menu={EVENT} submenus={[submenu, PRIVACY_POLICY]} />
       <section className="bg-base-200 grid gap-4 leading-7 m-4 p-4 rounded-box text-sm">
         <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
         <p>

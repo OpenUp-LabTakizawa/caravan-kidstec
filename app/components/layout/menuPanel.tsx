@@ -2,7 +2,14 @@
 
 import type { MenuPanel, Submenu } from "@/app/interfaces/menu"
 import type { Picture } from "@/app/interfaces/picture"
-import { PARTNER, PRIVACY_POLICY, Q_AND_A, SUPPORTER } from "@/app/lib/constant"
+import {
+  HIROSHIMA,
+  HISTORY,
+  PARTNER,
+  PRIVACY_POLICY,
+  Q_AND_A,
+  SUPPORTER,
+} from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
@@ -160,9 +167,9 @@ export function HistoryPanels({
 export function HistoryPictures({
   pictures,
 }: Readonly<{ pictures: Picture[] }>): JSX.Element {
-  const ref: RefObject<Map<string, HTMLImageElement>> = useRef<
-    Map<string, HTMLImageElement>
-  >(new Map<string, HTMLImageElement>())
+  const ref: RefObject<Map<string, HTMLAnchorElement>> = useRef<
+    Map<string, HTMLAnchorElement>
+  >(new Map<string, HTMLAnchorElement>())
 
   useEffect(() => {
     if (window.IntersectionObserver) {
@@ -171,10 +178,10 @@ export function HistoryPictures({
           const delay = index * 200
           if (entry.isIntersecting) {
             setTimeout(() => {
-              entry.target.classList.add("zoom-in")
+              entry.target.classList.add("scale-up-down")
             }, delay)
           } else {
-            entry.target.classList.remove("zoom-in")
+            entry.target.classList.remove("scale-up-down")
           }
         })
       })
@@ -190,21 +197,25 @@ export function HistoryPictures({
   return (
     <div className="grid grid-cols-3">
       {pictures.map((picture) => (
-        <Image
+        <Link
           key={picture.alt}
-          ref={(node: HTMLImageElement) => {
+          href={`${HISTORY.href + HIROSHIMA.href}/image${picture.src}`}
+          ref={(node: HTMLAnchorElement) => {
             ref.current?.set(picture.alt, node)
             return () => {
               ref.current?.delete(picture.alt)
             }
           }}
-          loader={cloudfrontLoader}
-          src={picture.src}
-          height={1000}
-          width={1000}
-          alt={picture.alt}
-          className="w-full"
-        />
+        >
+          <Image
+            loader={cloudfrontLoader}
+            src={picture.src}
+            height={1000}
+            width={1000}
+            alt={picture.alt}
+            className="w-full"
+          />
+        </Link>
       ))}
     </div>
   )

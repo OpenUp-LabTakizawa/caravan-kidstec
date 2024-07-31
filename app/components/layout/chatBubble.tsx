@@ -11,7 +11,7 @@ export function ChatBubble({
     <>
       {qAndAs.map((qAndA) => (
         <details key={qAndA.title} className="collapse collapse-arrow pb-2">
-          <summary className="bg-amber-50 collapse-title text-xl">
+          <summary className="bg-amber-50 collapse-title min-h-0">
             {qAndA.title}
           </summary>
           <div className="chat chat-start">

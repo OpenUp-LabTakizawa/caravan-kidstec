@@ -1,4 +1,5 @@
 import { Heading } from "@/app/components/layout/heading"
+import { HistoryPanels } from "@/app/components/layout/menuPanel"
 import type { Picture } from "@/app/interfaces/picture"
 import { HIROSHIMA, HIROSHIMA_PICTURES, HISTORY } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
@@ -32,6 +33,7 @@ export default function HiroshimaImage({
         <ArrowUturnLeftIcon className="rotate-z size-6" />
         {HISTORY.name}に戻る
       </Link>
+      <HistoryPanels menuHref={HISTORY.href} submenu={HIROSHIMA} />
     </>
   )
 }

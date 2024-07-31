@@ -1,7 +1,11 @@
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
-import { HistoryPanels } from "@/app/components/layout/menuPanel"
+import {
+  HistoryPanels,
+  HistoryPictures,
+} from "@/app/components/layout/menuPanel"
 import { Programs } from "@/app/history/programs"
+import type { Picture } from "@/app/interfaces/picture"
 import {
   HIROSHIMA,
   HIROSHIMA_HISTORY,
@@ -13,6 +17,33 @@ import Link from "next/link"
 import type { JSX } from "react"
 
 export default function Hiroshima(): JSX.Element {
+  const pictures: Picture[] = [
+    {
+      alt: "writing",
+      src: "/202206/sandankyo/writing.avif",
+    },
+    {
+      alt: "using_nipper",
+      src: "/202311/eda_island/using_nipper.avif",
+    },
+    {
+      alt: "peace_sign",
+      src: "/202311/sandankyo/peace_sign.avif",
+    },
+    {
+      alt: "mother_check",
+      src: "/202311/wedding/mother_check.avif",
+    },
+    {
+      alt: "switch_on",
+      src: "/202311/wedding/switch_on.avif",
+    },
+    {
+      alt: "olive_pouring",
+      src: "/202311/eda_island/olive_pouring.avif",
+    },
+  ] as const
+
   return (
     <>
       <Heading menu={HISTORY} submenus={[HIROSHIMA]} />
@@ -28,6 +59,7 @@ export default function Hiroshima(): JSX.Element {
               <span className="grow">{history.title}</span>
             </summary>
             <Programs programs={history.programs} />
+            <HistoryPictures pictures={pictures} />
             {history !== HIROSHIMA_HISTORY[3] && (
               <Link
                 href={`${HISTORY.href}${HIROSHIMA.href}/movie${history.href}`}

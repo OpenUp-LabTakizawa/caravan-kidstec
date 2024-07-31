@@ -2,6 +2,21 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.zoom-in {
+  animation: zoom-in 1s;
+}
+
+@keyframes zoom-in {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  30%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+
 .arrow-down {
   animation: arrow-down 1.5s infinite;
 }

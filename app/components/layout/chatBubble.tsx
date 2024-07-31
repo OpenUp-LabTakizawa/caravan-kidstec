@@ -10,8 +10,11 @@ export function ChatBubble({
   return (
     <>
       {qAndAs.map((qAndA) => (
-        <>
-          <div key={qAndA.question} className="chat chat-start">
+        <details key={qAndA.title} className="collapse collapse-arrow pb-2">
+          <summary className="bg-amber-50 collapse-title text-xl">
+            {qAndA.title}
+          </summary>
+          <div className="chat chat-start">
             <div className="chat-image avatar">
               <div className="w-10 rounded-full">
                 <Image
@@ -49,7 +52,7 @@ export function ChatBubble({
           {qAndA.question === "ロボットを改造しても良いですか？" && (
             <LineRegister lineLink={lineLink} />
           )}
-        </>
+        </details>
       ))}
     </>
   )

@@ -1,4 +1,4 @@
-import { SlideUp } from "@/app/components/animation/slideUp"
+import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { Heading } from "@/app/components/layout/heading"
 import type { Supporter } from "@/app/interfaces/supporter"
 import { SUPPORTER } from "@/app/lib/constant"
@@ -61,9 +61,9 @@ export default function SupporterPage(): JSX.Element {
                 {supporter.business}
               </p>
               <p className="font-bold text-sky-400">
-                <SlideUp className="whitespace-pre">
+                <FadeInUp className="whitespace-pre">
                   {supporter.purpose}
-                </SlideUp>
+                </FadeInUp>
               </p>
             </div>
           </section>

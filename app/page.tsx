@@ -1,4 +1,4 @@
-import { SlideUp } from "@/app/components/animation/slideUp"
+import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { Banner } from "@/app/components/button/banner"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
@@ -73,7 +73,7 @@ export default function Home(): JSX.Element {
       <Banner />
       <Carousel />
       <section className="p-4 text-center">
-        <SlideUp className="pb-4">
+        <FadeInUp className="pb-4">
           <Image
             src="/caravan-kidstec_logo_line.avif"
             width={1000}
@@ -81,7 +81,7 @@ export default function Home(): JSX.Element {
             alt="こどもテックキャラバン"
             className="w-full"
           />
-        </SlideUp>
+        </FadeInUp>
         <div className="font-bold grid gap-4 leading-7 tracking-[.29em]">
           <p>
             プログラミング体験と

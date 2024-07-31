@@ -140,7 +140,7 @@ export function QA({
       <Heading menu={menu} submenus={[submenu, Q_AND_A]} />
       {sections.map((section) => (
         <section key={section.title}>
-          <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-3xl text-center">
+          <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-2xl text-center">
             {section.title}
           </h2>
           <ChatBubble lineLink={lineLink} qAndAs={section.qAndAs} />

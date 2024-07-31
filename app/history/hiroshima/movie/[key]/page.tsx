@@ -22,7 +22,7 @@ export default function HiroshimaVideo({
         className="btn max-w-fit mx-auto"
       >
         <ArrowUturnLeftIcon className="rotate-z size-6" />
-        過去の実績に戻る
+        {HISTORY.name}に戻る
       </Link>
     </>
   )

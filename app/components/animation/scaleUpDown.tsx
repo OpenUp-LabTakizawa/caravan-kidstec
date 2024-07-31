@@ -8,7 +8,7 @@ import {
   useRef,
 } from "react"
 
-export function FadeInUp({
+export function ScaleUpDown({
   children,
   className,
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
@@ -17,13 +17,16 @@ export function FadeInUp({
   useEffect(() => {
     if (window.IntersectionObserver) {
       const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
+        entries.forEach((entry, index) => {
+          const delay = index * 200
           if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-up")
+            setTimeout(() => {
+              entry.target.classList.add("scale-up-down")
+            }, delay)
           } else {
-            entry.target.classList.remove("fade-in-up")
+            entry.target.classList.remove("scale-up-down")
           }
-        }
+        })
       })
 
       observer.observe(ref.current as HTMLSpanElement)
@@ -32,10 +35,7 @@ export function FadeInUp({
   })
 
   return (
-    <span
-      ref={ref}
-      className={`inline-block opacity-0${className ? ` ${className}` : ""}`}
-    >
+    <span ref={ref} className={`${className ? ` ${className}` : ""}`}>
       {children}
     </span>
   )

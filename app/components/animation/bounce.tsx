@@ -8,7 +8,7 @@ import {
   useRef,
 } from "react"
 
-export function FadeInUp({
+export function Bounce({
   children,
   className,
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
@@ -19,9 +19,10 @@ export function FadeInUp({
       const observer = new IntersectionObserver((entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-up")
-          } else {
-            entry.target.classList.remove("fade-in-up")
+            entry.target.classList.add("animate-bounce")
+            setTimeout(() => {
+              entry.target.classList.remove("animate-bounce")
+            }, 2500)
           }
         }
       })
@@ -32,10 +33,7 @@ export function FadeInUp({
   })
 
   return (
-    <span
-      ref={ref}
-      className={`inline-block opacity-0${className ? ` ${className}` : ""}`}
-    >
+    <span ref={ref} className={`${className ? ` ${className}` : ""}`}>
       {children}
     </span>
   )

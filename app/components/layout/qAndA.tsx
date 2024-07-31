@@ -51,6 +51,11 @@ export function QA({
       answer:
         "会場によって異なります。\n会場の駐車場、又は、会場周辺の\nパーキングをご利用ください。",
     },
+    {
+      title: "食事代と交通費について",
+      question: "食事代と交通費は支給されますか？",
+      answer: "食事代、交通費共に\n自己負担となります。",
+    },
   ]
 
   const eventDate: QandA[] = [

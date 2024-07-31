@@ -19,8 +19,13 @@ export default function Hiroshima(): JSX.Element {
       {HIROSHIMA_HISTORY.map((history) => (
         <section key={history.href} className="gap-4 grid text-center">
           <details className="collapse collapse-arrow">
-            <summary className="bg-amber-50 collapse-title font-bold font-zenMaruGothic min-h-0 text-2xl">
-              {history.title}
+            <summary className="bg-amber-50 collapse-title flex font-bold font-zenMaruGothic min-h-0 text-2xl">
+              <div className="absolute outline outline-offset-2 rounded text-rose-400 text-xs -rotate-45">
+                大好評で
+                <br />
+                開催終了
+              </div>
+              <span className="grow">{history.title}</span>
             </summary>
             <Programs programs={history.programs} />
             {history !== HIROSHIMA_HISTORY[3] && (

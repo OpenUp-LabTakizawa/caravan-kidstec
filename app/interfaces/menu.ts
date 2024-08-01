@@ -1,6 +1,6 @@
 export type Menu = {
   name: string
-  color: string
+  textColor: string
   href: string
   submenus: Submenu[]
 }
@@ -19,5 +19,6 @@ export type MenuPanel = {
 
 export type Submenu = {
   name: string
+  color: string
   href: string
 }

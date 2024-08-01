@@ -4,11 +4,12 @@ import { Heading } from "@/app/components/layout/heading"
 import { EventPanels } from "@/app/components/layout/menuPanel"
 import { Register } from "@/app/event/register"
 import { Schedules } from "@/app/event/schedules"
+import type { Guideline } from "@/app/interfaces/guideline"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
   EVENT,
   TOKYO_CHIBA,
-  TOKYO_CHIBA_GUIDELINE,
+  TOKYO_CHIBA_DEADLINE,
   TOKYO_CHIBA_LINE,
 } from "@/app/lib/constant"
 import Image from "next/image"
@@ -16,6 +17,11 @@ import Link from "next/link"
 import type { JSX } from "react"
 
 export default function TokyoChiba(): JSX.Element {
+  const guideline: Guideline = {
+    participantsNumber: "２０組程",
+    deadline: TOKYO_CHIBA_DEADLINE,
+    lineLink: TOKYO_CHIBA_LINE,
+  }
   const schedules: Schedule[] = [
     {
       alt: "ロボット制作",
@@ -78,7 +84,7 @@ export default function TokyoChiba(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleCarousel schedules={schedules} />
       </section>
-      <Register guideline={TOKYO_CHIBA_GUIDELINE} />
+      <Register guideline={guideline} />
       <LineApply lineLink={TOKYO_CHIBA_LINE} />
       <EventPanels menuHref={EVENT.href} submenu={TOKYO_CHIBA} />
     </>

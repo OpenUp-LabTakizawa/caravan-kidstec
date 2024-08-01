@@ -23,7 +23,7 @@ export function Partners({
             className="h-40 object-contain"
           />
           <div className="content-center gap-2 grid">
-            <h2 className="font-semibold text-sm">
+            <h2 className="font-bold text-sm">
               <Link
                 href={partner.href}
                 target="_blank"

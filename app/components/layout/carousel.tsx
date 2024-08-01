@@ -176,11 +176,11 @@ export function ScheduleCarousel({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   return (
-    <div className="carousel relative space-x-4">
+    <div className="carousel relative">
       <ScrollRightHint />
       {schedules.map((schedule, index) => (
         <div key={schedule.alt} className="carousel-item rounded-box w-60">
-          <div className="card shadow-lg">
+          <div className="card shadow-lg m-2">
             <Image
               loader={cloudfrontLoader}
               src={schedule.src}
@@ -189,7 +189,7 @@ export function ScheduleCarousel({
               alt={schedule.alt}
               className="h-60 object-cover rounded-t-2xl"
             />
-            <div className="bg-amber-50 card-body p-0 py-8 relative">
+            <div className="bg-amber-50 card-body p-0 py-8 relative rounded-b-2xl">
               <strong
                 className={`absolute left-0 px-2 py-1 text-white text-xs top-0 ${schedule.color}`}
               >
@@ -198,10 +198,10 @@ export function ScheduleCarousel({
               <h3 className="card-title mx-auto text-lg whitespace-pre">
                 {schedule.title}
               </h3>
-              <p className="font-semibold text-sm">
+              <strong className="text-sm">
                 {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
                 日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
-              </p>
+              </strong>
               <div className="card-actions justify-center">
                 {schedule.tags.map((tag) => (
                   <div
@@ -222,7 +222,7 @@ export function ScheduleCarousel({
 
 function ScrollRightHint(): JSX.Element {
   return (
-    <OpacityZero className="absolute bg-black/60 pt-20 text-white left-1/2 top-1/2 -translate-y-1/2 z-10">
+    <OpacityZero className="absolute bg-black/60 left-1/2 pt-20 text-white top-1/2 z-10 -translate-y-1/2 ">
       <ChevronRightIcon className="scroll-right size-20" />
       <ChevronRightIcon className="scroll-right size-20" />
       <ChevronRightIcon className="scroll-right size-20" />

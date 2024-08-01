@@ -51,7 +51,7 @@ export default function SupporterPage(): JSX.Element {
               className="col-span-1 w-full object-contain sm:max-h-20"
             />
             <div className="col-span-2 grid gap-2 text-center sm:col-span-1">
-              <h2 className="flex font-semibold items-center justify-center text-sm">
+              <h2 className="flex font-bold items-center justify-center text-sm">
                 <Link href={supporter.href} target="_blank" className="link">
                   {supporter.name}
                 </Link>

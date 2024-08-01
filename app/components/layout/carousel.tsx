@@ -1,5 +1,6 @@
 "use client"
 
+import { OpacityZero } from "@/app/components/animation/opacityZero"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
 import type { Schedule } from "@/app/interfaces/schedule"
@@ -8,7 +9,6 @@ import { UserCircleIcon } from "@heroicons/react/24/outline"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
-import { OpacityZero } from "../animation/opacityZero"
 
 export function Carousel(): JSX.Element {
   const pictures: Picture[] = [

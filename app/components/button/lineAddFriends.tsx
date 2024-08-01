@@ -26,7 +26,7 @@ export function LineApply({
   lineLink,
 }: Readonly<{ lineLink: string }>): JSX.Element {
   return (
-    <Bounce>
+    <Bounce className="mx-auto">
       <Link href={lineLink}>
         <button
           type="button"

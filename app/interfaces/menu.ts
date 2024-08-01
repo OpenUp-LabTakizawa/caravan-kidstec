@@ -12,7 +12,6 @@ export type MenuPanel = {
   name: string
   color: {
     bg: string
-    border: string
     shadow: string
     text: string
     textHover: string

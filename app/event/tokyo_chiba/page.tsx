@@ -79,9 +79,7 @@ export default function TokyoChiba(): JSX.Element {
         <ScheduleCarousel schedules={schedules} />
       </section>
       <Register guideline={TOKYO_CHIBA_GUIDELINE} />
-      <section className="bg-amber-50 grid gap-1 mx-auto p-4 w-max">
-        <LineApply lineLink={TOKYO_CHIBA_LINE} />
-      </section>
+      <LineApply lineLink={TOKYO_CHIBA_LINE} />
       <EventPanels menuHref={EVENT.href} submenu={TOKYO_CHIBA} />
     </>
   )

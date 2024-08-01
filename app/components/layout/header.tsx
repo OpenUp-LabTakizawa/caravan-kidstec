@@ -42,7 +42,7 @@ export function Header(): JSX.Element {
           />
         </Link>
       </div>
-      <nav className="hidden navbar-center lg:flex">
+      <nav className="hidden navbar-end lg:flex">
         <Navigation isScrollDown={scrollY.isScrollDown} />
       </nav>
       <div className="navbar-end lg:hidden">
@@ -87,15 +87,11 @@ function DropdownMenu({
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (
                 <Link href={menu.href} className="font-bold text-nowrap">
-                  <menu.icon className={`size-5 ${menu.color}`} />
                   {menu.name}
                 </Link>
               ) : (
                 <>
-                  <strong>
-                    <menu.icon className={`size-5 ${menu.color}`} />
-                    {menu.name}
-                  </strong>
+                  <strong>{menu.name}</strong>
                   <Menu submenus={menu.submenus} href={menu.href} />
                 </>
               )}
@@ -148,7 +144,6 @@ function Navigation({
         <li key={menu.name} className="hover:scale-110">
           {menu.submenus.length === 0 ? (
             <Link href={menu.href} className="font-bold">
-              <menu.icon className={`size-5 ${menu.color}`} />
               {menu.name}
             </Link>
           ) : (
@@ -160,10 +155,7 @@ function Navigation({
                 }
               }}
             >
-              <summary className="font-bold">
-                <menu.icon className={`size-5 ${menu.color}`} />
-                {menu.name}
-              </summary>
+              <summary className="font-bold">{menu.name}</summary>
               <Menu submenus={menu.submenus} href={menu.href} />
             </details>
           )}
@@ -178,7 +170,7 @@ function Menu({
   href,
 }: { submenus: Submenu[]; href: string }): JSX.Element {
   return (
-    <ul className="p-2">
+    <ul className="py-2">
       {submenus.map((submenu) => (
         <li key={submenu.name}>
           <Link href={href + submenu.href} className="text-nowrap">

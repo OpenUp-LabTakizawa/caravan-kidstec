@@ -1,8 +1,5 @@
-import type { ElementType } from "react"
-
 export type Menu = {
   name: string
-  icon: ElementType
   color: string
   href: string
   submenus: Submenu[]

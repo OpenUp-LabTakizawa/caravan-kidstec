@@ -3,6 +3,7 @@ import { Heading } from "@/app/components/layout/heading"
 import type { Menu, Submenu } from "@/app/interfaces/menu"
 import type { QandA } from "@/app/interfaces/qAndA"
 import { Q_AND_A } from "@/app/lib/constant"
+import Image from "next/image"
 import type { JSX } from "react"
 
 export function QA({
@@ -76,10 +77,37 @@ export function QA({
             open={index === 0}
             className="collapse collapse-arrow"
           >
-            <summary className="bg-sky-50 collapse-title min-h-0 rounded-2xl text-center">
-              {qAndA.question}
+            <summary className="bg-sky-50 collapse-title min-h-0 pl-16 rounded-2xl text-center">
+              {qAndA.title}
             </summary>
-            <div className="bg-sky-50 chat chat-end py-2 rounded-2xl mt-2">
+            <div className="bg-sky-50 chat chat-start flex items-center mt-2 rounded-t-2xl">
+              <div className="chat-image avatar">
+                <div className="w-10 rounded-full">
+                  <Image
+                    src="/kai_icon.avif"
+                    width={1000}
+                    height={1000}
+                    alt="カイ"
+                    className="w-full"
+                  />
+                </div>
+              </div>
+              <span className="bg-teal-400 chat-bubble min-h-0 text-black">
+                {qAndA.question}
+              </span>
+            </div>
+            <div className="bg-sky-50 chat chat-end rounded-b-2xl">
+              <div className="chat-image avatar">
+                <div className="w-10 rounded-full">
+                  <Image
+                    src="/miku_icon.avif"
+                    width={1000}
+                    height={1000}
+                    alt="ミク"
+                    className="flip-horizontal w-full"
+                  />
+                </div>
+              </div>
               <span className="bg-sky-400 chat-bubble min-h-0 text-black whitespace-pre">
                 {qAndA.answer}
               </span>

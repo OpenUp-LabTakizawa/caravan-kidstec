@@ -71,15 +71,17 @@ export default function Home(): JSX.Element {
   return (
     <article className="grid gap-6 pb-4 text-base text-center">
       <Banner />
-      <Carousel />
-      <section className="p-4 text-center">
-        <FadeInUp className="pb-4">
+      <section>
+        <Carousel />
+      </section>
+      <section className="gap-4 grid text-center">
+        <FadeInUp>
           <Image
             src="/caravan-kidstec_logo_line.avif"
             width={1000}
             height={1000}
             alt="こどもテックキャラバン"
-            className="w-full"
+            className="w-full px-1"
           />
         </FadeInUp>
         <div className="font-bold grid gap-4 leading-7 tracking-[.29em]">
@@ -128,13 +130,13 @@ export default function Home(): JSX.Element {
         </h2>
         <PanelTile panels={techPanels} />
       </section>
-      <section className="grid grid-cols-2 gap-4">
+      <section className="gap-2 grid grid-cols-2">
         <h2 className="col-span-2 font-bold font-zenMaruGothic text-3xl text-teal-400">
           自然学習
         </h2>
         <PanelTile panels={naturePanels} />
       </section>
-      <section className="grid grid-cols-2 gap-4">
+      <section className="gap-2 grid grid-cols-2">
         <h2 className="col-span-2 font-bold font-zenMaruGothic text-3xl text-rose-400">
           結婚式体験
         </h2>

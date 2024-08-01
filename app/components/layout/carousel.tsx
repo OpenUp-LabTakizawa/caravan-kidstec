@@ -60,10 +60,10 @@ export function Carousel(): JSX.Element {
   })
 
   return (
-    <section>
+    <>
       <div
         ref={ref}
-        className="carousel rounded-box shadow-lg w-full"
+        className="carousel rounded-2xl shadow-lg w-full"
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
       >
@@ -80,7 +80,7 @@ export function Carousel(): JSX.Element {
         ))}
       </div>
       <p className="text-center">※自然体験は開催時期により異なります</p>
-    </section>
+    </>
   )
 }
 
@@ -156,16 +156,15 @@ export function ReviewCarousel(): JSX.Element {
     <div className="carousel relative space-x-4">
       <ScrollRightHint />
       {reviews.map((review) => (
-        <div key={review.description} className="carousel-item">
-          <div className="bg-blue-100 content-between gap-2 grid h-full p-2 rounded-2xl shadow-lg w-56">
-            <p className="my-auto text-sm whitespace-pre">
-              {review.description}
-            </p>
-            <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
-              <UserCircleIcon className="text-rose-400 size-6 mr-1" />
-              {review.areaAndUser}
-            </p>
-          </div>
+        <div
+          key={review.description}
+          className="bg-blue-100 carousel-item content-between grid m-2 p-2 rounded-2xl shadow-lg w-56"
+        >
+          <p className="my-auto text-sm whitespace-pre">{review.description}</p>
+          <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
+            <UserCircleIcon className="text-rose-400 size-6 mr-1" />
+            {review.areaAndUser}
+          </p>
         </div>
       ))}
     </div>
@@ -179,39 +178,40 @@ export function ScheduleCarousel({
     <div className="carousel relative">
       <ScrollRightHint />
       {schedules.map((schedule, index) => (
-        <div key={schedule.alt} className="carousel-item rounded-box w-60">
-          <div className="card shadow-lg m-2">
-            <Image
-              loader={cloudfrontLoader}
-              src={schedule.src}
-              width={1000}
-              height={1000}
-              alt={schedule.alt}
-              className="h-60 object-cover rounded-t-2xl"
-            />
-            <div className="bg-amber-50 card-body p-0 py-8 relative rounded-b-2xl">
-              <strong
-                className={`absolute left-0 px-2 py-1 text-white text-xs top-0 ${schedule.color}`}
-              >
-                Day&nbsp;{index + 1}
-              </strong>
-              <h3 className="card-title mx-auto text-lg whitespace-pre">
-                {schedule.title}
-              </h3>
-              <strong className="text-sm">
-                {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
-                日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
-              </strong>
-              <div className="card-actions justify-center">
-                {schedule.tags.map((tag) => (
-                  <div
-                    key={tag}
-                    className="badge badge-outline bg-base-200 text-xs"
-                  >
-                    {tag}
-                  </div>
-                ))}
-              </div>
+        <div
+          key={schedule.alt}
+          className="card carousel-item m-2 shadow-lg w-60"
+        >
+          <Image
+            loader={cloudfrontLoader}
+            src={schedule.src}
+            width={1000}
+            height={1000}
+            alt={schedule.alt}
+            className="h-60 object-cover rounded-t-2xl"
+          />
+          <div className="bg-amber-50 card-body p-0 py-8 relative rounded-b-2xl">
+            <strong
+              className={`absolute left-0 px-2 py-1 text-white text-xs top-0 ${schedule.color}`}
+            >
+              Day&nbsp;{index + 1}
+            </strong>
+            <h3 className="card-title mx-auto text-lg whitespace-pre">
+              {schedule.title}
+            </h3>
+            <strong className="text-sm">
+              {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
+              日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
+            </strong>
+            <div className="card-actions justify-center">
+              {schedule.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="badge badge-outline bg-base-200 text-xs"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </div>

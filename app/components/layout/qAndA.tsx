@@ -1,4 +1,4 @@
-import { ChatBubble } from "@/app/components/layout/chatBubble"
+import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
 import type { Menu, Submenu } from "@/app/interfaces/menu"
 import type { QandA } from "@/app/interfaces/qAndA"
@@ -70,8 +70,24 @@ export function QA({
     <>
       <Heading menu={menu} submenus={[submenu, Q_AND_A]} />
       <section>
-        {qAndAs.map((qAndA) => (
-          <ChatBubble key={qAndA.title} lineLink={lineLink} qAndA={qAndA} />
+        {qAndAs.map((qAndA, index) => (
+          <details
+            key={qAndA.title}
+            open={index === 0}
+            className="collapse collapse-arrow mb-2"
+          >
+            <summary className="bg-amber-50 collapse-title min-h-0 rounded-2xl text-center">
+              {qAndA.question}
+            </summary>
+            <div className="bg-sky-100 chat chat-end py-2 rounded-2xl mt-2">
+              <span className="bg-orange-400 chat-bubble min-h-0 text-black whitespace-pre">
+                {qAndA.answer}
+              </span>
+            </div>
+            {qAndA.question === "ロボットを改造しても良いですか？" && (
+              <LineRegister lineLink={lineLink} />
+            )}
+          </details>
         ))}
       </section>
     </>

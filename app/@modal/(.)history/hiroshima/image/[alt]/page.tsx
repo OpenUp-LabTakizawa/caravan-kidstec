@@ -1,9 +1,9 @@
+import { Modal } from "@/app/@modal/(.)history/hiroshima/modal"
 import type { Picture } from "@/app/interfaces/picture"
 import { HIROSHIMA_PICTURES } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import type { JSX } from "react"
-import { Modal } from "./modal"
 
 export default function HiroshimaImage({
   params: { alt },

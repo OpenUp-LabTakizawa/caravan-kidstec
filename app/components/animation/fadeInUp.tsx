@@ -10,7 +10,7 @@ import {
 
 export function FadeInUp({
   children,
-  className,
+  className = "",
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
   const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
 
@@ -32,10 +32,7 @@ export function FadeInUp({
   })
 
   return (
-    <span
-      ref={ref}
-      className={`inline-block opacity-0${className ? ` ${className}` : ""}`}
-    >
+    <span ref={ref} className={`inline-block opacity-0 ${className}`}>
       {children}
     </span>
   )

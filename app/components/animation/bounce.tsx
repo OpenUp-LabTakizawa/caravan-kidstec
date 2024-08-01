@@ -10,7 +10,7 @@ import {
 
 export function Bounce({
   children,
-  className,
+  className = "",
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
   const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
 
@@ -33,7 +33,7 @@ export function Bounce({
   })
 
   return (
-    <span ref={ref} className={`${className ? ` ${className}` : ""}`}>
+    <span ref={ref} className={className}>
       {children}
     </span>
   )

@@ -10,7 +10,7 @@ import {
 
 export function ScaleUpDown({
   children,
-  className,
+  className = "",
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
   const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
 
@@ -18,11 +18,10 @@ export function ScaleUpDown({
     if (window.IntersectionObserver) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
-          const delay = index * 200
           if (entry.isIntersecting) {
             setTimeout(() => {
               entry.target.classList.add("scale-up-down")
-            }, delay)
+            }, index * 200)
           } else {
             entry.target.classList.remove("scale-up-down")
           }
@@ -35,7 +34,7 @@ export function ScaleUpDown({
   })
 
   return (
-    <span ref={ref} className={`${className ? ` ${className}` : ""}`}>
+    <span ref={ref} className={className}>
       {children}
     </span>
   )

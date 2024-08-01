@@ -68,6 +68,24 @@ export default function Home(): JSX.Element {
     },
   ] as const
 
+  const sections = [
+    {
+      title: "プログラミング体験",
+      color: "text-orange-400",
+      panels: techPanels,
+    },
+    {
+      title: "自然学習",
+      color: "text-teal-400",
+      panels: naturePanels,
+    },
+    {
+      title: "結婚式体験",
+      color: "text-rose-400",
+      panels: weddingPanels,
+    },
+  ] as const
+
   return (
     <article className="grid gap-6 pb-4 text-base text-center">
       <Banner />
@@ -124,25 +142,17 @@ export default function Home(): JSX.Element {
           className="w-full"
         />
       </Link>
-      <section className="gap-2 grid grid-cols-2">
-        <h2 className="col-span-2 font-bold font-zenMaruGothic pb-2 text-3xl text-orange-400">
-          プログラミング体験
-        </h2>
-        <PanelTile panels={techPanels} />
-      </section>
-      <section className="gap-2 grid grid-cols-2">
-        <h2 className="col-span-2 font-bold font-zenMaruGothic text-3xl text-teal-400">
-          自然学習
-        </h2>
-        <PanelTile panels={naturePanels} />
-      </section>
-      <section className="gap-2 grid grid-cols-2">
-        <h2 className="col-span-2 font-bold font-zenMaruGothic text-3xl text-rose-400">
-          結婚式体験
-        </h2>
-        <PanelTile panels={weddingPanels} />
-      </section>
-      <section className="grid gap-4">
+      {sections.map((section) => (
+        <section key={section.title} className="gap-2 grid grid-cols-2">
+          <h2
+            className={`col-span-2 font-bold font-zenMaruGothic text-3xl ${section.color}`}
+          >
+            {section.title}
+          </h2>
+          <PanelTile panels={section.panels} />
+        </section>
+      ))}
+      <section className="gap-4 grid">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
@@ -150,11 +160,11 @@ export default function Home(): JSX.Element {
         src="https://dk75m1tgsot44.cloudfront.net/movie/202311"
         controls={false}
       />
-      <section className="grid gap-4">
+      <section className="gap-4 grid">
         <h2 className="font-bold font-zenMaruGothic text-3xl">
           わたしたちの想い
         </h2>
-        <div className="font-bold grid gap-4 text-sm">
+        <div className="font-bold gap-4 grid text-sm">
           <p>
             このイベントでは新しい人やものとの出会いや、
             <br />

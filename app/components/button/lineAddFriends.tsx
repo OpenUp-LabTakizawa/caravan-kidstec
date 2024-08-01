@@ -45,11 +45,11 @@ export function LineRegister({
 }: Readonly<{ lineLink: string }>): JSX.Element {
   return (
     <section className="bg-amber-50 gap-1 grid mx-auto p-4 text-center w-max">
-      <p className="font-semibold">
+      <strong>
         LINE公式アカウントから、
         <br />
         次回開催の通知を受け取れます。
-      </p>
+      </strong>
       <LineAddFriends linkLink={lineLink} />
     </section>
   )

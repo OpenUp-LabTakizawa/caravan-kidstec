@@ -151,6 +151,7 @@ export function ReviewCarousel(): JSX.Element {
       areaAndUser: "第4回 広島 小5、中2",
     },
   ] as const
+
   return (
     <div className="carousel relative space-x-4">
       <ScrollRightHint />
@@ -189,11 +190,11 @@ export function ScheduleCarousel({
               className="h-60 object-cover rounded-t-2xl"
             />
             <div className="bg-amber-50 card-body p-0 py-8 relative">
-              <span
-                className={`absolute font-bold left-0 px-2 py-1 text-white text-xs top-0 ${schedule.color}`}
+              <strong
+                className={`absolute left-0 px-2 py-1 text-white text-xs top-0 ${schedule.color}`}
               >
                 Day&nbsp;{index + 1}
-              </span>
+              </strong>
               <h3 className="card-title mx-auto text-lg whitespace-pre">
                 {schedule.title}
               </h3>

@@ -92,10 +92,10 @@ function DropdownMenu({
                 </Link>
               ) : (
                 <>
-                  <div className="font-bold">
+                  <strong>
                     <menu.icon className={`size-5 ${menu.color}`} />
                     {menu.name}
-                  </div>
+                  </strong>
                   <Menu submenus={menu.submenus} href={menu.href} />
                 </>
               )}

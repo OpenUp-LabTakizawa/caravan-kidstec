@@ -64,7 +64,7 @@ export function QA({
       question: "ロボットを改造しても良いですか？",
       answer: "以下の規定を守れば、\n自由に改造出来ます。",
     },
-  ]
+  ] as const
 
   return (
     <>

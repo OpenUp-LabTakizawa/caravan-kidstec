@@ -61,7 +61,7 @@ export default function TokyoChiba(): JSX.Element {
       />
       <Schedules schedules={schedules} />
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 text-center w-max">
-        <p className="font-semibold mb-2">
+        <strong className="mb-2">
           <Link
             href={`${EVENT.href}${TOKYO_CHIBA.href}#details`}
             className="link text-sky-400"
@@ -71,7 +71,7 @@ export default function TokyoChiba(): JSX.Element {
           をご確認の上、
           <br />
           応募画面へお進み下さい。
-        </p>
+        </strong>
         <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
       <section className="grid gap-4 text-center">

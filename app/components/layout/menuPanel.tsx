@@ -63,11 +63,11 @@ export function EventPanels({
           href={panel.href}
           className={`border-2 group rounded-lg shadow-lg w-full hover:text-white ${panel.color.shadow}`}
         >
-          <p
-            className={`font-bold mx-auto w-fit group-hover:text-white ${panel.color.text}`}
+          <strong
+            className={`mx-auto w-fit group-hover:text-white ${panel.color.text}`}
           >
             {panel.name}
-          </p>
+          </strong>
           <div className="flex">
             <span className="grow">{panel.text}</span>
             <ArrowRightIcon
@@ -128,11 +128,11 @@ export function HistoryPanels({
           href={panel.href}
           className={`border-2 group rounded-lg shadow-lg w-full hover:text-white ${panel.color.shadow}`}
         >
-          <p
-            className={`font-bold mx-auto w-fit group-hover:text-white ${panel.color.text}`}
+          <strong
+            className={`mx-auto w-fit group-hover:text-white ${panel.color.text}`}
           >
             {panel.name}
-          </p>
+          </strong>
           <div className="flex">
             <span className="grow">{panel.text}</span>
             <ArrowRightIcon

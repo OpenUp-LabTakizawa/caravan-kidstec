@@ -60,11 +60,9 @@ export default function SupporterPage(): JSX.Element {
                 <BuildingOffice2Icon className="size-5 mr-1" />
                 {supporter.business}
               </p>
-              <p className="font-bold text-sky-400">
-                <FadeInUp className="whitespace-pre">
-                  {supporter.purpose}
-                </FadeInUp>
-              </p>
+              <FadeInUp className="font-bold text-sky-400 whitespace-pre">
+                {supporter.purpose}
+              </FadeInUp>
             </div>
           </section>
         ))}

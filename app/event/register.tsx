@@ -23,7 +23,7 @@ function Details({
   guideline,
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
-    <section id="details" className="grid gap-4 px-4 text-center">
+    <section id="details" className="gap-4 grid px-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
       <div className="bg-sky-300 gap-1 grid grid-flow-col items-center mx-auto p-4 rounded-2xl shadow-lg text-base">
         <InformationCircleIcon className="row-span-2 size-10" />
@@ -105,13 +105,13 @@ function Procedure({
   guideline,
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
-    <section className="grid gap-4 px-4 text-center">
+    <section className="gap-4 grid px-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
       <ul className="gap-2 grid mx-auto text-sm w-96">
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
-          <span className="absolute bg-sky-400 flex font-bold items-center left-0 top-0 pr-1">
-            <CheckIcon className="size-5 mr-1" />1
-          </span>
+          <strong className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
+            <CheckIcon className="mr-1 size-5" />1
+          </strong>
           <p>
             <Link
               href={guideline.lineLink}
@@ -128,38 +128,38 @@ function Procedure({
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
-          <span className="absolute bg-sky-400 flex font-bold items-center left-0 top-0 pr-1">
-            <CheckIcon className="size-5 mr-1" />2
-          </span>
+          <strong className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
+            <CheckIcon className="mr-1 size-5" />2
+          </strong>
           <p>
             トーク画面メニューの
             <br />
-            <span className="font-bold">「参加申込はこちら」</span>をタップ
+            <strong>「参加申込はこちら」</strong>をタップ
           </p>
         </li>
         <li>
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
-          <span className="absolute bg-sky-400 flex font-bold items-center left-0 top-0 pr-1">
-            <CheckIcon className="size-5 mr-1" />3
-          </span>
+          <strong className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
+            <CheckIcon className="mr-1 size-5" />3
+          </strong>
           <p>会話に沿って必要事項を入力</p>
         </li>
         <li>
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
-          <span className="absolute bg-sky-400 flex font-bold items-center left-0 top-0 pr-1">
-            <CheckIcon className="size-5 mr-1" />4
-          </span>
+          <strong className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
+            <CheckIcon className="mr-1 size-5" />4
+          </strong>
           <p>
-            全て回答して<span className="font-bold">申込完了！</span>
+            全て回答して<strong>申込完了！</strong>
           </p>
           <p>
             担当者よりご参加の確定、及び、
             <br />
-            その他ご連絡をさせて頂きます。
+            その他のご連絡をさせて頂きます。
           </p>
         </li>
       </ul>

@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage(): JSX.Element {
     "クルックフィールズ",
     "株式会社Griteen",
     "株式会社テイクアンドギヴ・ニーズ",
-  ]
+  ] as const
 
   return <PrivacyPolicy submenu={TOKYO_CHIBA} organizations={organizations} />
 }

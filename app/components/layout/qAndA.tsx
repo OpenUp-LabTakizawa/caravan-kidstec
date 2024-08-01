@@ -1,4 +1,4 @@
-import { LineRegister } from "@/app/components/button/lineAddFriends"
+import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
 import type { Menu, Submenu } from "@/app/interfaces/menu"
 import type { QandA } from "@/app/interfaces/qAndA"
@@ -112,11 +112,18 @@ export function QA({
                 {qAndA.answer}
               </span>
             </div>
-            {qAndA.question === "ロボットを改造しても良いですか？" && (
-              <LineRegister lineLink={lineLink} />
-            )}
+            {qAndA.question === "ロボットを改造しても良いですか？" &&
+              "修正中..."}
           </details>
         ))}
+      </section>
+      <section className="bg-amber-50 grid gap-1 mx-auto p-4 text-center w-max">
+        <strong className="mb-2">
+          ご不明な点がございましたら、
+          <br />
+          LINE公式アカウントへお問い合わせ下さい。
+        </strong>
+        <LineAddFriends linkLink={lineLink} />
       </section>
     </>
   )

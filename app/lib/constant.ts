@@ -2,12 +2,6 @@ import type { Guideline } from "@/app/interfaces/guideline"
 import type { Menu, Submenu } from "@/app/interfaces/menu"
 import type { Picture } from "@/app/interfaces/picture"
 import type { EventDate, Program } from "@/app/interfaces/schedule"
-import {
-  GlobeAsiaAustraliaIcon,
-  HeartIcon,
-  TrophyIcon,
-  TruckIcon,
-} from "@heroicons/react/24/outline"
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
@@ -22,28 +16,24 @@ export const PRIVACY_POLICY: Submenu = {
 
 export const EVENT: Menu = {
   name: "開催予定",
-  icon: TruckIcon,
   color: "text-orange-400",
   href: "/event",
   submenus: [TOKYO_CHIBA],
 }
 export const HISTORY: Menu = {
   name: "過去の実績",
-  icon: TrophyIcon,
   color: "text-yellow-400",
   href: "/history",
   submenus: [HIROSHIMA],
 }
 export const SUPPORTER: Menu = {
   name: "サポーター",
-  icon: GlobeAsiaAustraliaIcon,
   color: "text-teal-400",
   href: "/supporter",
   submenus: [],
 }
 export const PARTNER: Menu = {
   name: "パートナー",
-  icon: HeartIcon,
   color: "text-rose-400",
   href: "/partner",
   submenus: [TOKYO_CHIBA, HIROSHIMA],

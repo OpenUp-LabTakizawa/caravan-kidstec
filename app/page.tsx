@@ -160,7 +160,14 @@ export default function Home(): JSX.Element {
         src="https://dk75m1tgsot44.cloudfront.net/movie/202311"
         controls={false}
       />
-      <section className="gap-4 grid">
+      <section className="gap-4 grid relative">
+        <Image
+          src="/handshake.avif"
+          alt="handshake"
+          width={1000}
+          height={1000}
+          className="absolute bottom-0 max-h-48 object-contain opacity-20 -z-10"
+        />
         <h2 className="font-bold font-zenMaruGothic text-3xl">
           わたしたちの想い
         </h2>

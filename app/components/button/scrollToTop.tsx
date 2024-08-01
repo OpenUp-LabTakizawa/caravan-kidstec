@@ -43,7 +43,7 @@ export function ScrollToTop(): JSX.Element {
     <button
       type="button"
       ref={ref}
-      className="bg-sky-400 btn btn-square hidden fixed bottom-5 right-5 gap-0 hover:scale-110"
+      className="bg-sky-400 btn btn-square hidden fixed gap-0 bottom-5 right-5 hover:scale-110"
       onClick={scrollToTop}
     >
       <ChevronDoubleUpIcon className="arrow-up size-8" />

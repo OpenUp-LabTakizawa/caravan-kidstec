@@ -12,7 +12,7 @@ export function Partners({
       {partners.map((partner) => (
         <section
           key={partner.name}
-          className="bg-base-200 gap-2 grid items-center p-4 rounded-box shadow-lg"
+          className="bg-base-200 gap-2 grid items-center p-4 rounded-2xl shadow-lg"
         >
           <Image
             loader={cloudfrontLoader}

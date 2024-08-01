@@ -36,7 +36,7 @@ export function EventPanels({
       color: {
         bg: "bg-teal-400",
         shadow: "box-teal-shadow",
-        text: SUPPORTER.color,
+        text: SUPPORTER.textColor,
         textHover: "group-hover:text-teal-400",
       },
       href: SUPPORTER.href,
@@ -47,7 +47,7 @@ export function EventPanels({
       color: {
         bg: "bg-rose-400",
         shadow: "box-rose-shadow",
-        text: PARTNER.color,
+        text: PARTNER.textColor,
         textHover: "group-hover:text-rose-400",
       },
       href: PARTNER.href + submenu.href,
@@ -101,7 +101,7 @@ export function HistoryPanels({
       color: {
         bg: "bg-teal-400",
         shadow: "box-teal-shadow",
-        text: SUPPORTER.color,
+        text: SUPPORTER.textColor,
         textHover: "group-hover:text-teal-400",
       },
       href: SUPPORTER.href,
@@ -112,7 +112,7 @@ export function HistoryPanels({
       color: {
         bg: "bg-rose-400",
         shadow: "box-rose-shadow",
-        text: PARTNER.color,
+        text: PARTNER.textColor,
         textHover: "group-hover:text-rose-400",
       },
       href: PARTNER.href + submenu.href,

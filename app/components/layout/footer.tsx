@@ -7,7 +7,7 @@ export function Footer(): JSX.Element {
   return (
     <footer className="bg-base-300 grid items-center justify-center p-4 text-base-content">
       <nav>
-        <ul className="grid grid-cols-2 sm:grid-cols-4 menu p-0">
+        <ul className="grid grid-cols-2 menu p-0 sm:grid-cols-4">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (
@@ -40,7 +40,8 @@ export function Footer(): JSX.Element {
       </nav>
       <aside className="flex justify-between items-center">
         <p className="text-sm">
-          Copyright © Open Up Group Inc. <br className="block sm:hidden" />
+          Copyright © Open Up Group Inc.&nbsp;
+          <br className="block sm:hidden" />
           All rights reserved.
         </p>
         <Link

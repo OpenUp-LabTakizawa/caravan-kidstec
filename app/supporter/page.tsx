@@ -40,7 +40,7 @@ export default function SupporterPage(): JSX.Element {
         {supporters.map((supporter) => (
           <section
             key={supporter.name}
-            className="bg-base-200 gap-1 grid grid-cols-3 items-center min-h-32 p-4 rounded-box shadow-lg sm:grid-cols-2"
+            className="bg-base-200 gap-1 grid grid-cols-3 items-center min-h-32 p-4 rounded-2xl shadow-lg sm:grid-cols-2"
           >
             <Image
               loader={cloudfrontLoader}

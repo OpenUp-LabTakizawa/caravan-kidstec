@@ -32,7 +32,7 @@ export function Header(): JSX.Element {
       }`}
     >
       <div className="navbar-start">
-        <Link href="/" className="btn btn-ghost w-fit tilt-shaking">
+        <Link href="/" className="btn btn-ghost tilt-shaking w-fit">
           <Image
             src="/caravan-kidstec_logo_line.avif"
             width={200}
@@ -42,7 +42,7 @@ export function Header(): JSX.Element {
           />
         </Link>
       </div>
-      <nav className="navbar-center hidden lg:flex">
+      <nav className="hidden navbar-center lg:flex">
         <Navigation isScrollDown={scrollY.isScrollDown} />
       </nav>
       <div className="navbar-end lg:hidden">
@@ -82,11 +82,11 @@ function DropdownMenu({
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>
-        <ul className="menu menu-sm dropdown-content z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+        <ul className="bg-base-100 dropdown-content menu menu-sm rounded-2xl shadow z-10">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (
-                <Link href={menu.href} className="font-bold">
+                <Link href={menu.href} className="font-bold text-nowrap">
                   <menu.icon className={`size-5 ${menu.color}`} />
                   {menu.name}
                 </Link>
@@ -181,7 +181,9 @@ function Menu({
     <ul className="p-2">
       {submenus.map((submenu) => (
         <li key={submenu.name}>
-          <Link href={href + submenu.href}>{submenu.name}</Link>
+          <Link href={href + submenu.href} className="text-nowrap">
+            {submenu.name}
+          </Link>
         </li>
       ))}
     </ul>

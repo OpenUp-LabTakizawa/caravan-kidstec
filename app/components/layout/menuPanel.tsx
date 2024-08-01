@@ -121,7 +121,7 @@ export function HistoryPanels({
   ] as const
 
   return (
-    <section className="gap-4 flex justify-items-center mr-2 text-center">
+    <section className="flex gap-4 justify-items-center mr-2 text-center">
       {panels.map((panel) => (
         <Link
           key={panel.name}

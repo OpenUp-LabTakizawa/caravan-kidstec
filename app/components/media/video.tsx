@@ -12,7 +12,7 @@ export function Video({
       muted={true}
       playsInline={true}
       preload="auto"
-      className="mx-auto rounded-box shadow-lg w-full"
+      className="mx-auto rounded-2xl shadow-lg w-full"
     >
       <source src={`${src}.webm`} type="video/webm" />
       <source src={`${src}.mp4`} type="video/mp4" />

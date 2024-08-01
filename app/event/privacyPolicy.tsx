@@ -12,7 +12,7 @@ export function PrivacyPolicy({
   return (
     <>
       <Heading menu={EVENT} submenus={[submenu, PRIVACY_POLICY]} />
-      <section className="bg-base-200 grid gap-4 leading-7 m-4 p-4 rounded-box text-sm">
+      <section className="bg-base-200 grid gap-4 leading-7 m-4 p-4 rounded-2xl text-sm">
         <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
         <p>
           株式会社オープンアップグループ（以下「当社」といいます。）は、イベント&nbsp;【こどもテックキャラバン】&nbsp;（以下「本件」といいます。）へのご参加お申込みに必要な情報、また参加決定者の詳細情報においてお預かりする個人情報の取扱いについて、次のように管理し、保護に努めて参ります。

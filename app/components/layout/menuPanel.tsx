@@ -1,59 +1,20 @@
-import type { MenuPanel, Submenu } from "@/app/interfaces/menu"
-import { PARTNER, PRIVACY_POLICY, Q_AND_A, SUPPORTER } from "@/app/lib/constant"
+import type { Menu, MenuPanel, Submenu } from "@/app/interfaces/menu"
+import {
+  EVENT,
+  PARTNER,
+  PRIVACY_POLICY,
+  Q_AND_A,
+  SUPPORTER,
+} from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export function EventPanels({
-  menuHref,
+  menu,
   submenu,
-}: Readonly<{ menuHref: string; submenu: Submenu }>): JSX.Element {
-  const panels: MenuPanel[] = [
-    {
-      name: Q_AND_A.name,
-      color: {
-        bg: "bg-sky-400",
-        shadow: "box-sky-shadow",
-        text: "text-sky-400",
-        textHover: "group-hover:text-sky-400",
-      },
-      href: menuHref + submenu.href + Q_AND_A.href,
-      text: "よくある質問",
-    },
-    {
-      name: PRIVACY_POLICY.name,
-      color: {
-        bg: "bg-orange-400",
-        shadow: "box-orange-shadow",
-        text: "text-orange-400",
-        textHover: "group-hover:text-orange-400",
-      },
-      href: menuHref + submenu.href + PRIVACY_POLICY.href,
-      text: "プライバシーポリシー",
-    },
-    {
-      name: SUPPORTER.name,
-      color: {
-        bg: "bg-teal-400",
-        shadow: "box-teal-shadow",
-        text: "text-teal-400",
-        textHover: "group-hover:text-teal-400",
-      },
-      href: SUPPORTER.href,
-      text: "企画・運営・補助",
-    },
-    {
-      name: submenu.name + PARTNER.name,
-      color: {
-        bg: "bg-rose-400",
-        shadow: "box-rose-shadow",
-        text: "text-rose-400",
-        textHover: "group-hover:text-rose-400",
-      },
-      href: PARTNER.href + submenu.href,
-      text: "地域イベンター",
-    },
-  ] as const
+}: Readonly<{ menu: Menu; submenu: Submenu }>): JSX.Element {
+  const panels: MenuPanel[] = getPanels(menu, submenu)
 
   return (
     <section className="gap-4 grid grid-cols-2 justify-items-center mr-2 text-center">
@@ -81,44 +42,10 @@ export function EventPanels({
 }
 
 export function HistoryPanels({
-  menuHref,
+  menu,
   submenu,
-}: Readonly<{ menuHref: string; submenu: Submenu }>): JSX.Element {
-  const panels: MenuPanel[] = [
-    {
-      name: Q_AND_A.name,
-      color: {
-        bg: "bg-sky-400",
-        shadow: "box-sky-shadow",
-        text: "text-sky-400",
-        textHover: "group-hover:text-sky-400",
-      },
-      href: menuHref + submenu.href + Q_AND_A.href,
-      text: "よくある質問",
-    },
-    {
-      name: SUPPORTER.name,
-      color: {
-        bg: "bg-teal-400",
-        shadow: "box-teal-shadow",
-        text: SUPPORTER.textColor,
-        textHover: "group-hover:text-teal-400",
-      },
-      href: SUPPORTER.href,
-      text: "企画・運営・補助",
-    },
-    {
-      name: submenu.name + PARTNER.name,
-      color: {
-        bg: "bg-rose-400",
-        shadow: "box-rose-shadow",
-        text: PARTNER.textColor,
-        textHover: "group-hover:text-rose-400",
-      },
-      href: PARTNER.href + submenu.href,
-      text: "地域イベンター",
-    },
-  ] as const
+}: Readonly<{ menu: Menu; submenu: Submenu }>): JSX.Element {
+  const panels: MenuPanel[] = getPanels(menu, submenu)
 
   return (
     <section className="flex gap-4 justify-items-center mr-2 text-center">
@@ -143,4 +70,56 @@ export function HistoryPanels({
       ))}
     </section>
   )
+}
+
+function getPanels(menu: Menu, submenu: Submenu): MenuPanel[] {
+  const qaPanels: MenuPanel = {
+    name: Q_AND_A.name,
+    color: {
+      bg: "bg-sky-400",
+      shadow: "box-sky-shadow",
+      text: "text-sky-400",
+      textHover: "group-hover:text-sky-400",
+    },
+    href: menu.href + submenu.href + Q_AND_A.href,
+    text: "よくある質問",
+  }
+  const privacyPolicyPanel: MenuPanel = {
+    name: PRIVACY_POLICY.name,
+    color: {
+      bg: "bg-orange-400",
+      shadow: "box-orange-shadow",
+      text: "text-orange-400",
+      textHover: "group-hover:text-orange-400",
+    },
+    href: menu.href + submenu.href + PRIVACY_POLICY.href,
+    text: "プライバシーポリシー",
+  }
+  const supporterPanel: MenuPanel = {
+    name: SUPPORTER.name,
+    color: {
+      bg: "bg-teal-400",
+      shadow: "box-teal-shadow",
+      text: "text-teal-400",
+      textHover: "group-hover:text-teal-400",
+    },
+    href: SUPPORTER.href,
+    text: "企画・運営・補助",
+  }
+  const partnerPanel: MenuPanel = {
+    name: submenu.name + PARTNER.name,
+    color: {
+      bg: "bg-rose-400",
+      shadow: "box-rose-shadow",
+      text: "text-rose-400",
+      textHover: "group-hover:text-rose-400",
+    },
+    href: PARTNER.href + submenu.href,
+    text: "地域イベンター",
+  }
+
+  if (menu === EVENT) {
+    return [qaPanels, privacyPolicyPanel, supporterPanel, partnerPanel]
+  }
+  return [qaPanels, supporterPanel, partnerPanel]
 }

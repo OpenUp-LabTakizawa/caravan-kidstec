@@ -86,7 +86,7 @@ export default function TokyoChiba(): JSX.Element {
       </section>
       <Register guideline={guideline} />
       <LineApply lineLink={TOKYO_CHIBA_LINE} />
-      <EventPanels menuHref={EVENT.href} submenu={TOKYO_CHIBA} />
+      <EventPanels menu={EVENT} submenu={TOKYO_CHIBA} />
     </>
   )
 }

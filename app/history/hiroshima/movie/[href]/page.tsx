@@ -1,6 +1,7 @@
 import { Heading } from "@/app/components/layout/heading"
 import { HistoryPanels } from "@/app/components/layout/menuPanel"
 import { Video } from "@/app/components/media/video"
+import type { Submenu } from "@/app/interfaces/menu"
 import type { EventDate } from "@/app/interfaces/schedule"
 import { HIROSHIMA, HIROSHIMA_HISTORY, HISTORY } from "@/app/lib/constant"
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
@@ -13,10 +14,15 @@ export default function HiroshimaMovie({
   const eventDate: EventDate = HIROSHIMA_HISTORY.find(
     (history) => history.href.split("/").pop() === href,
   ) as EventDate
+  const submenu: Submenu = {
+    name: eventDate.title,
+    href: eventDate.href,
+    textColor: "text-yellow-400",
+  }
 
   return (
     <>
-      <Heading menu={HISTORY} submenus={[HIROSHIMA]} title={eventDate.title} />
+      <Heading menu={HISTORY} submenus={[HIROSHIMA, submenu]} />
       <Video
         src={`https://dk75m1tgsot44.cloudfront.net/movie${eventDate.href}`}
       />

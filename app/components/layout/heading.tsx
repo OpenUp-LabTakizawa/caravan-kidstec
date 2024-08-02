@@ -7,29 +7,17 @@ import type { JSX } from "react"
 export function Heading({
   menu,
   submenus,
-  title,
 }: Readonly<{
   menu: Menu
   submenus?: Submenu[]
-  title?: string
 }>): JSX.Element {
-  function getTitle(): string {
-    if (title) {
-      return title
-    }
-    if (submenus) {
-      return submenus[submenus.length - 1].name
-    }
-    return menu.name
-  }
-
   return (
     <section className="grid gap-6 pl-4">
-      <Breadcrumb menu={menu} submenus={submenus} title={title} />
+      <Breadcrumb menu={menu} submenus={submenus} />
       <h1
-        className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${submenus?.length === 2 ? "text-sky-400" : menu.textColor}`}
+        className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${submenus?.length === 2 ? submenus[1].textColor : menu.textColor}`}
       >
-        {getTitle()}
+        {submenus ? submenus[submenus.length - 1].name : menu.name}
       </h1>
     </section>
   )
@@ -38,11 +26,9 @@ export function Heading({
 function Breadcrumb({
   menu,
   submenus,
-  title,
 }: Readonly<{
   menu: Menu
   submenus?: Submenu[]
-  title?: string
 }>): JSX.Element {
   return (
     <div className="text-sm breadcrumbs">
@@ -62,10 +48,11 @@ function Breadcrumb({
               </Link>
             </li>
           ) : (
-            <li key={submenu.name}>{submenu.name}</li>
+            <li key={submenu.name} className={submenu.textColor}>
+              {submenu.name}
+            </li>
           ),
         )}
-        {title && <li>{title}</li>}
       </ul>
     </div>
   )

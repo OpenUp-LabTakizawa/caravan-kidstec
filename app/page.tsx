@@ -1,5 +1,4 @@
 import { FadeInUp } from "@/app/components/animation/fadeInUp"
-import { Banner } from "@/app/components/button/banner"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import type { Panel } from "@/app/interfaces/picture"
@@ -53,7 +52,7 @@ export default function Home(): JSX.Element {
 
   const weddingPanels: Panel[] = [
     {
-      alt: "蝶ネクタイをつけて入場！　素敵！",
+      alt: "蝶ネクタイをつけて入場！ 素敵！",
       src: "/202311/wedding/boys_march.avif",
     },
     {
@@ -88,7 +87,6 @@ export default function Home(): JSX.Element {
 
   return (
     <article className="grid gap-6 pb-4 text-base text-center">
-      <Banner />
       <section>
         <Carousel />
       </section>

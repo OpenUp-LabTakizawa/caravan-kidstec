@@ -6,24 +6,11 @@ export const SITE_TITLE: string = "こどもテックキャラバン"
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
 export const TOKYO_CHIBA_DEADLINE: string = "２０２４年８月３１日"
-export const HIROSHIMA: Submenu = {
-  name: "広島",
-  color: "",
-  href: "/hiroshima",
-}
-export const TOKYO_CHIBA: Submenu = {
-  name: "東京・千葉",
-  color: "",
-  href: "/tokyo_chiba",
-}
-export const Q_AND_A: Submenu = {
-  name: "Q&A",
-  color: "sky-400",
-  href: "/q-and-a",
-}
+export const HIROSHIMA: Submenu = { name: "広島", href: "/hiroshima" }
+export const TOKYO_CHIBA: Submenu = { name: "東京・千葉", href: "/tokyo_chiba" }
+export const Q_AND_A: Submenu = { name: "Q&A", href: "/q-and-a" }
 export const PRIVACY_POLICY: Submenu = {
   name: "個人情報保護方針",
-  color: "sky-400",
   href: "/privacy-policy",
 }
 

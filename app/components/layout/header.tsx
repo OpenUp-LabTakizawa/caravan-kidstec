@@ -88,13 +88,13 @@ function DropdownMenu({
               {menu.submenus.length === 0 ? (
                 <Link
                   href={menu.href}
-                  className={`font-bold text-nowrap ${menu.textColor}`}
+                  className="font-bold text-nowrap text-orange-400"
                 >
                   {menu.name}
                 </Link>
               ) : (
                 <>
-                  <strong className={menu.textColor}>{menu.name}</strong>
+                  <strong className="text-orange-400">{menu.name}</strong>
                   <Menu submenus={menu.submenus} href={menu.href} />
                 </>
               )}
@@ -146,7 +146,7 @@ function Navigation({
       {NAVIGATION.map((menu) => (
         <li key={menu.name}>
           {menu.submenus.length === 0 ? (
-            <Link href={menu.href} className={`font-bold ${menu.textColor}`}>
+            <Link href={menu.href} className="font-bold text-orange-400">
               {menu.name}
             </Link>
           ) : (
@@ -158,7 +158,7 @@ function Navigation({
                 }
               }}
             >
-              <summary className={`font-bold ${menu.textColor}`}>
+              <summary className="font-bold text-orange-400">
                 {menu.name}
               </summary>
               <Menu submenus={menu.submenus} href={menu.href} />

@@ -78,7 +78,7 @@ export function Banner(): JSX.Element {
     >
       <p className="banner inline-flex items-center text-nowrap">
         【新着情報】
-        <strong className={EVENT.textColor}>{TOKYO_CHIBA.name}</strong>
+        <strong className="text-orange-400">{TOKYO_CHIBA.name}</strong>
         で参加者を募集中！&nbsp;応募期限は
         <strong>{TOKYO_CHIBA_DEADLINE}</strong>
         まで&nbsp;

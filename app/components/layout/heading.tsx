@@ -53,7 +53,7 @@ function Breadcrumb({
             ホーム
           </Link>
         </li>
-        <li>{menu.name}</li>
+        <li className={menu.textColor}>{menu.name}</li>
         {submenus?.map((submenu) =>
           submenu === HIROSHIMA || submenu === TOKYO_CHIBA ? (
             <li key={submenu.name}>

@@ -19,6 +19,5 @@ export type MenuPanel = {
 
 export type Submenu = {
   name: string
-  color: string
   href: string
 }

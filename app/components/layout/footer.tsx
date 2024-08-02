@@ -13,13 +13,13 @@ export function Footer(): JSX.Element {
               {menu.submenus.length === 0 ? (
                 <Link
                   href={menu.href}
-                  className={`font-bold link-hover justify-center ${menu.textColor}`}
+                  className="font-bold link-hover justify-center text-orange-400"
                 >
                   {menu.name}
                 </Link>
               ) : (
                 <>
-                  <strong className={`justify-center ${menu.textColor}`}>
+                  <strong className="justify-center text-orange-400">
                     {menu.name}
                   </strong>
                   <ul>

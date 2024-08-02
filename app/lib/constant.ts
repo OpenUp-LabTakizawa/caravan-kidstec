@@ -6,36 +6,49 @@ export const SITE_TITLE: string = "こどもテックキャラバン"
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
 export const TOKYO_CHIBA_DEADLINE: string = "２０２４年８月３１日"
-export const HIROSHIMA: Submenu = { name: "広島", href: "/hiroshima" }
-export const TOKYO_CHIBA: Submenu = { name: "東京・千葉", href: "/tokyo_chiba" }
-export const Q_AND_A: Submenu = { name: "Q&A", href: "/q-and-a" }
+export const HIROSHIMA: Submenu = {
+  name: "広島",
+  href: "/hiroshima",
+  textColor: "",
+}
+export const TOKYO_CHIBA: Submenu = {
+  name: "東京・千葉",
+  href: "/tokyo_chiba",
+  textColor: "",
+}
+export const Q_AND_A: Submenu = {
+  name: "Q&A",
+  href: "/q-and-a",
+  textColor: "text-sky-400",
+}
 export const PRIVACY_POLICY: Submenu = {
   name: "個人情報保護方針",
   href: "/privacy-policy",
+  textColor: "text-orange-400",
 }
 
 export const EVENT: Menu = {
   name: "開催予定",
-  textColor: "text-orange-400",
   href: "/event",
+  textColor: "text-orange-400",
   submenus: [TOKYO_CHIBA],
 }
 export const HISTORY: Menu = {
   name: "過去の実績",
-  textColor: "text-yellow-400",
   href: "/history",
+  textColor: "text-yellow-400",
   submenus: [HIROSHIMA],
 }
 export const SUPPORTER: Menu = {
   name: "サポーター",
-  textColor: "text-teal-400",
   href: "/supporter",
+  textColor: "text-teal-400",
   submenus: [],
 }
 export const PARTNER: Menu = {
   name: "パートナー",
-  textColor: "text-rose-400",
   href: "/partner",
+  textColor: "text-rose-400",
   submenus: [TOKYO_CHIBA, HIROSHIMA],
 }
 

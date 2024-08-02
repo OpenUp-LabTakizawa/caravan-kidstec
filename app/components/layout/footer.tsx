@@ -13,13 +13,15 @@ export function Footer(): JSX.Element {
               {menu.submenus.length === 0 ? (
                 <Link
                   href={menu.href}
-                  className="font-bold link-hover justify-center"
+                  className={`font-bold link-hover justify-center ${menu.textColor}`}
                 >
                   {menu.name}
                 </Link>
               ) : (
                 <>
-                  <strong className="justify-center">{menu.name}</strong>
+                  <strong className={`justify-center ${menu.textColor}`}>
+                    {menu.name}
+                  </strong>
                   <ul>
                     {menu.submenus.map((submenu) => (
                       <li key={submenu.name}>

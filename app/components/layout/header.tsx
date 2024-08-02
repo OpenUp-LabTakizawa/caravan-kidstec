@@ -86,12 +86,15 @@ function DropdownMenu({
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (
-                <Link href={menu.href} className="font-bold text-nowrap">
+                <Link
+                  href={menu.href}
+                  className={`font-bold text-nowrap ${menu.textColor}`}
+                >
                   {menu.name}
                 </Link>
               ) : (
                 <>
-                  <strong>{menu.name}</strong>
+                  <strong className={menu.textColor}>{menu.name}</strong>
                   <Menu submenus={menu.submenus} href={menu.href} />
                 </>
               )}
@@ -141,9 +144,9 @@ function Navigation({
   return (
     <ul className="menu menu-horizontal p-0">
       {NAVIGATION.map((menu) => (
-        <li key={menu.name} className="hover:scale-110">
+        <li key={menu.name}>
           {menu.submenus.length === 0 ? (
-            <Link href={menu.href} className="font-bold">
+            <Link href={menu.href} className={`font-bold ${menu.textColor}`}>
               {menu.name}
             </Link>
           ) : (
@@ -155,7 +158,9 @@ function Navigation({
                 }
               }}
             >
-              <summary className="font-bold">{menu.name}</summary>
+              <summary className={`font-bold ${menu.textColor}`}>
+                {menu.name}
+              </summary>
               <Menu submenus={menu.submenus} href={menu.href} />
             </details>
           )}

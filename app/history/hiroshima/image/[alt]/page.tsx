@@ -33,7 +33,7 @@ export default function HiroshimaImage({
         <ArrowUturnLeftIcon className="rotate-z size-6" />
         {HISTORY.name}に戻る
       </Link>
-      <HistoryPanels menuHref={HISTORY.href} submenu={HIROSHIMA} />
+      <HistoryPanels menu={HISTORY} submenu={HIROSHIMA} />
     </>
   )
 }

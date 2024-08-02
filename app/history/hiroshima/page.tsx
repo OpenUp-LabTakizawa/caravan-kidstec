@@ -51,7 +51,7 @@ export default function Hiroshima(): JSX.Element {
       <section className="gap-4 grid">
         <LineRegister lineLink={HIROSHIMA_LINE} />
       </section>
-      <HistoryPanels menuHref={HISTORY.href} submenu={HIROSHIMA} />
+      <HistoryPanels menu={HISTORY} submenu={HIROSHIMA} />
     </>
   )
 }

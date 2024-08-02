@@ -12,7 +12,7 @@ export function Heading({
   submenus?: Submenu[]
 }>): JSX.Element {
   return (
-    <section className="grid gap-6 pl-4">
+    <section className="gap-6 grid pl-4">
       <Breadcrumb menu={menu} submenus={submenus} />
       <h1
         className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${submenus?.length === 2 ? submenus[1].textColor : menu.textColor}`}
@@ -31,11 +31,11 @@ function Breadcrumb({
   submenus?: Submenu[]
 }>): JSX.Element {
   return (
-    <div className="text-sm breadcrumbs">
+    <div className="breadcrumbs text-sm">
       <ul>
         <li>
           <Link href="/" className="link">
-            <HomeIcon className="size-5 mr-1 text-sky-400" />
+            <HomeIcon className="mr-1 size-5 text-sky-400" />
             ホーム
           </Link>
         </li>

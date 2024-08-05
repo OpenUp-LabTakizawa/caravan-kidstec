@@ -9,6 +9,7 @@ import { UserCircleIcon } from "@heroicons/react/24/outline"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
+import {} from "react-dom/client"
 
 export function Carousel(): JSX.Element {
   const pictures: Picture[] = [
@@ -151,10 +152,68 @@ export function ReviewCarousel(): JSX.Element {
       areaAndUser: "第4回 広島 小5、中2",
     },
   ] as const
+  const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
+  const [scrollMount, setScrollMount] = useState<number>(3344)
+
+  useEffect(() => {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    carousel.scrollLeft = 3344
+  }, [])
+
+  useEffect(() => {
+    if (isMouseEnter) {
+      return
+    }
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const scrollWidth: number = carousel.scrollWidth
+    if ((scrollWidth * 2) / 3 <= scrollMount) {
+      carousel.scrollTo({ left: 3344, behavior: "instant" })
+    }
+    const interval = window.setInterval(() => {
+      if (scrollWidth < scrollMount) {
+        setScrollMount(3344)
+      } else {
+        setScrollMount(scrollMount + scrollWidth / (reviews.length * 3))
+      }
+      carousel.scrollLeft = scrollMount
+    }, 3000)
+    return () => window.clearInterval(interval)
+  }, [isMouseEnter, reviews, scrollMount])
 
   return (
-    <div className="carousel relative space-x-4">
+    <div
+      ref={carouselRef}
+      className="carousel relative space-x-4"
+      onMouseEnter={() => setIsMouseEnter(true)}
+      onMouseLeave={() => setIsMouseEnter(false)}
+      onScroll={(event) => setScrollMount(event.currentTarget.scrollLeft)}
+    >
       <ScrollRightHint />
+      {reviews.map((review) => (
+        <div
+          key={review.description}
+          className="bg-blue-100 carousel-item content-between grid m-2 p-2 rounded-2xl shadow-lg w-56"
+        >
+          <p className="my-auto text-sm whitespace-pre">{review.description}</p>
+          <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
+            <UserCircleIcon className="text-rose-400 size-6 mr-1" />
+            {review.areaAndUser}
+          </p>
+        </div>
+      ))}
+      {reviews.map((review) => (
+        <div
+          key={review.description}
+          className="bg-blue-100 carousel-item content-between grid m-2 p-2 rounded-2xl shadow-lg w-56"
+        >
+          <p className="my-auto text-sm whitespace-pre">{review.description}</p>
+          <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
+            <UserCircleIcon className="text-rose-400 size-6 mr-1" />
+            {review.areaAndUser}
+          </p>
+        </div>
+      ))}
       {reviews.map((review) => (
         <div
           key={review.description}

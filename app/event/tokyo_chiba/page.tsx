@@ -28,7 +28,7 @@ export default function TokyoChiba(): JSX.Element {
       src: "/202311/sandankyo/brothers.avif",
       color: "bg-teal-400",
       title: "午前：ロボット制作\n午後：自然の循環",
-      date: { year: "2024", month: "9", day: "14", dayOfWeek: "土" },
+      date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
       venue: "クルックフィールズ",
       address: "千葉県木更津市矢那2503",
       tags: ["ロボット制作", "自然学習"],
@@ -38,7 +38,7 @@ export default function TokyoChiba(): JSX.Element {
       src: "/content/rays-blog_girl.avif",
       color: "bg-sky-400",
       title: "午前：プログラミング体験\n午後：謎解き体験！",
-      date: { year: "2024", month: "9", day: "21", dayOfWeek: "土" },
+      date: { year: "2024", month: "11", day: "9", dayOfWeek: "土" },
       venue: "東京虎ノ門グローバルスクエア",
       address: "東京都港区虎ノ門1-3-1",
       tags: ["プログラミング", "情報教育"],
@@ -48,7 +48,7 @@ export default function TokyoChiba(): JSX.Element {
       src: "/202206/eda_island/course_challenge.avif",
       color: "bg-rose-400",
       title: "午前：ロボサバ大会\n午後：結婚式体験",
-      date: { year: "2024", month: "9", day: "22", dayOfWeek: "日" },
+      date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
       venue: "ヴィクトリアガーデン恵比寿迎賓館",
       address: "東京都渋谷区恵比寿南1-14-20",
       tags: ["ロボサバ", "結婚式体験"],
@@ -59,7 +59,7 @@ export default function TokyoChiba(): JSX.Element {
     <>
       <Heading menu={EVENT} submenus={[TOKYO_CHIBA]} />
       <Image
-        src={"/202409_tokyo_chiba.avif"}
+        src={"/202410_tokyo_chiba.avif"}
         width={1000}
         height={1000}
         alt="こどもテックキャラバン"

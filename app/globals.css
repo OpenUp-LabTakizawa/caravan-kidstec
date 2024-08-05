@@ -38,12 +38,11 @@
   border-color: #fb923c;
   box-shadow: #fff 4px 4px 0 0, #fb923c 4px 4px 0 2px;
   transition: .5s;
-}
-
-.box-orange-shadow:hover {
-  background-position: 100% 100%;
-  box-shadow: #fff 2px 2px 0 0, #fb923c 2px 2px 0 2px;
-  transform: translate(2px, 2px);
+  &:hover {
+    background-position: 100% 100%;
+    box-shadow: #fff 2px 2px 0 0, #fb923c 2px 2px 0 2px;
+    transform: translate(2px, 2px);
+  }
 }
 
 .box-rose-shadow {
@@ -52,12 +51,11 @@
   border-color: #fb7185;
   box-shadow: #fff 4px 4px 0 0, #fb7185 4px 4px 0 2px;
   transition: .5s;
-}
-
-.box-rose-shadow:hover {
-  background-position: 100% 100%;
-  box-shadow: #fff 2px 2px 0 0, #fb7185 2px 2px 0 2px;
-  transform: translate(2px, 2px);
+  &:hover {
+    background-position: 100% 100%;
+    box-shadow: #fff 2px 2px 0 0, #fb7185 2px 2px 0 2px;
+    transform: translate(2px, 2px);
+  }
 }
 
 .box-sky-shadow {
@@ -66,12 +64,11 @@
   border-color: #38bdf8;
   box-shadow: #fff 4px 4px 0 0, #38bdf8 4px 4px 0 2px;
   transition: .5s;
-}
-
-.box-sky-shadow:hover {
-  background-position: 100% 100%;
-  box-shadow: #fff 2px 2px 0 0, #38bdf8 2px 2px 0 2px;
-  transform: translate(2px, 2px);
+  &:hover {
+    background-position: 100% 100%;
+    box-shadow: #fff 2px 2px 0 0, #38bdf8 2px 2px 0 2px;
+    transform: translate(2px, 2px);
+  }
 }
 
 .box-teal-shadow {
@@ -80,12 +77,11 @@
   border-color: #2dd4bf;
   box-shadow: #fff 4px 4px 0 0, #2dd4bf 4px 4px 0 2px;
   transition: .5s;
-}
-
-.box-teal-shadow:hover {
-  background-position: 100% 100%;
-  box-shadow: #fff 2px 2px 0 0, #2dd4bf 2px 2px 0 2px;
-  transform: translate(2px, 2px);
+  &:hover {
+    background-position: 100% 100%;
+    box-shadow: #fff 2px 2px 0 0, #2dd4bf 2px 2px 0 2px;
+    transform: translate(2px, 2px);
+  }
 }
 
 .fade-out-down {
@@ -121,14 +117,12 @@
   top: 0%;
   transform: scale3d(0.5, 0.5, 0.5);
   animation: scroll-right 3s ease-out infinite;
-}
-
-.scroll-right:first-child {
-  animation: scroll-right 3s ease-out 1s infinite;
-}
-
-.scroll-right:nth-child(2) {
-  animation: scroll-right 3s ease-out 2s infinite;
+  &:first-child {
+    animation: scroll-right 3s ease-out 1s infinite;
+  }
+  &:nth-child(2) {
+    animation: scroll-right 3s ease-out 2s infinite;
+  }
 }
 
 .stretch {

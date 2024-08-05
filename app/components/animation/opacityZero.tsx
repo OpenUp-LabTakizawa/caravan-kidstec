@@ -15,22 +15,20 @@ export function OpacityZero({
   const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("opacity-0")
-            }, 3000)
-          } else {
-            entry.target.classList.remove("opacity-0")
-          }
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("opacity-0")
+          }, 3000)
+        } else {
+          entry.target.classList.remove("opacity-0")
         }
-      })
+      }
+    })
 
-      observer.observe(ref.current as HTMLSpanElement)
-      return () => observer.disconnect()
-    }
+    observer.observe(ref.current as HTMLSpanElement)
+    return () => observer.disconnect()
   })
 
   return (

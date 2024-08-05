@@ -14,14 +14,21 @@ export function Header(): JSX.Element {
   }>({ scrollY: 0, isScrollDown: false })
   const headerHeight: number = 50
 
-  if (typeof window !== "undefined") {
+  useEffect(() => {
     window.addEventListener("scroll", () => {
       setScrollY({
         scrollY: window.scrollY,
         isScrollDown: scrollY.scrollY < window.scrollY,
       })
     })
-  }
+    return () =>
+      window.removeEventListener("scroll", () => {
+        setScrollY({
+          scrollY: window.scrollY,
+          isScrollDown: scrollY.scrollY < window.scrollY,
+        })
+      })
+  })
 
   return (
     <header

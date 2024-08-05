@@ -15,20 +15,18 @@ export function FadeInUp({
   const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-up")
-          } else {
-            entry.target.classList.remove("fade-in-up")
-          }
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in-up")
+        } else {
+          entry.target.classList.remove("fade-in-up")
         }
-      })
+      }
+    })
 
-      observer.observe(ref.current as HTMLSpanElement)
-      return () => observer.disconnect()
-    }
+    observer.observe(ref.current as HTMLSpanElement)
+    return () => observer.disconnect()
   })
 
   return (

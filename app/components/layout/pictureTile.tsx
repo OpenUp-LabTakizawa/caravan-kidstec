@@ -15,24 +15,22 @@ export function HistoryPictures({
   >(new Map<string, HTMLAnchorElement>())
 
   useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-          const delay = index * 200
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("scale-up-down")
-            }, delay)
-          } else {
-            entry.target.classList.remove("scale-up-down")
-          }
-        })
-      })
-
-      if (ref.current?.values()) {
-        for (const node of ref.current.values()) {
-          observer.observe(node)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        const delay = index * 200
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("scale-up-down")
+          }, delay)
+        } else {
+          entry.target.classList.remove("scale-up-down")
         }
+      })
+    })
+
+    if (ref.current?.values()) {
+      for (const node of ref.current.values()) {
+        observer.observe(node)
       }
     }
   })

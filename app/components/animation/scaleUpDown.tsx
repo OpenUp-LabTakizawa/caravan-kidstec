@@ -15,22 +15,20 @@ export function ScaleUpDown({
   const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("scale-up-down")
-            }, index * 200)
-          } else {
-            entry.target.classList.remove("scale-up-down")
-          }
-        })
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("scale-up-down")
+          }, index * 200)
+        } else {
+          entry.target.classList.remove("scale-up-down")
+        }
       })
+    })
 
-      observer.observe(ref.current as HTMLSpanElement)
-      return () => observer.disconnect()
-    }
+    observer.observe(ref.current as HTMLSpanElement)
+    return () => observer.disconnect()
   })
 
   return (

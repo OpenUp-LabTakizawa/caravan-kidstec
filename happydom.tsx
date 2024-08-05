@@ -51,3 +51,21 @@ mock.module("next/image", (): EsModuleDefault<ComponentType<ImageProps>> => {
     default: MockNextImage,
   }
 })
+
+class IntersectionObserver {
+  observe = mock()
+  disconnect = mock()
+  unobserve = mock()
+}
+
+Object.defineProperty(window, "IntersectionObserver", {
+  writable: true,
+  configurable: true,
+  value: IntersectionObserver,
+})
+
+Object.defineProperty(global, "IntersectionObserver", {
+  writable: true,
+  configurable: true,
+  value: IntersectionObserver,
+})

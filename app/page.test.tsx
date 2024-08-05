@@ -7,7 +7,7 @@ render(<Home />)
 describe("Home", () => {
   test("article test", () => {
     const article = document.querySelector("article")
-    expect(article?.className).toEqual("grid gap-6 pb-4 text-base text-center")
+    expect(article?.className).toEqual("gap-6 grid pb-4 text-base text-center")
   })
 
   test("section test", () => {

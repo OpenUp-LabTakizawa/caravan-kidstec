@@ -15,21 +15,19 @@ export function Bounce({
   const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
-    if (window.IntersectionObserver) {
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-bounce")
-            setTimeout(() => {
-              entry.target.classList.remove("animate-bounce")
-            }, 2500)
-          }
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-bounce")
+          setTimeout(() => {
+            entry.target.classList.remove("animate-bounce")
+          }, 2500)
         }
-      })
+      }
+    })
 
-      observer.observe(ref.current as HTMLSpanElement)
-      return () => observer.disconnect()
-    }
+    observer.observe(ref.current as HTMLSpanElement)
+    return () => observer.disconnect()
   })
 
   return (

@@ -86,7 +86,7 @@ export default function Home(): JSX.Element {
   ] as const
 
   return (
-    <article className="grid gap-6 pb-4 text-base text-center">
+    <article className="gap-6 grid pb-4 text-base text-center">
       <section>
         <Carousel />
       </section>
@@ -150,7 +150,7 @@ export default function Home(): JSX.Element {
           <PanelTile panels={section.panels} />
         </section>
       ))}
-      <section className="gap-4 grid">
+      <section id="review" className="gap-4 grid">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>

@@ -9,7 +9,6 @@ import { UserCircleIcon } from "@heroicons/react/24/outline"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
-import {} from "react-dom/client"
 
 export function Carousel(): JSX.Element {
   const pictures: Picture[] = [
@@ -238,12 +237,48 @@ export function ReviewCarousel(): JSX.Element {
 export function ScheduleCarousel({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
+  const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const schedulesRef: RefObject<Map<string, HTMLDivElement>> = useRef<
+    Map<string, HTMLDivElement>
+  >(new Map<string, HTMLDivElement>())
+
+  function ScrollEvent(): void {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const schedules = schedulesRef.current as Map<string, HTMLDivElement>
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth
+    const scrollLeft = carousel.scrollLeft
+    const buffer = 100
+
+    if (maxScrollLeft < scrollLeft + buffer) {
+      for (const node of schedules.values()) {
+        const newSchedules = node.cloneNode(true)
+        carousel.append(newSchedules)
+      }
+    }
+    if (scrollLeft < buffer) {
+      for (const node of [...schedules.values()].reverse()) {
+        const newSchedules = node.cloneNode(true)
+        carousel.prepend(newSchedules)
+      }
+    }
+  }
+
   return (
-    <div className="carousel relative">
+    <div
+      ref={carouselRef}
+      className="carousel carousel-center relative"
+      onScroll={() => ScrollEvent()}
+    >
       <ScrollRightHint />
       {schedules.map((schedule, index) => (
         <div
           key={schedule.alt}
+          ref={(node: HTMLDivElement) => {
+            schedulesRef.current?.set(schedule.alt, node)
+            return () => {
+              schedulesRef.current?.delete(schedule.alt)
+            }
+          }}
           className="card carousel-item m-2 shadow-lg w-60"
         >
           <Image

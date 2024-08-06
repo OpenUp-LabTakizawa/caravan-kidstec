@@ -194,11 +194,8 @@ export default function Home(): JSX.Element {
 function PanelTile({ panels }: Readonly<{ panels: Panel[] }>): JSX.Element {
   return (
     <>
-      {panels.map((panel, index) => (
-        <figure
-          key={panel.alt}
-          className={`${index === 0 ? "col-span-2" : ""}`}
-        >
+      {panels.map((panel) => (
+        <figure key={panel.alt} className="first-of-type:col-span-2">
           <Image
             loader={cloudfrontLoader}
             src={panel.src}

@@ -153,70 +153,75 @@ export function ReviewCarousel(): JSX.Element {
     },
   ] as const
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const reviewsRef: RefObject<Map<string, HTMLDivElement>> = useRef<
+    Map<string, HTMLDivElement>
+  >(new Map<string, HTMLDivElement>())
   const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
-  const [scrollMount, setScrollMount] = useState<number>(3344)
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    carousel.scrollLeft = 3344
-  }, [])
-
-  useEffect(() => {
-    if (isMouseEnter) {
-      return
-    }
-    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const scrollWidth: number = carousel.scrollWidth
-    if ((scrollWidth * 2) / 3 <= scrollMount) {
-      carousel.scrollTo({ left: 3344, behavior: "instant" })
-    }
-    const interval = window.setInterval(() => {
-      if (scrollWidth < scrollMount) {
-        setScrollMount(3344)
-      } else {
-        setScrollMount(scrollMount + scrollWidth / (reviews.length * 3))
+    const reviewWidth = 240
+    const interval = setInterval(() => {
+      if (!isMouseEnter && carousel.classList.contains("observing")) {
+        carousel.scrollLeft += reviewWidth
       }
-      carousel.scrollLeft = scrollMount
     }, 3000)
-    return () => window.clearInterval(interval)
-  }, [isMouseEnter, reviews, scrollMount])
+    return () => clearInterval(interval)
+  })
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("observing")
+        } else {
+          entry.target.classList.remove("observing")
+        }
+      }
+    })
+    observer.observe(carouselRef.current as HTMLDivElement)
+    return () => observer.disconnect()
+  })
+
+  function ScrollEvent(): void {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const reviews = reviewsRef.current as Map<string, HTMLDivElement>
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth
+    const scrollLeft = carousel.scrollLeft
+    const buffer = 100
+
+    if (maxScrollLeft < scrollLeft + buffer) {
+      for (const node of reviews.values()) {
+        const newReviews = node.cloneNode(true)
+        carousel.append(newReviews)
+      }
+    }
+    if (scrollLeft < buffer) {
+      for (const node of [...reviews.values()].reverse()) {
+        const newReviews = node.cloneNode(true)
+        carousel.prepend(newReviews)
+      }
+    }
+  }
 
   return (
     <div
       ref={carouselRef}
-      className="carousel relative space-x-4"
+      className="carousel carousel-center relative space-x-4"
       onMouseEnter={() => setIsMouseEnter(true)}
       onMouseLeave={() => setIsMouseEnter(false)}
-      onScroll={(event) => setScrollMount(event.currentTarget.scrollLeft)}
+      onScroll={() => ScrollEvent()}
     >
       <ScrollRightHint />
       {reviews.map((review) => (
         <div
           key={review.description}
-          className="bg-blue-100 carousel-item content-between grid m-2 p-2 rounded-2xl shadow-lg w-56"
-        >
-          <p className="my-auto text-sm whitespace-pre">{review.description}</p>
-          <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
-            <UserCircleIcon className="text-rose-400 size-6 mr-1" />
-            {review.areaAndUser}
-          </p>
-        </div>
-      ))}
-      {reviews.map((review) => (
-        <div
-          key={review.description}
-          className="bg-blue-100 carousel-item content-between grid m-2 p-2 rounded-2xl shadow-lg w-56"
-        >
-          <p className="my-auto text-sm whitespace-pre">{review.description}</p>
-          <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
-            <UserCircleIcon className="text-rose-400 size-6 mr-1" />
-            {review.areaAndUser}
-          </p>
-        </div>
-      ))}
-      {reviews.map((review) => (
-        <div
-          key={review.description}
+          ref={(node: HTMLDivElement) => {
+            reviewsRef.current?.set(review.description, node)
+            return () => {
+              reviewsRef.current?.delete(review.description)
+            }
+          }}
           className="bg-blue-100 carousel-item content-between grid m-2 p-2 rounded-2xl shadow-lg w-56"
         >
           <p className="my-auto text-sm whitespace-pre">{review.description}</p>

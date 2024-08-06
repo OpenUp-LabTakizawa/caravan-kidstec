@@ -5,7 +5,7 @@ import type { EventDate, Program } from "@/app/interfaces/schedule"
 export const SITE_TITLE: string = "こどもテックキャラバン"
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
-export const TOKYO_CHIBA_DEADLINE: string = "２０２４年８月３１日"
+export const TOKYO_CHIBA_DEADLINE: string = "２０２４年９月３１日"
 export const HIROSHIMA: Submenu = {
   name: "広島",
   href: "/hiroshima",

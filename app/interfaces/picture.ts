@@ -8,3 +8,9 @@ export type Panel = {
   alt: string
   height?: string
 }
+
+export type TabPanel = {
+  title: string
+  color: string
+  panels: Panel[]
+}

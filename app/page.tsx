@@ -1,12 +1,13 @@
 import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
-import type { Panel } from "@/app/interfaces/picture"
+import type { Panel, TabPanel } from "@/app/interfaces/picture"
 import { EVENT, TOKYO_CHIBA } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import { EventTablist } from "./components/layout/tablist"
 
 export default function Home(): JSX.Element {
   const techPanels: Panel[] = [
@@ -67,7 +68,7 @@ export default function Home(): JSX.Element {
     },
   ] as const
 
-  const sections = [
+  const tabPanels: TabPanel[] = [
     {
       title: "プログラミング体験",
       color: "text-orange-400",
@@ -100,7 +101,7 @@ export default function Home(): JSX.Element {
             className="w-full px-1"
           />
         </FadeInUp>
-        <div className="font-bold grid gap-4 leading-7 tracking-[.29em]">
+        <div className="font-bold gap-4 grid leading-7 tracking-[.29em]">
           <p>
             プログラミング体験と
             <br />
@@ -140,14 +141,17 @@ export default function Home(): JSX.Element {
           className="w-full"
         />
       </Link>
-      {sections.map((section) => (
-        <section key={section.title} className="gap-2 grid grid-cols-2">
+      <section className="gap-2 grid">
+        <EventTablist tabPanels={tabPanels} />
+      </section>
+      {tabPanels.map((tabPanel) => (
+        <section key={tabPanel.title} className="gap-2 grid grid-cols-2">
           <h2
-            className={`col-span-2 font-bold font-zenMaruGothic text-3xl ${section.color}`}
+            className={`col-span-2 font-bold font-zenMaruGothic text-3xl ${tabPanel.color}`}
           >
-            {section.title}
+            {tabPanel.title}
           </h2>
-          <PanelTile panels={section.panels} />
+          <PanelTile panels={tabPanel.panels} />
         </section>
       ))}
       <section id="review" className="gap-4 grid">

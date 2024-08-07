@@ -2,7 +2,7 @@ import { LineApply } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { EventPanels } from "@/app/components/layout/menuPanel"
-import { ScheduleTab } from "@/app/components/layout/tab"
+import { ScheduleTab, ScheduleTab1 } from "@/app/components/layout/tab"
 import { Register } from "@/app/event/register"
 import { Schedules } from "@/app/event/schedules"
 import type { Guideline } from "@/app/interfaces/guideline"
@@ -28,7 +28,7 @@ export default function TokyoChiba(): JSX.Element {
       alt: "ロボット制作",
       src: "/202311/sandankyo/brothers.avif",
       color: "bg-teal-400",
-      title: "午前：ロボット制作\n午後：自然の循環",
+      title: "午前：ロボット制作\n午後：自然学習",
       date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
       venue: "クルックフィールズ",
       address: "千葉県木更津市矢那2503",
@@ -84,8 +84,11 @@ export default function TokyoChiba(): JSX.Element {
       <section className="grid gap-4 text-center">
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleTab schedules={schedules} />
-        <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleCarousel schedules={schedules} />
+        <h2 className="font-bold font-zenMaruGothic text-3xl">
+          スケジュール パターン２
+        </h2>
+        <ScheduleTab1 schedules={schedules} />
       </section>
       <Register guideline={guideline} />
       <LineApply lineLink={TOKYO_CHIBA_LINE} />

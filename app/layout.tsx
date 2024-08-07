@@ -38,7 +38,10 @@ const zenKakuGothicNew = localFont({
 export const metadata: Metadata = {
   title: SITE_TITLE,
   description: DESCRIPTION,
-  metadataBase: new URL("https://caravan-kidstec.com"),
+  metadataBase:
+    process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+      ? undefined
+      : new URL("https://caravan-kidstec.com"),
 }
 
 export default function RootLayout({

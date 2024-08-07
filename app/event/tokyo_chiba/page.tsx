@@ -2,7 +2,7 @@ import { LineApply } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { EventPanels } from "@/app/components/layout/menuPanel"
-import { ScheduleTab, ScheduleTab1 } from "@/app/components/layout/tab"
+import { ScheduleTab } from "@/app/components/layout/tab"
 import { Register } from "@/app/event/register"
 import { Schedules } from "@/app/event/schedules"
 import type { Guideline } from "@/app/interfaces/guideline"
@@ -27,7 +27,6 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "ロボット制作",
       src: "/202311/sandankyo/brothers.avif",
-      color: "bg-teal-400",
       title: "午前：ロボット制作\n午後：自然学習",
       date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
       venue: "クルックフィールズ",
@@ -37,7 +36,6 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "謎解き体験！",
       src: "/content/rays-blog_girl.avif",
-      color: "bg-sky-400",
       title: "午前：プログラミング体験\n午後：謎解き体験！",
       date: { year: "2024", month: "11", day: "9", dayOfWeek: "土" },
       venue: "東京虎ノ門グローバルスクエア",
@@ -47,7 +45,6 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "ロボサバ大会",
       src: "/202206/eda_island/course_challenge.avif",
-      color: "bg-rose-400",
       title: "午前：ロボサバ大会\n午後：結婚式体験",
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
       venue: "ヴィクトリアガーデン恵比寿迎賓館",
@@ -85,10 +82,6 @@ export default function TokyoChiba(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleTab schedules={schedules} />
         <ScheduleCarousel schedules={schedules} />
-        <h2 className="font-bold font-zenMaruGothic hidden text-3xl sm:block">
-          スケジュール パターン２
-        </h2>
-        <ScheduleTab1 schedules={schedules} />
       </section>
       <Register guideline={guideline} />
       <LineApply lineLink={TOKYO_CHIBA_LINE} />

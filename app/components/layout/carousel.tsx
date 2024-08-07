@@ -254,9 +254,7 @@ export function ScheduleCarousel({
             className="h-60 object-cover rounded-t-2xl"
           />
           <div className="bg-amber-50 card-body p-0 py-8 relative rounded-b-2xl">
-            <strong
-              className={`absolute left-0 px-2 py-1 text-white text-xs top-0 ${schedule.color}`}
-            >
+            <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
               Day&nbsp;{index + 1}
             </strong>
             <h3 className="card-title mx-auto text-lg whitespace-pre">

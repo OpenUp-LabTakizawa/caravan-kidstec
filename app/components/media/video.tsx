@@ -54,9 +54,9 @@ export function Video({
           className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block${isPlaying ? " hidden" : ""}`}
         >
           {isPlaying ? (
-            <StopCircleIcon className="size-32 text-orange-400" />
+            <StopCircleIcon className="bg-black/60 size-32 text-white/60" />
           ) : (
-            <PlayCircleIcon className="size-32 text-orange-400" />
+            <PlayCircleIcon className="bg-black/60 size-32 text-white/60" />
           )}
         </button>
       )}

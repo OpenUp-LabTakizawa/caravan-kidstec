@@ -238,12 +238,11 @@ export function ScheduleCarousel({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   return (
-    <div className="carousel hidden relative sm:flex">
-      <ScrollRightHint />
+    <div className="carousel hidden overflow-visible relative space-x-1 sm:flex">
       {schedules.map((schedule, index) => (
         <div
           key={schedule.alt}
-          className="card carousel-item m-2 shadow-lg w-60"
+          className="card carousel-item my-2 shadow-lg w-56"
         >
           <Image
             loader={cloudfrontLoader}
@@ -251,7 +250,7 @@ export function ScheduleCarousel({
             width={1000}
             height={1000}
             alt={schedule.alt}
-            className="h-60 object-cover rounded-t-2xl"
+            className="h-56 object-cover rounded-t-2xl"
           />
           <div className="bg-amber-50 card-body p-0 py-8 relative rounded-b-2xl">
             <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">

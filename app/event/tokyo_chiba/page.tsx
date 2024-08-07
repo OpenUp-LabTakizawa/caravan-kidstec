@@ -2,7 +2,7 @@ import { LineApply } from "@/app/components/button/lineAddFriends"
 import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { EventPanels } from "@/app/components/layout/menuPanel"
-import { ScheduleTab } from "@/app/components/layout/tab"
+import { ScheduleTab, ScheduleTab2 } from "@/app/components/layout/tab"
 import { Register } from "@/app/event/register"
 import { Schedules } from "@/app/event/schedules"
 import type { Guideline } from "@/app/interfaces/guideline"
@@ -82,6 +82,10 @@ export default function TokyoChiba(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleTab schedules={schedules} />
         <ScheduleCarousel schedules={schedules} />
+        <h2 className="font-bold font-zenMaruGothic text-3xl sm:hidden">
+          スケジュール2
+        </h2>
+        <ScheduleTab2 schedules={schedules} />
       </section>
       <Register guideline={guideline} />
       <LineApply lineLink={TOKYO_CHIBA_LINE} />

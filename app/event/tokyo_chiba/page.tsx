@@ -85,7 +85,7 @@ export default function TokyoChiba(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleTab schedules={schedules} />
         <ScheduleCarousel schedules={schedules} />
-        <h2 className="font-bold font-zenMaruGothic text-3xl">
+        <h2 className="font-bold font-zenMaruGothic hidden text-3xl sm:block">
           スケジュール パターン２
         </h2>
         <ScheduleTab1 schedules={schedules} />

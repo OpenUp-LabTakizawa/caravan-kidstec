@@ -4,7 +4,7 @@ import { Header } from "@/app/components/layout/header"
 import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
 import "./globals.css"
-import { SITE_TITLE } from "@/app/lib/constant"
+import { DESCRIPTION, SITE_TITLE } from "@/app/lib/constant"
 import localFont from "next/font/local"
 
 const zenMaruGothic = localFont({
@@ -37,7 +37,7 @@ const zenKakuGothicNew = localFont({
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
-  description: "こども向けマルチ体験ワークショップイベント",
+  description: DESCRIPTION,
   metadataBase: new URL("https://caravan-kidstec.com"),
 }
 

@@ -10,34 +10,9 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
-export function Carousel(): JSX.Element {
-  const pictures: Picture[] = [
-    {
-      alt: "プログラミング体験",
-      src: "/202206/camps/basic_programming.avif",
-    },
-    {
-      alt: "サップ体験",
-      src: "/202206/eda_island/sea_circle.avif",
-    },
-    {
-      alt: "オリーブ体験",
-      src: "/202311/eda_island/olive_smile.avif",
-    },
-    {
-      alt: "自然学習",
-      src: "/202311/sandankyo/check_a_leaf.avif",
-    },
-    {
-      alt: "ブーケ作成",
-      src: "/202311/wedding/flower_arrangement.avif",
-    },
-    {
-      alt: "結婚式体験",
-      src: "/202311/wedding/wedding_bouquet.avif",
-    },
-  ] as const
-
+export function Carousel({
+  pictures,
+}: Readonly<{ pictures: Picture[] }>): JSX.Element {
   const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
   const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
   let slide = 0

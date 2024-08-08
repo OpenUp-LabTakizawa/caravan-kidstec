@@ -1,61 +1,100 @@
 "use client"
 
-import type { Panel, TabPanel } from "@/app/interfaces/picture"
+import type { Picture, TabCarousel } from "@/app/interfaces/picture"
 import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import { type JSX, useState } from "react"
+import { Carousel } from "./carousel"
 
-export function EventTablist({
-  tabPanels,
-}: Readonly<{ tabPanels: TabPanel[] }>): JSX.Element {
-  const [tab, setTab] = useState<string>(tabPanels[0].title)
-
-  function PanelTile({ panels }: Readonly<{ panels: Panel[] }>): JSX.Element {
-    return (
-      <>
-        {panels.map((panel) => (
-          <figure key={panel.alt} className="first-of-type:col-span-2">
-            <Image
-              loader={cloudfrontLoader}
-              src={panel.src}
-              height={1000}
-              width={1000}
-              alt={panel.alt}
-              className="w-full"
-            />
-            <figcaption
-              className={`bg-amber-50 font-bold grid items-center text-center whitespace-pre${panel.height ? ` ${panel.height}` : ""}`}
-            >
-              {panel.alt}
-            </figcaption>
-          </figure>
-        ))}
-      </>
-    )
-  }
+export function CarouselTablist(): JSX.Element {
+  const naturePictures: Picture[] = [
+    {
+      alt: "マリンスポーツで楽しい思い出！",
+      src: "/202306/eda_island/mega_sap_group.avif",
+    },
+    {
+      alt: "手作りのオリーブオイル、最初はまだ赤い！",
+      src: "/202311/eda_island/olive_pouring.avif",
+    },
+    {
+      alt: "三段峡の自然に興味津々！",
+      src: "/202206/sandankyo/writing.avif",
+    },
+  ] as const
+  const weddingPictures: Picture[] = [
+    {
+      alt: "蝶ネクタイをつけて入場！ 素敵！",
+      src: "/202311/wedding/boys_march.avif",
+    },
+    {
+      alt: "ブーケで使うお花選び、どれにするか決まったかな？",
+      src: "/202311/wedding/select_flowers.avif",
+    },
+    {
+      alt: "ラッピングも自分で挑戦！",
+      src: "/202311/wedding/pouring_water.avif",
+    },
+  ] as const
+  const techPictures: Picture[] = [
+    {
+      alt: "はじめてのはんだづけにどきどき",
+      src: "/202311/eda_island/soldering.avif",
+    },
+    {
+      alt: "ロボット作りに挑戦！",
+      src: "/202311/eda_island/using_nipper.avif",
+    },
+    {
+      alt: "自分で作ったロボットの完成！",
+      src: "/202311/sandankyo/peace_sign.avif",
+    },
+    {
+      alt: "親子で協力しながらプログラミング！上手に動くかな？",
+      src: "/202311/wedding/mother_check.avif",
+    },
+    {
+      alt: "最終日のロボサバ大会！優勝目指そう！",
+      src: "/202311/wedding/switch_on.avif",
+    },
+  ] as const
+  const tabCarousels: TabCarousel[] = [
+    {
+      title: "自然学習",
+      pictures: naturePictures,
+    },
+    {
+      title: "結婚式体験",
+      pictures: weddingPictures,
+    },
+    {
+      title: "プログラミング体験",
+      pictures: techPictures,
+    },
+  ] as const
+  const [tab, setTab] = useState<string>(tabCarousels[0].title)
 
   return (
     <>
       <div role="tablist" className="gap-2 tabs">
-        {tabPanels.map((tabPanel) => (
+        {tabCarousels.map((tabCarousel) => (
           <button
-            key={tabPanel.title}
+            key={tabCarousel.title}
             type="button"
             role="tab"
-            onClick={() => setTab(tabPanel.title)}
-            className={`rounded-lg shadow-lg tab ${tab === tabPanel.title ? "bg-teal-400 tab-active" : "bg-gray-100"}`}
+            onClick={() => setTab(tabCarousel.title)}
+            className={`rounded-lg shadow-lg tab ${tab === tabCarousel.title ? "bg-teal-400 tab-active" : "bg-gray-100"}`}
           >
-            <strong>{tabPanel.title}</strong>
+            <strong>{tabCarousel.title}</strong>
           </button>
         ))}
       </div>
-      <div className="gap-2 grid grid-cols-2">
-        {tabPanels.map(
-          (tabPanel) =>
-            tab === tabPanel.title && <PanelTile panels={tabPanel.panels} />,
-        )}
-      </div>
+      {tabCarousels.map(
+        (tabCarousel) =>
+          tab === tabCarousel.title && (
+            <Carousel key={tabCarousel.title} pictures={tabCarousel.pictures} />
+          ),
+      )}
     </>
   )
 }

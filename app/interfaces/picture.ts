@@ -9,8 +9,7 @@ export type Panel = {
   height?: string
 }
 
-export type TabPanel = {
+export type TabCarousel = {
   title: string
-  color: string
-  panels: Panel[]
+  pictures: Picture[]
 }

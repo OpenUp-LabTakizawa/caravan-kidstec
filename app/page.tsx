@@ -107,9 +107,7 @@ export default function Home(): JSX.Element {
         </div>
       </section>
       <section id="review" className="gap-4 grid">
-        <h2 className="fo={true}nt-bold font-zenMa={true}ruGot={true}hic text-3xl">
-          参加者の声
-        </h2>
+        <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
       <Video

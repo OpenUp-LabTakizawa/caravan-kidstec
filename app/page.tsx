@@ -1,13 +1,12 @@
 import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
+import { EventTablist } from "@/app/components/layout/tablist"
 import { Video } from "@/app/components/media/video"
 import type { Panel, TabPanel } from "@/app/interfaces/picture"
 import { EVENT, TOKYO_CHIBA } from "@/app/lib/constant"
-import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
-import { EventTablist } from "./components/layout/tablist"
 
 export default function Home(): JSX.Element {
   const techPanels: Panel[] = [
@@ -144,16 +143,6 @@ export default function Home(): JSX.Element {
       <section className="gap-2 grid">
         <EventTablist tabPanels={tabPanels} />
       </section>
-      {tabPanels.map((tabPanel) => (
-        <section key={tabPanel.title} className="gap-2 grid grid-cols-2">
-          <h2
-            className={`col-span-2 font-bold font-zenMaruGothic text-3xl ${tabPanel.color}`}
-          >
-            {tabPanel.title}
-          </h2>
-          <PanelTile panels={tabPanel.panels} />
-        </section>
-      ))}
       <section id="review" className="gap-4 grid">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
@@ -192,29 +181,5 @@ export default function Home(): JSX.Element {
         </div>
       </section>
     </article>
-  )
-}
-
-function PanelTile({ panels }: Readonly<{ panels: Panel[] }>): JSX.Element {
-  return (
-    <>
-      {panels.map((panel) => (
-        <figure key={panel.alt} className="first-of-type:col-span-2">
-          <Image
-            loader={cloudfrontLoader}
-            src={panel.src}
-            height={1000}
-            width={1000}
-            alt={panel.alt}
-            className="w-full"
-          />
-          <figcaption
-            className={`bg-amber-50 font-bold grid items-center text-center whitespace-pre${panel.height ? ` ${panel.height}` : ""}`}
-          >
-            {panel.alt}
-          </figcaption>
-        </figure>
-      ))}
-    </>
   )
 }

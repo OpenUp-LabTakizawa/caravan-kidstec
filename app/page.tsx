@@ -1,94 +1,46 @@
 import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
-import { EventTablist } from "@/app/components/layout/tablist"
+import { CarouselTablist } from "@/app/components/layout/tablist"
 import { Video } from "@/app/components/media/video"
-import type { Panel, TabPanel } from "@/app/interfaces/picture"
+import type { Picture } from "@/app/interfaces/picture"
 import { EVENT, TOKYO_CHIBA } from "@/app/lib/constant"
+import { PlusIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export default function Home(): JSX.Element {
-  const techPanels: Panel[] = [
+  const topPictures: Picture[] = [
     {
-      alt: "はじめてのはんだづけにどきどき",
-      src: "/202311/eda_island/soldering.avif",
+      alt: "プログラミング体験",
+      src: "/202206/camps/basic_programming.avif",
     },
     {
-      alt: "ロボット作りに挑戦！",
-      src: "/202311/eda_island/using_nipper.avif",
-      height: "h-12",
+      alt: "サップ体験",
+      src: "/202206/eda_island/sea_circle.avif",
     },
     {
-      alt: "自分で作った\nロボットの完成！",
-      src: "/202311/sandankyo/peace_sign.avif",
+      alt: "オリーブ体験",
+      src: "/202311/eda_island/olive_smile.avif",
     },
     {
-      alt: "親子で協力しながら\nプログラミング！\n上手に動くかな？",
-      src: "/202311/wedding/mother_check.avif",
-      height: "h-20",
+      alt: "自然学習",
+      src: "/202311/sandankyo/check_a_leaf.avif",
     },
     {
-      alt: "最終日のロボサバ大会！\n優勝目指そう！",
-      src: "/202311/wedding/switch_on.avif",
-      height: "h-20",
-    },
-  ] as const
-
-  const naturePanels: Panel[] = [
-    {
-      alt: "マリンスポーツで楽しい思い出！",
-      src: "/202306/eda_island/mega_sap_group.avif",
+      alt: "ブーケ作成",
+      src: "/202311/wedding/flower_arrangement.avif",
     },
     {
-      alt: "手作りのオリーブオイル、\n最初はまだ赤い！",
-      src: "/202311/eda_island/olive_pouring.avif",
-    },
-    {
-      alt: "三段峡の自然に\n興味津々！",
-      src: "/202206/sandankyo/writing.avif",
-    },
-  ] as const
-
-  const weddingPanels: Panel[] = [
-    {
-      alt: "蝶ネクタイをつけて入場！ 素敵！",
-      src: "/202311/wedding/boys_march.avif",
-    },
-    {
-      alt: "ブーケで使うお花選び、\nどれにするか\n決まったかな？",
-      src: "/202311/wedding/select_flowers.avif",
-      height: "h-20",
-    },
-    {
-      alt: "ラッピングも\n自分で挑戦！",
-      src: "/202311/wedding/pouring_water.avif",
-      height: "h-20",
-    },
-  ] as const
-
-  const tabPanels: TabPanel[] = [
-    {
-      title: "プログラミング体験",
-      color: "text-orange-400",
-      panels: techPanels,
-    },
-    {
-      title: "自然学習",
-      color: "text-teal-400",
-      panels: naturePanels,
-    },
-    {
-      title: "結婚式体験",
-      color: "text-rose-400",
-      panels: weddingPanels,
+      alt: "結婚式体験",
+      src: "/202311/wedding/wedding_bouquet.avif",
     },
   ] as const
 
   return (
     <article className="gap-6 grid pb-4 text-base text-center">
       <section>
-        <Carousel />
+        <Carousel pictures={topPictures} />
       </section>
       <section className="gap-4 grid text-center">
         <FadeInUp>
@@ -141,10 +93,23 @@ export default function Home(): JSX.Element {
         />
       </Link>
       <section className="gap-2 grid">
-        <EventTablist tabPanels={tabPanels} />
+        <div className="bg-sky-400 gap-4 grid p-4 rounded-2xl text-white">
+          <strong>こどもテックキャラバンの１日は？</strong>
+          <strong className="bg-white p-2 rounded-2xl shadow-lg text-sky-400">
+            プログラミング体験
+          </strong>
+          <PlusIcon className="mx-auto size-5" />
+          <strong className="bg-white p-2 rounded-2xl shadow-lg text-sky-400">
+            体験学習
+          </strong>
+          過去の体験はこちら！
+          <CarouselTablist />
+        </div>
       </section>
       <section id="review" className="gap-4 grid">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
+        <h2 className="fo={true}nt-bold font-zenMa={true}ruGot={true}hic text-3xl">
+          参加者の声
+        </h2>
         <ReviewCarousel />
       </section>
       <Video

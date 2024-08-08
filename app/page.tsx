@@ -148,7 +148,7 @@ export default function Home(): JSX.Element {
         <ReviewCarousel />
       </section>
       <Video
-        src="https://dk75m1tgsot44.cloudfront.net/movie/202311"
+        src="https://dk75m1tgsot44.cloudfront.net/movie/202407"
         controls={false}
       />
       <section className="gap-4 grid relative">

@@ -53,34 +53,34 @@ export default function Home(): JSX.Element {
           />
         </FadeInUp>
         <div className="font-bold gap-4 grid leading-7 tracking-[.29em]">
-          <p>
+          <FadeInUp>
             プログラミング体験と
             <br />
             体験学習をかけあわせた
             <br />
             親子参加型のイベントです。
-          </p>
-          <p>
+          </FadeInUp>
+          <FadeInUp>
             プログラミング体験は、
             <br />
             ロボットを作って、
             <br />
             自分で動かせるように！
-          </p>
-          <p>
+          </FadeInUp>
+          <FadeInUp>
             体験学習は毎回変わります。
             <br />
             過去には自然学習や結婚式体験で
             <br />
             楽しく学んできました。
-          </p>
-          <p>
+          </FadeInUp>
+          <FadeInUp>
             <span className="text-orange-400">楽しく学び、楽しく遊び、</span>
             <br />
             親子でたくさんの経験と
             <br />
             思い出を作りましょう！
-          </p>
+          </FadeInUp>
         </div>
       </section>
       <Link href={EVENT.href + TOKYO_CHIBA.href}>

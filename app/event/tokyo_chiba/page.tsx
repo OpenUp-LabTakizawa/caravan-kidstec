@@ -31,6 +31,7 @@ export default function TokyoChiba(): JSX.Element {
       date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
       venue: "クルックフィールズ",
       address: "千葉県木更津市矢那2503",
+      googleMapLink: "https://maps.app.goo.gl/o73uHVntuoTg3aym9",
       tags: ["ロボット制作", "自然学習"],
     },
     {
@@ -40,6 +41,7 @@ export default function TokyoChiba(): JSX.Element {
       date: { year: "2024", month: "11", day: "9", dayOfWeek: "土" },
       venue: "東京虎ノ門グローバルスクエア",
       address: "東京都港区虎ノ門1-3-1",
+      googleMapLink: "https://maps.app.goo.gl/98KzCvCeFggZY88P6",
       tags: ["プログラミング", "情報教育"],
     },
     {
@@ -49,6 +51,7 @@ export default function TokyoChiba(): JSX.Element {
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
       venue: "ヴィクトリアガーデン恵比寿迎賓館",
       address: "東京都渋谷区恵比寿南1-14-20",
+      googleMapLink: "https://maps.app.goo.gl/wLmPrkKwYheQgvuM8",
       tags: ["ロボサバ", "結婚式体験"],
     },
   ] as const

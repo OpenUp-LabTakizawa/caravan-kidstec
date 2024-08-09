@@ -5,6 +5,7 @@ export type Schedule = {
   date: { year: string; month: string; day: string; dayOfWeek: string }
   venue: string
   address: string
+  googleMapLink: string
   tags: string[]
 }
 

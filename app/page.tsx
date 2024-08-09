@@ -44,15 +44,6 @@ export default function Home(): JSX.Element {
         <Carousel pictures={topPictures} />
       </section>
       <section className="gap-4 grid text-center">
-        <FadeInUp>
-          <Image
-            src="/caravan-kidstec_logo_line.avif"
-            width={1000}
-            height={1000}
-            alt="こどもテックキャラバン"
-            className="w-full px-1"
-          />
-        </FadeInUp>
         <div className="font-bold gap-4 grid leading-7 tracking-[.29em]">
           <FadeInUp>
             プログラミング体験と
@@ -76,11 +67,13 @@ export default function Home(): JSX.Element {
             楽しく学んできました。
           </FadeInUp>
           <FadeInUp>
-            <span className="text-orange-400">楽しく学び、楽しく遊び、</span>
+            <span className="text-orange-400">
+              たくさん学び、たくさん遊び、
+            </span>
             <br />
-            親子でたくさんの経験と
+            親子で新しい発見や、
             <br />
-            思い出を作りましょう！
+            楽しい思い出を作りましょう！
           </FadeInUp>
         </div>
       </section>

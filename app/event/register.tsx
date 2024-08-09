@@ -33,7 +33,11 @@ function Details({
           </span>
           になります。
         </p>
-        <p>定員に達し次第、募集を終了します。</p>
+        <p>
+          定員に達し次第、
+          <br className="sm:hidden" />
+          募集を終了します。
+        </p>
       </div>
       <table className="border-2 border-sky-400 mx-auto table text-center w-80">
         <tbody>

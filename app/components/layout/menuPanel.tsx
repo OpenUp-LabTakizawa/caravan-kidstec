@@ -1,11 +1,5 @@
 import type { Menu, MenuPanel, Submenu } from "@/app/interfaces/menu"
-import {
-  EVENT,
-  PARTNER,
-  PRIVACY_POLICY,
-  Q_AND_A,
-  SUPPORTER,
-} from "@/app/lib/constant"
+import { PARTNER, Q_AND_A, SUPPORTER } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -17,7 +11,7 @@ export function EventPanels({
   const panels: MenuPanel[] = getPanels(menu, submenu)
 
   return (
-    <section className="gap-4 grid grid-cols-2 justify-items-center mr-2 text-center">
+    <section className="flex gap-4 justify-items-center mr-2 text-center">
       {panels.map((panel) => (
         <Link
           key={panel.name}
@@ -84,17 +78,6 @@ function getPanels(menu: Menu, submenu: Submenu): MenuPanel[] {
     href: menu.href + submenu.href + Q_AND_A.href,
     text: "よくある質問",
   }
-  const privacyPolicyPanel: MenuPanel = {
-    name: PRIVACY_POLICY.name,
-    color: {
-      bg: "bg-orange-400",
-      shadow: "box-orange-shadow",
-      text: "text-orange-400",
-      textHover: "group-hover:text-orange-400",
-    },
-    href: menu.href + submenu.href + PRIVACY_POLICY.href,
-    text: "プライバシーポリシー",
-  }
   const supporterPanel: MenuPanel = {
     name: SUPPORTER.name,
     color: {
@@ -104,10 +87,10 @@ function getPanels(menu: Menu, submenu: Submenu): MenuPanel[] {
       textHover: "group-hover:text-teal-400",
     },
     href: SUPPORTER.href,
-    text: "企画・運営・補助",
+    text: "企画・運営",
   }
   const partnerPanel: MenuPanel = {
-    name: submenu.name + PARTNER.name,
+    name: PARTNER.name,
     color: {
       bg: "bg-rose-400",
       shadow: "box-rose-shadow",
@@ -115,11 +98,8 @@ function getPanels(menu: Menu, submenu: Submenu): MenuPanel[] {
       textHover: "group-hover:text-rose-400",
     },
     href: PARTNER.href + submenu.href,
-    text: "地域イベンター",
+    text: submenu.name,
   }
 
-  if (menu === EVENT) {
-    return [qaPanels, privacyPolicyPanel, supporterPanel, partnerPanel]
-  }
   return [qaPanels, supporterPanel, partnerPanel]
 }

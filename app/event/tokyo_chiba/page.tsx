@@ -42,7 +42,7 @@ export default function TokyoChiba(): JSX.Element {
       venue: "東京虎ノ門グローバルスクエア",
       address: "東京都港区虎ノ門1-3-1",
       googleMapLink: "https://maps.app.goo.gl/98KzCvCeFggZY88P6",
-      tags: ["プログラミング", "情報教育"],
+      tags: ["プログラミング", "ネットリテラシー"],
     },
     {
       alt: "ロボサバ大会",

@@ -48,7 +48,7 @@ function Details({
           <tr>
             <th className="p-0 pl-4">対象者</th>
             <td>
-              小学４年生&nbsp;～&nbsp;中学２年生の
+              小学２年生&nbsp;～&nbsp;中学２年生の
               <br />
               お子様とご家族
               <br />

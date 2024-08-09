@@ -231,7 +231,7 @@ export function ScheduleCarousel({
             alt={schedule.alt}
             className="h-56 object-cover rounded-t-2xl"
           />
-          <div className="bg-amber-50 card-body p-0 py-8 relative rounded-b-2xl">
+          <div className="bg-amber-50 card-body p-0 pb-2 pt-6 relative rounded-b-2xl">
             <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
               Day&nbsp;{index + 1}
             </strong>

@@ -141,7 +141,7 @@ export function ScheduleTablist({
                 <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
                   Day&nbsp;{index + 1}
                 </strong>
-                <h3 className="card-title mx-auto text-2xl whitespace-pre">
+                <h3 className="card-title mx-auto text-xl whitespace-pre">
                   {schedule.title}
                 </h3>
                 <strong className="text-sm">

@@ -122,16 +122,15 @@ export default function Home(): JSX.Element {
           alt="handshake"
           width={1000}
           height={1000}
-          className="absolute bottom-0 max-h-48 object-contain opacity-10 -z-10"
+          className="absolute h-full object-contain opacity-10 w-full -z-10"
         />
-        <h2 className="font-bold font-zenMaruGothic text-3xl">
-          わたしたちの想い
-        </h2>
         <div className="font-bold gap-4 grid text-sm">
           <p>
-            このイベントでは新しい人やものとの出会いや、
+            このイベントでは新しい人や
             <br />
-            初めての体験、わくわくするような瞬間がきっとあります。
+            ものとの出会いや、 初めての体験、
+            <br />
+            わくわくするような瞬間がきっとあります。
           </p>
           <p>
             いままで気づかなかった
@@ -139,9 +138,14 @@ export default function Home(): JSX.Element {
             新しい発見もあるかもしれません。
           </p>
           <p>
-            みなさんの可能性が広がり、
+            普段は関係のない異業種同士のわたしたちが
             <br />
-            新しい何かを見つけられることを願っています。
+            お互いに協力し、このイベントを行っています。
+          </p>
+          <p>
+            わたしたちは皆さんの可能性が広がり
+            <br />
+            心がときめく瞬間に出会えることを願っています。
           </p>
         </div>
       </section>

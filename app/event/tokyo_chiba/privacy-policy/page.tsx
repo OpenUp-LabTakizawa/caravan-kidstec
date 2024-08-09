@@ -4,7 +4,7 @@ import type { JSX } from "react"
 
 export default function PrivacyPolicyPage(): JSX.Element {
   const organizations: string[] = [
-    "CLASSROOM ADVENTURE",
+    "Classroom Adventure",
     "ICHI COMMONS株式会社",
     "PCN仙台",
     "クルックフィールズ",

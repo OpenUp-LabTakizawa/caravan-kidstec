@@ -18,20 +18,19 @@ export function Carousel({
   let slide = 0
 
   useEffect(() => {
-    if (isBusy) {
-      return
-    }
     const carousel: HTMLDivElement = ref.current as HTMLDivElement
     const scrollWidth: number = carousel.scrollWidth
-    const interval = window.setInterval(() => {
-      if (scrollWidth <= slide) {
-        slide = 0
-      } else {
-        slide += scrollWidth / pictures.length
+    const interval = setInterval(() => {
+      if (!isBusy) {
+        if (scrollWidth <= slide) {
+          slide = 0
+        } else {
+          slide += scrollWidth / pictures.length
+        }
+        carousel.scrollLeft = slide
       }
-      carousel.scrollLeft = slide
     }, 3000)
-    return () => window.clearInterval(interval)
+    return () => clearInterval(interval)
   })
 
   return (

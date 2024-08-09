@@ -18,7 +18,9 @@ export function FadeInUp({
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) {
-          entry.target.classList.add("fade-in-up")
+          setTimeout(() => {
+            entry.target.classList.add("fade-in-up")
+          }, 500)
         } else {
           entry.target.classList.remove("fade-in-up")
         }

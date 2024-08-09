@@ -4,7 +4,7 @@ import type { Picture, TabCarousel } from "@/app/interfaces/picture"
 import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
-import { type JSX, useState } from "react"
+import { type JSX, useEffect, useState } from "react"
 import { Carousel } from "./carousel"
 
 export function CarouselTablist(): JSX.Element {
@@ -98,29 +98,50 @@ export function CarouselTablist(): JSX.Element {
 export function ScheduleTablist({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
-  const [tab, setTab] = useState<string>("Day 1")
+  const [tab, setTab] = useState<string>(schedules[0].alt)
+  const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (isMouseEnter) {
+      return
+    }
+    const interval = window.setInterval(() => {
+      if (tab === schedules[0].alt) {
+        setTab(schedules[1].alt)
+      }
+      if (tab === schedules[1].alt) {
+        setTab(schedules[2].alt)
+      }
+      if (tab === schedules[2].alt) {
+        setTab(schedules[0].alt)
+      }
+    }, 3000)
+    return () => window.clearInterval(interval)
+  })
 
   return (
     <div className="sm:hidden">
       <div role="tablist" className="gap-2 tabs">
-        {schedules.map((schedule, index) => (
+        {schedules.map((schedule) => (
           <button
             key={schedule.alt}
             type="button"
             role="tab"
-            onClick={() => setTab(`Day ${index + 1}`)}
-            className={`rounded-lg shadow-lg tab ${tab === `Day ${index + 1}` ? "bg-teal-400 tab-active" : "bg-gray-100"}`}
+            onClick={() => setTab(schedule.alt)}
+            className={`rounded-lg shadow-lg tab ${tab === schedule.alt ? "bg-teal-400 tab-active" : "bg-gray-100"}`}
           >
-            <strong>Day&nbsp;{index + 1}</strong>
+            <strong>{schedule.alt}</strong>
           </button>
         ))}
       </div>
       {schedules.map(
-        (schedule, index) =>
-          tab === `Day ${index + 1}` && (
+        (schedule) =>
+          tab === schedule.alt && (
             <div
               key={schedule.alt}
               role="tabpanel"
+              onMouseEnter={() => setIsMouseEnter(true)}
+              onMouseLeave={() => setIsMouseEnter(false)}
               className="card m-2 shadow-lg"
             >
               <Image
@@ -133,7 +154,7 @@ export function ScheduleTablist({
               />
               <div className="bg-amber-50 card-body p-0 py-2 relative rounded-b-2xl">
                 <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
-                  Day&nbsp;{index + 1}
+                  {schedule.alt}
                 </strong>
                 <h3 className="card-title mx-auto text-xl whitespace-pre">
                   {schedule.title}

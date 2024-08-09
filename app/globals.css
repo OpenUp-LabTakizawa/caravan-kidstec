@@ -89,7 +89,7 @@
 }
 
 .fade-in-up {
-  animation: fade-in-up 1s forwards;
+  animation: fade-in-up 2s ease-in-out forwards;
 }
 
 .flip-horizontal {

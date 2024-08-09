@@ -1,5 +1,4 @@
 import { NAVIGATION } from "@/app/lib/constant"
-import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 
@@ -40,24 +39,12 @@ export function Footer(): JSX.Element {
           ))}
         </ul>
       </nav>
-      <aside className="flex justify-between items-center">
+      <aside>
         <p className="text-sm">
-          Copyright © Open Up Group Inc.&nbsp;
+          Copyright © こどもテックキャラバン 運営事務局&nbsp;
           <br className="block sm:hidden" />
           All rights reserved.
         </p>
-        <Link
-          href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec"
-          target="_blank"
-        >
-          <Image
-            src="/github-mark.svg"
-            width={24}
-            height={24}
-            alt="GitHub"
-            className="size-8"
-          />
-        </Link>
       </aside>
     </footer>
   )

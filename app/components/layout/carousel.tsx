@@ -54,7 +54,11 @@ export function Carousel({
           />
         ))}
       </div>
-      <p className="text-center">※自然体験は開催時期により異なります</p>
+      <p className="text-center text-xs">
+        ※&nbsp;写真は過去開催時のものです。
+        <br />
+        体験学習はイベントごとに異なります。
+      </p>
     </>
   )
 }

@@ -76,7 +76,7 @@ export function CarouselTablist(): JSX.Element {
 
   return (
     <>
-      <div role="tablist" className="tabs">
+      <div role="tablist" className="gap-1 tabs">
         {tabCarousels.map((tabCarousel) => (
           <button
             key={tabCarousel.title}
@@ -92,7 +92,9 @@ export function CarouselTablist(): JSX.Element {
       {tabCarousels.map(
         (tabCarousel) =>
           tab === tabCarousel.title && (
-            <Carousel key={tabCarousel.title} pictures={tabCarousel.pictures} />
+            <div key={tabCarousel.title}>
+              <Carousel pictures={tabCarousel.pictures} />
+            </div>
           ),
       )}
     </>

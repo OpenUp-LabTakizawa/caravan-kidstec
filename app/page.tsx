@@ -90,7 +90,13 @@ export default function Home(): JSX.Element {
       </ScaleUpDown>
       <section className="gap-2 grid">
         <div className="bg-sky-400 gap-4 grid p-4 rounded-2xl text-white">
-          <strong>こどもテックキャラバンの１日は？</strong>
+          <p>
+            こどもテックキャラバンは
+            <br />
+            <strong>プログラミング</strong>と<strong>体験学習</strong>を
+            <br />
+            かけ合わせた体験型イベント！
+          </p>
           <strong className="bg-white p-2 rounded-2xl shadow-lg text-sky-400">
             プログラミング体験
           </strong>
@@ -98,7 +104,7 @@ export default function Home(): JSX.Element {
           <strong className="bg-white p-2 rounded-2xl shadow-lg text-sky-400">
             体験学習
           </strong>
-          過去の体験はこちら！
+          過去の体験学習はこちら！
           <CarouselTablist />
         </div>
       </section>

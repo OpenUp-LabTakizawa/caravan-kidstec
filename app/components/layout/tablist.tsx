@@ -8,6 +8,28 @@ import { type JSX, useState } from "react"
 import { Carousel } from "./carousel"
 
 export function CarouselTablist(): JSX.Element {
+  const techPictures: Picture[] = [
+    {
+      alt: "はじめてのはんだづけにどきどき",
+      src: "/202311/eda_island/soldering.avif",
+    },
+    {
+      alt: "ロボット作りに挑戦！",
+      src: "/202311/eda_island/using_nipper.avif",
+    },
+    {
+      alt: "自分で作ったロボットの完成！",
+      src: "/202311/sandankyo/peace_sign.avif",
+    },
+    {
+      alt: "親子で協力しながらプログラミング！上手に動くかな？",
+      src: "/202311/wedding/mother_check.avif",
+    },
+    {
+      alt: "最終日のロボサバ大会！優勝目指そう！",
+      src: "/202311/wedding/switch_on.avif",
+    },
+  ] as const
   const naturePictures: Picture[] = [
     {
       alt: "マリンスポーツで楽しい思い出！",
@@ -36,29 +58,11 @@ export function CarouselTablist(): JSX.Element {
       src: "/202311/wedding/pouring_water.avif",
     },
   ] as const
-  const techPictures: Picture[] = [
-    {
-      alt: "はじめてのはんだづけにどきどき",
-      src: "/202311/eda_island/soldering.avif",
-    },
-    {
-      alt: "ロボット作りに挑戦！",
-      src: "/202311/eda_island/using_nipper.avif",
-    },
-    {
-      alt: "自分で作ったロボットの完成！",
-      src: "/202311/sandankyo/peace_sign.avif",
-    },
-    {
-      alt: "親子で協力しながらプログラミング！上手に動くかな？",
-      src: "/202311/wedding/mother_check.avif",
-    },
-    {
-      alt: "最終日のロボサバ大会！優勝目指そう！",
-      src: "/202311/wedding/switch_on.avif",
-    },
-  ] as const
   const tabCarousels: TabCarousel[] = [
+    {
+      title: "プログラミング体験",
+      pictures: techPictures,
+    },
     {
       title: "自然学習",
       pictures: naturePictures,
@@ -67,23 +71,19 @@ export function CarouselTablist(): JSX.Element {
       title: "結婚式体験",
       pictures: weddingPictures,
     },
-    {
-      title: "プログラミング体験",
-      pictures: techPictures,
-    },
   ] as const
   const [tab, setTab] = useState<string>(tabCarousels[0].title)
 
   return (
     <>
-      <div role="tablist" className="gap-2 tabs">
+      <div role="tablist" className="tabs">
         {tabCarousels.map((tabCarousel) => (
           <button
             key={tabCarousel.title}
             type="button"
             role="tab"
             onClick={() => setTab(tabCarousel.title)}
-            className={`rounded-lg shadow-lg tab ${tab === tabCarousel.title ? "bg-teal-400 tab-active" : "bg-gray-100"}`}
+            className={`rounded-lg shadow-lg tab text-xs ${tab === tabCarousel.title ? "bg-teal-400 tab-active" : "bg-gray-100"}`}
           >
             <strong>{tabCarousel.title}</strong>
           </button>

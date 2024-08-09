@@ -102,21 +102,20 @@ export function ScheduleTablist({
   const [isBusy, setIsBusy] = useState<boolean>(false)
 
   useEffect(() => {
-    if (isBusy) {
-      return
-    }
-    const interval = window.setInterval(() => {
-      if (tab === schedules[0].alt) {
-        setTab(schedules[1].alt)
-      }
-      if (tab === schedules[1].alt) {
-        setTab(schedules[2].alt)
-      }
-      if (tab === schedules[2].alt) {
-        setTab(schedules[0].alt)
+    const interval = setInterval(() => {
+      if (!isBusy) {
+        if (tab === schedules[0].alt) {
+          setTab(schedules[1].alt)
+        }
+        if (tab === schedules[1].alt) {
+          setTab(schedules[2].alt)
+        }
+        if (tab === schedules[2].alt) {
+          setTab(schedules[0].alt)
+        }
       }
     }, 3000)
-    return () => window.clearInterval(interval)
+    return () => clearInterval(interval)
   })
 
   return (

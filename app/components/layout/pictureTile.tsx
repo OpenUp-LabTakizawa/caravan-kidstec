@@ -35,7 +35,7 @@ export function HistoryPictures({
   })
 
   return (
-    <div className="grid grid-cols-3">
+    <div className="gap-1 grid grid-cols-3">
       {pictures.map((picture) => (
         <Link
           key={picture.alt}

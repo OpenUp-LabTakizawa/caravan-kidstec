@@ -99,10 +99,10 @@ export function ScheduleTablist({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   const [tab, setTab] = useState<string>(schedules[0].alt)
-  const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
+  const [isBusy, setIsBusy] = useState<boolean>(false)
 
   useEffect(() => {
-    if (isMouseEnter) {
+    if (isBusy) {
       return
     }
     const interval = window.setInterval(() => {
@@ -140,8 +140,10 @@ export function ScheduleTablist({
             <div
               key={schedule.alt}
               role="tabpanel"
-              onMouseEnter={() => setIsMouseEnter(true)}
-              onMouseLeave={() => setIsMouseEnter(false)}
+              onMouseEnter={() => setIsBusy(true)}
+              onMouseLeave={() => setIsBusy(false)}
+              onTouchStart={() => setIsBusy(true)}
+              onTouchEnd={() => setIsBusy(false)}
               className="card m-2 shadow-lg"
             >
               <Image

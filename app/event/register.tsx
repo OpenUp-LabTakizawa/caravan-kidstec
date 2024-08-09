@@ -35,14 +35,14 @@ function Details({
         </p>
         <p>定員に達し次第、募集を終了します。</p>
       </div>
-      <table className="border-2 border-sky-400 mx-auto table text-center w-96">
+      <table className="border-2 border-sky-400 mx-auto table text-center w-80">
         <tbody>
           <tr>
-            <th>募集人数</th>
+            <th className="p-0 pl-4">募集人数</th>
             <td>{guideline.participantsNumber}</td>
           </tr>
           <tr>
-            <th>対象者</th>
+            <th className="p-0 pl-4">対象者</th>
             <td>
               小学４年生&nbsp;～&nbsp;中学２年生の
               <br />
@@ -52,7 +52,7 @@ function Details({
             </td>
           </tr>
           <tr>
-            <th>参加費</th>
+            <th className="p-0 pl-4">参加費</th>
             <td>
               無料
               <br />
@@ -60,17 +60,21 @@ function Details({
             </td>
           </tr>
           <tr>
-            <th>参加条件</th>
+            <th className="p-0 pl-4">参加条件</th>
             <td>
               <ul>
                 <li>
-                  ３日間で１つのイベントである為、
+                  ３日間で１つの
+                  <br />
+                  イベントである為、
                   <br />
                   全日程にご参加頂けること
                 </li>
                 <br />
                 <li>
-                  イベントの感想やアンケートに
+                  イベントの感想や
+                  <br />
+                  アンケートに
                   <br />
                   ご対応頂けること
                 </li>
@@ -90,7 +94,7 @@ function Details({
             </td>
           </tr>
           <tr>
-            <th>応募締切</th>
+            <th className="p-0 pl-4">応募締切</th>
             <td className="decoration-4 decoration-orange-400 font-bold underline">
               {guideline.deadline}
             </td>
@@ -107,7 +111,7 @@ function Procedure({
   return (
     <section className="gap-4 grid px-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
-      <ul className="gap-2 grid mx-auto text-sm w-96">
+      <ul className="gap-2 grid mx-auto text-sm w-80">
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
           <strong className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />1

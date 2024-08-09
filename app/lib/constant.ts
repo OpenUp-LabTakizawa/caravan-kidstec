@@ -6,7 +6,7 @@ export const SITE_TITLE: string = "こどもテックキャラバン"
 export const DESCRIPTION: string = "こども向けマルチ体験ワークショップイベント"
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
-export const TOKYO_CHIBA_DEADLINE: string = "２０２４年９月３１日"
+export const TOKYO_CHIBA_DEADLINE: string = "２０２４年１０月１０日"
 export const HIROSHIMA: Submenu = {
   name: "広島",
   href: "/hiroshima",

@@ -14,14 +14,14 @@ export default function TokyoChiba(): JSX.Element {
         "30haの広大な農場を舞台に繰り広げられる、\n消費や食のあり方を「農業」 「食」 「アート」の\n３つのコンテンツを軸に提案する、\nサステナブルファーム＆パーク「KURKKUFIELDS」。\n\n自然やアートに触れる様々なフィールドツアー、\nイベント、施設での宿泊体験などを通じて、\n人間本来の生きる喜びや、いのちのてざわり、\nそして持続可能な社会を実現していくためのヒントを\n共有出来ればと考えています。",
     },
     {
-      name: "CLASSROOM ADVENTURE",
+      name: "Classroom Adventure",
       href: "https://www.classroom-adventure.com/",
       src: "/logo/classroom-adventure_logo.svg",
       introduction:
         "ワクワクする学びを。 学びのゲーミフィケーション\n(ゲームの要素を活かして楽しく学ぶこと。)に情熱を燃やし、\n情報検証の最前線に立つ慶応義塾大学の\n大学生が運営する団体です。\n\n「レイのブログ」とは真実を見つける力を全ての人へ。\n真実と噓を見分けるスキルを教育する\n今までにないメディアリテラシープログラムです。",
     },
     {
-      name: "griteen",
+      name: "Griteen",
       href: "https://griteen.com/",
       src: "/logo/griteen_logo.avif",
       introduction:

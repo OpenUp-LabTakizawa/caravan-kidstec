@@ -11,21 +11,21 @@ import type { JSX } from "react"
 export default function SupporterPage(): JSX.Element {
   const supporters: Supporter[] = [
     {
-      name: "ICHI COMMONS株式会社",
+      name: "ICHI COMMONS",
       href: "https://ichicommons.com/",
       src: "/logo/ichicommons_logo.svg",
       business: "社会課題解決への\nインフラ事業",
       purpose: "サステナビリティ活動で\n企業も、社会も持続可能に",
     },
     {
-      name: "株式会社オープンアップグループ",
+      name: "オープンアップグループ",
       href: "https://www.openupgroup.co.jp/",
       src: "/logo/openup_logo.svg",
       business: "エンジニア派遣事業",
       purpose: "幸せな仕事を通じて\nひとりひとりの可能性を\nひらく社会に",
     },
     {
-      name: "株式会社テイクアンドギヴ・ニーズ",
+      name: "テイクアンドギヴ・ニーズ",
       href: "https://www.tgn.co.jp/",
       src: "/logo/take_and_give_needs_logo.svg",
       business: "ホテルウェディング事業",
@@ -40,7 +40,7 @@ export default function SupporterPage(): JSX.Element {
         {supporters.map((supporter) => (
           <section
             key={supporter.name}
-            className="bg-base-200 gap-1 grid grid-cols-3 items-center min-h-32 p-4 rounded-2xl shadow-lg sm:grid-cols-2"
+            className="bg-base-200 gap-1 grid grid-cols-2 items-center min-h-32 p-4 rounded-2xl shadow-lg sm:grid-cols-2"
           >
             <Image
               loader={cloudfrontLoader}
@@ -48,9 +48,9 @@ export default function SupporterPage(): JSX.Element {
               width={1000}
               height={1000}
               alt={supporter.name}
-              className="col-span-1 w-full object-contain sm:max-h-20"
+              className="w-full object-contain sm:max-h-20"
             />
-            <div className="col-span-2 grid gap-2 text-center sm:col-span-1">
+            <div className="grid gap-2 text-center sm:col-span-1">
               <h2 className="flex font-bold items-center justify-center text-sm">
                 <Link href={supporter.href} target="_blank" className="link">
                   {supporter.name}

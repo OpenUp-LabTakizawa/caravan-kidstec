@@ -8,7 +8,7 @@ import { type JSX, useState } from "react"
 import { Carousel } from "./carousel"
 
 export function CarouselTablist(): JSX.Element {
-  const techPictures: Picture[] = [
+  const programmingPictures: Picture[] = [
     {
       alt: "はじめてのはんだづけにどきどき",
       src: "/202311/eda_island/soldering.avif",
@@ -30,7 +30,7 @@ export function CarouselTablist(): JSX.Element {
       src: "/202311/wedding/switch_on.avif",
     },
   ] as const
-  const naturePictures: Picture[] = [
+  const eventPictures: Picture[] = [
     {
       alt: "マリンスポーツで楽しい思い出！",
       src: "/202306/eda_island/mega_sap_group.avif",
@@ -43,8 +43,6 @@ export function CarouselTablist(): JSX.Element {
       alt: "三段峡の自然に興味津々！",
       src: "/202206/sandankyo/writing.avif",
     },
-  ] as const
-  const weddingPictures: Picture[] = [
     {
       alt: "蝶ネクタイをつけて入場！ 素敵！",
       src: "/202311/wedding/boys_march.avif",
@@ -61,29 +59,25 @@ export function CarouselTablist(): JSX.Element {
   const tabCarousels: TabCarousel[] = [
     {
       title: "プログラミング体験",
-      pictures: techPictures,
+      pictures: programmingPictures,
     },
     {
-      title: "自然学習",
-      pictures: naturePictures,
-    },
-    {
-      title: "結婚式体験",
-      pictures: weddingPictures,
+      title: "体験学習",
+      pictures: eventPictures,
     },
   ] as const
   const [tab, setTab] = useState<string>(tabCarousels[0].title)
 
   return (
     <>
-      <div role="tablist" className="gap-1 tabs">
+      <div role="tablist" className="gap-1 grid-cols-2 tabs">
         {tabCarousels.map((tabCarousel) => (
           <button
             key={tabCarousel.title}
             type="button"
             role="tab"
             onClick={() => setTab(tabCarousel.title)}
-            className={`rounded-lg shadow-lg tab text-xs ${tab === tabCarousel.title ? "bg-teal-400 tab-active" : "bg-gray-100"}`}
+            className={`rounded-lg shadow-lg tab ${tab === tabCarousel.title ? "bg-teal-400 tab-active" : "bg-gray-100"}`}
           >
             <strong>{tabCarousel.title}</strong>
           </button>

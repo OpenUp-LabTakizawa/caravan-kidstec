@@ -105,8 +105,8 @@ export default function Home(): JSX.Element {
             体験学習
           </strong>
           過去の体験学習はこちら！
-          <CarouselTablist />
         </div>
+        <CarouselTablist />
       </section>
       <section id="review" className="gap-4 grid">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>

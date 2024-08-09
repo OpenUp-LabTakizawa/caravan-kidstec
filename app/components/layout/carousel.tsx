@@ -14,11 +14,11 @@ export function Carousel({
   pictures,
 }: Readonly<{ pictures: Picture[] }>): JSX.Element {
   const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-  const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
+  const [isBusy, setIsBusy] = useState<boolean>(false)
   let slide = 0
 
   useEffect(() => {
-    if (isMouseEnter) {
+    if (isBusy) {
       return
     }
     const carousel: HTMLDivElement = ref.current as HTMLDivElement
@@ -39,10 +39,10 @@ export function Carousel({
       <div
         ref={ref}
         className="carousel rounded-2xl shadow-lg w-full"
-        onMouseEnter={() => setIsMouseEnter(true)}
-        onMouseLeave={() => setIsMouseEnter(false)}
-        onTouchStart={() => setIsMouseEnter(true)}
-        onTouchEnd={() => setIsMouseEnter(false)}
+        onMouseEnter={() => setIsBusy(true)}
+        onMouseLeave={() => setIsBusy(false)}
+        onTouchStart={() => setIsBusy(true)}
+        onTouchEnd={() => setIsBusy(false)}
       >
         {pictures.map((picture) => (
           <Image
@@ -136,13 +136,13 @@ export function ReviewCarousel(): JSX.Element {
   const reviewsRef: RefObject<Map<string, HTMLDivElement>> = useRef<
     Map<string, HTMLDivElement>
   >(new Map<string, HTMLDivElement>())
-  const [isMouseEnter, setIsMouseEnter] = useState<boolean>(false)
+  const [isBusy, setIsBusy] = useState<boolean>(false)
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
     const reviewWidth = 240
     const interval = setInterval(() => {
-      if (!isMouseEnter && carousel.classList.contains("observing")) {
+      if (!isBusy && carousel.classList.contains("observing")) {
         carousel.scrollLeft += reviewWidth
       }
     }, 3000)
@@ -188,10 +188,10 @@ export function ReviewCarousel(): JSX.Element {
     <div
       ref={carouselRef}
       className="carousel carousel-center relative space-x-4"
-      onMouseEnter={() => setIsMouseEnter(true)}
-      onMouseLeave={() => setIsMouseEnter(false)}
-      onTouchStart={() => setIsMouseEnter(true)}
-      onTouchEnd={() => setIsMouseEnter(false)}
+      onMouseEnter={() => setIsBusy(true)}
+      onMouseLeave={() => setIsBusy(false)}
+      onTouchStart={() => setIsBusy(true)}
+      onTouchEnd={() => setIsBusy(false)}
       onScroll={() => ScrollEvent()}
     >
       <ScrollRightHint />

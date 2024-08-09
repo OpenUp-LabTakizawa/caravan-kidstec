@@ -16,15 +16,15 @@ export function ScaleUpDown({
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
+      for (const entry of entries) {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add("scale-up-down")
-          }, index * 200)
+          }, 500)
         } else {
           entry.target.classList.remove("scale-up-down")
         }
-      })
+      }
     })
 
     observer.observe(ref.current as HTMLSpanElement)

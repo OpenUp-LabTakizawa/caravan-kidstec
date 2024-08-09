@@ -1,4 +1,5 @@
 import { FadeInUp } from "@/app/components/animation/fadeInUp"
+import { ScaleUpDown } from "@/app/components/animation/scaleUpDown"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { CarouselTablist } from "@/app/components/layout/tablist"
 import { Video } from "@/app/components/media/video"
@@ -83,15 +84,17 @@ export default function Home(): JSX.Element {
           </FadeInUp>
         </div>
       </section>
-      <Link href={EVENT.href + TOKYO_CHIBA.href}>
-        <Image
-          src="/202410_event_banner.avif"
-          width={1000}
-          height={1000}
-          alt="イベント詳細はこちら"
-          className="w-full"
-        />
-      </Link>
+      <ScaleUpDown>
+        <Link href={EVENT.href + TOKYO_CHIBA.href}>
+          <Image
+            src="/202410_event_banner.avif"
+            width={1000}
+            height={1000}
+            alt="イベント詳細はこちら"
+            className="w-full"
+          />
+        </Link>
+      </ScaleUpDown>
       <section className="gap-2 grid">
         <div className="bg-sky-400 gap-4 grid p-4 rounded-2xl text-white">
           <strong>こどもテックキャラバンの１日は？</strong>

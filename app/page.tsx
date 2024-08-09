@@ -40,6 +40,17 @@ export default function Home(): JSX.Element {
 
   return (
     <article className="gap-6 grid pb-4 text-base text-center">
+      <ScaleUpDown>
+        <Link href={EVENT.href + TOKYO_CHIBA.href}>
+          <Image
+            src="/202410_event_banner.avif"
+            width={1000}
+            height={1000}
+            alt="イベント詳細はこちら"
+            className="w-full"
+          />
+        </Link>
+      </ScaleUpDown>
       <section>
         <Carousel pictures={topPictures} />
       </section>
@@ -77,17 +88,6 @@ export default function Home(): JSX.Element {
           </FadeInUp>
         </div>
       </section>
-      <ScaleUpDown>
-        <Link href={EVENT.href + TOKYO_CHIBA.href}>
-          <Image
-            src="/202410_event_banner.avif"
-            width={1000}
-            height={1000}
-            alt="イベント詳細はこちら"
-            className="w-full"
-          />
-        </Link>
-      </ScaleUpDown>
       <section className="gap-2 grid">
         <div className="bg-sky-400 gap-4 grid p-4 rounded-2xl text-white">
           <p>

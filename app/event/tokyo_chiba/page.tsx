@@ -25,7 +25,7 @@ export default function TokyoChiba(): JSX.Element {
   }
   const schedules: Schedule[] = [
     {
-      alt: "ロボット制作",
+      alt: "Day 1",
       src: "/202407/hiroshima_university/soldering_with_father.avif",
       title: "午前：ロボット制作\n午後：自然学習",
       date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
@@ -35,7 +35,7 @@ export default function TokyoChiba(): JSX.Element {
       tags: ["ロボット制作", "自然学習"],
     },
     {
-      alt: "謎解き体験！",
+      alt: "Day 2",
       src: "/content/rays-blog_girl.avif",
       title: "午前：プログラミング体験\n午後：謎解き体験！",
       date: { year: "2024", month: "11", day: "9", dayOfWeek: "土" },
@@ -45,7 +45,7 @@ export default function TokyoChiba(): JSX.Element {
       tags: ["プログラミング", "ネットリテラシー"],
     },
     {
-      alt: "ロボサバ大会",
+      alt: "Day 3",
       src: "/202407/wedding/put_a_piece_of_cake.avif",
       title: "午前：ロボサバ大会\n午後：結婚式体験",
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },

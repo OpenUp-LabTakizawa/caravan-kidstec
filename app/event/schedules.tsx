@@ -35,7 +35,7 @@ export function Schedules({
                   className="flex gap-1 items-center link"
                 >
                   {schedule.address}
-                  <ArrowTopRightOnSquareIcon className="size-5" />
+                  <ArrowTopRightOnSquareIcon className="size-4" />
                 </Link>
               </p>
             </div>

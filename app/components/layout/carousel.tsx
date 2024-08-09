@@ -218,7 +218,7 @@ export function ScheduleCarousel({
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   return (
     <div className="carousel hidden overflow-visible relative space-x-1 sm:flex">
-      {schedules.map((schedule, index) => (
+      {schedules.map((schedule) => (
         <div
           key={schedule.alt}
           className="card carousel-item my-2 shadow-lg w-56"
@@ -233,7 +233,7 @@ export function ScheduleCarousel({
           />
           <div className="bg-amber-50 card-body p-0 pb-2 pt-6 relative rounded-b-2xl">
             <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
-              Day&nbsp;{index + 1}
+              {schedule.alt}
             </strong>
             <h3 className="card-title mx-auto text-lg whitespace-pre">
               {schedule.title}

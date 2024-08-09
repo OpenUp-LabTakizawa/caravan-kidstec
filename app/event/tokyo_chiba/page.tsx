@@ -26,7 +26,7 @@ export default function TokyoChiba(): JSX.Element {
   const schedules: Schedule[] = [
     {
       alt: "ロボット制作",
-      src: "/202311/sandankyo/brothers.avif",
+      src: "/202407/hiroshima_university/soldering_with_father.avif",
       title: "午前：ロボット制作\n午後：自然学習",
       date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
       venue: "クルックフィールズ",
@@ -44,7 +44,7 @@ export default function TokyoChiba(): JSX.Element {
     },
     {
       alt: "ロボサバ大会",
-      src: "/202206/eda_island/course_challenge.avif",
+      src: "/202407/wedding/put_a_piece_of_cake.avif",
       title: "午前：ロボサバ大会\n午後：結婚式体験",
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
       venue: "ヴィクトリアガーデン恵比寿迎賓館",

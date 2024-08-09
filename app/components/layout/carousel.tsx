@@ -41,6 +41,8 @@ export function Carousel({
         className="carousel rounded-2xl shadow-lg w-full"
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
+        onTouchStart={() => setIsMouseEnter(true)}
+        onTouchEnd={() => setIsMouseEnter(false)}
       >
         {pictures.map((picture) => (
           <Image
@@ -188,6 +190,8 @@ export function ReviewCarousel(): JSX.Element {
       className="carousel carousel-center relative space-x-4"
       onMouseEnter={() => setIsMouseEnter(true)}
       onMouseLeave={() => setIsMouseEnter(false)}
+      onTouchStart={() => setIsMouseEnter(true)}
+      onTouchEnd={() => setIsMouseEnter(false)}
       onScroll={() => ScrollEvent()}
     >
       <ScrollRightHint />

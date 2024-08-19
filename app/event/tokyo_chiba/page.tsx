@@ -84,7 +84,6 @@ export default function TokyoChiba(): JSX.Element {
         <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
       <section className="grid gap-4 text-center">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
         <ScheduleTablist schedules={schedules} />
         <ScheduleCarousel schedules={schedules} />
       </section>

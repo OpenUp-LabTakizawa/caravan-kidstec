@@ -7,11 +7,9 @@ export function Schedules({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   return (
-    <section className="grid mx-auto relative text-center">
-      <strong className="absolute bg-sky-400 justify-self-start left-0 p-1 top-0">
-        開催日時
-      </strong>
-      <ul>
+    <section className="gap-2 grid mx-auto relative text-center">
+      <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
+      <ul className="border-2 border-sky-400 w-80">
         {schedules.map((schedule) => (
           <li key={schedule.alt} className="grid gap-1 border-b p-2">
             <p className="decoration-4 decoration-sky-400 underline">

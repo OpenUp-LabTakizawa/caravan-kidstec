@@ -98,6 +98,16 @@ function Details({
             </td>
           </tr>
           <tr>
+            <th className="p-0 pl-4">注意事項</th>
+            <td>
+              10/26(土)のイベント
+              <br />
+              クルックフィールズでは、
+              <br />
+              飲食物の持ち込みは出来ません。
+            </td>
+          </tr>
+          <tr>
             <th className="p-0 pl-4">応募締切</th>
             <td className="decoration-4 decoration-orange-400 font-bold underline">
               {guideline.deadline}

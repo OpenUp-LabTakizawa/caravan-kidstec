@@ -3,7 +3,6 @@
 import { OpacityZero } from "@/app/components/animation/opacityZero"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
-import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
@@ -210,52 +209,6 @@ export function ReviewCarousel(): JSX.Element {
             <UserCircleIcon className="text-rose-400 size-6 mr-1" />
             {review.areaAndUser}
           </p>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-export function ScheduleCarousel({
-  schedules,
-}: Readonly<{ schedules: Schedule[] }>): JSX.Element {
-  return (
-    <div className="carousel hidden overflow-visible relative space-x-1 sm:flex">
-      {schedules.map((schedule) => (
-        <div
-          key={schedule.alt}
-          className="card carousel-item my-2 shadow-lg w-56"
-        >
-          <Image
-            loader={cloudfrontLoader}
-            src={schedule.src}
-            width={1000}
-            height={1000}
-            alt={schedule.alt}
-            className="h-56 object-cover rounded-t-2xl"
-          />
-          <div className="bg-amber-50 card-body p-0 pb-2 pt-6 relative rounded-b-2xl">
-            <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
-              {schedule.alt}
-            </strong>
-            <h3 className="card-title mx-auto text-lg whitespace-pre">
-              {schedule.title}
-            </h3>
-            <strong className="text-sm">
-              {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
-              日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
-            </strong>
-            <div className="card-actions justify-center">
-              {schedule.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="badge badge-outline bg-base-200 text-xs"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       ))}
     </div>

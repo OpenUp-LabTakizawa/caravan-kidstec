@@ -119,7 +119,7 @@ export function ScheduleTablist({
   })
 
   return (
-    <div className="sm:hidden">
+    <div className="max-w-screen-sm mx-auto">
       <div role="tablist" className="gap-2 tabs">
         {schedules.map((schedule) => (
           <button
@@ -151,14 +151,16 @@ export function ScheduleTablist({
                 width={1000}
                 height={1000}
                 alt={schedule.alt}
-                className="h-60 object-cover rounded-t-2xl"
+                className="h-60 object-cover rounded-t-2xl sm:h-80"
               />
               <div className="bg-amber-50 card-body p-0 py-2 relative rounded-b-2xl">
                 <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
                   {schedule.alt}
                 </strong>
-                <h3 className="card-title mx-auto text-xl whitespace-pre">
-                  {schedule.title}
+                <h3 className="card-title mx-auto text-xl whitespace-pre sm:whitespace-normal">
+                  {schedule.title.am}
+                  <br />
+                  {schedule.title.pm}
                 </h3>
                 <strong className="text-sm">
                   {schedule.date.year}年{schedule.date.month}月

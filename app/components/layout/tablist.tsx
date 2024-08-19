@@ -119,7 +119,7 @@ export function ScheduleTablist({
   })
 
   return (
-    <section className="gap-4 grid max-w-screen-sm mx-auto text-center">
+    <section className="gap-4 grid max-w-lg mx-auto text-center">
       <div role="tablist" className="gap-2 tabs">
         {schedules.map((schedule) => (
           <button

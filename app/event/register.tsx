@@ -13,17 +13,17 @@ export function Register({
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
     <>
-      <Details guideline={guideline} />
+      <Requirement guideline={guideline} />
       <Procedure guideline={guideline} />
     </>
   )
 }
 
-function Details({
+function Requirement({
   guideline,
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
-    <section id="details" className="gap-4 grid px-4 text-center">
+    <section id={guideline.anchorLink} className="gap-4 grid px-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
       <div className="bg-sky-300 gap-1 grid grid-flow-col items-center mx-auto p-4 rounded-2xl shadow-lg text-base">
         <InformationCircleIcon className="row-span-2 size-10" />
@@ -100,11 +100,25 @@ function Details({
           <tr>
             <th className="p-0 pl-4">注意事項</th>
             <td>
-              10/26(土)のイベント
-              <br />
-              クルックフィールズでは、
-              <br />
-              飲食物の持ち込みは出来ません。
+              <ul>
+                <li>
+                  プログラム初日の
+                  <br />
+                  クルックフィールズは、
+                  <br />
+                  飲食物のお持ち込みが
+                  <br />
+                  できません。
+                </li>
+                <br />
+                <li>
+                  場内でのお弁当のご購入と
+                  <br />
+                  マイボトルのご持参を
+                  <br />
+                  お願いいたします。
+                </li>
+              </ul>
             </td>
           </tr>
           <tr>

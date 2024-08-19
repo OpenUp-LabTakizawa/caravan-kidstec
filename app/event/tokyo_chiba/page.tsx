@@ -18,6 +18,7 @@ import type { JSX } from "react"
 
 export default function TokyoChiba(): JSX.Element {
   const guideline: Guideline = {
+    anchorLink: "requirement",
     participantsNumber: "２０組程",
     deadline: TOKYO_CHIBA_DEADLINE,
     lineLink: TOKYO_CHIBA_LINE,
@@ -76,7 +77,7 @@ export default function TokyoChiba(): JSX.Element {
           </strong>
           <br />
           <Link
-            href={`${EVENT.href}${TOKYO_CHIBA.href}#details`}
+            href={`${EVENT.href}${TOKYO_CHIBA.href}#${guideline.anchorLink}`}
             className="link text-sky-400 font-bold"
           >
             応募要項
@@ -87,9 +88,7 @@ export default function TokyoChiba(): JSX.Element {
         </p>
         <LineApply lineLink={TOKYO_CHIBA_LINE} />
       </section>
-      <section className="grid gap-4 text-center">
-        <ScheduleTablist schedules={schedules} />
-      </section>
+      <ScheduleTablist schedules={schedules} />
       <Register guideline={guideline} />
       <LineApply lineLink={TOKYO_CHIBA_LINE} />
       <EventPanels menu={EVENT} submenu={TOKYO_CHIBA} />

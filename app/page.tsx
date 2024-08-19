@@ -1,4 +1,3 @@
-import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { ScaleUpDown } from "@/app/components/animation/scaleUpDown"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { CarouselTablist } from "@/app/components/layout/tablist"
@@ -56,28 +55,28 @@ export default function Home(): JSX.Element {
       </section>
       <section className="gap-4 grid text-center">
         <div className="font-bold gap-4 grid leading-7 tracking-[.29em]">
-          <FadeInUp>
+          <span className="fade-in-up-timeline inline-block opacity-0">
             プログラミング体験と
             <br />
             体験学習をかけあわせた
             <br />
             親子参加型のイベントです。
-          </FadeInUp>
-          <FadeInUp>
+          </span>
+          <span className="fade-in-up-timeline inline-block opacity-0">
             プログラミング体験は、
             <br />
             ロボットを作って、
             <br />
             自分で動かせるように！
-          </FadeInUp>
-          <FadeInUp>
+          </span>
+          <span className="fade-in-up-timeline inline-block opacity-0">
             体験学習は毎回変わります。
             <br />
             過去には自然学習や結婚式体験で
             <br />
             楽しく学んできました。
-          </FadeInUp>
-          <FadeInUp>
+          </span>
+          <span className="fade-in-up-timeline inline-block opacity-0">
             <span className="text-orange-400">
               たくさん学び、たくさん遊び、
             </span>
@@ -85,7 +84,7 @@ export default function Home(): JSX.Element {
             親子で新しい発見や、
             <br />
             楽しい思い出を作りましょう！
-          </FadeInUp>
+          </span>
         </div>
       </section>
       <section className="gap-2 grid">

@@ -92,6 +92,12 @@
   animation: fade-in-up 2s ease-in-out forwards;
 }
 
+.fade-in-up-timeline {
+  animation: fade-in-up ease-in-out forwards;
+  animation-timeline: view();
+  animation-range: contain 0% contain 100%;
+}
+
 .flip-horizontal {
   transform: scale(-1, 1);
 }
@@ -200,6 +206,15 @@
   100% {
     opacity: 0;
     transform: translatey(20px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

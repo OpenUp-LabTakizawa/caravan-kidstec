@@ -1,7 +1,7 @@
 export type Schedule = {
   alt: string
   src: string
-  title: string
+  title: { am: string; pm: string }
   date: { year: string; month: string; day: string; dayOfWeek: string }
   venue: string
   address: string

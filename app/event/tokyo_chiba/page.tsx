@@ -1,5 +1,4 @@
 import { LineApply } from "@/app/components/button/lineAddFriends"
-import { ScheduleCarousel } from "@/app/components/layout/carousel"
 import { Heading } from "@/app/components/layout/heading"
 import { EventPanels } from "@/app/components/layout/menuPanel"
 import { ScheduleTablist } from "@/app/components/layout/tablist"
@@ -27,7 +26,10 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "Day 1",
       src: "/202407/hiroshima_university/soldering_with_father.avif",
-      title: "午前：ロボット制作\n午後：自然学習",
+      title: {
+        am: "午前：ロボット制作",
+        pm: "午後：自然学習\n（農と食、いのちのてざわり）",
+      },
       date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
       venue: "クルックフィールズ",
       address: "千葉県木更津市矢那2503",
@@ -37,7 +39,7 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "Day 2",
       src: "/content/rays-blog_girl.avif",
-      title: "午前：プログラミング体験\n午後：謎解き体験！",
+      title: { am: "午前：プログラミング体験", pm: "午後：謎解き体験！" },
       date: { year: "2024", month: "11", day: "9", dayOfWeek: "土" },
       venue: "東京虎ノ門グローバルスクエア",
       address: "東京都港区虎ノ門1-3-1",
@@ -47,7 +49,7 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "Day 3",
       src: "/202407/wedding/put_a_piece_of_cake.avif",
-      title: "午前：ロボサバ大会\n午後：結婚式体験",
+      title: { am: "午前：ロボサバ大会", pm: "午後：結婚式体験" },
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
       venue: "ヴィクトリアガーデン恵比寿迎賓館",
       address: "東京都渋谷区恵比寿南1-14-20",
@@ -87,7 +89,6 @@ export default function TokyoChiba(): JSX.Element {
       </section>
       <section className="grid gap-4 text-center">
         <ScheduleTablist schedules={schedules} />
-        <ScheduleCarousel schedules={schedules} />
       </section>
       <Register guideline={guideline} />
       <LineApply lineLink={TOKYO_CHIBA_LINE} />

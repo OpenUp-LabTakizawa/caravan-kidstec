@@ -9,7 +9,7 @@ export function Schedules({
   return (
     <section className="gap-2 grid mx-auto relative text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
-      <ul className="border-2 border-sky-400 w-80">
+      <ul className="border-2 border-sky-400 min-w-80">
         {schedules.map((schedule) => (
           <li key={schedule.alt} className="grid gap-1 border-b p-2">
             <p className="decoration-4 decoration-sky-400 underline">

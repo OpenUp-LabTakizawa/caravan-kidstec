@@ -69,7 +69,9 @@ export default function TokyoChiba(): JSX.Element {
       <Schedules schedules={schedules} />
       <section className="grid gap-1 mx-auto p-4 text-center w-max">
         <p className="mb-2">
-          <strong className="text-sm">全日程参加が必須となります。</strong>
+          <strong className="text-sm md:text-xl">
+            全日程参加が必須となります。
+          </strong>
           <br />
           <Link
             href={`${EVENT.href}${TOKYO_CHIBA.href}#details`}

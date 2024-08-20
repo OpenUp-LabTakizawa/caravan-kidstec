@@ -353,12 +353,10 @@ export function IndicatorCarousel(): JSX.Element {
   })
 
   function onClick(indicator: Indicator): void {
-    setIsBusy(true)
     setTab(indicator.title)
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const image = carousel.children[indicator.index]
-    image.scrollIntoView({ behavior: "smooth" })
-    setIsBusy(false)
+    carousel.scrollLeft =
+      (carousel.scrollWidth / pictures.length / 2) * indicator.index
   }
 
   function ScrollEvent(): void {

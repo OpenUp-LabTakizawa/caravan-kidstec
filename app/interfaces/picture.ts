@@ -8,8 +8,3 @@ export type Panel = {
   alt: string
   height?: string
 }
-
-export type TabCarousel = {
-  title: string
-  pictures: Picture[]
-}

@@ -1,5 +1,6 @@
 "use client"
 
+import type { Indicator } from "@/app/interfaces/indicator"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
 import { cloudfrontLoader } from "@/app/lib/loader"
@@ -44,14 +45,14 @@ export function Carousel(): JSX.Element {
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
     const images = imagesRef.current as Map<string, HTMLImageElement>
-
-    if (carousel.childNodes.length === pictures.length) {
-      for (const node of [...images.values()].reverse()) {
-        const newImage = node.cloneNode(true)
-        carousel.prepend(newImage)
-      }
+    for (const node of [...images.values()].reverse()) {
+      const newImage = node.cloneNode(true)
+      carousel.prepend(newImage)
     }
+  }, [])
 
+  useEffect(() => {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
     const interval = setInterval(() => {
       if (!isBusy) {
         carousel.scrollLeft += carousel.scrollWidth / (pictures.length * 2)
@@ -109,103 +110,6 @@ export function Carousel(): JSX.Element {
             width={1000}
             alt={picture.alt}
             className="aspect-square carousel-item object-cover w-full"
-            onMouseEnter={() => setIsBusy(true)}
-            onMouseLeave={() => setIsBusy(false)}
-            onTouchStart={() => setIsBusy(true)}
-            onTouchEnd={() => setIsBusy(false)}
-          />
-        ))}
-      </div>
-      <p className="text-center text-xs">
-        ※&nbsp;写真は過去開催時のものです。
-        <br />
-        体験学習はイベントごとに異なります。
-      </p>
-    </>
-  )
-}
-
-export function OldCarousel({
-  pictures,
-}: Readonly<{ pictures: Picture[] }>): JSX.Element {
-  const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-  const imagesRef: RefObject<Map<string, HTMLImageElement>> = useRef<
-    Map<string, HTMLImageElement>
-  >(new Map<string, HTMLImageElement>())
-  const [isBusy, setIsBusy] = useState<boolean>(false)
-
-  useEffect(() => {
-    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images = imagesRef.current as Map<string, HTMLImageElement>
-
-    if (carousel.childNodes.length === pictures.length) {
-      for (const node of [...images.values()].reverse()) {
-        const newImage = node.cloneNode(true)
-        carousel.prepend(newImage)
-      }
-    }
-
-    const interval = setInterval(() => {
-      if (!isBusy) {
-        carousel.scrollLeft += carousel.scrollWidth / (pictures.length * 2)
-      }
-    }, 3000)
-    return () => clearInterval(interval)
-  })
-
-  function ScrollEvent(): void {
-    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images = imagesRef.current as Map<string, HTMLImageElement>
-    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth
-    const scrollLeft = carousel.scrollLeft
-    const buffer = carousel.scrollWidth / 4
-
-    if (maxScrollLeft < scrollLeft + buffer) {
-      for (const node of images.values()) {
-        const newImage = node.cloneNode(true)
-        carousel.append(newImage)
-        carousel.firstChild?.remove()
-      }
-    }
-    if (scrollLeft < buffer) {
-      for (const node of [...images.values()].reverse()) {
-        const newImage = node.cloneNode(true)
-        carousel.prepend(newImage)
-        carousel.lastChild?.remove()
-      }
-    }
-  }
-
-  return (
-    <>
-      <div
-        ref={carouselRef}
-        className="carousel rounded-2xl shadow-lg w-full"
-        onMouseEnter={() => setIsBusy(true)}
-        onMouseLeave={() => setIsBusy(false)}
-        onTouchStart={() => setIsBusy(true)}
-        onTouchEnd={() => setIsBusy(false)}
-        onScroll={() => ScrollEvent()}
-      >
-        {pictures.map((picture) => (
-          <Image
-            key={picture.alt}
-            ref={(node: HTMLImageElement) => {
-              imagesRef.current?.set(picture.alt, node)
-              return () => {
-                imagesRef.current?.delete(picture.alt)
-              }
-            }}
-            loader={cloudfrontLoader}
-            src={picture.src}
-            height={1000}
-            width={1000}
-            alt={picture.alt}
-            className="aspect-square carousel-item object-cover w-full"
-            onMouseEnter={() => setIsBusy(true)}
-            onMouseLeave={() => setIsBusy(false)}
-            onTouchStart={() => setIsBusy(true)}
-            onTouchEnd={() => setIsBusy(false)}
           />
         ))}
       </div>
@@ -293,14 +197,15 @@ export function ReviewCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const reviewElements = reviewsRef.current as Map<string, HTMLDivElement>
-    if (carousel.childNodes.length === reviews.length) {
-      for (const node of [...reviewElements.values()].reverse()) {
-        const newReview = node.cloneNode(true)
-        carousel.prepend(newReview)
-      }
+    const reviews = reviewsRef.current as Map<string, HTMLDivElement>
+    for (const node of [...reviews.values()].reverse()) {
+      const newReview = node.cloneNode(true)
+      carousel.prepend(newReview)
     }
+  }, [])
 
+  useEffect(() => {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
     const interval = setInterval(() => {
       if (!isBusy) {
         carousel.scrollLeft += carousel.scrollWidth / (reviews.length * 2)
@@ -361,5 +266,175 @@ export function ReviewCarousel(): JSX.Element {
         </div>
       ))}
     </div>
+  )
+}
+
+export function IndicatorCarousel(): JSX.Element {
+  const programmingPictures: Picture[] = [
+    {
+      alt: "はじめてのはんだづけにどきどき",
+      src: "/202311/eda_island/soldering.avif",
+    },
+    {
+      alt: "ロボット作りに挑戦！",
+      src: "/202311/eda_island/using_nipper.avif",
+    },
+    {
+      alt: "自分で作ったロボットの完成！",
+      src: "/202311/sandankyo/peace_sign.avif",
+    },
+    {
+      alt: "親子で協力しながらプログラミング！上手に動くかな？",
+      src: "/202311/wedding/mother_check.avif",
+    },
+    {
+      alt: "最終日のロボサバ大会！優勝目指そう！",
+      src: "/202311/wedding/switch_on.avif",
+    },
+  ] as const
+  const eventPictures: Picture[] = [
+    {
+      alt: "マリンスポーツで楽しい思い出！",
+      src: "/202306/eda_island/mega_sap_group.avif",
+    },
+    {
+      alt: "手作りのオリーブオイル、最初はまだ赤い！",
+      src: "/202311/eda_island/olive_pouring.avif",
+    },
+    {
+      alt: "三段峡の自然に興味津々！",
+      src: "/202206/sandankyo/writing.avif",
+    },
+    {
+      alt: "蝶ネクタイをつけて入場！ 素敵！",
+      src: "/202311/wedding/boys_march.avif",
+    },
+    {
+      alt: "ブーケで使うお花選び、どれにするか決まったかな？",
+      src: "/202311/wedding/select_flowers.avif",
+    },
+    {
+      alt: "ラッピングも自分で挑戦！",
+      src: "/202311/wedding/pouring_water.avif",
+    },
+  ] as const
+  const pictures: Picture[] = [
+    ...programmingPictures,
+    ...eventPictures,
+  ] as const
+  const indicators: Indicator[] = [
+    { title: "プログラミング体験", index: 0 },
+    { title: "体験学習", index: 5 },
+  ] as const
+  const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const imagesRef: RefObject<Map<string, HTMLImageElement>> = useRef<
+    Map<string, HTMLImageElement>
+  >(new Map<string, HTMLImageElement>())
+  const [tab, setTab] = useState<string>(indicators[0].title)
+  const [isBusy, setIsBusy] = useState<boolean>(false)
+
+  useEffect(() => {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images = imagesRef.current as Map<string, HTMLImageElement>
+    for (const node of [...images.values()].reverse()) {
+      const newImage = node.cloneNode(true)
+      carousel.prepend(newImage)
+    }
+  }, [])
+
+  useEffect(() => {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const interval = setInterval(() => {
+      if (!isBusy) {
+        carousel.scrollLeft += carousel.scrollWidth / (pictures.length * 2)
+      }
+    }, 3000)
+    return () => clearInterval(interval)
+  })
+
+  function onClick(indicator: Indicator): void {
+    setIsBusy(true)
+    setTab(indicator.title)
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const image = carousel.children[indicator.index]
+    image.scrollIntoView({ behavior: "smooth" })
+    setIsBusy(false)
+  }
+
+  function ScrollEvent(): void {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images = imagesRef.current as Map<string, HTMLImageElement>
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth
+    const scrollLeft = carousel.scrollLeft
+    const buffer = carousel.scrollWidth / 4
+
+    if (maxScrollLeft < scrollLeft + buffer) {
+      for (const node of images.values()) {
+        const newImage = node.cloneNode(true)
+        carousel.append(newImage)
+        carousel.firstChild?.remove()
+      }
+    }
+    if (scrollLeft < buffer) {
+      for (const node of [...images.values()].reverse()) {
+        const newImage = node.cloneNode(true)
+        carousel.prepend(newImage)
+        carousel.lastChild?.remove()
+      }
+    }
+  }
+
+  return (
+    <>
+      <div role="tablist" className="content-end gap-1 grid grid-cols-2">
+        {indicators.map((indicator) => (
+          <button
+            key={indicator.title}
+            type="button"
+            role="tab"
+            onClick={() => onClick(indicator)}
+            className={`py-1 rounded-lg shadow-lg ${tab === indicator.title ? "bg-teal-400" : "bg-gray-100"}`}
+          >
+            <strong>{indicator.title}</strong>
+          </button>
+        ))}
+      </div>
+      <div
+        ref={carouselRef}
+        className="carousel rounded-2xl shadow-lg w-full"
+        onMouseEnter={() => setIsBusy(true)}
+        onMouseLeave={() => setIsBusy(false)}
+        onTouchStart={() => setIsBusy(true)}
+        onTouchEnd={() => setIsBusy(false)}
+        onScroll={() => ScrollEvent()}
+      >
+        {pictures.map((picture) => (
+          <Image
+            key={picture.alt}
+            ref={(node: HTMLImageElement) => {
+              imagesRef.current?.set(picture.alt, node)
+              return () => {
+                imagesRef.current?.delete(picture.alt)
+              }
+            }}
+            loader={cloudfrontLoader}
+            src={picture.src}
+            height={1000}
+            width={1000}
+            alt={picture.alt}
+            className="aspect-square carousel-item object-cover w-full"
+            onMouseEnter={() => setIsBusy(true)}
+            onMouseLeave={() => setIsBusy(false)}
+            onTouchStart={() => setIsBusy(true)}
+            onTouchEnd={() => setIsBusy(false)}
+          />
+        ))}
+      </div>
+      <p className="text-center text-xs">
+        ※&nbsp;写真は過去開催時のものです。
+        <br />
+        体験学習はイベントごとに異なります。
+      </p>
+    </>
   )
 }

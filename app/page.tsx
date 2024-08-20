@@ -1,6 +1,9 @@
 import { ScaleUpDown } from "@/app/components/animation/scaleUpDown"
-import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
-import { CarouselTablist } from "@/app/components/layout/tablist"
+import {
+  Carousel,
+  IndicatorCarousel,
+  ReviewCarousel,
+} from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import { EVENT, TOKYO_CHIBA } from "@/app/lib/constant"
 import { PlusIcon } from "@heroicons/react/24/solid"
@@ -77,7 +80,7 @@ export default function Home(): JSX.Element {
           </strong>
           過去の体験学習はこちら！
         </div>
-        <CarouselTablist />
+        <IndicatorCarousel />
       </section>
       <section id="review" className="gap-4 grid">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>

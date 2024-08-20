@@ -1,56 +1,211 @@
 "use client"
 
-import { OpacityZero } from "@/app/components/animation/opacityZero"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
-import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
-export function Carousel({
-  pictures,
-}: Readonly<{ pictures: Picture[] }>): JSX.Element {
-  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+export function Carousel(): JSX.Element {
+  const pictures: Picture[] = [
+    {
+      alt: "プログラミング体験",
+      src: "/202206/camps/basic_programming.avif",
+    },
+    {
+      alt: "サップ体験",
+      src: "/202206/eda_island/sea_circle.avif",
+    },
+    {
+      alt: "オリーブ体験",
+      src: "/202311/eda_island/olive_smile.avif",
+    },
+    {
+      alt: "自然学習",
+      src: "/202311/sandankyo/check_a_leaf.avif",
+    },
+    {
+      alt: "ブーケ作成",
+      src: "/202311/wedding/flower_arrangement.avif",
+    },
+    {
+      alt: "結婚式体験",
+      src: "/202311/wedding/wedding_bouquet.avif",
+    },
+  ] as const
+
+  const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const imagesRef: RefObject<Map<string, HTMLImageElement>> = useRef<
+    Map<string, HTMLImageElement>
+  >(new Map<string, HTMLImageElement>())
   const [isBusy, setIsBusy] = useState<boolean>(false)
-  let slide = 0
 
   useEffect(() => {
-    const carousel: HTMLDivElement = ref.current as HTMLDivElement
-    const scrollWidth: number = carousel.scrollWidth
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images = imagesRef.current as Map<string, HTMLImageElement>
+
+    if (carousel.childNodes.length === pictures.length) {
+      for (const node of [...images.values()].reverse()) {
+        const newImage = node.cloneNode(true)
+        carousel.prepend(newImage)
+      }
+    }
+
     const interval = setInterval(() => {
       if (!isBusy) {
-        if (scrollWidth <= slide) {
-          slide = 0
-        } else {
-          slide += scrollWidth / pictures.length
-        }
-        carousel.scrollLeft = slide
+        carousel.scrollLeft += carousel.scrollWidth / (pictures.length * 2)
       }
     }, 3000)
     return () => clearInterval(interval)
   })
 
+  function ScrollEvent(): void {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images = imagesRef.current as Map<string, HTMLImageElement>
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth
+    const scrollLeft = carousel.scrollLeft
+    const buffer = carousel.scrollWidth / 5
+
+    if (maxScrollLeft < scrollLeft + buffer) {
+      for (const node of images.values()) {
+        const newImage = node.cloneNode(true)
+        carousel.append(newImage)
+        carousel.firstChild?.remove()
+      }
+    }
+    if (scrollLeft < buffer) {
+      for (const node of [...images.values()].reverse()) {
+        const newImage = node.cloneNode(true)
+        carousel.prepend(newImage)
+        carousel.lastChild?.remove()
+      }
+    }
+  }
+
   return (
     <>
       <div
-        ref={ref}
+        ref={carouselRef}
         className="carousel rounded-2xl shadow-lg w-full"
         onMouseEnter={() => setIsBusy(true)}
         onMouseLeave={() => setIsBusy(false)}
         onTouchStart={() => setIsBusy(true)}
         onTouchEnd={() => setIsBusy(false)}
+        onScroll={() => ScrollEvent()}
       >
         {pictures.map((picture) => (
           <Image
             key={picture.alt}
+            ref={(node: HTMLImageElement) => {
+              imagesRef.current?.set(picture.alt, node)
+              return () => {
+                imagesRef.current?.delete(picture.alt)
+              }
+            }}
             loader={cloudfrontLoader}
             src={picture.src}
             height={1000}
             width={1000}
             alt={picture.alt}
             className="aspect-square carousel-item object-cover w-full"
+            onMouseEnter={() => setIsBusy(true)}
+            onMouseLeave={() => setIsBusy(false)}
+            onTouchStart={() => setIsBusy(true)}
+            onTouchEnd={() => setIsBusy(false)}
+          />
+        ))}
+      </div>
+      <p className="text-center text-xs">
+        ※&nbsp;写真は過去開催時のものです。
+        <br />
+        体験学習はイベントごとに異なります。
+      </p>
+    </>
+  )
+}
+
+export function OldCarousel({
+  pictures,
+}: Readonly<{ pictures: Picture[] }>): JSX.Element {
+  const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const imagesRef: RefObject<Map<string, HTMLImageElement>> = useRef<
+    Map<string, HTMLImageElement>
+  >(new Map<string, HTMLImageElement>())
+  const [isBusy, setIsBusy] = useState<boolean>(false)
+
+  useEffect(() => {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images = imagesRef.current as Map<string, HTMLImageElement>
+
+    if (carousel.childNodes.length === pictures.length) {
+      for (const node of [...images.values()].reverse()) {
+        const newImage = node.cloneNode(true)
+        carousel.prepend(newImage)
+      }
+    }
+
+    const interval = setInterval(() => {
+      if (!isBusy) {
+        carousel.scrollLeft += carousel.scrollWidth / (pictures.length * 2)
+      }
+    }, 3000)
+    return () => clearInterval(interval)
+  })
+
+  function ScrollEvent(): void {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images = imagesRef.current as Map<string, HTMLImageElement>
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth
+    const scrollLeft = carousel.scrollLeft
+    const buffer = carousel.scrollWidth / 4
+
+    if (maxScrollLeft < scrollLeft + buffer) {
+      for (const node of images.values()) {
+        const newImage = node.cloneNode(true)
+        carousel.append(newImage)
+        carousel.firstChild?.remove()
+      }
+    }
+    if (scrollLeft < buffer) {
+      for (const node of [...images.values()].reverse()) {
+        const newImage = node.cloneNode(true)
+        carousel.prepend(newImage)
+        carousel.lastChild?.remove()
+      }
+    }
+  }
+
+  return (
+    <>
+      <div
+        ref={carouselRef}
+        className="carousel rounded-2xl shadow-lg w-full"
+        onMouseEnter={() => setIsBusy(true)}
+        onMouseLeave={() => setIsBusy(false)}
+        onTouchStart={() => setIsBusy(true)}
+        onTouchEnd={() => setIsBusy(false)}
+        onScroll={() => ScrollEvent()}
+      >
+        {pictures.map((picture) => (
+          <Image
+            key={picture.alt}
+            ref={(node: HTMLImageElement) => {
+              imagesRef.current?.set(picture.alt, node)
+              return () => {
+                imagesRef.current?.delete(picture.alt)
+              }
+            }}
+            loader={cloudfrontLoader}
+            src={picture.src}
+            height={1000}
+            width={1000}
+            alt={picture.alt}
+            className="aspect-square carousel-item object-cover w-full"
+            onMouseEnter={() => setIsBusy(true)}
+            onMouseLeave={() => setIsBusy(false)}
+            onTouchStart={() => setIsBusy(true)}
+            onTouchEnd={() => setIsBusy(false)}
           />
         ))}
       </div>
@@ -138,27 +293,20 @@ export function ReviewCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const reviewWidth = 240
+    const reviewElements = reviewsRef.current as Map<string, HTMLDivElement>
+    if (carousel.childNodes.length === reviews.length) {
+      for (const node of [...reviewElements.values()].reverse()) {
+        const newReview = node.cloneNode(true)
+        carousel.prepend(newReview)
+      }
+    }
+
     const interval = setInterval(() => {
-      if (!isBusy && carousel.classList.contains("observing")) {
-        carousel.scrollLeft += reviewWidth
+      if (!isBusy) {
+        carousel.scrollLeft += carousel.scrollWidth / (reviews.length * 2)
       }
     }, 3000)
     return () => clearInterval(interval)
-  })
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("observing")
-        } else {
-          entry.target.classList.remove("observing")
-        }
-      }
-    })
-    observer.observe(carouselRef.current as HTMLDivElement)
-    return () => observer.disconnect()
   })
 
   function ScrollEvent(): void {
@@ -166,18 +314,20 @@ export function ReviewCarousel(): JSX.Element {
     const reviews = reviewsRef.current as Map<string, HTMLDivElement>
     const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft = carousel.scrollLeft
-    const buffer = 100
+    const buffer = carousel.scrollWidth / 5
 
     if (maxScrollLeft < scrollLeft + buffer) {
       for (const node of reviews.values()) {
-        const newReviews = node.cloneNode(true)
-        carousel.append(newReviews)
+        const newReview = node.cloneNode(true)
+        carousel.append(newReview)
+        carousel.firstChild?.remove()
       }
     }
     if (scrollLeft < buffer) {
       for (const node of [...reviews.values()].reverse()) {
-        const newReviews = node.cloneNode(true)
-        carousel.prepend(newReviews)
+        const newReview = node.cloneNode(true)
+        carousel.prepend(newReview)
+        carousel.lastChild?.remove()
       }
     }
   }
@@ -192,7 +342,6 @@ export function ReviewCarousel(): JSX.Element {
       onTouchEnd={() => setIsBusy(false)}
       onScroll={() => ScrollEvent()}
     >
-      <ScrollRightHint />
       {reviews.map((review) => (
         <div
           key={review.description}
@@ -212,16 +361,5 @@ export function ReviewCarousel(): JSX.Element {
         </div>
       ))}
     </div>
-  )
-}
-
-function ScrollRightHint(): JSX.Element {
-  return (
-    <OpacityZero className="absolute bg-black/60 left-1/2 pt-20 text-white top-1/2 z-10 -translate-y-1/2 ">
-      <ChevronRightIcon className="scroll-right size-20" />
-      <ChevronRightIcon className="scroll-right size-20" />
-      <ChevronRightIcon className="scroll-right size-20" />
-      <span className="px-2 text-xs">右スクロール</span>
-    </OpacityZero>
   )
 }

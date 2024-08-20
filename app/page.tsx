@@ -2,7 +2,6 @@ import { ScaleUpDown } from "@/app/components/animation/scaleUpDown"
 import { Carousel, ReviewCarousel } from "@/app/components/layout/carousel"
 import { CarouselTablist } from "@/app/components/layout/tablist"
 import { Video } from "@/app/components/media/video"
-import type { Picture } from "@/app/interfaces/picture"
 import { EVENT, TOKYO_CHIBA } from "@/app/lib/constant"
 import { PlusIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
@@ -10,33 +9,6 @@ import Link from "next/link"
 import type { JSX } from "react"
 
 export default function Home(): JSX.Element {
-  const topPictures: Picture[] = [
-    {
-      alt: "プログラミング体験",
-      src: "/202206/camps/basic_programming.avif",
-    },
-    {
-      alt: "サップ体験",
-      src: "/202206/eda_island/sea_circle.avif",
-    },
-    {
-      alt: "オリーブ体験",
-      src: "/202311/eda_island/olive_smile.avif",
-    },
-    {
-      alt: "自然学習",
-      src: "/202311/sandankyo/check_a_leaf.avif",
-    },
-    {
-      alt: "ブーケ作成",
-      src: "/202311/wedding/flower_arrangement.avif",
-    },
-    {
-      alt: "結婚式体験",
-      src: "/202311/wedding/wedding_bouquet.avif",
-    },
-  ] as const
-
   return (
     <article className="gap-6 grid pb-4 text-base text-center">
       <ScaleUpDown>
@@ -51,7 +23,7 @@ export default function Home(): JSX.Element {
         </Link>
       </ScaleUpDown>
       <section>
-        <Carousel pictures={topPictures} />
+        <Carousel />
       </section>
       <section className="gap-4 grid text-center">
         <div className="font-bold gap-4 grid leading-7 tracking-[.29em]">

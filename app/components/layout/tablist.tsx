@@ -5,7 +5,7 @@ import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import { type JSX, useEffect, useState } from "react"
-import { Carousel } from "./carousel"
+import { OldCarousel } from "./carousel"
 
 export function CarouselTablist(): JSX.Element {
   const programmingPictures: Picture[] = [
@@ -87,7 +87,7 @@ export function CarouselTablist(): JSX.Element {
         (tabCarousel) =>
           tab === tabCarousel.title && (
             <div key={tabCarousel.title}>
-              <Carousel pictures={tabCarousel.pictures} />
+              <OldCarousel pictures={tabCarousel.pictures} />
             </div>
           ),
       )}

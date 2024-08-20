@@ -93,7 +93,7 @@
 }
 
 .fade-in-up-timeline {
-  animation: fade-in-up ease-in-out forwards;
+  animation: fade-in-up-timeline ease-in-out forwards;
   animation-timeline: view();
   animation-range: contain 0% contain 100%;
 }
@@ -222,6 +222,17 @@
   0% {
     opacity: 0;
     transform: translatey(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+
+@keyframes fade-in-up-timeline {
+  0% {
+    opacity: 0;
+    transform: translatey(40px);
   }
   100% {
     opacity: 1;

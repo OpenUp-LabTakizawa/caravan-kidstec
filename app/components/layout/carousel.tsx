@@ -64,17 +64,14 @@ export function Carousel(): JSX.Element {
     const scrollLeft = carousel.scrollLeft
     const buffer = carousel.scrollWidth / 5
 
-    if (
-      scrollLeft + buffer - 10 < maxScrollLeft &&
-      maxScrollLeft < scrollLeft + buffer
-    ) {
+    if (maxScrollLeft < scrollLeft + buffer) {
       for (const node of images.values()) {
         const newImage = node.cloneNode(true)
         carousel.append(newImage)
         carousel.firstChild?.remove()
       }
     }
-    if (buffer - 10 < scrollLeft && scrollLeft < buffer) {
+    if (scrollLeft < buffer) {
       for (const node of [...images.values()].reverse()) {
         const newImage = node.cloneNode(true)
         carousel.prepend(newImage)
@@ -220,17 +217,14 @@ export function ReviewCarousel(): JSX.Element {
     const scrollLeft = carousel.scrollLeft
     const buffer = carousel.scrollWidth / 5
 
-    if (
-      scrollLeft + buffer - 10 < maxScrollLeft &&
-      maxScrollLeft < scrollLeft + buffer
-    ) {
+    if (maxScrollLeft < scrollLeft + buffer) {
       for (const node of reviews.values()) {
         const newReview = node.cloneNode(true)
         carousel.append(newReview)
         carousel.firstChild?.remove()
       }
     }
-    if (buffer - 10 < scrollLeft && scrollLeft < buffer) {
+    if (scrollLeft < buffer) {
       for (const node of [...reviews.values()].reverse()) {
         const newReview = node.cloneNode(true)
         carousel.prepend(newReview)
@@ -372,17 +366,14 @@ export function IndicatorCarousel(): JSX.Element {
     const scrollLeft = carousel.scrollLeft
     const buffer = carousel.scrollWidth / 4
 
-    if (
-      scrollLeft + buffer - 10 < maxScrollLeft &&
-      maxScrollLeft < scrollLeft + buffer
-    ) {
+    if (maxScrollLeft < scrollLeft + buffer) {
       for (const node of images.values()) {
         const newImage = node.cloneNode(true)
         carousel.append(newImage)
         carousel.firstChild?.remove()
       }
     }
-    if (buffer - 10 < scrollLeft && scrollLeft < buffer) {
+    if (scrollLeft < buffer) {
       for (const node of [...images.values()].reverse()) {
         const newImage = node.cloneNode(true)
         carousel.prepend(newImage)

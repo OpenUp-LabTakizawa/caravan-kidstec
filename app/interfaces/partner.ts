@@ -1,6 +1,6 @@
 export type Partner = {
-  name: string
-  href: string
-  src: string
-  introduction: string
+  readonly name: string
+  readonly href: string
+  readonly src: string
+  readonly introduction: string
 }

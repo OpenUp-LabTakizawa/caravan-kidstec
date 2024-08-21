@@ -1,7 +1,7 @@
 export type Supporter = {
-  name: string
-  href: string
-  src: string
-  business: string
-  purpose: string
+  readonly name: string
+  readonly href: string
+  readonly src: string
+  readonly business: string
+  readonly purpose: string
 }

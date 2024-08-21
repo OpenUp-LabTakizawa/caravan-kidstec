@@ -1,24 +1,24 @@
 export type Menu = {
-  name: string
-  href: string
-  textColor: string
-  submenus: Submenu[]
+  readonly name: string
+  readonly href: string
+  readonly textColor: string
+  readonly submenus: Submenu[]
 }
 
 export type MenuPanel = {
-  name: string
-  color: {
-    bg: string
-    shadow: string
-    text: string
-    textHover: string
+  readonly name: string
+  readonly color: {
+    readonly bg: string
+    readonly shadow: string
+    readonly text: string
+    readonly textHover: string
   }
-  href: string
-  text: string
+  readonly href: string
+  readonly text: string
 }
 
 export type Submenu = {
-  name: string
-  href: string
-  textColor: string
+  readonly name: string
+  readonly href: string
+  readonly textColor: string
 }

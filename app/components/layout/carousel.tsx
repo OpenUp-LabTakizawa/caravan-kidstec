@@ -11,28 +11,24 @@ import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 export function Carousel(): JSX.Element {
   const pictures: Picture[] = [
     {
-      alt: "プログラミング体験",
-      src: "/202206/camps/basic_programming.avif",
-    },
-    {
-      alt: "サップ体験",
-      src: "/202206/eda_island/sea_circle.avif",
-    },
-    {
-      alt: "オリーブ体験",
-      src: "/202311/eda_island/olive_smile.avif",
-    },
-    {
       alt: "自然学習",
-      src: "/202311/sandankyo/check_a_leaf.avif",
+      src: "/202407/hiroshima_university/capture_insect.avif",
     },
     {
-      alt: "ブーケ作成",
-      src: "/202311/wedding/flower_arrangement.avif",
+      alt: "ロボサバ大会",
+      src: "/202407/wedding/enjoy_robot_with_family.avif",
     },
     {
       alt: "結婚式体験",
-      src: "/202311/wedding/wedding_bouquet.avif",
+      src: "/202407/wedding/bubbles_entrance.avif",
+    },
+    {
+      alt: "ブーケ作成",
+      src: "/202311/wedding/select_flowers.avif",
+    },
+    {
+      alt: "プログラミング",
+      src: "/202407/wedding/typing_with_mother.avif",
     },
   ] as const
 
@@ -278,50 +274,54 @@ export function ReviewCarousel(): JSX.Element {
 export function IndicatorCarousel(): JSX.Element {
   const programmingPictures: Picture[] = [
     {
+      alt: "はんだ確認中…",
+      src: "/202311/eda_island/check_solder.avif",
+    },
+    {
       alt: "はじめてのはんだづけにどきどき",
-      src: "/202311/eda_island/soldering.avif",
+      src: "/202407/eda_island/soldering.avif",
+    },
+    {
+      alt: "最終日のロボサバ大会！優勝目指そう！",
+      src: "/202407/wedding/watch_robot_move.avif",
+    },
+    {
+      alt: "ロボットが上手く動くコツを伝授！",
+      src: "/202407/wedding/teaching.avif",
+    },
+    {
+      alt: "ロボサバ大会に挑戦！上手に動くかな？",
+      src: "/202407/wedding/put_robot_on_course.avif",
     },
     {
       alt: "ロボット作りに挑戦！",
       src: "/202311/eda_island/using_nipper.avif",
     },
-    {
-      alt: "自分で作ったロボットの完成！",
-      src: "/202311/sandankyo/peace_sign.avif",
-    },
-    {
-      alt: "親子で協力しながらプログラミング！上手に動くかな？",
-      src: "/202311/wedding/mother_check.avif",
-    },
-    {
-      alt: "最終日のロボサバ大会！優勝目指そう！",
-      src: "/202311/wedding/switch_on.avif",
-    },
   ] as const
   const eventPictures: Picture[] = [
     {
-      alt: "マリンスポーツで楽しい思い出！",
-      src: "/202306/eda_island/mega_sap_group.avif",
+      alt: "採れたてのお魚に興味津々！",
+      src: "/202407/eda_island/holding_fish.avif",
+    },
+    {
+      alt: "広島大学のチェックポイント確認中…",
+      src: "/202407/hiroshima_university/checking_course.avif",
+    },
+    {
+      alt: "広島大学で昆虫採集！",
+      src: "/202407/hiroshima_university/insect_netting_boy.avif",
     },
     {
       alt: "手作りのオリーブオイル、最初はまだ赤い！",
       src: "/202311/eda_island/olive_pouring.avif",
     },
     {
-      alt: "三段峡の自然に興味津々！",
-      src: "/202206/sandankyo/writing.avif",
+      alt: "ブーケを持って入場！",
+      src: "/202311/wedding/wedding_bouquet.avif",
     },
     {
-      alt: "蝶ネクタイをつけて入場！ 素敵！",
-      src: "/202311/wedding/boys_march.avif",
-    },
-    {
-      alt: "ブーケで使うお花選び、どれにするか決まったかな？",
-      src: "/202311/wedding/select_flowers.avif",
-    },
-    {
-      alt: "ラッピングも自分で挑戦！",
-      src: "/202311/wedding/pouring_water.avif",
+      alt: "ケーキ作りも自分で挑戦！",
+      src: "/202407/wedding/pastry_chef_boy.avif",
     },
   ] as const
   const pictures: Picture[] = [

@@ -1,6 +1,6 @@
 export type Guideline = {
-  anchorLink: string
-  participantsNumber: string
-  deadline: string
-  lineLink: string
+  readonly anchorLink: string
+  readonly participantsNumber: string
+  readonly deadline: string
+  readonly lineLink: string
 }

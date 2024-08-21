@@ -1,10 +1,10 @@
 export type Picture = {
-  alt: string
-  src: string
+  readonly alt: string
+  readonly src: string
 }
 
 export type Panel = {
-  src: string
-  alt: string
-  height?: string
+  readonly src: string
+  readonly alt: string
+  readonly height?: string
 }

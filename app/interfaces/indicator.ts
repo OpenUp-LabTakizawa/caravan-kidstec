@@ -1,4 +1,4 @@
 export type Indicator = {
-  title: string
-  index: number
+  readonly title: string
+  readonly index: number
 }

@@ -1,5 +1,5 @@
 export type QandA = {
-  title: string
-  question: string
-  answer: string
+  readonly title: string
+  readonly question: string
+  readonly answer: string
 }

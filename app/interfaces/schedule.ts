@@ -1,21 +1,31 @@
 export type Schedule = {
-  alt: string
-  src: string
-  title: { am: string; pm: string }
-  date: { year: string; month: string; day: string; dayOfWeek: string }
-  venue: string
-  address: string
-  googleMapLink: string
-  tags: string[]
+  readonly alt: string
+  readonly src: string
+  readonly title: { readonly am: string; readonly pm: string }
+  readonly date: {
+    readonly year: string
+    readonly month: string
+    readonly day: string
+    readonly dayOfWeek: string
+  }
+  readonly venue: string
+  readonly address: string
+  readonly googleMapLink: string
+  readonly tags: string[]
 }
 
 export type Program = {
-  date: { year: string; month: string; day: string; dayOfWeek: string }
-  venue: string
+  readonly date: {
+    readonly year: string
+    readonly month: string
+    readonly day: string
+    readonly dayOfWeek: string
+  }
+  readonly venue: string
 }
 
 export type EventDate = {
-  href: string
-  title: string
-  programs: Program[]
+  readonly href: string
+  readonly title: string
+  readonly programs: Program[]
 }

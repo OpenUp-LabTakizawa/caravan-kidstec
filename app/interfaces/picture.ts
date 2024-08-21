@@ -8,3 +8,9 @@ export type Panel = {
   readonly alt: string
   readonly height?: string
 }
+
+export type Carousel = {
+  readonly alt: string
+  readonly src: string
+  readonly key: number
+}

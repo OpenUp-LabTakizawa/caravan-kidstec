@@ -1,8 +1,8 @@
 import { ScaleUpDown } from "@/app/components/animation/scaleUpDown"
 import {
-  Carousel,
   IndicatorCarousel,
   ReviewCarousel,
+  TopCarousel,
 } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import { EVENT, TOKYO_CHIBA } from "@/app/lib/constant"
@@ -26,7 +26,7 @@ export default function Home(): JSX.Element {
         </Link>
       </ScaleUpDown>
       <section>
-        <Carousel />
+        <TopCarousel />
       </section>
       <section className="gap-4 grid text-center">
         <div className="font-bold gap-4 grid leading-7 tracking-[.29em]">

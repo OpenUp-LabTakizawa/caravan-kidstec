@@ -1,57 +1,61 @@
 "use client"
 
 import type { Indicator } from "@/app/interfaces/indicator"
-import type { Picture } from "@/app/interfaces/picture"
+import type { Carousel, Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
-export function Carousel(): JSX.Element {
-  const pictures: Picture[] = [
+export function TopCarousel(): JSX.Element {
+  const topPictures: Carousel[] = [
     {
       alt: "自然学習",
       src: "/202407/hiroshima_university/capture_insect.avif",
+      key: 1,
     },
     {
       alt: "ロボサバ大会",
       src: "/202407/wedding/enjoy_robot_with_family.avif",
+      key: 2,
     },
     {
       alt: "結婚式体験",
       src: "/202407/wedding/bubbles_entrance.avif",
+      key: 3,
     },
     {
       alt: "ブーケ作成",
       src: "/202311/wedding/select_flowers.avif",
+      key: 4,
     },
     {
       alt: "プログラミング",
       src: "/202407/wedding/typing_with_mother.avif",
+      key: 5,
     },
-  ] as const
-
+  ]
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-  const imagesRef: RefObject<Map<string, HTMLImageElement>> = useRef<
-    Map<string, HTMLImageElement>
-  >(new Map<string, HTMLImageElement>())
+  const [pictures, setPictures] = useState<Carousel[]>([...topPictures])
   const [isBusy, setIsBusy] = useState<boolean>(false)
+  let timeoutId: globalThis.Timer
 
   useEffect(() => {
-    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images = imagesRef.current as Map<string, HTMLImageElement>
-    for (const node of [...images.values()].reverse()) {
-      const newImage = node.cloneNode(true)
-      carousel.prepend(newImage)
-    }
+    const leftPictures = topPictures.map((picture) => {
+      return {
+        ...picture,
+        key: picture.key - topPictures.length,
+      }
+    })
+    setPictures([...leftPictures, ...topPictures])
   }, [])
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
     const interval = setInterval(() => {
       if (!isBusy) {
-        carousel.scrollLeft += carousel.scrollWidth / (pictures.length * 2)
+        carousel.scrollLeft += carousel.scrollWidth / (topPictures.length * 2)
       }
     }, 3000)
     return () => clearInterval(interval)
@@ -59,25 +63,31 @@ export function Carousel(): JSX.Element {
 
   function ScrollEvent(): void {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images = imagesRef.current as Map<string, HTMLImageElement>
     const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft = carousel.scrollLeft
-    const buffer = carousel.scrollWidth / 5
+    const buffer = carousel.scrollWidth / topPictures.length
 
-    if (maxScrollLeft < scrollLeft + buffer) {
-      for (const node of images.values()) {
-        const newImage = node.cloneNode(true)
-        carousel.append(newImage)
-        carousel.firstChild?.remove()
+    clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => {
+      if (maxScrollLeft < scrollLeft + buffer) {
+        const nextPictures = pictures.map((picture) => {
+          return {
+            ...picture,
+            key: picture.key + topPictures.length,
+          }
+        })
+        setPictures([...nextPictures])
       }
-    }
-    if (scrollLeft < buffer) {
-      for (const node of [...images.values()].reverse()) {
-        const newImage = node.cloneNode(true)
-        carousel.prepend(newImage)
-        carousel.lastChild?.remove()
+      if (scrollLeft < buffer) {
+        const nextPictures = pictures.map((picture) => {
+          return {
+            ...picture,
+            key: picture.key - topPictures.length,
+          }
+        })
+        setPictures([...nextPictures])
       }
-    }
+    }, 100)
   }
 
   return (
@@ -93,13 +103,7 @@ export function Carousel(): JSX.Element {
       >
         {pictures.map((picture) => (
           <Image
-            key={picture.alt}
-            ref={(node: HTMLImageElement) => {
-              imagesRef.current?.set(picture.alt, node)
-              return () => {
-                imagesRef.current?.delete(picture.alt)
-              }
-            }}
+            key={picture.key}
             loader={cloudfrontLoader}
             src={picture.src}
             height={1000}
@@ -421,10 +425,6 @@ export function IndicatorCarousel(): JSX.Element {
             width={1000}
             alt={picture.alt}
             className="aspect-square carousel-item object-cover w-full"
-            onMouseEnter={() => setIsBusy(true)}
-            onMouseLeave={() => setIsBusy(false)}
-            onTouchStart={() => setIsBusy(true)}
-            onTouchEnd={() => setIsBusy(false)}
           />
         ))}
       </div>

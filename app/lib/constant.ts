@@ -148,27 +148,27 @@ export const HIROSHIMA_HISTORY: EventDate[] = [
 
 export const HIROSHIMA_PICTURES: Picture[] = [
   {
-    alt: "writing",
-    src: "/202206/sandankyo/writing.avif",
+    alt: "採れたてのお魚に興味津々！",
+    src: "/202407/eda_island/holding_fish.avif",
   },
   {
-    alt: "using_nipper",
-    src: "/202311/eda_island/using_nipper.avif",
+    alt: "広島大学のチェックポイント確認中…",
+    src: "/202407/hiroshima_university/checking_course.avif",
   },
   {
-    alt: "peace_sign",
-    src: "/202311/sandankyo/peace_sign.avif",
+    alt: "広島大学で昆虫採集！",
+    src: "/202407/hiroshima_university/insect_netting_boy.avif",
   },
   {
-    alt: "mother_check",
-    src: "/202311/wedding/mother_check.avif",
-  },
-  {
-    alt: "switch_on",
-    src: "/202311/wedding/switch_on.avif",
-  },
-  {
-    alt: "olive_pouring",
+    alt: "手作りのオリーブオイル、最初はまだ赤い！",
     src: "/202311/eda_island/olive_pouring.avif",
+  },
+  {
+    alt: "ブーケを持って入場！",
+    src: "/202311/wedding/wedding_bouquet.avif",
+  },
+  {
+    alt: "ケーキ作りも自分で挑戦！",
+    src: "/202407/wedding/pastry_chef_boy.avif",
   },
 ] as const

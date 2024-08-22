@@ -5,8 +5,10 @@ import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
+import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
+import { OpacityZero } from "../animation/opacityZero"
 
 export function TopCarousel(): JSX.Element {
   const topPictures: Picture[] = [
@@ -439,6 +441,7 @@ export function ReviewCarousel(): JSX.Element {
       onTouchEnd={() => setIsBusy(false)}
       onScroll={() => ScrollEvent()}
     >
+      <ScrollRightHint />
       {reviews.map((review) => (
         <div
           key={review.key}
@@ -453,5 +456,16 @@ export function ReviewCarousel(): JSX.Element {
         </div>
       ))}
     </div>
+  )
+}
+
+function ScrollRightHint(): JSX.Element {
+  return (
+    <OpacityZero className="absolute bg-black/60 left-1/2 pt-20 text-white top-1/2 z-10 -translate-y-1/2 ">
+      <ChevronRightIcon className="scroll-right size-20" />
+      <ChevronRightIcon className="scroll-right size-20" />
+      <ChevronRightIcon className="scroll-right size-20" />
+      <span className="px-2 text-xs">右スクロール</span>
+    </OpacityZero>
   )
 }

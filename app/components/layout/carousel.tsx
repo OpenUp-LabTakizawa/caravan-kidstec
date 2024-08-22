@@ -200,20 +200,21 @@ export function ReviewCarousel(): JSX.Element {
       areaAndUser: "第4回 広島 小5、中2",
       key: 13,
     },
-  ]
+  ] as const
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-  const [reviews, setReviews] = useState<Review[]>([...reviewLists])
+  const reviewsRef: RefObject<Map<string, HTMLDivElement>> = useRef<
+    Map<string, HTMLDivElement>
+  >(new Map<string, HTMLDivElement>())
   const [isBusy, setIsBusy] = useState<boolean>(false)
   let timeoutId: globalThis.Timer
 
   useEffect(() => {
-    const leftReviews: Review[] = reviewLists.map((review) => {
-      return {
-        ...review,
-        key: review.key - reviewLists.length,
-      }
-    })
-    setReviews([...leftReviews, ...reviewLists])
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const reviews = reviewsRef.current as Map<string, HTMLDivElement>
+    for (const node of [...reviews.values()].reverse()) {
+      const newReview = node.cloneNode(true)
+      carousel.prepend(newReview)
+    }
   }, [])
 
   useEffect(() => {
@@ -227,6 +228,7 @@ export function ReviewCarousel(): JSX.Element {
   })
 
   function ScrollEvent(): void {
+    const reviews = reviewsRef.current as Map<string, HTMLDivElement>
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
     const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft: number = carousel.scrollLeft
@@ -235,22 +237,18 @@ export function ReviewCarousel(): JSX.Element {
     clearTimeout(timeoutId)
     timeoutId = setTimeout(() => {
       if (maxScrollLeft < scrollLeft + buffer) {
-        const nextPictures: Review[] = reviews.map((review) => {
-          return {
-            ...review,
-            key: review.key + reviewLists.length,
-          }
-        })
-        setReviews([...nextPictures])
+        for (const node of reviews.values()) {
+          const newReview = node.cloneNode(true)
+          carousel.append(newReview)
+          carousel.firstChild?.remove()
+        }
       }
       if (scrollLeft < buffer) {
-        const nextPictures: Review[] = reviews.map((review) => {
-          return {
-            ...review,
-            key: review.key - reviewLists.length,
-          }
-        })
-        setReviews([...nextPictures])
+        for (const node of [...reviews.values()].reverse()) {
+          const newReview = node.cloneNode(true)
+          carousel.prepend(newReview)
+          carousel.lastChild?.remove()
+        }
       }
     }, 100)
   }
@@ -265,9 +263,15 @@ export function ReviewCarousel(): JSX.Element {
       onTouchEnd={() => setIsBusy(false)}
       onScroll={() => ScrollEvent()}
     >
-      {reviews.map((review) => (
+      {reviewLists.map((review) => (
         <div
           key={review.key}
+          ref={(node: HTMLDivElement) => {
+            reviewsRef.current?.set(review.description, node)
+            return () => {
+              reviewsRef.current?.delete(review.description)
+            }
+          }}
           className="bg-blue-100 carousel-item content-between grid m-2 p-2 rounded-2xl shadow-lg w-56"
         >
           <p className="my-auto text-sm whitespace-pre">{review.description}</p>

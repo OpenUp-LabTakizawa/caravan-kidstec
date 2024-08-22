@@ -52,7 +52,7 @@ export default function TokyoChiba(): JSX.Element {
       src: "/202407/wedding/put_a_piece_of_cake.avif",
       title: { am: "午前：ロボサバ大会", pm: "午後：結婚式体験" },
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
-      venue: "ヴィクトリアガーデン恵比寿迎賓館",
+      venue: "ヴィクトリアガーデン恵比寿迎賓館（予定）",
       address: "東京都渋谷区恵比寿南1-14-20",
       googleMapLink: "https://maps.app.goo.gl/wLmPrkKwYheQgvuM8",
       tags: ["ロボサバ", "結婚式体験"],

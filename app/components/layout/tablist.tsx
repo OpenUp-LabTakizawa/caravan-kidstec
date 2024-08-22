@@ -37,6 +37,10 @@ export function ScheduleTablist({
             type="button"
             role="tab"
             onClick={() => setTab(schedule.alt)}
+            onMouseEnter={() => setIsBusy(true)}
+            onMouseLeave={() => setIsBusy(false)}
+            onTouchStart={() => setIsBusy(true)}
+            onTouchEnd={() => setIsBusy(false)}
             className={`border-b-4 duration-300 py-1 rounded-lg shadow-xl ${schedule.alt === tab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
           >
             <strong>{schedule.alt}</strong>

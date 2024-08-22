@@ -1,7 +1,7 @@
 "use client"
 
 import type { Indicator } from "@/app/interfaces/indicator"
-import type { Carousel, Picture } from "@/app/interfaces/picture"
+import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
@@ -9,56 +9,50 @@ import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
 export function TopCarousel(): JSX.Element {
-  const topPictures: Carousel[] = [
+  const topPictures: Picture[] = [
     {
       alt: "自然学習",
       src: "/202407/hiroshima_university/capture_insect.avif",
-      key: 1,
     },
     {
       alt: "ロボサバ大会",
       src: "/202407/wedding/enjoy_robot_with_family.avif",
-      key: 2,
     },
     {
       alt: "結婚式体験",
       src: "/202407/wedding/bubbles_entrance.avif",
-      key: 3,
     },
     {
       alt: "ブーケ作成",
       src: "/202311/wedding/select_flowers.avif",
-      key: 4,
     },
     {
       alt: "プログラミング",
       src: "/202407/wedding/typing_with_mother.avif",
-      key: 5,
     },
     {
       alt: "サップ体験",
       src: "/202206/eda_island/sea_circle.avif",
-      key: 6,
     },
     {
       alt: "オリーブ体験",
       src: "/202311/eda_island/olive_smile.avif",
-      key: 7,
     },
-  ]
+  ] as const
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-  const [pictures, setPictures] = useState<Carousel[]>([...topPictures])
+  const imagesRef: RefObject<Map<string, HTMLImageElement>> = useRef<
+    Map<string, HTMLImageElement>
+  >(new Map<string, HTMLImageElement>())
   const [isBusy, setIsBusy] = useState<boolean>(false)
   let timeoutId: globalThis.Timer
 
   useEffect(() => {
-    const leftPictures: Carousel[] = topPictures.map((picture) => {
-      return {
-        ...picture,
-        key: picture.key - topPictures.length,
-      }
-    })
-    setPictures([...leftPictures, ...topPictures])
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images = imagesRef.current as Map<string, HTMLImageElement>
+    for (const node of [...images.values()].reverse()) {
+      const newImage = node.cloneNode(true)
+      carousel.prepend(newImage)
+    }
   }, [])
 
   useEffect(() => {
@@ -72,30 +66,27 @@ export function TopCarousel(): JSX.Element {
   })
 
   function ScrollEvent(): void {
+    const images = imagesRef.current as Map<string, HTMLImageElement>
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
     const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft: number = carousel.scrollLeft
-    const buffer: number = carousel.scrollWidth / topPictures.length
+    const buffer: number = maxScrollLeft / topPictures.length
 
     clearTimeout(timeoutId)
     timeoutId = setTimeout(() => {
       if (maxScrollLeft < scrollLeft + buffer) {
-        const nextPictures: Carousel[] = pictures.map((picture) => {
-          return {
-            ...picture,
-            key: picture.key + topPictures.length,
-          }
-        })
-        setPictures([...nextPictures])
+        for (const node of images.values()) {
+          const newImage = node.cloneNode(true)
+          carousel.append(newImage)
+          carousel.firstChild?.remove()
+        }
       }
       if (scrollLeft < buffer) {
-        const nextPictures: Carousel[] = pictures.map((picture) => {
-          return {
-            ...picture,
-            key: picture.key - topPictures.length,
-          }
-        })
-        setPictures([...nextPictures])
+        for (const node of [...images.values()].reverse()) {
+          const newImage = node.cloneNode(true)
+          carousel.prepend(newImage)
+          carousel.lastChild?.remove()
+        }
       }
     }, 100)
   }
@@ -111,9 +102,15 @@ export function TopCarousel(): JSX.Element {
         onTouchEnd={() => setIsBusy(false)}
         onScroll={() => ScrollEvent()}
       >
-        {pictures.map((picture) => (
+        {topPictures.map((picture) => (
           <Image
-            key={picture.key}
+            key={picture.alt}
+            ref={(node: HTMLImageElement) => {
+              imagesRef.current?.set(picture.alt, node)
+              return () => {
+                imagesRef.current?.delete(picture.alt)
+              }
+            }}
             loader={cloudfrontLoader}
             src={picture.src}
             height={1000}

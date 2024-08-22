@@ -41,9 +41,9 @@ export const HISTORY: Menu = {
   textColor: "text-yellow-400",
   submenus: [HIROSHIMA],
 }
-export const SUPPORTER: Menu = {
-  name: "サポーター",
-  href: "/supporter",
+export const SPONSER: Menu = {
+  name: "スポンサー",
+  href: "/sponser",
   textColor: "text-teal-400",
   submenus: [],
 }
@@ -54,7 +54,7 @@ export const PARTNER: Menu = {
   submenus: [TOKYO_CHIBA, HIROSHIMA],
 }
 
-export const NAVIGATION: Menu[] = [EVENT, HISTORY, SUPPORTER, PARTNER] as const
+export const NAVIGATION: Menu[] = [EVENT, HISTORY, SPONSER, PARTNER] as const
 
 const HIROSHIMA_FIRST_PROGRAMS: Program[] = [
   {

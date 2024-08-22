@@ -1,15 +1,15 @@
 import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { Heading } from "@/app/components/layout/heading"
-import type { Supporter } from "@/app/interfaces/supporter"
-import { SUPPORTER } from "@/app/lib/constant"
+import type { Sponser } from "@/app/interfaces/sponser"
+import { SPONSER } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 
-export default function SupporterPage(): JSX.Element {
-  const supporters: Supporter[] = [
+export default function SponserPage(): JSX.Element {
+  const sponsers: Sponser[] = [
     {
       name: "ICHI COMMONS",
       href: "https://ichicommons.com/",
@@ -35,33 +35,33 @@ export default function SupporterPage(): JSX.Element {
 
   return (
     <>
-      <Heading menu={SUPPORTER} />
+      <Heading menu={SPONSER} />
       <section className="grid gap-6 px-4">
-        {supporters.map((supporter) => (
+        {sponsers.map((sponser) => (
           <section
-            key={supporter.name}
+            key={sponser.name}
             className="bg-base-200 gap-1 grid grid-cols-2 items-center min-h-32 p-4 rounded-2xl shadow-lg sm:grid-cols-2"
           >
             <Image
               loader={cloudfrontLoader}
-              src={supporter.src}
+              src={sponser.src}
               width={1000}
               height={1000}
-              alt={supporter.name}
+              alt={sponser.name}
               className="w-full object-contain sm:max-h-20"
             />
             <div className="grid gap-2 text-center sm:col-span-1">
               <h2 className="flex font-bold items-center justify-center text-sm">
-                <Link href={supporter.href} target="_blank" className="link">
-                  {supporter.name}
+                <Link href={sponser.href} target="_blank" className="link">
+                  {sponser.name}
                 </Link>
               </h2>
               <p className="flex items-center justify-center whitespace-pre sm:whitespace-normal">
                 <BuildingOffice2Icon className="size-5 mr-1" />
-                {supporter.business}
+                {sponser.business}
               </p>
               <FadeInUp className="font-bold text-sky-400 whitespace-pre">
-                {supporter.purpose}
+                {sponser.purpose}
               </FadeInUp>
             </div>
           </section>

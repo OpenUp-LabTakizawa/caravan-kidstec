@@ -42,6 +42,14 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
       ? undefined
       : new URL("https://caravan-kidstec.com"),
+  openGraph: {
+    title: SITE_TITLE,
+    description: DESCRIPTION,
+    url: "https://caravan-kidstec.com",
+    siteName: SITE_TITLE,
+    locale: "ja_JP",
+    type: "website",
+  },
 }
 
 export default function RootLayout({

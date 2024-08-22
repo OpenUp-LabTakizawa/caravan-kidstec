@@ -49,7 +49,7 @@ export default function TokyoChiba(): JSX.Element {
     },
     {
       alt: "Day 3",
-      src: "/202407/wedding/put_a_piece_of_cake.avif",
+      src: "/202407/wedding/pick_up_flower.avif",
       title: { am: "午前：ロボサバ大会", pm: "午後：結婚式体験" },
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
       venue: "ヴィクトリアガーデン恵比寿迎賓館（予定）",

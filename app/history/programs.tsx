@@ -11,7 +11,10 @@ export function Programs({
       </strong>
       <ul>
         {programs.map((program) => (
-          <li key={program.venue} className="grid gap-1 border-b p-2">
+          <li
+            key={program.date.month + program.date.day + program.venue}
+            className="grid gap-1 border-b p-2"
+          >
             <p>
               {program.date.year}年{program.date.month}月{program.date.day}日(
               {program.date.dayOfWeek})

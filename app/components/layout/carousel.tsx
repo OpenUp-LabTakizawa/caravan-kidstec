@@ -1,5 +1,6 @@
 "use client"
 
+import { OpacityZero } from "@/app/components/animation/opacityZero"
 import type { Indicator } from "@/app/interfaces/indicator"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
@@ -8,7 +9,6 @@ import { UserCircleIcon } from "@heroicons/react/24/outline"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
-import { OpacityZero } from "../animation/opacityZero"
 
 export function TopCarousel(): JSX.Element {
   const topPictures: Picture[] = [
@@ -46,6 +46,7 @@ export function TopCarousel(): JSX.Element {
     Map<string, HTMLImageElement>
   >(new Map<string, HTMLImageElement>())
   const [isBusy, setIsBusy] = useState<boolean>(false)
+  let timeoutId: globalThis.Timer
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
@@ -58,35 +59,47 @@ export function TopCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
+      string,
+      HTMLImageElement
+    >
+    const imageNode = images.get(topPictures[0].alt) as HTMLImageElement
     const interval = setInterval(() => {
       if (!isBusy) {
-        carousel.scrollLeft += carousel.scrollWidth / (topPictures.length * 2)
+        carousel.scrollLeft += imageNode.clientWidth
       }
     }, 3000)
     return () => clearInterval(interval)
   })
 
   function ScrollEvent(): void {
-    const images = imagesRef.current as Map<string, HTMLImageElement>
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
+      string,
+      HTMLImageElement
+    >
+    const imageNode = images.get(topPictures[0].alt) as HTMLImageElement
     const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft: number = carousel.scrollLeft
-    const buffer: number = maxScrollLeft / topPictures.length
+    const buffer: number = imageNode.clientWidth * 2
 
-    if (maxScrollLeft < scrollLeft + buffer) {
-      for (const node of images.values()) {
-        const newImage = node.cloneNode(true)
-        carousel.append(newImage)
-        carousel.firstChild?.remove()
+    clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => {
+      if (maxScrollLeft < scrollLeft + buffer) {
+        for (const node of images.values()) {
+          const newImage = node.cloneNode(true)
+          carousel.append(newImage)
+          // carousel.firstChild?.remove()
+        }
       }
-    }
-    if (scrollLeft < buffer) {
-      for (const node of [...images.values()].reverse()) {
-        const newImage = node.cloneNode(true)
-        carousel.prepend(newImage)
-        carousel.lastChild?.remove()
+      if (scrollLeft < buffer) {
+        for (const node of [...images.values()].reverse()) {
+          const newImage = node.cloneNode(true)
+          carousel.prepend(newImage)
+          // carousel.lastChild?.remove()
+        }
       }
-    }
+    }, 100)
   }
 
   return (
@@ -368,7 +381,6 @@ export function ReviewCarousel(): JSX.Element {
     Map<string, HTMLDivElement>
   >(new Map<string, HTMLDivElement>())
   const [isBusy, setIsBusy] = useState<boolean>(false)
-  const carouselWidth = 240
   let timeoutId: globalThis.Timer
 
   useEffect(() => {
@@ -382,32 +394,45 @@ export function ReviewCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const reviewsNode: Map<string, HTMLDivElement> = reviewsRef.current as Map<
+      string,
+      HTMLDivElement
+    >
+    const reviewNode: HTMLDivElement = reviewsNode.get(
+      reviews[0].description,
+    ) as HTMLDivElement
     const interval = setInterval(() => {
       if (!isBusy) {
-        carousel.scrollLeft += carouselWidth
+        carousel.scrollLeft += reviewNode.clientWidth
       }
     }, 3000)
     return () => clearInterval(interval)
   })
 
   function ScrollEvent(): void {
-    const reviews = reviewsRef.current as Map<string, HTMLDivElement>
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const reviewsNode: Map<string, HTMLDivElement> = reviewsRef.current as Map<
+      string,
+      HTMLDivElement
+    >
+    const reviewNode: HTMLDivElement = reviewsNode.get(
+      reviews[0].description,
+    ) as HTMLDivElement
     const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft: number = carousel.scrollLeft
-    const buffer: number = carouselWidth * 4
+    const buffer: number = reviewNode.clientWidth * 2
 
     clearTimeout(timeoutId)
     timeoutId = setTimeout(() => {
       if (maxScrollLeft < scrollLeft + buffer) {
-        for (const node of reviews.values()) {
+        for (const node of reviewsNode.values()) {
           const newReview = node.cloneNode(true)
           carousel.append(newReview)
           // carousel.firstChild?.remove()
         }
       }
       if (scrollLeft < buffer) {
-        for (const node of [...reviews.values()].reverse()) {
+        for (const node of [...reviewsNode.values()].reverse()) {
           const newReview = node.cloneNode(true)
           carousel.prepend(newReview)
           // carousel.lastChild?.remove()

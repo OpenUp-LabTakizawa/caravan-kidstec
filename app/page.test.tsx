@@ -15,7 +15,7 @@ describe("Home", () => {
     expect(sections[0]?.className).toEqual("")
     expect(sections[1]?.className).toEqual("gap-4 grid text-center")
     expect(sections[2]?.className).toEqual(
-      "bg-sky-400 gap-2 grid rounded-2xl py-2",
+      "bg-sky-300 gap-2 grid mx-2 rounded-2xl pb-2",
     )
     expect(sections[3]?.className).toEqual("gap-4 grid")
     expect(sections[4]?.className).toEqual("gap-4 grid relative")

@@ -29,15 +29,15 @@ export function ScheduleTablist({
   })
 
   return (
-    <section className="gap-4 grid max-w-lg mx-auto text-center">
-      <div role="tablist" className="gap-2 tabs">
+    <section className="gap-1 grid max-w-lg mx-auto text-center">
+      <div role="tablist" className="content-end gap-2 grid grid-cols-3 px-2">
         {schedules.map((schedule) => (
           <button
             key={schedule.alt}
             type="button"
             role="tab"
             onClick={() => setTab(schedule.alt)}
-            className={`rounded-lg shadow-lg tab ${tab === schedule.alt ? "bg-teal-400 tab-active" : "bg-gray-100"}`}
+            className={`border-b-4 duration-300 py-1 rounded-lg shadow-xl ${schedule.alt === tab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
           >
             <strong>{schedule.alt}</strong>
           </button>

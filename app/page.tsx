@@ -62,7 +62,7 @@ export default function Home(): JSX.Element {
           </span>
         </div>
       </section>
-      <section className="bg-sky-400 gap-2 grid rounded-2xl py-2">
+      <section className="bg-sky-300 gap-2 grid mx-2 rounded-2xl pb-2">
         <div className="gap-2 grid p-4 text-white">
           <p className="mb-2">
             こどもテックキャラバンは

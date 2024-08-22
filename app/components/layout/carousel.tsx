@@ -409,7 +409,7 @@ export function IndicatorCarousel(): JSX.Element {
 
   return (
     <>
-      <div role="tablist" className="content-end gap-2 grid grid-cols-2 px-2">
+      <div role="tablist" className="content-end gap-1 grid grid-cols-2 px-1">
         {indicators.map((indicator) => (
           <button
             key={indicator.title}

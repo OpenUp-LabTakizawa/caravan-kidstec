@@ -381,22 +381,22 @@ export function IndicatorCarousel(): JSX.Element {
     const scrollLeft: number = carousel.scrollLeft
     const buffer: number = carousel.scrollWidth / 5
 
-    if (pictures[0].alt === programmingPictures[0].alt) {
-      if (carousel.scrollLeft < maxScrollLeft / 2) {
-        setActiveTab(programmingPictures[0].alt)
-      } else {
-        setActiveTab(eventPictures[0].alt)
-      }
-    } else if (pictures[0].alt === eventPictures[0].alt) {
-      if (carousel.scrollLeft < maxScrollLeft / 2) {
-        setActiveTab(eventPictures[0].alt)
-      } else {
-        setActiveTab(programmingPictures[0].alt)
-      }
-    }
-
     clearTimeout(timeoutId)
     timeoutId = setTimeout(() => {
+      if (pictures[0].alt === programmingPictures[0].alt) {
+        if (carousel.scrollLeft < maxScrollLeft / 2) {
+          setActiveTab(programmingPictures[0].alt)
+        } else {
+          setActiveTab(eventPictures[0].alt)
+        }
+      } else if (pictures[0].alt === eventPictures[0].alt) {
+        if (carousel.scrollLeft < maxScrollLeft / 2) {
+          setActiveTab(eventPictures[0].alt)
+        } else {
+          setActiveTab(programmingPictures[0].alt)
+        }
+      }
+
       if (maxScrollLeft < scrollLeft + buffer || scrollLeft < buffer) {
         if (pictures[0].alt === programmingPictures[0].alt) {
           setPictures([...eventPictures, ...programmingPictures])

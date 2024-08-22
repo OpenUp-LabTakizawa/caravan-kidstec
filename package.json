@@ -12,7 +12,7 @@
   "dependencies": {
     "@heroicons/react": "^2.1.5",
     "@line/bot-sdk": "^9.2.2",
-    "next": "15.0.0-canary.111",
+    "next": "canary",
     "react": "canary",
     "react-dom": "canary"
   },

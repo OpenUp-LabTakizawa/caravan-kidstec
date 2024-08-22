@@ -62,23 +62,23 @@ export default function Home(): JSX.Element {
           </span>
         </div>
       </section>
-      <section className="gap-2 grid">
-        <div className="bg-sky-400 gap-4 grid p-4 rounded-2xl text-white">
-          <p>
+      <section className="bg-sky-400 gap-2 grid rounded-2xl py-2">
+        <div className="gap-2 grid p-4 text-white">
+          <p className="mb-2">
             こどもテックキャラバンは
             <br />
             <strong>プログラミング</strong>と<strong>体験学習</strong>を
             <br />
             かけ合わせた体験型イベント！
           </p>
-          <strong className="bg-white p-2 rounded-2xl shadow-lg text-sky-400">
+          <strong className="border-2 border-white mx-auto p-2 rounded-2xl shadow-lg w-60">
             プログラミング体験
           </strong>
           <PlusIcon className="mx-auto size-5" />
-          <strong className="bg-white p-2 rounded-2xl shadow-lg text-sky-400">
+          <strong className="border-2 border-white mx-auto p-2 rounded-2xl shadow-lg w-60">
             体験学習
           </strong>
-          過去の体験学習はこちら！
+          <p className="mt-2">過去の体験学習はこちら！</p>
         </div>
         <IndicatorCarousel />
       </section>

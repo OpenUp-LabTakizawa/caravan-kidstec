@@ -3,7 +3,8 @@ import type { Picture } from "@/app/interfaces/picture"
 import type { EventDate, Program } from "@/app/interfaces/schedule"
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
-export const DESCRIPTION: string = "こども向けマルチ体験ワークショップイベント"
+export const DESCRIPTION: string =
+  "プログラミング×体験学習　親子で学ぶ体験型イベント"
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
 export const TOKYO_CHIBA_DEADLINE: string = "２０２４年１０月１０日"

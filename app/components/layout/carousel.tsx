@@ -379,7 +379,10 @@ export function IndicatorCarousel(): JSX.Element {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
     const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft: number = carousel.scrollLeft
-    const buffer: number = carousel.scrollWidth / 5
+    const buffer: number =
+      (carousel.scrollWidth /
+        (programmingPictures.length + eventPictures.length)) *
+      2
 
     clearTimeout(timeoutId)
     timeoutId = setTimeout(() => {

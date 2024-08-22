@@ -44,7 +44,6 @@ export function TopCarousel(): JSX.Element {
     Map<string, HTMLImageElement>
   >(new Map<string, HTMLImageElement>())
   const [isBusy, setIsBusy] = useState<boolean>(false)
-  let timeoutId: globalThis.Timer
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
@@ -72,23 +71,20 @@ export function TopCarousel(): JSX.Element {
     const scrollLeft: number = carousel.scrollLeft
     const buffer: number = maxScrollLeft / topPictures.length
 
-    clearTimeout(timeoutId)
-    timeoutId = setTimeout(() => {
-      if (maxScrollLeft < scrollLeft + buffer) {
-        for (const node of images.values()) {
-          const newImage = node.cloneNode(true)
-          carousel.append(newImage)
-          carousel.firstChild?.remove()
-        }
+    if (maxScrollLeft < scrollLeft + buffer) {
+      for (const node of images.values()) {
+        const newImage = node.cloneNode(true)
+        carousel.append(newImage)
+        carousel.firstChild?.remove()
       }
-      if (scrollLeft < buffer) {
-        for (const node of [...images.values()].reverse()) {
-          const newImage = node.cloneNode(true)
-          carousel.prepend(newImage)
-          carousel.lastChild?.remove()
-        }
+    }
+    if (scrollLeft < buffer) {
+      for (const node of [...images.values()].reverse()) {
+        const newImage = node.cloneNode(true)
+        carousel.prepend(newImage)
+        carousel.lastChild?.remove()
       }
-    }, 100)
+    }
   }
 
   return (

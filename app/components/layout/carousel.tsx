@@ -89,16 +89,18 @@ export function TopCarousel(): JSX.Element {
         for (const node of images.values()) {
           const newImage = node.cloneNode(true)
           carousel.append(newImage)
+          // TODO: Safari works correctly with remove()
           // carousel.firstChild?.remove()
         }
       }
-      if (scrollLeft < buffer) {
-        for (const node of [...images.values()].reverse()) {
-          const newImage = node.cloneNode(true)
-          carousel.prepend(newImage)
-          // carousel.lastChild?.remove()
-        }
-      }
+      // TODO: Safari works correctly with remove()
+      // if (scrollLeft < buffer) {
+      //   for (const node of [...images.values()].reverse()) {
+      //     const newImage = node.cloneNode(true)
+      //     carousel.prepend(newImage)
+      //     carousel.lastChild?.remove()
+      //   }
+      // }
     }, 100)
   }
 
@@ -428,6 +430,7 @@ export function ReviewCarousel(): JSX.Element {
         for (const node of reviewsNode.values()) {
           const newReview = node.cloneNode(true)
           carousel.append(newReview)
+          // TODO: Safari works correctly with remove()
           // carousel.firstChild?.remove()
         }
       }
@@ -435,6 +438,7 @@ export function ReviewCarousel(): JSX.Element {
         for (const node of [...reviewsNode.values()].reverse()) {
           const newReview = node.cloneNode(true)
           carousel.prepend(newReview)
+          // TODO: Safari works correctly with remove()
           // carousel.lastChild?.remove()
         }
       }

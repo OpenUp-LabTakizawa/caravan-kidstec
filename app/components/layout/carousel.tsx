@@ -35,6 +35,16 @@ export function TopCarousel(): JSX.Element {
       src: "/202407/wedding/typing_with_mother.avif",
       key: 5,
     },
+    {
+      alt: "サップ体験",
+      src: "/202206/eda_island/sea_circle.avif",
+      key: 6,
+    },
+    {
+      alt: "オリーブ体験",
+      src: "/202311/eda_island/olive_smile.avif",
+      key: 7,
+    },
   ]
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
   const [pictures, setPictures] = useState<Carousel[]>([...topPictures])
@@ -113,11 +123,7 @@ export function TopCarousel(): JSX.Element {
           />
         ))}
       </div>
-      <p className="text-center text-xs">
-        ※&nbsp;写真は過去開催時のものです。
-        <br />
-        体験学習はイベントごとに異なります。
-      </p>
+      <Attention />
     </>
   )
 }
@@ -403,14 +409,14 @@ export function IndicatorCarousel(): JSX.Element {
 
   return (
     <>
-      <div role="tablist" className="content-end gap-1 grid grid-cols-2">
+      <div role="tablist" className="content-end gap-2 grid grid-cols-2 px-2">
         {indicators.map((indicator) => (
           <button
             key={indicator.title}
             type="button"
             role="tab"
             onClick={() => onClick(indicator)}
-            className={`py-1 rounded-lg shadow-lg ${indicator.alt === activeTab ? "bg-teal-400" : "bg-gray-100"}`}
+            className={`py-1 rounded-lg shadow-xl ${indicator.alt === activeTab ? "bg-teal-400" : "bg-gray-100"}`}
           >
             <strong>{indicator.title}</strong>
           </button>
@@ -437,11 +443,17 @@ export function IndicatorCarousel(): JSX.Element {
           />
         ))}
       </div>
-      <p className="text-center text-xs">
-        ※&nbsp;写真は過去開催時のものです。
-        <br />
-        体験学習はイベントごとに異なります。
-      </p>
+      <Attention />
     </>
+  )
+}
+
+export function Attention(): JSX.Element {
+  return (
+    <p className="text-center text-xs">
+      ※&nbsp;写真は過去開催時のものです。
+      <br />
+      体験学習はイベントごとに異なります。
+    </p>
   )
 }

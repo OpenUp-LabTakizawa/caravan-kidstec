@@ -415,7 +415,7 @@ export function ReviewCarousel(): JSX.Element {
             key: review.key + reviewLists.length,
           }
         })
-        setReviews([...nextReviews])
+        setReviews([...reviews, ...nextReviews])
       }
       if (scrollLeft < buffer) {
         const nextReviews: Review[] = reviews.map((review) => {
@@ -424,7 +424,7 @@ export function ReviewCarousel(): JSX.Element {
             key: review.key - reviewLists.length,
           }
         })
-        setReviews([...nextReviews])
+        setReviews([...nextReviews, ...reviews])
       }
     }, 100)
   }

@@ -1,5 +1,5 @@
 import type { Menu, MenuPanel, Submenu } from "@/app/interfaces/menu"
-import { PARTNER, Q_AND_A, SUPPORTER } from "@/app/lib/constant"
+import { PARTNER, Q_AND_A, SPONSER } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -78,15 +78,15 @@ function getPanels(menu: Menu, submenu: Submenu): MenuPanel[] {
     href: menu.href + submenu.href + Q_AND_A.href,
     text: "よくある質問",
   }
-  const supporterPanel: MenuPanel = {
-    name: SUPPORTER.name,
+  const sponserPanel: MenuPanel = {
+    name: SPONSER.name,
     color: {
       bg: "bg-teal-400",
       shadow: "box-teal-shadow",
       text: "text-teal-400",
       textHover: "group-hover:text-teal-400",
     },
-    href: SUPPORTER.href,
+    href: SPONSER.href,
     text: "企画・運営",
   }
   const partnerPanel: MenuPanel = {
@@ -101,5 +101,5 @@ function getPanels(menu: Menu, submenu: Submenu): MenuPanel[] {
     text: submenu.name,
   }
 
-  return [qaPanels, supporterPanel, partnerPanel]
+  return [qaPanels, sponserPanel, partnerPanel]
 }

@@ -1,7 +1,7 @@
 "use client"
 
 import type { Indicator } from "@/app/interfaces/indicator"
-import type { Carousel } from "@/app/interfaces/picture"
+import type { Carousel, Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
@@ -283,167 +283,90 @@ export function ReviewCarousel(): JSX.Element {
 }
 
 export function IndicatorCarousel(): JSX.Element {
-  // const programmingPictures: Carousel[] = [
-  //   {
-  //     alt: "はんだ確認中…",
-  //     src: "/202311/eda_island/check_solder.avif",
-  //     key: 1,
-  //   },
-  //   {
-  //     alt: "はじめてのはんだづけにどきどき",
-  //     src: "/202407/eda_island/soldering.avif",
-  //     key: 2,
-  //   },
-  //   {
-  //     alt: "最終日のロボサバ大会！優勝目指そう！",
-  //     src: "/202407/wedding/watch_robot_move.avif",
-  //     key: 3,
-  //   },
-  //   {
-  //     alt: "ロボットが上手く動くコツを伝授！",
-  //     src: "/202407/wedding/teaching.avif",
-  //     key: 4,
-  //   },
-  //   {
-  //     alt: "ロボサバ大会に挑戦！上手に動くかな？",
-  //     src: "/202407/wedding/put_robot_on_course.avif",
-  //     key: 5,
-  //   },
-  //   {
-  //     alt: "ロボット作りに挑戦！",
-  //     src: "/202311/eda_island/using_nipper.avif",
-  //     key: 6,
-  //   },
-  // ] as const
-  // const eventPictures: Carousel[] = [
-  //   {
-  //     alt: "採れたてのお魚に興味津々！",
-  //     src: "/202407/eda_island/holding_fish.avif",
-  //     key: 7,
-  //   },
-  //   {
-  //     alt: "広島大学のチェックポイント確認中…",
-  //     src: "/202407/hiroshima_university/checking_course.avif",
-  //     key: 8,
-  //   },
-  //   {
-  //     alt: "広島大学で昆虫採集！",
-  //     src: "/202407/hiroshima_university/insect_netting_boy.avif",
-  //     key: 9,
-  //   },
-  //   {
-  //     alt: "手作りのオリーブオイル、最初はまだ赤い！",
-  //     src: "/202311/eda_island/olive_pouring.avif",
-  //     key: 10,
-  //   },
-  //   {
-  //     alt: "ブーケを持って入場！",
-  //     src: "/202311/wedding/wedding_bouquet.avif",
-  //     key: 11,
-  //   },
-  //   {
-  //     alt: "ケーキ作りも自分で挑戦！",
-  //     src: "/202407/wedding/pastry_chef_boy.avif",
-  //     key: 12,
-  //   },
-  // ] as const
-  const carouselLists: Carousel[] = [
+  const programmingPictures: Picture[] = [
     {
       alt: "はんだ確認中…",
       src: "/202311/eda_island/check_solder.avif",
-      key: 1,
     },
     {
       alt: "はじめてのはんだづけにどきどき",
       src: "/202407/eda_island/soldering.avif",
-      key: 2,
     },
     {
       alt: "最終日のロボサバ大会！優勝目指そう！",
       src: "/202407/wedding/watch_robot_move.avif",
-      key: 3,
     },
     {
       alt: "ロボットが上手く動くコツを伝授！",
       src: "/202407/wedding/teaching.avif",
-      key: 4,
     },
     {
       alt: "ロボサバ大会に挑戦！上手に動くかな？",
       src: "/202407/wedding/put_robot_on_course.avif",
-      key: 5,
     },
     {
       alt: "ロボット作りに挑戦！",
       src: "/202311/eda_island/using_nipper.avif",
-      key: 6,
     },
+  ]
+  const eventPictures: Picture[] = [
     {
       alt: "採れたてのお魚に興味津々！",
       src: "/202407/eda_island/holding_fish.avif",
-      key: 7,
     },
     {
       alt: "広島大学のチェックポイント確認中…",
       src: "/202407/hiroshima_university/checking_course.avif",
-      key: 8,
     },
     {
       alt: "広島大学で昆虫採集！",
       src: "/202407/hiroshima_university/insect_netting_boy.avif",
-      key: 9,
     },
     {
       alt: "手作りのオリーブオイル、最初はまだ赤い！",
       src: "/202311/eda_island/olive_pouring.avif",
-      key: 10,
     },
     {
       alt: "ブーケを持って入場！",
       src: "/202311/wedding/wedding_bouquet.avif",
-      key: 11,
     },
     {
       alt: "ケーキ作りも自分で挑戦！",
       src: "/202407/wedding/pastry_chef_boy.avif",
-      key: 12,
     },
   ]
   const indicators: Indicator[] = [
-    { title: "プログラミング体験", index: 12 },
-    { title: "体験学習", index: 6 },
+    { title: "プログラミング体験", alt: programmingPictures[0].alt },
+    { title: "体験学習", alt: eventPictures[0].alt },
   ] as const
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-  const [pictures, setPictures] = useState<Carousel[]>([...carouselLists])
-  const [tab, setTab] = useState<string>(indicators[0].title)
+  const [pictures, setPictures] = useState<Picture[]>([...programmingPictures])
+  const [activeTab, setActiveTab] = useState<string>(programmingPictures[0].alt)
   const [isBusy, setIsBusy] = useState<boolean>(false)
   let timeoutId: globalThis.Timer
 
   useEffect(() => {
-    const leftPictures: Carousel[] = carouselLists.map((picture) => {
-      return {
-        ...picture,
-        key: picture.key - carouselLists.length,
-      }
-    })
-    setPictures([...leftPictures, ...carouselLists])
+    setPictures([...eventPictures, ...programmingPictures])
   }, [])
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
     const interval = setInterval(() => {
       if (!isBusy) {
-        carousel.scrollLeft += carousel.scrollWidth / (carouselLists.length * 2)
+        carousel.scrollLeft +=
+          carousel.scrollWidth /
+          (programmingPictures.length + eventPictures.length)
       }
     }, 3000)
     return () => clearInterval(interval)
   })
 
   function onClick(indicator: Indicator): void {
-    setTab(indicator.title)
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    carousel.scrollLeft =
-      (carousel.scrollWidth / carouselLists.length / 2) * indicator.index
+    if (indicator.alt === activeTab) {
+      return
+    }
+    carousel.scrollLeft = 0
   }
 
   function ScrollEvent(): void {
@@ -452,25 +375,28 @@ export function IndicatorCarousel(): JSX.Element {
     const scrollLeft: number = carousel.scrollLeft
     const buffer: number = carousel.scrollWidth / 5
 
+    if (pictures[0].alt === programmingPictures[0].alt) {
+      if (carousel.scrollLeft < maxScrollLeft / 2) {
+        setActiveTab(programmingPictures[0].alt)
+      } else {
+        setActiveTab(eventPictures[0].alt)
+      }
+    } else if (pictures[0].alt === eventPictures[0].alt) {
+      if (carousel.scrollLeft < maxScrollLeft / 2) {
+        setActiveTab(eventPictures[0].alt)
+      } else {
+        setActiveTab(programmingPictures[0].alt)
+      }
+    }
+
     clearTimeout(timeoutId)
     timeoutId = setTimeout(() => {
-      if (maxScrollLeft < scrollLeft + buffer) {
-        const nextPictures: Carousel[] = pictures.map((picture) => {
-          return {
-            ...picture,
-            key: picture.key + carouselLists.length,
-          }
-        })
-        setPictures([...nextPictures])
-      }
-      if (scrollLeft < buffer) {
-        const nextPictures: Carousel[] = pictures.map((picture) => {
-          return {
-            ...picture,
-            key: picture.key - carouselLists.length,
-          }
-        })
-        setPictures([...nextPictures])
+      if (maxScrollLeft < scrollLeft + buffer || scrollLeft < buffer) {
+        if (pictures[0].alt === programmingPictures[0].alt) {
+          setPictures([...eventPictures, ...programmingPictures])
+        } else if (pictures[0].alt === eventPictures[0].alt) {
+          setPictures([...programmingPictures, ...eventPictures])
+        }
       }
     }, 100)
   }
@@ -484,7 +410,7 @@ export function IndicatorCarousel(): JSX.Element {
             type="button"
             role="tab"
             onClick={() => onClick(indicator)}
-            className={`py-1 rounded-lg shadow-lg ${tab === indicator.title ? "bg-teal-400" : "bg-gray-100"}`}
+            className={`py-1 rounded-lg shadow-lg ${indicator.alt === activeTab ? "bg-teal-400" : "bg-gray-100"}`}
           >
             <strong>{indicator.title}</strong>
           </button>
@@ -501,7 +427,7 @@ export function IndicatorCarousel(): JSX.Element {
       >
         {pictures.map((picture) => (
           <Image
-            key={picture.key}
+            key={picture.alt}
             loader={cloudfrontLoader}
             src={picture.src}
             height={1000}

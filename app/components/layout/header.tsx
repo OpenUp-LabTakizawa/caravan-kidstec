@@ -5,7 +5,7 @@ import { NAVIGATION, SITE_TITLE } from "@/app/lib/constant"
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
-// import { usePathname } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
 export function Header(): JSX.Element {
@@ -13,9 +13,8 @@ export function Header(): JSX.Element {
     scrollY: number
     isScrollDown: boolean
   }>({ scrollY: 0, isScrollDown: false })
-  // const [className, setClassName] = useState<string>("")
-  // const headerHeight: number = 50
-  // const pathname: string = usePathname()
+  const headerHeight: number = 50
+  const pathname: string = usePathname()
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -23,9 +22,6 @@ export function Header(): JSX.Element {
         scrollY: window.scrollY,
         isScrollDown: scrollY.scrollY < window.scrollY,
       })
-      // if (pathname !== "/") {
-      //   TranslateY()
-      // }
     })
     return () =>
       window.removeEventListener("scroll", () => {
@@ -36,18 +32,10 @@ export function Header(): JSX.Element {
       })
   })
 
-  // TODO: usePathname doesn't work
-  // function TranslateY(): void {
-  //   const translateY =
-  //     headerHeight < scrollY.scrollY && scrollY.isScrollDown
-  //       ? "-translate-y-20"
-  //       : "translate-y-0"
-  //   setClassName(` transition sticky top-0 z-20 ${translateY}`)
-  // }
-
   return (
-    // <header className={`bg-base-100 navbar${className}`}>
-    <header className="bg-base-100 navbar">
+    <header
+      className={`bg-base-100 navbar${pathname !== "/" && headerHeight < scrollY.scrollY && scrollY.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollY.scrollY < headerHeight || !scrollY.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
+    >
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost tilt-shaking w-fit">
           <Image

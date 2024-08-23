@@ -249,14 +249,17 @@ export function IndicatorCarousel(): JSX.Element {
     const imageNode: HTMLImageElement = images.get(
       pictures[0].alt,
     ) as HTMLImageElement
+    const imageWidth: number = imageNode.clientWidth
+
     if (indicator.alt === activeTab) {
       return
     }
+
     if (indicator.alt === programmingPictures[0].alt) {
-      carousel.scrollLeft = imageNode.clientWidth * pictures.length
+      carousel.scrollLeft = imageWidth * pictures.length
     } else if (indicator.alt === eventPictures[0].alt) {
       carousel.scrollLeft =
-        imageNode.clientWidth * pictures.length * programmingPictures.length
+        imageWidth * (pictures.length + programmingPictures.length)
     }
   }
 
@@ -282,7 +285,7 @@ export function IndicatorCarousel(): JSX.Element {
       ) {
         setActiveTab(programmingPictures[0].alt)
       } else if (
-        imageWidth * programmingPictures.length <
+        imageWidth * programmingPictures.length <=
         scrollLeft % (imageWidth * pictures.length)
       ) {
         setActiveTab(eventPictures[0].alt)

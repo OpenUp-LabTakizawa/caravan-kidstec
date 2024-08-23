@@ -50,7 +50,10 @@ export function TopCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images = imagesRef.current as Map<string, HTMLImageElement>
+    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
+      string,
+      HTMLImageElement
+    >
     for (const node of [...images.values()].reverse()) {
       const newImage = node.cloneNode(true)
       carousel.prepend(newImage)
@@ -63,7 +66,9 @@ export function TopCarousel(): JSX.Element {
       string,
       HTMLImageElement
     >
-    const imageNode = images.get(topPictures[0].alt) as HTMLImageElement
+    const imageNode: HTMLImageElement = images.get(
+      topPictures[0].alt,
+    ) as HTMLImageElement
     const interval = setInterval(() => {
       if (!isBusy) {
         carousel.scrollLeft += imageNode.clientWidth
@@ -78,7 +83,9 @@ export function TopCarousel(): JSX.Element {
       string,
       HTMLImageElement
     >
-    const imageNode = images.get(topPictures[0].alt) as HTMLImageElement
+    const imageNode: HTMLImageElement = images.get(
+      topPictures[0].alt,
+    ) as HTMLImageElement
     const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft: number = carousel.scrollLeft
     const buffer: number = imageNode.clientWidth * 2
@@ -164,7 +171,7 @@ export function IndicatorCarousel(): JSX.Element {
       alt: "ロボット作りに挑戦！",
       src: "/202311/eda_island/using_nipper.avif",
     },
-  ]
+  ] as const
   const eventPictures: Picture[] = [
     {
       alt: "採れたてのお魚に興味津々！",
@@ -190,28 +197,44 @@ export function IndicatorCarousel(): JSX.Element {
       alt: "ケーキ作りも自分で挑戦！",
       src: "/202407/wedding/pastry_chef_boy.avif",
     },
-  ]
+  ] as const
+  const pictures: Picture[] = [...programmingPictures, ...eventPictures]
   const indicators: Indicator[] = [
     { title: "プログラミング体験", alt: programmingPictures[0].alt },
     { title: "体験学習", alt: eventPictures[0].alt },
   ] as const
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-  const [pictures, setPictures] = useState<Picture[]>([...programmingPictures])
+  const imagesRef: RefObject<Map<string, HTMLImageElement>> = useRef<
+    Map<string, HTMLImageElement>
+  >(new Map<string, HTMLImageElement>())
   const [activeTab, setActiveTab] = useState<string>(programmingPictures[0].alt)
   const [isBusy, setIsBusy] = useState<boolean>(false)
   let timeoutId: globalThis.Timer
 
   useEffect(() => {
-    setPictures([...eventPictures, ...programmingPictures])
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
+      string,
+      HTMLImageElement
+    >
+    for (const node of [...images.values()].reverse()) {
+      const newImage = node.cloneNode(true)
+      carousel.prepend(newImage)
+    }
   }, [])
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
+      string,
+      HTMLImageElement
+    >
+    const imageNode: HTMLImageElement = images.get(
+      pictures[0].alt,
+    ) as HTMLImageElement
     const interval = setInterval(() => {
       if (!isBusy) {
-        carousel.scrollLeft +=
-          carousel.scrollWidth /
-          (programmingPictures.length + eventPictures.length)
+        carousel.scrollLeft += imageNode.clientWidth
       }
     }, 3000)
     return () => clearInterval(interval)
@@ -219,44 +242,61 @@ export function IndicatorCarousel(): JSX.Element {
 
   function onClick(indicator: Indicator): void {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
+      string,
+      HTMLImageElement
+    >
+    const imageNode: HTMLImageElement = images.get(
+      pictures[0].alt,
+    ) as HTMLImageElement
     if (indicator.alt === activeTab) {
       return
     }
-    carousel.scrollLeft = 0
+    if (indicator.alt === programmingPictures[0].alt) {
+      carousel.scrollLeft = imageNode.clientWidth * pictures.length
+    } else if (indicator.alt === eventPictures[0].alt) {
+      carousel.scrollLeft =
+        imageNode.clientWidth * pictures.length * programmingPictures.length
+    }
   }
 
   function ScrollEvent(): void {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
+      string,
+      HTMLImageElement
+    >
+    const imageNode: HTMLImageElement = images.get(
+      pictures[0].alt,
+    ) as HTMLImageElement
     const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft: number = carousel.scrollLeft
-    const buffer: number =
-      (carousel.scrollWidth /
-        (programmingPictures.length + eventPictures.length)) *
-      2
+    const buffer: number = imageNode.clientWidth * 2
 
     clearTimeout(timeoutId)
     timeoutId = setTimeout(() => {
-      if (pictures[0].alt === programmingPictures[0].alt) {
-        if (carousel.scrollLeft < maxScrollLeft / 2) {
-          setActiveTab(programmingPictures[0].alt)
-        } else {
-          setActiveTab(eventPictures[0].alt)
-        }
-      } else if (pictures[0].alt === eventPictures[0].alt) {
-        if (carousel.scrollLeft < maxScrollLeft / 2) {
-          setActiveTab(eventPictures[0].alt)
-        } else {
-          setActiveTab(programmingPictures[0].alt)
-        }
+      if (scrollLeft % (buffer * 6) < buffer * 3) {
+        setActiveTab(programmingPictures[0].alt)
+      } else if (buffer * 3 < scrollLeft % (buffer * 6)) {
+        setActiveTab(eventPictures[0].alt)
       }
 
-      if (maxScrollLeft < scrollLeft + buffer || scrollLeft < buffer) {
-        if (pictures[0].alt === programmingPictures[0].alt) {
-          setPictures([...eventPictures, ...programmingPictures])
-        } else if (pictures[0].alt === eventPictures[0].alt) {
-          setPictures([...programmingPictures, ...eventPictures])
+      if (maxScrollLeft < scrollLeft + buffer) {
+        for (const node of images.values()) {
+          const newImage = node.cloneNode(true)
+          carousel.append(newImage)
+          // TODO: Safari works correctly with remove()
+          // carousel.firstChild?.remove()
         }
       }
+      // TODO: Safari works correctly with remove()
+      // if (scrollLeft < buffer) {
+      //   for (const node of [...images.values()].reverse()) {
+      //     const newImage = node.cloneNode(true)
+      //     carousel.prepend(newImage)
+      //     carousel.lastChild?.remove()
+      //   }
+      // }
     }, 100)
   }
 
@@ -287,6 +327,12 @@ export function IndicatorCarousel(): JSX.Element {
         {pictures.map((picture) => (
           <Image
             key={picture.alt}
+            ref={(node: HTMLImageElement) => {
+              imagesRef.current?.set(picture.alt, node)
+              return () => {
+                imagesRef.current?.delete(picture.alt)
+              }
+            }}
             loader={cloudfrontLoader}
             src={picture.src}
             height={1000}
@@ -377,7 +423,7 @@ export function ReviewCarousel(): JSX.Element {
         "とても素晴らしい体験を\nありがとうございました。\n\nまた次回も\n参加したいと思います。\n\n皆様お疲れ様でした。",
       areaAndUser: "第4回 広島 小5、中2",
     },
-  ]
+  ] as const
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
   const reviewsRef: RefObject<Map<string, HTMLDivElement>> = useRef<
     Map<string, HTMLDivElement>
@@ -387,7 +433,10 @@ export function ReviewCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const reviews = reviewsRef.current as Map<string, HTMLDivElement>
+    const reviews: Map<string, HTMLDivElement> = reviewsRef.current as Map<
+      string,
+      HTMLDivElement
+    >
     for (const node of [...reviews.values()].reverse()) {
       const newReview = node.cloneNode(true)
       carousel.prepend(newReview)

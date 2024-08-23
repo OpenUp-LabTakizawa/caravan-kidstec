@@ -18,6 +18,11 @@ export const TOKYO_CHIBA: Submenu = {
   href: "/tokyo_chiba",
   textColor: "",
 }
+export const SPECIAL: Submenu = {
+  name: "スペシャル",
+  href: "/special",
+  textColor: "",
+}
 export const Q_AND_A: Submenu = {
   name: "Q&A",
   href: "/q-and-a",
@@ -51,7 +56,7 @@ export const PARTNER: Menu = {
   name: "パートナー",
   href: "/partner",
   textColor: "text-rose-400",
-  submenus: [TOKYO_CHIBA, HIROSHIMA],
+  submenus: [TOKYO_CHIBA, HIROSHIMA, SPECIAL],
 }
 
 export const NAVIGATION: Menu[] = [EVENT, HISTORY, SPONSER, PARTNER] as const

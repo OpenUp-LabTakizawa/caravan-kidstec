@@ -1,5 +1,5 @@
 import type { Menu, Submenu } from "@/app/interfaces/menu"
-import { HIROSHIMA, TOKYO_CHIBA } from "@/app/lib/constant"
+import { PARTNER } from "@/app/lib/constant"
 import { HomeIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -41,7 +41,7 @@ function Breadcrumb({
         </li>
         <li className={menu.textColor}>{menu.name}</li>
         {submenus?.map((submenu) =>
-          submenu === HIROSHIMA || submenu === TOKYO_CHIBA ? (
+          PARTNER.submenus.includes(submenu) ? (
             <li key={submenu.name}>
               <Link href={menu.href + submenu.href} className="link">
                 {submenu.name}

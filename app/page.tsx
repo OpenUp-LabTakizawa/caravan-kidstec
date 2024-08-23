@@ -1,4 +1,3 @@
-import { ScaleUpDown } from "@/app/components/animation/scaleUpDown"
 import {
   IndicatorCarousel,
   ReviewCarousel,
@@ -14,17 +13,18 @@ import type { JSX } from "react"
 export default function Home(): JSX.Element {
   return (
     <article className="gap-6 grid pb-4 text-base text-center">
-      <ScaleUpDown>
-        <Link href={EVENT.href + TOKYO_CHIBA.href}>
-          <Image
-            src="/202410_event_banner.avif"
-            width={1000}
-            height={1000}
-            alt="イベント詳細はこちら"
-            className="w-full"
-          />
-        </Link>
-      </ScaleUpDown>
+      <Link
+        href={EVENT.href + TOKYO_CHIBA.href}
+        className="scale-up-down sticky top-0 z-20"
+      >
+        <Image
+          src="/202410_event_banner.avif"
+          width={1000}
+          height={1000}
+          alt="イベント詳細はこちら"
+          className="w-full"
+        />
+      </Link>
       <section>
         <TopCarousel />
       </section>

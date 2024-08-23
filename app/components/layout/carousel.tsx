@@ -269,15 +269,22 @@ export function IndicatorCarousel(): JSX.Element {
     const imageNode: HTMLImageElement = images.get(
       pictures[0].alt,
     ) as HTMLImageElement
+    const imageWidth: number = imageNode.clientWidth
     const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft: number = carousel.scrollLeft
-    const buffer: number = imageNode.clientWidth * 2
+    const buffer: number = imageWidth * 2
 
     clearTimeout(timeoutId)
     timeoutId = setTimeout(() => {
-      if (scrollLeft % (buffer * 6) < buffer * 3) {
+      if (
+        scrollLeft % (imageWidth * pictures.length) <
+        imageWidth * programmingPictures.length
+      ) {
         setActiveTab(programmingPictures[0].alt)
-      } else if (buffer * 3 < scrollLeft % (buffer * 6)) {
+      } else if (
+        imageWidth * programmingPictures.length <
+        scrollLeft % (imageWidth * pictures.length)
+      ) {
         setActiveTab(eventPictures[0].alt)
       }
 

@@ -41,9 +41,9 @@ export function Footer(): JSX.Element {
       </nav>
       <aside>
         <p className="text-sm">
-          Copyright © こどもテックキャラバン 運営事務局&nbsp;
+          Copyright © こどもテックキャラバン&nbsp;
           <br className="block sm:hidden" />
-          All rights reserved.
+          運営事務局 All rights reserved.
         </p>
       </aside>
     </footer>

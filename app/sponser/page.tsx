@@ -40,7 +40,7 @@ export default function SponserPage(): JSX.Element {
         {sponsers.map((sponser) => (
           <section
             key={sponser.name}
-            className="bg-base-200 gap-1 grid grid-cols-2 items-center min-h-32 p-4 rounded-2xl shadow-lg sm:grid-cols-2"
+            className="bg-base-200 gap-1 grid grid-cols-6 items-center min-h-32 p-4 rounded-2xl shadow-lg sm:grid-cols-2"
           >
             <Image
               loader={cloudfrontLoader}
@@ -48,9 +48,9 @@ export default function SponserPage(): JSX.Element {
               width={1000}
               height={1000}
               alt={sponser.name}
-              className="w-full object-contain sm:max-h-20"
+              className="col-span-2 w-full object-contain sm:col-span-1 sm:max-h-20"
             />
-            <div className="grid gap-2 text-center sm:col-span-1">
+            <div className="col-span-4 gap-2 grid text-center sm:col-span-1">
               <h2 className="flex font-bold items-center justify-center text-sm">
                 <Link href={sponser.href} target="_blank" className="link">
                   {sponser.name}

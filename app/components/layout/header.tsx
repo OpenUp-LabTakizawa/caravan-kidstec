@@ -156,6 +156,7 @@ function Navigation({
                   ref.current?.delete(menu.name)
                 }
               }}
+              className="z-30"
             >
               <summary className="font-bold text-orange-400">
                 {menu.name}

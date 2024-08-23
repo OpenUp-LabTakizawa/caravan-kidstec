@@ -98,7 +98,7 @@ export default function Home(): JSX.Element {
           height={1000}
           className="absolute h-full object-contain opacity-10 w-full -z-10"
         />
-        <h2 className="font-bold font-zenMaruGothic text-3xl">
+        <h2 className="font-bold font-zenMaruGothic text-2xl">
           運営事務局の想い
         </h2>
         <div className="font-bold gap-4 grid text-sm">

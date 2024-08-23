@@ -5,6 +5,7 @@ import { NAVIGATION, SITE_TITLE } from "@/app/lib/constant"
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
 export function Header(): JSX.Element {
@@ -12,12 +13,19 @@ export function Header(): JSX.Element {
     scrollY: number
     isScrollDown: boolean
   }>({ scrollY: 0, isScrollDown: false })
+  const [className, setClassName] = useState<string>("")
+  const headerHeight: number = 50
+  const pathname: string = usePathname()
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScrollY({
         scrollY: window.scrollY,
         isScrollDown: scrollY.scrollY < window.scrollY,
       })
+      if (pathname !== "/") {
+        TranslateY()
+      }
     })
     return () =>
       window.removeEventListener("scroll", () => {
@@ -28,8 +36,16 @@ export function Header(): JSX.Element {
       })
   })
 
+  function TranslateY(): void {
+    const translateY =
+      headerHeight < scrollY.scrollY && scrollY.isScrollDown
+        ? "-translate-y-20"
+        : "translate-y-0"
+    setClassName(` transition sticky top-0 z-20 ${translateY}`)
+  }
+
   return (
-    <header className="bg-base-100 navbar">
+    <header className={`bg-base-100 navbar${className}`}>
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost tilt-shaking w-fit">
           <Image

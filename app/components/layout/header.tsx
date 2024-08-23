@@ -12,8 +12,6 @@ export function Header(): JSX.Element {
     scrollY: number
     isScrollDown: boolean
   }>({ scrollY: 0, isScrollDown: false })
-  const headerHeight: number = 50
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScrollY({
@@ -31,13 +29,7 @@ export function Header(): JSX.Element {
   })
 
   return (
-    <header
-      className={`bg-base-100 transition duration-400 ease navbar sticky top-0 z-20 ${
-        headerHeight < scrollY.scrollY && scrollY.isScrollDown
-          ? "-translate-y-20"
-          : "translate-y-0"
-      }`}
-    >
+    <header className="bg-base-100 navbar">
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost tilt-shaking w-fit">
           <Image
@@ -89,7 +81,7 @@ function DropdownMenu({
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>
-        <ul className="bg-base-100 dropdown-content menu menu-sm rounded-2xl shadow z-10">
+        <ul className="bg-base-100 dropdown-content menu menu-sm rounded-2xl shadow z-30">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (

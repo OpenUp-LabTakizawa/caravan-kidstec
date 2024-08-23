@@ -11,13 +11,6 @@ import type { JSX } from "react"
 export default function SponserPage(): JSX.Element {
   const sponsers: Sponser[] = [
     {
-      name: "ICHI COMMONS",
-      href: "https://ichicommons.com/",
-      src: "/logo/ichicommons_logo.svg",
-      business: "社会課題解決への\nインフラ事業",
-      purpose: "サステナビリティ活動で\n企業も、社会も持続可能に",
-    },
-    {
       name: "オープンアップグループ",
       href: "https://www.openupgroup.co.jp/",
       src: "/logo/openup_logo.svg",

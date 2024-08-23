@@ -39,11 +39,11 @@ export function Footer(): JSX.Element {
           ))}
         </ul>
       </nav>
-      <aside>
+      <aside className="text-center">
         <p className="text-sm">
-          Copyright © こどもテックキャラバン&nbsp;
+          Copyright © こどもテックキャラバン事務局&nbsp;
           <br className="block sm:hidden" />
-          運営事務局 All rights reserved.
+          All rights reserved.
         </p>
       </aside>
     </footer>

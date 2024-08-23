@@ -13,16 +13,13 @@ import type { JSX } from "react"
 export default function Home(): JSX.Element {
   return (
     <article className="gap-6 grid pb-4 text-base text-center">
-      <Link
-        href={EVENT.href + TOKYO_CHIBA.href}
-        className="scale-up-down sticky top-0 z-20"
-      >
+      <Link href={EVENT.href + TOKYO_CHIBA.href} className="sticky top-0 z-20">
         <Image
           src="/202410_event_banner.avif"
           width={1000}
           height={1000}
           alt="イベント詳細はこちら"
-          className="w-full"
+          className="w-full z-10"
         />
       </Link>
       <section>

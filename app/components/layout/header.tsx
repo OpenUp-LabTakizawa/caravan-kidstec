@@ -5,7 +5,7 @@ import { NAVIGATION, SITE_TITLE } from "@/app/lib/constant"
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+// import { usePathname } from "next/navigation"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
 export function Header(): JSX.Element {
@@ -13,9 +13,9 @@ export function Header(): JSX.Element {
     scrollY: number
     isScrollDown: boolean
   }>({ scrollY: 0, isScrollDown: false })
-  const [className, setClassName] = useState<string>("")
-  const headerHeight: number = 50
-  const pathname: string = usePathname()
+  // const [className, setClassName] = useState<string>("")
+  // const headerHeight: number = 50
+  // const pathname: string = usePathname()
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -23,9 +23,9 @@ export function Header(): JSX.Element {
         scrollY: window.scrollY,
         isScrollDown: scrollY.scrollY < window.scrollY,
       })
-      if (pathname !== "/") {
-        TranslateY()
-      }
+      // if (pathname !== "/") {
+      //   TranslateY()
+      // }
     })
     return () =>
       window.removeEventListener("scroll", () => {
@@ -36,16 +36,18 @@ export function Header(): JSX.Element {
       })
   })
 
-  function TranslateY(): void {
-    const translateY =
-      headerHeight < scrollY.scrollY && scrollY.isScrollDown
-        ? "-translate-y-20"
-        : "translate-y-0"
-    setClassName(` transition sticky top-0 z-20 ${translateY}`)
-  }
+  // TODO: usePathname doesn't work
+  // function TranslateY(): void {
+  //   const translateY =
+  //     headerHeight < scrollY.scrollY && scrollY.isScrollDown
+  //       ? "-translate-y-20"
+  //       : "translate-y-0"
+  //   setClassName(` transition sticky top-0 z-20 ${translateY}`)
+  // }
 
   return (
-    <header className={`bg-base-100 navbar${className}`}>
+    // <header className={`bg-base-100 navbar${className}`}>
+    <header className="bg-base-100 navbar">
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost tilt-shaking w-fit">
           <Image
@@ -57,10 +59,10 @@ export function Header(): JSX.Element {
           />
         </Link>
       </div>
-      <nav className="hidden navbar-end lg:flex">
+      <nav className="hidden navbar-end z-30 lg:flex">
         <Navigation isScrollDown={scrollY.isScrollDown} />
       </nav>
-      <div className="navbar-end lg:hidden">
+      <div className="navbar-end z-30 lg:hidden">
         <DropdownMenu isScrollDown={scrollY.isScrollDown} />
       </div>
     </header>
@@ -97,7 +99,7 @@ function DropdownMenu({
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>
-        <ul className="bg-base-100 dropdown-content menu menu-sm rounded-2xl shadow z-30">
+        <ul className="bg-base-100 dropdown-content menu menu-sm rounded-2xl shadow">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (
@@ -172,7 +174,6 @@ function Navigation({
                   ref.current?.delete(menu.name)
                 }
               }}
-              className="z-30"
             >
               <summary className="font-bold text-orange-400">
                 {menu.name}

@@ -1,5 +1,4 @@
 import { Heading } from "@/app/components/layout/heading"
-import { HistoryPanels } from "@/app/components/layout/menuPanel"
 import { Video } from "@/app/components/media/video"
 import type { Submenu } from "@/app/interfaces/menu"
 import type { EventDate } from "@/app/interfaces/schedule"
@@ -33,7 +32,6 @@ export default function HiroshimaMovie({
         <ArrowUturnLeftIcon className="rotate-z size-6" />
         {HISTORY.name}に戻る
       </Link>
-      <HistoryPanels menu={HISTORY} submenu={HIROSHIMA} />
     </>
   )
 }

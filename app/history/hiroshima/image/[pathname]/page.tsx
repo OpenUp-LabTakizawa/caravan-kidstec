@@ -1,7 +1,7 @@
 import { Heading } from "@/app/components/layout/heading"
 import { HistoryPanels } from "@/app/components/layout/menuPanel"
 import type { TilePicture } from "@/app/interfaces/picture"
-import { HIROSHIMA, HIROSHIMA_PICTURES, HISTORY } from "@/app/lib/constant"
+import { HIROSHIMA, HIROSHIMA_HISTORY, HISTORY } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
@@ -11,19 +11,19 @@ import type { JSX } from "react"
 export default function HiroshimaImage({
   params: { pathname },
 }: Readonly<{ params: { pathname: string } }>): JSX.Element {
-  const picture: TilePicture = HIROSHIMA_PICTURES.find(
-    (picture) => picture.pathname === pathname,
-  ) as TilePicture
+  const selectedPicture: TilePicture = HIROSHIMA_HISTORY.find((history) => {
+    return history.pictures.some((picture) => picture.pathname === pathname)
+  })?.pictures.find((picture) => picture.pathname === pathname) as TilePicture
 
   return (
     <>
       <Heading menu={HISTORY} submenus={[HIROSHIMA]} />
       <Image
         loader={cloudfrontLoader}
-        src={picture.src}
+        src={selectedPicture.src}
         height={256}
         width={256}
-        alt={picture.alt}
+        alt={selectedPicture.alt}
         className="w-full"
       />
       <Link

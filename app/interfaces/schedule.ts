@@ -11,6 +11,7 @@ export type Schedule = {
     readonly dayOfWeek: string
   }
   readonly venue: string
+  readonly homepageLink: string
   readonly address: string
   readonly googleMapLink: string
   readonly tags: string[]

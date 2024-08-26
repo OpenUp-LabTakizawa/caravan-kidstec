@@ -19,8 +19,8 @@ export default function Home(): JSX.Element {
       >
         <Image
           src="/202410_event_banner.avif"
-          width={200}
-          height={200}
+          width={540}
+          height={540}
           alt="イベント詳細はこちら"
           className="w-full z-10"
         />
@@ -94,8 +94,8 @@ export default function Home(): JSX.Element {
         <Image
           src="/handshake.avif"
           alt="handshake"
-          width={200}
-          height={200}
+          width={256}
+          height={256}
           className="absolute h-full object-contain opacity-10 w-full -z-10"
         />
         <h2 className="font-bold font-zenMaruGothic text-2xl">事務局の想い</h2>

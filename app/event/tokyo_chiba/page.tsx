@@ -64,8 +64,8 @@ export default function TokyoChiba(): JSX.Element {
       <Heading menu={EVENT} submenus={[TOKYO_CHIBA]} />
       <Image
         src={"/202410_tokyo_chiba.avif"}
-        width={200}
-        height={200}
+        width={540}
+        height={540}
         alt="こどもテックキャラバン"
         className="w-full"
       />

@@ -40,10 +40,11 @@ export function Header(): JSX.Element {
         <Link href="/" className="btn btn-ghost tilt-shaking w-fit">
           <Image
             src="/caravan-kidstec_logo_line.avif"
-            width={200}
-            height={200}
+            width={256}
+            height={256}
             alt={SITE_TITLE}
             priority={true}
+            className="w-full"
           />
         </Link>
       </div>

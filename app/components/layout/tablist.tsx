@@ -1,6 +1,7 @@
 "use client"
 
 import type { Schedule } from "@/app/interfaces/schedule"
+import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import { type JSX, useEffect, useState } from "react"
 
@@ -59,9 +60,8 @@ export function ScheduleTablist({
               className="card m-2 shadow-lg"
             >
               <Image
-                // loader={cloudfrontLoader}
-                // src={schedule.src}
-                src={`https://dk75m1tgsot44.cloudfront.net${schedule.src}`}
+                loader={cloudfrontLoader}
+                src={schedule.src}
                 width={256}
                 height={256}
                 alt={schedule.alt}

@@ -4,6 +4,7 @@ import { OpacityZero } from "@/app/components/animation/opacityZero"
 import type { Indicator } from "@/app/interfaces/indicator"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
+import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
@@ -130,9 +131,8 @@ export function TopCarousel(): JSX.Element {
                 imagesRef.current?.delete(picture.alt)
               }
             }}
-            // loader={cloudfrontLoader}
-            // src={picture.src}
-            src={`https://dk75m1tgsot44.cloudfront.net${picture.src}`}
+            loader={cloudfrontLoader}
+            src={picture.src}
             height={256}
             width={256}
             alt={picture.alt}
@@ -153,7 +153,7 @@ export function IndicatorCarousel(): JSX.Element {
     },
     {
       alt: "はじめてのはんだづけにどきどき",
-      src: "/202407/eda_island/soldering.avif",
+      src: "/202407/hiroshima_university/soldering.avif",
     },
     {
       alt: "最終日のロボサバ大会！優勝目指そう！",
@@ -272,7 +272,8 @@ export function IndicatorCarousel(): JSX.Element {
     const imageNode: HTMLImageElement = images.get(
       pictures[0].alt,
     ) as HTMLImageElement
-    const imageWidth: number = imageNode.clientWidth
+    // imageWidth is floating point so that it should be minus 1
+    const imageWidth: number = imageNode.clientWidth - 1
     const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
     const scrollLeft: number = carousel.scrollLeft
     const buffer: number = imageWidth * 2
@@ -343,9 +344,8 @@ export function IndicatorCarousel(): JSX.Element {
                 imagesRef.current?.delete(picture.alt)
               }
             }}
-            // loader={cloudfrontLoader}
-            // src={picture.src}
-            src={`https://dk75m1tgsot44.cloudfront.net${picture.src}`}
+            loader={cloudfrontLoader}
+            src={picture.src}
             height={256}
             width={256}
             alt={picture.alt}

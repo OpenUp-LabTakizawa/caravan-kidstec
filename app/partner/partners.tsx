@@ -1,4 +1,5 @@
 import type { Partner } from "@/app/interfaces/partner"
+import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -14,13 +15,12 @@ export function Partners({
           className="bg-base-200 gap-2 grid items-center p-4 rounded-2xl shadow-lg"
         >
           <Image
-            // loader={cloudfrontLoader}
-            // src={partner.src}
-            src={`https://dk75m1tgsot44.cloudfront.net${partner.src}`}
+            loader={cloudfrontLoader}
+            src={partner.src}
             width={256}
             height={256}
             alt={partner.name}
-            className="h-40 object-contain"
+            className="bg-white h-40 mx-auto object-contain"
           />
           <div className="content-center gap-2 grid">
             <h2 className="font-bold text-sm">

@@ -78,8 +78,8 @@ export function QA({
                 <div className="w-10 rounded-full">
                   <Image
                     src="/kai_icon.avif"
-                    width={1000}
-                    height={1000}
+                    width={100}
+                    height={100}
                     alt="カイ"
                     className="w-full"
                   />
@@ -94,8 +94,8 @@ export function QA({
                 <div className="w-10 rounded-full">
                   <Image
                     src="/miku_icon.avif"
-                    width={1000}
-                    height={1000}
+                    width={100}
+                    height={100}
                     alt="ミク"
                     className="flip-horizontal w-full"
                   />

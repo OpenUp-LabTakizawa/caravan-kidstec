@@ -17,8 +17,8 @@ export function Partners({
           <Image
             loader={cloudfrontLoader}
             src={partner.src}
-            width={1000}
-            height={1000}
+            width={100}
+            height={100}
             alt={partner.name}
             className="h-40 object-contain"
           />

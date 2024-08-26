@@ -133,8 +133,8 @@ export function TopCarousel(): JSX.Element {
             }}
             loader={cloudfrontLoader}
             src={picture.src}
-            height={1000}
-            width={1000}
+            height={100}
+            width={100}
             alt={picture.alt}
             className="aspect-square carousel-item object-cover w-full"
           />
@@ -345,8 +345,8 @@ export function IndicatorCarousel(): JSX.Element {
             }}
             loader={cloudfrontLoader}
             src={picture.src}
-            height={1000}
-            width={1000}
+            height={100}
+            width={100}
             alt={picture.alt}
             className="aspect-square carousel-item object-cover w-full"
           />

@@ -62,10 +62,10 @@ export function ScheduleTablist({
               <Image
                 loader={cloudfrontLoader}
                 src={schedule.src}
-                width={1000}
-                height={1000}
+                width={100}
+                height={100}
                 alt={schedule.alt}
-                className="h-60 object-cover rounded-t-2xl sm:h-80"
+                className="h-60 object-cover rounded-t-2xl w-96 sm:h-80"
               />
               <div className="bg-amber-50 card-body p-0 py-2 relative rounded-b-2xl">
                 <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">

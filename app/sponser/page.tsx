@@ -38,10 +38,10 @@ export default function SponserPage(): JSX.Element {
             <Image
               loader={cloudfrontLoader}
               src={sponser.src}
-              width={1000}
-              height={1000}
+              width={100}
+              height={100}
               alt={sponser.name}
-              className="col-span-2 w-full object-contain sm:col-span-1 sm:max-h-20"
+              className="col-span-2 object-contain w-full sm:col-span-1 sm:max-h-20"
             />
             <div className="col-span-4 gap-2 grid text-center sm:col-span-1">
               <h2 className="flex font-bold items-center justify-center text-sm">

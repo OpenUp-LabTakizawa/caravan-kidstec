@@ -105,8 +105,6 @@ export function QA({
                 {qAndA.answer}
               </span>
             </div>
-            {qAndA.question === "ロボットを改造しても良いですか？" &&
-              "修正中..."}
           </details>
         ))}
       </section>

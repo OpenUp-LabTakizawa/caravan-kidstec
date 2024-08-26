@@ -1,6 +1,6 @@
 import { Heading } from "@/app/components/layout/heading"
 import { HistoryPanels } from "@/app/components/layout/menuPanel"
-import type { Picture } from "@/app/interfaces/picture"
+import type { TilePicture } from "@/app/interfaces/picture"
 import { HIROSHIMA, HIROSHIMA_PICTURES, HISTORY } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
@@ -9,11 +9,11 @@ import Link from "next/link"
 import type { JSX } from "react"
 
 export default function HiroshimaImage({
-  params: { alt },
-}: Readonly<{ params: { alt: string } }>): JSX.Element {
-  const picture: Picture = HIROSHIMA_PICTURES.find(
-    (picture) => picture.alt === alt,
-  ) as Picture
+  params: { pathname },
+}: Readonly<{ params: { pathname: string } }>): JSX.Element {
+  const picture: TilePicture = HIROSHIMA_PICTURES.find(
+    (picture) => picture.pathname === pathname,
+  ) as TilePicture
 
   return (
     <>

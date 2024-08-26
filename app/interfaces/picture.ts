@@ -3,6 +3,12 @@ export type Picture = {
   readonly src: string
 }
 
+export type TilePicture = {
+  readonly alt: string
+  readonly src: string
+  readonly pathname: string
+}
+
 export type Panel = {
   readonly src: string
   readonly alt: string

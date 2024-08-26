@@ -1,5 +1,5 @@
 import type { Menu, Submenu } from "@/app/interfaces/menu"
-import type { Picture } from "@/app/interfaces/picture"
+import type { TilePicture } from "@/app/interfaces/picture"
 import type { EventDate, Program } from "@/app/interfaces/schedule"
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
@@ -152,29 +152,35 @@ export const HIROSHIMA_HISTORY: EventDate[] = [
   },
 ]
 
-export const HIROSHIMA_PICTURES: Picture[] = [
+export const HIROSHIMA_PICTURES: TilePicture[] = [
   {
     alt: "採れたてのお魚に興味津々！",
     src: "/202407/eda_island/holding_fish.avif",
+    pathname: "holding_fish",
   },
   {
     alt: "広島大学のチェックポイント確認中…",
     src: "/202407/hiroshima_university/checking_course.avif",
+    pathname: "checking_course",
   },
   {
     alt: "広島大学で昆虫採集！",
     src: "/202407/hiroshima_university/insect_netting_boy.avif",
+    pathname: "insect_netting_boy",
   },
   {
     alt: "手作りのオリーブオイル、最初はまだ赤い！",
     src: "/202311/eda_island/olive_pouring.avif",
+    pathname: "olive_pouring",
   },
   {
     alt: "ブーケを持って入場！",
     src: "/202311/wedding/wedding_bouquet.avif",
+    pathname: "wedding_bouquet",
   },
   {
     alt: "ケーキ作りも自分で挑戦！",
     src: "/202407/wedding/pastry_chef_boy.avif",
+    pathname: "pastry_chef_boy",
   },
 ] as const

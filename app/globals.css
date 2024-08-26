@@ -2,6 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* disable hold down in order to prevent downloading images   */
+img {
+  pointer-events: none;
+}
+
 .arrow-down {
   animation: arrow-down 1.5s infinite;
 }

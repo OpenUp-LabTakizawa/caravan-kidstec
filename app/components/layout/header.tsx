@@ -16,7 +16,7 @@ export function Header(): JSX.Element {
   const headerHeight: number = 50
   const pathname: string = usePathname()
 
-  // disable right click in order to prevent download image
+  // disable right click in order to prevent downloading images
   useEffect(() => {
     window.addEventListener("contextmenu", (event) => event.preventDefault())
     return () =>

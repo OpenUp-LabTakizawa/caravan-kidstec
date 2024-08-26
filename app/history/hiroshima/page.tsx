@@ -7,7 +7,6 @@ import {
   HIROSHIMA,
   HIROSHIMA_HISTORY,
   HIROSHIMA_LINE,
-  HIROSHIMA_PICTURES,
   HISTORY,
 } from "@/app/lib/constant"
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
@@ -30,7 +29,7 @@ export default function Hiroshima(): JSX.Element {
               {history.title}
             </summary>
             <Programs programs={history.programs} />
-            <HistoryPictures pictures={HIROSHIMA_PICTURES} />
+            <HistoryPictures pictures={history.pictures} />
             <Link
               href={`${HISTORY.href}${HIROSHIMA.href}/movie${history.href}`}
               className="pt-2"

@@ -1,3 +1,5 @@
+import type { TilePicture } from "./picture"
+
 export type Schedule = {
   readonly alt: string
   readonly src: string
@@ -28,4 +30,5 @@ export type EventDate = {
   readonly href: string
   readonly title: string
   readonly programs: Program[]
+  readonly pictures: TilePicture[]
 }

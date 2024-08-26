@@ -129,26 +129,160 @@ const HIROSHIMA_FOURTH_PROGRAMS: Program[] = [
     venue: "アーククラブ迎賓館福山",
   },
 ] as const
+
+export const HIROSHIMA_FIRST_PICTURES: TilePicture[] = [
+  {
+    alt: "プログラミング体験",
+    src: "/202206/sandankyo/initial_screen.avif",
+    pathname: "initial_screen",
+  },
+  {
+    alt: "家族ではんだ付けに挑戦！",
+    src: "/202206/sandankyo/soldering_by_mother.avif",
+    pathname: "soldering_by_mother",
+  },
+  {
+    alt: "採れたての魚をパクリ！",
+    src: "/202206/sandankyo/eating_char.avif",
+    pathname: "eating_char",
+  },
+  {
+    alt: "三段峡で記念撮影！",
+    src: "/202206/sandankyo/group_peace.avif",
+    pathname: "group_peace",
+  },
+  {
+    alt: "三段峡の神秘的な自然に圧倒！",
+    src: "/202206/sandankyo/magnificent_natural_landscape.avif",
+    pathname: "magnificent_natural_landscape",
+  },
+  {
+    alt: "サップ体験の準備ができましたか？",
+    src: "/202206/eda_island/ready_for_sup.avif",
+    pathname: "ready_for_sup",
+  },
+] as const
+export const HIROSHIMA_SECOND_PICTURES: TilePicture[] = [
+  {
+    alt: "正しく取り付け出来るかな？",
+    src: "/202306/m-plaza/check_parts.avif",
+    pathname: "check_parts",
+  },
+  {
+    alt: "メガサップに挑戦！",
+    src: "/202306/eda_island/rowing_mega_sup.avif",
+    pathname: "rowing_mega_sup",
+  },
+  {
+    alt: "記念の集合写真をパシャリ！",
+    src: "/202306/eda_island/group_mega_sup.avif",
+    pathname: "group_mega_sup",
+  },
+  {
+    alt: "初めてのプログラミング体験",
+    src: "/202306/sandankyo/thinking_girl.avif",
+    pathname: "thinking_girl",
+  },
+  {
+    alt: "みんなと川下り体験",
+    src: "/202306/sandankyo/going_downstream.avif",
+    pathname: "going_downstream",
+  },
+  {
+    alt: "雄大な自然を楽しみながら川下り体験",
+    src: "/202306/sandankyo/rowing_boat.avif",
+    pathname: "rowing_boat",
+  },
+] as const
+export const HIROSHIMA_THIRD_PICTURES: TilePicture[] = [
+  {
+    alt: "はんだ付けに興味津々！",
+    src: "/202311/eda_island/teaching_soldering.avif",
+    pathname: "teaching_soldering",
+  },
+  {
+    alt: "三段峡の自然と触れ合う",
+    src: "/202311/sandankyo/laminate_leaf.avif",
+    pathname: "laminate_leaf",
+  },
+  {
+    alt: "ぺったんぺったん、餅つき体験！",
+    src: "/202311/sandankyo/mochi_pounding.avif",
+    pathname: "mochi_pounding",
+  },
+  {
+    alt: "ロボサバ大会に挑戦中…",
+    src: "/202311/wedding/thinking_boy.avif",
+    pathname: "thinking_boy",
+  },
+  {
+    alt: "結婚式場でフラワーアレンジメント体験！",
+    src: "/202311/wedding/wraping_flower.avif",
+    pathname: "wraping_flower",
+  },
+  {
+    alt: "最後に集合写真をパシャリ！",
+    src: "/202311/wedding/group.avif",
+    pathname: "group",
+  },
+] as const
+export const HIROSHIMA_FOURTH_PICTURES: TilePicture[] = [
+  {
+    alt: "はんだ付けに興味津々！",
+    src: "/202407/hiroshima_university/teaching_soldering_to_girl.avif",
+    pathname: "teaching_soldering_to_girl",
+  },
+  {
+    alt: "三段峡の自然と触れ合う",
+    src: "/202407/hiroshima_university/looking_for_paper.avif",
+    pathname: "looking_for_paper",
+  },
+  {
+    alt: "ぺったんぺったん、餅つき体験！",
+    src: "/202407/hiroshima_university/pointing_out_map.avif",
+    pathname: "pointing_out_map",
+  },
+  {
+    alt: "ロボサバ大会に挑戦中…",
+    src: "/202407/wedding/judging.avif",
+    pathname: "judging",
+  },
+  {
+    alt: "結婚式場でフラワーアレンジメント体験！",
+    src: "/202407/wedding/make_cream.avif",
+    pathname: "make_cream",
+  },
+  {
+    alt: "最後に集合写真をパシャリ！",
+    src: "/202407/wedding/group_with_sofa.avif",
+    pathname: "group_with_sofa",
+  },
+] as const
+
 export const HIROSHIMA_HISTORY: EventDate[] = [
   {
     href: "/202206",
     title: "第１回 2022年6月",
     programs: HIROSHIMA_FIRST_PROGRAMS,
+    pictures: HIROSHIMA_FIRST_PICTURES,
   },
   {
     href: "/202306",
     title: "第２回 2023年6月",
     programs: HIROSHIMA_SECOND_PROGRAMS,
+    pictures: HIROSHIMA_SECOND_PICTURES,
   },
   {
     href: "/202311",
     title: "第３回 2023年11月",
     programs: HIROSHIMA_THIRD_PROGRAMS,
+    pictures: HIROSHIMA_THIRD_PICTURES,
   },
   {
     href: "/202407",
     title: "第４回 2024年7月",
     programs: HIROSHIMA_FOURTH_PROGRAMS,
+    pictures: HIROSHIMA_FOURTH_PICTURES,
   },
 ]
 

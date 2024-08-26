@@ -8,6 +8,11 @@ export const DESCRIPTION: string =
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
 export const TOKYO_CHIBA_DEADLINE: string = "２０２４年１０月１０日"
+export const SPECIAL: Submenu = {
+  name: "スペシャル",
+  href: "/special",
+  textColor: "",
+}
 export const HIROSHIMA: Submenu = {
   name: "広島",
   href: "/hiroshima",
@@ -16,11 +21,6 @@ export const HIROSHIMA: Submenu = {
 export const TOKYO_CHIBA: Submenu = {
   name: "東京・千葉",
   href: "/tokyo_chiba",
-  textColor: "",
-}
-export const SPECIAL: Submenu = {
-  name: "スペシャル",
-  href: "/special",
   textColor: "",
 }
 export const Q_AND_A: Submenu = {
@@ -56,7 +56,7 @@ export const PARTNER: Menu = {
   name: "パートナー",
   href: "/partner",
   textColor: "text-rose-400",
-  submenus: [TOKYO_CHIBA, HIROSHIMA, SPECIAL],
+  submenus: [SPECIAL, TOKYO_CHIBA, HIROSHIMA],
 }
 
 export const NAVIGATION: Menu[] = [EVENT, HISTORY, SPONSER, PARTNER] as const

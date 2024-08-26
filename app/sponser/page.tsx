@@ -2,7 +2,6 @@ import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { Heading } from "@/app/components/layout/heading"
 import type { Sponser } from "@/app/interfaces/sponser"
 import { SPONSER } from "@/app/lib/constant"
-import { cloudfrontLoader } from "@/app/lib/loader"
 import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
@@ -36,10 +35,11 @@ export default function SponserPage(): JSX.Element {
             className="bg-base-200 gap-1 grid grid-cols-6 items-center min-h-32 p-4 rounded-2xl shadow-lg sm:grid-cols-2"
           >
             <Image
-              loader={cloudfrontLoader}
-              src={sponser.src}
-              width={100}
-              height={100}
+              // loader={cloudfrontLoader}
+              // src={sponser.src}
+              src={`https://dk75m1tgsot44.cloudfront.net${sponser.src}`}
+              width={256}
+              height={256}
               alt={sponser.name}
               className="col-span-2 object-contain w-full sm:col-span-1 sm:max-h-20"
             />

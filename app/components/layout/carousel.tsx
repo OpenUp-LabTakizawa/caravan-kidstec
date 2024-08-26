@@ -4,7 +4,6 @@ import { OpacityZero } from "@/app/components/animation/opacityZero"
 import type { Indicator } from "@/app/interfaces/indicator"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
-import { cloudfrontLoader } from "@/app/lib/loader"
 import { UserCircleIcon } from "@heroicons/react/24/outline"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
@@ -131,10 +130,11 @@ export function TopCarousel(): JSX.Element {
                 imagesRef.current?.delete(picture.alt)
               }
             }}
-            loader={cloudfrontLoader}
-            src={picture.src}
-            height={100}
-            width={100}
+            // loader={cloudfrontLoader}
+            // src={picture.src}
+            src={`https://dk75m1tgsot44.cloudfront.net${picture.src}`}
+            height={256}
+            width={256}
             alt={picture.alt}
             className="aspect-square carousel-item object-cover w-full"
           />
@@ -343,10 +343,11 @@ export function IndicatorCarousel(): JSX.Element {
                 imagesRef.current?.delete(picture.alt)
               }
             }}
-            loader={cloudfrontLoader}
-            src={picture.src}
-            height={100}
-            width={100}
+            // loader={cloudfrontLoader}
+            // src={picture.src}
+            src={`https://dk75m1tgsot44.cloudfront.net${picture.src}`}
+            height={256}
+            width={256}
             alt={picture.alt}
             className="aspect-square carousel-item object-cover w-full"
           />

@@ -2,7 +2,6 @@
 
 import type { Picture } from "@/app/interfaces/picture"
 import { HIROSHIMA, HISTORY } from "@/app/lib/constant"
-import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
 import { type JSX, type RefObject, useEffect, useRef } from "react"
@@ -48,10 +47,11 @@ export function HistoryPictures({
           }}
         >
           <Image
-            loader={cloudfrontLoader}
-            src={picture.src}
-            height={100}
-            width={100}
+            // loader={cloudfrontLoader}
+            // src={picture.src}
+            src={`https://dk75m1tgsot44.cloudfront.net${picture.src}`}
+            height={256}
+            width={256}
             alt={picture.alt}
             className="w-full"
           />

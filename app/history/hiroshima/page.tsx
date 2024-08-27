@@ -25,7 +25,7 @@ export default function Hiroshima(): JSX.Element {
                 <br />
                 開催終了
               </p>
-              {history.title}
+              <span className="ml-12">{history.title}</span>
             </summary>
             <Programs programs={history.programs} />
             <HistoryPictures pictures={history.pictures} />

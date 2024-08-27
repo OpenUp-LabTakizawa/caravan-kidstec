@@ -78,6 +78,7 @@ export function ScheduleTablist({
                       href={schedule.am.url}
                       target="_blank"
                       className="link"
+                      rel="noopener noreferrer"
                     >
                       {schedule.am.title}
                     </Link>
@@ -89,6 +90,7 @@ export function ScheduleTablist({
                       href={schedule.pm.url}
                       target="_blank"
                       className="link"
+                      rel="noopener noreferrer"
                     >
                       {schedule.pm.title}
                     </Link>

@@ -1,17 +1,18 @@
 "use client"
 
-import { type JSX, useEffect } from "react"
+import { type JSX, useEffect, useState } from "react"
 import { FadeInUp } from "./components/animation/fadeInUp"
 
 export function Introduction(): JSX.Element {
-  let isWebkit = false
+  const [isWebkit, setIsWebkit] = useState(false)
 
   useEffect(() => {
     const userAgent = navigator.userAgent
-    isWebkit =
+    const isWebkit =
       /\b(iPad|iPhone|iPod)\b/.test(userAgent) &&
       /WebKit/.test(userAgent) &&
       !/Edge/.test(userAgent)
+    setIsWebkit(isWebkit)
   })
 
   return (

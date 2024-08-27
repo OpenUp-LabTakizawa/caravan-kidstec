@@ -28,7 +28,7 @@ export default function TokyoChiba(): JSX.Element {
       alt: "Day 1",
       src: "/202407/hiroshima_university/soldering_with_father.avif",
       date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
-      am: { title: "午前：ロボット制作", url: "" },
+      am: { title: "午前：ロボット製作", url: "" },
       pm: {
         title: "午後：自然学習（農と食、いのちのてざわり）",
         url: "https://kurkkufields.jp/",
@@ -56,7 +56,7 @@ export default function TokyoChiba(): JSX.Element {
       alt: "Day 3",
       src: "/202407/wedding/pick_up_flower.avif",
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
-      am: { title: "午前：ロボサバ大会", url: "https://robosava.jp/" },
+      am: { title: "午前：ロボット競技大会", url: "https://robosava.jp/" },
       pm: {
         title: "午後：結婚式体験",
         url: "https://www.tgn.co.jp/wedding/tokyo/vge/",

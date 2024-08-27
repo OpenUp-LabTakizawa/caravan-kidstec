@@ -12,7 +12,7 @@ export function Partners({
       {partners.map((partner) => (
         <section
           key={partner.name}
-          className="bg-base-200 gap-2 grid items-center p-4 rounded-2xl shadow-lg"
+          className="bg-base-200 gap-2 grid items-center p-2 rounded-2xl shadow-lg"
         >
           <Image
             loader={cloudfrontLoader}
@@ -34,7 +34,7 @@ export function Partners({
               </Link>
             </h2>
             <div
-              className={`grid items-center my-auto ${partners[0].name === "BPL" ? "h-40" : "h-44"}`}
+              className={`grid items-center my-auto ${partners[0].name === "BPL" ? "h-40" : "h-48"}`}
             >
               <p className="whitespace-pre">{partner.introduction}</p>
             </div>

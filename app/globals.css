@@ -89,6 +89,10 @@ img {
   }
 }
 
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }
@@ -103,14 +107,14 @@ img {
   animation-range: contain 0% contain 100%;
 }
 
-.flip-horizontal {
-  transform: scale(-1, 1);
-}
-
 .green-shine {
   background: linear-gradient(to right, #00c300 50%, #abf1b5 60%, #00c300 70%);
   background-size: 600% 100%;
   animation: shine 20s infinite linear;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }
 
 .rotate-z {

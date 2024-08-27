@@ -2,19 +2,20 @@ import type { TilePicture } from "./picture"
 
 export type Schedule = {
   readonly alt: string
-  readonly src: string
   readonly date: {
     readonly year: string
     readonly month: string
     readonly day: string
     readonly dayOfWeek: string
   }
-  readonly am: { title: string; url: string }
-  readonly pm: { title: string; url: string }
   readonly venue: string
   readonly address: string
   readonly googleMapLink: string
-  readonly tags: string[]
+  readonly src: { readonly am: string; readonly pm: string }
+  readonly title: { readonly am: string; readonly pm: string }
+  readonly organization: { readonly am: string; readonly pm: string }
+  readonly url: { readonly am: string; readonly pm: string }
+  readonly tags: { readonly am: string[]; readonly pm: string[] }
 }
 
 export type Program = {

@@ -9,11 +9,21 @@ import { type JSX, useEffect, useState } from "react"
 export function ScheduleTablist({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
+  const [isFlip, setIsFlip] = useState<boolean>(false)
   const [tab, setTab] = useState<string>(schedules[0].alt)
   const [isBusy, setIsBusy] = useState<boolean>(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
+      if (!isBusy) {
+        setIsFlip(!isFlip)
+      }
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [isFlip, isBusy])
+
+  useEffect(() => {
+    const tabInterval = setInterval(() => {
       if (!isBusy) {
         if (tab === schedules[0].alt) {
           setTab(schedules[1].alt)
@@ -25,9 +35,9 @@ export function ScheduleTablist({
           setTab(schedules[0].alt)
         }
       }
-    }, 3000)
-    return () => clearInterval(interval)
-  })
+    }, 6000)
+    return () => clearInterval(tabInterval)
+  }, [tab, schedules, isBusy])
 
   return (
     <section className="gap-1 grid max-w-lg mx-auto text-center">
@@ -58,65 +68,108 @@ export function ScheduleTablist({
               onMouseLeave={() => setIsBusy(false)}
               onTouchStart={() => setIsBusy(true)}
               onTouchEnd={() => setIsBusy(false)}
-              className="card m-2 shadow-lg"
+              className="card flip-card m-2 h-96 w-80"
+              style={{ perspective: "1000px" }}
             >
-              <Image
-                loader={cloudfrontLoader}
-                src={schedule.src}
-                width={256}
-                height={256}
-                alt={schedule.alt}
-                className="h-60 object-cover rounded-t-2xl w-96 sm:h-80"
-              />
-              <div className="bg-amber-50 card-body p-0 py-2 relative rounded-b-2xl">
-                <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
-                  {schedule.alt}
-                </strong>
-                <h3 className="gap-1 grid mx-auto text-base font-bold">
-                  {schedule.am.url ? (
-                    <Link
-                      href={schedule.am.url}
-                      target="_blank"
-                      className="link"
-                      rel="noopener noreferrer"
-                    >
-                      {schedule.am.title}
-                    </Link>
-                  ) : (
-                    <span>{schedule.am.title}</span>
-                  )}
-                  {schedule.pm.url ? (
-                    <Link
-                      href={schedule.pm.url}
-                      target="_blank"
-                      className="link"
-                      rel="noopener noreferrer"
-                    >
-                      {schedule.pm.title}
-                    </Link>
-                  ) : (
-                    <span>{schedule.pm.title}</span>
-                  )}
-                </h3>
-                <strong className="text-sm">
-                  {schedule.date.year}年{schedule.date.month}月
-                  {schedule.date.day}
-                  日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
-                </strong>
-                <div className="card-actions justify-center">
-                  {schedule.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="badge badge-outline bg-base-200 text-xs"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              <div
+                className={`duration-1000 flip-card-inner shadow-lg relative transition-transform ${isFlip ? "rotate-y-180" : ""}`}
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                <div
+                  className="absolute h-full w-full"
+                  style={{ backfaceVisibility: "hidden" }}
+                >
+                  <TabCard schedule={schedule} time="am" />
+                </div>
+                <div
+                  className="absolute h-full w-full"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
+                  }}
+                >
+                  <TabCard schedule={schedule} time="pm" />
                 </div>
               </div>
             </div>
           ),
       )}
     </section>
+  )
+}
+
+function TabCard({
+  schedule,
+  time,
+}: { schedule: Schedule; time: string }): JSX.Element {
+  return (
+    <>
+      <Image
+        loader={cloudfrontLoader}
+        src={time === "am" ? schedule.src.am : schedule.src.pm}
+        width={256}
+        height={256}
+        alt={schedule.alt}
+        className="h-60 object-cover rounded-t-2xl w-96"
+      />
+      <div className="bg-amber-50 card-body h-36 p-0 pb-2 pt-6 relative rounded-b-2xl shadow-2xl">
+        <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
+          {schedule.alt}&nbsp;{time === "am" ? "午前" : "午後"}
+        </strong>
+        <h3 className="gap-1 grid mx-auto text-base font-bold">
+          {time === "am" ? schedule.title.am : schedule.title.pm}
+        </h3>
+        <strong className="text-sm">
+          {time === "am" ? (
+            schedule.url.am ? (
+              <Link
+                href={schedule.url.am}
+                target="_blank"
+                className="link"
+                rel="noopener noreferrer"
+              >
+                {schedule.organization.am}
+              </Link>
+            ) : (
+              <>{schedule.organization.am}</>
+            )
+          ) : schedule.url.pm ? (
+            <Link
+              href={schedule.url.pm}
+              target="_blank"
+              className="link"
+              rel="noopener noreferrer"
+            >
+              {schedule.organization.pm}
+            </Link>
+          ) : (
+            <>{schedule.organization.pm}</>
+          )}
+        </strong>
+        <strong className="text-sm">
+          {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
+          日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
+        </strong>
+        <div className="card-actions justify-center">
+          {time === "am"
+            ? schedule.tags.am.map((tag) => (
+                <span
+                  key={tag}
+                  className="badge badge-outline bg-base-200 text-xs"
+                >
+                  {tag}
+                </span>
+              ))
+            : schedule.tags.pm.map((tag) => (
+                <span
+                  key={tag}
+                  className="badge badge-outline bg-base-200 text-xs"
+                >
+                  {tag}
+                </span>
+              ))}
+        </div>
+      </div>
+    </>
   )
 }

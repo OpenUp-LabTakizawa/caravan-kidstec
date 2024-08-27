@@ -54,7 +54,8 @@ export function QA({
                     width={32}
                     height={32}
                     alt="ミク"
-                    className="flip-horizontal w-full"
+                    className="w-full"
+                    style={{ transform: "scaleX(-1)" }}
                   />
                 </div>
               </div>

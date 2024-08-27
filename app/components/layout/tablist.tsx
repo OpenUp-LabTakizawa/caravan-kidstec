@@ -4,7 +4,7 @@ import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
-import { type JSX, useState } from "react"
+import { type JSX, useEffect, useState } from "react"
 
 export function ScheduleTablist({
   schedules,
@@ -12,22 +12,22 @@ export function ScheduleTablist({
   const [tab, setTab] = useState<string>(schedules[0].alt)
   const [isBusy, setIsBusy] = useState<boolean>(false)
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (!isBusy) {
-  //       if (tab === schedules[0].alt) {
-  //         setTab(schedules[1].alt)
-  //       }
-  //       if (tab === schedules[1].alt) {
-  //         setTab(schedules[2].alt)
-  //       }
-  //       if (tab === schedules[2].alt) {
-  //         setTab(schedules[0].alt)
-  //       }
-  //     }
-  //   }, 3000)
-  //   return () => clearInterval(interval)
-  // })
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isBusy) {
+        if (tab === schedules[0].alt) {
+          setTab(schedules[1].alt)
+        }
+        if (tab === schedules[1].alt) {
+          setTab(schedules[2].alt)
+        }
+        if (tab === schedules[2].alt) {
+          setTab(schedules[0].alt)
+        }
+      }
+    }, 3000)
+    return () => clearInterval(interval)
+  })
 
   return (
     <section className="gap-1 grid max-w-lg mx-auto text-center">

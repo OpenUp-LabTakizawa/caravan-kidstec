@@ -36,7 +36,7 @@ export default function TokyoChiba(): JSX.Element {
       venue: "クルックフィールズ",
       address: "千葉県木更津市矢那2503",
       googleMapLink: "https://maps.app.goo.gl/o73uHVntuoTg3aym9",
-      tags: ["ロボット制作", "自然学習"],
+      tags: ["ロボット", "自然学習"],
     },
     {
       alt: "Day 2",
@@ -50,7 +50,7 @@ export default function TokyoChiba(): JSX.Element {
       venue: "東京虎ノ門グローバルスクエア",
       address: "東京都港区虎ノ門1-3-1",
       googleMapLink: "https://maps.app.goo.gl/98KzCvCeFggZY88P6",
-      tags: ["プログラミング", "ネットリテラシー"],
+      tags: ["ロボット", "ネットリテラシー"],
     },
     {
       alt: "Day 3",

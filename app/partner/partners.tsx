@@ -34,7 +34,7 @@ export function Partners({
               </Link>
             </h2>
             <div
-              className={`grid items-center my-auto ${partners[0].name === "BPL Inc." ? "h-30" : "h-44"}`}
+              className={`grid items-center my-auto ${partners[0].name === "クルックフィールズ" ? "h-44" : "h-40"}`}
             >
               <p className="whitespace-pre">{partner.introduction}</p>
             </div>

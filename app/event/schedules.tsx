@@ -31,6 +31,7 @@ export function Schedules({
                   href={schedule.googleMapLink}
                   target="_blank"
                   className="flex gap-1 items-center link"
+                  rel="noopener noreferrer"
                 >
                   {schedule.address}
                   <ArrowTopRightOnSquareIcon className="size-4" />

@@ -45,7 +45,12 @@ export default function SponserPage(): JSX.Element {
             />
             <div className="col-span-4 gap-2 grid text-center sm:col-span-1">
               <h2 className="flex font-bold items-center justify-center text-sm">
-                <Link href={sponser.href} target="_blank" className="link">
+                <Link
+                  href={sponser.href}
+                  target="_blank"
+                  className="link"
+                  rel="noopener noreferrer"
+                >
                   {sponser.name}
                 </Link>
               </h2>

@@ -64,15 +64,17 @@ export function ScheduleTablist({
             <div
               key={schedule.alt}
               role="tabpanel"
+              onClick={() => setIsFlip(!isFlip)}
+              onKeyDown={() => setIsFlip(!isFlip)}
               onMouseEnter={() => setIsBusy(true)}
               onMouseLeave={() => setIsBusy(false)}
               onTouchStart={() => setIsBusy(true)}
               onTouchEnd={() => setIsBusy(false)}
-              className="card flip-card m-2 h-96 w-80"
+              className="card m-2 h-96 w-80"
               style={{ perspective: "1000px" }}
             >
               <div
-                className={`duration-1000 flip-card-inner shadow-lg relative transition-transform ${isFlip ? "rotate-y-180" : ""}`}
+                className={`duration-1000 shadow-lg relative transition-transform ${isFlip ? "rotate-y-180" : ""}`}
                 style={{ transformStyle: "preserve-3d" }}
               >
                 <div

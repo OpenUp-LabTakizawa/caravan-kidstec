@@ -89,10 +89,6 @@ img {
   }
 }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }

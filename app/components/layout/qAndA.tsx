@@ -7,59 +7,16 @@ import Image from "next/image"
 import type { JSX } from "react"
 
 export function QA({
+  qAndAs,
   lineLink,
   menu,
   submenu,
-}: Readonly<{ lineLink: string; menu: Menu; submenu: Submenu }>): JSX.Element {
-  const qAndAs: QandA[] = [
-    {
-      title: "対象年齢",
-      question: "Q：何歳から参加できますか？",
-      answer:
-        "A：小学２年生 ～ 中学２年生\n（ロボットプログラミングの対象年齢）までの\nお子さまがいるご家族が対象です。\n自然体験についてはその他の\n年齢のお子さまも参加できます。",
-    },
-    {
-      title: "参加人数",
-      question: "Q：兄弟姉妹で一緒の参加は可能ですか？",
-      answer:
-        "A：参加出来ます。\n対象年齢がありますので、一度\nLINE公式アカウントへご相談ください。",
-    },
-    {
-      title: "子どもだけの参加",
-      question: "Q：子どもだけの参加はできますか？",
-      answer:
-        "A：お子さまだけの参加はできません。\n必ず親御様１名以上の\n参加が条件となります。",
-    },
-    {
-      title: "移動について",
-      question: "Q：移動手段の指定はありますか？",
-      answer: "A：指定はございません。\nまた、交通費は自己負担となります。",
-    },
-    {
-      title: "全日参加について",
-      question: "Q：全日参加が必要ですか？",
-      answer: "A：原則、全日程参加が条件となります。",
-    },
-    {
-      title: "天候不良の場合",
-      question: "Q：雨が降った場合、当日はどうなりますか？",
-      answer:
-        "A：屋外イベントの場合は、\n屋内でできるイベントに\n振り替える場合もございますが、\n極端な天候不良や災害の場合は、\n中止とさせていただく可能性も\nございますのでご了承ください。\nどちらの場合にもご連絡いたします。",
-    },
-    {
-      title: "キャンセルについて",
-      question: "Q：参加確定後のキャンセルはできますか？",
-      answer:
-        "A：キャンセルを承ることは可能です。\nキャンセルのご連絡は、\n運営上の関係で早めに\nご連絡いただけますと幸いです。",
-    },
-    {
-      title: "人数の変更",
-      question: "Q：参加する人数の変更はできますか？",
-      answer:
-        "A：基本的には承ることができますが、\n必ずLINE公式アカウントにて\nご相談ください。",
-    },
-  ] as const
-
+}: Readonly<{
+  qAndAs: QandA[]
+  lineLink: string
+  menu: Menu
+  submenu: Submenu
+}>): JSX.Element {
   return (
     <>
       <Heading menu={menu} submenus={[submenu, Q_AND_A]} />
@@ -85,7 +42,7 @@ export function QA({
                   />
                 </div>
               </div>
-              <span className="bg-teal-100 chat-bubble min-h-0 text-black">
+              <span className="bg-teal-100 chat-bubble min-h-0 text-black whitespace-pre">
                 {qAndA.question}
               </span>
             </div>

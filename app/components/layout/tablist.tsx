@@ -3,7 +3,8 @@
 import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
-import { type JSX, useEffect, useState } from "react"
+import Link from "next/link"
+import { type JSX, useState } from "react"
 
 export function ScheduleTablist({
   schedules,
@@ -11,22 +12,22 @@ export function ScheduleTablist({
   const [tab, setTab] = useState<string>(schedules[0].alt)
   const [isBusy, setIsBusy] = useState<boolean>(false)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isBusy) {
-        if (tab === schedules[0].alt) {
-          setTab(schedules[1].alt)
-        }
-        if (tab === schedules[1].alt) {
-          setTab(schedules[2].alt)
-        }
-        if (tab === schedules[2].alt) {
-          setTab(schedules[0].alt)
-        }
-      }
-    }, 3000)
-    return () => clearInterval(interval)
-  })
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (!isBusy) {
+  //       if (tab === schedules[0].alt) {
+  //         setTab(schedules[1].alt)
+  //       }
+  //       if (tab === schedules[1].alt) {
+  //         setTab(schedules[2].alt)
+  //       }
+  //       if (tab === schedules[2].alt) {
+  //         setTab(schedules[0].alt)
+  //       }
+  //     }
+  //   }, 3000)
+  //   return () => clearInterval(interval)
+  // })
 
   return (
     <section className="gap-1 grid max-w-lg mx-auto text-center">
@@ -71,10 +72,29 @@ export function ScheduleTablist({
                 <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
                   {schedule.alt}
                 </strong>
-                <h3 className="card-title mx-auto text-base">
-                  {schedule.title.am}
-                  <br />
-                  {schedule.title.pm}
+                <h3 className="gap-1 grid mx-auto text-base font-bold">
+                  {schedule.am.url ? (
+                    <Link
+                      href={schedule.am.url}
+                      target="_blank"
+                      className="link"
+                    >
+                      {schedule.am.title}
+                    </Link>
+                  ) : (
+                    <span>{schedule.am.title}</span>
+                  )}
+                  {schedule.pm.url ? (
+                    <Link
+                      href={schedule.pm.url}
+                      target="_blank"
+                      className="link"
+                    >
+                      {schedule.pm.title}
+                    </Link>
+                  ) : (
+                    <span>{schedule.pm.title}</span>
+                  )}
                 </h3>
                 <strong className="text-sm">
                   {schedule.date.year}年{schedule.date.month}月

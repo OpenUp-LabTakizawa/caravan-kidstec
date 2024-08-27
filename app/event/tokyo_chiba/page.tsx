@@ -27,11 +27,12 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "Day 1",
       src: "/202407/hiroshima_university/soldering_with_father.avif",
-      title: {
-        am: "午前：ロボット制作",
-        pm: "午後：自然学習\n（農と食、いのちのてざわり）",
-      },
       date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
+      am: { title: "午前：ロボット制作", url: "" },
+      pm: {
+        title: "午後：自然学習（農と食、いのちのてざわり）",
+        url: "https://kurkkufields.jp/",
+      },
       venue: "クルックフィールズ",
       address: "千葉県木更津市矢那2503",
       googleMapLink: "https://maps.app.goo.gl/o73uHVntuoTg3aym9",
@@ -40,8 +41,12 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "Day 2",
       src: "/content/rays-blog_girl.avif",
-      title: { am: "午前：プログラミング体験", pm: "午後：謎解き体験！" },
       date: { year: "2024", month: "11", day: "9", dayOfWeek: "土" },
+      am: { title: "午前：プログラミング体験", url: "" },
+      pm: {
+        title: "午後：謎解き体験！",
+        url: "https://www.classroom-adventure.com/rays-blog-jpn",
+      },
       venue: "東京虎ノ門グローバルスクエア",
       address: "東京都港区虎ノ門1-3-1",
       googleMapLink: "https://maps.app.goo.gl/98KzCvCeFggZY88P6",
@@ -50,8 +55,12 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "Day 3",
       src: "/202407/wedding/pick_up_flower.avif",
-      title: { am: "午前：ロボサバ大会", pm: "午後：結婚式体験" },
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
+      am: { title: "午前：ロボサバ大会", url: "https://robosava.jp/" },
+      pm: {
+        title: "午後：結婚式体験",
+        url: "https://www.tgn.co.jp/wedding/tokyo/vge/",
+      },
       venue: "ヴィクトリアガーデン恵比寿迎賓館（予定）",
       address: "東京都渋谷区恵比寿南1-14-20",
       googleMapLink: "https://maps.app.goo.gl/wLmPrkKwYheQgvuM8",

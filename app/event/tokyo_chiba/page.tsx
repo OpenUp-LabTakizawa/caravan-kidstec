@@ -50,7 +50,7 @@ export default function TokyoChiba(): JSX.Element {
       venue: "東京虎ノ門グローバルスクエア",
       address: "東京都港区虎ノ門1-3-1",
       googleMapLink: "https://maps.app.goo.gl/98KzCvCeFggZY88P6",
-      tags: ["ロボット", "ネットリテラシー"],
+      tags: ["ロボット", "プログラミング", "ネットリテラシー"],
     },
     {
       alt: "Day 3",
@@ -64,7 +64,7 @@ export default function TokyoChiba(): JSX.Element {
       venue: "ヴィクトリアガーデン恵比寿迎賓館（予定）",
       address: "東京都渋谷区恵比寿南1-14-20",
       googleMapLink: "https://maps.app.goo.gl/wLmPrkKwYheQgvuM8",
-      tags: ["ロボサバ", "結婚式体験"],
+      tags: ["ロボット", "プログラミング", "結婚式体験"],
     },
   ] as const
 

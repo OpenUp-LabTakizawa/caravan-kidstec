@@ -31,34 +31,6 @@ export default function Home(): JSX.Element {
       </section>
       <section className="font-bold gap-4 grid leading-7 text-center tracking-[.29em]">
         <Introduction />
-        {/* <span className="fade-in-up-timeline inline-block opacity-0">
-          プログラミング体験と
-          <br />
-          体験学習をかけあわせた
-          <br />
-          親子参加型のイベントです。
-        </span>
-        <span className="fade-in-up-timeline inline-block opacity-0">
-          プログラミング体験は、
-          <br />
-          ロボットを作って、
-          <br />
-          自分で動かせるように！
-        </span>
-        <span className="fade-in-up-timeline inline-block opacity-0">
-          体験学習は毎回変わります。
-          <br />
-          過去には自然学習や結婚式体験で
-          <br />
-          楽しく学んできました。
-        </span>
-        <span className="fade-in-up-timeline inline-block opacity-0">
-          <span className="text-orange-400">たくさん学び、たくさん遊び、</span>
-          <br />
-          親子で新しい発見や、
-          <br />
-          楽しい思い出を作りましょう！
-        </span> */}
       </section>
       <section className="bg-sky-300 gap-2 grid mx-2 rounded-2xl pb-2">
         <div className="gap-2 grid p-4 text-white">

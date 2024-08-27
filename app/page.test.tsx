@@ -13,7 +13,9 @@ describe("Home", () => {
   test("section test", () => {
     const sections = document.querySelectorAll("section")
     expect(sections[0]?.className).toEqual("")
-    expect(sections[1]?.className).toEqual("gap-4 grid text-center")
+    expect(sections[1]?.className).toEqual(
+      "font-bold gap-4 grid leading-7 text-center tracking-[.29em]",
+    )
     expect(sections[2]?.className).toEqual(
       "bg-sky-300 gap-2 grid mx-2 rounded-2xl pb-2",
     )

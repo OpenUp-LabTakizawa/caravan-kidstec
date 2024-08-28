@@ -14,12 +14,12 @@ export function Schedules({
           <li key={schedule.alt} className="grid gap-1 border-b p-2">
             <p className="decoration-4 decoration-sky-400 underline">
               {schedule.date.year}年
-              <strong className="text-2xl">{schedule.date.month}</strong>月
-              <strong className="decoration-4 decoration-sky-400 text-2xl underline">
+              <b className="text-2xl">{schedule.date.month}</b>月
+              <b className="decoration-4 decoration-sky-400 text-2xl underline">
                 {schedule.date.day}
-              </strong>
+              </b>
               日(
-              <strong className="text-xl">{schedule.date.dayOfWeek}</strong>)
+              <b className="text-xl">{schedule.date.dayOfWeek}</b>)
             </p>
             <p>10：00&nbsp;～&nbsp;17：00（予定）</p>
             <div className="flex gap-2 items-center mx-auto">

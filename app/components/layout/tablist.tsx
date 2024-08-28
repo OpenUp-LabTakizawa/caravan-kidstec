@@ -61,7 +61,7 @@ export function ScheduleTablist({
             onTouchEnd={() => setIsBusy(false)}
             className={`border-b-4 duration-300 py-1 rounded-lg shadow-xl ${schedule.alt === tab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
           >
-            <strong>{schedule.alt}</strong>
+            <b>{schedule.alt}</b>
           </button>
         ))}
       </div>
@@ -77,7 +77,7 @@ export function ScheduleTablist({
               onMouseLeave={() => setIsBusy(false)}
               onTouchStart={() => setIsBusy(true)}
               onTouchEnd={() => setIsBusy(false)}
-              className="card h-96 m-2 w-80 sm:w-96"
+              className="h-96 m-2 w-80 sm:w-96"
               style={{ perspective: "1000px" }}
             >
               <div
@@ -121,16 +121,16 @@ function TabCard({
         alt={schedule.alt}
         className="h-60 object-cover rounded-t-2xl w-96"
       />
-      <div className="bg-amber-50 card-body h-36 p-0 pb-2 rounded-b-2xl shadow-2xl">
-        <p className="text-left pt-1">
-          <strong className="bg-teal-400 px-2 py-1 text-white text-xs">
+      <div className="bg-amber-50 gap-1 grid h-36 pb-2 py-1 rounded-b-2xl shadow-2xl lg:py-0">
+        <p className="text-left">
+          <b className="bg-teal-400 px-2 py-1 text-white text-xs">
             {schedule.alt}
-          </strong>
-          <strong
+          </b>
+          <b
             className={`px-2 py-1 text-white text-xs ${time === "am" ? "bg-sky-400 " : "bg-orange-400 "}`}
           >
             {time === "am" ? "午前" : "午後"}
-          </strong>
+          </b>
         </p>
         <h3 className="gap-1 grid mx-auto text-base font-bold">
           {time === "am" ? schedule.title.am : schedule.title.pm}
@@ -153,10 +153,10 @@ function TabCard({
             schedule.organization.pm
           )}
         </strong>
-        <strong className="text-sm">
+        <b className="text-sm">
           {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
           日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
-        </strong>
+        </b>
         <div className="card-actions justify-center">
           {time === "am"
             ? schedule.tags.am.map((tag) => (

@@ -30,11 +30,11 @@ export function EventPanels({
           href={panel.href}
           className={`border-2 group rounded-lg shadow-lg w-full hover:text-white ${panel.color.shadow}`}
         >
-          <strong
+          <b
             className={`mx-auto w-fit group-hover:text-white ${panel.color.text}`}
           >
             {panel.name}
-          </strong>
+          </b>
           <div className="flex">
             <span className="grow">{panel.text}</span>
             <ArrowRightIcon

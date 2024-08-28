@@ -4,7 +4,7 @@ import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
-import { type JSX, useState } from "react"
+import { type JSX, useEffect, useState } from "react"
 
 export function ScheduleTablist({
   schedules,
@@ -13,33 +13,33 @@ export function ScheduleTablist({
   const [tab, setTab] = useState<string>(schedules[0].alt)
   const [isBusy, setIsBusy] = useState<boolean>(false)
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (!isBusy) {
-  //       setIsFlip(!isFlip)
-  //     }
-  //   }, 3000)
-  //   return () => clearInterval(interval)
-  // }, [isFlip, isBusy])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isBusy) {
+        setIsFlip(!isFlip)
+      }
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [isFlip, isBusy])
 
-  // useEffect(() => {
-  //   const tabInterval = setInterval(() => {
-  //     if (!isBusy) {
-  //       setIsFlip(false)
+  useEffect(() => {
+    const tabInterval = setInterval(() => {
+      if (!isBusy) {
+        setIsFlip(false)
 
-  //       if (tab === schedules[0].alt) {
-  //         setTab(schedules[1].alt)
-  //       }
-  //       if (tab === schedules[1].alt) {
-  //         setTab(schedules[2].alt)
-  //       }
-  //       if (tab === schedules[2].alt) {
-  //         setTab(schedules[0].alt)
-  //       }
-  //     }
-  //   }, 6000)
-  //   return () => clearInterval(tabInterval)
-  // }, [schedules, isBusy, tab])
+        if (tab === schedules[0].alt) {
+          setTab(schedules[1].alt)
+        }
+        if (tab === schedules[1].alt) {
+          setTab(schedules[2].alt)
+        }
+        if (tab === schedules[2].alt) {
+          setTab(schedules[0].alt)
+        }
+      }
+    }, 6000)
+    return () => clearInterval(tabInterval)
+  }, [schedules, isBusy, tab])
 
   function onClickTab(alt: string): void {
     setIsFlip(false)

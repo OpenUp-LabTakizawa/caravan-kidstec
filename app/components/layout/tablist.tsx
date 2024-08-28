@@ -25,6 +25,8 @@ export function ScheduleTablist({
   useEffect(() => {
     const tabInterval = setInterval(() => {
       if (!isBusy) {
+        setIsFlip(false)
+
         if (tab === schedules[0].alt) {
           setTab(schedules[1].alt)
         }
@@ -37,7 +39,12 @@ export function ScheduleTablist({
       }
     }, 6000)
     return () => clearInterval(tabInterval)
-  }, [tab, schedules, isBusy])
+  }, [schedules, isBusy, tab])
+
+  function onClickTab(alt: string): void {
+    setIsFlip(false)
+    setTab(alt)
+  }
 
   return (
     <section className="gap-1 grid max-w-lg mx-auto text-center">
@@ -47,7 +54,7 @@ export function ScheduleTablist({
             key={schedule.alt}
             type="button"
             role="tab"
-            onClick={() => setTab(schedule.alt)}
+            onClick={() => onClickTab(schedule.alt)}
             onMouseEnter={() => setIsBusy(true)}
             onMouseLeave={() => setIsBusy(false)}
             onTouchStart={() => setIsBusy(true)}
@@ -70,11 +77,11 @@ export function ScheduleTablist({
               onMouseLeave={() => setIsBusy(false)}
               onTouchStart={() => setIsBusy(true)}
               onTouchEnd={() => setIsBusy(false)}
-              className="card m-2 h-96 w-80"
+              className="card h-96 m-2 w-80 sm:w-96"
               style={{ perspective: "1000px" }}
             >
               <div
-                className={`duration-1000 shadow-lg relative transition-transform ${isFlip ? "rotate-y-180" : ""}`}
+                className={`duration-1000 shadow-lg relative transition-transform${isFlip ? " rotate-y-180" : ""}`}
                 style={{ transformStyle: "preserve-3d" }}
               >
                 <div
@@ -114,38 +121,36 @@ function TabCard({
         alt={schedule.alt}
         className="h-60 object-cover rounded-t-2xl w-96"
       />
-      <div className="bg-amber-50 card-body h-36 p-0 pb-2 pt-6 relative rounded-b-2xl shadow-2xl">
-        <strong className="absolute bg-teal-400 left-0 px-2 py-1 text-white text-xs top-0">
-          {schedule.alt}&nbsp;{time === "am" ? "午前" : "午後"}
-        </strong>
+      <div className="bg-amber-50 card-body h-36 p-0 pb-2 rounded-b-2xl shadow-2xl">
+        <p className="text-left pt-1">
+          <strong className="bg-teal-400 px-2 py-1 text-white text-xs">
+            {schedule.alt}
+          </strong>
+          <strong
+            className={`px-2 py-1 text-white text-xs ${time === "am" ? "bg-sky-400 " : "bg-orange-400 "}`}
+          >
+            {time === "am" ? "午前" : "午後"}
+          </strong>
+        </p>
         <h3 className="gap-1 grid mx-auto text-base font-bold">
           {time === "am" ? schedule.title.am : schedule.title.pm}
         </h3>
         <strong className="text-sm">
-          {time === "am" ? (
-            schedule.url.am ? (
-              <Link
-                href={schedule.url.am}
-                target="_blank"
-                className="link"
-                rel="noopener noreferrer"
-              >
-                {schedule.organization.am}
-              </Link>
-            ) : (
-              <>{schedule.organization.am}</>
-            )
-          ) : schedule.url.pm ? (
+          {schedule.url.am || schedule.url.pm ? (
             <Link
-              href={schedule.url.pm}
+              href={time === "am" ? schedule.url.am : schedule.url.pm}
               target="_blank"
               className="link"
               rel="noopener noreferrer"
             >
-              {schedule.organization.pm}
+              {time === "am"
+                ? schedule.organization.am
+                : schedule.organization.pm}
             </Link>
+          ) : time === "am" ? (
+            schedule.organization.am
           ) : (
-            <>{schedule.organization.pm}</>
+            schedule.organization.pm
           )}
         </strong>
         <strong className="text-sm">

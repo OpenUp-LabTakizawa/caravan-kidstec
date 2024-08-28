@@ -7,11 +7,11 @@ export function Schedules({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   return (
-    <section className="gap-2 grid mx-auto relative text-center">
+    <section className="mx-auto px-2 relative space-y-2 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
-      <ul className="border-2 border-sky-400 min-w-80">
+      <ul className="border-2 border-sky-400 mx-auto w-80">
         {schedules.map((schedule) => (
-          <li key={schedule.alt} className="grid gap-1 border-b p-2">
+          <li key={schedule.alt} className="border-b p-2 space-y-1">
             <p className="decoration-4 decoration-sky-400 underline">
               {schedule.date.year}年
               <b className="text-2xl">{schedule.date.month}</b>月
@@ -22,11 +22,10 @@ export function Schedules({
               <b className="text-xl">{schedule.date.dayOfWeek}</b>)
             </p>
             <p>10：00&nbsp;～&nbsp;17：00（予定）</p>
-            <div className="flex gap-2 items-center mx-auto">
+            <div className="flex gap-2 items-center justify-center">
               <p className="badge badge-outline">場所</p>
-              <p>
-                <strong>{schedule.venue}</strong>
-                <br />
+              <div>
+                <p className="font-bold">{schedule.venue}</p>
                 <Link
                   href={schedule.googleMapLink}
                   target="_blank"
@@ -36,7 +35,7 @@ export function Schedules({
                   {schedule.address}
                   <ArrowTopRightOnSquareIcon className="size-4" />
                 </Link>
-              </p>
+              </div>
             </div>
           </li>
         ))}

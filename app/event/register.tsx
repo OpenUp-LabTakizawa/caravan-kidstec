@@ -23,9 +23,9 @@ function Requirement({
   guideline,
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
-    <section id={guideline.anchorLink} className="gap-4 grid px-4 text-center">
+    <section id={guideline.anchorLink} className="px-2 space-y-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
-      <div className="bg-sky-300 gap-1 grid grid-flow-col items-center mx-auto p-4 rounded-2xl shadow-lg text-base">
+      <div className="bg-sky-300 gap-1 grid grid-flow-col items-center mx-auto p-3 rounded-2xl shadow-lg text-base w-max">
         <InformationCircleIcon className="row-span-2 size-10" />
         <p>
           <span className="decoration-4 decoration-orange-400 font-bold underline">
@@ -141,10 +141,10 @@ function Procedure({
   guideline,
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
-    <section className="gap-4 grid px-4 text-center">
+    <section className="px-2 space-y-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
       <ul className="mx-auto space-y-2 text-sm w-80">
-        <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
+        <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
           <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />1
           </b>
@@ -163,7 +163,7 @@ function Procedure({
         <li>
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
-        <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
+        <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
           <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />2
           </b>
@@ -176,7 +176,7 @@ function Procedure({
         <li>
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
-        <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
+        <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
           <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />3
           </b>
@@ -185,7 +185,7 @@ function Procedure({
         <li>
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
-        <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
+        <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
           <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />4
           </b>

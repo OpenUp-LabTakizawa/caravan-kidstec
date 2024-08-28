@@ -48,8 +48,8 @@ export function ScheduleTablist({
   }
 
   return (
-    <section className="gap-1 grid max-w-lg mx-auto text-center">
-      <div role="tablist" className="content-end gap-2 grid grid-cols-3 px-2">
+    <section className="max-w-lg mx-auto space-y-2 text-center w-80 sm:w-96">
+      <div role="tablist" className="flex gap-2 mx-auto px-2">
         {schedules.map((schedule) => (
           <button
             key={schedule.alt}
@@ -60,7 +60,7 @@ export function ScheduleTablist({
             onMouseLeave={() => setTabState({ isBusy: false, tab: "" })}
             onTouchStart={() => setTabState({ isBusy: true, tab: "" })}
             onTouchEnd={() => setTabState({ isBusy: true, tab: "" })}
-            className={`border-b-4 duration-300 py-1 rounded-lg shadow-xl ${schedule.alt === tab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
+            className={`basis-1/3 border-b-4 duration-300 py-1 rounded-lg shadow-xl ${schedule.alt === tab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
           >
             <b>{schedule.alt}</b>
           </button>
@@ -78,7 +78,7 @@ export function ScheduleTablist({
               onMouseLeave={() => setTabState({ isBusy: false, tab: "" })}
               onTouchStart={() => setTabState({ isBusy: true, tab: "" })}
               onTouchEnd={() => setTabState({ isBusy: true, tab: "" })}
-              className="h-96 m-2 w-80 sm:w-96"
+              className="h-96 m-2"
               style={{ perspective: "1000px" }}
             >
               <div
@@ -122,7 +122,7 @@ function TabCard({
         alt={schedule.alt}
         className="h-60 object-cover rounded-t-2xl w-96"
       />
-      <div className="bg-amber-50 gap-1 grid h-36 pb-2 py-1 rounded-b-2xl shadow-2xl">
+      <div className="bg-amber-50 h-36 pb-2 py-1 rounded-b-2xl shadow-2xl space-y-2">
         <p className="text-left text-white text-xs">
           <b className="bg-teal-400 px-2 py-1">{schedule.alt}</b>
           <b
@@ -131,7 +131,7 @@ function TabCard({
             {time === "am" ? "午前" : "午後"}
           </b>
         </p>
-        <h3 className="gap-1 grid mx-auto text-base font-bold">
+        <h3 className="font-bold mx-auto text-base">
           {time === "am" ? schedule.title.am : schedule.title.pm}
         </h3>
         {schedule.url.am || schedule.url.pm ? (
@@ -146,14 +146,14 @@ function TabCard({
               : schedule.organization.pm}
           </Link>
         ) : time === "am" ? (
-          <strong className="text-sm">{schedule.organization.am}</strong>
+          <p className="font-bold text-sm">{schedule.organization.am}</p>
         ) : (
-          <strong className="text-sm">{schedule.organization.pm}</strong>
+          <p className="font-bold text-sm">{schedule.organization.pm}</p>
         )}
-        <b className="text-sm">
+        <p className="font-bold text-sm">
           {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
           日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
-        </b>
+        </p>
         <div className="flex flex-wrap gap-2 justify-center">
           {time === "am"
             ? schedule.tags.am.map((tag) => (

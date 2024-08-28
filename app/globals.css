@@ -100,7 +100,7 @@ img {
 .fade-in-up-timeline {
   animation: fade-in-up-timeline ease-in-out forwards;
   animation-timeline: view();
-  animation-range: contain 0% contain 100%;
+  animation-range: contain 0% contain 50%;
 }
 
 .green-shine {

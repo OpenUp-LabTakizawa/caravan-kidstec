@@ -12,7 +12,7 @@ export function FadeInUp({
   children,
   className = "",
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
-  const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -27,13 +27,13 @@ export function FadeInUp({
       }
     })
 
-    observer.observe(ref.current as HTMLSpanElement)
+    observer.observe(ref.current as HTMLDivElement)
     return () => observer.disconnect()
   })
 
   return (
-    <span ref={ref} className={`inline-block opacity-0 ${className}`}>
+    <div ref={ref} className={`opacity-0 ${className}`}>
       {children}
-    </span>
+    </div>
   )
 }

@@ -20,7 +20,7 @@ export function QA({
   return (
     <>
       <Heading menu={menu} submenus={[submenu, Q_AND_A]} />
-      <section className="grid gap-2">
+      <section className="space-y-2">
         {qAndAs.map((qAndA, index) => (
           <details
             key={qAndA.title}
@@ -66,8 +66,8 @@ export function QA({
           </details>
         ))}
       </section>
-      <section className="bg-amber-50 grid gap-1 mx-auto p-4 rounded-2xl text-center w-max">
-        <b className="mb-2">
+      <section className="bg-amber-50 mx-auto p-4 rounded-2xl space-y-2 text-center w-max">
+        <b>
           ご不明な点がございましたら、
           <br />
           LINE公式アカウントへお問い合わせ下さい。

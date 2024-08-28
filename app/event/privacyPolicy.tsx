@@ -12,13 +12,13 @@ export function PrivacyPolicy({
   return (
     <>
       <Heading menu={EVENT} submenus={[submenu, PRIVACY_POLICY]} />
-      <section className="bg-base-200 grid gap-4 leading-7 m-4 p-4 rounded-2xl text-sm">
+      <section className="bg-base-200 leading-7 m-4 p-4 rounded-2xl space-y-4 text-sm">
         <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
         <p>
           株式会社オープンアップグループ（以下「当社」といいます。）は、イベント&nbsp;【こどもテックキャラバン】&nbsp;（以下「本件」といいます。）へのご参加お申込みに必要な情報、また参加決定者の詳細情報においてお預かりする個人情報の取扱いについて、次のように管理し、保護に努めて参ります。
         </p>
         <Divider />
-        <section className="grid gap-4">
+        <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">１．</span>
             個人情報の収集、及び、利用目的
@@ -42,12 +42,12 @@ export function PrivacyPolicy({
           </ul>
         </section>
         <Divider />
-        <section className="grid gap-4">
+        <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">２．</span>
             収集したお申込者様の個人情報の第三者への提供、及び、外部への預託について
           </h3>
-          <section className="grid gap-4">
+          <section className="space-y-4">
             <h4>
               １）当社は、以下に挙げるケースにおいて、いただいた個人情報を外部に提供します。
             </h4>
@@ -82,7 +82,7 @@ export function PrivacyPolicy({
               提供する個人情報の取扱いに関しては、機密保持及び管理責任の所在を明らかにする契約を上記組織と締結しております。
             </p>
           </section>
-          <section className="grid gap-4">
+          <section className="space-y-4">
             <h4>
               ２）法令に基づき、お申込者様からご提供頂いた個人情報を関係機関へ提供、預託する場合があります。
             </h4>
@@ -92,7 +92,7 @@ export function PrivacyPolicy({
           </section>
         </section>
         <Divider />
-        <section className="grid gap-4">
+        <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">３．</span>
             要配慮個人情報の取得について
@@ -100,7 +100,7 @@ export function PrivacyPolicy({
           <p>本件について、要配慮個人情報をいただくことはございません。</p>
         </section>
         <Divider />
-        <section className="grid gap-4">
+        <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">４．</span>
             個人情報の管理方法
@@ -116,7 +116,7 @@ export function PrivacyPolicy({
           </p>
         </section>
         <Divider />
-        <section className="grid gap-4">
+        <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">５．</span>
             個人情報の提出に関して
@@ -126,7 +126,7 @@ export function PrivacyPolicy({
           </p>
         </section>
         <Divider />
-        <section className="grid gap-4">
+        <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">６．</span>
             個人情報に関する権利について
@@ -162,7 +162,7 @@ export function PrivacyPolicy({
           </address>
         </section>
         <Divider />
-        <section className="grid gap-4">
+        <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">７．</span>
             個人情報取り扱いについての同意の確認

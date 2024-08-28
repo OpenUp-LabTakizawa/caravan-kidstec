@@ -508,7 +508,7 @@ export function ReviewCarousel(): JSX.Element {
   return (
     <div
       ref={carouselRef}
-      className="carousel carousel-center relative space-x-4"
+      className="carousel carousel-center relative space-x-4 w-full"
       onMouseEnter={() => setIsBusy(true)}
       onMouseLeave={() => setIsBusy(false)}
       onTouchStart={() => setIsBusy(true)}

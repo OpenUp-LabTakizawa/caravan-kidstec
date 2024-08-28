@@ -17,7 +17,7 @@ export default function Hiroshima(): JSX.Element {
     <>
       <Heading menu={HISTORY} submenus={[HIROSHIMA]} />
       {HIROSHIMA_HISTORY.map((history) => (
-        <section key={history.href} className="gap-4 grid text-center">
+        <section key={history.href} className="space-y-4">
           <details className="collapse collapse-arrow">
             <summary className="bg-amber-50 collapse-title font-bold font-zenMaruGothic min-h-0 text-2xl">
               <p className="absolute outline outline-offset-2 rounded text-rose-400 text-xs -rotate-45">
@@ -35,7 +35,7 @@ export default function Hiroshima(): JSX.Element {
             >
               <button
                 type="button"
-                className="bg-sky-400 blue-shine btn rounded-2xl shadow-lg text-lg text-white w-full"
+                className="bg-sky-400 blue-shine btn rounded-2xl shadow-lg text-lg text-white"
               >
                 イベントの様子はこちら！
                 <ArrowTopRightOnSquareIcon className="arrow-top-right size-5" />
@@ -44,7 +44,7 @@ export default function Hiroshima(): JSX.Element {
           </details>
         </section>
       ))}
-      <section className="gap-4 grid">
+      <section>
         <LineRegister lineLink={HIROSHIMA_LINE} />
       </section>
     </>

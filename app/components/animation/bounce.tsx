@@ -12,7 +12,7 @@ export function Bounce({
   children,
   className = "",
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
-  const ref: RefObject<HTMLSpanElement> = useRef<HTMLSpanElement>(null)
+  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -26,13 +26,13 @@ export function Bounce({
       }
     })
 
-    observer.observe(ref.current as HTMLSpanElement)
+    observer.observe(ref.current as HTMLDivElement)
     return () => observer.disconnect()
   })
 
   return (
-    <span ref={ref} className={className}>
+    <div ref={ref} className={className}>
       {children}
-    </span>
+    </div>
   )
 }

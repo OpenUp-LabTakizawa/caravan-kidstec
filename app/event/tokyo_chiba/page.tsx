@@ -109,15 +109,14 @@ export default function TokyoChiba(): JSX.Element {
         className="w-full"
       />
       <Schedules schedules={schedules} />
-      <section className="grid gap-1 mx-auto p-4 text-center w-max">
-        <p className="mb-2">
-          <strong className="text-sm md:text-xl">
-            全日程参加が必須となります。
-          </strong>
-          <br />
+      <section className="mx-auto p-2 text-center w-max">
+        <p className="font-bold text-sm md:text-xl">
+          全日程参加が必須となります。
+        </p>
+        <p className="mb-3">
           <Link
             href={`${EVENT.href}${TOKYO_CHIBA.href}#${guideline.anchorLink}`}
-            className="link text-sky-400 font-bold"
+            className="font-bold link text-sky-400"
           >
             応募要項
           </Link>

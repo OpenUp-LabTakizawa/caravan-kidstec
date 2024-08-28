@@ -44,7 +44,7 @@ export function LineRegister({
   lineLink,
 }: Readonly<{ lineLink: string }>): JSX.Element {
   return (
-    <section className="bg-amber-50 gap-1 grid mx-auto p-4 text-center w-max">
+    <section className="bg-amber-50 gap-1 grid mx-auto p-4 rounded-2xl text-center w-max">
       <b>
         LINE公式アカウントから、
         <br />

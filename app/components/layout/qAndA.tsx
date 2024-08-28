@@ -66,7 +66,7 @@ export function QA({
           </details>
         ))}
       </section>
-      <section className="bg-amber-50 grid gap-1 mx-auto p-4 text-center w-max">
+      <section className="bg-amber-50 grid gap-1 mx-auto p-4 rounded-2xl text-center w-max">
         <b className="mb-2">
           ご不明な点がございましたら、
           <br />

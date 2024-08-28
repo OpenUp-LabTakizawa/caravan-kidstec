@@ -4,7 +4,7 @@ import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
-import { type JSX, useEffect, useState } from "react"
+import { type JSX, useState } from "react"
 
 export function ScheduleTablist({
   schedules,
@@ -13,33 +13,33 @@ export function ScheduleTablist({
   const [tab, setTab] = useState<string>(schedules[0].alt)
   const [isBusy, setIsBusy] = useState<boolean>(false)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isBusy) {
-        setIsFlip(!isFlip)
-      }
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [isFlip, isBusy])
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (!isBusy) {
+  //       setIsFlip(!isFlip)
+  //     }
+  //   }, 3000)
+  //   return () => clearInterval(interval)
+  // }, [isFlip, isBusy])
 
-  useEffect(() => {
-    const tabInterval = setInterval(() => {
-      if (!isBusy) {
-        setIsFlip(false)
+  // useEffect(() => {
+  //   const tabInterval = setInterval(() => {
+  //     if (!isBusy) {
+  //       setIsFlip(false)
 
-        if (tab === schedules[0].alt) {
-          setTab(schedules[1].alt)
-        }
-        if (tab === schedules[1].alt) {
-          setTab(schedules[2].alt)
-        }
-        if (tab === schedules[2].alt) {
-          setTab(schedules[0].alt)
-        }
-      }
-    }, 6000)
-    return () => clearInterval(tabInterval)
-  }, [schedules, isBusy, tab])
+  //       if (tab === schedules[0].alt) {
+  //         setTab(schedules[1].alt)
+  //       }
+  //       if (tab === schedules[1].alt) {
+  //         setTab(schedules[2].alt)
+  //       }
+  //       if (tab === schedules[2].alt) {
+  //         setTab(schedules[0].alt)
+  //       }
+  //     }
+  //   }, 6000)
+  //   return () => clearInterval(tabInterval)
+  // }, [schedules, isBusy, tab])
 
   function onClickTab(alt: string): void {
     setIsFlip(false)
@@ -121,13 +121,11 @@ function TabCard({
         alt={schedule.alt}
         className="h-60 object-cover rounded-t-2xl w-96"
       />
-      <div className="bg-amber-50 gap-1 grid h-36 pb-2 py-1 rounded-b-2xl shadow-2xl lg:py-0">
-        <p className="text-left">
-          <b className="bg-teal-400 px-2 py-1 text-white text-xs">
-            {schedule.alt}
-          </b>
+      <div className="bg-amber-50 gap-1 grid h-36 pb-2 py-1 rounded-b-2xl shadow-2xl">
+        <p className="text-left text-white text-xs">
+          <b className="bg-teal-400 px-2 py-1">{schedule.alt}</b>
           <b
-            className={`px-2 py-1 text-white text-xs ${time === "am" ? "bg-sky-400 " : "bg-orange-400 "}`}
+            className={`px-2 py-1 ${time === "am" ? "bg-sky-400" : "bg-orange-400"}`}
           >
             {time === "am" ? "午前" : "午後"}
           </b>
@@ -135,29 +133,27 @@ function TabCard({
         <h3 className="gap-1 grid mx-auto text-base font-bold">
           {time === "am" ? schedule.title.am : schedule.title.pm}
         </h3>
-        <strong className="text-sm">
-          {schedule.url.am || schedule.url.pm ? (
-            <Link
-              href={time === "am" ? schedule.url.am : schedule.url.pm}
-              target="_blank"
-              className="link"
-              rel="noopener noreferrer"
-            >
-              {time === "am"
-                ? schedule.organization.am
-                : schedule.organization.pm}
-            </Link>
-          ) : time === "am" ? (
-            schedule.organization.am
-          ) : (
-            schedule.organization.pm
-          )}
-        </strong>
+        {schedule.url.am || schedule.url.pm ? (
+          <Link
+            href={time === "am" ? schedule.url.am : schedule.url.pm}
+            target="_blank"
+            className="font-bold link text-sm"
+            rel="noopener noreferrer"
+          >
+            {time === "am"
+              ? schedule.organization.am
+              : schedule.organization.pm}
+          </Link>
+        ) : time === "am" ? (
+          <strong className="text-sm">{schedule.organization.am}</strong>
+        ) : (
+          <strong className="text-sm">{schedule.organization.pm}</strong>
+        )}
         <b className="text-sm">
           {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
           日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
         </b>
-        <div className="card-actions justify-center">
+        <div className="flex flex-wrap gap-2 justify-center">
           {time === "am"
             ? schedule.tags.am.map((tag) => (
                 <span

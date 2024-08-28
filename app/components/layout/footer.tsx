@@ -18,9 +18,7 @@ export function Footer(): JSX.Element {
                 </Link>
               ) : (
                 <>
-                  <strong className="justify-center text-orange-400">
-                    {menu.name}
-                  </strong>
+                  <b className="justify-center text-orange-400">{menu.name}</b>
                   <ul>
                     {menu.submenus.map((submenu) => (
                       <li key={submenu.name}>

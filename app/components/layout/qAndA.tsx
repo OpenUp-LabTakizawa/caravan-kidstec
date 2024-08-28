@@ -67,11 +67,11 @@ export function QA({
         ))}
       </section>
       <section className="bg-amber-50 grid gap-1 mx-auto p-4 text-center w-max">
-        <strong className="mb-2">
+        <b className="mb-2">
           ご不明な点がございましたら、
           <br />
           LINE公式アカウントへお問い合わせ下さい。
-        </strong>
+        </b>
         <LineAddFriends linkLink={lineLink} />
       </section>
     </>

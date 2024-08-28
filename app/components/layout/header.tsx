@@ -109,7 +109,7 @@ function DropdownMenu({
                 </Link>
               ) : (
                 <>
-                  <strong className="text-orange-400">{menu.name}</strong>
+                  <b className="text-orange-400">{menu.name}</b>
                   <Menu submenus={menu.submenus} href={menu.href} />
                 </>
               )}

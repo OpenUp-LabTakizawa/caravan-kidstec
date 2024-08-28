@@ -6,9 +6,9 @@ export function Programs({
 }: Readonly<{ programs: Program[] }>): JSX.Element {
   return (
     <section className="bg-amber-50 grid mx-auto relative w-full">
-      <strong className="absolute bg-sky-400 justify-self-start left-0 p-1 top-0">
+      <b className="absolute bg-sky-400 justify-self-start left-0 p-1 top-0">
         開催日時
-      </strong>
+      </b>
       <ul>
         {programs.map((program) => (
           <li
@@ -20,9 +20,7 @@ export function Programs({
               {program.date.dayOfWeek})
             </p>
             <p>
-              <strong className="badge badge-outline badge-xs mr-1">
-                場所
-              </strong>
+              <b className="badge badge-outline badge-xs mr-1">場所</b>
               {program.venue}
             </p>
           </li>

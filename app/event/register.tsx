@@ -141,9 +141,9 @@ function Procedure({
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
       <ul className="gap-2 grid mx-auto text-sm w-80">
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
-          <strong className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
+          <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />1
-          </strong>
+          </b>
           <p>
             <Link
               href={guideline.lineLink}
@@ -160,33 +160,33 @@ function Procedure({
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
-          <strong className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
+          <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />2
-          </strong>
+          </b>
           <p>
             トーク画面メニューの
             <br />
-            <strong>「参加申込はこちら」</strong>をタップ
+            <b>「参加申込はこちら」</b>をタップ
           </p>
         </li>
         <li>
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
-          <strong className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
+          <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />3
-          </strong>
+          </b>
           <p>会話に沿って必要事項を入力</p>
         </li>
         <li>
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
-          <strong className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
+          <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />4
-          </strong>
+          </b>
           <p>
-            全て回答して<strong>申込完了！</strong>
+            全て回答して<b>申込完了！</b>
           </p>
           <p>
             担当者よりご参加の確定、及び、

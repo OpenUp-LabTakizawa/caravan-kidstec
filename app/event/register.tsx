@@ -66,7 +66,7 @@ function Requirement({
           <tr>
             <th className="p-0 pl-4">参加条件</th>
             <td>
-              <ul>
+              <ul className="space-y-3">
                 <li>
                   ３日間で１つの
                   <br />
@@ -74,7 +74,6 @@ function Requirement({
                   <br />
                   全日程にご参加頂けること
                 </li>
-                <br />
                 <li>
                   イベントの感想や
                   <br />
@@ -82,7 +81,6 @@ function Requirement({
                   <br />
                   ご対応頂けること
                 </li>
-                <br />
                 <li>
                   今後のイベント募集、また、
                   <br />
@@ -100,7 +98,14 @@ function Requirement({
           <tr>
             <th className="p-0 pl-4">注意事項</th>
             <td>
-              <ul>
+              <ul className="space-y-3">
+                <li>
+                  受付手続きや会場内の
+                  <br />
+                  移動を考慮し、集合時間は
+                  <br />
+                  数十分、早くなります。
+                </li>
                 <li>
                   プログラム初日の
                   <br />
@@ -110,7 +115,6 @@ function Requirement({
                   <br />
                   できません。
                 </li>
-                <br />
                 <li>
                   場内でのお弁当のご購入と
                   <br />
@@ -139,7 +143,7 @@ function Procedure({
   return (
     <section className="gap-4 grid px-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
-      <ul className="gap-2 grid mx-auto text-sm w-80">
+      <ul className="mx-auto space-y-2 text-sm w-80">
         <li className="border-2 border-sky-400 gap-2 grid items-center pb-2 relative">
           <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
             <CheckIcon className="mr-1 size-5" />1

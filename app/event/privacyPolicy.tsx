@@ -26,7 +26,7 @@ export function PrivacyPolicy({
           <p>
             当社は、お申込者様から収集した個人情報は以下に示す本件活動の目的で利用することとし、それ以外の目的に利用することは一切ありません。
           </p>
-          <ul className="grid gap-2 list-disc px-8">
+          <ul className="list-disc px-8 space-y-2">
             <li>
               お申込者様を識別する為、氏名・年齢・学年・続柄などの情報を利用いたします。
             </li>
@@ -52,8 +52,8 @@ export function PrivacyPolicy({
               １）当社は、以下に挙げるケースにおいて、いただいた個人情報を外部に提供します。
             </h4>
             <ul className="px-4">
-              <li>①本件実施に関する業務提携を行う場合</li>
-              <li>②本件実施に関する業務委託を行う場合</li>
+              <li>①&nbsp;本件実施に関する業務提携を行う場合</li>
+              <li>②&nbsp;本件実施に関する業務委託を行う場合</li>
             </ul>
             <p>a.&nbsp;提供する個人情報の項目</p>
             <ul className="list-disc px-8">

@@ -58,6 +58,12 @@ export const PARTNER: Menu = {
   textColor: "text-rose-400",
   submenus: [SPECIAL, TOKYO_CHIBA, HIROSHIMA],
 }
+export const SECRETARIAT: Menu = {
+  name: "こどもテックキャラバン事務局",
+  href: "/secretariat",
+  textColor: "text-teal-400",
+  submenus: [],
+}
 
 export const NAVIGATION: Menu[] = [EVENT, HISTORY, SPONSER, PARTNER] as const
 

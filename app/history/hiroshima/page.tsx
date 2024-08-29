@@ -19,7 +19,7 @@ export default function Hiroshima(): JSX.Element {
       {HIROSHIMA_HISTORY.map((history) => (
         <section key={history.href} className="space-y-4">
           <details className="collapse collapse-arrow">
-            <summary className="bg-amber-50 collapse-title font-bold font-zenMaruGothic min-h-0 text-2xl">
+            <summary className="bg-amber-50 collapse-title font-bold font-zenMaruGothic text-2xl">
               <p className="absolute outline outline-offset-2 rounded text-rose-400 text-xs -rotate-45">
                 大好評で
                 <br />

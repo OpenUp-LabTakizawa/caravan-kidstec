@@ -52,14 +52,11 @@ export default function Home(): JSX.Element {
         </div>
         <IndicatorCarousel />
       </section>
-      <section id="review" className="space-y-4">
+      <section className="space-y-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <Video
-        src="https://dk75m1tgsot44.cloudfront.net/movie/202407"
-        controls={false}
-      />
+      <Video pathname="/202407" controls={false} />
       <section className="relative space-y-4">
         <Image
           src="/handshake.avif"

@@ -4,9 +4,9 @@ import { PlayCircleIcon, StopCircleIcon } from "@heroicons/react/24/outline"
 import { type JSX, type RefObject, useRef, useState } from "react"
 
 export function Video({
-  src,
+  pathname,
   controls = true,
-}: Readonly<{ src: string; controls?: boolean }>): JSX.Element {
+}: Readonly<{ pathname: string; controls?: boolean }>): JSX.Element {
   const [isPlaying, setIsPlaying] = useState<boolean>(true)
   const ref: RefObject<HTMLVideoElement> = useRef<HTMLVideoElement>(null)
 
@@ -37,10 +37,16 @@ export function Video({
         onPause={() => setIsPlaying(false)}
         className="group mx-auto rounded-2xl shadow-lg w-full"
       >
-        <source src={`${src}.webm`} type="video/webm" />
-        <source src={`${src}.mp4`} type="video/mp4" />
+        <source
+          src={`https://dk75m1tgsot44.cloudfront.net/movie${pathname}.webm`}
+          type="video/webm"
+        />
+        <source
+          src={`https://dk75m1tgsot44.cloudfront.net/movie${pathname}.mp4`}
+          type="video/mp4"
+        />
         <track
-          src={`${src}.vtt`}
+          src={`https://dk75m1tgsot44.cloudfront.net/movie${pathname}.vtt`}
           kind="captions"
           srcLang="en"
           label="English"

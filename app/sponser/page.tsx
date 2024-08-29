@@ -29,7 +29,7 @@ export default function SponserPage(): JSX.Element {
   return (
     <>
       <Heading menu={SPONSER} />
-      <section className="px-4 space-y-6">
+      <section className="px-2 space-y-6">
         {sponsers.map((sponser) => (
           <section
             key={sponser.name}
@@ -44,7 +44,7 @@ export default function SponserPage(): JSX.Element {
               className="bg-white col-span-2 object-contain w-full sm:col-span-1 sm:max-h-20"
             />
             <div className="col-span-4 space-y-2 text-center sm:col-span-1">
-              <h2 className="flex font-bold items-center justify-center text-sm">
+              <h2 className="font-bold text-sm">
                 <Link
                   href={sponser.href}
                   target="_blank"
@@ -54,7 +54,7 @@ export default function SponserPage(): JSX.Element {
                   {sponser.name}
                 </Link>
               </h2>
-              <p className="flex gap-1 items-center justify-center whitespace-pre sm:whitespace-normal">
+              <p className="flex gap-1 items-center justify-center">
                 <BuildingOffice2Icon className="size-5" />
                 {sponser.business}
               </p>

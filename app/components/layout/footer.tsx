@@ -6,9 +6,12 @@ export function Footer(): JSX.Element {
   return (
     <footer className="bg-base-300 grid items-center justify-center p-4 text-base-content">
       <nav>
-        <ul className="grid grid-cols-2 menu p-0 sm:grid-cols-4">
+        <ul className="grid grid-cols-2 menu p-0 text-sm sm:grid-cols-4">
           {NAVIGATION.map((menu) => (
-            <li key={menu.name}>
+            <li
+              key={menu.name}
+              className="flex flex-col flex-wrap items-stretch relative"
+            >
               {menu.submenus.length === 0 ? (
                 <Link
                   href={menu.href}
@@ -19,7 +22,7 @@ export function Footer(): JSX.Element {
               ) : (
                 <>
                   <b className="justify-center text-orange-400">{menu.name}</b>
-                  <ul>
+                  <ul className="ms-4 ps-2 relative whitespace-nowrap">
                     {menu.submenus.map((submenu) => (
                       <li key={submenu.name}>
                         <Link

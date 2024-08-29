@@ -66,7 +66,7 @@ function Requirement({
           <tr>
             <th className="p-0 pl-4">参加条件</th>
             <td>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-left">
                 <li className="flex gap-1 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
@@ -107,7 +107,7 @@ function Requirement({
           <tr>
             <th className="p-0 pl-4">注意事項</th>
             <td>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-left">
                 <li className="flex gap-1 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">

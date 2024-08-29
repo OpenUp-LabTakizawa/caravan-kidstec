@@ -528,8 +528,8 @@ export function ReviewCarousel(): JSX.Element {
           className="bg-blue-100 carousel-item content-between grid m-2 p-2 rounded-2xl shadow-lg w-56"
         >
           <p className="my-auto text-sm whitespace-pre">{review.description}</p>
-          <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
-            <UserCircleIcon className="mr-1 size-6 text-rose-400" />
+          <p className="flex gap-1 h-fit items-center justify-center text-sm whitespace-pre">
+            <UserCircleIcon className="size-6 text-rose-400" />
             {review.areaAndUser}
           </p>
         </div>

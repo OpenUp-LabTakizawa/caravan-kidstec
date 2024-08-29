@@ -34,9 +34,9 @@ function Breadcrumb({
     <div className="breadcrumbs text-sm">
       <ul>
         <li>
-          <Link href="/" className="link">
-            <HomeIcon className="mr-1 size-5 text-sky-400" />
-            ホーム
+          <Link href="/" className="link space-x-1">
+            <HomeIcon className="size-5 text-sky-400" />
+            <span>ホーム</span>
           </Link>
         </li>
         <li className={menu.textColor}>{menu.name}</li>

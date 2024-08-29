@@ -529,7 +529,7 @@ export function ReviewCarousel(): JSX.Element {
         >
           <p className="my-auto text-sm whitespace-pre">{review.description}</p>
           <p className="flex h-fit items-center justify-center text-sm whitespace-pre">
-            <UserCircleIcon className="text-rose-400 size-6 mr-1" />
+            <UserCircleIcon className="mr-1 size-6 text-rose-400" />
             {review.areaAndUser}
           </p>
         </div>
@@ -540,7 +540,7 @@ export function ReviewCarousel(): JSX.Element {
 
 function ScrollRightHint(): JSX.Element {
   return (
-    <OpacityZero className="absolute bg-black/60 left-1/2 pt-20 text-white top-1/2 z-10 -translate-y-1/2 ">
+    <OpacityZero className="absolute bg-black/60 left-1/2 pt-20 text-white top-1/2 z-10 -translate-y-1/2">
       <ChevronRightIcon className="scroll-right size-20" />
       <ChevronRightIcon className="scroll-right size-20" />
       <ChevronRightIcon className="scroll-right size-20" />

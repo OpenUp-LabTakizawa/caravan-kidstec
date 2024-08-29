@@ -43,7 +43,7 @@ export function Header(): JSX.Element {
 
   return (
     <header
-      className={`bg-base-100 navbar${pathname !== "/" && headerHeight < scrollY.scrollY && scrollY.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollY.scrollY < headerHeight || !scrollY.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
+      className={`bg-white navbar${pathname !== "/" && headerHeight < scrollY.scrollY && scrollY.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollY.scrollY < headerHeight || !scrollY.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
     >
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost tilt-shaking w-fit">
@@ -97,7 +97,7 @@ function DropdownMenu({
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>
-        <ul className="bg-base-100 dropdown-content menu menu-sm rounded-2xl shadow">
+        <ul className="bg-white dropdown-content menu menu-sm rounded-2xl shadow">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (

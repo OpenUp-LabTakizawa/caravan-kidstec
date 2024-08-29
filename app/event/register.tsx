@@ -4,7 +4,6 @@ import {
   CheckIcon,
   ChevronDoubleDownIcon,
   InformationCircleIcon,
-  LightBulbIcon,
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -110,7 +109,7 @@ function Requirement({
             <td>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-2">
-                  <LightBulbIcon className="size-5 text-yellow-400" />
+                  <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
                     受付手続きや会場内の
                     <br />
@@ -120,7 +119,7 @@ function Requirement({
                   </p>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <LightBulbIcon className="size-5 text-yellow-400" />
+                  <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
                     プログラム初日の
                     <br />
@@ -132,7 +131,7 @@ function Requirement({
                   </p>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <LightBulbIcon className="size-5 text-yellow-400" />
+                  <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
                     場内でのお弁当のご購入と
                     <br />

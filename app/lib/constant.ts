@@ -7,7 +7,7 @@ export const DESCRIPTION: string =
   "プログラミング×体験学習　親子で学ぶ体験型イベント"
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
-export const TOKYO_CHIBA_DEADLINE: string = "２０２４年１０月１０日"
+export const TOKYO_CHIBA_DEADLINE: string = "２０２４年１０月１０日 １２時"
 export const SPECIAL: Submenu = {
   name: "スペシャル",
   href: "/special",

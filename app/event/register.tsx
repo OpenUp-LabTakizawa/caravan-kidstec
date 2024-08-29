@@ -6,7 +6,7 @@ import {
   InformationCircleIcon,
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
-import type { JSX } from "react"
+import type { JSX, ReactNode } from "react"
 
 export function Register({
   guideline,
@@ -67,7 +67,7 @@ function Requirement({
             <th className="p-0 pl-4">参加条件</th>
             <td>
               <ul className="space-y-3">
-                <li className="flex items-center space-x-2">
+                <li className="flex gap-1 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
                     ３日間で１つの
@@ -77,7 +77,7 @@ function Requirement({
                     全日程にご参加頂けること
                   </p>
                 </li>
-                <li className="flex items-center space-x-2">
+                <li className="flex gap-1 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
                     イベントの感想や
@@ -87,7 +87,7 @@ function Requirement({
                     ご対応頂けること
                   </p>
                 </li>
-                <li className="flex items-center space-x-2">
+                <li className="flex gap-1 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
                     今後のイベント募集、また、
@@ -108,7 +108,7 @@ function Requirement({
             <th className="p-0 pl-4">注意事項</th>
             <td>
               <ul className="space-y-3">
-                <li className="flex items-center space-x-2">
+                <li className="flex gap-1 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
                     受付手続きや会場内の
@@ -118,7 +118,7 @@ function Requirement({
                     数十分、早くなります。
                   </p>
                 </li>
-                <li className="flex items-center space-x-2">
+                <li className="flex gap-1 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
                     プログラム初日の
@@ -130,7 +130,7 @@ function Requirement({
                     できません。
                   </p>
                 </li>
-                <li className="flex items-center space-x-2">
+                <li className="flex gap-1 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
                     場内でのお弁当のご購入と
@@ -162,10 +162,7 @@ function Procedure({
     <section className="px-2 space-y-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
       <ul className="mx-auto space-y-2 text-sm w-80">
-        <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
-          <b className="absolute bg-sky-400 flex gap-1 items-center left-0 top-0 pr-1">
-            <CheckIcon className="size-5" />1
-          </b>
+        <Step index={1}>
           <p>
             <Link
               href={guideline.lineLink}
@@ -177,36 +174,18 @@ function Procedure({
             友達追加してトーク画面へ
           </p>
           <LineAddFriends linkLink={guideline.lineLink} />
-        </li>
-        <li>
-          <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
-        </li>
-        <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
-          <b className="absolute bg-sky-400 flex gap-1 items-center left-0 top-0 pr-1">
-            <CheckIcon className="size-5" />2
-          </b>
+        </Step>
+        <Step index={2}>
           <p>
             トーク画面メニューの
             <br />
             <b>「参加申込はこちら」</b>をタップ
           </p>
-        </li>
-        <li>
-          <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
-        </li>
-        <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
-          <b className="absolute bg-sky-400 flex gap-1 items-center left-0 top-0 pr-1">
-            <CheckIcon className="size-5" />3
-          </b>
+        </Step>
+        <Step index={3}>
           <p>会話に沿って必要事項を入力</p>
-        </li>
-        <li>
-          <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
-        </li>
-        <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
-          <b className="absolute bg-sky-400 flex gap-1 items-center left-0 top-0 pr-1">
-            <CheckIcon className="size-5" />4
-          </b>
+        </Step>
+        <Step index={4} isLast={true}>
           <p>
             全て回答して<b>申込完了！</b>
           </p>
@@ -215,8 +194,35 @@ function Procedure({
             <br />
             その他のご連絡をさせて頂きます。
           </p>
-        </li>
+        </Step>
       </ul>
     </section>
+  )
+}
+
+function Step({
+  children,
+  index,
+  isLast = false,
+}: Readonly<{
+  children: ReactNode
+  index: number
+  isLast?: boolean
+}>): JSX.Element {
+  return (
+    <>
+      <li className="border-2 border-sky-400 pb-2 relative space-y-2">
+        <b className="absolute bg-sky-400 flex gap-1 items-center left-0 pr-1 top-0">
+          <CheckIcon className="size-5" />
+          {index}
+        </b>
+        {children}
+      </li>
+      {!isLast && (
+        <li>
+          <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
+        </li>
+      )}
+    </>
   )
 }

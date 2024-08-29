@@ -6,8 +6,8 @@ export default function PrivacyPolicyPage(): JSX.Element {
   const organizations: string[] = [
     "Classroom Adventure",
     "ICHI COMMONS株式会社",
-    "PCN仙台",
     "クルックフィールズ",
+    "ロボットサバイバルプロジェクト（ロボサバ）",
     "株式会社Griteen",
     "株式会社テイクアンドギヴ・ニーズ",
   ] as const

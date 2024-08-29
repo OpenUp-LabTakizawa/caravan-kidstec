@@ -9,7 +9,7 @@ export function Schedules({
   return (
     <section className="mx-auto px-2 relative space-y-2 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
-      <ul className="border-2 border-sky-400 mx-auto w-80">
+      <ul className="border-2 border-sky-400 mx-auto w-80 sm:w-max">
         {schedules.map((schedule) => (
           <li key={schedule.alt} className="border-b p-2 space-y-1">
             <p className="decoration-4 decoration-sky-400 underline">

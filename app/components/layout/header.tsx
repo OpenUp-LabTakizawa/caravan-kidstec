@@ -101,10 +101,7 @@ function DropdownMenu({
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (
-                <Link
-                  href={menu.href}
-                  className="font-bold text-nowrap text-orange-400"
-                >
+                <Link href={menu.href} className="font-bold text-orange-400">
                   {menu.name}
                 </Link>
               ) : (
@@ -190,7 +187,7 @@ function Menu({
   href,
 }: { submenus: Submenu[]; href: string }): JSX.Element {
   return (
-    <ul className="py-2">
+    <ul>
       {submenus.map((submenu) => (
         <li key={submenu.name}>
           <Link href={href + submenu.href} className="text-nowrap">

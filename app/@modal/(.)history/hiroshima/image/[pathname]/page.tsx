@@ -20,7 +20,7 @@ export default function HiroshimaImage({
         height={256}
         width={256}
         alt={selectedPicture.alt}
-        className="pt-4 w-full"
+        className="pt-6 w-full"
       />
     </Modal>
   )

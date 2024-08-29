@@ -12,10 +12,10 @@ export function LineAddFriends({
       <Link href={linkLink} className="mx-auto">
         <Image
           src="/line_add_friends.avif"
-          width={232}
-          height={72}
+          width={128}
+          height={128}
           alt="友だち追加"
-          className="border-0 mx-auto shadow-lg w-auto"
+          className="mx-auto shadow-lg"
         />
       </Link>
     </Bounce>
@@ -27,14 +27,12 @@ export function LineApply({
 }: Readonly<{ lineLink: string }>): JSX.Element {
   return (
     <Bounce className="text-center">
-      <Link href={lineLink}>
-        <button
-          type="button"
-          className="bg-[#00C300] btn green-shine shadow-lg text-lg text-white"
-        >
-          LINEで簡単応募する！
-          <ArrowRightIcon className="arrow-right size-5" />
-        </button>
+      <Link
+        href={lineLink}
+        className="bg-[#00C300] btn green-shine shadow-lg text-lg text-white"
+      >
+        LINEで簡単応募する！
+        <ArrowRightIcon className="arrow-right size-5" />
       </Link>
     </Bounce>
   )

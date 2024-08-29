@@ -31,15 +31,10 @@ export default function Hiroshima(): JSX.Element {
             <HistoryPictures pictures={history.pictures} />
             <Link
               href={`${HISTORY.href}${HIROSHIMA.href}/movie${history.href}`}
-              className="pt-2"
+              className="bg-sky-400 blue-shine btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-max"
             >
-              <button
-                type="button"
-                className="bg-sky-400 blue-shine btn rounded-2xl shadow-lg text-lg text-white"
-              >
-                イベントの様子はこちら！
-                <ArrowTopRightOnSquareIcon className="arrow-top-right size-5" />
-              </button>
+              イベントの様子はこちら！
+              <ArrowTopRightOnSquareIcon className="arrow-top-right size-5" />
             </Link>
           </details>
         </section>

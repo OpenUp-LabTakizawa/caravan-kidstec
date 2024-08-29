@@ -20,7 +20,7 @@ export default function SponserPage(): JSX.Element {
     {
       name: "テイクアンドギヴ・ニーズ",
       href: "https://www.tgn.co.jp/",
-      src: "/logo/take_and_give_needs_logo.svg",
+      src: "/logo/take_and_give_needs_logo.avif",
       business: "ホテルウェディング事業",
       purpose: "ホスピタリティ業界に\nイノベーションを起こし\n日本を躍動させる",
     },

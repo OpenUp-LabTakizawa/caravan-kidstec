@@ -59,7 +59,7 @@ export const PARTNER: Menu = {
   submenus: [SPECIAL, TOKYO_CHIBA, HIROSHIMA],
 }
 export const SECRETARIAT: Menu = {
-  name: "こどもテックキャラバン事務局",
+  name: "事務局",
   href: "/secretariat",
   textColor: "text-teal-400",
   submenus: [],

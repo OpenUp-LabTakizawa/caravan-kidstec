@@ -58,7 +58,7 @@ export default function SponserPage(): JSX.Element {
                 <BuildingOffice2Icon className="size-5" />
                 {sponser.business}
               </p>
-              <FadeInUp className="font-bold text-sky-400 whitespace-pre">
+              <FadeInUp className="font-bold text-teal-400 whitespace-pre">
                 {sponser.purpose}
               </FadeInUp>
             </div>

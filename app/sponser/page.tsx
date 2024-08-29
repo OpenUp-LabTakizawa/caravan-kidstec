@@ -54,8 +54,8 @@ export default function SponserPage(): JSX.Element {
                   {sponser.name}
                 </Link>
               </h2>
-              <p className="flex items-center justify-center whitespace-pre sm:whitespace-normal">
-                <BuildingOffice2Icon className="mr-1 size-5" />
+              <p className="flex gap-1 items-center justify-center whitespace-pre sm:whitespace-normal">
+                <BuildingOffice2Icon className="size-5" />
                 {sponser.business}
               </p>
               <FadeInUp className="font-bold text-sky-400 whitespace-pre">

@@ -163,8 +163,8 @@ function Procedure({
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
       <ul className="mx-auto space-y-2 text-sm w-80">
         <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
-          <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
-            <CheckIcon className="mr-1 size-5" />1
+          <b className="absolute bg-sky-400 flex gap-1 items-center left-0 top-0 pr-1">
+            <CheckIcon className="size-5" />1
           </b>
           <p>
             <Link
@@ -182,8 +182,8 @@ function Procedure({
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
         <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
-          <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
-            <CheckIcon className="mr-1 size-5" />2
+          <b className="absolute bg-sky-400 flex gap-1 items-center left-0 top-0 pr-1">
+            <CheckIcon className="size-5" />2
           </b>
           <p>
             トーク画面メニューの
@@ -195,8 +195,8 @@ function Procedure({
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
         <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
-          <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
-            <CheckIcon className="mr-1 size-5" />3
+          <b className="absolute bg-sky-400 flex gap-1 items-center left-0 top-0 pr-1">
+            <CheckIcon className="size-5" />3
           </b>
           <p>会話に沿って必要事項を入力</p>
         </li>
@@ -204,8 +204,8 @@ function Procedure({
           <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
         </li>
         <li className="border-2 border-sky-400 items-center pb-2 relative space-y-2">
-          <b className="absolute bg-sky-400 flex items-center left-0 top-0 pr-1">
-            <CheckIcon className="mr-1 size-5" />4
+          <b className="absolute bg-sky-400 flex gap-1 items-center left-0 top-0 pr-1">
+            <CheckIcon className="size-5" />4
           </b>
           <p>
             全て回答して<b>申込完了！</b>

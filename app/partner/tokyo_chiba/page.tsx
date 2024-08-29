@@ -16,7 +16,7 @@ export default function TokyoChiba(): JSX.Element {
     {
       name: "Classroom Adventure",
       href: "https://www.classroom-adventure.com/",
-      src: "/logo/classroom-adventure_logo.svg",
+      src: "/logo/classroom-adventure_logo.avif",
       introduction:
         "ワクワクする学びを。\n学びのゲーミフィケーション\n(ゲームの要素を活かして楽しく学ぶこと。)に\n情熱を燃やし、情報検証の最前線に立つ\n慶応義塾大学の大学生が運営する団体です。\n\n「レイのブログ」とは\n真実を見つける力を全ての人へ。\n真実と噓を見分けるスキルを教育する\n今までにないメディアリテラシープログラムです。",
     },

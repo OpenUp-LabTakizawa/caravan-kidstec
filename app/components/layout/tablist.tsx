@@ -4,7 +4,7 @@ import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
-import { type JSX, useState } from "react"
+import { type JSX, useEffect, useState } from "react"
 
 export function ScheduleTablist({
   schedules,
@@ -16,31 +16,31 @@ export function ScheduleTablist({
     tab: "",
   })
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (!tabState.isBusy) {
-  //       if (isFlip) {
-  //         setIsFlip(false)
-  //         if (tab === schedules[0].alt) {
-  //           setTab(schedules[1].alt)
-  //         }
-  //         if (tab === schedules[1].alt) {
-  //           setTab(schedules[2].alt)
-  //         }
-  //         if (tab === schedules[2].alt) {
-  //           setTab(schedules[0].alt)
-  //         }
-  //       } else {
-  //         setIsFlip(true)
-  //       }
-  //     } else if (tabState.tab === "") {
-  //       setTabState({ isBusy: true, tab: tab })
-  //     } else if (tabState.isBusy && tabState.tab === tab) {
-  //       setTabState({ isBusy: false, tab: "" })
-  //     }
-  //   }, 3000)
-  //   return () => clearInterval(interval)
-  // })
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!tabState.isBusy) {
+        if (isFlip) {
+          setIsFlip(false)
+          if (tab === schedules[0].alt) {
+            setTab(schedules[1].alt)
+          }
+          if (tab === schedules[1].alt) {
+            setTab(schedules[2].alt)
+          }
+          if (tab === schedules[2].alt) {
+            setTab(schedules[0].alt)
+          }
+        } else {
+          setIsFlip(true)
+        }
+      } else if (tabState.tab === "") {
+        setTabState({ isBusy: true, tab: tab })
+      } else if (tabState.isBusy && tabState.tab === tab) {
+        setTabState({ isBusy: false, tab: "" })
+      }
+    }, 3000)
+    return () => clearInterval(interval)
+  })
 
   function onClickTab(alt: string): void {
     setIsFlip(false)
@@ -48,8 +48,8 @@ export function ScheduleTablist({
   }
 
   return (
-    <section className="max-w-lg mx-auto space-y-2 text-center w-80 sm:w-96">
-      <div role="tablist" className="flex gap-2 mx-auto px-2">
+    <section className="max-w-lg mx-auto px-2 space-y-2 text-center w-80 sm:w-96">
+      <div role="tablist" className="flex gap-2 mx-auto">
         {schedules.map((schedule) => (
           <button
             key={schedule.alt}
@@ -78,7 +78,7 @@ export function ScheduleTablist({
               onMouseLeave={() => setTabState({ isBusy: false, tab: "" })}
               onTouchStart={() => setTabState({ isBusy: true, tab: "" })}
               onTouchEnd={() => setTabState({ isBusy: true, tab: "" })}
-              className="h-96 m-2"
+              className="h-96"
               style={{ perspective: "1000px" }}
             >
               <div
@@ -86,13 +86,13 @@ export function ScheduleTablist({
                 style={{ transformStyle: "preserve-3d" }}
               >
                 <div
-                  className="absolute h-full w-full"
+                  className="absolute"
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <TabCard schedule={schedule} time="am" />
                 </div>
                 <div
-                  className="absolute h-full w-full"
+                  className="absolute"
                   style={{
                     backfaceVisibility: "hidden",
                     transform: "rotateY(180deg)",
@@ -131,10 +131,7 @@ function TabCard({
             {time === "am" ? "午前" : "午後"}
           </b>
         </p>
-        <h3
-          className="font-bold mx-auto text-base"
-          style={{ transform: "translateZ(100px)" }}
-        >
+        <h3 className="font-bold mx-auto text-base">
           {time === "am" ? schedule.title.am : schedule.title.pm}
         </h3>
         {schedule.url.am || schedule.url.pm ? (

@@ -24,9 +24,10 @@ export function LineAddFriends({
 
 export function LineApply({
   lineLink,
-}: Readonly<{ lineLink: string }>): JSX.Element {
+  classname = "",
+}: Readonly<{ lineLink: string; classname?: string }>): JSX.Element {
   return (
-    <Bounce className="text-center">
+    <Bounce className={classname}>
       <Link
         href={lineLink}
         className="bg-[#00C300] btn green-shine shadow-lg text-lg text-white"

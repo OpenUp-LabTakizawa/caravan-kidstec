@@ -128,7 +128,7 @@ export default function TokyoChiba(): JSX.Element {
       </section>
       <ScheduleTablist schedules={schedules} />
       <Register guideline={guideline} />
-      <LineApply lineLink={TOKYO_CHIBA_LINE} />
+      <LineApply lineLink={TOKYO_CHIBA_LINE} classname="text-center" />
       <EventPanels menu={EVENT} submenu={TOKYO_CHIBA} />
     </>
   )

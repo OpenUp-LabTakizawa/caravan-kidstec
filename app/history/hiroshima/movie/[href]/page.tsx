@@ -22,13 +22,8 @@ export default function HiroshimaMovie({
   return (
     <>
       <Heading menu={HISTORY} submenus={[HIROSHIMA, submenu]} />
-      <Video
-        src={`https://dk75m1tgsot44.cloudfront.net/movie${eventDate.href}`}
-      />
-      <Link
-        href={HISTORY.href + HIROSHIMA.href}
-        className="btn max-w-fit mx-auto"
-      >
+      <Video pathname={eventDate.href} />
+      <Link href={HISTORY.href + HIROSHIMA.href} className="btn mx-auto">
         <ArrowUturnLeftIcon className="rotate-z size-6" />
         {HISTORY.name}に戻る
       </Link>

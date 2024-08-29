@@ -19,9 +19,9 @@ export function Programs({
               {program.date.year}年{program.date.month}月{program.date.day}日(
               {program.date.dayOfWeek})
             </p>
-            <p>
-              <b className="badge badge-outline badge-xs mr-1">場所</b>
-              {program.venue}
+            <p className="space-x-1">
+              <b className="badge badge-outline badge-xs">場所</b>
+              <span>{program.venue}</span>
             </p>
           </li>
         ))}

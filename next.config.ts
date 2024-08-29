@@ -3,6 +3,7 @@ import type { NextConfig } from "next"
 const nextConfig: NextConfig = {
   experimental: {
     ppr: "incremental",
+    pprFallbacks: true,
   },
   images: {
     formats: ["image/avif", "image/webp"],

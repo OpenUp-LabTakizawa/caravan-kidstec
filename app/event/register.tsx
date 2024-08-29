@@ -4,6 +4,7 @@ import {
   CheckIcon,
   ChevronDoubleDownIcon,
   InformationCircleIcon,
+  LightBulbIcon,
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -67,30 +68,39 @@ function Requirement({
             <th className="p-0 pl-4">参加条件</th>
             <td>
               <ul className="space-y-3">
-                <li>
-                  ３日間で１つの
-                  <br />
-                  イベントである為、
-                  <br />
-                  全日程にご参加頂けること
+                <li className="flex items-center space-x-2">
+                  <CheckIcon className="size-5 text-sky-400" />
+                  <p className="grow">
+                    ３日間で１つの
+                    <br />
+                    イベントである為、
+                    <br />
+                    全日程にご参加頂けること
+                  </p>
                 </li>
-                <li>
-                  イベントの感想や
-                  <br />
-                  アンケートに
-                  <br />
-                  ご対応頂けること
+                <li className="flex items-center space-x-2">
+                  <CheckIcon className="size-5 text-sky-400" />
+                  <p className="grow">
+                    イベントの感想や
+                    <br />
+                    アンケートに
+                    <br />
+                    ご対応頂けること
+                  </p>
                 </li>
-                <li>
-                  今後のイベント募集、また、
-                  <br />
-                  スポンサーやパートナーの
-                  <br />
-                  取り組み事例紹介として、
-                  <br />
-                  イベント写真・動画利用の
-                  <br />
-                  承諾を頂けること
+                <li className="flex items-center space-x-2">
+                  <CheckIcon className="size-5 text-sky-400" />
+                  <p className="grow">
+                    今後のイベント募集、また、
+                    <br />
+                    スポンサーやパートナーの
+                    <br />
+                    取り組み事例紹介として、
+                    <br />
+                    イベント写真・動画利用の
+                    <br />
+                    承諾を頂けること
+                  </p>
                 </li>
               </ul>
             </td>
@@ -99,28 +109,37 @@ function Requirement({
             <th className="p-0 pl-4">注意事項</th>
             <td>
               <ul className="space-y-3">
-                <li>
-                  受付手続きや会場内の
-                  <br />
-                  移動を考慮し、集合時間は
-                  <br />
-                  数十分、早くなります。
+                <li className="flex items-center space-x-2">
+                  <LightBulbIcon className="size-5 text-yellow-400" />
+                  <p className="grow">
+                    受付手続きや会場内の
+                    <br />
+                    移動を考慮し、集合時間は
+                    <br />
+                    数十分、早くなります。
+                  </p>
                 </li>
-                <li>
-                  プログラム初日の
-                  <br />
-                  クルックフィールズは、
-                  <br />
-                  飲食物のお持ち込みが
-                  <br />
-                  できません。
+                <li className="flex items-center space-x-2">
+                  <LightBulbIcon className="size-5 text-yellow-400" />
+                  <p className="grow">
+                    プログラム初日の
+                    <br />
+                    クルックフィールズは、
+                    <br />
+                    飲食物のお持ち込みが
+                    <br />
+                    できません。
+                  </p>
                 </li>
-                <li>
-                  場内でのお弁当のご購入と
-                  <br />
-                  マイボトルのご持参を
-                  <br />
-                  お願いいたします。
+                <li className="flex items-center space-x-2">
+                  <LightBulbIcon className="size-5 text-yellow-400" />
+                  <p className="grow">
+                    場内でのお弁当のご購入と
+                    <br />
+                    マイボトルのご持参を
+                    <br />
+                    お願いいたします。
+                  </p>
                 </li>
               </ul>
             </td>

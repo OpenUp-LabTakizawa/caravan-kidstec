@@ -144,6 +144,10 @@ function Requirement({
             </td>
           </tr>
           <tr>
+            <th className="p-0 pl-4">応募開始</th>
+            <td className="font-bold">２０２４年９月９日 １２時</td>
+          </tr>
+          <tr>
             <th className="p-0 pl-4">応募締切</th>
             <td className="decoration-4 decoration-orange-400 font-bold underline">
               {guideline.deadline}

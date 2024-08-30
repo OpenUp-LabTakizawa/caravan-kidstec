@@ -10,7 +10,7 @@ export function Video({
   const [isPlaying, setIsPlaying] = useState<boolean>(true)
   const ref: RefObject<HTMLVideoElement> = useRef<HTMLVideoElement>(null)
 
-  function handleClick() {
+  function handlePlayState() {
     const nextIsPlaying = !isPlaying
     setIsPlaying(nextIsPlaying)
 
@@ -31,8 +31,8 @@ export function Video({
         muted={true}
         playsInline={true}
         preload="auto"
-        onClick={handleClick}
-        onKeyDown={handleClick}
+        onClick={handlePlayState}
+        onKeyDown={handlePlayState}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         className="group mx-auto rounded-2xl shadow-lg w-full"
@@ -54,9 +54,21 @@ export function Video({
         お使いのブラウザはビデオ対応していません。
       </video>
       {!controls && (
-        <button
+        <>
+          <button
+            type="button"
+            onClick={handlePlayState}
+            className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block${isPlaying ? " hidden" : ""}`}
+          >
+            {isPlaying ? (
+              <StopCircleIcon className="bg-black/60 size-32 text-white/60" />
+            ) : (
+              <PlayCircleIcon className="bg-black/60 size-32 text-white/60" />
+            )}
+          </button>
+          {/* <button
           type="button"
-          onClick={handleClick}
+          onClick={handlePlayState}
           className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block${isPlaying ? " hidden" : ""}`}
         >
           {isPlaying ? (
@@ -64,7 +76,8 @@ export function Video({
           ) : (
             <PlayCircleIcon className="bg-black/60 size-32 text-white/60" />
           )}
-        </button>
+        </button> */}
+        </>
       )}
     </div>
   )

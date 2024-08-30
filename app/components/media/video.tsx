@@ -90,9 +90,9 @@ export function Video({
             className={`absolute left-2/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:sm:block${isPlaying && isMute ? " hidden" : ""}`}
           >
             {isMute ? (
-              <SpeakerXMarkIcon className="bg-black/60 size-20 text-white/60 sm:size-32" />
-            ) : (
               <SpeakerWaveIcon className="bg-black/60 size-20 text-white/60 sm:size-32" />
+            ) : (
+              <SpeakerXMarkIcon className="bg-black/60 size-20 text-white/60 sm:size-32" />
             )}
           </button>
         </>

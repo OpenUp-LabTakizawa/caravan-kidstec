@@ -35,14 +35,16 @@ export default function SponserPage(): JSX.Element {
             key={sponser.name}
             className="bg-base-200 gap-1 grid grid-cols-6 items-center min-h-32 p-1 rounded-2xl shadow-lg sm:grid-cols-2"
           >
-            <Image
-              loader={cloudfrontLoader}
-              src={sponser.src}
-              width={256}
-              height={256}
-              alt={sponser.name}
-              className="bg-white col-span-2 object-contain w-full sm:col-span-1 sm:max-h-20"
-            />
+            <div className="bg-white col-span-2 flex h-full items-center rounded-2xl my-4 sm:col-span-1">
+              <Image
+                loader={cloudfrontLoader}
+                src={sponser.src}
+                width={256}
+                height={256}
+                alt={sponser.name}
+                className="bg-white h-full object-contain rounded-2xl w-full sm:max-h-20"
+              />
+            </div>
             <div className="col-span-4 space-y-2 text-center sm:col-span-1">
               <h2 className="font-bold text-sm">
                 <Link

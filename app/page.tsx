@@ -66,7 +66,7 @@ export default function Home(): JSX.Element {
           className="absolute h-full object-contain opacity-10 w-full -z-10"
         />
         <h2 className="font-bold font-zenMaruGothic text-2xl">事務局の想い</h2>
-        <div className="font-bold space-y-4 text-sm">
+        <div className="font-bold space-y-4 text-sm sm:text-base">
           <p>
             このイベントでは新しい人や
             <br />

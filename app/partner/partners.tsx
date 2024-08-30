@@ -14,14 +14,16 @@ export function Partners({
           key={partner.name}
           className="bg-base-200 px-1 py-2 rounded-2xl shadow-lg space-y-2"
         >
-          <Image
-            loader={cloudfrontLoader}
-            src={partner.src}
-            width={256}
-            height={256}
-            alt={partner.name}
-            className="bg-white h-40 mx-auto object-contain"
-          />
+          <div className="bg-white col-span-2 flex h-full items-center rounded-2xl my-4 sm:col-span-1">
+            <Image
+              loader={cloudfrontLoader}
+              src={partner.src}
+              width={256}
+              height={256}
+              alt={partner.name}
+              className="bg-white h-40 mx-auto py-2 object-contain"
+            />
+          </div>
           <h2 className="font-bold text-sm">
             <Link
               href={partner.href}

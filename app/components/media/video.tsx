@@ -76,7 +76,7 @@ export function Video({
           <button
             type="button"
             onClick={handlePlayState}
-            className={`absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block${isPlaying ? " hidden" : ""}`}
+            className={`absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:sm:block${isPlaying ? " hidden" : ""}`}
           >
             {isPlaying ? (
               <StopCircleIcon className="bg-black/60 size-20 text-white/60 sm:size-32" />
@@ -87,7 +87,7 @@ export function Video({
           <button
             type="button"
             onClick={handleSoundState}
-            className={`absolute left-2/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block${isMute ? " hidden" : ""}`}
+            className={`absolute left-2/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:sm:block${isPlaying && isMute ? " hidden" : ""}`}
           >
             {isMute ? (
               <SpeakerXMarkIcon className="bg-black/60 size-20 text-white/60 sm:size-32" />

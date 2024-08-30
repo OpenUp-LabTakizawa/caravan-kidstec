@@ -46,7 +46,7 @@ export default function TokyoChiba(): JSX.Element {
         am: "https://robosava.jp/",
         pm: "https://kurkkufields.jp/",
       },
-      tags: { am: ["ロボット"], pm: ["自然学習"] },
+      tags: { am: ["電子工作", "ロボット"], pm: ["自然学習"] },
     },
     {
       alt: "Day 2",

@@ -1,6 +1,11 @@
 "use client"
 
-import { PlayCircleIcon, StopCircleIcon } from "@heroicons/react/24/outline"
+import {
+  PlayCircleIcon,
+  SpeakerWaveIcon,
+  SpeakerXMarkIcon,
+  StopCircleIcon,
+} from "@heroicons/react/24/outline"
 import { type JSX, type RefObject, useRef, useState } from "react"
 
 export function Video({
@@ -8,6 +13,7 @@ export function Video({
   controls = true,
 }: Readonly<{ pathname: string; controls?: boolean }>): JSX.Element {
   const [isPlaying, setIsPlaying] = useState<boolean>(true)
+  const [isMute, setIsMute] = useState<boolean>(true)
   const ref: RefObject<HTMLVideoElement> = useRef<HTMLVideoElement>(null)
 
   function handlePlayState() {
@@ -18,6 +24,18 @@ export function Video({
       ref.current?.play()
     } else {
       ref.current?.pause()
+    }
+  }
+
+  function handleSoundState() {
+    const video = ref.current as HTMLVideoElement
+    const nextIsMute = !isMute
+    setIsMute(nextIsMute)
+
+    if (nextIsMute) {
+      video.muted = true
+    } else {
+      video.muted = false
     }
   }
 
@@ -58,25 +76,25 @@ export function Video({
           <button
             type="button"
             onClick={handlePlayState}
-            className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block${isPlaying ? " hidden" : ""}`}
+            className={`absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block${isPlaying ? " hidden" : ""}`}
           >
             {isPlaying ? (
-              <StopCircleIcon className="bg-black/60 size-32 text-white/60" />
+              <StopCircleIcon className="bg-black/60 size-20 text-white/60 sm:size-32" />
             ) : (
-              <PlayCircleIcon className="bg-black/60 size-32 text-white/60" />
+              <PlayCircleIcon className="bg-black/60 size-20 text-white/60 sm:size-32" />
             )}
           </button>
-          {/* <button
-          type="button"
-          onClick={handlePlayState}
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block${isPlaying ? " hidden" : ""}`}
-        >
-          {isPlaying ? (
-            <StopCircleIcon className="bg-black/60 size-32 text-white/60" />
-          ) : (
-            <PlayCircleIcon className="bg-black/60 size-32 text-white/60" />
-          )}
-        </button> */}
+          <button
+            type="button"
+            onClick={handleSoundState}
+            className={`absolute left-2/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 group-hover:block${isMute ? " hidden" : ""}`}
+          >
+            {isMute ? (
+              <SpeakerXMarkIcon className="bg-black/60 size-20 text-white/60 sm:size-32" />
+            ) : (
+              <SpeakerWaveIcon className="bg-black/60 size-20 text-white/60 sm:size-32" />
+            )}
+          </button>
         </>
       )}
     </div>

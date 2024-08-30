@@ -11,13 +11,15 @@ export function Video({
   const ref: RefObject<HTMLVideoElement> = useRef<HTMLVideoElement>(null)
 
   function handlePlayState() {
+    const video = ref.current as HTMLVideoElement
     const nextIsPlaying = !isPlaying
     setIsPlaying(nextIsPlaying)
 
     if (nextIsPlaying) {
-      ref.current?.play()
+      video.muted = false
+      video.play()
     } else {
-      ref.current?.pause()
+      video.pause()
     }
   }
 
@@ -26,7 +28,9 @@ export function Video({
       <video
         ref={ref}
         controls={controls}
+        autoPlay={true}
         loop={true}
+        muted={true}
         playsInline={true}
         preload="auto"
         onClick={handlePlayState}

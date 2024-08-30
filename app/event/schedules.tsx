@@ -21,7 +21,7 @@ export function Schedules({
               日(
               <b className="text-xl">{schedule.date.dayOfWeek}</b>)
             </p>
-            <p>10：00&nbsp;～&nbsp;17：00（予定）</p>
+            <p className="font-bold">10：00&nbsp;～&nbsp;17：00（予定）</p>
             <div className="flex gap-2 items-center justify-center">
               <p className="badge badge-outline">場所</p>
               <div>

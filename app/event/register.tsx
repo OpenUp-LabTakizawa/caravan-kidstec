@@ -43,11 +43,11 @@ function Requirement({
         <tbody>
           <tr>
             <th className="p-0 pl-4">募集人数</th>
-            <td>{guideline.participantsNumber}</td>
+            <td className="text-left">{guideline.participantsNumber}</td>
           </tr>
           <tr>
             <th className="p-0 pl-4">対象者</th>
-            <td>
+            <td className="text-left">
               小学２年生&nbsp;～&nbsp;中学２年生の
               <br />
               お子様とご家族
@@ -57,7 +57,7 @@ function Requirement({
           </tr>
           <tr>
             <th className="p-0 pl-4">参加費</th>
-            <td>
+            <td className="text-left">
               無料
               <br />
               （交通費、食事代は自己負担）
@@ -145,11 +145,11 @@ function Requirement({
           </tr>
           <tr>
             <th className="p-0 pl-4">応募開始</th>
-            <td className="font-bold">２０２４年９月９日 １２時</td>
+            <td className="font-bold text-left">２０２４年９月９日 １２時</td>
           </tr>
           <tr>
             <th className="p-0 pl-4">応募締切</th>
-            <td className="decoration-4 decoration-orange-400 font-bold underline">
+            <td className="decoration-4 decoration-orange-400 font-bold text-left underline">
               {guideline.deadline}
             </td>
           </tr>

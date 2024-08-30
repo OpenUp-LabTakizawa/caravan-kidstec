@@ -80,7 +80,7 @@ export default function TokyoChiba(): JSX.Element {
       googleMapLink: "https://maps.app.goo.gl/wLmPrkKwYheQgvuM8",
       src: {
         am: "/202407/wedding/smile_challenge.avif",
-        pm: "/202407/wedding/pick_up_flower.avif",
+        pm: "/202407/wedding/bubbles_entrance.avif",
       },
       title: {
         am: "ロボット競技大会",

@@ -22,7 +22,7 @@ export function TopCarousel(): JSX.Element {
     },
     {
       alt: "結婚式体験",
-      src: "/202407/wedding/bubbles_entrance.avif",
+      src: "/202407/wedding/bubbles_entrance_square.avif",
     },
     {
       alt: "ブーケ作成",

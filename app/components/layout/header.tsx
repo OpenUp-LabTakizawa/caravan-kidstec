@@ -42,10 +42,9 @@ export function Header(): JSX.Element {
   })
 
   return (
-    // <header
-    //   className={`bg-white navbar${pathname !== "/" && headerHeight < scrollY.scrollY && scrollY.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollY.scrollY < headerHeight || !scrollY.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
-    // >
-    <header className="bg-white navbar">
+    <header
+      className={`bg-white navbar${pathname !== "/" && headerHeight < scrollY.scrollY && scrollY.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollY.scrollY < headerHeight || !scrollY.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
+    >
       <div className="navbar-start">
         <Link href="/" className="btn btn-ghost tilt-shaking w-fit">
           <Image

@@ -2,6 +2,7 @@
 
 import type { Schedule } from "@/app/interfaces/schedule"
 import { cloudfrontLoader } from "@/app/lib/loader"
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import { type JSX, useEffect, useState } from "react"
@@ -82,7 +83,7 @@ export function ScheduleTablist({
               style={{ perspective: "1000px" }}
             >
               <div
-                className={`duration-1000 shadow-lg relative transition-transform${isFlip ? " rotate-y-180" : ""}`}
+                className={`duration-1000 relative shadow-lg transition-transform${isFlip ? " rotate-y-180" : ""}`}
                 style={{ transformStyle: "preserve-3d" }}
               >
                 <div
@@ -138,12 +139,13 @@ function TabCard({
           <Link
             href={time === "am" ? schedule.url.am : schedule.url.pm}
             target="_blank"
-            className="font-bold link text-sm"
+            className="flex font-bold gap-1 items-center link mx-auto text-sm w-max"
             rel="noopener noreferrer"
           >
             {time === "am"
               ? schedule.organization.am
               : schedule.organization.pm}
+            <ArrowTopRightOnSquareIcon className="size-4" />
           </Link>
         ) : time === "am" ? (
           <p className="font-bold text-sm">{schedule.organization.am}</p>

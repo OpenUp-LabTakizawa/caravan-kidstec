@@ -19,7 +19,7 @@ import type { JSX } from "react"
 export default function TokyoChiba(): JSX.Element {
   const guideline: Guideline = {
     anchorLink: "requirement",
-    participantsNumber: "２０組程",
+    participantsNumber: "２０組程（６０名）",
     deadline: TOKYO_CHIBA_DEADLINE,
     lineLink: TOKYO_CHIBA_LINE,
   }

@@ -19,7 +19,7 @@ export default function Home(): JSX.Element {
         className="block sticky top-0 w-full z-20 sm:inline sm:static"
       >
         <Image
-          src="/202410_event_banner.avif"
+          src="/202410_event_banner_ready.avif"
           width={540}
           height={540}
           alt="イベント詳細はこちら"

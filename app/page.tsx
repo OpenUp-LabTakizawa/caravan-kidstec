@@ -23,7 +23,7 @@ export default function Home(): JSX.Element {
           width={540}
           height={540}
           alt="イベント詳細はこちら"
-          className="sticky top-0 w-full z-20 sm:static"
+          className="w-full"
         />
       </Link>
       <section>

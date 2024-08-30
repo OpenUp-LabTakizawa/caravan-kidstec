@@ -16,7 +16,7 @@ export default function Home(): JSX.Element {
     <article className="pb-4 space-y-6 text-base text-center">
       <Link
         href={EVENT.href + TOKYO_CHIBA.href}
-        className="sticky top-0 w-full z-20 sm:static"
+        className="block sticky top-0 w-full z-20 sm:inline sm:static"
       >
         <Image
           src="/202410_event_banner.avif"

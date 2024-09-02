@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* disable hold down in order to prevent downloading images   */
+/* disable hold down in order to prevent downloading images */
 img {
   pointer-events: none;
 }
@@ -52,6 +52,10 @@ img {
 
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
+}
+
+.fade-in-out {
+  animation: fade-in-out 1s forwards;
 }
 
 .fade-in-up {
@@ -175,12 +179,16 @@ img {
   }
 }
 
-@keyframes fade-in {
+@keyframes fade-in-out {
   0% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 1.5;
   }
 }
 

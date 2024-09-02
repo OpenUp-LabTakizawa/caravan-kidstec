@@ -39,117 +39,175 @@ function Requirement({
           募集を終了します。
         </p>
       </div>
-      <table className="border-2 border-sky-400 mx-auto table text-center w-80">
+      <div className="border-2 border-sky-400 mx-auto py-2 space-y-2 text-center text-sm w-80 sm:hidden">
+        <div className="border-1 border-b pb-2">
+          <p className="font-bold">募集人数</p>
+          <p>{guideline.participantsNumber}</p>
+        </div>
+        <div className="border-1 border-b pb-2">
+          <p className="font-bold">対象者</p>
+          <p>
+            小学２年生&nbsp;～&nbsp;中学２年生のお子様とご家族
+            <br />
+            （全日程において親子２名以上）
+          </p>
+        </div>
+        <div className="border-1 border-b pb-2">
+          <p className="font-bold">参加費</p>
+          <p>無料（交通費、食事代は自己負担）</p>
+        </div>
+        <div className="border-1 border-b pb-2">
+          <p className="font-bold">参加条件</p>
+          <ul className="space-y-3">
+            <li className="flex gap-1 items-center pl-2">
+              <CheckIcon className="size-5 text-sky-400" />
+              <p className="grow">
+                ３日間で１つのイベントである為、
+                <br />
+                全日程にご参加頂けること
+              </p>
+            </li>
+            <li className="flex gap-1 items-center pl-2">
+              <CheckIcon className="size-5 text-sky-400" />
+              <p className="grow">
+                イベントの感想やアンケートに
+                <br />
+                ご対応頂けること
+              </p>
+            </li>
+            <li className="flex gap-1 items-center pl-2">
+              <CheckIcon className="size-5 text-sky-400" />
+              <p className="grow">
+                今後のイベント募集、また、
+                <br />
+                スポンサーやパートナーの取り組み
+                <br />
+                事例紹介として、イベント写真・
+                <br />
+                動画利用の承諾を頂けること
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p className="font-bold">注意事項</p>
+          <ul className="space-y-3">
+            <li className="flex gap-1 items-center pl-2">
+              <CheckIcon className="size-5 text-sky-400" />
+              <p className="grow">
+                受付手続きや会場内の移動を考慮し、
+                <br />
+                集合時間は数十分、早くなります。
+              </p>
+            </li>
+            <li className="flex gap-1 items-center pl-2">
+              <CheckIcon className="size-5 text-sky-400" />
+              <p className="grow">
+                プログラム初日のクルックフィールズは、
+                <br />
+                飲食物のお持ち込みができません。
+              </p>
+            </li>
+            <li className="flex gap-1 items-center pl-2">
+              <CheckIcon className="size-5 text-sky-400" />
+              <p className="grow">
+                場内でのお弁当のご購入と、
+                <br />
+                マイボトルのご持参をお願いいたします。
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <table className="border-2 border-sky-400 hidden mx-auto sm:table">
         <tbody>
           <tr>
-            <th className="p-0 pl-4">募集人数</th>
-            <td className="text-left">{guideline.participantsNumber}</td>
+            <th>募集人数</th>
+            <td>{guideline.participantsNumber}</td>
           </tr>
           <tr>
-            <th className="p-0 pl-4">対象者</th>
-            <td className="text-left">
-              小学２年生&nbsp;～&nbsp;中学２年生の
-              <br />
-              お子様とご家族
-              <br />
+            <th>対象者</th>
+            <td>
+              小学２年生&nbsp;～&nbsp;中学２年生のお子様とご家族
+              <br className="md:hidden" />
               （全日程において親子２名以上）
             </td>
           </tr>
           <tr>
-            <th className="p-0 pl-4">参加費</th>
-            <td className="text-left">
-              無料
-              <br />
-              （交通費、食事代は自己負担）
-            </td>
+            <th>参加費</th>
+            <td>無料（交通費、食事代は自己負担）</td>
           </tr>
           <tr>
-            <th className="p-0 pl-4">参加条件</th>
+            <th>参加条件</th>
             <td>
-              <ul className="space-y-3 text-left">
-                <li className="flex gap-1 items-center">
+              <ul className="space-y-3">
+                <li className="flex gap-2 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
-                    ３日間で１つの
-                    <br />
-                    イベントである為、
-                    <br />
+                    ３日間で１つのイベントである為、
+                    <br className="md:hidden" />
                     全日程にご参加頂けること
                   </p>
                 </li>
-                <li className="flex gap-1 items-center">
+                <li className="flex gap-2 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
-                    イベントの感想や
-                    <br />
-                    アンケートに
-                    <br />
-                    ご対応頂けること
+                    イベントの感想やアンケートにご対応頂けること
                   </p>
                 </li>
-                <li className="flex gap-1 items-center">
+                <li className="flex gap-2 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
-                    今後のイベント募集、また、
-                    <br />
-                    スポンサーやパートナーの
-                    <br />
+                    今後のイベント募集、また、スポンサーや
+                    <br className="md:hidden" />
+                    パートナーの
+                    <br className="hidden md:block" />
                     取り組み事例紹介として、
-                    <br />
-                    イベント写真・動画利用の
-                    <br />
-                    承諾を頂けること
+                    <br className="md:hidden" />
+                    イベント写真・動画利用の承諾を頂けること
                   </p>
                 </li>
               </ul>
             </td>
           </tr>
           <tr>
-            <th className="p-0 pl-4">注意事項</th>
+            <th>注意事項</th>
             <td>
-              <ul className="space-y-3 text-left">
-                <li className="flex gap-1 items-center">
+              <ul className="space-y-3">
+                <li className="flex gap-2 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
-                    受付手続きや会場内の
-                    <br />
-                    移動を考慮し、集合時間は
-                    <br />
-                    数十分、早くなります。
+                    受付手続きや会場内の移動を考慮し、
+                    <br className="md:hidden" />
+                    集合時間は数十分、早くなります。
                   </p>
                 </li>
-                <li className="flex gap-1 items-center">
+                <li className="flex gap-2 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
-                    プログラム初日の
-                    <br />
-                    クルックフィールズは、
-                    <br />
-                    飲食物のお持ち込みが
-                    <br />
-                    できません。
+                    プログラム初日のクルックフィールズは、
+                    <br className="md:hidden" />
+                    飲食物のお持ち込みができません。
                   </p>
                 </li>
-                <li className="flex gap-1 items-center">
+                <li className="flex gap-2 items-center">
                   <CheckIcon className="size-5 text-sky-400" />
                   <p className="grow">
-                    場内でのお弁当のご購入と
-                    <br />
-                    マイボトルのご持参を
-                    <br />
-                    お願いいたします。
+                    場内でのお弁当のご購入と、
+                    <br className="md:hidden" />
+                    マイボトルのご持参をお願いいたします。
                   </p>
                 </li>
               </ul>
             </td>
           </tr>
           <tr>
-            <th className="p-0 pl-4">応募開始</th>
-            <td className="font-bold text-left">{guideline.startDate}</td>
+            <th>応募開始</th>
+            <td className="font-bold">{guideline.startDate}</td>
           </tr>
           <tr>
-            <th className="p-0 pl-4">応募締切</th>
-            <td className="decoration-4 decoration-orange-400 font-bold text-left underline">
+            <th>応募締切</th>
+            <td className="decoration-4 decoration-orange-400 font-bold underline">
               {guideline.deadline}
             </td>
           </tr>

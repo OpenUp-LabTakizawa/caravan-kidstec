@@ -11,6 +11,9 @@ export function Video({
   const ref: RefObject<HTMLVideoElement> = useRef<HTMLVideoElement>(null)
 
   function handleClick() {
+    if (controls) {
+      return
+    }
     const video = ref.current as HTMLVideoElement
     const nextIsMute = !isMute
     setIsMute(nextIsMute)

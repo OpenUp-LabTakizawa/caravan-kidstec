@@ -12,9 +12,9 @@ export function Partners({
       {partners.map((partner) => (
         <section
           key={partner.name}
-          className="bg-base-200 px-1 py-2 rounded-2xl shadow-lg space-y-2"
+          className="bg-base-200 p-2 rounded-2xl shadow-lg space-y-2"
         >
-          <div className="bg-white col-span-2 flex h-full items-center rounded-2xl my-4 sm:col-span-1">
+          <div className="bg-white col-span-2 flex h-full items-center rounded-2xl sm:col-span-1">
             <Image
               loader={cloudfrontLoader}
               src={partner.src}

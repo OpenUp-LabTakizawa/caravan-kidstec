@@ -39,7 +39,7 @@ export function ScheduleTablist({
       } else if (tabState.isBusy && tabState.tab === tab) {
         setTabState({ isBusy: false, tab: "" })
       }
-    }, 2000)
+    }, 2500)
     return () => clearInterval(interval)
   })
 

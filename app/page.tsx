@@ -5,13 +5,16 @@ import {
 } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import { Introduction } from "@/app/introduction"
-import { EVENT, TOKYO_CHIBA } from "@/app/lib/constant"
+import { EVENT, TOKYO_CHIBA, TOKYO_CHIBA_START_DATE } from "@/app/lib/constant"
 import { PlusIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export default function Home(): JSX.Element {
+  const startDate = new Date(TOKYO_CHIBA_START_DATE.date)
+  const now = new Date()
+
   return (
     <article className="pb-4 space-y-6 text-base text-center">
       <Link
@@ -19,7 +22,11 @@ export default function Home(): JSX.Element {
         className="block sticky top-0 w-full z-20 sm:inline sm:static"
       >
         <Image
-          src="/202410_event_banner_ready.avif"
+          src={
+            now < startDate
+              ? "/202410_event_banner_ready.avif"
+              : "/202410_event_banner_start.avif"
+          }
           width={540}
           height={540}
           alt="イベント詳細はこちら"

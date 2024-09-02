@@ -11,6 +11,7 @@ import {
   TOKYO_CHIBA,
   TOKYO_CHIBA_DEADLINE,
   TOKYO_CHIBA_LINE,
+  TOKYO_CHIBA_START_DATE,
 } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
@@ -20,6 +21,7 @@ export default function TokyoChiba(): JSX.Element {
   const guideline: Guideline = {
     anchorLink: "requirement",
     participantsNumber: "２０組程（６０名）",
+    startDate: TOKYO_CHIBA_START_DATE.text,
     deadline: TOKYO_CHIBA_DEADLINE,
     lineLink: TOKYO_CHIBA_LINE,
   }

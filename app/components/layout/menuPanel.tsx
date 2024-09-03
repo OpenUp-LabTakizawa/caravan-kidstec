@@ -39,7 +39,7 @@ export function EventPanels({
         <Link
           key={panel.name}
           href={panel.href}
-          className={`basis-1/2 border-2 group max-w-40 rounded-lg shadow-lg hover:text-white ${panel.color.shadow}`}
+          className={`basis-1/2 border-2 group max-w-52 rounded-lg shadow-lg hover:text-white ${panel.color.shadow}`}
         >
           <b
             className={`mx-auto w-fit group-hover:text-white ${panel.color.text}`}

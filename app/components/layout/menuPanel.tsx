@@ -1,5 +1,5 @@
 import type { Menu, MenuPanel, Submenu } from "@/app/interfaces/menu"
-import { Q_AND_A } from "@/app/lib/constant"
+import { PRIVACY_POLICY, Q_AND_A } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -19,16 +19,27 @@ export function EventPanels({
     href: menu.href + submenu.href + Q_AND_A.href,
     text: "よくある質問",
   }
+  const privacyPolicyPanel: MenuPanel = {
+    name: PRIVACY_POLICY.name,
+    color: {
+      bg: "bg-orange-400",
+      shadow: "box-orange-shadow",
+      text: "text-orange-400",
+      textHover: "group-hover:text-orange-400",
+    },
+    href: menu.href + submenu.href + PRIVACY_POLICY.href,
+    text: "プライバシーポリシー",
+  }
 
-  const panels: MenuPanel[] = [qaPanels]
+  const panels: MenuPanel[] = [qaPanels, privacyPolicyPanel]
 
   return (
-    <section className="flex mx-auto text-center w-40">
+    <section className="flex gap-4 justify-center pl-2 pr-4 text-center">
       {panels.map((panel) => (
         <Link
           key={panel.name}
           href={panel.href}
-          className={`border-2 group rounded-lg shadow-lg w-full hover:text-white ${panel.color.shadow}`}
+          className={`basis-1/2 border-2 group max-w-40 rounded-lg shadow-lg hover:text-white ${panel.color.shadow}`}
         >
           <b
             className={`mx-auto w-fit group-hover:text-white ${panel.color.text}`}

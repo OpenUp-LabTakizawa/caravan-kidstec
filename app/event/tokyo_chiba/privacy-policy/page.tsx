@@ -341,7 +341,7 @@ export default function PrivacyPolicy(): JSX.Element {
                 <li className="before:content-['①'] before:mr-1">
                   組織体制：
                   <p className="px-4">
-                    情報の取扱い（取得、利用、保存、提供、削除・廃棄等）の段階ごとにおける関係者の役割を規定し、それに従った組織体制を整備します。
+                    個人情報の取扱い（取得、利用、保存、提供、削除・廃棄等）の段階ごとにおける関係者の役割を規定し、それに従った組織体制を整備します。
                   </p>
                 </li>
                 <li className="before:content-['②'] before:mr-1">

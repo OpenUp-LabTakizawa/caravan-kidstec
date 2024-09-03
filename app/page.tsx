@@ -69,7 +69,7 @@ export default function Home(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <Video pathname="/202407" controls={false} />
+      <Video pathname="/202407" />
       <section className="relative space-y-4">
         <Image
           src="/handshake.avif"
@@ -98,10 +98,8 @@ export default function Home(): JSX.Element {
           </p>
           <p>
             この特別な経験をつくるためにわたしたちは
-            <br className="sm:hidden" />
-            パートナシップ同士、
-            <br className="hidden sm:block" />
-            お互いに協力し
+            <br />
+            パートナシップを組んで協力し、
             <br className="sm:hidden" />
             このイベントを行っています。
           </p>

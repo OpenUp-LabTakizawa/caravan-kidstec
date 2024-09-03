@@ -108,6 +108,7 @@ export default function TokyoChiba(): JSX.Element {
         width={540}
         height={540}
         alt="こどもテックキャラバン"
+        priority={true}
         className="w-full"
       />
       <Schedules schedules={schedules} />

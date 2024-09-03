@@ -58,8 +58,8 @@ function Requirement({
         </div>
         <div className="border-1 border-b pb-2">
           <p className="font-bold">参加条件</p>
-          <ul className="space-y-3">
-            <li className="flex gap-1 items-center pl-2">
+          <ul className="space-y-3 text-left pl-4">
+            <li className="flex gap-2 items-center">
               <CheckIcon className="size-5 text-sky-400" />
               <p className="grow">
                 ３日間で１つのイベントである為、
@@ -67,7 +67,7 @@ function Requirement({
                 全日程にご参加頂けること
               </p>
             </li>
-            <li className="flex gap-1 items-center pl-2">
+            <li className="flex gap-2 items-center">
               <CheckIcon className="size-5 text-sky-400" />
               <p className="grow">
                 イベントの感想やアンケートに
@@ -75,7 +75,7 @@ function Requirement({
                 ご対応頂けること
               </p>
             </li>
-            <li className="flex gap-1 items-center pl-2">
+            <li className="flex gap-2 items-center">
               <CheckIcon className="size-5 text-sky-400" />
               <p className="grow">
                 今後のイベント募集、また、
@@ -91,8 +91,8 @@ function Requirement({
         </div>
         <div>
           <p className="font-bold">注意事項</p>
-          <ul className="space-y-3">
-            <li className="flex gap-1 items-center pl-2">
+          <ul className="space-y-3 text-left pl-4">
+            <li className="flex gap-2 items-center">
               <CheckIcon className="size-5 text-sky-400" />
               <p className="grow">
                 受付手続きや会場内の移動を考慮し、
@@ -100,7 +100,7 @@ function Requirement({
                 集合時間は数十分、早くなります。
               </p>
             </li>
-            <li className="flex gap-1 items-center pl-2">
+            <li className="flex gap-2 items-center">
               <CheckIcon className="size-5 text-sky-400" />
               <p className="grow">
                 プログラム初日のクルックフィールズは、
@@ -108,7 +108,7 @@ function Requirement({
                 飲食物のお持ち込みができません。
               </p>
             </li>
-            <li className="flex gap-1 items-center pl-2">
+            <li className="flex gap-2 items-center">
               <CheckIcon className="size-5 text-sky-400" />
               <p className="grow">
                 場内でのお弁当のご購入と、

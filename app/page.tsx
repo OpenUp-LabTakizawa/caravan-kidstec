@@ -17,6 +17,7 @@ export default function Home(): JSX.Element {
 
   return (
     <article className="pb-4 space-y-6 text-base text-center">
+      {/* block className is necessary for Safari behavior */}
       <Link
         href={EVENT.href + TOKYO_CHIBA.href}
         className="block sticky top-0 w-full z-20 sm:inline sm:static"

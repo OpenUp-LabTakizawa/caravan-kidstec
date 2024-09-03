@@ -136,6 +136,7 @@ export function TopCarousel(): JSX.Element {
             height={256}
             width={256}
             alt={picture.alt}
+            priority={true}
             className="aspect-square carousel-item object-cover w-full"
           />
         ))}

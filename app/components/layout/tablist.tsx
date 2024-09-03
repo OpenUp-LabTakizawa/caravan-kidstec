@@ -67,44 +67,38 @@ export function ScheduleTablist({
           </button>
         ))}
       </div>
-      {schedules.map(
-        (schedule) =>
-          tab === schedule.alt && (
-            <div
-              key={schedule.alt}
-              role="tabpanel"
-              onClick={() => setIsFlip(!isFlip)}
-              onKeyDown={() => setIsFlip(!isFlip)}
-              onMouseEnter={() => setTabState({ isBusy: true, tab: "" })}
-              onMouseLeave={() => setTabState({ isBusy: false, tab: "" })}
-              onTouchStart={() => setTabState({ isBusy: true, tab: "" })}
-              onTouchEnd={() => setTabState({ isBusy: true, tab: "" })}
-              className="h-96"
-              style={{ perspective: "1000px" }}
-            >
-              <div
-                className={`duration-1000 relative shadow-lg transition-transform${isFlip ? " rotate-y-180" : ""}`}
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                <div
-                  className="absolute"
-                  style={{ backfaceVisibility: "hidden" }}
-                >
-                  <TabCard schedule={schedule} time="am" />
-                </div>
-                <div
-                  className="absolute"
-                  style={{
-                    backfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)",
-                  }}
-                >
-                  <TabCard schedule={schedule} time="pm" />
-                </div>
-              </div>
+      {schedules.map((schedule) => (
+        <div
+          key={schedule.alt}
+          role="tabpanel"
+          onClick={() => setIsFlip(!isFlip)}
+          onKeyDown={() => setIsFlip(!isFlip)}
+          onMouseEnter={() => setTabState({ isBusy: true, tab: "" })}
+          onMouseLeave={() => setTabState({ isBusy: false, tab: "" })}
+          onTouchStart={() => setTabState({ isBusy: true, tab: "" })}
+          onTouchEnd={() => setTabState({ isBusy: true, tab: "" })}
+          className={`h-96${tab === schedule.alt ? "" : " hidden"}`}
+          style={{ perspective: "1000px" }}
+        >
+          <div
+            className={`duration-1000 relative shadow-lg transition-transform${isFlip ? " rotate-y-180" : ""}`}
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            <div className="absolute" style={{ backfaceVisibility: "hidden" }}>
+              <TabCard schedule={schedule} time="am" />
             </div>
-          ),
-      )}
+            <div
+              className="absolute"
+              style={{
+                backfaceVisibility: "hidden",
+                transform: "rotateY(180deg)",
+              }}
+            >
+              <TabCard schedule={schedule} time="pm" />
+            </div>
+          </div>
+        </div>
+      ))}
     </section>
   )
 }

@@ -12,7 +12,7 @@ export function Heading({
   submenus?: Submenu[]
 }>): JSX.Element {
   return (
-    <section className="pl-4 space-y-6">
+    <section className="px-4 space-y-6">
       <Breadcrumb menu={menu} submenus={submenus} />
       <h1
         className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${submenus?.length === 2 ? submenus[1].textColor : menu.textColor}`}

@@ -46,30 +46,36 @@ export function Header(): JSX.Element {
       className={`bg-white navbar${pathname !== "/" && headerHeight < scrollY.scrollY && scrollY.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollY.scrollY < headerHeight || !scrollY.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
     >
       <div className="navbar-start">
-        <Link href="/" className="btn btn-ghost tilt-shaking w-fit">
+        <Link href="/" className="px-4 tilt-shaking">
           <Image
             src="/caravan-kidstec_logo_line.avif"
-            width={256}
-            height={256}
+            width={150}
+            height={75}
+            sizes="100vw"
             alt={SITE_TITLE}
             priority={true}
-            className="w-full"
+            className="max-h-8 w-full"
           />
         </Link>
       </div>
-      <nav className="hidden navbar-end z-30 lg:flex">
-        <Navigation isScrollDown={scrollY.isScrollDown} />
+      <nav className="navbar-end z-30">
+        <DropdownMenu
+          className="lg:hidden"
+          isScrollDown={scrollY.isScrollDown}
+        />
+        <Navigation
+          className="hidden lg:flex"
+          isScrollDown={scrollY.isScrollDown}
+        />
       </nav>
-      <div className="navbar-end z-30 lg:hidden">
-        <DropdownMenu isScrollDown={scrollY.isScrollDown} />
-      </div>
     </header>
   )
 }
 
 function DropdownMenu({
+  className = "",
   isScrollDown,
-}: Readonly<{ isScrollDown: boolean }>): JSX.Element {
+}: Readonly<{ className?: string; isScrollDown: boolean }>): JSX.Element {
   const ref: RefObject<HTMLDetailsElement> = useRef<HTMLDetailsElement>(null)
 
   useEffect(() => {
@@ -92,7 +98,10 @@ function DropdownMenu({
   })
 
   return (
-    <details ref={ref} className="dropdown dropdown-end">
+    <details
+      ref={ref}
+      className={`dropdown dropdown-end${className === "" ? "" : ` ${className}`}`}
+    >
       <summary role="button" className="btn btn-ghost lg:hidden">
         <Bars3BottomRightIcon className="size-7" />
       </summary>
@@ -119,8 +128,9 @@ function DropdownMenu({
 }
 
 function Navigation({
+  className = "",
   isScrollDown,
-}: Readonly<{ isScrollDown: boolean }>): JSX.Element {
+}: Readonly<{ className?: string; isScrollDown: boolean }>): JSX.Element {
   const ref: RefObject<Map<string, HTMLDetailsElement>> = useRef<
     Map<string, HTMLDetailsElement>
   >(new Map<string, HTMLDetailsElement>())
@@ -154,7 +164,9 @@ function Navigation({
   }
 
   return (
-    <ul className="menu menu-horizontal p-0">
+    <ul
+      className={`menu menu-horizontal p-0${className === "" ? "" : ` ${className}`}`}
+    >
       {NAVIGATION.map((menu) => (
         <li key={menu.name}>
           {menu.submenus.length === 0 ? (

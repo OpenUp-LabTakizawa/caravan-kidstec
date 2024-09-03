@@ -68,25 +68,19 @@ export default function Secretariat(): JSX.Element {
           <br className="sm:hidden" />
           こどもテックキャラバンを行っています。
         </p>
-        <ul className="space-y-2 sm:mx-auto sm:w-max">
+        <ul className="space-y-2">
           {organizations.map((organization) => (
-            <li
-              key={organization.company}
-              className="flex items-center justify-center sm:block"
-            >
-              <span className="pl-4 sm:hidden">・</span>
-              <div className="grow before:sm:content-['・'] sm:grow-0">
-                <Link
-                  href={organization.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-bold link text-sky-400"
-                >
-                  {organization.company}&nbsp;
-                </Link>
-                <br className="sm:hidden" />
-                {organization.description}
-              </div>
+            <li key={organization.company} className="before:content-['・']">
+              <Link
+                href={organization.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold link text-sky-400"
+              >
+                {organization.company}&nbsp;
+              </Link>
+              <br className="sm:hidden" />
+              &nbsp;&nbsp;&nbsp;{organization.description}
             </li>
           ))}
         </ul>

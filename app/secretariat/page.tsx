@@ -32,13 +32,13 @@ export default function Secretariat(): JSX.Element {
   return (
     <>
       <Heading menu={SECRETARIAT} />
-      <section className="px-2 space-y-4 text-center md:text-sm">
+      <section className="px-2 space-y-4 md:text-sm">
         <h2 className="font-bold font-zenMaruGothic text-2xl">
           こどもテックキャラバン
           <br className="sm:hidden" />
           事務局について
         </h2>
-        <div className="flex gap-2 items-center justify-center">
+        <div className="flex gap-2 items-center">
           <p>
             事務局はSDGs目標の17
             <br className="sm:hidden" />「
@@ -59,20 +59,16 @@ export default function Secretariat(): JSX.Element {
             className="h-full"
           />
         </div>
-      </section>
-      <section className="px-2 space-y-4 text-center">
         <p>
           以下の企業・団体が事務局として非営利で
           <br className="sm:hidden" />
-          運営しており、
-          <br className="hidden sm:block" />
-          『パートナーシップ』だからこそ
-          <br className="sm:hidden" />
-          実現できる社会貢献活動として
+          運営しており、『パートナーシップ』だからこそ
           <br />
+          実現できる社会貢献活動として
+          <br className="sm:hidden" />
           こどもテックキャラバンを行っています。
         </p>
-        <ul className="space-y-2 sm:mx-auto sm:text-left sm:w-max">
+        <ul className="space-y-2 sm:mx-auto sm:w-max">
           {organizations.map((organization) => (
             <li
               key={organization.company}
@@ -95,7 +91,7 @@ export default function Secretariat(): JSX.Element {
           ))}
         </ul>
       </section>
-      <section className="px-2 space-y-4 text-center md:text-sm">
+      <section className="px-2 space-y-4 md:text-sm">
         <h2 className="font-bold font-zenMaruGothic text-2xl">
           こどもテックキャラバンの
           <br className="sm:hidden" />
@@ -130,7 +126,7 @@ export default function Secretariat(): JSX.Element {
           <br className="sm:hidden" />
           すべての人に
           <br className="hidden sm:block" />
-          心が湧き立つような瞬間があること、
+          心が沸き立つような瞬間があること、
           <br className="sm:hidden" />
           新しい可能性が広がることを目指しています。
         </p>

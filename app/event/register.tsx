@@ -58,63 +58,45 @@ function Requirement({
         </div>
         <div className="border-1 border-b pb-2">
           <p className="font-bold">参加条件</p>
-          <ul className="space-y-3 text-left pl-4">
-            <li className="flex gap-2 items-center">
-              <CheckIcon className="size-5 text-sky-400" />
-              <p className="grow">
-                ３日間で１つのイベントである為、
-                <br />
-                全日程にご参加頂けること
-              </p>
+          <ul className="list-disc pl-8 space-y-3 text-left">
+            <li>
+              ３日間で１つのイベントである為、
+              <br />
+              全日程にご参加頂けること
             </li>
-            <li className="flex gap-2 items-center">
-              <CheckIcon className="size-5 text-sky-400" />
-              <p className="grow">
-                イベントの感想やアンケートに
-                <br />
-                ご対応頂けること
-              </p>
+            <li>
+              イベントの感想やアンケートに
+              <br />
+              ご対応頂けること
             </li>
-            <li className="flex gap-2 items-center">
-              <CheckIcon className="size-5 text-sky-400" />
-              <p className="grow">
-                今後のイベント募集、また、
-                <br />
-                スポンサーやパートナーの取り組み
-                <br />
-                事例紹介として、イベント写真・
-                <br />
-                動画利用の承諾を頂けること
-              </p>
+            <li>
+              今後のイベント募集、また、
+              <br />
+              スポンサーやパートナーの取り組み
+              <br />
+              事例紹介として、イベント写真・
+              <br />
+              動画利用の承諾を頂けること
             </li>
           </ul>
         </div>
         <div>
           <p className="font-bold">注意事項</p>
-          <ul className="space-y-3 text-left pl-4">
-            <li className="flex gap-2 items-center">
-              <CheckIcon className="size-5 text-sky-400" />
-              <p className="grow">
-                受付手続きや会場内の移動を考慮し、
-                <br />
-                集合時間は数十分、早くなります。
-              </p>
+          <ul className="list-disc pl-8 space-y-3 text-left">
+            <li>
+              受付手続きや会場内の移動を考慮し、
+              <br />
+              集合時間は数十分、早くなります。
             </li>
-            <li className="flex gap-2 items-center">
-              <CheckIcon className="size-5 text-sky-400" />
-              <p className="grow">
-                プログラム初日のクルックフィールズは、
-                <br />
-                飲食物のお持ち込みができません。
-              </p>
+            <li>
+              プログラム初日のクルックフィールズは、
+              <br />
+              飲食物のお持ち込みができません。
             </li>
-            <li className="flex gap-2 items-center">
-              <CheckIcon className="size-5 text-sky-400" />
-              <p className="grow">
-                場内でのお弁当のご購入と、
-                <br />
-                マイボトルのご持参をお願いいたします。
-              </p>
+            <li>
+              場内でのお弁当のご購入と、
+              <br />
+              マイボトルのご持参をお願いいたします。
             </li>
           </ul>
         </div>
@@ -140,32 +122,21 @@ function Requirement({
           <tr>
             <th>参加条件</th>
             <td>
-              <ul className="space-y-3">
-                <li className="flex gap-2 items-center">
-                  <CheckIcon className="size-5 text-sky-400" />
-                  <p className="grow">
-                    ３日間で１つのイベントである為、
-                    <br className="md:hidden" />
-                    全日程にご参加頂けること
-                  </p>
+              <ul className="list-disc pl-4 space-y-3">
+                <li>
+                  ３日間で１つのイベントである為、
+                  <br className="md:hidden" />
+                  全日程にご参加頂けること
                 </li>
-                <li className="flex gap-2 items-center">
-                  <CheckIcon className="size-5 text-sky-400" />
-                  <p className="grow">
-                    イベントの感想やアンケートにご対応頂けること
-                  </p>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <CheckIcon className="size-5 text-sky-400" />
-                  <p className="grow">
-                    今後のイベント募集、また、スポンサーや
-                    <br className="md:hidden" />
-                    パートナーの
-                    <br className="hidden md:block" />
-                    取り組み事例紹介として、
-                    <br className="md:hidden" />
-                    イベント写真・動画利用の承諾を頂けること
-                  </p>
+                <li>イベントの感想やアンケートにご対応頂けること</li>
+                <li>
+                  今後のイベント募集、また、スポンサーや
+                  <br className="md:hidden" />
+                  パートナーの
+                  <br className="hidden md:block" />
+                  取り組み事例紹介として、
+                  <br className="md:hidden" />
+                  イベント写真・動画利用の承諾を頂けること
                 </li>
               </ul>
             </td>
@@ -173,30 +144,21 @@ function Requirement({
           <tr>
             <th>注意事項</th>
             <td>
-              <ul className="space-y-3">
-                <li className="flex gap-2 items-center">
-                  <CheckIcon className="size-5 text-sky-400" />
-                  <p className="grow">
-                    受付手続きや会場内の移動を考慮し、
-                    <br className="md:hidden" />
-                    集合時間は数十分、早くなります。
-                  </p>
+              <ul className="list-disc pl-4 space-y-3">
+                <li>
+                  受付手続きや会場内の移動を考慮し、
+                  <br className="md:hidden" />
+                  集合時間は数十分、早くなります。
                 </li>
-                <li className="flex gap-2 items-center">
-                  <CheckIcon className="size-5 text-sky-400" />
-                  <p className="grow">
-                    プログラム初日のクルックフィールズは、
-                    <br className="md:hidden" />
-                    飲食物のお持ち込みができません。
-                  </p>
+                <li>
+                  プログラム初日のクルックフィールズは、
+                  <br className="md:hidden" />
+                  飲食物のお持ち込みができません。
                 </li>
-                <li className="flex gap-2 items-center">
-                  <CheckIcon className="size-5 text-sky-400" />
-                  <p className="grow">
-                    場内でのお弁当のご購入と、
-                    <br className="md:hidden" />
-                    マイボトルのご持参をお願いいたします。
-                  </p>
+                <li>
+                  場内でのお弁当のご購入と、
+                  <br className="md:hidden" />
+                  マイボトルのご持参をお願いいたします。
                 </li>
               </ul>
             </td>

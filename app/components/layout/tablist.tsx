@@ -10,35 +10,26 @@ import { type JSX, useEffect, useState } from "react"
 export function ScheduleTablist({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
+  const [isBusy, setIsBusy] = useState<boolean>(false)
   const [isFlip, setIsFlip] = useState<boolean>(false)
   const [tab, setTab] = useState<string>(schedules[0].alt)
-  const [tabState, setTabState] = useState<{ isBusy: boolean; tab: string }>({
-    isBusy: false,
-    tab: "",
-  })
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!tabState.isBusy) {
-        if (isFlip) {
-          setIsFlip(false)
-          if (tab === schedules[0].alt) {
-            setTab(schedules[1].alt)
-          }
-          if (tab === schedules[1].alt) {
-            setTab(schedules[2].alt)
-          }
-          if (tab === schedules[2].alt) {
-            setTab(schedules[0].alt)
-          }
-        } else {
-          setIsFlip(true)
-        }
-      } else if (tabState.tab === "") {
-        setTabState({ isBusy: true, tab: tab })
-      } else if (tabState.isBusy && tabState.tab === tab) {
-        setTabState({ isBusy: false, tab: "" })
+      if (isBusy) {
+        return
       }
+
+      if (isFlip && tab === schedules[0].alt) {
+        setTab(schedules[1].alt)
+      }
+      if (isFlip && tab === schedules[1].alt) {
+        setTab(schedules[2].alt)
+      }
+      if (isFlip && tab === schedules[2].alt) {
+        setTab(schedules[0].alt)
+      }
+      setIsFlip(!isFlip)
     }, 2500)
     return () => clearInterval(interval)
   })
@@ -46,6 +37,18 @@ export function ScheduleTablist({
   function onClickTab(alt: string): void {
     setIsFlip(false)
     setTab(alt)
+  }
+
+  function onMouseEnter(): void {
+    if (!("maxTouchPoints" in navigator)) {
+      setIsBusy(true)
+    }
+  }
+
+  function onMouseLeave(): void {
+    if (!("maxTouchPoints" in navigator)) {
+      setIsBusy(false)
+    }
   }
 
   return (
@@ -57,10 +60,10 @@ export function ScheduleTablist({
             type="button"
             role="tab"
             onClick={() => onClickTab(schedule.alt)}
-            onMouseEnter={() => setTabState({ isBusy: true, tab: "" })}
-            onMouseLeave={() => setTabState({ isBusy: false, tab: "" })}
-            onTouchStart={() => setTabState({ isBusy: true, tab: "" })}
-            onTouchEnd={() => setTabState({ isBusy: true, tab: "" })}
+            onMouseEnter={() => onMouseEnter()}
+            onMouseLeave={() => onMouseLeave()}
+            onTouchStart={() => setIsBusy(true)}
+            onTouchEnd={() => setIsBusy(false)}
             className={`basis-1/3 border-b-4 duration-300 py-1 rounded-lg shadow-xl ${schedule.alt === tab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
           >
             <b>{schedule.alt}</b>
@@ -73,10 +76,10 @@ export function ScheduleTablist({
           role="tabpanel"
           onClick={() => setIsFlip(!isFlip)}
           onKeyDown={() => setIsFlip(!isFlip)}
-          onMouseEnter={() => setTabState({ isBusy: true, tab: "" })}
-          onMouseLeave={() => setTabState({ isBusy: false, tab: "" })}
-          onTouchStart={() => setTabState({ isBusy: true, tab: "" })}
-          onTouchEnd={() => setTabState({ isBusy: true, tab: "" })}
+          onMouseEnter={() => onMouseEnter()}
+          onMouseLeave={() => onMouseLeave()}
+          onTouchStart={() => setIsBusy(true)}
+          onTouchEnd={() => setIsBusy(false)}
           className={`h-96${tab === schedule.alt ? "" : " hidden"}`}
           style={{ perspective: "1000px" }}
         >

@@ -118,7 +118,7 @@ export default function TokyoChiba(): JSX.Element {
         </p>
         <p className="mb-3">
           <Link
-            href={`${EVENT.href}${TOKYO_CHIBA.href}#${guideline.anchorLink}`}
+            href={`#${guideline.anchorLink}`}
             className="font-bold link text-sky-400"
           >
             応募要項

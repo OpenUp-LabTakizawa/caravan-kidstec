@@ -79,7 +79,7 @@ export default function Home(): JSX.Element {
           className="absolute h-full object-contain opacity-10 w-full -z-10"
         />
         <h2 className="font-bold font-zenMaruGothic text-2xl">
-          <Link href={SECRETARIAT.href} className="link">
+          <Link href={SECRETARIAT.href} className="link link-info">
             事務局の想い
           </Link>
         </h2>

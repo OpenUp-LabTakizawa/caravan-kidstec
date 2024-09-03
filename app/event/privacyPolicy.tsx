@@ -7,15 +7,16 @@ import type { JSX } from "react"
 
 export function PrivacyPolicy({
   submenu,
-  organizations,
-}: Readonly<{ submenu: Submenu; organizations: string[] }>): JSX.Element {
+}: Readonly<{ submenu: Submenu }>): JSX.Element {
+  const contactHref: string = "contact"
+
   return (
     <>
       <Heading menu={EVENT} submenus={[submenu, PRIVACY_POLICY]} />
+      <p className="px-4 text-sm">
+        こどもテックキャラバンの個人情報は、株式会社オープンアップグループ（以下「当社」）が代表して取得しておりますので、当社の個人情報保護方針を以下にお知らせします。
+      </p>
       <section className="bg-base-200 leading-7 m-4 p-4 rounded-2xl space-y-4 text-sm">
-        <p>
-          こどもテックキャラバンの個人情報は、株式会社オープンアップグループ（以下「当社」）が代表して取得しておりますので、当社の個人情報保護方針を以下にお知らせします。
-        </p>
         <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
         <p>
           当社は、個人情報を大切に取り扱い、個人の権利利益を保護することを重要な社会的責務と考えています。
@@ -38,9 +39,117 @@ export function PrivacyPolicy({
         <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">２．</span>
-            収集したお申込者様の個人情報の第三者への提供、及び、外部への預託について
+            安全対策の実施について
           </h3>
-          <section className="space-y-4">
+          <p>
+            個人情報の正確性およびその利用の安全性を確保するため、情報セキュリティ対策を始めとする安全措置を構築し、個人情報への不正アクセス、個人情報の漏洩、滅失または毀損等の的確な防止とセキュリティの是正に努めます。
+            また、個人情報保護に関する社内規定を定め、役職員への研修の実施、事務所への入退室管理、委託先の監督等の安全管理の取り組みを行っています。
+          </p>
+        </section>
+        <Divider />
+        <section className="space-y-4">
+          <h3 className="font-bold text-xl">
+            <span className="text-primary">３．</span>
+            苦情に対する適正な対応について
+          </h3>
+          <p>
+            個人情報を提供された本人の権利を尊重し、本人から自己情報の開示、訂正、削除、または利用もしくは提供の停止等を求められたときは、適法にこれに応じるとともに本人からの苦情に関して適正な対応をします。
+          </p>
+        </section>
+        <Divider />
+        <section className="space-y-4">
+          <h3 className="font-bold text-xl">
+            <span className="text-primary">４．</span>
+            法令・指針・規範の遵守について
+          </h3>
+          <p>
+            適正な個人情報保護の実現のため、個人情報の取り扱いに関する法令､国が定める指針およびその他の規範を遵守します。
+          </p>
+        </section>
+        <Divider />
+        <section className="space-y-4">
+          <h3 className="font-bold text-xl">
+            <span className="text-primary">５．</span>
+            個人情報保護マネジメントシステムの継続的改善について
+          </h3>
+          <p>
+            個人情報保護マネジメントシステムの運用状況について定期的に監査し、それを維持し、継続的に改善し、個人情報の保護水準の向上を図ります。
+          </p>
+        </section>
+      </section>
+      <section className="bg-base-200 leading-7 m-4 p-4 rounded-2xl space-y-4 text-sm">
+        <h2 className="font-bold text-2xl text-center">
+          特定個人情報の適正な取扱いに関する基本方針
+        </h2>
+        <p>
+          当社は、個人番号及び特定個人情報（以下「特定個人情報等」）の適正な取扱いの確保について、組織として取組むため、本基本方針を定めます。
+        </p>
+        <Divider />
+        <section className="space-y-4">
+          <h3 className="font-bold text-xl">
+            <span className="text-primary">１．</span>
+            関連法令・ガイドライン等の遵守について
+          </h3>
+          <p>
+            当社は、「行政手続きにおける特定の個人を識別するための番号の利用等に関する法律」（通称「マイナンバー法」）及び「個人情報の保護に関する法律」（通称「個人情報保護法」）並びにこれらの政令、省令、及びガイドラインを遵守して、特定個人情報等の適正な取扱いを行います。
+          </p>
+        </section>
+        <Divider />
+        <section className="space-y-4">
+          <h3 className="font-bold text-xl">
+            <span className="text-primary">２．</span>
+            安全管理措置について
+          </h3>
+          <p>
+            当社は、特定個人情報等の適切な管理のために、別途、特定個人情報等の取扱いに関する社内規定を定め、これを遵守します。
+          </p>
+        </section>
+        <Divider />
+        <section className="space-y-4">
+          <h3 className="font-bold text-xl">
+            <span className="text-primary">３．</span>
+            ご質問・苦情処理の窓口について
+          </h3>
+          <p>
+            特定個人情報等の取扱いに関するご質問や苦情につきましては、後述の「個人情報の取り扱いに関して」の「
+            <Link href={`#${contactHref}`} className="link">
+              5.&nbsp;個人情報に関するお問い合わせ方法及び窓口
+            </Link>
+            」までお願いします。
+          </p>
+        </section>
+      </section>
+      <section className="bg-base-200 leading-7 m-4 p-4 rounded-2xl space-y-4 text-sm">
+        <h2 className="font-bold text-2xl text-center">
+          個人情報の取り扱いに関して
+        </h2>
+        <p>
+          当社では「個人情報保護方針」に基づき個人情報の適切な保護に取り組んでいます。
+          当社がイベント開催、運営の用に供するために取得し、または保有する個人情報について、以下の通りお知らせいたします。
+        </p>
+        <Divider />
+        <section className="space-y-4">
+          <h3 className="font-bold text-xl">
+            <span className="text-primary">１．</span>
+            個人情報の当事業者の名称
+          </h3>
+          <p>
+            株式会社オープンアップグループ
+            <br />
+            〒105-0021 東京都港区虎ノ門一丁目3番１号
+          </p>
+        </section>
+        <Divider />
+        <section className="space-y-4">
+          <h3 className="font-bold text-xl">
+            <span className="text-primary">２．</span>
+            個人情報の管理者およびその連絡先
+          </h3>
+          <p>
+            当社の個人情報保護管理責任者は、グループ管理部長となります。
+            ※後述の「個人情報に関するお問い合わせ窓口」にご連絡ください。
+          </p>
+          {/* <section className="space-y-4">
             <h4>
               １）当社は、以下に挙げるケースにおいて、いただいた個人情報を外部に提供します。
             </h4>
@@ -74,51 +183,101 @@ export function PrivacyPolicy({
             <p className="px-4">
               提供する個人情報の取扱いに関しては、機密保持及び管理責任の所在を明らかにする契約を上記組織と締結しております。
             </p>
-          </section>
-          <section className="space-y-4">
-            <h4>
-              ２）法令に基づき、お申込者様からご提供頂いた個人情報を関係機関へ提供、預託する場合があります。
-            </h4>
-            <p>
-              上記１）、２）以外、お申込者様からの同意がない限り、第三者へ提供、外部へ預託することはいたしません。
-            </p>
-          </section>
+          </section> */}
         </section>
         <Divider />
         <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">３．</span>
-            要配慮個人情報の取得について
+            個人情報の利用目的
           </h3>
-          <p>本件について、要配慮個人情報をいただくことはございません。</p>
+          <table className="border-2 border-white table">
+            <thead>
+              <tr className="border-b-2 border-white">
+                <th>種別</th>
+                <th className="border-l-2 border-white">利用目的</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b-2 border-white">
+                <th>イベントご参加者様</th>
+                <td className="border-l-2 border-white">
+                  <ul className="list-disc pl-2 space-y-2">
+                    <li>
+                      当社およびイベント共催各社のイベント、サービス等ご案内
+                    </li>
+                    <li>イベントに関する宣伝、広報</li>
+                    <li>
+                      ご相談・お問い合わせに関するデータ分析
+                      <br />
+                      （個人特定できない統計データの公表・第三者開示を含む）
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  各種ご相談・
+                  <br />
+                  お問い合わせ
+                </th>
+                <td className="border-l-2 border-white">
+                  <ul className="list-disc pl-2 space-y-2">
+                    <li>ご相談・お問い合わせ対応及び関連するご連絡</li>
+                    <li>
+                      ご相談・お問い合わせに関するデータ分析
+                      <br />
+                      （個人特定できない統計データの公表・第三者開示を含む）
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>その他、個別に書面で明示したとおりの利用目的とします。</p>
+          <p>
+            ※なお、取得した個人情報は、取得時に明示した場合を除き、お客様の同意を得ずに第三者に提供することはありません。
+            ただし、利用目的の範囲において個人情報の全部または一部を委託する場合があります。
+          </p>
         </section>
         <Divider />
         <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">４．</span>
-            個人情報の管理方法
+            個人情報の共同利用について
           </h3>
           <p>
-            お預かりしました個人情報は当社にて厳重に管理致します。
-            <br />
-            <br />
-            なお、お申込者様からご提出いただきました必要書類は返却いたしませんので、あらかじめご了承願います。
-            <br />
-            <br />
-            また、お預かりしました個人情報は、法令及び本件運営管理の範囲内において管理・保管し、当社内規に基づく保存期間経過後は一切の個人情報を廃棄処理致します。
+            当社及びオープンアップグループ各社の総合的なサービスのご提供のために、以下のとおり個人情報を共同で利用いたします。
           </p>
+          <ol className="px-3">
+            <li className="before:content-['①'] before:mr-1">
+              共同して利用される個人情報の項目：&nbsp;氏名、年齢、性別、続柄、住所、電話番号、メールアドレス、SNSアカウント、肖像を含む動画・画像、イベントに関するコメント・アンケート回答
+            </li>
+            <li className="before:content-['①'] before:mr-1">
+              共同して利用する者の範囲：&nbsp;株式会社オープンアップグループおよびその他イベントを共同して開催する会社（以下「共催先」）
+              該当する共催先の範囲は以下をご参照ください。
+              <p className="px-2">
+                こどもテックキャラバンＨＰ&nbsp;スポンサーおよびパートナー
+                <br />
+                <Link href="/" className="link">
+                  https://caravan-kidstec.com/
+                </Link>
+              </p>
+            </li>
+          </ol>
         </section>
         <Divider />
         <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">５．</span>
-            個人情報の提出に関して
+            個人情報保護マネジメントシステムの継続的改善について
           </h3>
           <p>
-            当社への個人情報の提出はあくまで任意のものですが、情報を提出いただかず運営に差し支えが生じる場合など、当社の判断で本件への参加をお断りする場合があります。
+            個人情報保護マネジメントシステムの運用状況について定期的に監査し、それを維持し、継続的に改善し、個人情報の保護水準の向上を図ります。
           </p>
         </section>
-        <Divider />
+      </section>
+      <section>
         <section className="space-y-4">
           <h3 className="font-bold text-xl">
             <span className="text-primary">６．</span>

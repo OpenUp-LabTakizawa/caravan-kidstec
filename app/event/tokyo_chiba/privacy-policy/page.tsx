@@ -1,6 +1,4 @@
 import { Divider } from "@/app/components/layout/divider"
-import { Heading } from "@/app/components/layout/heading"
-import { EVENT, PRIVACY_POLICY, TOKYO_CHIBA } from "@/app/lib/constant"
 import Link from "next/link"
 import type { JSX } from "react"
 
@@ -12,7 +10,6 @@ export default function PrivacyPolicy(): JSX.Element {
 
   return (
     <>
-      <Heading menu={EVENT} submenus={[TOKYO_CHIBA, PRIVACY_POLICY]} />
       <p className="px-4 text-xs sm:text-sm">
         こどもテックキャラバンの個人情報は、株式会社オープンアップグループ（以下「当社」）が代表して取得しておりますので、当社の個人情報保護方針を以下にお知らせします。
       </p>

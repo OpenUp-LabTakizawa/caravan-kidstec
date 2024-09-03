@@ -69,7 +69,13 @@ export const SECRETARIAT: Menu = {
   submenus: [],
 }
 
-export const NAVIGATION: Menu[] = [EVENT, HISTORY, SPONSER, PARTNER] as const
+export const NAVIGATION: Menu[] = [
+  EVENT,
+  HISTORY,
+  SPONSER,
+  PARTNER,
+  SECRETARIAT,
+] as const
 
 const HIROSHIMA_FIRST_PROGRAMS: Program[] = [
   {

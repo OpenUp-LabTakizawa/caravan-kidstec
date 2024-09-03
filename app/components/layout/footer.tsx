@@ -6,7 +6,7 @@ export function Footer(): JSX.Element {
   return (
     <footer className="bg-base-300 grid items-center justify-center p-4 text-base-content">
       <nav>
-        <ul className="grid grid-cols-2 menu p-0 text-sm sm:grid-cols-4">
+        <ul className="grid grid-cols-2 menu p-0 text-sm sm:grid-cols-5">
           {NAVIGATION.map((menu) => (
             <li
               key={menu.name}
@@ -27,7 +27,7 @@ export function Footer(): JSX.Element {
                       <li key={submenu.name}>
                         <Link
                           href={menu.href + submenu.href}
-                          className="link-hover"
+                          className="link-hover text-nowrap"
                         >
                           {submenu.name}
                         </Link>

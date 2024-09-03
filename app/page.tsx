@@ -5,7 +5,12 @@ import {
 } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import { Introduction } from "@/app/introduction"
-import { EVENT, TOKYO_CHIBA, TOKYO_CHIBA_START_DATE } from "@/app/lib/constant"
+import {
+  EVENT,
+  SECRETARIAT,
+  TOKYO_CHIBA,
+  TOKYO_CHIBA_START_DATE,
+} from "@/app/lib/constant"
 import { PlusIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
@@ -73,28 +78,36 @@ export default function Home(): JSX.Element {
           height={256}
           className="absolute h-full object-contain opacity-10 w-full -z-10"
         />
-        <h2 className="font-bold font-zenMaruGothic text-2xl">事務局の想い</h2>
+        <h2 className="font-bold font-zenMaruGothic text-2xl">
+          <Link href={SECRETARIAT.href} className="link">
+            事務局の想い
+          </Link>
+        </h2>
         <div className="font-bold space-y-4 text-sm sm:text-base">
           <p>
             このイベントでは新しい人や
-            <br />
+            <br className="sm:hidden" />
             ものとの出会いや、 初めての体験、
             <br />
             わくわくするような瞬間がきっとあります。
           </p>
           <p>
             いままで気づかなかった
-            <br />
+            <br className="sm:hidden" />
             新しい発見もあるかもしれません。
           </p>
           <p>
-            普段は関係のない異業種同士のわたしたちが
-            <br />
-            お互いに協力し、このイベントを行っています。
+            この特別な経験をつくるためにわたしたちは
+            <br className="sm:hidden" />
+            パートナシップ同士、
+            <br className="hidden sm:block" />
+            お互いに協力し
+            <br className="sm:hidden" />
+            このイベントを行っています。
           </p>
           <p>
-            わたしたちは皆さんの可能性が広がり
-            <br />
+            わたしたちは皆さんの可能性が広がり、
+            <br className="sm:hidden" />
             心がときめく瞬間に
             <br />
             出会えることを願っています。

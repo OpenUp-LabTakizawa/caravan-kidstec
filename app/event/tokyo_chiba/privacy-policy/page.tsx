@@ -180,7 +180,7 @@ export default function PrivacyPolicy(): JSX.Element {
                     </li>
                     <li>イベントに関する宣伝、広報</li>
                     <li>
-                      ご相談・お問い合わせに関するデータ分析
+                      イベント参加、サービス利用等に関するデータ分析
                       <br />
                       （個人特定できない統計データの公表・第三者開示を含む）
                     </li>
@@ -233,6 +233,7 @@ export default function PrivacyPolicy(): JSX.Element {
               共同して利用する者の範囲：
               <p className="px-4">
                 株式会社オープンアップグループおよびその他イベントを共同して開催する会社（以下「共催先」）
+                <br />
                 該当する共催先の範囲は以下をご参照ください。
               </p>
               <p className="px-6">

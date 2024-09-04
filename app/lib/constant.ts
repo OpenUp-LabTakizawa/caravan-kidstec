@@ -3,10 +3,12 @@ import type { TilePicture } from "@/app/interfaces/picture"
 import type { EventDate, Program } from "@/app/interfaces/schedule"
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
+export const SITE_URL: string = "https://caravan-kidstec.com"
 export const DESCRIPTION: string =
   "プログラミング×体験学習　親子で学ぶ体験型イベント"
 export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
 export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
+export const CLOUDFRONT_URL: string = "https://dk75m1tgsot44.cloudfront.net"
 export const TOKYO_CHIBA_START_DATE: { text: string; date: string } = {
   text: "２０２４年９月９日 １２時",
   date: "2024-09-09T13:00:00+09:00",

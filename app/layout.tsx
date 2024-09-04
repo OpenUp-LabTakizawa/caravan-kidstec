@@ -4,7 +4,12 @@ import { Header } from "@/app/components/layout/header"
 import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
 import "./globals.css"
-import { DESCRIPTION, SITE_TITLE } from "@/app/lib/constant"
+import {
+  CLOUDFRONT_URL,
+  DESCRIPTION,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/app/lib/constant"
 import localFont from "next/font/local"
 
 const zenMaruGothic = localFont({
@@ -41,14 +46,20 @@ export const metadata: Metadata = {
   metadataBase:
     process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
       ? undefined
-      : new URL("https://caravan-kidstec.com"),
+      : new URL(SITE_URL),
   openGraph: {
     title: SITE_TITLE,
     description: DESCRIPTION,
-    url: "https://caravan-kidstec.com",
+    url: SITE_URL,
     siteName: SITE_TITLE,
     locale: "ja_JP",
     type: "website",
+    videos: [
+      {
+        url: `${CLOUDFRONT_URL}/movie/202407.webm`,
+        type: "video/webm",
+      },
+    ],
   },
 }
 

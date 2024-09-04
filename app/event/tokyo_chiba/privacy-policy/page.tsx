@@ -1,4 +1,5 @@
 import { Divider } from "@/app/components/layout/divider"
+import { SITE_URL } from "@/app/lib/constant"
 import Link from "next/link"
 import type { JSX } from "react"
 
@@ -240,7 +241,7 @@ export default function PrivacyPolicy(): JSX.Element {
                 こどもテックキャラバンＨＰ&nbsp;スポンサーおよびパートナー
                 <br />
                 <Link href="/" className="link">
-                  https://caravan-kidstec.com/
+                  {SITE_URL}/
                 </Link>
               </p>
             </li>

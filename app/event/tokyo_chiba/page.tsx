@@ -13,9 +13,14 @@ import {
   TOKYO_CHIBA_LINE,
   TOKYO_CHIBA_START_DATE,
 } from "@/app/lib/constant"
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+
+export const metadata: Metadata = {
+  title: `${TOKYO_CHIBA.name}イベント`,
+}
 
 export default function TokyoChiba(): JSX.Element {
   const guideline: Guideline = {

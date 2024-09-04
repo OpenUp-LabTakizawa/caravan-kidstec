@@ -1,7 +1,12 @@
 import { Divider } from "@/app/components/layout/divider"
-import { SITE_URL } from "@/app/lib/constant"
+import { PRIVACY_POLICY, SITE_URL, TOKYO_CHIBA } from "@/app/lib/constant"
+import type { Metadata } from "next"
 import Link from "next/link"
 import type { JSX } from "react"
+
+export const metadata: Metadata = {
+  title: `${PRIVACY_POLICY.name} | ${TOKYO_CHIBA.name}`,
+}
 
 export default function PrivacyPolicy(): JSX.Element {
   const addressId: string = "address"

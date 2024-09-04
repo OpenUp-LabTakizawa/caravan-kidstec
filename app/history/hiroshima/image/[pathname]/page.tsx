@@ -3,9 +3,14 @@ import type { TilePicture } from "@/app/interfaces/picture"
 import { HIROSHIMA, HIROSHIMA_HISTORY, HISTORY } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+
+export const metadata: Metadata = {
+  title: `${HIROSHIMA.name}での実績`,
+}
 
 export default function HiroshimaImage({
   params: { pathname },

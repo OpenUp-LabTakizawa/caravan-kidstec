@@ -1,7 +1,17 @@
 import { QA } from "@/app/components/layout/qAndA"
 import type { QandA } from "@/app/interfaces/qAndA"
-import { EVENT, TOKYO_CHIBA, TOKYO_CHIBA_LINE } from "@/app/lib/constant"
+import {
+  EVENT,
+  Q_AND_A,
+  TOKYO_CHIBA,
+  TOKYO_CHIBA_LINE,
+} from "@/app/lib/constant"
+import type { Metadata } from "next"
 import type { JSX } from "react"
+
+export const metadata: Metadata = {
+  title: `${Q_AND_A.name} | ${TOKYO_CHIBA.name}`,
+}
 
 export default function QandAs(): JSX.Element {
   const qAndAs: QandA[] = [

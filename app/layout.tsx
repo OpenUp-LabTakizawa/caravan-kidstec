@@ -41,7 +41,10 @@ const zenKakuGothicNew = localFont({
 })
 
 export const metadata: Metadata = {
-  title: SITE_TITLE,
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_TITLE}`,
+  },
   description: DESCRIPTION,
   metadataBase:
     process.env.NEXT_PUBLIC_VERCEL_ENV === "production"

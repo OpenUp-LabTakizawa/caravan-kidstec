@@ -2,7 +2,12 @@ import { Heading } from "@/app/components/layout/heading"
 import type { Partner } from "@/app/interfaces/partner"
 import { HIROSHIMA, PARTNER } from "@/app/lib/constant"
 import { Partners } from "@/app/partner/partners"
+import type { Metadata } from "next"
 import type { JSX } from "react"
+
+export const metadata: Metadata = {
+  title: HIROSHIMA.name + PARTNER.name,
+}
 
 export default function Hiroshima(): JSX.Element {
   const partners: Partner[] = [

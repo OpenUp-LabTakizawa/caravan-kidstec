@@ -6,8 +6,8 @@ export const SITE_TITLE: string = "こどもテックキャラバン"
 export const SITE_URL: string = "https://caravan-kidstec.com"
 export const DESCRIPTION: string =
   "プログラミング×体験学習　親子で学ぶ体験型イベント"
-export const HIROSHIMA_LINE: string = "https://lin.ee/LuSqIls"
-export const TOKYO_CHIBA_LINE: string = "https://lin.ee/a1BRnXT"
+export const HIROSHIMA_LINE: string = "https://lin.ee/eYcNlkG"
+export const TOKYO_CHIBA_LINE: string = "https://lin.ee/RHBWD7P"
 export const CLOUDFRONT_URL: string = "https://dk75m1tgsot44.cloudfront.net"
 export const TOKYO_CHIBA_START_DATE: { text: string; date: string } = {
   text: "２０２４年９月９日 １２時",

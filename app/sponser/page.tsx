@@ -4,9 +4,14 @@ import type { Sponser } from "@/app/interfaces/sponser"
 import { SPONSER } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+
+export const metadata: Metadata = {
+  title: SPONSER.name,
+}
 
 export default function SponserPage(): JSX.Element {
   const sponsers: Sponser[] = [

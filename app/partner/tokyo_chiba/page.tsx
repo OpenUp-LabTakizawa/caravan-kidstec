@@ -2,7 +2,12 @@ import { Heading } from "@/app/components/layout/heading"
 import type { Partner } from "@/app/interfaces/partner"
 import { PARTNER, TOKYO_CHIBA } from "@/app/lib/constant"
 import { Partners } from "@/app/partner/partners"
+import type { Metadata } from "next"
 import type { JSX } from "react"
+
+export const metadata: Metadata = {
+  title: TOKYO_CHIBA.name + PARTNER.name,
+}
 
 export default function TokyoChiba(): JSX.Element {
   const partners: Partner[] = [

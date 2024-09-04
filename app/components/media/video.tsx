@@ -8,7 +8,6 @@ export function Video({
   pathname,
   controls = true,
 }: Readonly<{ pathname: string; controls?: boolean }>): JSX.Element {
-  const videoPathname: string = `${CLOUDFRONT_URL}/movie${pathname}`
   const [isMute, setIsMute] = useState<boolean>(true)
   const ref: RefObject<HTMLVideoElement> = useRef<HTMLVideoElement>(null)
 
@@ -41,10 +40,16 @@ export function Video({
         onKeyDown={handleClick}
         className="group mx-auto rounded-2xl shadow-lg w-full"
       >
-        <source src={`${videoPathname}.webm`} type="video/webm" />
-        <source src={`${videoPathname}.mp4`} type="video/mp4" />
+        <source
+          src={`${CLOUDFRONT_URL}/movie${pathname}.webm`}
+          type="video/webm"
+        />
+        <source
+          src={`${CLOUDFRONT_URL}/movie${pathname}.mp4`}
+          type="video/mp4"
+        />
         <track
-          src={`${videoPathname}.vtt`}
+          src={`${CLOUDFRONT_URL}/movie${pathname}.vtt`}
           kind="captions"
           srcLang="en"
           label="English"

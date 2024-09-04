@@ -15,17 +15,17 @@ export default function PrivacyPolicy(): JSX.Element {
         こどもテックキャラバンの個人情報は、株式会社オープンアップグループ（以下「当社」）が代表して取得しておりますので、当社の個人情報保護方針を以下にお知らせします。
       </p>
       <section className="bg-base-200 leading-5 m-4 p-4 rounded-2xl space-y-4 text-xs sm:leading-7 sm:text-sm">
-        <h2 className="font-bold text-2xl text-center">個人情報保護方針</h2>
+        <h1 className="font-bold text-2xl text-center">個人情報保護方針</h1>
         <p>
           当社は、個人情報を大切に取り扱い、個人の権利利益を保護することを重要な社会的責務と考えています。
           各種法令を遵守し、個人情報保護の実践に努めます。
         </p>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">１．</span>
             個人情報の取得･利用･提供等について
-          </h3>
+          </h2>
           <p>
             個人情報を取得する際は、その利用目的をできる限り具体的に特定し、その目的達成に必要な限度において適法かつ公正な手段で取得します。
             <br />
@@ -38,10 +38,10 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">２．</span>
             安全対策の実施について
-          </h3>
+          </h2>
           <p>
             個人情報の正確性およびその利用の安全性を確保するため、情報セキュリティ対策を始めとする安全措置を構築し、個人情報への不正アクセス、個人情報の漏洩、滅失または毀損等の的確な防止とセキュリティの是正に努めます。
             <br />
@@ -50,30 +50,30 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">３．</span>
             苦情に対する適正な対応について
-          </h3>
+          </h2>
           <p>
             個人情報を提供された本人の権利を尊重し、本人から自己情報の開示、訂正、削除、または利用もしくは提供の停止等を求められたときは、適法にこれに応じるとともに本人からの苦情に関して適正な対応をします。
           </p>
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">４．</span>
             法令・指針・規範の遵守について
-          </h3>
+          </h2>
           <p>
             適正な個人情報保護の実現のため、個人情報の取り扱いに関する法令､国が定める指針およびその他の規範を遵守します。
           </p>
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">５．</span>
             個人情報保護マネジメントシステムの継続的改善について
-          </h3>
+          </h2>
           <p>
             個人情報保護マネジメントシステムの運用状況について定期的に監査し、それを維持し、継続的に改善し、個人情報の保護水準の向上を図ります。
           </p>
@@ -88,30 +88,30 @@ export default function PrivacyPolicy(): JSX.Element {
         </p>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">１．</span>
             関連法令・ガイドライン等の遵守について
-          </h3>
+          </h2>
           <p>
             当社は、「行政手続きにおける特定の個人を識別するための番号の利用等に関する法律」（通称「マイナンバー法」）及び「個人情報の保護に関する法律」（通称「個人情報保護法」）並びにこれらの政令、省令、及びガイドラインを遵守して、特定個人情報等の適正な取扱いを行います。
           </p>
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">２．</span>
             安全管理措置について
-          </h3>
+          </h2>
           <p>
             当社は、特定個人情報等の適切な管理のために、別途、特定個人情報等の取扱いに関する社内規定を定め、これを遵守します。
           </p>
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">３．</span>
             ご質問・苦情処理の窓口について
-          </h3>
+          </h2>
           <p>
             特定個人情報等の取扱いに関するご質問や苦情につきましては、後述の「個人情報の取り扱いに関して」の「
             <Link href={`#${contactId}`} className="link">
@@ -132,10 +132,10 @@ export default function PrivacyPolicy(): JSX.Element {
         </p>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">１．</span>
             個人情報の当事業者の名称
-          </h3>
+          </h2>
           <p>
             株式会社オープンアップグループ
             <br />
@@ -144,10 +144,10 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section id={addressId} className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">２．</span>
             個人情報の管理者およびその連絡先
-          </h3>
+          </h2>
           <p>
             当社の個人情報保護管理責任者は、グループ管理部長となります。
             <br />
@@ -160,10 +160,10 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section id={purposeId} className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">３．</span>
             個人情報の利用目的
-          </h3>
+          </h2>
           <table className="border-2 border-white table">
             <thead>
               <tr className="border-b-2 border-white">
@@ -216,10 +216,10 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">４．</span>
             個人情報の共同利用について
-          </h3>
+          </h2>
           <p>
             当社及びオープンアップグループ各社の総合的なサービスのご提供のために、以下のとおり個人情報を共同で利用いたします。
           </p>
@@ -275,10 +275,10 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section id={contactId} className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">５．</span>
             個人情報に関するお問い合わせ方法及び窓口
-          </h3>
+          </h2>
           <address>
             <ul className="px-4">
               <li>
@@ -306,18 +306,18 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">６．</span>
             所属する認定個人情報保護団体の名称および苦情の解決の申し出先
-          </h3>
+          </h2>
           <p>現在、当社の所属する認定個人情報保護団体はありません。</p>
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">７．</span>
             個人情報の安全管理措置
-          </h3>
+          </h2>
           <p>当社は個人情報の適正な取扱いのため、以下の措置を実施します。</p>
           <ul className="space-y-4">
             <li>
@@ -462,10 +462,10 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h3 className="font-bold text-xl">
+          <h2 className="font-bold text-xl">
             <span className="text-primary">８．</span>
             開示対象個人情報の「開示等の求め」に応じる手続き等
-          </h3>
+          </h2>
           <p>
             ご本人がご自身を識別できる開示対象個人情報について、利用目的の通知、開示、内容の訂正、追加または削除、利用の停止、消去および第三者への提供の停止（総称して、「開示等」という）を求めるためのお申し出をされる場合は、上掲の当社「
             <Link href={`#${contactId}`} className="link">

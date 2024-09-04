@@ -47,13 +47,13 @@ export default function Home(): JSX.Element {
       </section>
       <section className="bg-sky-300 mx-2 rounded-2xl pb-2 space-y-2">
         <div className="p-4 space-y-2 text-white">
-          <p className="mb-2">
+          <h1 className="mb-2">
             こどもテックキャラバンは
             <br />
             <strong>プログラミング</strong>と<strong>体験学習</strong>を
             <br />
             かけ合わせた体験型イベント！
-          </p>
+          </h1>
           <p className="border-2 border-white font-bold mx-auto p-2 rounded-2xl shadow-lg w-60">
             プログラミング体験
           </p>

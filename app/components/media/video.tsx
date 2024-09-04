@@ -1,5 +1,6 @@
 "use client"
 
+import { CLOUDFRONT_URL } from "@/app/lib/constant"
 import { SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/24/outline"
 import { type JSX, type RefObject, useRef, useState } from "react"
 
@@ -7,6 +8,7 @@ export function Video({
   pathname,
   controls = true,
 }: Readonly<{ pathname: string; controls?: boolean }>): JSX.Element {
+  const videoPathname: string = `${CLOUDFRONT_URL}/movie${pathname}`
   const [isMute, setIsMute] = useState<boolean>(true)
   const ref: RefObject<HTMLVideoElement> = useRef<HTMLVideoElement>(null)
 
@@ -39,16 +41,10 @@ export function Video({
         onKeyDown={handleClick}
         className="group mx-auto rounded-2xl shadow-lg w-full"
       >
-        <source
-          src={`https://dk75m1tgsot44.cloudfront.net/movie${pathname}.webm`}
-          type="video/webm"
-        />
-        <source
-          src={`https://dk75m1tgsot44.cloudfront.net/movie${pathname}.mp4`}
-          type="video/mp4"
-        />
+        <source src={`${videoPathname}.webm`} type="video/webm" />
+        <source src={`${videoPathname}.mp4`} type="video/mp4" />
         <track
-          src={`https://dk75m1tgsot44.cloudfront.net/movie${pathname}.vtt`}
+          src={`${videoPathname}.vtt`}
           kind="captions"
           srcLang="en"
           label="English"

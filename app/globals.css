@@ -7,6 +7,10 @@ img {
   pointer-events: none;
 }
 
+.arrow-up {
+  animation: arrow-up 1.5s infinite;
+}
+
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }
@@ -27,6 +31,16 @@ img {
 
 .stretch {
   animation: stretch 1s ease-out forwards;
+}
+
+@keyframes arrow-up {
+  0%,
+  40% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translatey(-8px);
+  }
 }
 
 @keyframes fade-out-down {

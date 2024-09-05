@@ -122,7 +122,7 @@ export function TopCarousel(): JSX.Element {
         onTouchEnd={() => setIsBusy(false)}
         onScroll={() => ScrollEvent()}
       >
-        {topPictures.map((picture) => (
+        {topPictures.map((picture, index) => (
           <Image
             key={picture.alt}
             ref={(node: HTMLImageElement) => {
@@ -136,7 +136,7 @@ export function TopCarousel(): JSX.Element {
             height={256}
             width={256}
             alt={picture.alt}
-            priority={true}
+            priority={index === 0}
             className="aspect-square carousel-item object-cover w-full"
           />
         ))}

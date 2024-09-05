@@ -11,7 +11,6 @@ import {
   SITE_URL,
 } from "@/app/lib/constant"
 import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from "next/font/google"
-import Script from "next/script"
 
 const zenMaruGothic = Zen_Maru_Gothic({
   weight: ["400", "700"],
@@ -69,15 +68,6 @@ export default function RootLayout({
           <ScrollToTop />
         </main>
         <Footer />
-        <Script strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "nyc5rkdbe9");
-          `}
-        </Script>
       </body>
     </html>
   )

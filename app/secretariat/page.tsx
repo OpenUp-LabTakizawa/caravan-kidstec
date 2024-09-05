@@ -1,14 +1,9 @@
 import { Heading } from "@/app/components/layout/heading"
 import { SECRETARIAT } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
-import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
-
-export const metadata: Metadata = {
-  title: SECRETARIAT.name,
-}
 
 export default function Secretariat(): JSX.Element {
   const organizations = [

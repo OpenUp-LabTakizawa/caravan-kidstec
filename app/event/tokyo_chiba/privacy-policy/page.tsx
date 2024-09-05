@@ -5,7 +5,7 @@ import Link from "next/link"
 import type { JSX } from "react"
 
 export const metadata: Metadata = {
-  title: `${PRIVACY_POLICY.name} | ${TOKYO_CHIBA.name}`,
+  title: `${PRIVACY_POLICY.name} - ${TOKYO_CHIBA.name}イベント`,
 }
 
 export default function PrivacyPolicy(): JSX.Element {

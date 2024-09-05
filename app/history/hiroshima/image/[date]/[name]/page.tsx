@@ -11,7 +11,7 @@ import Link from "next/link"
 import type { JSX } from "react"
 
 export const metadata: Metadata = {
-  title: `${HIROSHIMA.name}での実績`,
+  title: `${HIROSHIMA.name}での活動・実績`,
 }
 
 export default function HiroshimaImage({

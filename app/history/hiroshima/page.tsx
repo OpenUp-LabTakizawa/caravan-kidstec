@@ -1,6 +1,6 @@
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
-import { HistoryPictures } from "@/app/components/layout/pictureTile"
+import { HistoryTile } from "@/app/components/layout/pictureTile"
 import { Programs } from "@/app/history/programs"
 import {
   HIROSHIMA,
@@ -33,7 +33,7 @@ export default function Hiroshima(): JSX.Element {
               <span className="ml-12">{history.title}</span>
             </summary>
             <Programs programs={history.programs} />
-            <HistoryPictures pictures={history.pictures} />
+            <HistoryTile date={history.date} pictures={history.pictures} />
             <Link
               href={`${HISTORY.pathname}${HIROSHIMA.pathname}/movie/${history.date}`}
               className="bg-sky-400 blue-shine btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-max"

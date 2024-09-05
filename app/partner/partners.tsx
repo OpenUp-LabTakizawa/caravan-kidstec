@@ -21,7 +21,7 @@ export function Partners({
               width={256}
               height={256}
               alt={partner.name}
-              className="bg-white h-40 mx-auto py-2 object-contain"
+              className="bg-white h-40 mx-auto p-4 object-contain rounded-2xl w-auto"
             />
           </div>
           <h2 className="font-bold text-sm">

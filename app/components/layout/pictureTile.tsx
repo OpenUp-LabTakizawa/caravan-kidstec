@@ -7,9 +7,10 @@ import Image from "next/image"
 import Link from "next/link"
 import { type JSX, type RefObject, useEffect, useRef } from "react"
 
-export function HistoryPictures({
+export function HistoryTile({
+  date,
   pictures,
-}: Readonly<{ pictures: TilePicture[] }>): JSX.Element {
+}: Readonly<{ date: string; pictures: TilePicture[] }>): JSX.Element {
   const ref: RefObject<Map<string, HTMLAnchorElement>> = useRef<
     Map<string, HTMLAnchorElement>
   >(new Map<string, HTMLAnchorElement>())
@@ -32,6 +33,7 @@ export function HistoryPictures({
         observer.observe(node)
       }
     }
+    return () => observer.disconnect()
   })
 
   return (
@@ -39,7 +41,7 @@ export function HistoryPictures({
       {pictures.map((picture) => (
         <Link
           key={picture.alt}
-          href={`${HISTORY.pathname + HIROSHIMA.pathname}/image/${picture.name}`}
+          href={`${HISTORY.pathname + HIROSHIMA.pathname}/image/${date}/${picture.name}`}
           ref={(node: HTMLAnchorElement) => {
             ref.current?.set(picture.alt, node)
             return () => {

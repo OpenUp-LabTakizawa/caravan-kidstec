@@ -36,6 +36,7 @@ export default function Home(): JSX.Element {
           width={540}
           height={540}
           alt="イベント詳細はこちら"
+          priority={true}
           className="w-full"
         />
       </Link>

@@ -15,7 +15,7 @@ export function LineAddFriends({
           width={128}
           height={128}
           alt="友だち追加"
-          className="mx-auto shadow-lg"
+          className="mx-auto shadow-lg w-auto"
         />
       </Link>
     </Bounce>

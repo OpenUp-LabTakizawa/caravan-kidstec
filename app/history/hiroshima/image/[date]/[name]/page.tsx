@@ -1,13 +1,12 @@
+import { BackButton } from "@/app/components/button/backButton"
 import { Heading } from "@/app/components/layout/heading"
 import type { Submenu } from "@/app/interfaces/menu"
 import type { TilePicture } from "@/app/interfaces/picture"
 import type { EventDate } from "@/app/interfaces/schedule"
 import { HIROSHIMA, HIROSHIMA_HISTORY, HISTORY } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
-import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
 import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
 import type { JSX } from "react"
 
 export const metadata: Metadata = {
@@ -40,13 +39,10 @@ export default function HiroshimaImage({
         alt={tilePicture.alt}
         className="w-full"
       />
-      <Link
+      <BackButton
         href={HISTORY.pathname + HIROSHIMA.pathname}
-        className="btn mx-auto"
-      >
-        <ArrowUturnLeftIcon className="rotate-z size-6" />
-        {HISTORY.name}に戻る
-      </Link>
+        name={HISTORY.name}
+      />
     </>
   )
 }

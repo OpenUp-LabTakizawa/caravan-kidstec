@@ -9,6 +9,7 @@ import { UserCircleIcon } from "@heroicons/react/24/outline"
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
+import styles from "./carousel.module.css"
 
 export function TopCarousel(): JSX.Element {
   const topPictures: Picture[] = [
@@ -538,9 +539,9 @@ export function ReviewCarousel(): JSX.Element {
 function ScrollRightHint(): JSX.Element {
   return (
     <OpacityZero className="absolute bg-black/60 left-1/2 pt-20 text-white top-1/2 z-10 -translate-y-1/2">
-      <ChevronRightIcon className="scroll-right size-20" />
-      <ChevronRightIcon className="scroll-right size-20" />
-      <ChevronRightIcon className="scroll-right size-20" />
+      <ChevronRightIcon className={`size-20 ${styles.scrollRight}`} />
+      <ChevronRightIcon className={`size-20 ${styles.scrollRight}`} />
+      <ChevronRightIcon className={`size-20 ${styles.scrollRight}`} />
       <span className="px-2 text-xs">右スクロール</span>
     </OpacityZero>
   )

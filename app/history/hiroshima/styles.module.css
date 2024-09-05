@@ -1,0 +1,31 @@
+.arrowTopRight {
+  animation: arrow-top-right 1.5s infinite;
+}
+
+.blueShine {
+  background: linear-gradient(to right, #38bdf8 50%, #e0f2fe 60%, #38bdf8 70%);
+  background-size: 600% 100%;
+  animation: shine 20s infinite linear;
+}
+
+@keyframes arrow-top-right {
+  0%,
+  40% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(8px, -8px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: 400%;
+  }
+  50% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: -400%;
+  }
+}

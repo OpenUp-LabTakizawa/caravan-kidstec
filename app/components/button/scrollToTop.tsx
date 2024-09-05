@@ -3,6 +3,7 @@
 import { ChevronDoubleUpIcon } from "@heroicons/react/24/solid"
 import { type RefObject, useEffect, useRef, useState } from "react"
 import type { JSX } from "react"
+import styles from "./scrollToTop.module.css"
 
 export function ScrollToTop(): JSX.Element {
   const ref: RefObject<HTMLButtonElement> = useRef<HTMLButtonElement>(null)
@@ -46,7 +47,7 @@ export function ScrollToTop(): JSX.Element {
       className="bg-sky-400 border-sky-400 btn btn-square hidden fixed gap-0 bottom-5 right-5 z-10 hover:scale-110"
       onClick={scrollToTop}
     >
-      <ChevronDoubleUpIcon className="arrow-up size-8" />
+      <ChevronDoubleUpIcon className={`size-8 ${styles.arrowUp}`} />
       TOP
     </button>
   )

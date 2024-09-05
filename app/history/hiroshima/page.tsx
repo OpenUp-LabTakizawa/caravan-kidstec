@@ -22,7 +22,7 @@ export default function Hiroshima(): JSX.Element {
     <>
       <Heading menu={HISTORY} submenus={[HIROSHIMA]} />
       {HIROSHIMA_HISTORY.map((history) => (
-        <section key={history.href} className="space-y-4">
+        <section key={history.date} className="space-y-4">
           <details className="collapse collapse-arrow">
             <summary className="bg-amber-50 collapse-title font-bold font-zenMaruGothic text-2xl">
               <p className="absolute outline outline-offset-2 rounded text-rose-400 text-xs -rotate-45">
@@ -35,7 +35,7 @@ export default function Hiroshima(): JSX.Element {
             <Programs programs={history.programs} />
             <HistoryPictures pictures={history.pictures} />
             <Link
-              href={`${HISTORY.href}${HIROSHIMA.href}/movie${history.href}`}
+              href={`${HISTORY.pathname}${HIROSHIMA.pathname}/movie/${history.date}`}
               className="bg-sky-400 blue-shine btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-max"
             >
               イベントの様子はこちら！

@@ -110,13 +110,16 @@ function DropdownMenu({
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               {menu.submenus.length === 0 ? (
-                <Link href={menu.href} className="font-bold text-orange-400">
+                <Link
+                  href={menu.pathname}
+                  className="font-bold text-orange-400"
+                >
                   {menu.name}
                 </Link>
               ) : (
                 <>
                   <b className="text-orange-400">{menu.name}</b>
-                  <Menu submenus={menu.submenus} href={menu.href} />
+                  <Menu pathname={menu.pathname} submenus={menu.submenus} />
                 </>
               )}
             </li>
@@ -170,7 +173,7 @@ function Navigation({
       {NAVIGATION.map((menu) => (
         <li key={menu.name}>
           {menu.submenus.length === 0 ? (
-            <Link href={menu.href} className="font-bold text-orange-400">
+            <Link href={menu.pathname} className="font-bold text-orange-400">
               {menu.name}
             </Link>
           ) : (
@@ -185,7 +188,7 @@ function Navigation({
               <summary className="font-bold text-orange-400">
                 {menu.name}
               </summary>
-              <Menu submenus={menu.submenus} href={menu.href} />
+              <Menu pathname={menu.pathname} submenus={menu.submenus} />
             </details>
           )}
         </li>
@@ -195,14 +198,14 @@ function Navigation({
 }
 
 function Menu({
+  pathname,
   submenus,
-  href,
-}: { submenus: Submenu[]; href: string }): JSX.Element {
+}: { pathname: string; submenus: Submenu[] }): JSX.Element {
   return (
     <ul>
       {submenus.map((submenu) => (
         <li key={submenu.name}>
-          <Link href={href + submenu.href} className="text-nowrap">
+          <Link href={pathname + submenu.pathname} className="text-nowrap">
             {submenu.name}
           </Link>
         </li>

@@ -14,7 +14,7 @@ export function Footer(): JSX.Element {
             >
               {menu.submenus.length === 0 ? (
                 <Link
-                  href={menu.href}
+                  href={menu.pathname}
                   className="font-bold link-hover justify-center text-orange-400"
                 >
                   {menu.name}
@@ -26,7 +26,7 @@ export function Footer(): JSX.Element {
                     {menu.submenus.map((submenu) => (
                       <li key={submenu.name}>
                         <Link
-                          href={menu.href + submenu.href}
+                          href={menu.pathname + submenu.pathname}
                           className="link-hover text-nowrap"
                         >
                           {submenu.name}

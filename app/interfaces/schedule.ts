@@ -29,7 +29,7 @@ export type Program = {
 }
 
 export type EventDate = {
-  readonly href: string
+  readonly date: string
   readonly title: string
   readonly programs: Program[]
   readonly pictures: TilePicture[]

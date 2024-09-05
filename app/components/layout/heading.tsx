@@ -43,7 +43,7 @@ function Breadcrumb({
         {submenus?.map((submenu) =>
           PARTNER.submenus.includes(submenu) ? (
             <li key={submenu.name}>
-              <Link href={menu.href + submenu.href} className="link">
+              <Link href={menu.pathname + submenu.pathname} className="link">
                 {submenu.name}
               </Link>
             </li>

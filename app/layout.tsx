@@ -10,33 +10,18 @@ import {
   SITE_TITLE,
   SITE_URL,
 } from "@/app/lib/constant"
-import localFont from "next/font/local"
+import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from "next/font/google"
 
-const zenMaruGothic = localFont({
-  src: [
-    {
-      path: "./fonts/ZenMaruGothic-Regular.ttf",
-      weight: "400",
-    },
-    {
-      path: "./fonts/ZenMaruGothic-Bold.ttf",
-      weight: "700",
-    },
-  ],
+const zenMaruGothic = Zen_Maru_Gothic({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
   variable: "--font-zen-maru-gothic",
 })
-
-const zenKakuGothicNew = localFont({
-  src: [
-    {
-      path: "./fonts/ZenKakuGothicNew-Regular.ttf",
-      weight: "400",
-    },
-    {
-      path: "./fonts/ZenKakuGothicNew-Bold.ttf",
-      weight: "700",
-    },
-  ],
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
   variable: "--font-zen-kaku-gothic-new",
 })
 

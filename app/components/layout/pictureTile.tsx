@@ -39,7 +39,7 @@ export function HistoryPictures({
       {pictures.map((picture) => (
         <Link
           key={picture.alt}
-          href={`${HISTORY.href + HIROSHIMA.href}/image/${picture.pathname}`}
+          href={`${HISTORY.pathname + HIROSHIMA.pathname}/image/${picture.name}`}
           ref={(node: HTMLAnchorElement) => {
             ref.current?.set(picture.alt, node)
             return () => {

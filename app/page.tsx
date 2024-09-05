@@ -24,7 +24,7 @@ export default function Home(): JSX.Element {
     <article className="pb-4 space-y-6 text-base text-center">
       {/* block className is necessary for Safari behavior */}
       <Link
-        href={EVENT.href + TOKYO_CHIBA.href}
+        href={EVENT.pathname + TOKYO_CHIBA.pathname}
         className="block sticky top-0 w-full z-20 sm:inline sm:static"
       >
         <Image
@@ -69,7 +69,7 @@ export default function Home(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <Video pathname="/202407" />
+      <Video date="202407" />
       <section className="relative space-y-4">
         <Image
           src="/handshake.avif"
@@ -79,7 +79,7 @@ export default function Home(): JSX.Element {
           className="absolute h-full object-contain opacity-10 w-full -z-10"
         />
         <h2 className="font-bold font-zenMaruGothic text-2xl">
-          <Link href={SECRETARIAT.href} className="link link-info">
+          <Link href={SECRETARIAT.pathname} className="link link-info">
             事務局の想い
           </Link>
         </h2>

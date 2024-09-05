@@ -1,6 +1,6 @@
 export type Menu = {
   readonly name: string
-  readonly href: string
+  readonly pathname: string
   readonly textColor: string
   readonly submenus: Submenu[]
 }
@@ -19,6 +19,6 @@ export type MenuPanel = {
 
 export type Submenu = {
   readonly name: string
-  readonly href: string
+  readonly pathname: string
   readonly textColor: string
 }

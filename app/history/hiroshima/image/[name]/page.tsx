@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 }
 
 export default function HiroshimaImage({
-  params: { pathname },
-}: Readonly<{ params: { pathname: string } }>): JSX.Element {
+  params: { name },
+}: Readonly<{ params: { name: string } }>): JSX.Element {
   const selectedPicture: TilePicture = HIROSHIMA_HISTORY.find((history) => {
-    return history.pictures.some((picture) => picture.pathname === pathname)
-  })?.pictures.find((picture) => picture.pathname === pathname) as TilePicture
+    return history.pictures.some((picture) => picture.name === name)
+  })?.pictures.find((picture) => picture.name === name) as TilePicture
 
   return (
     <>
@@ -30,7 +30,10 @@ export default function HiroshimaImage({
         alt={selectedPicture.alt}
         className="w-full"
       />
-      <Link href={HISTORY.href + HIROSHIMA.href} className="btn mx-auto">
+      <Link
+        href={HISTORY.pathname + HIROSHIMA.pathname}
+        className="btn mx-auto"
+      >
         <ArrowUturnLeftIcon className="rotate-z size-6" />
         {HISTORY.name}に戻る
       </Link>

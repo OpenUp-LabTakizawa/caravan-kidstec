@@ -6,11 +6,11 @@ import Image from "next/image"
 import type { JSX } from "react"
 
 export default function HiroshimaImage({
-  params: { pathname },
-}: Readonly<{ params: { pathname: string } }>): JSX.Element {
+  params: { name },
+}: Readonly<{ params: { name: string } }>): JSX.Element {
   const selectedPicture: TilePicture = HIROSHIMA_HISTORY.find((history) => {
-    return history.pictures.some((picture) => picture.pathname === pathname)
-  })?.pictures.find((picture) => picture.pathname === pathname) as TilePicture
+    return history.pictures.some((picture) => picture.name === name)
+  })?.pictures.find((picture) => picture.name === name) as TilePicture
 
   return (
     <Modal>

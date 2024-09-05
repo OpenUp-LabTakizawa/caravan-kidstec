@@ -13,22 +13,25 @@ export const metadata: Metadata = {
 }
 
 export default function HiroshimaMovie({
-  params: { href },
-}: Readonly<{ params: { href: string } }>): JSX.Element {
+  params: { date },
+}: Readonly<{ params: { date: string } }>): JSX.Element {
   const eventDate: EventDate = HIROSHIMA_HISTORY.find(
-    (history) => history.href.split("/").pop() === href,
+    (history) => history.date === date,
   ) as EventDate
   const submenu: Submenu = {
     name: eventDate.title,
-    href: eventDate.href,
+    pathname: `/${eventDate.date}`,
     textColor: "text-yellow-400",
   }
 
   return (
     <>
       <Heading menu={HISTORY} submenus={[HIROSHIMA, submenu]} />
-      <Video pathname={eventDate.href} />
-      <Link href={HISTORY.href + HIROSHIMA.href} className="btn mx-auto">
+      <Video date={eventDate.date} />
+      <Link
+        href={HISTORY.pathname + HIROSHIMA.pathname}
+        className="btn mx-auto"
+      >
         <ArrowUturnLeftIcon className="rotate-z size-6" />
         {HISTORY.name}に戻る
       </Link>

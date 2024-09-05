@@ -5,10 +5,10 @@ import { HIROSHIMA_HISTORY } from "@/app/lib/constant"
 import type { JSX } from "react"
 
 export default function HiroshimaMovie({
-  params: { href },
-}: Readonly<{ params: { href: string } }>): JSX.Element {
+  params: { date },
+}: Readonly<{ params: { date: string } }>): JSX.Element {
   const eventDate: EventDate = HIROSHIMA_HISTORY.find(
-    (history) => history.href.split("/").pop() === href,
+    (history) => history.date === date,
   ) as EventDate
 
   return (
@@ -16,7 +16,7 @@ export default function HiroshimaMovie({
       <h2 className="font-bold font-zenMaruGothic mb-5 text-3xl text-center">
         {eventDate.title}
       </h2>
-      <Video pathname={eventDate.href} />
+      <Video date={eventDate.date} />
     </Modal>
   )
 }

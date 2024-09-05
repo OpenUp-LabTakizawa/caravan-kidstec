@@ -16,7 +16,7 @@ export function EventPanels({
       text: "text-sky-400",
       textHover: "group-hover:text-sky-400",
     },
-    href: menu.href + submenu.href + Q_AND_A.href,
+    href: menu.pathname + submenu.pathname + Q_AND_A.pathname,
     text: "よくある質問",
   }
   const privacyPolicyPanel: MenuPanel = {
@@ -27,7 +27,7 @@ export function EventPanels({
       text: "text-orange-400",
       textHover: "group-hover:text-orange-400",
     },
-    href: menu.href + submenu.href + PRIVACY_POLICY.href,
+    href: menu.pathname + submenu.pathname + PRIVACY_POLICY.pathname,
     text: "プライバシーポリシー",
   }
 

@@ -5,9 +5,9 @@ import { SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/24/outline"
 import { type JSX, type RefObject, useRef, useState } from "react"
 
 export function Video({
-  pathname,
+  date,
   controls = true,
-}: Readonly<{ pathname: string; controls?: boolean }>): JSX.Element {
+}: Readonly<{ date: string; controls?: boolean }>): JSX.Element {
   const [isMute, setIsMute] = useState<boolean>(true)
   const ref: RefObject<HTMLVideoElement> = useRef<HTMLVideoElement>(null)
 
@@ -41,15 +41,12 @@ export function Video({
         className="group mx-auto rounded-2xl shadow-lg w-full"
       >
         <source
-          src={`${CLOUDFRONT_URL}/movie${pathname}.webm`}
+          src={`${CLOUDFRONT_URL}/movie/${date}.webm`}
           type="video/webm"
         />
-        <source
-          src={`${CLOUDFRONT_URL}/movie${pathname}.mp4`}
-          type="video/mp4"
-        />
+        <source src={`${CLOUDFRONT_URL}/movie/${date}.mp4`} type="video/mp4" />
         <track
-          src={`${CLOUDFRONT_URL}/movie${pathname}.vtt`}
+          src={`${CLOUDFRONT_URL}/movie/${date}.vtt`}
           kind="captions"
           srcLang="en"
           label="English"

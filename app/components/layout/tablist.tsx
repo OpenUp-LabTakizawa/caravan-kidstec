@@ -6,6 +6,7 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import { type JSX, useEffect, useState } from "react"
+import styles from "./tablist.module.css"
 
 export function ScheduleTablist({
   schedules,
@@ -84,7 +85,7 @@ export function ScheduleTablist({
           style={{ perspective: "1000px" }}
         >
           <div
-            className={`duration-1000 relative shadow-lg transition-transform${isFlip ? " rotate-y-180" : ""}`}
+            className={`duration-1000 relative shadow-lg transition-transform${isFlip ? ` ${styles.rotateY180}` : ""}`}
             style={{ transformStyle: "preserve-3d" }}
           >
             <div className="absolute" style={{ backfaceVisibility: "hidden" }}>

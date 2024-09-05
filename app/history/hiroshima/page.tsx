@@ -12,6 +12,7 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import type { Metadata } from "next"
 import Link from "next/link"
 import type { JSX } from "react"
+import styles from "./styles.module.css"
 
 export const metadata: Metadata = {
   title: `${HIROSHIMA.name}での活動・実績`,
@@ -36,10 +37,12 @@ export default function Hiroshima(): JSX.Element {
             <HistoryTile date={history.date} pictures={history.pictures} />
             <Link
               href={`${HISTORY.pathname}${HIROSHIMA.pathname}/movie/${history.date}`}
-              className="bg-sky-400 blue-shine btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-max"
+              className={`bg-sky-400 btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-max ${styles.blueShine}`}
             >
               イベントの様子はこちら！
-              <ArrowTopRightOnSquareIcon className="arrow-top-right size-5" />
+              <ArrowTopRightOnSquareIcon
+                className={`${styles.arrowTopRight} size-5`}
+              />
             </Link>
           </details>
         </section>

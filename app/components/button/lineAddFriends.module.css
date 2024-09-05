@@ -1,0 +1,31 @@
+.arrowRight {
+  animation: arrow-right 1.5s infinite;
+}
+
+.greenShine {
+  background: linear-gradient(to right, #00c300 50%, #abf1b5 60%, #00c300 70%);
+  background-size: 600% 100%;
+  animation: shine 20s infinite linear;
+}
+
+@keyframes arrow-right {
+  0%,
+  40% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translatex(8px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: 400%;
+  }
+  50% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: -400%;
+  }
+}

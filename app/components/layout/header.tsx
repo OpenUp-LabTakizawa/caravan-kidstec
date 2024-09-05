@@ -7,6 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
+import styles from "./header.module.css"
 
 export function Header(): JSX.Element {
   const [scrollY, setScrollY] = useState<{
@@ -46,7 +47,7 @@ export function Header(): JSX.Element {
       className={`bg-white navbar${pathname !== "/" && headerHeight < scrollY.scrollY && scrollY.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollY.scrollY < headerHeight || !scrollY.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
     >
       <div className="navbar-start">
-        <Link href="/" className="px-4 tilt-shaking">
+        <Link href="/" className={`px-4 ${styles.tiltShaking}`}>
           <Image
             src="/caravan-kidstec_logo_line.avif"
             width={150}

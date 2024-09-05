@@ -3,6 +3,7 @@
 import { CLOUDFRONT_URL } from "@/app/lib/constant"
 import { SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/24/outline"
 import { type JSX, type RefObject, useRef, useState } from "react"
+import styles from "./styles.module.css"
 
 export function Video({
   date,
@@ -72,9 +73,13 @@ export function Video({
             className="absolute left-1/2 rounded-2xl top-1/2 -translate-x-1/2 -translate-y-1/2 sm:hidden group-hover:sm:block"
           >
             {isMute ? (
-              <SpeakerXMarkIcon className="bg-black/60 fade-in-out rounded-2xl size-20 text-white/60 sm:animate-none sm:size-32" />
+              <SpeakerXMarkIcon
+                className={`bg-black/60 rounded-2xl size-20 text-white/60 sm:animate-none sm:size-32 ${styles.fadeInOut}`}
+              />
             ) : (
-              <SpeakerWaveIcon className="bg-black/60 fade-in-out rounded-2xl size-20 text-white/60 sm:animate-none sm:size-32" />
+              <SpeakerWaveIcon
+                className={`bg-black/60 rounded-2xl size-20 text-white/60 sm:animate-none sm:size-32 ${styles.fadeInOut}`}
+              />
             )}
           </button>
         </>

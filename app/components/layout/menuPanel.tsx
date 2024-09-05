@@ -3,6 +3,7 @@ import { PRIVACY_POLICY, Q_AND_A } from "@/app/lib/constant"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
+import styles from "./menuPanel.module.css"
 
 export function EventPanels({
   menu,
@@ -12,7 +13,7 @@ export function EventPanels({
     name: Q_AND_A.name,
     color: {
       bg: "bg-sky-400",
-      shadow: "box-sky-shadow",
+      shadow: styles.boxSkyShadow,
       text: "text-sky-400",
       textHover: "group-hover:text-sky-400",
     },
@@ -23,7 +24,7 @@ export function EventPanels({
     name: PRIVACY_POLICY.name,
     color: {
       bg: "bg-orange-400",
-      shadow: "box-orange-shadow",
+      shadow: styles.boxOrangeShadow,
       text: "text-orange-400",
       textHover: "group-hover:text-orange-400",
     },
@@ -49,7 +50,7 @@ export function EventPanels({
           <div className="flex">
             <span className="grow">{panel.text}</span>
             <ArrowRightIcon
-              className={`arrow-back-right ml-auto rounded-full size-4 text-white group-hover:bg-white ${panel.color.bg} ${panel.color.textHover}`}
+              className={`ml-auto rounded-full size-4 text-white group-hover:bg-white ${styles.arrowBackRight} ${panel.color.bg} ${panel.color.textHover}`}
             />
           </div>
         </Link>

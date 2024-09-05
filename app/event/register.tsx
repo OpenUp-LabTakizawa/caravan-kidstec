@@ -7,6 +7,7 @@ import {
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import type { JSX, ReactNode } from "react"
+import styles from "./register.module.css"
 
 export function Register({
   guideline,
@@ -244,7 +245,9 @@ function Step({
       </li>
       {!isLast && (
         <li>
-          <ChevronDoubleDownIcon className="arrow-down mx-auto size-10" />
+          <ChevronDoubleDownIcon
+            className={`mx-auto size-10 ${styles.arrowDown}`}
+          />
         </li>
       )}
     </>

@@ -3,6 +3,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import styles from "./lineAddFriends.module.css"
 
 export function LineAddFriends({
   linkLink,
@@ -30,10 +31,10 @@ export function LineApply({
     <Bounce className={classname}>
       <Link
         href={lineLink}
-        className="bg-[#00C300] btn green-shine shadow-lg text-lg text-white"
+        className={`bg-[#00C300] btn shadow-lg text-lg text-white ${styles.greenShine}`}
       >
         LINEで簡単応募する！
-        <ArrowRightIcon className="arrow-right size-5" />
+        <ArrowRightIcon className={`size-5 ${styles.arrowRight}`} />
       </Link>
     </Bounce>
   )

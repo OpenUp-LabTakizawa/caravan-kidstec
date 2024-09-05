@@ -19,7 +19,7 @@ import Link from "next/link"
 import type { JSX } from "react"
 
 export const metadata: Metadata = {
-  title: `${TOKYO_CHIBA.name}イベント`,
+  title: `${TOKYO_CHIBA.name}イベントの応募・スケジュール`,
 }
 
 export default function TokyoChiba(): JSX.Element {

@@ -1,4 +1,10 @@
+import { SECRETARIAT, SITE_TITLE } from "@/app/lib/constant"
+import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
+
+export const metadata: Metadata = {
+  title: SITE_TITLE + SECRETARIAT.name,
+}
 
 export default function SecretariatLayout({
   children,

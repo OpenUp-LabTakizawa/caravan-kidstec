@@ -27,7 +27,7 @@ const zenKakuGothicNew = Zen_Kaku_Gothic_New({
 
 export const metadata: Metadata = {
   title: {
-    default: SITE_TITLE,
+    default: `${SITE_TITLE} - プログラミング×体験学習`,
     template: `%s | ${SITE_TITLE}`,
   },
   description: DESCRIPTION,

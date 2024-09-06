@@ -52,8 +52,8 @@ export function HistoryTile({
           <Image
             loader={cloudfrontLoader}
             src={picture.src}
-            height={256}
             width={256}
+            height={256}
             alt={picture.alt}
             className="w-full"
           />

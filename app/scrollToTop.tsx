@@ -6,36 +6,25 @@ import type { JSX } from "react"
 
 export function ScrollToTop(): JSX.Element {
   const ref: RefObject<HTMLButtonElement> = useRef<HTMLButtonElement>(null)
-  const scrollBtn: HTMLButtonElement = ref.current as HTMLButtonElement
   const [scrollY, setScrollY] = useState<number>(0)
   const [isScrollDown, setIsScrollDown] = useState<boolean>(false)
   const scrollPoint: number = 200
 
   useEffect(() => {
-    window.addEventListener("scroll", () => setScrollY(window.scrollY))
-    if (
-      scrollPoint < scrollY &&
-      !scrollBtn.classList.contains("scroll-to-top")
-    ) {
-      scrollBtn.classList.remove("hidden")
-      scrollBtn.classList.remove("fade-out-down")
-      scrollBtn.classList.add("fade-in-up")
+    if (scrollPoint < scrollY) {
       setIsScrollDown(true)
     }
-    if (scrollY < scrollPoint && isScrollDown) {
-      scrollBtn.classList.remove("fade-in-up")
-      scrollBtn.classList.remove("scroll-to-top")
-      scrollBtn.classList.add("fade-out-down")
-    }
+
+    window.addEventListener("scroll", () => setScrollY(window.scrollY))
     return () => {
       window.removeEventListener("scroll", () => setScrollY(window.scrollY))
     }
   })
 
   function scrollToTop(): void {
+    const scrollBtn: HTMLButtonElement = ref.current as HTMLButtonElement
+    // restart animation unless remove the animation class
     scrollBtn.classList.remove("fade-in-up")
-    scrollBtn.classList.add("fade-out-down")
-    scrollBtn.classList.add("scroll-to-top")
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
@@ -43,8 +32,8 @@ export function ScrollToTop(): JSX.Element {
     <button
       type="button"
       ref={ref}
-      className="bg-sky-400 border-sky-400 btn btn-square hidden fixed gap-0 bottom-5 right-5 z-10 hover:scale-110"
       onClick={scrollToTop}
+      className={`bg-sky-400 border-sky-400 bottom-2 btn btn-square fixed gap-0 right-2 z-10 hover:bg-sky-500 sm:bottom-4 sm:right-4${scrollY < scrollPoint && !isScrollDown ? " hidden" : ""} ${scrollY < scrollPoint ? "fade-out-down" : "fade-in-up"}`}
     >
       <ChevronDoubleUpIcon className="arrow-up size-8" />
       TOP

@@ -112,7 +112,7 @@ export default function TokyoChiba(): JSX.Element {
         src={"/202410_tokyo_chiba.avif"}
         width={540}
         height={540}
-        alt="こどもテックキャラバン"
+        alt="こどもテックキャラバン 東京・千葉イベント"
         priority={true}
         className="w-full"
       />

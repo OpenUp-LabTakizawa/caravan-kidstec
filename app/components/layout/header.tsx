@@ -46,20 +46,19 @@ export function Header(): JSX.Element {
     <header
       className={`bg-white navbar${pathname !== "/" && headerHeight < scrollY.scrollY && scrollY.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollY.scrollY < headerHeight || !scrollY.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
     >
-      <div className="navbar-start">
+      <div className="navbar-start grow">
         <Link href="/" className={`px-4 ${styles.tiltShaking}`}>
           <Image
             src="/caravan-kidstec_logo_line.avif"
-            width={150}
-            height={75}
-            sizes="100vw"
+            width={192}
+            height={20}
             alt={SITE_TITLE}
             priority={true}
-            className="max-h-8 w-full"
+            className="w-full"
           />
         </Link>
       </div>
-      <nav className="navbar-end z-30">
+      <nav className="navbar-end w-max z-30">
         <DropdownMenu
           className="lg:hidden"
           isScrollDown={scrollY.isScrollDown}
@@ -169,7 +168,7 @@ function Navigation({
 
   return (
     <ul
-      className={`menu menu-horizontal p-0${className === "" ? "" : ` ${className}`}`}
+      className={`flex-nowrap menu menu-horizontal p-0${className === "" ? "" : ` ${className}`}`}
     >
       {NAVIGATION.map((menu) => (
         <li key={menu.name}>

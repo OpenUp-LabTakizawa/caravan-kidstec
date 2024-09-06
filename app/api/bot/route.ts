@@ -17,11 +17,11 @@ export async function POST(request: Request): Promise<Response> {
   const body: ArrayBuffer = await request.arrayBuffer()
   const buffer: Buffer = Buffer.from(body)
 
-  const isValidSignature: string = middleware(request, buffer)
-  if (isValidSignature) {
+  const errorMessage: string = validateRequest(request, buffer)
+  if (errorMessage) {
     return Response.json({
       status: "error",
-      message: isValidSignature,
+      message: errorMessage,
     })
   }
 
@@ -37,8 +37,20 @@ export async function POST(request: Request): Promise<Response> {
           console.error(error.status)
           console.error(error.headers.get("x-line-request-id"))
           console.error(error.body)
-        } else if (error instanceof Error) {
+
+          return Response.json({
+            status: `error: ${error.status}`,
+            message: error.body,
+          })
+        }
+
+        if (error instanceof Error) {
           console.error(error)
+
+          return Response.json({
+            status: "error",
+            message: error.message,
+          })
         }
 
         return Response.json({
@@ -52,6 +64,20 @@ export async function POST(request: Request): Promise<Response> {
     status: "success",
     results,
   })
+}
+
+function validateRequest(request: Request, buffer: Buffer): string {
+  const signature: string = request.headers.get("x-line-signature") || ""
+  if (!signature) {
+    return "No signature"
+  }
+
+  const secret: string = process.env.CHANNEL_SECRET || ""
+  if (!validateSignature(buffer, secret, signature)) {
+    return "signature validation failed"
+  }
+
+  return ""
 }
 
 async function textEventHandler(
@@ -77,18 +103,4 @@ async function textEventHandler(
     })
     return
   }
-}
-
-function middleware(request: Request, buffer: Buffer): string {
-  const signature: string = request.headers.get("x-line-signature") || ""
-  if (!signature) {
-    return "No signature"
-  }
-
-  const secret: string = process.env.CHANNEL_SECRET || ""
-  if (!validateSignature(buffer, secret, signature)) {
-    return "signature validation failed"
-  }
-
-  return ""
 }

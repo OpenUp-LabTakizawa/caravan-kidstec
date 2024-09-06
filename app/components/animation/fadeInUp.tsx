@@ -32,7 +32,10 @@ export function FadeInUp({
   })
 
   return (
-    <div ref={ref} className={`opacity-0 ${className}`}>
+    <div
+      ref={ref}
+      className={`opacity-0${className === "" ? "" : ` ${className}`}`}
+    >
       {children}
     </div>
   )

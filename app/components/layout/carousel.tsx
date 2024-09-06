@@ -49,17 +49,17 @@ export function TopCarousel(): JSX.Element {
   const [isBusy, setIsBusy] = useState<boolean>(false)
   let timeoutId: globalThis.Timer
 
-  // useEffect(() => {
-  //   const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-  //   const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
-  //     string,
-  //     HTMLImageElement
-  //   >
-  //   for (const node of [...images.values()].reverse()) {
-  //     const newImage = node.cloneNode(true)
-  //     carousel.prepend(newImage)
-  //   }
-  // }, [])
+  useEffect(() => {
+    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
+    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
+      string,
+      HTMLImageElement
+    >
+    for (const node of [...images.values()].reverse()) {
+      const newImage = node.cloneNode(true)
+      carousel.prepend(newImage)
+    }
+  }, [])
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement

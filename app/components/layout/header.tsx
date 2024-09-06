@@ -10,7 +10,7 @@ import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 import styles from "./header.module.css"
 
 export function Header(): JSX.Element {
-  const [scrollY, setScrollY] = useState<{
+  const [scrollState, setScrollState] = useState<{
     scrollY: number
     isScrollDown: boolean
   }>({ scrollY: 0, isScrollDown: false })
@@ -28,44 +28,43 @@ export function Header(): JSX.Element {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScrollY({
+      setScrollState({
         scrollY: window.scrollY,
-        isScrollDown: scrollY.scrollY < window.scrollY,
+        isScrollDown: scrollState.scrollY < window.scrollY,
       })
     })
     return () =>
       window.removeEventListener("scroll", () => {
-        setScrollY({
+        setScrollState({
           scrollY: window.scrollY,
-          isScrollDown: scrollY.scrollY < window.scrollY,
+          isScrollDown: scrollState.scrollY < window.scrollY,
         })
       })
   })
 
   return (
     <header
-      className={`bg-white navbar${pathname !== "/" && headerHeight < scrollY.scrollY && scrollY.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollY.scrollY < headerHeight || !scrollY.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
+      className={`bg-white navbar${pathname !== "/" && headerHeight < scrollState.scrollY && scrollState.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollState.scrollY < headerHeight || !scrollState.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
     >
       <div className="navbar-start grow">
         <Link href="/" className={`px-4 ${styles.tiltShaking}`}>
           <Image
             src="/caravan-kidstec_logo_line.avif"
             width={192}
-            height={20}
+            height={23}
             alt={SITE_TITLE}
             priority={true}
-            className="w-full"
           />
         </Link>
       </div>
       <nav className="navbar-end w-max z-30">
         <DropdownMenu
           className="lg:hidden"
-          isScrollDown={scrollY.isScrollDown}
+          isScrollDown={scrollState.isScrollDown}
         />
         <Navigation
           className="hidden lg:flex"
-          isScrollDown={scrollY.isScrollDown}
+          isScrollDown={scrollState.isScrollDown}
         />
       </nav>
     </header>

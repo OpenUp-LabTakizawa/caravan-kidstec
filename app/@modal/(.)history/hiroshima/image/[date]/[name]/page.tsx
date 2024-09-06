@@ -21,8 +21,8 @@ export default function HiroshimaImage({
       <Image
         loader={cloudfrontLoader}
         src={tilePicture.src}
-        height={256}
         width={256}
+        height={256}
         alt={tilePicture.alt}
         className="pt-6 w-full"
       />

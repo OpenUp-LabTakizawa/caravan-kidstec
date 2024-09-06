@@ -34,7 +34,7 @@ export default function Home(): JSX.Element {
               : "/202410_event_banner_start.avif"
           }
           width={540}
-          height={540}
+          height={162}
           alt="イベント詳細はこちら"
           priority={true}
           className="w-full"
@@ -77,7 +77,7 @@ export default function Home(): JSX.Element {
           alt="handshake"
           width={256}
           height={256}
-          className="absolute h-full object-contain opacity-10 w-full -z-10"
+          className="absolute object-contain opacity-10 size-full -z-10"
         />
         <h2 className="font-bold font-zenMaruGothic text-2xl">
           <Link href={SECRETARIAT.pathname} className="link link-info">

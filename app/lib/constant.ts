@@ -9,10 +9,7 @@ export const DESCRIPTION: string =
 export const HIROSHIMA_LINE: string = "https://lin.ee/eYcNlkG"
 export const KANTO_LINE: string = "https://lin.ee/RHBWD7P"
 export const CLOUDFRONT_URL: string = "https://dk75m1tgsot44.cloudfront.net"
-export const KANTO_START_DATE: { text: string; date: string } = {
-  text: "２０２４年９月９日 １２時",
-  date: "2024-09-09T13:00:00+09:00",
-}
+export const KANTO_START_DATE: string = "２０２４年９月９日 １２時"
 export const KANTO_DEADLINE: string = "２０２４年１０月１０日 １２時"
 export const SPECIAL: Submenu = {
   name: "スペシャル",

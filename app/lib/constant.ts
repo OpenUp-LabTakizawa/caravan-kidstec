@@ -7,26 +7,26 @@ export const SITE_URL: string = "https://caravan-kidstec.com"
 export const DESCRIPTION: string =
   "プログラミング×体験学習　親子で学ぶ体験型イベント"
 export const HIROSHIMA_LINE: string = "https://lin.ee/eYcNlkG"
-export const TOKYO_CHIBA_LINE: string = "https://lin.ee/RHBWD7P"
+export const KANTO_LINE: string = "https://lin.ee/RHBWD7P"
 export const CLOUDFRONT_URL: string = "https://dk75m1tgsot44.cloudfront.net"
-export const TOKYO_CHIBA_START_DATE: { text: string; date: string } = {
+export const KANTO_START_DATE: { text: string; date: string } = {
   text: "２０２４年９月９日 １２時",
   date: "2024-09-09T13:00:00+09:00",
 }
-export const TOKYO_CHIBA_DEADLINE: string = "２０２４年１０月１０日 １２時"
+export const KANTO_DEADLINE: string = "２０２４年１０月１０日 １２時"
 export const SPECIAL: Submenu = {
   name: "スペシャル",
   pathname: "/special",
   textColor: "",
 }
+export const KANTO: Submenu = {
+  name: "関東",
+  pathname: "/kanto",
+  textColor: "",
+}
 export const HIROSHIMA: Submenu = {
   name: "広島",
   pathname: "/hiroshima",
-  textColor: "",
-}
-export const TOKYO_CHIBA: Submenu = {
-  name: "東京・千葉",
-  pathname: "/tokyo_chiba",
   textColor: "",
 }
 export const Q_AND_A: Submenu = {
@@ -44,7 +44,7 @@ export const EVENT: Menu = {
   name: "開催予定",
   pathname: "/event",
   textColor: "text-orange-400",
-  submenus: [TOKYO_CHIBA],
+  submenus: [KANTO],
 }
 export const HISTORY: Menu = {
   name: "過去の実績",
@@ -62,7 +62,7 @@ export const PARTNER: Menu = {
   name: "パートナー",
   pathname: "/partner",
   textColor: "text-rose-400",
-  submenus: [SPECIAL, TOKYO_CHIBA, HIROSHIMA],
+  submenus: [SPECIAL, KANTO, HIROSHIMA],
 }
 export const SECRETARIAT: Menu = {
   name: "事務局",

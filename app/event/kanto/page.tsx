@@ -8,10 +8,10 @@ import type { Guideline } from "@/app/interfaces/guideline"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
   EVENT,
-  TOKYO_CHIBA,
-  TOKYO_CHIBA_DEADLINE,
-  TOKYO_CHIBA_LINE,
-  TOKYO_CHIBA_START_DATE,
+  KANTO,
+  KANTO_DEADLINE,
+  KANTO_LINE,
+  KANTO_START_DATE,
 } from "@/app/lib/constant"
 import type { Metadata } from "next"
 import Image from "next/image"
@@ -19,16 +19,16 @@ import Link from "next/link"
 import type { JSX } from "react"
 
 export const metadata: Metadata = {
-  title: `${TOKYO_CHIBA.name}イベントの応募・スケジュール`,
+  title: `${KANTO.name}イベントの応募・スケジュール`,
 }
 
 export default function TokyoChiba(): JSX.Element {
   const guideline: Guideline = {
     anchorLink: "requirement",
     participantsNumber: "２０組程（６０名）",
-    startDate: TOKYO_CHIBA_START_DATE.text,
-    deadline: TOKYO_CHIBA_DEADLINE,
-    lineLink: TOKYO_CHIBA_LINE,
+    startDate: KANTO_START_DATE.text,
+    deadline: KANTO_DEADLINE,
+    lineLink: KANTO_LINE,
   }
   const schedules: Schedule[] = [
     {
@@ -107,12 +107,12 @@ export default function TokyoChiba(): JSX.Element {
 
   return (
     <>
-      <Heading menu={EVENT} submenus={[TOKYO_CHIBA]} />
+      <Heading menu={EVENT} submenus={[KANTO]} />
       <Image
-        src={"/202410_tokyo_chiba.avif"}
+        src={"/202410_kanto.avif"}
         width={540}
         height={540}
-        alt="こどもテックキャラバン-東京・千葉イベント"
+        alt="こどもテックキャラバン-関東イベント"
         priority={true}
         className="w-full"
       />
@@ -132,12 +132,12 @@ export default function TokyoChiba(): JSX.Element {
           <br />
           応募画面からお申し込みください。
         </p>
-        <LineApply lineLink={TOKYO_CHIBA_LINE} />
+        <LineApply lineLink={KANTO_LINE} />
       </section>
       <ScheduleTablist schedules={schedules} />
       <Register guideline={guideline} />
-      <LineApply lineLink={TOKYO_CHIBA_LINE} classname="text-center" />
-      <EventPanels menu={EVENT} submenu={TOKYO_CHIBA} />
+      <LineApply lineLink={KANTO_LINE} classname="text-center" />
+      <EventPanels menu={EVENT} submenu={KANTO} />
     </>
   )
 }

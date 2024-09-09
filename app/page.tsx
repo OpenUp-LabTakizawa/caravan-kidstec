@@ -5,16 +5,13 @@ import {
 } from "@/app/components/layout/carousel"
 import { Video } from "@/app/components/media/video"
 import { Introduction } from "@/app/introduction"
-import { EVENT, KANTO, KANTO_START_DATE, SECRETARIAT } from "@/app/lib/constant"
+import { EVENT, KANTO, SECRETARIAT } from "@/app/lib/constant"
 import { PlusIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export default function Home(): JSX.Element {
-  const startDate = new Date(KANTO_START_DATE.date)
-  const now = new Date()
-
   return (
     <article className="pb-4 space-y-6 text-base text-center">
       {/* block className is necessary for Safari behavior */}
@@ -23,11 +20,7 @@ export default function Home(): JSX.Element {
         className="block sticky top-0 w-full z-20 sm:inline sm:static"
       >
         <Image
-          src={
-            now < startDate
-              ? "/202410_event_banner_ready.avif"
-              : "/202410_event_banner_start.avif"
-          }
+          src="/202410_event_banner_start.avif"
           width={540}
           height={162}
           alt="イベント詳細はこちら"

@@ -26,7 +26,7 @@ export default function Kanto(): JSX.Element {
   const guideline: Guideline = {
     anchorLink: "requirement",
     participantsNumber: "２０組程（６０名）",
-    startDate: KANTO_START_DATE.text,
+    startDate: KANTO_START_DATE,
     deadline: KANTO_DEADLINE,
     lineLink: KANTO_LINE,
   }

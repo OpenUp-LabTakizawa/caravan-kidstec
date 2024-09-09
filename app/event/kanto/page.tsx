@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: `${KANTO.name}イベントの応募・スケジュール`,
 }
 
-export default function TokyoChiba(): JSX.Element {
+export default function Kanto(): JSX.Element {
   const guideline: Guideline = {
     anchorLink: "requirement",
     participantsNumber: "２０組程（６０名）",

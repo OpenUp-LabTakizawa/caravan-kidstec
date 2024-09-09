@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: KANTO.name + PARTNER.name,
 }
 
-export default function TokyoChiba(): JSX.Element {
+export default function Kanto(): JSX.Element {
   const partners: Partner[] = [
     {
       name: "クルックフィールズ",

@@ -1,11 +1,11 @@
 import { Divider } from "@/app/components/layout/divider"
-import { PRIVACY_POLICY, SITE_URL, TOKYO_CHIBA } from "@/app/lib/constant"
+import { KANTO, PRIVACY_POLICY, SITE_URL } from "@/app/lib/constant"
 import type { Metadata } from "next"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export const metadata: Metadata = {
-  title: `${PRIVACY_POLICY.name} - ${TOKYO_CHIBA.name}イベント`,
+  title: `${PRIVACY_POLICY.name} - ${KANTO.name}イベント`,
 }
 
 export default function PrivacyPolicy(): JSX.Element {

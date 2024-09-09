@@ -82,9 +82,9 @@ export default function TokyoChiba(): JSX.Element {
     {
       alt: "Day 3",
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
-      venue: "ヴィクトリアガーデン恵比寿迎賓館（予定）",
-      address: "東京都渋谷区恵比寿南1-14-20",
-      googleMapLink: "https://maps.app.goo.gl/wLmPrkKwYheQgvuM8",
+      venue: "アクアテラス迎賓館 新横浜",
+      address: "神奈川県横浜市港北区新横浜3-7-15",
+      googleMapLink: "https://maps.app.goo.gl/yUm7wrRfMm1veozm6",
       src: {
         am: "/202407/wedding/smile_challenge.avif",
         pm: "/202407/wedding/bubbles_entrance.avif",
@@ -95,11 +95,11 @@ export default function TokyoChiba(): JSX.Element {
       },
       organization: {
         am: "ロボットサバイバルプロジェクト",
-        pm: "ヴィクトリアガーデン恵比寿迎賓館（予定）",
+        pm: "アクアテラス迎賓館 新横浜",
       },
       url: {
         am: "https://robosava.jp/",
-        pm: "https://www.tgn.co.jp/wedding/tokyo/vge/",
+        pm: "https://www.tgn.co.jp/wedding/yokohama/aqy/",
       },
       tags: { am: ["ロボット", "プログラミング"], pm: ["結婚式体験"] },
     },
@@ -112,7 +112,7 @@ export default function TokyoChiba(): JSX.Element {
         src={"/202410_tokyo_chiba.avif"}
         width={540}
         height={540}
-        alt="こどもテックキャラバン 東京・千葉イベント"
+        alt="こどもテックキャラバン-東京・千葉イベント"
         priority={true}
         className="w-full"
       />

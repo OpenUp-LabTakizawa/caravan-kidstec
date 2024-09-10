@@ -50,8 +50,8 @@ export default function SponserPage(): JSX.Element {
                 <Link
                   href={sponser.href}
                   target="_blank"
-                  className="link"
                   rel="noopener noreferrer"
+                  className="link"
                 >
                   {sponser.name}
                 </Link>

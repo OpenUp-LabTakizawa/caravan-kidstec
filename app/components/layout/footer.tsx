@@ -1,10 +1,11 @@
 import { NAVIGATION } from "@/app/lib/constant"
+import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export function Footer(): JSX.Element {
   return (
-    <footer className="bg-base-300 grid items-center justify-center p-4 text-base-content">
+    <footer className="bg-base-300 grid items-center justify-center p-4 space-y-2 text-base-content">
       <nav>
         <ul className="grid grid-cols-2 menu p-0 text-sm sm:grid-cols-5">
           {NAVIGATION.map((menu) => (
@@ -39,6 +40,19 @@ export function Footer(): JSX.Element {
             </li>
           ))}
         </ul>
+        <Link
+          href="https://www.instagram.com/ktc_caravan/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/Instagram_Glyph_Gradient.avif"
+            width={24}
+            height={24}
+            alt="こどもテックキャラバン-公式インスタグラム"
+            className="mx-auto"
+          />
+        </Link>
       </nav>
       <aside className="text-center">
         <p className="text-sm">

@@ -1,11 +1,22 @@
 "use client"
 
+import type { PartnerArea } from "@/app/interfaces/partner"
 import type { Schedule } from "@/app/interfaces/schedule"
+import {
+  HIROSHIMA,
+  HIROSHIMA_PARTNERS,
+  KANTO,
+  KANTO_PARTNERS,
+  PARTNER,
+  SPECIAL,
+  SPECIAL_PARTNERS,
+} from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import { type JSX, useEffect, useState } from "react"
+import { JapanMap } from "./JapanMap"
 import styles from "./tablist.module.css"
 
 export function ScheduleTablist({
@@ -175,5 +186,78 @@ function TabCard({
         </div>
       </div>
     </>
+  )
+}
+
+export function PartnerTablist(): JSX.Element {
+  const formats: string[] = ["一覧", "地図"]
+  const partnerAreas: PartnerArea[] = [
+    {
+      color: "bg-amber-50",
+      submenu: SPECIAL,
+      partners: SPECIAL_PARTNERS,
+    },
+    {
+      color: "bg-sky-200",
+      submenu: KANTO,
+      partners: KANTO_PARTNERS,
+    },
+    {
+      color: "bg-pink-300",
+      submenu: HIROSHIMA,
+      partners: HIROSHIMA_PARTNERS,
+    },
+  ]
+  const [tab, setTab] = useState<string>(formats[0])
+
+  return (
+    <section className="max-w-lg mx-auto px-2 space-y-4 text-center">
+      <div role="tablist" className="flex gap-2 mx-auto w-72 lg:w-96">
+        {formats.map((format) => (
+          <button
+            key={format}
+            type="button"
+            role="tab"
+            onClick={() => setTab(format)}
+            className={`basis-1/2 border-b-4 duration-300 py-1 rounded-lg shadow-xl ${format === tab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
+          >
+            <b>{format}</b>
+          </button>
+        ))}
+      </div>
+      {partnerAreas.map((area) => (
+        <section
+          key={area.submenu.name}
+          className={`mx-auto p-2 rounded-2xl shadow-lg space-y-4 w-72 lg:w-96 ${area.color}${tab === formats[0] ? "" : " hidden"}`}
+        >
+          <h2 className="font-bold font-zenMaruGothic text-3xl">
+            <Link
+              href={PARTNER.pathname + area.submenu.pathname}
+              className="link"
+            >
+              {area.submenu.name}
+            </Link>
+          </h2>
+          <ul className="space-y-2 mx-auto w-max">
+            {area.partners.map((partner) => (
+              <li
+                key={partner.name}
+                className="bg-white rounded-2xl p-2 shadow-lg"
+              >
+                <Link
+                  href={`${PARTNER.pathname}${area.submenu.pathname}#${partner.id}`}
+                  className="link font-bold"
+                >
+                  {partner.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+      <section className={`px-2${tab === formats[1] ? "" : " hidden"}`}>
+        <JapanMap />
+      </section>
+    </section>
   )
 }

@@ -1,4 +1,5 @@
 import type { Menu, Submenu } from "@/app/interfaces/menu"
+import type { Partner } from "@/app/interfaces/partner"
 import type { TilePicture } from "@/app/interfaces/picture"
 import type { EventDate, Program } from "@/app/interfaces/schedule"
 
@@ -59,7 +60,7 @@ export const PARTNER: Menu = {
   name: "パートナー",
   pathname: "/partner",
   textColor: "text-rose-400",
-  submenus: [SPECIAL, KANTO, HIROSHIMA],
+  submenus: [],
 }
 export const SECRETARIAT: Menu = {
   name: "事務局",
@@ -74,6 +75,87 @@ export const NAVIGATION: Menu[] = [
   SPONSER,
   PARTNER,
   SECRETARIAT,
+] as const
+
+export const SPECIAL_PARTNERS: Partner[] = [
+  {
+    id: "ichicommons",
+    name: "ICHI COMMONS",
+    href: "https://ichicommons.com/",
+    src: "/logo/ichicommons_logo.svg",
+    introduction:
+      "ICHI COMMONS株式会社は、\n企業やNPO、地域、個人が\n互いを支え合いながら、社会課題の解決に\n取り組むためのプラットフォーム\n『サステナNet』を運営しています。\n\nこのプラットフォームを通じて、\n様々なステークホルダーが出会い、\n事業や社会にプラスの影響を与える\n活動を生み出しています。",
+  },
+  {
+    id: "robosava",
+    name: "ロボットサバイバルプロジェクト（ロボサバ）",
+    href: "https://robosava.jp/",
+    src: "/logo/robosava_logo.avif",
+    introduction:
+      "「つくる」「学ぶ」「競う」３つの体験を軸に、\n子どもたちのクリエイティブな力を\n育むプロジェクトです。\n（運営：株式会社アイティプロジェクト／PCN仙台）\n\nはんだ付けをしてコンピュータをつくり、\n簡単なプログラムを打ち込んでロボットを動かしたり、\nセンサーを使ったプログラミングや\n電子工作体験などを行っております。\n\n自分でつくったモノをプログラムで動かすことで、\nワクワクと感動を体験することができます。",
+  },
+] as const
+
+export const KANTO_PARTNERS: Partner[] = [
+  {
+    id: "kurkkufields",
+    name: "クルックフィールズ",
+    href: "https://kurkkufields.jp/",
+    src: "/logo/kurkkufields_logo.avif",
+    introduction:
+      "30haの広大な農場を舞台に繰り広げられる、\n消費や食のあり方を「農業」 「食」 「アート」の\n３つのコンテンツを軸に提案する、\nサステナブルファーム＆パーク\n「KURKKUFIELDS」。\n\n自然やアートに触れる様々なフィールドツアー、\nイベント、施設での宿泊体験などを通じて、\n人間本来の生きる喜びや、いのちのてざわり、\nそして持続可能な社会を実現していくための\nヒントを共有出来ればと考えています。",
+  },
+  {
+    id: "classroom-adventure",
+    name: "Classroom Adventure",
+    href: "https://www.classroom-adventure.com/",
+    src: "/logo/classroom-adventure_logo.avif",
+    introduction:
+      "ワクワクする学びを。\n学びのゲーミフィケーション\n(ゲームの要素を活かして楽しく学ぶこと。)に\n情熱を燃やし、情報検証の最前線に立つ\n慶応義塾大学の大学生が運営する団体です。\n\n「レイのブログ」とは\n真実を見つける力を全ての人へ。\n真実と噓を見分けるスキルを教育する\n今までにないメディアリテラシープログラムです。",
+  },
+  {
+    id: "griteen",
+    name: "Griteen",
+    href: "https://griteen.com/",
+    src: "/logo/griteen_logo.avif",
+    introduction:
+      "「griteen」は小学生・中学生の女の子と\n保護者様が一緒に学ぶ、子供向け/大人向けの\nプログラミングスクールです。\n女の子がプログラミングに興味を持つことが\nできるような授業を提供し、理系へのハードルを\n取り払うことをサポートします。\n\n誰もが自ら考え行動することが必要となる\nこれからの社会で、女の子たちが自信を持ち、\n技術的なスキルとともにやり抜く力「Grit」を\n身につけることで、将来の選択肢が広がります。",
+  },
+] as const
+
+export const HIROSHIMA_PARTNERS: Partner[] = [
+  {
+    id: "bpl",
+    name: "BPL",
+    href: "https://bplab.biz/",
+    src: "/logo/bpl_logo.svg",
+    introduction:
+      "株式会社BPLは、ブランディング、\n経営・マーケティング、企画・運営など通して、\n地域の活性化につながる\n事業活動をおこなっております。\n\nどこにいても、実際に稼げる職業、\n若者が憧れる職業をつくりを、\n地域全体を活性化していくことで、\nニッポンを元気にしていくことを\n志命としています。",
+  },
+  {
+    id: "fuudo",
+    name: "フウド",
+    href: "https://fuudo.jp/",
+    src: "/logo/fuudo_logo.avif",
+    introduction:
+      "江田島市沖美町の移住交流拠点施設\n「フウド」を拠点に、島内外の人々の“縁”が\nつながる活動に取り組んでいます。\n\n移住のサポートや交流の場づくりに加え、\nビーチクリーン活動や\nマリンアクティビティの普及など、\n島の里海環境を生かした活動にも\n取り組んでいます。",
+  },
+  {
+    id: "sanken-hiroshima",
+    name: "三段峡-太田川流域研究会（さんけん）",
+    href: "https://sanken-hiroshima.org/",
+    src: "/logo/sanken_logo.avif",
+    introduction:
+      "私たちはフィールドの中で生態系を学び、\n自然と人とのかかわりを共に考え、\n一人ひとりの価値や、人と人の繋がりの\nあり方を提案し続けます。\n\n子ども達が『ここ』で\n誇りをもって暮らしていける為に。",
+  },
+  {
+    id: "sanken_club",
+    name: "広島大学さんけん部",
+    href: "https://www.instagram.com/hu_sankenbu/",
+    src: "/logo/sanken_club_logo.avif",
+    introduction:
+      "数多くの自然がある広島大学のキャンパスは、\n自然を学ぶ絶好のフィールドです。\n\n“さんけん”は調査や保全、\n環境教育を実施する団体です。\n\n皆さんと一緒に広島大学の\n自然の豊かさについて学びます。",
+  },
 ] as const
 
 const HIROSHIMA_FIRST_PROGRAMS: Program[] = [

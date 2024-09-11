@@ -47,9 +47,7 @@ export default function Hiroshima(): JSX.Element {
           </details>
         </section>
       ))}
-      <section>
-        <LineRegister lineLink={HIROSHIMA_LINE} />
-      </section>
+      <LineRegister lineLink={HIROSHIMA_LINE} />
     </>
   )
 }

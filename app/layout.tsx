@@ -1,7 +1,7 @@
-import { Footer } from "@/app/components/layout/footer"
-import { Header } from "@/app/components/layout/header"
 import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
+import { Footer } from "./footer"
+import { Header } from "./header"
 import { ScrollToTop } from "./scrollToTop"
 import "./globals.css"
 import {

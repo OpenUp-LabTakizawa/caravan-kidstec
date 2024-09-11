@@ -1,4 +1,4 @@
-import { QA } from "@/app/components/layout/qAndA"
+import { QA } from "@/app/event/qAndA"
 import type { QandA } from "@/app/interfaces/qAndA"
 import { EVENT, KANTO, KANTO_LINE, Q_AND_A } from "@/app/lib/constant"
 import type { Metadata } from "next"

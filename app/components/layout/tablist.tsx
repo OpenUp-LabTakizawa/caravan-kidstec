@@ -1,6 +1,6 @@
 "use client"
-
 import type { Schedule } from "@/app/interfaces/schedule"
+import {} from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"

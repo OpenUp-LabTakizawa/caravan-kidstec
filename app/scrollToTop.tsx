@@ -1,8 +1,7 @@
 "use client"
 
 import { ChevronDoubleUpIcon } from "@heroicons/react/24/solid"
-import { type RefObject, useEffect, useRef, useState } from "react"
-import type { JSX } from "react"
+import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
 export function ScrollToTop(): JSX.Element {
   const ref: RefObject<HTMLButtonElement> = useRef<HTMLButtonElement>(null)

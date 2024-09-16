@@ -1,7 +1,11 @@
 "use client"
 
+import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { type JSX, useEffect, useState } from "react"
-import { FadeInUp } from "./components/animation/fadeInUp"
+
+const safariRegex: RegExp = /\b(iPad|iPhone|iPod)\b/
+const webkitRegex: RegExp = /WebKit/
+const edgeRegex: RegExp = /Edge/
 
 export function Introduction(): JSX.Element {
   const [isWebkit, setIsWebkit] = useState(false)
@@ -9,9 +13,9 @@ export function Introduction(): JSX.Element {
   useEffect(() => {
     const userAgent = navigator.userAgent
     const isWebkit =
-      /\b(iPad|iPhone|iPod)\b/.test(userAgent) &&
-      /WebKit/.test(userAgent) &&
-      !/Edge/.test(userAgent)
+      safariRegex.test(userAgent) &&
+      webkitRegex.test(userAgent) &&
+      !edgeRegex.test(userAgent)
     setIsWebkit(isWebkit)
   })
 

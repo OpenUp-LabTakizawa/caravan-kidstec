@@ -1,8 +1,8 @@
+import { Footer } from "@/app/footer"
+import { Header } from "@/app/header"
+import { ScrollToTop } from "@/app/scrollToTop"
 import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
-import { Footer } from "./footer"
-import { Header } from "./header"
-import { ScrollToTop } from "./scrollToTop"
 import "./globals.css"
 import {
   CLOUDFRONT_URL,

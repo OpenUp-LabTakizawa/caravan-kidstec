@@ -54,12 +54,11 @@ export function ScheduleTablist({
 
   return (
     <section className="max-w-lg mx-auto px-2 space-y-2 text-center w-80 sm:w-96">
-      <div role="tablist" className="flex gap-2 mx-auto">
+      <div className="flex gap-2 mx-auto">
         {schedules.map((schedule) => (
           <button
             key={schedule.alt}
             type="button"
-            role="tab"
             onClick={() => onClickTab(schedule.alt)}
             onMouseEnter={() => onMouseEnter()}
             onMouseLeave={() => onMouseLeave()}
@@ -74,7 +73,6 @@ export function ScheduleTablist({
       {schedules.map((schedule) => (
         <div
           key={schedule.alt}
-          role="tabpanel"
           onClick={() => setIsFlip(!isFlip)}
           onKeyDown={() => setIsFlip(!isFlip)}
           onMouseEnter={() => onMouseEnter()}

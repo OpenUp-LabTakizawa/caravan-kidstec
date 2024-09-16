@@ -34,10 +34,6 @@ export async function POST(request: Request): Promise<Response> {
         await textEventHandler(event)
       } catch (error: unknown) {
         if (error instanceof HTTPFetchError) {
-          console.error(error.status)
-          console.error(error.headers.get("x-line-request-id"))
-          console.error(error.body)
-
           return Response.json({
             status: `error: ${error.status}`,
             message: error.body,
@@ -45,8 +41,6 @@ export async function POST(request: Request): Promise<Response> {
         }
 
         if (error instanceof Error) {
-          console.error(error)
-
           return Response.json({
             status: "error",
             message: error.message,

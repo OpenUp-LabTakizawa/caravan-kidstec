@@ -1,6 +1,6 @@
 "use client"
 
-import { CLOUDFRONT_URL } from "./constant"
+import { CLOUDFRONT_URL } from "@/app/lib/constant"
 
 // Docs: https://aws.amazon.com/developer/application-security-performance/articles/image-optimization
 export function cloudfrontLoader({

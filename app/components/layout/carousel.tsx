@@ -315,12 +315,11 @@ export function IndicatorCarousel(): JSX.Element {
 
   return (
     <>
-      <div role="tablist" className="content-end gap-1 grid grid-cols-2 px-1">
+      <div className="content-end gap-1 grid grid-cols-2 px-1">
         {indicators.map((indicator) => (
           <button
             key={indicator.title}
             type="button"
-            role="tab"
             onClick={() => onClick(indicator)}
             className={`border-b-4 duration-300 py-1 rounded-lg shadow-xl ${indicator.alt === activeTab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
           >

@@ -1,7 +1,7 @@
-import { NAVIGATION } from "@/app/lib/constant"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import { NAVIGATION } from "./lib/constant.ts"
 
 export function Footer(): JSX.Element {
   return (

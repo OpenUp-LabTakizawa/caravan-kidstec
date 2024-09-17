@@ -1,6 +1,5 @@
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
-import { Programs } from "@/app/history/programs"
 import {
   HIROSHIMA,
   HIROSHIMA_HISTORY,
@@ -16,6 +15,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import { Programs } from "../programs.tsx"
 import styles from "./styles.module.css"
 
 export const metadata: Metadata = {

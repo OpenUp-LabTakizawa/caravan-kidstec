@@ -1,12 +1,12 @@
 "use client"
 
-import type { Submenu } from "@/app/interfaces/menu"
-import { NAVIGATION, SITE_TITLE } from "@/app/lib/constant"
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
+import type { Submenu } from "./interfaces/menu.ts"
+import { NAVIGATION, SITE_TITLE } from "./lib/constant.ts"
 
 export function Header(): JSX.Element {
   const [scrollState, setScrollState] = useState<{

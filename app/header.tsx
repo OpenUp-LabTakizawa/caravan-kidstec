@@ -110,13 +110,13 @@ function DropdownMenu({
               {menu.submenus.length === 0 ? (
                 <Link
                   href={menu.pathname}
-                  className="font-bold text-orange-400"
+                  className="font-bold text-nowrap text-orange-400"
                 >
                   {menu.name}
                 </Link>
               ) : (
                 <>
-                  <b className="text-nowrap text-orange-400">{menu.name}</b>
+                  <b className="text-orange-400">{menu.name}</b>
                   <Menu pathname={menu.pathname} submenus={menu.submenus} />
                 </>
               )}

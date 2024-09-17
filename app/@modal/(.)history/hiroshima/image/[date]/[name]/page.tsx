@@ -6,7 +6,7 @@ import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import type { JSX } from "react"
 
-export default function HiroshimaImage({
+export default function Picture({
   params: { date, name },
 }: Readonly<{ params: { date: string; name: string } }>): JSX.Element {
   const eventDate: EventDate = HIROSHIMA_HISTORY.find(

@@ -222,128 +222,128 @@ export const HIROSHIMA_FIRST_PICTURES: TilePicture[] = [
   {
     alt: "プログラミング体験",
     name: "initial_screen",
-    src: "/202206/sandankyo/initial_screen.avif",
+    src: "/image/hiroshima/202206/sandankyo/initial_screen.avif",
   },
   {
     alt: "家族ではんだ付けに挑戦！",
     name: "soldering_by_mother",
-    src: "/202206/sandankyo/soldering_by_mother.avif",
+    src: "/image/hiroshima/202206/sandankyo/soldering_by_mother.avif",
   },
   {
     alt: "採れたての魚をパクリ！",
     name: "eating_char",
-    src: "/202206/sandankyo/eating_char.avif",
+    src: "/image/hiroshima/202206/sandankyo/eating_char.avif",
   },
   {
     alt: "三段峡で記念撮影！",
     name: "group_peace",
-    src: "/202206/sandankyo/group_peace.avif",
+    src: "/image/hiroshima/202206/sandankyo/group_peace.avif",
   },
   {
     alt: "三段峡の神秘的な自然に圧倒！",
     name: "magnificent_natural_landscape",
-    src: "/202206/sandankyo/magnificent_natural_landscape.avif",
+    src: "/image/hiroshima/202206/sandankyo/magnificent_natural_landscape.avif",
   },
   {
     alt: "サップ体験の準備ができましたか？",
     name: "ready_for_sup",
-    src: "/202206/eda_island/ready_for_sup.avif",
+    src: "/image/hiroshima/202206/eda_island/ready_for_sup.avif",
   },
 ] as const
 export const HIROSHIMA_SECOND_PICTURES: TilePicture[] = [
   {
     alt: "正しく取り付け出来るかな？",
     name: "check_parts",
-    src: "/202306/m-plaza/check_parts.avif",
+    src: "/image/hiroshima/202306/m-plaza/check_parts.avif",
   },
   {
     alt: "メガサップに挑戦！",
     name: "rowing_mega_sup",
-    src: "/202306/eda_island/rowing_mega_sup.avif",
+    src: "/image/hiroshima/202306/eda_island/rowing_mega_sup.avif",
   },
   {
     alt: "記念の集合写真をパシャリ！",
     name: "group_mega_sup",
-    src: "/202306/eda_island/group_mega_sup.avif",
+    src: "/image/hiroshima/202306/eda_island/group_mega_sup.avif",
   },
   {
     alt: "初めてのプログラミング体験",
     name: "thinking_girl",
-    src: "/202306/sandankyo/thinking_girl.avif",
+    src: "/image/hiroshima/202306/sandankyo/thinking_girl.avif",
   },
   {
     alt: "みんなと川下り体験",
     name: "going_downstream",
-    src: "/202306/sandankyo/going_downstream.avif",
+    src: "/image/hiroshima/202306/sandankyo/going_downstream.avif",
   },
   {
     alt: "雄大な自然を楽しみながら川下り体験",
     name: "rowing_boat",
-    src: "/202306/sandankyo/rowing_boat.avif",
+    src: "/image/hiroshima/202306/sandankyo/rowing_boat.avif",
   },
 ] as const
 export const HIROSHIMA_THIRD_PICTURES: TilePicture[] = [
   {
     alt: "はんだ付けに興味津々！",
     name: "teaching_soldering",
-    src: "/202311/eda_island/teaching_soldering.avif",
+    src: "/image/hiroshima/202311/eda_island/teaching_soldering.avif",
   },
   {
     alt: "三段峡の自然と触れ合う",
     name: "laminate_leaf",
-    src: "/202311/sandankyo/laminate_leaf.avif",
+    src: "/image/hiroshima/202311/sandankyo/laminate_leaf.avif",
   },
   {
     alt: "ぺったんぺったん、餅つき体験！",
     name: "mochi_pounding",
-    src: "/202311/sandankyo/mochi_pounding.avif",
+    src: "/image/hiroshima/202311/sandankyo/mochi_pounding.avif",
   },
   {
     alt: "ロボサバ大会に挑戦中…",
     name: "thinking_boy",
-    src: "/202311/wedding/thinking_boy.avif",
+    src: "/image/hiroshima/202311/wedding/thinking_boy.avif",
   },
   {
     alt: "結婚式場でフラワーアレンジメント体験！",
     name: "wraping_flower",
-    src: "/202311/wedding/wraping_flower.avif",
+    src: "/image/hiroshima/202311/wedding/wraping_flower.avif",
   },
   {
     alt: "最後に集合写真をパシャリ！",
     name: "group",
-    src: "/202311/wedding/group.avif",
+    src: "/image/hiroshima/202311/wedding/group.avif",
   },
 ] as const
 export const HIROSHIMA_FOURTH_PICTURES: TilePicture[] = [
   {
     alt: "はんだ付けに興味津々！",
     name: "teaching_soldering_to_girl",
-    src: "/202407/hiroshima_university/teaching_soldering_to_girl.avif",
+    src: "/image/hiroshima/202407/hiroshima_university/teaching_soldering_to_girl.avif",
   },
   {
     alt: "三段峡の自然と触れ合う",
     name: "looking_for_paper",
-    src: "/202407/hiroshima_university/looking_for_paper.avif",
+    src: "/image/hiroshima/202407/hiroshima_university/looking_for_paper.avif",
   },
   {
     alt: "ぺったんぺったん、餅つき体験！",
     name: "pointing_out_map",
-    src: "/202407/hiroshima_university/pointing_out_map.avif",
+    src: "/image/hiroshima/202407/hiroshima_university/pointing_out_map.avif",
   },
   {
     alt: "ロボサバ大会に挑戦中…",
     name: "judging",
-    src: "/202407/wedding/judging.avif",
+    src: "/image/hiroshima/202407/wedding/judging.avif",
   },
   {
     alt: "結婚式場でフラワーアレンジメント体験！",
     name: "make_cream",
-    src: "/202407/wedding/make_cream.avif",
+    src: "/image/hiroshima/202407/wedding/make_cream.avif",
   },
   {
     alt: "最後に集合写真をパシャリ！",
     name: "group_with_sofa",
-    src: "/202407/wedding/group_with_sofa.avif",
+    src: "/image/hiroshima/202407/wedding/group_with_sofa.avif",
   },
 ] as const
 

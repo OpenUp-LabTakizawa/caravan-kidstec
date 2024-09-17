@@ -15,31 +15,31 @@ export function TopCarousel(): JSX.Element {
   const topPictures: Picture[] = [
     {
       alt: "自然学習",
-      src: "/202407/hiroshima_university/capture_insect.avif",
+      src: "/image/hiroshima/202407/hiroshima_university/capture_insect.avif",
     },
     {
       alt: "ロボサバ大会",
-      src: "/202407/wedding/enjoy_robot_with_family.avif",
+      src: "/image/hiroshima/202407/wedding/enjoy_robot_with_family.avif",
     },
     {
       alt: "結婚式体験",
-      src: "/202407/wedding/bubbles_entrance_square.avif",
+      src: "/image/hiroshima/202407/wedding/bubbles_entrance_square.avif",
     },
     {
       alt: "ブーケ作成",
-      src: "/202311/wedding/select_flowers.avif",
+      src: "/image/hiroshima/202311/wedding/select_flowers.avif",
     },
     {
       alt: "プログラミング",
-      src: "/202407/wedding/typing_with_mother.avif",
+      src: "/image/hiroshima/202407/wedding/typing_with_mother.avif",
     },
     {
       alt: "サップ体験",
-      src: "/202206/eda_island/sea_circle.avif",
+      src: "/image/hiroshima/202206/eda_island/sea_circle.avif",
     },
     {
       alt: "オリーブ体験",
-      src: "/202311/eda_island/olive_smile.avif",
+      src: "/image/hiroshima/202311/eda_island/olive_smile.avif",
     },
   ] as const
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
@@ -151,53 +151,53 @@ export function IndicatorCarousel(): JSX.Element {
   const programmingPictures: Picture[] = [
     {
       alt: "はんだ確認中…",
-      src: "/202311/eda_island/check_solder.avif",
+      src: "/image/hiroshima/202311/eda_island/check_solder.avif",
     },
     {
       alt: "はじめてのはんだづけにどきどき",
-      src: "/202407/hiroshima_university/soldering.avif",
+      src: "/image/hiroshima/202407/hiroshima_university/soldering.avif",
     },
     {
       alt: "最終日のロボサバ大会！優勝目指そう！",
-      src: "/202407/wedding/watch_robot_move.avif",
+      src: "/image/hiroshima/202407/wedding/watch_robot_move.avif",
     },
     {
       alt: "ロボットが上手く動くコツを伝授！",
-      src: "/202407/wedding/teaching.avif",
+      src: "/image/hiroshima/202407/wedding/teaching.avif",
     },
     {
       alt: "ロボサバ大会に挑戦！上手に動くかな？",
-      src: "/202407/wedding/put_robot_on_course.avif",
+      src: "/image/hiroshima/202407/wedding/put_robot_on_course.avif",
     },
     {
       alt: "ロボット作りに挑戦！",
-      src: "/202311/eda_island/using_nipper.avif",
+      src: "/image/hiroshima/202311/eda_island/using_nipper.avif",
     },
   ] as const
   const eventPictures: Picture[] = [
     {
       alt: "採れたてのお魚に興味津々！",
-      src: "/202407/eda_island/holding_fish.avif",
+      src: "/image/hiroshima/202407/eda_island/holding_fish.avif",
     },
     {
       alt: "広島大学のチェックポイント確認中…",
-      src: "/202407/hiroshima_university/checking_course.avif",
+      src: "/image/hiroshima/202407/hiroshima_university/checking_course.avif",
     },
     {
       alt: "広島大学で昆虫採集！",
-      src: "/202407/hiroshima_university/insect_netting_boy.avif",
+      src: "/image/hiroshima/202407/hiroshima_university/insect_netting_boy.avif",
     },
     {
       alt: "手作りのオリーブオイル、最初はまだ赤い！",
-      src: "/202311/eda_island/olive_pouring.avif",
+      src: "/image/hiroshima/202311/eda_island/olive_pouring.avif",
     },
     {
       alt: "ブーケを持って入場！",
-      src: "/202311/wedding/wedding_bouquet.avif",
+      src: "/image/hiroshima/202311/wedding/wedding_bouquet.avif",
     },
     {
       alt: "ケーキ作りも自分で挑戦！",
-      src: "/202407/wedding/pastry_chef_boy.avif",
+      src: "/image/hiroshima/202407/wedding/pastry_chef_boy.avif",
     },
   ] as const
   const pictures: Picture[] = [...programmingPictures, ...eventPictures]

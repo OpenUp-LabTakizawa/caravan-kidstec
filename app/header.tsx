@@ -5,7 +5,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
-import type { Submenu } from "./interfaces/menu.ts"
 import { NAVIGATION, SITE_TITLE } from "./lib/constant.ts"
 
 export function Header(): JSX.Element {
@@ -107,19 +106,12 @@ function DropdownMenu({
         <ul className="bg-white dropdown-content menu menu-sm rounded-2xl shadow">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
-              {menu.submenus.length === 0 ? (
-                <Link
-                  href={menu.pathname}
-                  className="font-bold text-orange-400"
-                >
-                  {menu.name}
-                </Link>
-              ) : (
-                <>
-                  <b className="text-nowrap text-orange-400">{menu.name}</b>
-                  <Menu pathname={menu.pathname} submenus={menu.submenus} />
-                </>
-              )}
+              <Link
+                href={menu.pathname}
+                className="font-bold text-nowrap text-orange-400"
+              >
+                {menu.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -170,41 +162,8 @@ function Navigation({
     >
       {NAVIGATION.map((menu) => (
         <li key={menu.name}>
-          {menu.submenus.length === 0 ? (
-            <Link href={menu.pathname} className="font-bold text-orange-400">
-              {menu.name}
-            </Link>
-          ) : (
-            <details
-              ref={(node: HTMLDetailsElement) => {
-                ref.current?.set(menu.name, node)
-                return () => {
-                  ref.current?.delete(menu.name)
-                }
-              }}
-            >
-              <summary className="font-bold text-orange-400">
-                {menu.name}
-              </summary>
-              <Menu pathname={menu.pathname} submenus={menu.submenus} />
-            </details>
-          )}
-        </li>
-      ))}
-    </ul>
-  )
-}
-
-function Menu({
-  pathname,
-  submenus,
-}: { pathname: string; submenus: Submenu[] }): JSX.Element {
-  return (
-    <ul>
-      {submenus.map((submenu) => (
-        <li key={submenu.name}>
-          <Link href={pathname + submenu.pathname} className="text-nowrap">
-            {submenu.name}
+          <Link href={menu.pathname} className="font-bold text-orange-400">
+            {menu.name}
           </Link>
         </li>
       ))}

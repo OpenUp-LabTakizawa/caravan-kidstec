@@ -13,30 +13,12 @@ export function Footer(): JSX.Element {
               key={menu.name}
               className="flex flex-col flex-wrap items-stretch relative"
             >
-              {menu.submenus.length === 0 ? (
-                <Link
-                  href={menu.pathname}
-                  className="font-bold link-hover justify-center text-orange-400"
-                >
-                  {menu.name}
-                </Link>
-              ) : (
-                <>
-                  <b className="justify-center text-orange-400">{menu.name}</b>
-                  <ul className="ms-4 ps-2 relative whitespace-nowrap">
-                    {menu.submenus.map((submenu) => (
-                      <li key={submenu.name}>
-                        <Link
-                          href={menu.pathname + submenu.pathname}
-                          className="link-hover text-nowrap"
-                        >
-                          {submenu.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
+              <Link
+                href={menu.pathname}
+                className="font-bold link-hover justify-center text-orange-400"
+              >
+                {menu.name}
+              </Link>
             </li>
           ))}
         </ul>

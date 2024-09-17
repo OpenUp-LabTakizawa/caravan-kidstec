@@ -2,7 +2,6 @@ export type Menu = {
   readonly name: string
   readonly pathname: string
   readonly textColor: string
-  readonly submenus: Submenu[]
 }
 
 export type MenuPanel = {

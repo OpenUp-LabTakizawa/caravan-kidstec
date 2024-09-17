@@ -25,10 +25,6 @@ img {
   animation-range: contain 0% contain 50%;
 }
 
-.scale-up-down {
-  animation: scale-up-down 1s;
-}
-
 .stretch {
   animation: stretch 1s ease-out forwards;
 }
@@ -77,17 +73,6 @@ img {
   100% {
     opacity: 1;
     transform: translatey(0);
-  }
-}
-
-@keyframes scale-up-down {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  30%,
-  70% {
-    transform: scale(1.1);
   }
 }
 

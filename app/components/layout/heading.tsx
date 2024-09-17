@@ -39,9 +39,17 @@ function Breadcrumb({
             ホーム
           </Link>
         </li>
-        <li className={menu.textColor}>{menu.name}</li>
-        {submenus?.map((submenu) =>
-          PARTNER.submenus.includes(submenu) ? (
+        <li className={menu.textColor}>
+          {menu === PARTNER && submenus ? (
+            <Link href={menu.pathname} className="link">
+              {menu.name}
+            </Link>
+          ) : (
+            menu.name
+          )}
+        </li>
+        {submenus?.map((submenu, index) =>
+          submenus.length === 2 && index === 0 ? (
             <li key={submenu.name}>
               <Link href={menu.pathname + submenu.pathname} className="link">
                 {submenu.name}

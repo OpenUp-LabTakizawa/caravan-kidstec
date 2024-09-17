@@ -45,7 +45,7 @@ export default function Hiroshima(): JSX.Element {
                   href={`${HISTORY.pathname + HIROSHIMA.pathname}/image/${history.date}/${picture.name}`}
                   className="relative"
                 >
-                  <MagnifyingGlassPlusIcon className="absolute bg-black/60 right-0 size-4 text-white top-0" />
+                  <MagnifyingGlassPlusIcon className="absolute right-0 size-4 stroke-2 text-white top-0" />
                   <Image
                     loader={cloudfrontLoader}
                     src={picture.src}

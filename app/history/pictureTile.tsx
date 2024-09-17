@@ -1,7 +1,7 @@
 "use client"
 
 import type { TilePicture } from "@/app/interfaces/picture"
-import { HIROSHIMA, HISTORY } from "@/app/lib/constant"
+import { HISTORY } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
@@ -9,9 +9,14 @@ import Link from "next/link"
 import { type JSX, type RefObject, useEffect, useRef } from "react"
 
 export function PictureTile({
+  pathname,
   date,
   pictures,
-}: Readonly<{ date: string; pictures: TilePicture[] }>): JSX.Element {
+}: Readonly<{
+  pathname: string
+  date: string
+  pictures: TilePicture[]
+}>): JSX.Element {
   const ref: RefObject<Map<string, HTMLAnchorElement>> = useRef<
     Map<string, HTMLAnchorElement>
   >(new Map<string, HTMLAnchorElement>())
@@ -40,7 +45,7 @@ export function PictureTile({
       {pictures.map((picture) => (
         <Link
           key={picture.alt}
-          href={`${HISTORY.pathname + HIROSHIMA.pathname}/image/${date}/${picture.name}`}
+          href={`${HISTORY.pathname}/image${pathname}/${date}/${picture.name}`}
           ref={(node: HTMLAnchorElement) => {
             ref.current?.set(picture.alt, node)
             return () => {

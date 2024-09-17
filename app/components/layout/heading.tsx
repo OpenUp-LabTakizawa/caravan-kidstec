@@ -1,5 +1,4 @@
 import type { Menu, Submenu } from "@/app/interfaces/menu"
-import { PARTNER } from "@/app/lib/constant"
 import { HomeIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -40,7 +39,7 @@ function Breadcrumb({
           </Link>
         </li>
         <li className={menu.textColor}>
-          {menu === PARTNER && submenus ? (
+          {submenus ? (
             <Link href={menu.pathname} className="link">
               {menu.name}
             </Link>
@@ -48,19 +47,11 @@ function Breadcrumb({
             menu.name
           )}
         </li>
-        {submenus?.map((submenu, index) =>
-          submenus.length === 2 && index === 0 ? (
-            <li key={submenu.name}>
-              <Link href={menu.pathname + submenu.pathname} className="link">
-                {submenu.name}
-              </Link>
-            </li>
-          ) : (
-            <li key={submenu.name} className={submenu.textColor}>
-              {submenu.name}
-            </li>
-          ),
-        )}
+        {submenus?.map((submenu) => (
+          <li key={submenu.name} className={submenu.textColor}>
+            {submenu.name}
+          </li>
+        ))}
       </ul>
     </div>
   )

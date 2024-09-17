@@ -1,6 +1,6 @@
 import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
-import type { Menu, Submenu } from "@/app/interfaces/menu"
+import type { Menu } from "@/app/interfaces/menu"
 import type { QandA } from "@/app/interfaces/qAndA"
 import { Q_AND_A } from "@/app/lib/constant"
 import Image from "next/image"
@@ -10,16 +10,14 @@ export function QA({
   qAndAs,
   lineLink,
   menu,
-  submenu,
 }: Readonly<{
   qAndAs: QandA[]
   lineLink: string
   menu: Menu
-  submenu: Submenu
 }>): JSX.Element {
   return (
     <>
-      <Heading menu={menu} submenus={[submenu, Q_AND_A]} />
+      <Heading menu={menu} submenus={[Q_AND_A]} />
       <section className="space-y-2">
         {qAndAs.map((qAndA, index) => (
           <details

@@ -1,10 +1,10 @@
 import { LineApply } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
-import { EventPanels } from "@/app/components/layout/menuPanel"
-import { ScheduleTablist } from "@/app/components/layout/tablist"
 import { Register } from "@/app/event/register"
 import { Schedules } from "@/app/event/schedules"
+import { Tablist } from "@/app/event/tablist"
 import type { Guideline } from "@/app/interfaces/guideline"
+import type { Menu, MenuPanel, Submenu } from "@/app/interfaces/menu"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
   EVENT,
@@ -12,11 +12,15 @@ import {
   KANTO_DEADLINE,
   KANTO_LINE,
   KANTO_START_DATE,
+  PRIVACY_POLICY,
+  Q_AND_A,
 } from "@/app/lib/constant"
+import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import styles from "./styles.module.css"
 
 export const metadata: Metadata = {
   title: `${KANTO.name}イベントの応募・スケジュール`,
@@ -134,10 +138,64 @@ export default function Kanto(): JSX.Element {
         </p>
         <LineApply lineLink={KANTO_LINE} />
       </section>
-      <ScheduleTablist schedules={schedules} />
+      <Tablist schedules={schedules} />
       <Register guideline={guideline} />
       <LineApply lineLink={KANTO_LINE} classname="text-center" />
-      <EventPanels menu={EVENT} submenu={KANTO} />
+      <MenuPanels menu={EVENT} submenu={KANTO} />
     </>
+  )
+}
+
+function MenuPanels({
+  menu,
+  submenu,
+}: Readonly<{ menu: Menu; submenu: Submenu }>): JSX.Element {
+  const qaPanels: MenuPanel = {
+    name: Q_AND_A.name,
+    color: {
+      bg: "bg-sky-400",
+      shadow: styles.boxSkyShadow,
+      text: "text-sky-400",
+      textHover: "group-hover:text-sky-400",
+    },
+    href: menu.pathname + submenu.pathname + Q_AND_A.pathname,
+    text: "よくある質問",
+  }
+  const privacyPolicyPanel: MenuPanel = {
+    name: PRIVACY_POLICY.name,
+    color: {
+      bg: "bg-orange-400",
+      shadow: styles.boxOrangeShadow,
+      text: "text-orange-400",
+      textHover: "group-hover:text-orange-400",
+    },
+    href: menu.pathname + submenu.pathname + PRIVACY_POLICY.pathname,
+    text: "プライバシーポリシー",
+  }
+
+  const panels: MenuPanel[] = [qaPanels, privacyPolicyPanel]
+
+  return (
+    <section className="flex gap-4 justify-center pl-2 pr-4 text-center">
+      {panels.map((panel) => (
+        <Link
+          key={panel.name}
+          href={panel.href}
+          className={`basis-1/2 border-2 group max-w-52 rounded-lg shadow-lg hover:text-white ${panel.color.shadow}`}
+        >
+          <b
+            className={`mx-auto w-fit group-hover:text-white ${panel.color.text}`}
+          >
+            {panel.name}
+          </b>
+          <div className="flex">
+            <span className="grow">{panel.text}</span>
+            <ArrowRightIcon
+              className={`ml-auto rounded-full size-4 text-white group-hover:bg-white ${styles.arrowBackRight} ${panel.color.bg} ${panel.color.textHover}`}
+            />
+          </div>
+        </Link>
+      ))}
+    </section>
   )
 }

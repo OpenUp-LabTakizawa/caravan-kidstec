@@ -8,7 +8,7 @@ import Link from "next/link"
 import { type JSX, useEffect, useState } from "react"
 import styles from "./tablist.module.css"
 
-export function ScheduleTablist({
+export function Tablist({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   const [isBusy, setIsBusy] = useState<boolean>(false)

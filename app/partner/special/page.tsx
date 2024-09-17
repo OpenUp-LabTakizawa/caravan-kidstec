@@ -1,8 +1,8 @@
 import { Heading } from "@/app/components/layout/heading"
 import { PARTNER, SPECIAL, SPECIAL_PARTNERS } from "@/app/lib/constant"
-import { Partners } from "@/app/partner/partners"
 import type { Metadata } from "next"
 import type { JSX } from "react"
+import { Partners } from "../partners.tsx"
 
 export const metadata: Metadata = {
   title: SPECIAL.name + PARTNER.name,

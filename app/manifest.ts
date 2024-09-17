@@ -1,5 +1,5 @@
-import { DESCRIPTION, SITE_TITLE } from "@/app/lib/constant"
 import type { MetadataRoute } from "next"
+import { DESCRIPTION, SITE_TITLE } from "./lib/constant.ts"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {

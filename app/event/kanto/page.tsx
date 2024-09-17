@@ -1,8 +1,5 @@
 import { LineApply } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
-import { Register } from "@/app/event/register"
-import { Schedules } from "@/app/event/schedules"
-import { Tablist } from "@/app/event/tablist"
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Menu, MenuPanel, Submenu } from "@/app/interfaces/menu"
 import type { Schedule } from "@/app/interfaces/schedule"
@@ -20,6 +17,9 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import { Register } from "../register.tsx"
+import { Schedules } from "../schedules.tsx"
+import { Tablist } from "../tablist.tsx"
 import styles from "./styles.module.css"
 
 export const metadata: Metadata = {

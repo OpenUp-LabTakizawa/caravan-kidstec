@@ -1,7 +1,7 @@
 "use client"
 
-import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { type JSX, useEffect, useState } from "react"
+import { FadeInUp } from "./components/animation/fadeInUp.tsx"
 
 const safariRegex: RegExp = /\b(iPad|iPhone|iPod)\b/
 const webkitRegex: RegExp = /WebKit/

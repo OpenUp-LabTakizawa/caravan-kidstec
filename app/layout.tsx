@@ -1,16 +1,16 @@
-import { Footer } from "@/app/footer"
-import { Header } from "@/app/header"
-import { ScrollToTop } from "@/app/scrollToTop"
 import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
+import { Footer } from "./footer.tsx"
+import { Header } from "./header.tsx"
+import { ScrollToTop } from "./scrollToTop.tsx"
 import "./globals.css"
+import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from "next/font/google"
 import {
   CLOUDFRONT_URL,
   DESCRIPTION,
   SITE_TITLE,
   SITE_URL,
-} from "@/app/lib/constant"
-import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from "next/font/google"
+} from "./lib/constant.ts"
 
 const zenMaruGothic = Zen_Maru_Gothic({
   weight: ["400", "700"],

@@ -1,4 +1,4 @@
-import type { Submenu } from "@/app/interfaces/menu"
+import type { Submenu } from "./menu.ts"
 
 export type Partner = {
   readonly name: string

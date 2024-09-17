@@ -1,4 +1,4 @@
-import type { TilePicture } from "@/app/interfaces/picture"
+import type { TilePicture } from "./picture.ts"
 
 export type Schedule = {
   readonly alt: string

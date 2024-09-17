@@ -3,6 +3,7 @@
 import type { TilePicture } from "@/app/interfaces/picture"
 import { HIROSHIMA, HISTORY } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
+import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import { type JSX, type RefObject, useEffect, useRef } from "react"
@@ -48,7 +49,9 @@ export function HistoryTile({
               ref.current?.delete(picture.alt)
             }
           }}
+          className="relative"
         >
+          <MagnifyingGlassPlusIcon className="absolute bg-black/60 right-0 size-4 text-white top-0" />
           <Image
             loader={cloudfrontLoader}
             src={picture.src}

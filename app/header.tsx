@@ -116,7 +116,7 @@ function DropdownMenu({
                 </Link>
               ) : (
                 <>
-                  <b className="text-orange-400">{menu.name}</b>
+                  <b className="text-nowrap text-orange-400">{menu.name}</b>
                   <Menu pathname={menu.pathname} submenus={menu.submenus} />
                 </>
               )}

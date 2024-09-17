@@ -45,7 +45,7 @@ export const EVENT: Menu = {
   submenus: [KANTO],
 }
 export const HISTORY: Menu = {
-  name: "過去の実績",
+  name: "活動実績",
   pathname: "/history",
   textColor: "text-yellow-400",
   submenus: [HIROSHIMA],

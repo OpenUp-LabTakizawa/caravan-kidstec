@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: `${HIROSHIMA.name}での活動・実績`,
 }
 
-export default function HiroshimaMovie({
+export default function Movie({
   params: { date },
 }: Readonly<{ params: { date: string } }>): JSX.Element {
   const eventDate: EventDate = HIROSHIMA_HISTORY.find(
@@ -26,7 +26,7 @@ export default function HiroshimaMovie({
   return (
     <>
       <Heading menu={HISTORY} submenus={[HIROSHIMA, submenu]} />
-      <Video date={eventDate.date} />
+      <Video pathname={HIROSHIMA.pathname} date={eventDate.date} />
       <BackButton
         href={HISTORY.pathname + HIROSHIMA.pathname}
         name={HISTORY.name}

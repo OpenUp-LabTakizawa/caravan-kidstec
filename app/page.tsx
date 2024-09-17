@@ -9,7 +9,7 @@ import {
 } from "./components/layout/carousel.tsx"
 import { Video } from "./components/media/video.tsx"
 import { Introduction } from "./introduction.tsx"
-import { EVENT, KANTO, SECRETARIAT } from "./lib/constant.ts"
+import { EVENT, HIROSHIMA, KANTO, SECRETARIAT } from "./lib/constant.ts"
 
 export default function Home(): JSX.Element {
   return (
@@ -58,7 +58,7 @@ export default function Home(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <Video date="202407" />
+      <Video pathname={HIROSHIMA.pathname} date="202407" />
       <section className="relative space-y-4">
         <Image
           src="/handshake.avif"

@@ -1,6 +1,5 @@
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
-import { HistoryTile } from "@/app/components/layout/pictureTile"
 import { Programs } from "@/app/history/programs"
 import {
   HIROSHIMA,
@@ -8,8 +7,13 @@ import {
   HIROSHIMA_LINE,
   HISTORY,
 } from "@/app/lib/constant"
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
+import { cloudfrontLoader } from "@/app/lib/loader"
+import {
+  ArrowTopRightOnSquareIcon,
+  MagnifyingGlassPlusIcon,
+} from "@heroicons/react/24/outline"
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 import styles from "./styles.module.css"
@@ -34,7 +38,25 @@ export default function Hiroshima(): JSX.Element {
               <span className="ml-12">{history.title}</span>
             </summary>
             <Programs programs={history.programs} />
-            <HistoryTile date={history.date} pictures={history.pictures} />
+            <div className="gap-1 grid grid-cols-3">
+              {history.pictures.map((picture) => (
+                <Link
+                  key={picture.alt}
+                  href={`${HISTORY.pathname + HIROSHIMA.pathname}/image/${history.date}/${picture.name}`}
+                  className="relative"
+                >
+                  <MagnifyingGlassPlusIcon className="absolute bg-black/60 right-0 size-4 text-white top-0" />
+                  <Image
+                    loader={cloudfrontLoader}
+                    src={picture.src}
+                    width={256}
+                    height={256}
+                    alt={picture.alt}
+                    className="w-full"
+                  />
+                </Link>
+              ))}
+            </div>
             <Link
               href={`${HISTORY.pathname}${HIROSHIMA.pathname}/movie/${history.date}`}
               className={`bg-sky-400 btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-max ${styles.blueShine}`}

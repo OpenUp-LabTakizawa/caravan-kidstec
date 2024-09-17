@@ -12,6 +12,33 @@ export const KANTO_LINE: string = "https://lin.ee/RHBWD7P"
 export const CLOUDFRONT_URL: string = "https://dk75m1tgsot44.cloudfront.net"
 export const KANTO_START_DATE: string = "２０２４年９月９日 １２時"
 export const KANTO_DEADLINE: string = "２０２４年１０月１０日 １２時"
+
+export const KANTO_EVENT: Menu = {
+  name: "応募・申込",
+  pathname: "/kanto_event",
+  textColor: "text-orange-400",
+}
+export const HISTORY: Menu = {
+  name: "活動実績",
+  pathname: "/history",
+  textColor: "text-yellow-400",
+}
+export const SPONSER: Menu = {
+  name: "スポンサー",
+  pathname: "/sponser",
+  textColor: "text-teal-400",
+}
+export const PARTNER: Menu = {
+  name: "パートナー",
+  pathname: "/partner",
+  textColor: "text-rose-400",
+}
+export const SECRETARIAT: Menu = {
+  name: "事務局",
+  pathname: "/secretariat",
+  textColor: "text-teal-400",
+}
+
 export const SPECIAL: Submenu = {
   name: "スペシャル",
   pathname: "/special",
@@ -38,39 +65,8 @@ export const PRIVACY_POLICY: Submenu = {
   textColor: "text-orange-400",
 }
 
-export const EVENT: Menu = {
-  name: "開催予定",
-  pathname: "/event",
-  textColor: "text-orange-400",
-  submenus: [KANTO],
-}
-export const HISTORY: Menu = {
-  name: "過去の実績",
-  pathname: "/history",
-  textColor: "text-yellow-400",
-  submenus: [HIROSHIMA],
-}
-export const SPONSER: Menu = {
-  name: "スポンサー",
-  pathname: "/sponser",
-  textColor: "text-teal-400",
-  submenus: [],
-}
-export const PARTNER: Menu = {
-  name: "パートナー",
-  pathname: "/partner",
-  textColor: "text-rose-400",
-  submenus: [],
-}
-export const SECRETARIAT: Menu = {
-  name: "事務局",
-  pathname: "/secretariat",
-  textColor: "text-teal-400",
-  submenus: [],
-}
-
 export const NAVIGATION: Menu[] = [
-  EVENT,
+  KANTO_EVENT,
   HISTORY,
   SPONSER,
   PARTNER,
@@ -148,6 +144,63 @@ export const HIROSHIMA_PARTNERS: Partner[] = [
       "数多くの自然がある広島大学のキャンパスは、\n自然を学ぶ絶好のフィールドです。\n\n“さんけん”は調査や保全、\n環境教育を実施する団体です。\n\n皆さんと一緒に広島大学の\n自然の豊かさについて学びます。",
   },
 ] as const
+
+const KANTO_FIRST_PROGRAMS: Program[] = [
+  {
+    date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
+    venue: "クルックフィールズ",
+  },
+  {
+    date: { year: "2024", month: "11", day: "9", dayOfWeek: "土" },
+    venue: "東京虎ノ門グローバルスクエア",
+  },
+  {
+    date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
+    venue: "アクアテラス迎賓館 新横浜",
+  },
+] as const
+
+export const KANTO_FIRST_PICTURES: TilePicture[] = [
+  {
+    alt: "プログラミング体験",
+    name: "initial_screen",
+    src: "/202206/sandankyo/initial_screen.avif",
+  },
+  {
+    alt: "家族ではんだ付けに挑戦！",
+    name: "soldering_by_mother",
+    src: "/202206/sandankyo/soldering_by_mother.avif",
+  },
+  {
+    alt: "採れたての魚をパクリ！",
+    name: "eating_char",
+    src: "/202206/sandankyo/eating_char.avif",
+  },
+  {
+    alt: "三段峡で記念撮影！",
+    name: "group_peace",
+    src: "/202206/sandankyo/group_peace.avif",
+  },
+  {
+    alt: "三段峡の神秘的な自然に圧倒！",
+    name: "magnificent_natural_landscape",
+    src: "/202206/sandankyo/magnificent_natural_landscape.avif",
+  },
+  {
+    alt: "サップ体験の準備ができましたか？",
+    name: "ready_for_sup",
+    src: "/202206/eda_island/ready_for_sup.avif",
+  },
+] as const
+
+export const KANTO_HISTORY: EventDate[] = [
+  {
+    date: "202410",
+    title: "第１回 2024年10月",
+    programs: KANTO_FIRST_PROGRAMS,
+    pictures: KANTO_FIRST_PICTURES,
+  },
+]
 
 const HIROSHIMA_FIRST_PROGRAMS: Program[] = [
   {

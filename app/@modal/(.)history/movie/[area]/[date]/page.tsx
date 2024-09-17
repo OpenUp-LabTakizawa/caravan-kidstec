@@ -1,13 +1,15 @@
-import { Modal } from "@/app/@modal/(.)history/hiroshima/modal"
+import { Modal } from "@/app/@modal/(.)history/modal"
 import { Video } from "@/app/components/media/video"
 import type { EventDate } from "@/app/interfaces/schedule"
-import { HIROSHIMA_HISTORY } from "@/app/lib/constant"
+import { HIROSHIMA_HISTORY, KANTO_HISTORY } from "@/app/lib/constant"
 import type { JSX } from "react"
 
 export default function HiroshimaMovie({
-  params: { date },
-}: Readonly<{ params: { date: string } }>): JSX.Element {
-  const eventDate: EventDate = HIROSHIMA_HISTORY.find(
+  params: { area, date },
+}: Readonly<{ params: { area: string; date: string } }>): JSX.Element {
+  const history: EventDate[] =
+    area === "kanto" ? KANTO_HISTORY : HIROSHIMA_HISTORY
+  const eventDate: EventDate = history.find(
     (history) => history.date === date,
   ) as EventDate
 

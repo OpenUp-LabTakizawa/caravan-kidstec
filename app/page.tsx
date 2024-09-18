@@ -9,14 +9,14 @@ import {
 } from "./components/layout/carousel.tsx"
 import { Video } from "./components/media/video.tsx"
 import { Introduction } from "./introduction.tsx"
-import { EVENT, HIROSHIMA, KANTO, SECRETARIAT } from "./lib/constant.ts"
+import { HIROSHIMA, KANTO_EVENT, SECRETARIAT } from "./lib/constant.ts"
 
 export default function Home(): JSX.Element {
   return (
     <article className="pb-4 space-y-6 text-base text-center">
       {/* block className is necessary for Safari behavior */}
       <Link
-        href={EVENT.pathname + KANTO.pathname}
+        href={KANTO_EVENT.pathname}
         className="block sticky top-0 w-full z-20 sm:inline sm:static"
       >
         <Image

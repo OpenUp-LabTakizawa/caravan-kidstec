@@ -10,18 +10,21 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import type { Metadata } from "next"
 import Link from "next/link"
 import type { JSX } from "react"
-import { PictureTile } from "../pictureTile.tsx"
-import { Programs } from "../programs.tsx"
+import { PictureTile } from "./pictureTile.tsx"
+import { Programs } from "./programs.tsx"
 import styles from "./styles.module.css"
 
 export const metadata: Metadata = {
-  title: `${HIROSHIMA.name}での活動・実績`,
+  title: "活動実績",
 }
 
-export default function Hiroshima(): JSX.Element {
+export default function History(): JSX.Element {
   return (
     <>
-      <Heading menu={HISTORY} submenus={[HIROSHIMA]} />
+      <Heading menu={HISTORY} />
+      <h2 className="font-bold font-zenMaruGothic text-3xl">
+        {HIROSHIMA.name}
+      </h2>
       {HIROSHIMA_HISTORY.map((history) => (
         <section key={history.date} className="space-y-4">
           <details className="collapse collapse-arrow">
@@ -34,9 +37,13 @@ export default function Hiroshima(): JSX.Element {
               <span className="ml-12">{history.title}</span>
             </summary>
             <Programs programs={history.programs} />
-            <PictureTile date={history.date} pictures={history.pictures} />
+            <PictureTile
+              pathname={HIROSHIMA.pathname}
+              date={history.date}
+              pictures={history.pictures}
+            />
             <Link
-              href={`${HISTORY.pathname}${HIROSHIMA.pathname}/movie/${history.date}`}
+              href={`${HISTORY.pathname}/movie${HIROSHIMA.pathname}/${history.date}`}
               className={`bg-sky-400 btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-max ${styles.blueShine}`}
             >
               イベントの様子はこちら！

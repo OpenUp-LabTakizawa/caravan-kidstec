@@ -16,7 +16,7 @@ img {
 }
 
 .fade-in-up {
-  animation: fade-in-up 2s ease-in-out forwards;
+  animation: fade-in-up 1.5s ease-in-out forwards;
 }
 
 .fade-in-up-timeline {

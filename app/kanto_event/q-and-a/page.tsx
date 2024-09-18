@@ -1,8 +1,8 @@
-import { QA } from "@/app/event/qAndA"
 import type { QandA } from "@/app/interfaces/qAndA"
-import { EVENT, KANTO, KANTO_LINE, Q_AND_A } from "@/app/lib/constant"
+import { KANTO, KANTO_EVENT, KANTO_LINE, Q_AND_A } from "@/app/lib/constant"
 import type { Metadata } from "next"
 import type { JSX } from "react"
+import { QA } from "../qAndA.tsx"
 
 export const metadata: Metadata = {
   title: `${Q_AND_A.name} - ${KANTO.name}イベント`,
@@ -71,7 +71,5 @@ export default function QandAs(): JSX.Element {
     },
   ] as const
 
-  return (
-    <QA qAndAs={qAndAs} lineLink={KANTO_LINE} menu={EVENT} submenu={KANTO} />
-  )
+  return <QA qAndAs={qAndAs} lineLink={KANTO_LINE} menu={KANTO_EVENT} />
 }

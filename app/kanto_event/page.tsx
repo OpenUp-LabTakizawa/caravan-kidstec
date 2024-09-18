@@ -1,12 +1,12 @@
 import { LineApply } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
 import type { Guideline } from "@/app/interfaces/guideline"
-import type { Menu, MenuPanel, Submenu } from "@/app/interfaces/menu"
+import type { Menu, MenuPanel } from "@/app/interfaces/menu"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
-  EVENT,
   KANTO,
   KANTO_DEADLINE,
+  KANTO_EVENT,
   KANTO_LINE,
   KANTO_START_DATE,
   PRIVACY_POLICY,
@@ -17,16 +17,16 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
-import { Register } from "../register.tsx"
-import { Schedules } from "../schedules.tsx"
-import { Tablist } from "../tablist.tsx"
+import { Register } from "./register.tsx"
+import { Schedules } from "./schedules.tsx"
 import styles from "./styles.module.css"
+import { Tablist } from "./tablist.tsx"
 
 export const metadata: Metadata = {
   title: `${KANTO.name}イベントの応募・スケジュール`,
 }
 
-export default function Kanto(): JSX.Element {
+export default function KantoEvent(): JSX.Element {
   const guideline: Guideline = {
     anchorLink: "requirement",
     participantsNumber: "２０組程（６０名）",
@@ -111,7 +111,7 @@ export default function Kanto(): JSX.Element {
 
   return (
     <>
-      <Heading menu={EVENT} submenus={[KANTO]} />
+      <Heading menu={KANTO_EVENT} />
       <Image
         src={"/202410_kanto.avif"}
         width={540}
@@ -141,15 +141,12 @@ export default function Kanto(): JSX.Element {
       <Tablist schedules={schedules} />
       <Register guideline={guideline} />
       <LineApply lineLink={KANTO_LINE} classname="text-center" />
-      <MenuPanels menu={EVENT} submenu={KANTO} />
+      <MenuPanels menu={KANTO_EVENT} />
     </>
   )
 }
 
-function MenuPanels({
-  menu,
-  submenu,
-}: Readonly<{ menu: Menu; submenu: Submenu }>): JSX.Element {
+function MenuPanels({ menu }: Readonly<{ menu: Menu }>): JSX.Element {
   const qaPanels: MenuPanel = {
     name: Q_AND_A.name,
     color: {
@@ -158,7 +155,7 @@ function MenuPanels({
       text: "text-sky-400",
       textHover: "group-hover:text-sky-400",
     },
-    href: menu.pathname + submenu.pathname + Q_AND_A.pathname,
+    href: menu.pathname + Q_AND_A.pathname,
     text: "よくある質問",
   }
   const privacyPolicyPanel: MenuPanel = {
@@ -169,7 +166,7 @@ function MenuPanels({
       text: "text-orange-400",
       textHover: "group-hover:text-orange-400",
     },
-    href: menu.pathname + submenu.pathname + PRIVACY_POLICY.pathname,
+    href: menu.pathname + PRIVACY_POLICY.pathname,
     text: "プライバシーポリシー",
   }
 

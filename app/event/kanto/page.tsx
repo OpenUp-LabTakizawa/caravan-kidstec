@@ -42,7 +42,7 @@ export default function Kanto(): JSX.Element {
       address: "千葉県木更津市矢那2503",
       googleMapLink: "https://maps.app.goo.gl/o73uHVntuoTg3aym9",
       src: {
-        am: "/202407/hiroshima_university/soldering_with_father.avif",
+        am: "/image/hiroshima/202407/hiroshima_university/soldering_with_father.avif",
         pm: "/content/sheep_with_boy.avif",
       },
       title: {
@@ -66,7 +66,7 @@ export default function Kanto(): JSX.Element {
       address: "東京都港区虎ノ門1-3-1",
       googleMapLink: "https://maps.app.goo.gl/98KzCvCeFggZY88P6",
       src: {
-        am: "/202407/wedding/typing_boy.avif",
+        am: "/image/hiroshima/202407/wedding/typing_boy.avif",
         pm: "/content/rays-blog_girl.avif",
       },
       title: {
@@ -90,8 +90,8 @@ export default function Kanto(): JSX.Element {
       address: "神奈川県横浜市港北区新横浜3-7-15",
       googleMapLink: "https://maps.app.goo.gl/yUm7wrRfMm1veozm6",
       src: {
-        am: "/202407/wedding/smile_challenge.avif",
-        pm: "/202407/wedding/bubbles_entrance.avif",
+        am: "/image/hiroshima/202407/wedding/smile_challenge.avif",
+        pm: "/image/hiroshima/202407/wedding/bubbles_entrance.avif",
       },
       title: {
         am: "ロボット競技大会",

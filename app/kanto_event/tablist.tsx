@@ -157,7 +157,7 @@ function TabCard({
             ? schedule.tags.am.map((tag) => (
                 <span
                   key={tag}
-                  className="badge badge-outline bg-base-200 text-xs"
+                  className="badge badge-outline bg-gray-100 text-xs"
                 >
                   {tag}
                 </span>
@@ -165,7 +165,7 @@ function TabCard({
             : schedule.tags.pm.map((tag) => (
                 <span
                   key={tag}
-                  className="badge badge-outline bg-base-200 text-xs"
+                  className="badge badge-outline bg-gray-100 text-xs"
                 >
                   {tag}
                 </span>

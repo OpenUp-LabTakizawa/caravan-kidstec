@@ -42,10 +42,10 @@ export function Header(): JSX.Element {
 
   return (
     <header
-      className={`bg-white navbar${pathname !== "/" && headerHeight < scrollState.scrollY && scrollState.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollState.scrollY < headerHeight || !scrollState.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
+      className={`bg-white flex items-center p-2 w-full${pathname !== "/" && headerHeight < scrollState.scrollY && scrollState.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollState.scrollY < headerHeight || !scrollState.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
     >
-      <div className="navbar-start grow">
-        <Link href="/" className="px-4 tilt-shaking">
+      <div className="grow">
+        <Link href="/" className="block mx-4 tilt-shaking w-fit">
           <Image
             src="/caravan-kidstec_logo_line.avif"
             width={192}
@@ -55,24 +55,17 @@ export function Header(): JSX.Element {
           />
         </Link>
       </div>
-      <nav className="navbar-end w-max z-30">
-        <DropdownMenu
-          className="lg:hidden"
-          isScrollDown={scrollState.isScrollDown}
-        />
-        <Navigation
-          className="hidden lg:flex"
-          isScrollDown={scrollState.isScrollDown}
-        />
+      <nav className="w-fit z-30">
+        <DropdownMenu isScrollDown={scrollState.isScrollDown} />
+        <Navigation isScrollDown={scrollState.isScrollDown} />
       </nav>
     </header>
   )
 }
 
 function DropdownMenu({
-  className = "",
   isScrollDown,
-}: Readonly<{ className?: string; isScrollDown: boolean }>): JSX.Element {
+}: Readonly<{ isScrollDown: boolean }>): JSX.Element {
   const ref: RefObject<HTMLDetailsElement> = useRef<HTMLDetailsElement>(null)
 
   useEffect(() => {
@@ -95,20 +88,17 @@ function DropdownMenu({
   })
 
   return (
-    <details
-      ref={ref}
-      className={`dropdown dropdown-end${className === "" ? "" : ` ${className}`}`}
-    >
-      <summary role="button" className="btn btn-ghost lg:hidden">
+    <details ref={ref} className="inline-block relative lg:hidden">
+      <summary role="button" className="btn btn-ghost h-fit min-h-0 p-1">
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>
-        <ul className="bg-white dropdown-content menu menu-sm rounded-2xl shadow">
+        <ul className="absolute bg-white end-0 flex flex-col gap-1 p-3 rounded-2xl shadow text-sm">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               <Link
                 href={menu.pathname}
-                className="font-bold text-nowrap text-orange-400"
+                className="block font-bold px-3 py-1 rounded-xl scale-down-up text-nowrap text-orange-400 focus:bg-gray-400 hover:bg-gray-200"
               >
                 {menu.name}
               </Link>
@@ -121,9 +111,8 @@ function DropdownMenu({
 }
 
 function Navigation({
-  className = "",
   isScrollDown,
-}: Readonly<{ className?: string; isScrollDown: boolean }>): JSX.Element {
+}: Readonly<{ isScrollDown: boolean }>): JSX.Element {
   const ref: RefObject<Map<string, HTMLDetailsElement>> = useRef<
     Map<string, HTMLDetailsElement>
   >(new Map<string, HTMLDetailsElement>())
@@ -157,12 +146,13 @@ function Navigation({
   }
 
   return (
-    <ul
-      className={`flex-nowrap menu menu-horizontal p-0${className === "" ? "" : ` ${className}`}`}
-    >
+    <ul className="flex flex-nowrap gap-1 hidden p-0 lg:flex">
       {NAVIGATION.map((menu) => (
         <li key={menu.name}>
-          <Link href={menu.pathname} className="font-bold text-orange-400">
+          <Link
+            href={menu.pathname}
+            className="block font-bold px-3 py-1 rounded-xl scale-down-up text-orange-400 hover:bg-gray-200"
+          >
             {menu.name}
           </Link>
         </li>

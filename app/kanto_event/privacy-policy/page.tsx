@@ -19,7 +19,7 @@ export default function PrivacyPolicy(): JSX.Element {
       <p className="px-4 text-xs sm:text-sm">
         こどもテックキャラバンの個人情報は、株式会社オープンアップグループ（以下「当社」）が代表して取得しておりますので、当社の個人情報保護方針を以下にお知らせします。
       </p>
-      <section className="bg-base-200 leading-5 m-4 p-4 rounded-2xl space-y-4 text-xs sm:leading-7 sm:text-sm">
+      <section className="bg-gray-100 leading-5 m-4 p-4 rounded-2xl space-y-4 text-xs sm:leading-7 sm:text-sm">
         <h1 className="font-bold text-2xl text-center">個人情報保護方針</h1>
         <p>
           当社は、個人情報を大切に取り扱い、個人の権利利益を保護することを重要な社会的責務と考えています。
@@ -84,7 +84,7 @@ export default function PrivacyPolicy(): JSX.Element {
           </p>
         </section>
       </section>
-      <section className="bg-base-200 leading-5 m-4 p-4 rounded-2xl space-y-4  text-xs sm:leading-7 sm:text-sm">
+      <section className="bg-gray-100 leading-5 m-4 p-4 rounded-2xl space-y-4  text-xs sm:leading-7 sm:text-sm">
         <h2 className="font-bold text-2xl text-center">
           特定個人情報の適正な取扱いに関する基本方針
         </h2>
@@ -126,7 +126,7 @@ export default function PrivacyPolicy(): JSX.Element {
           </p>
         </section>
       </section>
-      <section className="bg-base-200 leading-5 m-4 p-4 rounded-2xl space-y-4 text-xs sm:leading-7 sm:text-sm">
+      <section className="bg-gray-100 leading-5 m-4 p-4 rounded-2xl space-y-4 text-xs sm:leading-7 sm:text-sm">
         <h2 className="font-bold text-2xl text-center">
           個人情報の取り扱いに関して
         </h2>

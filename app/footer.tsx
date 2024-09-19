@@ -5,17 +5,14 @@ import { NAVIGATION } from "./lib/constant.ts"
 
 export function Footer(): JSX.Element {
   return (
-    <footer className="bg-base-300 grid items-center justify-center p-4 space-y-2 text-base-content">
+    <footer className="bg-base-300 grid items-center justify-center space-y-2 text-center text-base-content">
       <nav>
-        <ul className="grid grid-cols-2 menu p-0 text-sm sm:grid-cols-5">
+        <ul className="gap-y-4 grid grid-cols-2 p-2 text-sm sm:grid-cols-5 sm:gap-6">
           {NAVIGATION.map((menu) => (
-            <li
-              key={menu.name}
-              className="flex flex-col flex-wrap items-stretch relative"
-            >
+            <li key={menu.name}>
               <Link
                 href={menu.pathname}
-                className="font-bold link-hover justify-center text-orange-400"
+                className="font-bold link-hover text-orange-400"
               >
                 {menu.name}
               </Link>
@@ -26,17 +23,17 @@ export function Footer(): JSX.Element {
           href="https://www.instagram.com/ktc_caravan/"
           target="_blank"
           rel="noopener noreferrer"
+          className="block mx-auto w-fit"
         >
           <Image
             src="/Instagram_Glyph_Gradient.avif"
             width={24}
             height={24}
             alt="こどもテックキャラバン-公式インスタグラム"
-            className="mx-auto"
           />
         </Link>
       </nav>
-      <aside className="text-center">
+      <aside className="pb-2">
         <p className="text-sm">
           Copyright © こどもテックキャラバン事務局&nbsp;
           <br className="block sm:hidden" />

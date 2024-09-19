@@ -1,7 +1,7 @@
 import { BackButton } from "@/app/components/button/backButton"
 import { Heading } from "@/app/components/layout/heading"
 import type { Menu } from "@/app/interfaces/menu"
-import type { TilePicture } from "@/app/interfaces/picture"
+import type { Picture } from "@/app/interfaces/picture"
 import type { EventDate } from "@/app/interfaces/schedule"
 import {
   HIROSHIMA,
@@ -19,10 +19,10 @@ export const metadata: Metadata = {
   title: "活動実績",
 }
 
-export default function Picture({
-  params: { area, date, name },
+export default function HistoryPicture({
+  params: { area, date, image },
 }: Readonly<{
-  params: { area: string; date: string; name: string }
+  params: { area: string; date: string; image: string }
 }>): JSX.Element {
   const menu: Menu = `/${area}` === KANTO.pathname ? KANTO : HIROSHIMA
   const history: EventDate[] =
@@ -30,9 +30,9 @@ export default function Picture({
   const eventDate: EventDate = history.find(
     (history) => history.date === date,
   ) as EventDate
-  const tilePicture: TilePicture = eventDate.pictures.find(
-    (picture) => picture.name === name,
-  ) as TilePicture
+  const picture: Picture = eventDate.pictures.find(
+    (picture) => picture.src.split("/").reverse()[0].split(".")[0] === image,
+  ) as Picture
   const movie: Menu = {
     name: eventDate.title,
     pathname: `/${eventDate.date}`,
@@ -44,10 +44,10 @@ export default function Picture({
       <Heading menus={[HISTORY, menu, movie]} />
       <Image
         loader={cloudfrontLoader}
-        src={tilePicture.src}
+        src={picture.src}
         width={256}
         height={256}
-        alt={tilePicture.alt}
+        alt={picture.alt}
         className="w-full"
       />
       <BackButton href={HISTORY.pathname} name={HISTORY.name} />

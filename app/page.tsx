@@ -2,11 +2,7 @@ import { PlusIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
-import {
-  IndicatorCarousel,
-  ReviewCarousel,
-  TopCarousel,
-} from "./components/layout/carousel.tsx"
+import { IndicatorCarousel, ReviewCarousel, TopCarousel } from "./carousel.tsx"
 import { Video } from "./components/media/video.tsx"
 import { Introduction } from "./introduction.tsx"
 import { HIROSHIMA, KANTO_EVENT, SECRETARIAT } from "./lib/constant.ts"

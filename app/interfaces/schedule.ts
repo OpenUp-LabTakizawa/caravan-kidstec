@@ -1,4 +1,4 @@
-import type { TilePicture } from "./picture.ts"
+import type { Picture } from "./picture.ts"
 
 export type Schedule = {
   readonly alt: string
@@ -32,5 +32,5 @@ export type EventDate = {
   readonly date: string
   readonly title: string
   readonly programs: Program[]
-  readonly pictures: TilePicture[]
+  readonly pictures: Picture[]
 }

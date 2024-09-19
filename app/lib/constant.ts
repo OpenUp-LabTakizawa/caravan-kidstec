@@ -1,6 +1,6 @@
 import type { Menu } from "@/app/interfaces/menu"
 import type { Partner } from "@/app/interfaces/partner"
-import type { TilePicture } from "@/app/interfaces/picture"
+import type { Picture } from "@/app/interfaces/picture"
 import type { EventDate, Program } from "@/app/interfaces/schedule"
 
 export const SITE_TITLE: string = "こどもテックキャラバン"
@@ -159,35 +159,29 @@ const KANTO_FIRST_PROGRAMS: Program[] = [
   },
 ] as const
 
-const KANTO_FIRST_PICTURES: TilePicture[] = [
+const KANTO_FIRST_PICTURES: Picture[] = [
   {
     alt: "",
-    name: "",
     src: "/image/kanto/202410/",
   },
   {
     alt: "",
-    name: "",
     src: "/image/kanto/202410/",
   },
   {
     alt: "",
-    name: "",
     src: "/image/kanto/202410/",
   },
   {
     alt: "",
-    name: "",
     src: "/image/kanto/202410/",
   },
   {
     alt: "",
-    name: "",
     src: "/image/kanto/202410/",
   },
   {
     alt: "",
-    name: "",
     src: "/image/kanto/202410/",
   },
 ] as const
@@ -270,131 +264,107 @@ const HIROSHIMA_FOURTH_PROGRAMS: Program[] = [
   },
 ] as const
 
-const HIROSHIMA_FIRST_PICTURES: TilePicture[] = [
+const HIROSHIMA_FIRST_PICTURES: Picture[] = [
   {
     alt: "プログラミング体験",
-    name: "initial_screen",
     src: "/image/hiroshima/202206/sandankyo/initial_screen.avif",
   },
   {
     alt: "家族ではんだ付けに挑戦！",
-    name: "soldering_by_mother",
     src: "/image/hiroshima/202206/sandankyo/soldering_by_mother.avif",
   },
   {
     alt: "採れたての魚をパクリ！",
-    name: "eating_char",
     src: "/image/hiroshima/202206/sandankyo/eating_char.avif",
   },
   {
     alt: "三段峡で記念撮影！",
-    name: "group_peace",
     src: "/image/hiroshima/202206/sandankyo/group_peace.avif",
   },
   {
     alt: "三段峡の神秘的な自然に圧倒！",
-    name: "magnificent_natural_landscape",
     src: "/image/hiroshima/202206/sandankyo/magnificent_natural_landscape.avif",
   },
   {
     alt: "サップ体験の準備ができましたか？",
-    name: "ready_for_sup",
     src: "/image/hiroshima/202206/eda_island/ready_for_sup.avif",
   },
 ] as const
-const HIROSHIMA_SECOND_PICTURES: TilePicture[] = [
+const HIROSHIMA_SECOND_PICTURES: Picture[] = [
   {
     alt: "正しく取り付け出来るかな？",
-    name: "check_parts",
     src: "/image/hiroshima/202306/m-plaza/check_parts.avif",
   },
   {
     alt: "メガサップに挑戦！",
-    name: "rowing_mega_sup",
     src: "/image/hiroshima/202306/eda_island/rowing_mega_sup.avif",
   },
   {
     alt: "記念の集合写真をパシャリ！",
-    name: "group_mega_sup",
     src: "/image/hiroshima/202306/eda_island/group_mega_sup.avif",
   },
   {
     alt: "初めてのプログラミング体験",
-    name: "thinking_girl",
     src: "/image/hiroshima/202306/sandankyo/thinking_girl.avif",
   },
   {
     alt: "みんなと川下り体験",
-    name: "going_downstream",
     src: "/image/hiroshima/202306/sandankyo/going_downstream.avif",
   },
   {
     alt: "雄大な自然を楽しみながら川下り体験",
-    name: "rowing_boat",
     src: "/image/hiroshima/202306/sandankyo/rowing_boat.avif",
   },
 ] as const
-const HIROSHIMA_THIRD_PICTURES: TilePicture[] = [
+const HIROSHIMA_THIRD_PICTURES: Picture[] = [
   {
     alt: "はんだ付けに興味津々！",
-    name: "teaching_soldering",
     src: "/image/hiroshima/202311/eda_island/teaching_soldering.avif",
   },
   {
     alt: "三段峡の自然と触れ合う",
-    name: "laminate_leaf",
     src: "/image/hiroshima/202311/sandankyo/laminate_leaf.avif",
   },
   {
     alt: "ぺったんぺったん、餅つき体験！",
-    name: "mochi_pounding",
     src: "/image/hiroshima/202311/sandankyo/mochi_pounding.avif",
   },
   {
     alt: "ロボサバ大会に挑戦中…",
-    name: "thinking_boy",
     src: "/image/hiroshima/202311/wedding/thinking_boy.avif",
   },
   {
     alt: "結婚式場でフラワーアレンジメント体験！",
-    name: "wraping_flower",
     src: "/image/hiroshima/202311/wedding/wraping_flower.avif",
   },
   {
     alt: "最後に集合写真をパシャリ！",
-    name: "group",
     src: "/image/hiroshima/202311/wedding/group.avif",
   },
 ] as const
-const HIROSHIMA_FOURTH_PICTURES: TilePicture[] = [
+const HIROSHIMA_FOURTH_PICTURES: Picture[] = [
   {
     alt: "はんだ付けに興味津々！",
-    name: "teaching_soldering_to_girl",
     src: "/image/hiroshima/202407/hiroshima_university/teaching_soldering_to_girl.avif",
   },
   {
     alt: "三段峡の自然と触れ合う",
-    name: "looking_for_paper",
     src: "/image/hiroshima/202407/hiroshima_university/looking_for_paper.avif",
   },
   {
     alt: "ぺったんぺったん、餅つき体験！",
-    name: "pointing_out_map",
     src: "/image/hiroshima/202407/hiroshima_university/pointing_out_map.avif",
   },
   {
     alt: "ロボサバ大会に挑戦中…",
-    name: "judging",
     src: "/image/hiroshima/202407/wedding/judging.avif",
   },
   {
     alt: "結婚式場でフラワーアレンジメント体験！",
-    name: "make_cream",
     src: "/image/hiroshima/202407/wedding/make_cream.avif",
   },
   {
     alt: "最後に集合写真をパシャリ！",
-    name: "group_with_sofa",
     src: "/image/hiroshima/202407/wedding/group_with_sofa.avif",
   },
 ] as const

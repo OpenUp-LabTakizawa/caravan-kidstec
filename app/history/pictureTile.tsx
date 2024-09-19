@@ -1,6 +1,6 @@
 "use client"
 
-import type { TilePicture } from "@/app/interfaces/picture"
+import type { Picture } from "@/app/interfaces/picture"
 import { HISTORY } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
@@ -15,7 +15,7 @@ export function PictureTile({
 }: Readonly<{
   pathname: string
   date: string
-  pictures: TilePicture[]
+  pictures: Picture[]
 }>): JSX.Element {
   const ref: RefObject<Map<string, HTMLAnchorElement>> = useRef<
     Map<string, HTMLAnchorElement>
@@ -45,7 +45,7 @@ export function PictureTile({
       {pictures.map((picture) => (
         <Link
           key={picture.alt}
-          href={`${HISTORY.pathname}/image${pathname}/${date}/${picture.name}`}
+          href={`${HISTORY.pathname}/image${pathname}/${date}/${picture.src.split("/").reverse()[0].split(".")[0]}`}
           ref={(node: HTMLAnchorElement) => {
             ref.current?.set(picture.alt, node)
             return () => {

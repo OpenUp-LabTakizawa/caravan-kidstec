@@ -3,7 +3,10 @@ import { Heading } from "@/app/components/layout/heading"
 import type { Sponser } from "@/app/interfaces/sponser"
 import { SPONSER } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
-import { BuildingOffice2Icon } from "@heroicons/react/24/solid"
+import {
+  ArrowTopRightOnSquareIcon,
+  BuildingOffice2Icon,
+} from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -51,9 +54,10 @@ export default function SponserPage(): JSX.Element {
                   href={sponser.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link"
+                  className="flex items-center justify-center underline"
                 >
-                  {sponser.name}
+                  {sponser.name}&nbsp;
+                  <ArrowTopRightOnSquareIcon className="size-4" />
                 </Link>
               </h2>
               <p className="flex gap-1 items-center justify-center">

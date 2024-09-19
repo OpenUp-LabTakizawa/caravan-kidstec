@@ -1,6 +1,7 @@
 import { Heading } from "@/app/components/layout/heading"
 import { SECRETARIAT } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -75,9 +76,10 @@ export default function Secretariat(): JSX.Element {
                 href={organization.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold link text-sky-400"
+                className="inline-flex font-bold text-sky-400 underline"
               >
                 {organization.company}&nbsp;
+                <ArrowTopRightOnSquareIcon className="size-4" />
               </Link>
               <br className="sm:hidden" />
               &nbsp;&nbsp;&nbsp;{organization.description}

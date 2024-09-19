@@ -29,7 +29,7 @@ function Breadcrumb({
     <div className="breadcrumbs text-sm">
       <ul>
         <li>
-          <Link href="/" className="gap-1 link">
+          <Link href="/" className="gap-1 underline">
             <HomeIcon className="size-5 text-sky-400" />
             ホーム
           </Link>
@@ -37,7 +37,7 @@ function Breadcrumb({
         {menus.map((menu, index) => (
           <li key={menu.name} className={menu.textColor}>
             {menus.length > 1 && index === 0 ? (
-              <Link href={menu.pathname} className="link">
+              <Link href={menu.pathname} className="underline">
                 {menu.name}
               </Link>
             ) : (

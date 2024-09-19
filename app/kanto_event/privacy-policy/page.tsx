@@ -1,8 +1,8 @@
-import { Divider } from "@/app/components/layout/divider"
 import { KANTO, PRIVACY_POLICY, SITE_URL } from "@/app/lib/constant"
 import type { Metadata } from "next"
 import Link from "next/link"
 import type { JSX } from "react"
+import { Divider } from "./divider.tsx"
 
 export const metadata: Metadata = {
   title: `${PRIVACY_POLICY.name} - ${KANTO.name}イベント`,

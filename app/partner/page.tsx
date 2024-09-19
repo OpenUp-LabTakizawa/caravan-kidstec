@@ -15,7 +15,7 @@ import type { JSX } from "react"
 export default function SponserPage(): JSX.Element {
   const partnerAreas: PartnerArea[] = [
     {
-      submenu: SPECIAL,
+      menu: SPECIAL,
       partners: SPECIAL_PARTNERS,
       color: {
         border: "border-rose-300",
@@ -23,7 +23,7 @@ export default function SponserPage(): JSX.Element {
       },
     },
     {
-      submenu: KANTO,
+      menu: KANTO,
       partners: KANTO_PARTNERS,
       color: {
         border: "border-sky-300",
@@ -31,7 +31,7 @@ export default function SponserPage(): JSX.Element {
       },
     },
     {
-      submenu: HIROSHIMA,
+      menu: HIROSHIMA,
       partners: HIROSHIMA_PARTNERS,
       color: {
         border: "border-sky-300",
@@ -42,18 +42,18 @@ export default function SponserPage(): JSX.Element {
 
   return (
     <>
-      <Heading menu={PARTNER} />
+      <Heading menus={[PARTNER]} />
       {partnerAreas.map((area) => (
         <section
-          key={area.submenu.name}
+          key={area.menu.name}
           className={`bg-amber-50 border-8 border-double mx-auto py-2 rounded-2xl shadow-lg space-y-4 w-72 lg:w-96 ${area.color.border}`}
         >
           <h2 className="font-bold font-zenMaruGothic text-3xl">
             <Link
-              href={PARTNER.pathname + area.submenu.pathname}
+              href={PARTNER.pathname + area.menu.pathname}
               className={`link ${area.color.text}`}
             >
-              {area.submenu.name}
+              {area.menu.name}
             </Link>
           </h2>
           <ul className="p-2 space-y-2">

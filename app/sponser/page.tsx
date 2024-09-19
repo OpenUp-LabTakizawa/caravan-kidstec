@@ -28,7 +28,7 @@ export default function SponserPage(): JSX.Element {
 
   return (
     <>
-      <Heading menu={SPONSER} />
+      <Heading menus={[SPONSER]} />
       <section className="px-2 space-y-6">
         {sponsers.map((sponser) => (
           <section

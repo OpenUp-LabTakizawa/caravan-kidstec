@@ -1,33 +1,29 @@
-import type { Menu, Submenu } from "@/app/interfaces/menu"
+import type { Menu } from "@/app/interfaces/menu"
 import { HomeIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export function Heading({
-  menu,
-  submenus,
+  menus,
 }: Readonly<{
-  menu: Menu
-  submenus?: Submenu[]
+  menus: Menu[]
 }>): JSX.Element {
   return (
     <section className="px-4 space-y-6">
-      <Breadcrumb menu={menu} submenus={submenus} />
+      <Breadcrumb menus={menus} />
       <h1
-        className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${submenus?.length === 2 ? submenus[1].textColor : menu.textColor}`}
+        className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${menus.length === 1 ? menus[0].textColor : menus.at(-1)?.textColor}`}
       >
-        {submenus ? submenus[submenus.length - 1].name : menu.name}
+        {menus.at(-1)?.name}
       </h1>
     </section>
   )
 }
 
 function Breadcrumb({
-  menu,
-  submenus,
+  menus,
 }: Readonly<{
-  menu: Menu
-  submenus?: Submenu[]
+  menus: Menu[]
 }>): JSX.Element {
   return (
     <div className="breadcrumbs text-sm">
@@ -38,18 +34,15 @@ function Breadcrumb({
             ホーム
           </Link>
         </li>
-        <li className={menu.textColor}>
-          {submenus ? (
-            <Link href={menu.pathname} className="link">
-              {menu.name}
-            </Link>
-          ) : (
-            menu.name
-          )}
-        </li>
-        {submenus?.map((submenu) => (
-          <li key={submenu.name} className={submenu.textColor}>
-            {submenu.name}
+        {menus.map((menu, index) => (
+          <li key={menu.name} className={menu.textColor}>
+            {menus.length > 1 && index === 0 ? (
+              <Link href={menu.pathname} className="link">
+                {menu.name}
+              </Link>
+            ) : (
+              menu.name
+            )}
           </li>
         ))}
       </ul>

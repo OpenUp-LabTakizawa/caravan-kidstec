@@ -1,4 +1,4 @@
-import type { Menu, Submenu } from "@/app/interfaces/menu"
+import type { Menu } from "@/app/interfaces/menu"
 import type { Partner } from "@/app/interfaces/partner"
 import type { TilePicture } from "@/app/interfaces/picture"
 import type { EventDate, Program } from "@/app/interfaces/schedule"
@@ -6,7 +6,7 @@ import type { EventDate, Program } from "@/app/interfaces/schedule"
 export const SITE_TITLE: string = "こどもテックキャラバン"
 export const SITE_URL: string = "https://caravan-kidstec.com"
 export const DESCRIPTION: string =
-  "プログラミング×体験学習　親子で学ぶ体験型イベント"
+  "プログラミング×体験学習 親子で学ぶ体験型イベント"
 export const HIROSHIMA_LINE: string = "https://lin.ee/eYcNlkG"
 export const KANTO_LINE: string = "https://lin.ee/RHBWD7P"
 export const CLOUDFRONT_URL: string = "https://dk75m1tgsot44.cloudfront.net"
@@ -38,28 +38,27 @@ export const SECRETARIAT: Menu = {
   pathname: "/secretariat",
   textColor: "text-teal-400",
 }
-
-export const SPECIAL: Submenu = {
+export const SPECIAL: Menu = {
   name: "スペシャル",
   pathname: "/special",
-  textColor: "",
+  textColor: "text-rose-400",
 }
-export const KANTO: Submenu = {
+export const KANTO: Menu = {
   name: "関東",
   pathname: "/kanto",
   textColor: "",
 }
-export const HIROSHIMA: Submenu = {
+export const HIROSHIMA: Menu = {
   name: "広島",
   pathname: "/hiroshima",
   textColor: "",
 }
-export const Q_AND_A: Submenu = {
+export const Q_AND_A: Menu = {
   name: "Q&A",
   pathname: "/q-and-a",
   textColor: "text-sky-400",
 }
-export const PRIVACY_POLICY: Submenu = {
+export const PRIVACY_POLICY: Menu = {
   name: "個人情報保護方針",
   pathname: "/privacy-policy",
   textColor: "text-orange-400",
@@ -160,36 +159,36 @@ const KANTO_FIRST_PROGRAMS: Program[] = [
   },
 ] as const
 
-export const KANTO_FIRST_PICTURES: TilePicture[] = [
+const KANTO_FIRST_PICTURES: TilePicture[] = [
   {
-    alt: "プログラミング体験",
-    name: "initial_screen",
-    src: "/202206/sandankyo/initial_screen.avif",
+    alt: "",
+    name: "",
+    src: "/image/kanto/202410/",
   },
   {
-    alt: "家族ではんだ付けに挑戦！",
-    name: "soldering_by_mother",
-    src: "/202206/sandankyo/soldering_by_mother.avif",
+    alt: "",
+    name: "",
+    src: "/image/kanto/202410/",
   },
   {
-    alt: "採れたての魚をパクリ！",
-    name: "eating_char",
-    src: "/202206/sandankyo/eating_char.avif",
+    alt: "",
+    name: "",
+    src: "/image/kanto/202410/",
   },
   {
-    alt: "三段峡で記念撮影！",
-    name: "group_peace",
-    src: "/202206/sandankyo/group_peace.avif",
+    alt: "",
+    name: "",
+    src: "/image/kanto/202410/",
   },
   {
-    alt: "三段峡の神秘的な自然に圧倒！",
-    name: "magnificent_natural_landscape",
-    src: "/202206/sandankyo/magnificent_natural_landscape.avif",
+    alt: "",
+    name: "",
+    src: "/image/kanto/202410/",
   },
   {
-    alt: "サップ体験の準備ができましたか？",
-    name: "ready_for_sup",
-    src: "/202206/eda_island/ready_for_sup.avif",
+    alt: "",
+    name: "",
+    src: "/image/kanto/202410/",
   },
 ] as const
 
@@ -271,7 +270,7 @@ const HIROSHIMA_FOURTH_PROGRAMS: Program[] = [
   },
 ] as const
 
-export const HIROSHIMA_FIRST_PICTURES: TilePicture[] = [
+const HIROSHIMA_FIRST_PICTURES: TilePicture[] = [
   {
     alt: "プログラミング体験",
     name: "initial_screen",
@@ -303,7 +302,7 @@ export const HIROSHIMA_FIRST_PICTURES: TilePicture[] = [
     src: "/image/hiroshima/202206/eda_island/ready_for_sup.avif",
   },
 ] as const
-export const HIROSHIMA_SECOND_PICTURES: TilePicture[] = [
+const HIROSHIMA_SECOND_PICTURES: TilePicture[] = [
   {
     alt: "正しく取り付け出来るかな？",
     name: "check_parts",
@@ -335,7 +334,7 @@ export const HIROSHIMA_SECOND_PICTURES: TilePicture[] = [
     src: "/image/hiroshima/202306/sandankyo/rowing_boat.avif",
   },
 ] as const
-export const HIROSHIMA_THIRD_PICTURES: TilePicture[] = [
+const HIROSHIMA_THIRD_PICTURES: TilePicture[] = [
   {
     alt: "はんだ付けに興味津々！",
     name: "teaching_soldering",
@@ -367,7 +366,7 @@ export const HIROSHIMA_THIRD_PICTURES: TilePicture[] = [
     src: "/image/hiroshima/202311/wedding/group.avif",
   },
 ] as const
-export const HIROSHIMA_FOURTH_PICTURES: TilePicture[] = [
+const HIROSHIMA_FOURTH_PICTURES: TilePicture[] = [
   {
     alt: "はんだ付けに興味津々！",
     name: "teaching_soldering_to_girl",

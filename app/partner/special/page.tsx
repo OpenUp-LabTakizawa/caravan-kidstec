@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Special(): JSX.Element {
   return (
     <>
-      <Heading menu={PARTNER} submenus={[SPECIAL]} />
+      <Heading menus={[PARTNER, SPECIAL]} />
       <Partners partners={SPECIAL_PARTNERS} />
     </>
   )

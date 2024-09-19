@@ -31,7 +31,7 @@ export default function Secretariat(): JSX.Element {
 
   return (
     <>
-      <Heading menu={SECRETARIAT} />
+      <Heading menus={[SECRETARIAT]} />
       <section className="px-2 space-y-4 md:text-sm">
         <h2 className="font-bold font-zenMaruGothic mx-auto text-2xl w-max">
           こどもテックキャラバン

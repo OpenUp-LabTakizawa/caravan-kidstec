@@ -1,4 +1,4 @@
-import type { Submenu } from "./menu.ts"
+import type { Menu } from "./menu.ts"
 
 export type Partner = {
   readonly name: string
@@ -8,7 +8,7 @@ export type Partner = {
 }
 
 export type PartnerArea = {
-  readonly submenu: Submenu
+  readonly menu: Menu
   readonly partners: Partner[]
   readonly color: {
     border: string

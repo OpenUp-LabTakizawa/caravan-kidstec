@@ -1,7 +1,7 @@
 import { BackButton } from "@/app/components/button/backButton"
 import { Heading } from "@/app/components/layout/heading"
 import { Video } from "@/app/components/media/video"
-import type { Submenu } from "@/app/interfaces/menu"
+import type { Menu } from "@/app/interfaces/menu"
 import type { EventDate } from "@/app/interfaces/schedule"
 import {
   HIROSHIMA,
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
 export default function Movie({
   params: { area, date },
 }: Readonly<{ params: { area: string; date: string } }>): JSX.Element {
-  const submenu: Submenu = `/${area}` === KANTO.pathname ? KANTO : HIROSHIMA
+  const menu: Menu = `/${area}` === KANTO.pathname ? KANTO : HIROSHIMA
   const history: EventDate[] =
     `/${area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
   const eventDate: EventDate = history.find(
     (history) => history.date === date,
   ) as EventDate
-  const movie: Submenu = {
+  const movie: Menu = {
     name: eventDate.title,
     pathname: `/${eventDate.date}`,
     textColor: "text-yellow-400",
@@ -34,8 +34,8 @@ export default function Movie({
 
   return (
     <>
-      <Heading menu={HISTORY} submenus={[submenu, movie]} />
-      <Video pathname={submenu.pathname} date={eventDate.date} />
+      <Heading menus={[HISTORY, menu, movie]} />
+      <Video pathname={menu.pathname} date={eventDate.date} />
       <BackButton href={HISTORY.pathname} name={HISTORY.name} />
     </>
   )

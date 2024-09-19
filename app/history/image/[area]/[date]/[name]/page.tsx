@@ -1,6 +1,6 @@
 import { BackButton } from "@/app/components/button/backButton"
 import { Heading } from "@/app/components/layout/heading"
-import type { Submenu } from "@/app/interfaces/menu"
+import type { Menu } from "@/app/interfaces/menu"
 import type { TilePicture } from "@/app/interfaces/picture"
 import type { EventDate } from "@/app/interfaces/schedule"
 import {
@@ -24,7 +24,7 @@ export default function Picture({
 }: Readonly<{
   params: { area: string; date: string; name: string }
 }>): JSX.Element {
-  const submenu: Submenu = `/${area}` === KANTO.pathname ? KANTO : HIROSHIMA
+  const menu: Menu = `/${area}` === KANTO.pathname ? KANTO : HIROSHIMA
   const history: EventDate[] =
     `/${area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
   const eventDate: EventDate = history.find(
@@ -33,7 +33,7 @@ export default function Picture({
   const tilePicture: TilePicture = eventDate.pictures.find(
     (picture) => picture.name === name,
   ) as TilePicture
-  const movie: Submenu = {
+  const movie: Menu = {
     name: eventDate.title,
     pathname: `/${eventDate.date}`,
     textColor: "text-yellow-400",
@@ -41,7 +41,7 @@ export default function Picture({
 
   return (
     <>
-      <Heading menu={HISTORY} submenus={[submenu, movie]} />
+      <Heading menus={[HISTORY, menu, movie]} />
       <Image
         loader={cloudfrontLoader}
         src={tilePicture.src}

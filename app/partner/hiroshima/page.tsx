@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Hiroshima(): JSX.Element {
   return (
     <>
-      <Heading menu={PARTNER} submenus={[HIROSHIMA]} />
+      <Heading menus={[PARTNER, HIROSHIMA]} />
       <Partners partners={HIROSHIMA_PARTNERS} />
     </>
   )

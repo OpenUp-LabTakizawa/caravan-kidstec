@@ -111,7 +111,7 @@ export default function KantoEvent(): JSX.Element {
 
   return (
     <>
-      <Heading menu={KANTO_EVENT} />
+      <Heading menus={[KANTO_EVENT]} />
       <Image
         src={"/202410_kanto.avif"}
         width={540}

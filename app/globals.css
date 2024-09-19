@@ -44,6 +44,21 @@ img {
   }
 }
 
+.scroll-right {
+  position: absolute;
+  opacity: 0;
+  right: 50%;
+  top: 0%;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: scroll-right 3s ease-out infinite;
+  &:nth-child(1) {
+    animation-delay: 1s;
+  }
+  &:nth-child(2) {
+    animation-delay: 2s;
+  }
+}
+
 .stretch {
   animation: stretch 1s ease-out forwards;
 }
@@ -103,6 +118,24 @@ img {
   30%,
   70% {
     transform: scale(1.1);
+  }
+}
+
+@keyframes scroll-right {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(65px) scale3d(0.5, 0.5, 0.5);
   }
 }
 

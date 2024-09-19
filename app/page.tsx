@@ -13,13 +13,13 @@ export default function Home(): JSX.Element {
       {/* block className is necessary for Safari behavior */}
       <Link
         href={KANTO_EVENT.pathname}
-        className="block sticky top-0 w-full z-20 sm:inline sm:static"
+        className="block scale-down-up sticky top-0 w-full z-20 sm:inline sm:static"
       >
         <Image
           src="/202410_kanto_banner_start.avif"
           width={540}
           height={162}
-          alt="イベント詳細はこちら"
+          alt="こどもテックキャラバン-関東イベントバナー"
           priority={true}
           className="w-full"
         />

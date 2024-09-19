@@ -9,7 +9,7 @@ export function Heading({
   menus: Menu[]
 }>): JSX.Element {
   return (
-    <section className="px-4 space-y-6">
+    <section className="px-3 space-y-6">
       <Breadcrumb menus={menus} />
       <h1
         className={`fade-in-up font-bold font-zenMaruGothic text-4xl text-center ${menus.length === 1 ? menus[0].textColor : menus.at(-1)?.textColor}`}
@@ -29,7 +29,10 @@ function Breadcrumb({
     <div className="breadcrumbs text-sm">
       <ul>
         <li>
-          <Link href="/" className="gap-1 underline">
+          <Link
+            href="/"
+            className="block gap-1 p-1 rounded-xl scale-down-up underline hover:bg-gray-200"
+          >
             <HomeIcon className="size-5 text-sky-400" />
             ホーム
           </Link>
@@ -37,11 +40,14 @@ function Breadcrumb({
         {menus.map((menu, index) => (
           <li key={menu.name} className={menu.textColor}>
             {menus.length > 1 && index === 0 ? (
-              <Link href={menu.pathname} className="underline">
+              <Link
+                href={menu.pathname}
+                className="block p-1 rounded-xl scale-down-up underline hover:bg-gray-200"
+              >
                 {menu.name}
               </Link>
             ) : (
-              menu.name
+              <span className="p-1">{menu.name}</span>
             )}
           </li>
         ))}

@@ -12,7 +12,7 @@ export function Partners({
       {partners.map((partner) => (
         <section
           key={partner.name}
-          className="bg-base-200 p-2 rounded-2xl shadow-lg space-y-2"
+          className="bg-gray-100 p-2 rounded-2xl shadow-lg space-y-2"
         >
           <div className="bg-white col-span-2 flex h-full items-center rounded-2xl sm:col-span-1">
             <Image

@@ -115,12 +115,13 @@ export function TopCarousel(): JSX.Element {
     <>
       <div
         ref={carouselRef}
-        className="carousel rounded-2xl shadow-lg w-full"
+        className="aspect-square flex overflow-x-scroll rounded-2xl scroll-smooth shadow-lg snap-mandatory snap-x w-full"
         onMouseEnter={() => setIsBusy(true)}
         onMouseLeave={() => setIsBusy(false)}
         onTouchStart={() => setIsBusy(true)}
         onTouchEnd={() => setIsBusy(false)}
         onScroll={() => ScrollEvent()}
+        style={{ scrollbarWidth: "none" }}
       >
         {topPictures.map((picture, index) => (
           <Image
@@ -137,7 +138,7 @@ export function TopCarousel(): JSX.Element {
             height={256}
             alt={picture.alt}
             priority={index === 0}
-            className="aspect-square carousel-item object-cover w-full"
+            className="object-cover snap-start w-full"
           />
         ))}
       </div>
@@ -328,12 +329,13 @@ export function IndicatorCarousel(): JSX.Element {
       </div>
       <div
         ref={carouselRef}
-        className="carousel rounded-2xl shadow-lg w-full"
+        className="aspect-square flex overflow-x-scroll rounded-2xl scroll-smooth shadow-lg snap-mandatory snap-x w-full"
         onMouseEnter={() => setIsBusy(true)}
         onMouseLeave={() => setIsBusy(false)}
         onTouchStart={() => setIsBusy(true)}
         onTouchEnd={() => setIsBusy(false)}
         onScroll={() => ScrollEvent()}
+        style={{ scrollbarWidth: "none" }}
       >
         {pictures.map((picture) => (
           <Image
@@ -349,7 +351,7 @@ export function IndicatorCarousel(): JSX.Element {
             width={256}
             height={256}
             alt={picture.alt}
-            className="aspect-square carousel-item object-cover w-full"
+            className="object-cover snap-start w-full"
           />
         ))}
       </div>
@@ -504,12 +506,13 @@ export function ReviewCarousel(): JSX.Element {
   return (
     <div
       ref={carouselRef}
-      className="carousel carousel-center relative space-x-4 w-full"
+      className="flex overflow-x-scroll relative scroll-smooth snap-mandatory snap-x space-x-4 w-full"
       onMouseEnter={() => setIsBusy(true)}
       onMouseLeave={() => setIsBusy(false)}
       onTouchStart={() => setIsBusy(true)}
       onTouchEnd={() => setIsBusy(false)}
       onScroll={() => ScrollEvent()}
+      style={{ scrollbarWidth: "none" }}
     >
       <ScrollRightHint />
       {reviews.map((review) => (
@@ -521,7 +524,7 @@ export function ReviewCarousel(): JSX.Element {
               reviewsRef.current?.delete(review.description)
             }
           }}
-          className="bg-blue-100 carousel-item content-between grid m-2 p-2 rounded-2xl shadow-lg w-56"
+          className="bg-blue-100 flex-none content-between grid m-2 p-2 rounded-2xl shadow-lg snap-center w-56"
         >
           <p className="my-auto text-sm whitespace-pre">{review.description}</p>
           <p className="flex gap-1 h-fit items-center justify-center text-sm whitespace-pre">

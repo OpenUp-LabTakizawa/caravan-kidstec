@@ -12,7 +12,7 @@ export function Heading({
     <section className="px-4 space-y-6">
       <Breadcrumb menus={menus} />
       <h1
-        className={`fade-in-up font-bold font-zenMaruGothic max-w-fit mx-auto text-4xl ${menus.length === 1 ? menus[0].textColor : menus.at(-1)?.textColor}`}
+        className={`fade-in-up font-bold font-zenMaruGothic text-4xl text-center ${menus.length === 1 ? menus[0].textColor : menus.at(-1)?.textColor}`}
       >
         {menus.at(-1)?.name}
       </h1>
@@ -29,7 +29,7 @@ function Breadcrumb({
     <div className="breadcrumbs text-sm">
       <ul>
         <li>
-          <Link href="/" className="link gap-1">
+          <Link href="/" className="gap-1 link">
             <HomeIcon className="size-5 text-sky-400" />
             ホーム
           </Link>

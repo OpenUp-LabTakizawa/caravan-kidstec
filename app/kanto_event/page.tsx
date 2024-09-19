@@ -140,7 +140,9 @@ export default function KantoEvent(): JSX.Element {
       </section>
       <Tablist schedules={schedules} />
       <Register guideline={guideline} />
-      <LineApply lineLink={KANTO_LINE} classname="text-center" />
+      <section className="text-center">
+        <LineApply lineLink={KANTO_LINE} />
+      </section>
       <MenuPanels menu={KANTO_EVENT} />
     </>
   )

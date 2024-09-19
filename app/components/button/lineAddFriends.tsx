@@ -10,13 +10,13 @@ export function LineAddFriends({
 }: Readonly<{ linkLink: string }>): JSX.Element {
   return (
     <Bounce>
-      <Link href={linkLink} className="mx-auto">
+      <Link href={linkLink} className="block mx-auto w-fit">
         <Image
           src="/line_add_friends.avif"
-          width={128}
-          height={128}
+          width={116}
+          height={36}
           alt="友だち追加"
-          className="mx-auto shadow-lg w-auto"
+          className="shadow-lg"
         />
       </Link>
     </Bounce>
@@ -25,10 +25,9 @@ export function LineAddFriends({
 
 export function LineApply({
   lineLink,
-  classname = "",
-}: Readonly<{ lineLink: string; classname?: string }>): JSX.Element {
+}: Readonly<{ lineLink: string }>): JSX.Element {
   return (
-    <Bounce className={classname}>
+    <Bounce>
       <Link
         href={lineLink}
         className={`bg-[#00C300] btn shadow-lg text-lg text-white ${styles.greenShine}`}
@@ -44,7 +43,7 @@ export function LineRegister({
   lineLink,
 }: Readonly<{ lineLink: string }>): JSX.Element {
   return (
-    <section className="bg-amber-50 mx-auto p-4 rounded-2xl space-y-2 text-center w-max">
+    <section className="bg-amber-50 mx-auto p-4 rounded-2xl space-y-2 text-center w-fit">
       <b>
         LINE公式アカウントから、
         <br />

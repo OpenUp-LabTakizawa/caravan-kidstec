@@ -17,7 +17,7 @@ export function QA({
 }>): JSX.Element {
   return (
     <>
-      <Heading menu={menu} submenus={[Q_AND_A]} />
+      <Heading menus={[menu, Q_AND_A]} />
       <section className="space-y-2">
         {qAndAs.map((qAndA, index) => (
           <details

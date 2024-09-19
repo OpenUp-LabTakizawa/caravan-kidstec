@@ -1,6 +1,6 @@
 import { Modal } from "@/app/@modal/(.)history/modal"
 import { Video } from "@/app/components/media/video"
-import type { Submenu } from "@/app/interfaces/menu"
+import type { Menu } from "@/app/interfaces/menu"
 import type { EventDate } from "@/app/interfaces/schedule"
 import {
   HIROSHIMA,
@@ -13,7 +13,7 @@ import type { JSX } from "react"
 export default function Movie({
   params: { area, date },
 }: Readonly<{ params: { area: string; date: string } }>): JSX.Element {
-  const submenu: Submenu = `/${area}` === KANTO.pathname ? KANTO : HIROSHIMA
+  const menu: Menu = `/${area}` === KANTO.pathname ? KANTO : HIROSHIMA
   const history: EventDate[] =
     `/${area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
   const eventDate: EventDate = history.find(
@@ -25,7 +25,7 @@ export default function Movie({
       <h2 className="font-bold font-zenMaruGothic mb-5 text-3xl text-center">
         {eventDate.title}
       </h2>
-      <Video pathname={submenu.pathname} date={eventDate.date} />
+      <Video pathname={menu.pathname} date={eventDate.date} />
     </Modal>
   )
 }

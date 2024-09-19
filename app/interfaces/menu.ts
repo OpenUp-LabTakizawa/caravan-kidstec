@@ -15,9 +15,3 @@ export type MenuPanel = {
   readonly href: string
   readonly text: string
 }
-
-export type Submenu = {
-  readonly name: string
-  readonly pathname: string
-  readonly textColor: string
-}

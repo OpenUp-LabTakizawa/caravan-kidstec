@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function History(): JSX.Element {
   return (
     <>
-      <Heading menu={HISTORY} />
+      <Heading menus={[HISTORY]} />
       <h2 className="font-bold font-zenMaruGothic text-3xl">
         {HIROSHIMA.name}
       </h2>

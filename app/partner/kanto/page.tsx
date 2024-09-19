@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Kanto(): JSX.Element {
   return (
     <>
-      <Heading menu={PARTNER} submenus={[KANTO]} />
+      <Heading menus={[PARTNER, KANTO]} />
       <Partners partners={KANTO_PARTNERS} />
     </>
   )

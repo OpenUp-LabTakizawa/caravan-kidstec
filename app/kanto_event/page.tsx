@@ -128,7 +128,7 @@ export default function KantoEvent(): JSX.Element {
         <p className="mb-3">
           <Link
             href={`#${guideline.anchorLink}`}
-            className="font-bold link text-sky-400"
+            className="font-bold text-sky-400 underline"
           >
             応募要項
           </Link>

@@ -119,7 +119,7 @@ export default function PrivacyPolicy(): JSX.Element {
           </h2>
           <p>
             特定個人情報等の取扱いに関するご質問や苦情につきましては、後述の「個人情報の取り扱いに関して」の「
-            <Link href={`#${contactId}`} className="link">
+            <Link href={`#${contactId}`} className="underline">
               ５.&nbsp;個人情報に関するお問い合わせ方法及び窓口
             </Link>
             」までお願いします。
@@ -157,7 +157,7 @@ export default function PrivacyPolicy(): JSX.Element {
             当社の個人情報保護管理責任者は、グループ管理部長となります。
             <br />
             ※後述の「
-            <Link href={`#${contactId}`} className="link">
+            <Link href={`#${contactId}`} className="underline">
               ５.&nbsp;個人情報に関するお問い合わせ方法及び窓口
             </Link>
             」にご連絡ください。
@@ -245,7 +245,7 @@ export default function PrivacyPolicy(): JSX.Element {
               <p className="px-6">
                 こどもテックキャラバンＨＰ&nbsp;スポンサーおよびパートナー
                 <br />
-                <Link href="/" className="link">
+                <Link href="/" className="underline">
                   {SITE_URL}/
                 </Link>
               </p>
@@ -254,7 +254,7 @@ export default function PrivacyPolicy(): JSX.Element {
               共同して利用する者の利用目的：
               <p className="px-4">
                 「
-                <Link href={`#${purposeId}`} className="link">
+                <Link href={`#${purposeId}`} className="underline">
                   ３.&nbsp;個人情報の利用目的
                 </Link>
                 」をご参照ください。
@@ -270,7 +270,7 @@ export default function PrivacyPolicy(): JSX.Element {
               共同して利用する個人情報の管理責任者：
               <p className="px-4">
                 「
-                <Link href={`#${addressId}`} className="link">
+                <Link href={`#${addressId}`} className="underline">
                   ２.&nbsp;個人情報の管理者およびその連絡先
                 </Link>
                 」をご参照ください。
@@ -301,7 +301,7 @@ export default function PrivacyPolicy(): JSX.Element {
               <li>
                 メールアドレス：
                 <p className="pl-4">
-                  <Link href={`mailto:${mailAddress}`} className="link">
+                  <Link href={`mailto:${mailAddress}`} className="underline">
                     {mailAddress}
                   </Link>
                 </p>
@@ -473,7 +473,7 @@ export default function PrivacyPolicy(): JSX.Element {
           </h2>
           <p>
             ご本人がご自身を識別できる開示対象個人情報について、利用目的の通知、開示、内容の訂正、追加または削除、利用の停止、消去および第三者への提供の停止（総称して、「開示等」という）を求めるためのお申し出をされる場合は、上掲の当社「
-            <Link href={`#${contactId}`} className="link">
+            <Link href={`#${contactId}`} className="underline">
               ５.&nbsp;個人情報に関するお問い合わせ方法及び窓口
             </Link>
             」にご連絡下さい。

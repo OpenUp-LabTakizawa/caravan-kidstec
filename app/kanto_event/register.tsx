@@ -191,7 +191,7 @@ function Procedure({
           <p>
             <Link
               href={guideline.lineLink}
-              className="font-bold link text-[#00C300]"
+              className="font-bold text-[#00C300] underline"
             >
               LINE公式アカウント
             </Link>

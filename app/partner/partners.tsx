@@ -29,7 +29,7 @@ export function Partners({
               href={partner.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="link"
+              className="underline"
             >
               {partner.name}
             </Link>

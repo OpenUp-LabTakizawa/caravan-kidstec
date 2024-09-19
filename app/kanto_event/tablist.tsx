@@ -136,7 +136,7 @@ function TabCard({
             href={time === "am" ? schedule.url.am : schedule.url.pm}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex font-bold gap-1 items-center link mx-auto text-sm w-max"
+            className="flex font-bold gap-1 items-center mx-auto text-sm underline w-max"
           >
             {time === "am"
               ? schedule.organization.am

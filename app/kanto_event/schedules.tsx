@@ -35,7 +35,7 @@ export function Schedules({
                   href={schedule.googleMapLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex gap-1 items-center link mx-auto w-max"
+                  className="flex gap-1 items-center mx-auto underline w-max"
                 >
                   {schedule.address}
                   <ArrowTopRightOnSquareIcon className="size-4" />

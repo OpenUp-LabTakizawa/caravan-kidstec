@@ -5,14 +5,14 @@ import { NAVIGATION } from "./lib/constant.ts"
 
 export function Footer(): JSX.Element {
   return (
-    <footer className="bg-base-300 grid items-center justify-center space-y-2 text-center text-base-content">
+    <footer className="bg-base-300 space-y-2 text-center text-sm">
       <nav>
-        <ul className="gap-y-4 grid grid-cols-2 p-2 text-sm sm:grid-cols-5 sm:gap-6">
+        <ul className="gap-4 grid grid-cols-3 justify-center mx-auto p-2 w-fit sm:gap-6 sm:grid-cols-5">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               <Link
                 href={menu.pathname}
-                className="font-bold link-hover text-orange-400"
+                className="font-bold text-orange-400 hover:underline"
               >
                 {menu.name}
               </Link>
@@ -34,11 +34,9 @@ export function Footer(): JSX.Element {
         </Link>
       </nav>
       <aside className="pb-2">
-        <p className="text-sm">
-          Copyright © こどもテックキャラバン事務局&nbsp;
-          <br className="block sm:hidden" />
-          All rights reserved.
-        </p>
+        Copyright © こどもテックキャラバン事務局&nbsp;
+        <br className="sm:hidden" />
+        All rights reserved.
       </aside>
     </footer>
   )

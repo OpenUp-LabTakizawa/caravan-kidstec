@@ -12,7 +12,7 @@ COPY . .
 RUN bun test
 RUN bun run build
 
-FROM node:22
+FROM public.ecr.aws/lambda/nodejs:20-arm64
 WORKDIR /app
 COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.4 /lambda-adapter /opt/extensions/lambda-adapter
 

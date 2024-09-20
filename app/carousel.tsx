@@ -138,7 +138,7 @@ export function TopCarousel(): JSX.Element {
             height={256}
             alt={picture.alt}
             priority={index === 0}
-            className="object-cover snap-start w-full"
+            className="aspect-square object-cover snap-start w-full"
           />
         ))}
       </div>

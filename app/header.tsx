@@ -89,10 +89,7 @@ function DropdownMenu({
 
   return (
     <details ref={ref} className="relative lg:hidden">
-      <summary
-        className="block h-fit min-h-0 p-1 scale-down-up"
-        style={{ listStyle: "none" }}
-      >
+      <summary className="block h-fit min-h-0 p-1 scale-down-up">
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>

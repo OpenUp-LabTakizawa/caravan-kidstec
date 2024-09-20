@@ -115,7 +115,7 @@ export function TopCarousel(): JSX.Element {
     <>
       <div
         ref={carouselRef}
-        className="aspect-square carousel flex overflow-x-scroll rounded-2xl scroll-smooth shadow-lg snap-mandatory snap-x w-full"
+        className="aspect-square flex overflow-x-scroll rounded-2xl scroll-smooth shadow-lg snap-mandatory snap-x w-full"
         onMouseEnter={() => setIsBusy(true)}
         onMouseLeave={() => setIsBusy(false)}
         onTouchStart={() => setIsBusy(true)}
@@ -138,7 +138,7 @@ export function TopCarousel(): JSX.Element {
             height={256}
             alt={picture.alt}
             priority={index === 0}
-            className="aspect-square carousel-item object-cover snap-start w-full"
+            className="flex-none snap-start w-full"
           />
         ))}
       </div>

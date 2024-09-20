@@ -7,6 +7,11 @@ img {
   pointer-events: none;
 }
 
+/* Hide the arrow in the summary */
+summary::-webkit-details-marker {
+  display: none;
+}
+
 .arrow-up {
   animation: arrow-up 1.5s infinite;
 }

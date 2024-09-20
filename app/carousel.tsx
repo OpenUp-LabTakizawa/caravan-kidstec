@@ -329,7 +329,7 @@ export function IndicatorCarousel(): JSX.Element {
       </div>
       <div
         ref={carouselRef}
-        className="aspect-square carousel flex overflow-x-scroll rounded-2xl scroll-smooth shadow-lg snap-mandatory snap-x w-full"
+        className="aspect-square flex overflow-x-scroll rounded-2xl scroll-smooth shadow-lg snap-mandatory snap-x w-full"
         onMouseEnter={() => setIsBusy(true)}
         onMouseLeave={() => setIsBusy(false)}
         onTouchStart={() => setIsBusy(true)}
@@ -351,7 +351,7 @@ export function IndicatorCarousel(): JSX.Element {
             width={256}
             height={256}
             alt={picture.alt}
-            className="aspect-square carousel-item snap-start w-full"
+            className="flex-none snap-start w-full"
           />
         ))}
       </div>

@@ -351,7 +351,7 @@ export function IndicatorCarousel(): JSX.Element {
             width={256}
             height={256}
             alt={picture.alt}
-            className="object-cover snap-start w-full"
+            className="aspect-square snap-start w-full"
           />
         ))}
       </div>

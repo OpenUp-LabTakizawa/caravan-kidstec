@@ -89,10 +89,7 @@ function DropdownMenu({
 
   return (
     <details ref={ref} className="inline-block relative lg:hidden">
-      <summary
-        role="button"
-        className="btn btn-ghost h-fit list-none min-h-0 p-1"
-      >
+      <summary className="block h-fit list-none min-h-0 p-1 scale-down-up">
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>

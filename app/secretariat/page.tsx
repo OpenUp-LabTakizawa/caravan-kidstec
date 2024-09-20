@@ -33,7 +33,7 @@ export default function Secretariat(): JSX.Element {
   return (
     <>
       <Heading menus={[SECRETARIAT]} />
-      <section className="px-2 space-y-4 md:text-sm">
+      <section className="gap-4 grid justify-center px-2 md:text-sm">
         <h2 className="font-bold font-zenMaruGothic mx-auto text-2xl w-max">
           こどもテックキャラバン
           <br className="sm:hidden" />
@@ -57,7 +57,7 @@ export default function Secretariat(): JSX.Element {
             width={58}
             height={58}
             alt="17 パートナーシップで目標を達成しよう"
-            className="h-full"
+            className="object-contain h-full"
           />
         </div>
         <p>
@@ -87,7 +87,7 @@ export default function Secretariat(): JSX.Element {
           ))}
         </ul>
       </section>
-      <section className="px-2 space-y-4 md:text-sm">
+      <section className="gap-4 grid justify-center px-2 md:text-sm">
         <h2 className="font-bold font-zenMaruGothic mx-auto text-2xl w-max">
           こどもテックキャラバンの
           <br className="sm:hidden" />

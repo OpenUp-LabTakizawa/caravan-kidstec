@@ -111,5 +111,5 @@ jobs:
         uses: docker/scout-action@v1
         with:
           command: compare
-          to: ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_REPOSITORY }}:canary
+          to: ${{ env.REPOSITORY }}:canary
           only-severities: critical,high

@@ -51,7 +51,7 @@ export default function SponserPage(): JSX.Element {
           <h2 className="font-bold font-zenMaruGothic text-3xl">
             <Link
               href={PARTNER.pathname + area.menu.pathname}
-              className={`underline ${area.color.text}`}
+              className={`block mx-auto scale-down-up underline w-fit ${area.color.text}`}
             >
               {area.menu.name}
             </Link>

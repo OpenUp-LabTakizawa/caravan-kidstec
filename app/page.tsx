@@ -64,7 +64,10 @@ export default function Home(): JSX.Element {
           className="absolute object-contain opacity-10 size-full -z-10"
         />
         <h2 className="font-bold font-zenMaruGothic text-2xl">
-          <Link href={SECRETARIAT.pathname} className="text-sky-400 underline">
+          <Link
+            href={SECRETARIAT.pathname}
+            className="block scale-down-up text-sky-400 underline"
+          >
             事務局の想い
           </Link>
         </h2>

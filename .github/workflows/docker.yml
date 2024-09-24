@@ -111,5 +111,6 @@ jobs:
         uses: docker/scout-action@v1
         with:
           command: cves,compare,quickview,recommendations,sbom
+          image: ${{ steps.meta.outputs.tags }}
           to: docker.io/${{ env.REPOSITORY }}:canary
           only-severities: critical,high

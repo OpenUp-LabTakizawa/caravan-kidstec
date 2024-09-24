@@ -111,6 +111,5 @@ jobs:
         uses: docker/scout-action@v1
         with:
           command: compare
-          image: ${{ env.REPOSITORY }}:${{ steps.meta.outputs.version }}
           to: ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_REPOSITORY }}:canary
           only-severities: critical,high

@@ -74,8 +74,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ env.REPOSITORY }}
-            ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_REPOSITORY }}
+            name=${{ env.REPOSITORY }}
+            name=${{ env.GHCR_REGISTRY }}/${{ env.GHCR_REPOSITORY }},enable=${{ fromJSON(env.IS_PUSH) }}
           tags: |
             type=ref,event=tag
             type=ref,event=pr,prefix=pr-

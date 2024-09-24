@@ -110,6 +110,6 @@ jobs:
         if: github.repository_owner == env.REPOSITORY_OWNER && github.event_name == 'pull_request_target'
         uses: docker/scout-action@v1
         with:
-          command: compare
-          to: ${{ env.REPOSITORY }}:canary
+          command: cves,compare,quickview,recommendations,sbom
+          to: docker.io/${{ env.REPOSITORY }}:canary
           only-severities: critical,high

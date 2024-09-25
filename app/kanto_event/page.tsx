@@ -12,6 +12,7 @@ import {
   PRIVACY_POLICY,
   Q_AND_A,
 } from "@/app/lib/constant"
+import { InformationCircleIcon } from "@heroicons/react/24/outline"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import type { Metadata } from "next"
 import Image from "next/image"
@@ -113,13 +114,25 @@ export default function KantoEvent(): JSX.Element {
     <>
       <Heading menus={[KANTO_EVENT]} />
       <Image
-        src={"/202410_kanto.avif"}
+        src={"/202410_kanto_cancel.avif"}
         width={540}
-        height={540}
+        height={383}
         alt="こどもテックキャラバン-関東イベント"
         priority={true}
         className="w-full"
       />
+      <div className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base text-center w-fit">
+        <InformationCircleIcon className="size-10" />
+        <p>
+          現在、
+          <span className="decoration-4 decoration-orange-400 font-bold underline">
+            キャンセル待ち
+          </span>
+          の
+          <br className="sm:hidden" />
+          受付中です。
+        </p>
+      </div>
       <Schedules schedules={schedules} />
       <section className="mx-auto p-2 text-center w-max">
         <p className="font-bold text-sm md:text-xl">

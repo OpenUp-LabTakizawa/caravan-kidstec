@@ -26,15 +26,14 @@ function Requirement({
   return (
     <section id={guideline.anchorLink} className="px-2 space-y-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
-      <div className="bg-sky-300 gap-1 grid grid-flow-col items-center mx-auto p-3 rounded-2xl shadow-lg text-base w-max">
-        <InformationCircleIcon className="row-span-2 size-10" />
+      <div className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base w-fit">
+        <InformationCircleIcon className="size-10" />
         <p>
           <span className="decoration-4 decoration-orange-400 font-bold underline">
             募集は先着順
           </span>
           になります。
-        </p>
-        <p>
+          <br />
           定員に達し次第、
           <br className="sm:hidden" />
           募集を終了します。
@@ -186,6 +185,18 @@ function Procedure({
   return (
     <section className="px-2 space-y-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
+      <div className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base text-center w-fit">
+        <InformationCircleIcon className="size-10" />
+        <p>
+          現在、
+          <span className="decoration-4 decoration-orange-400 font-bold underline">
+            キャンセル待ち
+          </span>
+          の
+          <br className="sm:hidden" />
+          受付中です。
+        </p>
+      </div>
       <ul className="mx-auto space-y-2 text-sm w-80">
         <Step index={1}>
           <p>
@@ -204,7 +215,7 @@ function Procedure({
           <p>
             トーク画面メニューの
             <br />
-            <b>「参加申込はこちら」</b>をタップ
+            <b>「キャンセル待ち登録はこちら」</b>をタップ
           </p>
         </Step>
         <Step index={3}>

@@ -115,7 +115,7 @@ export default function KantoEvent(): JSX.Element {
       <Image
         src={"/202410_kanto.avif"}
         width={540}
-        height={540}
+        height={383}
         alt="こどもテックキャラバン-関東イベント"
         priority={true}
         className="w-full"

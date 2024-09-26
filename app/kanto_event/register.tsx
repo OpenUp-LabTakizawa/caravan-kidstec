@@ -185,6 +185,28 @@ function Procedure({
   return (
     <section className="px-2 space-y-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
+      <div className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base text-center w-fit">
+        <InformationCircleIcon className="size-10" />
+        <div>
+          <p>
+            現在、
+            <span className="decoration-4 decoration-orange-400 font-bold underline">
+              キャンセル待ち中
+            </span>
+            です。
+          </p>
+          <p>
+            キャンセルが発生した場合、
+            <br />
+            参加が可能となります。
+          </p>
+          <p>
+            ご確認の上、ご登録を
+            <br className="sm:hidden" />
+            お願いいたします。
+          </p>
+        </div>
+      </div>
       <ul className="mx-auto space-y-2 text-sm w-80">
         <Step index={1}>
           <p>
@@ -203,7 +225,7 @@ function Procedure({
           <p>
             トーク画面メニューの
             <br />
-            <b>「参加申込はこちら」</b>をタップ
+            <b>「キャンセル待ち登録はこちら」</b>をタップ
           </p>
         </Step>
         <Step index={3}>

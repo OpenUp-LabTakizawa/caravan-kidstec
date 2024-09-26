@@ -17,14 +17,18 @@ export const metadata: Metadata = {
   title: "活動実績",
 }
 
-export default function Movie({
-  params: { area, date },
-}: Readonly<{ params: { area: string; date: string } }>): JSX.Element {
-  const menu: Menu = `/${area}` === KANTO.pathname ? KANTO : HIROSHIMA
+export default async function Movie({
+  params,
+}: Readonly<{
+  params: Promise<{ area: string; date: string }>
+}>): Promise<JSX.Element> {
+  const syncParams = await params
+  const menu: Menu =
+    `/${syncParams.area}` === KANTO.pathname ? KANTO : HIROSHIMA
   const history: EventDate[] =
-    `/${area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
+    `/${syncParams.area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
   const eventDate: EventDate = history.find(
-    (history) => history.date === date,
+    (history) => history.date === syncParams.date,
   ) as EventDate
   const movie: Menu = {
     name: eventDate.title,

@@ -6,18 +6,20 @@ import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import type { JSX } from "react"
 
-export default function PictureModal({
-  params: { area, date, image },
+export default async function PictureModal({
+  params,
 }: Readonly<{
-  params: { area: string; date: string; image: string }
-}>): JSX.Element {
+  params: Promise<{ area: string; date: string; image: string }>
+}>): Promise<JSX.Element> {
+  const syncParams = await params
   const history: EventDate[] =
-    `/${area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
+    `/${syncParams.area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
   const eventDate: EventDate = history.find(
-    (history) => history.date === date,
+    (history) => history.date === syncParams.date,
   ) as EventDate
   const picture: Picture = eventDate.pictures.find(
-    (picture) => picture.src.split("/").reverse()[0].split(".")[0] === image,
+    (picture) =>
+      picture.src.split("/").reverse()[0].split(".")[0] === syncParams.image,
   ) as Picture
 
   return (

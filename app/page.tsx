@@ -16,7 +16,7 @@ export default function Home(): JSX.Element {
         className="block scale-down-up sticky top-0 w-full z-20 sm:inline sm:static"
       >
         <Image
-          src="/202410_kanto_banner_start.avif"
+          src="/202410_kanto_banner_cancel.avif"
           width={540}
           height={162}
           alt="こどもテックキャラバン-関東イベントバナー"

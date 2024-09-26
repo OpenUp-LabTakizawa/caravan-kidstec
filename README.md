@@ -2,20 +2,20 @@
   <a href="https://caravan-kidstec.com/">
     <picture>
       <source srcset="./public/caravan-kidstec_logo.avif" media="(max-width: 600px)" height="128">
-      <img src="./public/caravan-kidstec_logo.avif" alt="caravan-kidstec_logo" height="256">
+      <img src="./public/caravan-kidstec_logo.avif" alt="caravan-kidstec logo" height="256">
     </picture>
   </a>
   <h1>caravan-kidstec</h1>
 
-  <a href="https://biomejs.dev/"><img src="https://img.shields.io/badge/biome-60A5FA?labelColor=000000&logo=biome&style=for-the-badge" alt="biome"></a>
-  <a href="https://bun.sh/"><img src="https://img.shields.io/badge/bun-FBF0DF?labelColor=000000&logo=bun&style=for-the-badge" alt="bun"></a>
+  <a href="https://biomejs.dev/"><img src="https://img.shields.io/badge/biome-60A5FA?labelColor=000000&logo=biome&style=for-the-badge" alt="Biome"></a>
+  <a href="https://bun.sh/"><img src="https://img.shields.io/badge/bun-FBF0DF?labelColor=000000&logo=bun&style=for-the-badge" alt="Bun"></a>
   <a href="https://line.me/"><img src="https://img.shields.io/badge/LINE-00C300.svg?labelColor=000000&logo=line&style=for-the-badge" alt="LINE"></a>
-  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/next.js-000000.svg?labelColor=000000&logo=next.js&style=for-the-badge" alt="next.js"></a>
-  <a href="https://react.dev/"><img src="https://img.shields.io/badge/react-61DAFB?labelColor=000000&logo=react&style=for-the-badge" alt="react"></a>
-  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/tailwind%20css-06B6D4?labelColor=000000&logo=tailwindcss&style=for-the-badge" alt="tailwindcss"></a>
-  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/typescript-3178C6?labelColor=000000&logo=typescript&style=for-the-badge" alt="typescript"></a>
-  <a href="https://code.visualstudio.com/"><img src="https://img.shields.io/badge/visual%20studio%20code-007ACC?labelColor=000000&style=for-the-badge" alt="vscode"></a>
-  <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/OpenUp-LabTakizawa/caravan-kidstec"><img src="https://img.shields.io/badge/open-007ACC?label=dev%20containers&labelColor=000000&style=for-the-badge" alt="devcontainer"></a>
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/next.js-000000.svg?labelColor=000000&logo=next.js&style=for-the-badge" alt="Next.js"></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/react-61DAFB?labelColor=000000&logo=react&style=for-the-badge" alt="React"></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/tailwind%20css-06B6D4?labelColor=000000&logo=tailwindcss&style=for-the-badge" alt="Tailwind CSS"></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/typescript-3178C6?labelColor=000000&logo=typescript&style=for-the-badge" alt="TypeScript"></a>
+  <a href="https://code.visualstudio.com/"><img src="https://img.shields.io/badge/visual%20studio%20code-007ACC?labelColor=000000&style=for-the-badge" alt="VSCode"></a>
+  <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/OpenUp-LabTakizawa/caravan-kidstec"><img src="https://img.shields.io/badge/open-007ACC?label=dev%20containers&labelColor=000000&style=for-the-badge" alt="Dev Container"></a>
   <a href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/LICENSE"><img src="https://img.shields.io/github/license/OpenUp-LabTakizawa/caravan-kidstec?labelColor=000000&style=for-the-badge" alt="License"></a>
 
   <p>

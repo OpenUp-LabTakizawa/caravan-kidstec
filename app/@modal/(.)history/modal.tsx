@@ -24,13 +24,12 @@ export function Modal({
   })
 
   return (
-    <dialog ref={dialogRef} className="modal" onClose={router.back}>
+    <dialog ref={dialogRef} onClose={router.back} className="modal">
       <div className="modal-box">
         <button
           type="button"
           onClick={router.back}
           className="absolute btn btn-circle btn-ghost btn-sm right-2 top-2 hover:scale-110"
-          aria-label="閉じる"
         >
           <XMarkIcon className="size-7" />
         </button>
@@ -42,6 +41,7 @@ export function Modal({
           </button>
         </div>
       </div>
+      <button type="button" onClick={router.back} className="modal-backdrop" />
     </dialog>
   )
 }

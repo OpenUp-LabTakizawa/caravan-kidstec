@@ -1,4 +1,4 @@
-import { LineApply } from "@/app/components/button/lineAddFriends"
+import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Menu, MenuPanel } from "@/app/interfaces/menu"
@@ -12,12 +12,12 @@ import {
   PRIVACY_POLICY,
   Q_AND_A,
 } from "@/app/lib/constant"
+import { InformationCircleIcon } from "@heroicons/react/24/outline"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
-import { Procedure } from "./procedure.tsx"
 import { Requirement } from "./requirement.tsx"
 import { Schedules } from "./schedules.tsx"
 import styles from "./styles.module.css"
@@ -114,37 +114,30 @@ export default function KantoEvent(): JSX.Element {
     <>
       <Heading menus={[KANTO_EVENT]} />
       <Image
-        src={"/202410_kanto.avif"}
+        src={"/202410_kanto_full.avif"}
         width={540}
         height={383}
         alt="こどもテックキャラバン-関東イベント"
         priority={true}
         className="w-full"
       />
-      <Schedules schedules={schedules} />
-      <section className="mx-auto p-2 text-center w-max">
-        <p className="font-bold text-sm md:text-xl">
-          全日程参加が必須となります。
-        </p>
-        <p className="mb-3">
-          <Link
-            href={`#${guideline.anchorLink}`}
-            className="font-bold text-sky-400 underline"
-          >
-            応募要項
-          </Link>
-          をご確認の上、
-          <br />
-          応募画面からお申し込みください。
-        </p>
-        <LineApply lineLink={KANTO_LINE} />
+      <section className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base text-center w-fit">
+        <InformationCircleIcon className="size-10" />
+        <div>
+          <p className="decoration-4 decoration-orange-400 font-bold underline">
+            受付は終了いたしました。
+          </p>
+          <p>
+            ご応募いただき誠に
+            <br className="sm:hidden" />
+            ありがとうございました。
+          </p>
+        </div>
       </section>
+      <LineRegister lineLink={KANTO_LINE} />
+      <Schedules schedules={schedules} />
       <Tablist schedules={schedules} />
       <Requirement guideline={guideline} />
-      <Procedure guideline={guideline} />
-      <section className="text-center">
-        <LineApply lineLink={KANTO_LINE} />
-      </section>
       <MenuPanels menu={KANTO_EVENT} />
     </>
   )

@@ -1,0 +1,13 @@
+.breadcrumbs > ul > li + *:before {
+  content: "";
+  margin-left: .5rem;
+  margin-right: .75rem;
+  display: block;
+  height: .375rem;
+  width: .375rem;
+  transform: rotate(45deg);
+  opacity: 0.4;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  background-color: transparent;
+}

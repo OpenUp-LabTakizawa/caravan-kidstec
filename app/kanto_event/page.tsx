@@ -189,10 +189,10 @@ function MenuPanels({ menu }: Readonly<{ menu: Menu }>): JSX.Element {
           >
             {panel.name}
           </b>
-          <div className="flex">
+          <div className="flex items-center">
             <span className="grow">{panel.text}</span>
             <ArrowRightIcon
-              className={`ml-auto rounded-full size-4 text-white group-hover:bg-white ${styles.arrowBackRight} ${panel.color.bg} ${panel.color.textHover}`}
+              className={`ml-auto rounded-full size-3 text-white group-hover:bg-white lg:size-4 ${styles.arrowBackRight} ${panel.color.bg} ${panel.color.textHover}`}
             />
           </div>
         </Link>

@@ -16,6 +16,14 @@ import type { JSX } from "react"
 export const metadata: Metadata = {
   title: "活動実績",
 }
+export const dynamicParams: boolean = false
+export function generateStaticParams(): { area: string; date: string }[] {
+  const hiroshimaArea: string = HIROSHIMA.pathname.split("/")[1]
+  return HIROSHIMA_HISTORY.map((eventDate) => ({
+    area: hiroshimaArea,
+    date: eventDate.date,
+  }))
+}
 
 export default async function Movie({
   params,

@@ -18,6 +18,21 @@ import type { JSX } from "react"
 export const metadata: Metadata = {
   title: "活動実績",
 }
+export const dynamicParams: boolean = false
+export function generateStaticParams(): {
+  area: string
+  date: string
+  image: string
+}[] {
+  const hiroshimaArea: string = HIROSHIMA.pathname.split("/")[1]
+  return HIROSHIMA_HISTORY.flatMap((eventDate) =>
+    eventDate.pictures.map((picture) => ({
+      area: hiroshimaArea,
+      date: eventDate.date,
+      image: picture.src.split("/").reverse()[0].split(".")[0],
+    })),
+  )
+}
 
 export default async function HistoryPicture({
   params,

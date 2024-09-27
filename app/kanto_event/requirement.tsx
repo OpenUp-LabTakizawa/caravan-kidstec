@@ -8,19 +8,19 @@ export function Requirement({
   return (
     <section id={guideline.anchorLink} className="px-2 space-y-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
-      <div className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base w-fit">
+      <section className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base text-center w-fit">
         <InformationCircleIcon className="size-10" />
-        <p>
-          <span className="decoration-4 decoration-orange-400 font-bold underline">
-            募集は先着順
-          </span>
-          になります。
-          <br />
-          定員に達し次第、
-          <br className="sm:hidden" />
-          募集を終了します。
-        </p>
-      </div>
+        <div>
+          <p className="decoration-4 decoration-orange-400 font-bold underline">
+            受付は終了いたしました。
+          </p>
+          <p>
+            ご応募いただき誠に
+            <br className="sm:hidden" />
+            ありがとうございました。
+          </p>
+        </div>
+      </section>
       <div className="border-2 border-sky-400 mx-auto py-2 space-y-2 text-center text-sm w-80 sm:hidden">
         <div className="border-1 border-b pb-2">
           <p className="font-bold">募集人数</p>

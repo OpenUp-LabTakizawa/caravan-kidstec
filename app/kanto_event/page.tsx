@@ -17,7 +17,8 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
-import { Register } from "./register.tsx"
+import { Procedure } from "./procedure.tsx"
+import { Requirement } from "./requirement.tsx"
 import { Schedules } from "./schedules.tsx"
 import styles from "./styles.module.css"
 import { Tablist } from "./tablist.tsx"
@@ -139,7 +140,8 @@ export default function KantoEvent(): JSX.Element {
         <LineApply lineLink={KANTO_LINE} />
       </section>
       <Tablist schedules={schedules} />
-      <Register guideline={guideline} />
+      <Requirement guideline={guideline} />
+      <Procedure guideline={guideline} />
       <section className="text-center">
         <LineApply lineLink={KANTO_LINE} />
       </section>

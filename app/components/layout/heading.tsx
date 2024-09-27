@@ -2,12 +2,9 @@ import type { Menu } from "@/app/interfaces/menu"
 import { HomeIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import type { JSX } from "react"
+import styles from "./heading.module.css"
 
-export function Heading({
-  menus,
-}: Readonly<{
-  menus: Menu[]
-}>): JSX.Element {
+export function Heading({ menus }: Readonly<{ menus: Menu[] }>): JSX.Element {
   return (
     <section className="px-3 space-y-6">
       <Breadcrumb menus={menus} />
@@ -20,29 +17,27 @@ export function Heading({
   )
 }
 
-function Breadcrumb({
-  menus,
-}: Readonly<{
-  menus: Menu[]
-}>): JSX.Element {
+function Breadcrumb({ menus }: Readonly<{ menus: Menu[] }>): JSX.Element {
   return (
-    <div className="breadcrumbs text-sm">
-      <ul>
-        <li>
+    <div
+      className={`max-w-full overflow-x-auto py-2 text-sm ${styles.breadcrumbs}`}
+    >
+      <ul className="flex items-center whitespace-nowrap">
+        <li className="flex items-center">
           <Link
             href="/"
-            className="block gap-1 p-1 rounded-xl scale-down-up underline hover:bg-gray-200"
+            className="flex items-center gap-1 p-1 rounded-xl scale-down-up underline hover:bg-gray-200"
           >
             <HomeIcon className="size-5 text-sky-400" />
             ホーム
           </Link>
         </li>
         {menus.map((menu, index) => (
-          <li key={menu.name} className={menu.textColor}>
+          <li key={menu.name} className={`flex items-center ${menu.textColor}`}>
             {menus.length > 1 && index === 0 ? (
               <Link
                 href={menu.pathname}
-                className="block p-1 rounded-xl scale-down-up underline hover:bg-gray-200"
+                className="p-1 rounded-xl scale-down-up underline hover:bg-gray-200"
               >
                 {menu.name}
               </Link>

@@ -1,0 +1,10 @@
+.dialog::backdrop {
+  animation: modal-pop 0.2s ease-out;
+  transition-property: transform, opacity, visibility;
+}
+
+@keyframes modal-pop {
+  0% {
+    opacity: 0;
+  }
+}

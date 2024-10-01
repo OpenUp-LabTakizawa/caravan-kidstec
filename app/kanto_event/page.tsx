@@ -123,9 +123,7 @@ export default function KantoEvent(): JSX.Element {
       />
       <Schedules schedules={schedules} />
       <section className="mx-auto p-2 text-center w-max">
-        <p className="font-bold text-sm md:text-xl">
-          全日程参加が必須となります。
-        </p>
+        <b className="text-lg md:text-xl">全日程参加が必須となります。</b>
         <p className="mb-3">
           <Link
             href={`#${guideline.anchorLink}`}
@@ -134,7 +132,7 @@ export default function KantoEvent(): JSX.Element {
             応募要項
           </Link>
           をご確認の上、
-          <br />
+          <br className="sm:hidden" />
           応募画面からお申し込みください。
         </p>
         <LineApply lineLink={KANTO_LINE} />

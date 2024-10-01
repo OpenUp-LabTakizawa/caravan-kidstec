@@ -63,7 +63,7 @@ export default function RootLayout({
     >
       <body className="font-zenKakuGothicNew">
         <Header />
-        <main className="max-w-screen-md mx-auto text-xs sm:px-12 lg:text-base">
+        <main className="max-w-screen-md mx-auto text-xs sm:px-12 sm:text-sm md:text-base">
           {children}
           {modal}
           <ScrollToTop />

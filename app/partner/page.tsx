@@ -46,7 +46,7 @@ export default function SponserPage(): JSX.Element {
       {partnerAreas.map((area) => (
         <section
           key={area.menu.name}
-          className={`bg-amber-50 border-8 border-double mx-auto py-2 rounded-2xl shadow-lg space-y-4 w-72 lg:w-96 ${area.color.border}`}
+          className={`bg-amber-50 border-8 border-double mx-auto py-2 rounded-2xl shadow-lg space-y-4 w-72 sm:w-96 ${area.color.border}`}
         >
           <h2 className="font-bold font-zenMaruGothic text-3xl">
             <Link

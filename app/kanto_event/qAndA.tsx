@@ -24,7 +24,7 @@ export function QA({
           <details
             key={qAndA.title}
             open={index === 0}
-            className={`rounded-2xl w-full ${styles.details}`}
+            className={`w-full ${styles.details}`}
           >
             <summary className="block bg-sky-50 p-2 relative rounded-2xl text-base text-center">
               {qAndA.title}

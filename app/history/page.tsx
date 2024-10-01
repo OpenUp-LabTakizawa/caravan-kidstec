@@ -27,8 +27,8 @@ export default function History(): JSX.Element {
       </h2>
       {HIROSHIMA_HISTORY.map((history) => (
         <section key={history.date} className="space-y-4">
-          <details className={`rounded-2xl w-full ${styles.details}`}>
-            <summary className="block bg-amber-50 font-bold font-zenMaruGothic p-4 relative text-2xl w-full">
+          <details className={`group w-full ${styles.details}`}>
+            <summary className="block bg-amber-50 font-bold font-zenMaruGothic p-4 relative rounded-2xl text-2xl w-full group-open:rounded-b-none">
               <p className="absolute outline outline-offset-2 rounded text-rose-400 text-xs -rotate-45">
                 大好評で
                 <br />
@@ -48,7 +48,7 @@ export default function History(): JSX.Element {
             >
               イベントの様子はこちら！
               <ArrowTopRightOnSquareIcon
-                className={`${styles.arrowTopRight} size-5`}
+                className={`size-5 ${styles.arrowTopRight}`}
               />
             </Link>
           </details>

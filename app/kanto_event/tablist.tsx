@@ -53,7 +53,7 @@ export function Tablist({
   }
 
   return (
-    <section className="max-w-lg mx-auto px-2 space-y-2 text-center sm:w-96">
+    <section className="max-w-lg mx-auto px-2 space-y-2 text-center sm:pb-12">
       <div className="flex gap-2 mx-auto">
         {schedules.map((schedule) => (
           <button
@@ -86,11 +86,14 @@ export function Tablist({
             className={`duration-1000 relative shadow-lg transition-transform${isFlip ? ` ${styles.rotateY180}` : ""}`}
             style={{ transformStyle: "preserve-3d" }}
           >
-            <div className="absolute" style={{ backfaceVisibility: "hidden" }}>
+            <div
+              className="absolute w-full"
+              style={{ backfaceVisibility: "hidden" }}
+            >
               <TabCard schedule={schedule} time="am" />
             </div>
             <div
-              className="absolute"
+              className="absolute w-full"
               style={{
                 backfaceVisibility: "hidden",
                 transform: "rotateY(180deg)",
@@ -117,7 +120,7 @@ function TabCard({
         width={256}
         height={256}
         alt={schedule.alt}
-        className="h-60 object-cover rounded-t-2xl w-96"
+        className="h-60 object-cover rounded-t-2xl w-full sm:h-72"
       />
       <div className="bg-amber-50 h-36 pb-2 py-1 rounded-b-2xl shadow-2xl space-y-2">
         <p className="text-left text-white text-xs">

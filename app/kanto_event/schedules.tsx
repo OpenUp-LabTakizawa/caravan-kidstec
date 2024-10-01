@@ -15,14 +15,19 @@ export function Schedules({
             key={schedule.alt}
             className={`p-2 space-y-2${index !== schedules.length - 1 ? " border-b" : ""}`}
           >
-            <p className="decoration-4 decoration-sky-400 underline">
-              {schedule.date.year}年
-              <b className="text-2xl">{schedule.date.month}</b>月
-              <b className="decoration-4 decoration-sky-400 text-2xl underline">
-                {schedule.date.day}
-              </b>
-              日(
-              <b className="text-xl">{schedule.date.dayOfWeek}</b>)
+            <p className="flex items-center">
+              <span className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">
+                Day{index + 1}
+              </span>
+              <span className="decoration-4 decoration-sky-400 grow underline">
+                {schedule.date.year}年
+                <b className="text-2xl">{schedule.date.month}</b>月
+                <b className="decoration-4 decoration-sky-400 text-2xl underline">
+                  {schedule.date.day}
+                </b>
+                日(
+                <b className="text-xl">{schedule.date.dayOfWeek}</b>)
+              </span>
             </p>
             <p className="flex items-center">
               <span className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">

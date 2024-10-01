@@ -20,10 +20,19 @@ summary::-webkit-details-marker {
   @media (prefers-reduced-motion: no-preference) {
     animation: button-pop .25s ease-out;
   }
+  & > img {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: button-pop .25s ease-out;
+    }
+  }
   &:active:hover,
   &:active:focus {
     animation: button-pop 0s ease-out;
     transform: scale(0.95);
+    & > img {
+      animation: button-pop 0s ease-out;
+      transform: scale(0.95);
+    }
   }
 }
 
@@ -39,13 +48,6 @@ summary::-webkit-details-marker {
   animation: fade-in-up-timeline ease-in-out forwards;
   animation-timeline: view();
   animation-range: contain 0% contain 50%;
-}
-
-.scale-down-up:focus {
-  animation: scale-down-up 200ms;
-  & > img {
-    animation: scale-down-up 200ms;
-  }
 }
 
 .scale-up-down {
@@ -142,16 +144,6 @@ summary::-webkit-details-marker {
   100% {
     opacity: 1;
     transform: translatey(0);
-  }
-}
-
-@keyframes scale-down-up {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.9);
   }
 }
 

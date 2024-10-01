@@ -26,7 +26,7 @@ function Breadcrumb({ menus }: Readonly<{ menus: Menu[] }>): JSX.Element {
         <li className="flex items-center">
           <Link
             href="/"
-            className="flex items-center gap-1 p-1 rounded-xl scale-down-up underline hover:bg-gray-200"
+            className="button-pop duration-200 ease-out flex items-center gap-1 p-1 rounded-xl underline hover:bg-gray-200"
           >
             <HomeIcon className="size-5 text-sky-400" />
             ホーム
@@ -37,7 +37,7 @@ function Breadcrumb({ menus }: Readonly<{ menus: Menu[] }>): JSX.Element {
             {menus.length > 1 && index === 0 ? (
               <Link
                 href={menu.pathname}
-                className="p-1 rounded-xl scale-down-up underline hover:bg-gray-200"
+                className="button-pop duration-200 ease-out p-1 rounded-xl underline hover:bg-gray-200"
               >
                 {menu.name}
               </Link>

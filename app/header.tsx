@@ -89,7 +89,7 @@ function DropdownMenu({
 
   return (
     <details ref={ref} className="relative lg:hidden">
-      <summary className="block h-fit min-h-0 p-1 scale-down-up">
+      <summary className="block button-pop duration-200 ease-out h-fit min-h-0 p-1">
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>
@@ -98,7 +98,7 @@ function DropdownMenu({
             <li key={menu.name}>
               <Link
                 href={menu.pathname}
-                className="block font-bold px-3 py-1 rounded-xl scale-down-up text-nowrap text-orange-400 focus:bg-gray-400 hover:bg-gray-200"
+                className="block button-pop duration-200 ease-out font-bold px-3 py-1 rounded-xl text-nowrap text-orange-400 focus:bg-gray-400 hover:bg-gray-200"
               >
                 {menu.name}
               </Link>
@@ -151,7 +151,7 @@ function Navigation({
         <li key={menu.name}>
           <Link
             href={menu.pathname}
-            className="block font-bold px-3 py-1 rounded-xl scale-down-up text-orange-400 hover:bg-gray-200"
+            className="block button-pop duration-200 ease-out font-bold px-3 py-1 rounded-xl text-orange-400 hover:bg-gray-200"
           >
             {menu.name}
           </Link>

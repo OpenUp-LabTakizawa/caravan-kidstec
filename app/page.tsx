@@ -13,7 +13,7 @@ export default function Home(): JSX.Element {
       {/* block className is necessary for Safari behavior */}
       <Link
         href={KANTO_EVENT.pathname}
-        className="block scale-down-up sticky top-0 w-full z-20 sm:inline sm:static"
+        className="block button-pop duration-200 ease-out sticky top-0 w-full z-20 sm:inline sm:static"
       >
         <Image
           src="/202410_kanto_banner_start.avif"
@@ -21,7 +21,7 @@ export default function Home(): JSX.Element {
           height={162}
           alt="こどもテックキャラバン-関東イベントバナー"
           priority={true}
-          className="w-full"
+          className="duration-200 ease-out w-full"
         />
       </Link>
       <section>
@@ -66,7 +66,7 @@ export default function Home(): JSX.Element {
         <h2 className="font-bold font-zenMaruGothic text-2xl">
           <Link
             href={SECRETARIAT.pathname}
-            className="block scale-down-up text-sky-400 underline"
+            className="block button-pop duration-200 ease-out text-sky-400 underline"
           >
             事務局の想い
           </Link>

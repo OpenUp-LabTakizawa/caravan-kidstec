@@ -12,7 +12,7 @@ export function Footer(): JSX.Element {
             <li key={menu.name}>
               <Link
                 href={menu.pathname}
-                className="block font-bold px-3 py-1 rounded-xl scale-down-up text-orange-400 hover:bg-gray-300"
+                className="block button-pop duration-200 ease-out font-bold px-3 py-1 rounded-xl text-orange-400 hover:bg-gray-300"
               >
                 {menu.name}
               </Link>

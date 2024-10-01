@@ -40,8 +40,12 @@ export function Requirement({
         </div>
         <div className="border-1 border-b pb-2">
           <p className="font-bold">参加条件</p>
-          <ul className="list-disc pl-7 pr-2 space-y-3 text-left">
-            <li>３日間で１つのイベントである為、全日程にご参加頂けること</li>
+          <ul className="list-disc pl-7 space-y-3 text-left">
+            <li>
+              ３日間で１つのイベントである為、
+              <br className="sm:hidden" />
+              全日程にご参加頂けること
+            </li>
             <li>イベントの感想やアンケートにご対応頂けること</li>
             <li>
               今後のイベント募集、また、スポンサーやパートナーの取り組み事例紹介として、イベント写真・動画利用の承諾を頂けること
@@ -50,15 +54,21 @@ export function Requirement({
         </div>
         <div>
           <p className="font-bold">注意事項</p>
-          <ul className="list-disc pl-7 pr-2 space-y-3 text-left">
+          <ul className="list-disc pl-7 space-y-3 text-left">
             <li>
-              受付手続きや会場内の移動を考慮し、集合時間は数十分、早くなります。
+              受付手続きや会場内の移動を考慮し、
+              <br className="sm:hidden" />
+              集合時間は数十分、早くなります。
             </li>
             <li>
-              プログラム初日のクルックフィールズは、飲食物のお持ち込みができません。
+              プログラム初日のクルックフィールズは、
+              <br className="sm:hidden" />
+              飲食物のお持ち込みができません。
             </li>
             <li>
-              場内でのお弁当のご購入と、マイボトルのご持参をお願いいたします。
+              場内でのお弁当のご購入と、
+              <br className="sm:hidden" />
+              マイボトルのご持参をお願いいたします。
             </li>
           </ul>
         </div>

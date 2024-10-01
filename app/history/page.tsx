@@ -26,7 +26,7 @@ export default function History(): JSX.Element {
         {HIROSHIMA.name}
       </h2>
       {HIROSHIMA_HISTORY.map((history) => (
-        <section key={history.date} className="space-y-4">
+        <section key={history.date} className="space-y-4 px-2">
           <details className={`group w-full ${styles.details}`}>
             <summary className="block bg-amber-50 font-bold font-zenMaruGothic p-4 relative rounded-2xl text-2xl w-full group-open:rounded-b-none">
               <p className="absolute outline outline-offset-2 rounded text-rose-400 text-xs -rotate-45">
@@ -34,7 +34,7 @@ export default function History(): JSX.Element {
                 <br />
                 開催終了
               </p>
-              <span className="ml-4 sm:ml-0">{history.title}</span>
+              <span className="ml-8 sm:ml-0">{history.title}</span>
             </summary>
             <Programs programs={history.programs} />
             <PictureTile

@@ -24,7 +24,7 @@ export function Schedules({
               日(
               <b className="text-xl">{schedule.date.dayOfWeek}</b>)
             </p>
-            <p className="flex">
+            <p className="flex items-center">
               <span className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">
                 開始
               </span>

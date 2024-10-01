@@ -16,6 +16,17 @@ summary::-webkit-details-marker {
   animation: arrow-up 1.5s infinite;
 }
 
+.button-pop {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: button-pop .25s ease-out;
+  }
+  &:active:hover,
+  &:active:focus {
+    animation: button-pop 0s ease-out;
+    transform: scale(0.95);
+  }
+}
+
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }
@@ -86,6 +97,18 @@ summary::-webkit-details-marker {
   }
   20% {
     transform: translatey(-8px);
+  }
+}
+
+@keyframes button-pop {
+  0% {
+    transform: scale(0.98);
+  }
+  40% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

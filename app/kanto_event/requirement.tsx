@@ -21,7 +21,7 @@ export function Requirement({
           募集を終了します。
         </p>
       </div>
-      <div className="border-2 border-sky-400 mx-auto py-2 space-y-2 text-center text-sm w-80 sm:hidden">
+      <div className="border-2 border-sky-400 mx-auto py-2 space-y-2 text-center text-sm sm:hidden">
         <div className="border-1 border-b pb-2">
           <p className="font-bold">募集人数</p>
           <p>{guideline.participantsNumber}</p>

@@ -20,7 +20,9 @@ export function Programs({
               {program.date.dayOfWeek})
             </p>
             <p className="space-x-1">
-              <b className="badge badge-outline badge-xs">場所</b>
+              <b className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs w-fit">
+                場所
+              </b>
               <span>{program.venue}</span>
             </p>
           </li>

@@ -11,7 +11,7 @@ export function Procedure({
   return (
     <section className="px-2 space-y-4 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
-      <ul className="mx-auto space-y-2 text-sm w-80">
+      <ul className="max-w-lg mx-auto space-y-2 text-sm">
         <Step index={1}>
           <p>
             <Link
@@ -20,7 +20,7 @@ export function Procedure({
             >
               LINE公式アカウント
             </Link>
-            を<br />
+            を<br className="sm:hidden" />
             友達追加してトーク画面へ
           </p>
           <LineAddFriends linkLink={guideline.lineLink} />
@@ -28,7 +28,7 @@ export function Procedure({
         <Step index={2}>
           <p>
             トーク画面メニューの
-            <br />
+            <br className="sm:hidden" />
             <b>「参加申込はこちら」</b>をタップ
           </p>
         </Step>
@@ -41,7 +41,7 @@ export function Procedure({
           </p>
           <p>
             担当者よりご参加の確定、及び、
-            <br />
+            <br className="sm:hidden" />
             その他のご連絡をさせて頂きます。
           </p>
         </Step>

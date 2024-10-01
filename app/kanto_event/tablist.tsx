@@ -53,7 +53,7 @@ export function Tablist({
   }
 
   return (
-    <section className="max-w-lg mx-auto px-2 space-y-2 text-center w-80 sm:w-96">
+    <section className="max-w-lg mx-auto px-2 space-y-2 text-center sm:w-96">
       <div className="flex gap-2 mx-auto">
         {schedules.map((schedule) => (
           <button
@@ -131,45 +131,28 @@ function TabCard({
         <h3 className="font-bold mx-auto text-base">
           {time === "am" ? schedule.title.am : schedule.title.pm}
         </h3>
-        {schedule.url.am || schedule.url.pm ? (
-          <Link
-            href={time === "am" ? schedule.url.am : schedule.url.pm}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex font-bold gap-1 items-center mx-auto text-sm underline w-max"
-          >
-            {time === "am"
-              ? schedule.organization.am
-              : schedule.organization.pm}
-            <ArrowTopRightOnSquareIcon className="size-4" />
-          </Link>
-        ) : time === "am" ? (
-          <p className="font-bold text-sm">{schedule.organization.am}</p>
-        ) : (
-          <p className="font-bold text-sm">{schedule.organization.pm}</p>
-        )}
+        <Link
+          href={time === "am" ? schedule.url.am : schedule.url.pm}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex font-bold gap-1 items-center mx-auto text-sm underline w-max"
+        >
+          {time === "am" ? schedule.organization.am : schedule.organization.pm}
+          <ArrowTopRightOnSquareIcon className="size-4" />
+        </Link>
         <p className="font-bold text-sm">
           {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
           日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
         </p>
         <div className="flex flex-wrap gap-2 justify-center">
-          {time === "am"
-            ? schedule.tags.am.map((tag) => (
-                <span
-                  key={tag}
-                  className="badge badge-outline bg-gray-100 text-xs"
-                >
-                  {tag}
-                </span>
-              ))
-            : schedule.tags.pm.map((tag) => (
-                <span
-                  key={tag}
-                  className="badge badge-outline bg-gray-100 text-xs"
-                >
-                  {tag}
-                </span>
-              ))}
+          {(time === "am" ? schedule.tags.am : schedule.tags.pm).map((tag) => (
+            <span
+              key={tag}
+              className="bg-gray-100 border border-current h-5 px-1.5 rounded-3xl text-xs"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
     </>

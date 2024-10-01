@@ -45,7 +45,7 @@ export function Header(): JSX.Element {
       className={`bg-white flex items-center p-2 w-full${pathname !== "/" && headerHeight < scrollState.scrollY && scrollState.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollState.scrollY < headerHeight || !scrollState.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
     >
       <div className="grow">
-        <Link href="/" className="block mx-4 tilt-shaking w-fit">
+        <Link href="/" className="block button-pop mx-4 tilt-shaking w-fit">
           <Image
             src="/caravan-kidstec_logo_line.avif"
             width={192}

@@ -44,7 +44,7 @@ export default function History(): JSX.Element {
             />
             <Link
               href={`${HISTORY.pathname}/movie${HIROSHIMA.pathname}/${history.date}`}
-              className={`bg-sky-400 btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-fit ${styles.blueShine}`}
+              className={`bg-sky-400 button-pop duration-200 ease-out flex font-bold gap-2 items-center justify-center h-12 mt-2 mx-auto px-4 rounded-2xl shadow-lg text-lg text-white w-fit ${styles.blueShine}`}
             >
               イベントの様子はこちら！
               <ArrowTopRightOnSquareIcon

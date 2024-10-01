@@ -30,7 +30,7 @@ export default async function PictureModal({
         width={256}
         height={256}
         alt={picture.alt}
-        className="pt-6 w-full"
+        className="w-full"
       />
     </Modal>
   )

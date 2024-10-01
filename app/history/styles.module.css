@@ -8,6 +8,27 @@
   animation: shine 20s infinite linear;
 }
 
+.details summary {
+  transition: background-color 0.2s ease-out;
+  &::after {
+    position: absolute;
+    display: block;
+    height: .5rem;
+    width: .5rem;
+    transition: all .2s ease-out;
+    top: 1.9rem;
+    inset-inline-end: 1.4rem;
+    content: "";
+    transform: translateY(-100%) rotate(45deg);
+    transform-origin: 75% 75%;
+    box-shadow: 2px 2px;
+    pointer-events: none;
+  }
+}
+.details[open] summary::after {
+  transform: translateY(-50%) rotate(225deg);
+}
+
 @keyframes arrow-top-right {
   0%,
   40% {

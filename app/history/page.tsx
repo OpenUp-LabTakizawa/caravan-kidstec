@@ -27,14 +27,14 @@ export default function History(): JSX.Element {
       </h2>
       {HIROSHIMA_HISTORY.map((history) => (
         <section key={history.date} className="space-y-4">
-          <details className="collapse collapse-arrow">
-            <summary className="bg-amber-50 collapse-title font-bold font-zenMaruGothic text-2xl">
+          <details className={`rounded-2xl w-full ${styles.details}`}>
+            <summary className="block bg-amber-50 font-bold font-zenMaruGothic p-4 relative text-2xl w-full">
               <p className="absolute outline outline-offset-2 rounded text-rose-400 text-xs -rotate-45">
                 大好評で
                 <br />
                 開催終了
               </p>
-              <span className="ml-12">{history.title}</span>
+              <span className="ml-4 sm:ml-0">{history.title}</span>
             </summary>
             <Programs programs={history.programs} />
             <PictureTile
@@ -44,7 +44,7 @@ export default function History(): JSX.Element {
             />
             <Link
               href={`${HISTORY.pathname}/movie${HIROSHIMA.pathname}/${history.date}`}
-              className={`bg-sky-400 btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-max ${styles.blueShine}`}
+              className={`bg-sky-400 btn mt-2 mx-auto rounded-2xl shadow-lg text-lg text-white w-fit ${styles.blueShine}`}
             >
               イベントの様子はこちら！
               <ArrowTopRightOnSquareIcon

@@ -5,6 +5,7 @@ import type { QandA } from "@/app/interfaces/qAndA"
 import { Q_AND_A } from "@/app/lib/constant"
 import Image from "next/image"
 import type { JSX } from "react"
+import styles from "./qAndA.module.css"
 
 export function QA({
   qAndAs,
@@ -23,9 +24,9 @@ export function QA({
           <details
             key={qAndA.title}
             open={index === 0}
-            className="collapse collapse-arrow"
+            className={`rounded-2xl w-full ${styles.details}`}
           >
-            <summary className="bg-sky-50 collapse-title min-h-0 pl-16 rounded-2xl text-center">
+            <summary className="block bg-sky-50 p-2 relative rounded-2xl text-base text-center">
               {qAndA.title}
             </summary>
             <div className="bg-sky-50 chat chat-start flex items-center mt-2 rounded-t-2xl">

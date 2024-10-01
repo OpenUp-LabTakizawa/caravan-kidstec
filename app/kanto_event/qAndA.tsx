@@ -19,7 +19,7 @@ export function QA({
   return (
     <>
       <Heading menus={[menu, Q_AND_A]} />
-      <section className="space-y-2">
+      <section className="px-1 space-y-2">
         {qAndAs.map((qAndA, index) => (
           <details
             key={qAndA.title}

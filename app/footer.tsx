@@ -5,14 +5,14 @@ import { NAVIGATION } from "./lib/constant.ts"
 
 export function Footer(): JSX.Element {
   return (
-    <footer className="bg-stone-200 space-y-2 text-center text-sm">
+    <footer className="bg-stone-200 space-y-2 text-center text-sm sm:text-base">
       <nav>
-        <ul className="gap-1 grid grid-cols-3 justify-center mx-auto p-1 w-fit sm:gap-6 sm:grid-cols-5">
+        <ul className="font-bold gap-1 grid grid-cols-3 justify-center mx-auto p-1 w-fit sm:gap-6 sm:grid-cols-5">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               <Link
                 href={menu.pathname}
-                className="block button-pop duration-200 ease-out font-bold px-3 py-1 rounded-xl text-orange-400 hover:bg-gray-300"
+                className="block button-pop duration-200 ease-out px-3 py-1 rounded-xl text-orange-400 hover:bg-gray-300"
               >
                 {menu.name}
               </Link>

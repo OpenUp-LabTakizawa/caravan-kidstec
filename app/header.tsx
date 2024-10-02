@@ -42,7 +42,7 @@ export function Header(): JSX.Element {
 
   return (
     <header
-      className={`bg-white flex items-center p-2 w-full${pathname !== "/" && headerHeight < scrollState.scrollY && scrollState.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollState.scrollY < headerHeight || !scrollState.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
+      className={`bg-white flex items-center p-2${pathname !== "/" && headerHeight < scrollState.scrollY && scrollState.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollState.scrollY < headerHeight || !scrollState.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
     >
       <div className="grow">
         <Link href="/" className="block button-pop mx-4 tilt-shaking w-fit">
@@ -55,7 +55,7 @@ export function Header(): JSX.Element {
           />
         </Link>
       </div>
-      <nav className="w-fit z-30">
+      <nav className="font-bold w-fit z-30">
         <DropdownMenu isScrollDown={scrollState.isScrollDown} />
         <Navigation isScrollDown={scrollState.isScrollDown} />
       </nav>
@@ -89,16 +89,16 @@ function DropdownMenu({
 
   return (
     <details ref={ref} className="relative lg:hidden">
-      <summary className="block button-pop duration-200 ease-out h-fit min-h-0 p-1">
+      <summary className="block button-pop duration-200 ease-out p-1">
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <nav>
-        <ul className="absolute bg-white end-0 flex flex-col gap-1 p-3 rounded-2xl shadow text-sm">
+        <ul className="absolute bg-white end-0 flex flex-col gap-1 p-3 rounded-2xl shadow text-base sm:text-lg">
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               <Link
                 href={menu.pathname}
-                className="block button-pop duration-200 ease-out font-bold px-3 py-1 rounded-xl text-nowrap text-orange-400 focus:bg-gray-400 hover:bg-gray-200"
+                className="block button-pop duration-200 ease-out px-3 py-1 rounded-xl text-nowrap text-orange-400 focus:bg-gray-400 hover:bg-gray-200"
               >
                 {menu.name}
               </Link>
@@ -146,12 +146,12 @@ function Navigation({
   }
 
   return (
-    <ul className="flex flex-nowrap gap-1 hidden p-0 lg:flex">
+    <ul className="flex flex-nowrap gap-1 hidden lg:flex">
       {NAVIGATION.map((menu) => (
         <li key={menu.name}>
           <Link
             href={menu.pathname}
-            className="block button-pop duration-200 ease-out font-bold px-3 py-1 rounded-xl text-orange-400 hover:bg-gray-200"
+            className="block button-pop duration-200 ease-out px-3 py-1 rounded-xl text-orange-400 hover:bg-gray-200"
           >
             {menu.name}
           </Link>

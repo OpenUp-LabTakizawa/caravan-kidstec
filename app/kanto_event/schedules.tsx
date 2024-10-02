@@ -7,7 +7,7 @@ export function Schedules({
   schedules,
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   return (
-    <section className="mx-auto px-2 relative space-y-2 text-center">
+    <section className="mx-auto px-2 space-y-2 text-center">
       <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
       <ul className="border-2 border-sky-400 mx-auto p-2 w-fit">
         {schedules.map((schedule, index) => (

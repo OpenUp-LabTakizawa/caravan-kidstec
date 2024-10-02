@@ -62,7 +62,7 @@ function Step({
   return (
     <>
       <li className="border-2 border-sky-400 pb-2 relative space-y-2">
-        <b className="absolute bg-sky-400 flex gap-1 items-center left-0 pr-1 top-0">
+        <b className="absolute bg-sky-400 flex gap-1 items-center pr-1">
           <CheckIcon className="size-5" />
           {index}
         </b>

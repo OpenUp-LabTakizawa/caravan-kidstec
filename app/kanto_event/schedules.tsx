@@ -12,7 +12,7 @@ export function Schedules({
       <ul className="border-2 border-sky-400 mx-auto p-2 w-fit">
         {schedules.map((schedule, index) => (
           <li
-            key={schedule.alt}
+            key={schedule.venue}
             className={`p-2 space-y-2${index !== schedules.length - 1 ? " border-b" : ""}`}
           >
             <p className="flex items-center">

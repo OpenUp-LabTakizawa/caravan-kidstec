@@ -1,7 +1,6 @@
 import type { Picture } from "./picture.ts"
 
 export type Schedule = {
-  readonly alt: string
   readonly date: {
     readonly year: string
     readonly month: string
@@ -12,6 +11,7 @@ export type Schedule = {
   readonly address: string
   readonly googleMapLink: string
   readonly src: { readonly am: string; readonly pm: string }
+  readonly alt: { readonly am: string; readonly pm: string }
   readonly title: { readonly am: string; readonly pm: string }
   readonly organization: { readonly am: string; readonly pm: string }
   readonly url: { readonly am: string; readonly pm: string }

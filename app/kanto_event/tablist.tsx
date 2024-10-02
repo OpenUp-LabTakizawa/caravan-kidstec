@@ -13,7 +13,7 @@ export function Tablist({
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   const [isBusy, setIsBusy] = useState<boolean>(false)
   const [isFlip, setIsFlip] = useState<boolean>(false)
-  const [tab, setTab] = useState<string>(schedules[0].alt)
+  const [tab, setTab] = useState<string>(schedules[0].venue)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,14 +21,14 @@ export function Tablist({
         return
       }
 
-      if (isFlip && tab === schedules[0].alt) {
-        setTab(schedules[1].alt)
+      if (isFlip && tab === schedules[0].venue) {
+        setTab(schedules[1].venue)
       }
-      if (isFlip && tab === schedules[1].alt) {
-        setTab(schedules[2].alt)
+      if (isFlip && tab === schedules[1].venue) {
+        setTab(schedules[2].venue)
       }
-      if (isFlip && tab === schedules[2].alt) {
-        setTab(schedules[0].alt)
+      if (isFlip && tab === schedules[2].venue) {
+        setTab(schedules[0].venue)
       }
       setIsFlip(!isFlip)
     }, 2500)
@@ -55,31 +55,31 @@ export function Tablist({
   return (
     <section className="max-w-lg mx-auto px-2 space-y-2 text-center">
       <div className="flex gap-2 mx-auto">
-        {schedules.map((schedule) => (
+        {schedules.map((schedule, index) => (
           <button
-            key={schedule.alt}
+            key={schedule.venue}
             type="button"
-            onClick={() => onClickTab(schedule.alt)}
+            onClick={() => onClickTab(schedule.venue)}
             onMouseEnter={() => onMouseEnter()}
             onMouseLeave={() => onMouseLeave()}
             onTouchStart={() => setIsBusy(true)}
             onTouchEnd={() => setIsBusy(false)}
-            className={`basis-1/3 border-b-4 duration-300 py-1 rounded-lg shadow-xl ${schedule.alt === tab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
+            className={`basis-1/3 border-b-4 duration-300 font-bold py-1 rounded-lg shadow-xl ${schedule.venue === tab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
           >
-            <b>{schedule.alt}</b>
+            Day&nbsp;{index + 1}
           </button>
         ))}
       </div>
-      {schedules.map((schedule) => (
+      {schedules.map((schedule, index) => (
         <div
-          key={schedule.alt}
+          key={schedule.venue}
           onClick={() => setIsFlip(!isFlip)}
           onKeyDown={() => setIsFlip(!isFlip)}
           onMouseEnter={() => onMouseEnter()}
           onMouseLeave={() => onMouseLeave()}
           onTouchStart={() => setIsBusy(true)}
           onTouchEnd={() => setIsBusy(false)}
-          className={`h-96 sm:h-[27rem]${tab === schedule.alt ? "" : " hidden"}`}
+          className={`h-96 sm:h-[27rem]${schedule.venue === tab ? "" : " hidden"}`}
           style={{ perspective: "1000px" }}
         >
           <div
@@ -90,7 +90,7 @@ export function Tablist({
               className="absolute w-full"
               style={{ backfaceVisibility: "hidden" }}
             >
-              <TabCard schedule={schedule} time="am" />
+              <TabCard index={index} schedule={schedule} time="am" />
             </div>
             <div
               className="absolute w-full"
@@ -99,7 +99,7 @@ export function Tablist({
                 transform: "rotateY(180deg)",
               }}
             >
-              <TabCard schedule={schedule} time="pm" />
+              <TabCard index={index} schedule={schedule} time="pm" />
             </div>
           </div>
         </div>
@@ -109,9 +109,10 @@ export function Tablist({
 }
 
 function TabCard({
+  index,
   schedule,
   time,
-}: { schedule: Schedule; time: string }): JSX.Element {
+}: Readonly<{ index: number; schedule: Schedule; time: string }>): JSX.Element {
   return (
     <>
       <Image
@@ -119,12 +120,12 @@ function TabCard({
         src={time === "am" ? schedule.src.am : schedule.src.pm}
         width={256}
         height={256}
-        alt={schedule.alt}
+        alt={time === "am" ? schedule.alt.am : schedule.alt.pm}
         className="h-60 object-cover rounded-t-2xl w-full sm:h-72"
       />
       <div className="bg-amber-50 h-36 pb-2 py-1 relative rounded-b-2xl shadow-2xl space-y-2">
         <p className="text-left text-white text-xs sm:absolute sm:top-1">
-          <b className="bg-teal-400 px-2 py-1">{schedule.alt}</b>
+          <b className="bg-teal-400 px-2 py-1">Day&nbsp;{index + 1}</b>
           <b
             className={`px-2 py-1 ${time === "am" ? "bg-sky-400" : "bg-orange-400"}`}
           >

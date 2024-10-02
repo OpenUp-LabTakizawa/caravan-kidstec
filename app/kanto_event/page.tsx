@@ -37,7 +37,6 @@ export default function KantoEvent(): JSX.Element {
   }
   const schedules: Schedule[] = [
     {
-      alt: "Day 1",
       date: { year: "2024", month: "10", day: "26", dayOfWeek: "土" },
       venue: "クルックフィールズ",
       address: "千葉県木更津市矢那2503",
@@ -45,6 +44,10 @@ export default function KantoEvent(): JSX.Element {
       src: {
         am: "/image/hiroshima/202407/hiroshima_university/soldering_with_father.avif",
         pm: "/content/sheep_with_boy.avif",
+      },
+      alt: {
+        am: "お父さんと一緒にはんだ付け",
+        pm: "お兄さんに見守れながら、羊さんに餌やり体験",
       },
       title: {
         am: "ロボット製作",
@@ -61,7 +64,6 @@ export default function KantoEvent(): JSX.Element {
       tags: { am: ["電子工作", "ロボット"], pm: ["自然学習"] },
     },
     {
-      alt: "Day 2",
       date: { year: "2024", month: "11", day: "9", dayOfWeek: "土" },
       venue: "東京虎ノ門グローバルスクエア",
       address: "東京都港区虎ノ門1-3-1",
@@ -69,6 +71,10 @@ export default function KantoEvent(): JSX.Element {
       src: {
         am: "/image/hiroshima/202407/wedding/typing_boy.avif",
         pm: "/content/rays-blog_girl.avif",
+      },
+      alt: {
+        am: "ロボサバ大会の入賞目指して、プログラミング！",
+        pm: "レイのブログ",
       },
       title: {
         am: "プログラミング体験",
@@ -85,7 +91,6 @@ export default function KantoEvent(): JSX.Element {
       tags: { am: ["ロボット", "プログラミング"], pm: ["ネットリテラシー"] },
     },
     {
-      alt: "Day 3",
       date: { year: "2024", month: "11", day: "10", dayOfWeek: "日" },
       venue: "アクアテラス迎賓館 新横浜",
       address: "神奈川県横浜市港北区新横浜3-7-15",
@@ -93,6 +98,10 @@ export default function KantoEvent(): JSX.Element {
       src: {
         am: "/image/hiroshima/202407/wedding/smile_challenge.avif",
         pm: "/image/hiroshima/202407/wedding/bubbles_entrance.avif",
+      },
+      alt: {
+        am: "家族と一緒にロボットプログラミング",
+        pm: "実際の結婚式場で、階段入場を体験！",
       },
       title: {
         am: "ロボット競技大会",

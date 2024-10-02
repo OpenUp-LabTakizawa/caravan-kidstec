@@ -23,11 +23,11 @@ export function Requirement({
       </div>
       <div className="border-2 border-sky-400 mx-auto py-2 space-y-2 text-center text-sm sm:hidden">
         <div className="border-1 border-b pb-2">
-          <p className="font-bold">募集人数</p>
+          <b>募集人数</b>
           <p>{guideline.participantsNumber}</p>
         </div>
         <div className="border-1 border-b pb-2">
-          <p className="font-bold">対象者</p>
+          <b>対象者</b>
           <p>
             小学２年生&nbsp;～&nbsp;中学２年生のお子様とご家族
             <br />
@@ -35,11 +35,11 @@ export function Requirement({
           </p>
         </div>
         <div className="border-1 border-b pb-2">
-          <p className="font-bold">参加費</p>
+          <b>参加費</b>
           <p>無料（交通費、食事代は自己負担）</p>
         </div>
         <div className="border-1 border-b pb-2">
-          <p className="font-bold">参加条件</p>
+          <b>参加条件</b>
           <ul className="list-disc pl-7 space-y-3 text-left">
             <li>
               ３日間で１つのイベントである為、
@@ -53,7 +53,7 @@ export function Requirement({
           </ul>
         </div>
         <div className="border-1 border-b pb-2">
-          <p className="font-bold">注意事項</p>
+          <b>注意事項</b>
           <ul className="list-disc pl-7 space-y-3 text-left">
             <li>
               受付手続きや会場内の移動を考慮し、
@@ -73,11 +73,11 @@ export function Requirement({
           </ul>
         </div>
         <div className="border-1 border-b pb-2">
-          <p className="font-bold">応募開始</p>
+          <b>応募開始</b>
           <p>{guideline.startDate}</p>
         </div>
         <div>
-          <p className="font-bold">応募締切</p>
+          <b>応募締切</b>
           <p className="decoration-4 decoration-orange-400 font-bold underline">
             {guideline.deadline}
           </p>

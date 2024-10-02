@@ -56,11 +56,9 @@ export default function SponserPage(): JSX.Element {
               {area.menu.name}
             </Link>
           </h2>
-          <ul className="p-2 space-y-2">
+          <ul className="font-bold p-2 space-y-2">
             {area.partners.map((partner) => (
-              <li key={partner.name} className="font-bold">
-                {partner.name}
-              </li>
+              <li key={partner.name}>{partner.name}</li>
             ))}
           </ul>
         </section>

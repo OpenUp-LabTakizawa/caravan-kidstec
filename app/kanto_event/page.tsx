@@ -123,8 +123,8 @@ export default function KantoEvent(): JSX.Element {
       />
       <Schedules schedules={schedules} />
       <section className="mx-auto p-2 text-center w-fit">
-        <b className="text-lg md:text-xl">
-          <span className="decoration-4 decoration-orange-400 underline">
+        <b>
+          <span className="decoration-4 decoration-orange-400 text-lg underline md:text-xl">
             全日程参加が必須
           </span>
           となります。

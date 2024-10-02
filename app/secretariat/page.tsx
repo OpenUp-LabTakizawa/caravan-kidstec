@@ -24,7 +24,7 @@ export default function Secretariat(): JSX.Element {
       description: "(スタートアップ企業)",
     },
     {
-      company: "ロボットサバイバルプロジェクト（ロボサバ）",
+      company: "ロボットサバイバルプロジェクト(ロボサバ)",
       href: "https://robosava.jp/",
       description: "(プログラミング体験の創出普及活動)",
     },
@@ -71,18 +71,21 @@ export default function Secretariat(): JSX.Element {
         </p>
         <ul className="space-y-2">
           {organizations.map((organization) => (
-            <li key={organization.company} className="before:content-['・']">
+            <li
+              key={organization.company}
+              className="before:content-['・'] sm:flex"
+            >
               <Link
                 href={organization.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex font-bold text-sky-400 underline"
+                className="font-bold inline-flex items-center text-sky-400 underline sm:mr-auto"
               >
                 {organization.company}&nbsp;
                 <ArrowTopRightOnSquareIcon className="size-4" />
               </Link>
               <br className="sm:hidden" />
-              &nbsp;&nbsp;&nbsp;{organization.description}
+              <span className="pl-3">{organization.description}</span>
             </li>
           ))}
         </ul>

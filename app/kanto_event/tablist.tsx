@@ -53,7 +53,7 @@ export function Tablist({
   }
 
   return (
-    <section className="max-w-lg mx-auto px-2 space-y-2 text-center sm:pb-12">
+    <section className="max-w-lg mx-auto px-2 space-y-2 text-center">
       <div className="flex gap-2 mx-auto">
         {schedules.map((schedule) => (
           <button
@@ -79,7 +79,7 @@ export function Tablist({
           onMouseLeave={() => onMouseLeave()}
           onTouchStart={() => setIsBusy(true)}
           onTouchEnd={() => setIsBusy(false)}
-          className={`h-96${tab === schedule.alt ? "" : " hidden"}`}
+          className={`h-96 sm:h-[27rem]${tab === schedule.alt ? "" : " hidden"}`}
           style={{ perspective: "1000px" }}
         >
           <div
@@ -122,8 +122,8 @@ function TabCard({
         alt={schedule.alt}
         className="h-60 object-cover rounded-t-2xl w-full sm:h-72"
       />
-      <div className="bg-amber-50 h-36 pb-2 py-1 rounded-b-2xl shadow-2xl space-y-2">
-        <p className="text-left text-white text-xs">
+      <div className="bg-amber-50 h-36 pb-2 py-1 relative rounded-b-2xl shadow-2xl space-y-2">
+        <p className="text-left text-white text-xs sm:absolute sm:top-1">
           <b className="bg-teal-400 px-2 py-1">{schedule.alt}</b>
           <b
             className={`px-2 py-1 ${time === "am" ? "bg-sky-400" : "bg-orange-400"}`}
@@ -131,27 +131,27 @@ function TabCard({
             {time === "am" ? "午前" : "午後"}
           </b>
         </p>
-        <h3 className="font-bold mx-auto text-base">
+        <h3 className="font-bold mx-auto text-base sm:text-lg">
           {time === "am" ? schedule.title.am : schedule.title.pm}
         </h3>
         <Link
           href={time === "am" ? schedule.url.am : schedule.url.pm}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex font-bold gap-1 items-center mx-auto text-sm underline w-max"
+          className="flex font-bold gap-1 items-center mx-auto text-sm underline w-fit sm:text-base"
         >
           {time === "am" ? schedule.organization.am : schedule.organization.pm}
           <ArrowTopRightOnSquareIcon className="size-4" />
         </Link>
-        <p className="font-bold text-sm">
+        <p className="font-bold text-sm sm:text-base">
           {schedule.date.year}年{schedule.date.month}月{schedule.date.day}
           日({schedule.date.dayOfWeek})&nbsp;10:00~17:00
         </p>
-        <div className="flex flex-wrap gap-2 justify-center">
+        <div className="flex flex-wrap gap-2 justify-center text-xs">
           {(time === "am" ? schedule.tags.am : schedule.tags.pm).map((tag) => (
             <span
               key={tag}
-              className="bg-gray-100 border border-current h-5 px-1.5 rounded-3xl text-xs"
+              className="bg-gray-100 border border-current h-5 px-1.5 rounded-3xl"
             >
               {tag}
             </span>

@@ -28,7 +28,7 @@ export default function History(): JSX.Element {
       {HIROSHIMA_HISTORY.map((history) => (
         <section key={history.date} className="space-y-4 px-2">
           <details className={`group w-full ${styles.details}`}>
-            <summary className="block bg-amber-50 font-bold font-zenMaruGothic p-4 relative rounded-2xl text-2xl w-full group-open:rounded-b-none">
+            <summary className="block bg-amber-50 font-bold font-zenMaruGothic p-4 relative rounded-2xl text-2xl group-open:rounded-b-none">
               <p className="absolute outline outline-offset-2 rounded text-rose-400 text-xs -rotate-45">
                 大好評で
                 <br />

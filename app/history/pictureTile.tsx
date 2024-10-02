@@ -54,7 +54,7 @@ export function PictureTile({
           }}
           className="relative"
         >
-          <MagnifyingGlassPlusIcon className="absolute right-0 size-4 stroke-2 text-white top-0" />
+          <MagnifyingGlassPlusIcon className="absolute right-0 size-4 stroke-2 text-white" />
           <Image
             loader={cloudfrontLoader}
             src={picture.src}

@@ -5,10 +5,8 @@ export function Programs({
   programs,
 }: Readonly<{ programs: Program[] }>): JSX.Element {
   return (
-    <section className="bg-amber-50 mx-auto relative w-full">
-      <b className="absolute bg-sky-400 hidden justify-self-start left-0 p-1 top-0 sm:block">
-        開催日時
-      </b>
+    <section className="bg-amber-50 mx-auto relative">
+      <b className="absolute bg-sky-400 hidden p-1 sm:block">開催日時</b>
       <ul>
         {programs.map((program, index) => (
           <li
@@ -16,7 +14,7 @@ export function Programs({
             className="border-b p-2 space-y-1"
           >
             <p className="flex items-center justify-center">
-              <b className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs w-fit">
+              <b className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">
                 Day{index + 1}
               </b>
               <span className="w-56 sm:w-80">
@@ -25,7 +23,7 @@ export function Programs({
               </span>
             </p>
             <p className="flex items-center justify-center">
-              <b className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs w-fit">
+              <b className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">
                 場所
               </b>
               <span className="w-56 sm:w-80">{program.venue}</span>

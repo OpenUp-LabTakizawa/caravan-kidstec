@@ -16,10 +16,10 @@ export default function PrivacyPolicy(): JSX.Element {
 
   return (
     <>
-      <p className="px-4 text-xs sm:text-sm">
+      <p className="px-4">
         こどもテックキャラバンの個人情報は、株式会社オープンアップグループ（以下「当社」）が代表して取得しておりますので、当社の個人情報保護方針を以下にお知らせします。
       </p>
-      <section className="bg-gray-100 leading-5 m-4 p-4 rounded-2xl space-y-4 text-xs sm:leading-7 sm:text-sm">
+      <section className="bg-gray-100 leading-5 m-4 p-4 rounded-2xl space-y-4 sm:leading-7">
         <h1 className="font-bold text-2xl text-center">個人情報保護方針</h1>
         <p>
           当社は、個人情報を大切に取り扱い、個人の権利利益を保護することを重要な社会的責務と考えています。
@@ -27,8 +27,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </p>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">１．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">１．</span>
             個人情報の取得･利用･提供等について
           </h2>
           <p>
@@ -43,8 +43,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">２．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">２．</span>
             安全対策の実施について
           </h2>
           <p>
@@ -55,8 +55,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">３．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">３．</span>
             苦情に対する適正な対応について
           </h2>
           <p>
@@ -65,8 +65,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">４．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">４．</span>
             法令・指針・規範の遵守について
           </h2>
           <p>
@@ -75,8 +75,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">５．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">５．</span>
             個人情報保護マネジメントシステムの継続的改善について
           </h2>
           <p>
@@ -84,17 +84,17 @@ export default function PrivacyPolicy(): JSX.Element {
           </p>
         </section>
       </section>
-      <section className="bg-gray-100 leading-5 m-4 p-4 rounded-2xl space-y-4  text-xs sm:leading-7 sm:text-sm">
-        <h2 className="font-bold text-2xl text-center">
+      <section className="bg-gray-100 leading-5 m-4 p-4 rounded-2xl space-y-4 sm:leading-7">
+        <h1 className="font-bold text-2xl text-center">
           特定個人情報の適正な取扱いに関する基本方針
-        </h2>
+        </h1>
         <p>
           当社は、個人番号及び特定個人情報（以下「特定個人情報等」）の適正な取扱いの確保について、組織として取組むため、本基本方針を定めます。
         </p>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">１．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">１．</span>
             関連法令・ガイドライン等の遵守について
           </h2>
           <p>
@@ -103,8 +103,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">２．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">２．</span>
             安全管理措置について
           </h2>
           <p>
@@ -113,8 +113,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">３．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">３．</span>
             ご質問・苦情処理の窓口について
           </h2>
           <p>
@@ -126,10 +126,10 @@ export default function PrivacyPolicy(): JSX.Element {
           </p>
         </section>
       </section>
-      <section className="bg-gray-100 leading-5 m-4 p-4 rounded-2xl space-y-4 text-xs sm:leading-7 sm:text-sm">
-        <h2 className="font-bold text-2xl text-center">
+      <section className="bg-gray-100 leading-5 m-4 p-4 rounded-2xl space-y-4 sm:leading-7">
+        <h1 className="font-bold text-2xl text-center">
           個人情報の取り扱いに関して
-        </h2>
+        </h1>
         <p>
           当社では「個人情報保護方針」に基づき個人情報の適切な保護に取り組んでいます。
           <br />
@@ -137,8 +137,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </p>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">１．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">１．</span>
             個人情報の当事業者の名称
           </h2>
           <p>
@@ -149,8 +149,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section id={addressId} className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">２．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">２．</span>
             個人情報の管理者およびその連絡先
           </h2>
           <p>
@@ -165,21 +165,23 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section id={purposeId} className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">３．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">３．</span>
             個人情報の利用目的
           </h2>
-          <table className="border-2 border-white table">
-            <thead>
-              <tr className="border-b-2 border-white">
-                <th>種別</th>
-                <th className="border-l-2 border-white">利用目的</th>
+          <table className="align-middle border-2 border-orange-300 text-sm">
+            <thead className="font-bold text-slate-800/60 text-xs">
+              <tr className="border-b-2 border-orange-300">
+                <th className="px-4 py-3">種別</th>
+                <th className="border-l-2 border-orange-300 px-4 py-3">
+                  利用目的
+                </th>
               </tr>
             </thead>
-            <tbody className="text-xs sm:text-sm">
-              <tr className="border-b-2 border-white">
-                <th className="px-2 sm:px-4">イベントご参加者様</th>
-                <td className="border-l-2 border-white px-2 sm:px-4">
+            <tbody>
+              <tr className="border-b-2 border-orange-300">
+                <th className="px-2 py-3 sm:px-4">イベントご参加者様</th>
+                <td className="border-l-2 border-orange-300 px-2 py-3 sm:px-4">
                   <ul className="list-disc pl-4 space-y-2">
                     <li>
                       当社およびイベント共催各社のイベント、サービス等ご案内
@@ -194,12 +196,12 @@ export default function PrivacyPolicy(): JSX.Element {
                 </td>
               </tr>
               <tr>
-                <th className="px-2 sm:px-4">
+                <th className="px-2 py-3 sm:px-4">
                   各種ご相談・
                   <br />
                   お問い合わせ
                 </th>
-                <td className="border-l-2 border-white px-2 sm:px-4">
+                <td className="border-l-2 border-orange-300 px-2 py-3 sm:px-4">
                   <ul className="list-disc pl-4 space-y-2">
                     <li>ご相談・お問い合わせ対応及び関連するご連絡</li>
                     <li>
@@ -221,8 +223,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">４．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">４．</span>
             個人情報の共同利用について
           </h2>
           <p>
@@ -280,8 +282,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section id={contactId} className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">５．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">５．</span>
             個人情報に関するお問い合わせ方法及び窓口
           </h2>
           <address>
@@ -311,16 +313,16 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">６．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">６．</span>
             所属する認定個人情報保護団体の名称および苦情の解決の申し出先
           </h2>
           <p>現在、当社の所属する認定個人情報保護団体はありません。</p>
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">７．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">７．</span>
             個人情報の安全管理措置
           </h2>
           <p>当社は個人情報の適正な取扱いのため、以下の措置を実施します。</p>
@@ -467,8 +469,8 @@ export default function PrivacyPolicy(): JSX.Element {
         </section>
         <Divider />
         <section className="space-y-4">
-          <h2 className="font-bold text-xl">
-            <span className="text-primary">８．</span>
+          <h2 className="font-bold text-lg sm:text-xl">
+            <span className="text-indigo-500">８．</span>
             開示対象個人情報の「開示等の求め」に応じる手続き等
           </h2>
           <p>

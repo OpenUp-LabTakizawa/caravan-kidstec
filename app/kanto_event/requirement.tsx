@@ -43,7 +43,7 @@ export function Requirement({
           <ul className="list-disc pl-7 space-y-3 text-left">
             <li>
               ３日間で１つのイベントである為、
-              <br className="sm:hidden" />
+              <br />
               全日程にご参加頂けること
             </li>
             <li>イベントの感想やアンケートにご対応頂けること</li>
@@ -57,43 +57,47 @@ export function Requirement({
           <ul className="list-disc pl-7 space-y-3 text-left">
             <li>
               受付手続きや会場内の移動を考慮し、
-              <br className="sm:hidden" />
+              <br />
               集合時間は数十分、早くなります。
             </li>
             <li>
               プログラム初日のクルックフィールズは、
-              <br className="sm:hidden" />
+              <br />
               飲食物のお持ち込みができません。
             </li>
             <li>
               場内でのお弁当のご購入と、
-              <br className="sm:hidden" />
+              <br />
               マイボトルのご持参をお願いいたします。
             </li>
           </ul>
         </div>
       </div>
-      <table className="border-2 border-sky-400 hidden mx-auto sm:table">
+      <table className="border-2 border-sky-400 hidden mx-auto text-left text-sm sm:table">
         <tbody>
-          <tr>
-            <th>募集人数</th>
-            <td>{guideline.participantsNumber}</td>
+          <tr className="border-b-gray-100 border-b">
+            <th className="align-middle px-4 py-3">募集人数</th>
+            <td className="align-middle px-4 py-3">
+              {guideline.participantsNumber}
+            </td>
           </tr>
-          <tr>
-            <th>対象者</th>
-            <td>
+          <tr className="border-b-gray-100 border-b">
+            <th className="align-middle px-4 py-3">対象者</th>
+            <td className="align-middle px-4 py-3">
               小学２年生&nbsp;～&nbsp;中学２年生のお子様とご家族
               <br className="md:hidden" />
               （全日程において親子２名以上）
             </td>
           </tr>
-          <tr>
-            <th>参加費</th>
-            <td>無料（交通費、食事代は自己負担）</td>
+          <tr className="border-b-gray-100 border-b">
+            <th className="align-middle px-4 py-3">参加費</th>
+            <td className="align-middle px-4 py-3">
+              無料（交通費、食事代は自己負担）
+            </td>
           </tr>
-          <tr>
-            <th>参加条件</th>
-            <td>
+          <tr className="border-b-gray-100 border-b">
+            <th className="align-middle px-4 py-3">参加条件</th>
+            <td className="align-middle px-4 py-3">
               <ul className="list-disc pl-4 space-y-3">
                 <li>
                   ３日間で１つのイベントである為、
@@ -113,9 +117,9 @@ export function Requirement({
               </ul>
             </td>
           </tr>
-          <tr>
-            <th>注意事項</th>
-            <td>
+          <tr className="border-b-gray-100 border-b">
+            <th className="align-middle px-4 py-3">注意事項</th>
+            <td className="align-middle px-4 py-3">
               <ul className="list-disc pl-4 space-y-3">
                 <li>
                   受付手続きや会場内の移動を考慮し、
@@ -135,13 +139,15 @@ export function Requirement({
               </ul>
             </td>
           </tr>
-          <tr>
-            <th>応募開始</th>
-            <td className="font-bold">{guideline.startDate}</td>
+          <tr className="border-b-gray-100 border-b">
+            <th className="align-middle px-4 py-3">応募開始</th>
+            <td className="align-middle font-bold px-4 py-3">
+              {guideline.startDate}
+            </td>
           </tr>
-          <tr>
-            <th>応募締切</th>
-            <td className="decoration-4 decoration-orange-400 font-bold underline">
+          <tr className="border-b-gray-100 border-b">
+            <th className="align-middle px-4 py-3">応募締切</th>
+            <td className="align-middle decoration-4 decoration-orange-400 font-bold px-4 py-3 underline">
               {guideline.deadline}
             </td>
           </tr>

@@ -45,7 +45,7 @@ export default function SponserPage(): JSX.Element {
                 width={256}
                 height={256}
                 alt={sponser.name}
-                className="bg-white max-h-32 object-contain rounded-2xl p-3 w-full sm:px-0"
+                className="max-h-32 object-contain rounded-2xl p-3 w-full sm:px-0"
               />
             </div>
             <div className="col-span-4 space-y-2 text-center sm:col-span-1">

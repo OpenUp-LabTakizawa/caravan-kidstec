@@ -321,9 +321,9 @@ export function IndicatorCarousel(): JSX.Element {
             key={indicator.title}
             type="button"
             onClick={() => onClick(indicator)}
-            className={`border-b-4 duration-300 py-1 rounded-lg shadow-xl ${indicator.alt === activeTab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
+            className={`border-b-4 duration-300 font-bold py-1 rounded-lg shadow-xl ${indicator.alt === activeTab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
           >
-            <b>{indicator.title}</b>
+            {indicator.title}
           </button>
         ))}
       </div>
@@ -362,7 +362,7 @@ export function IndicatorCarousel(): JSX.Element {
 
 export function Attention(): JSX.Element {
   return (
-    <p className="text-center text-xs sm:text-sm">
+    <p className="text-center md:text-sm">
       ※&nbsp;写真は過去開催時のものです。
       <br className="sm:hidden" />
       体験学習はイベントごとに異なります。
@@ -506,7 +506,7 @@ export function ReviewCarousel(): JSX.Element {
   return (
     <div
       ref={carouselRef}
-      className="flex overflow-x-scroll relative scroll-smooth snap-mandatory snap-x space-x-4 w-full"
+      className="flex gap-2 overflow-x-scroll relative scroll-smooth snap-mandatory snap-x w-full"
       onMouseEnter={() => setIsBusy(true)}
       onMouseLeave={() => setIsBusy(false)}
       onTouchStart={() => setIsBusy(true)}
@@ -524,10 +524,10 @@ export function ReviewCarousel(): JSX.Element {
               reviewsRef.current?.delete(review.description)
             }
           }}
-          className="bg-blue-100 flex-none content-between grid m-2 p-2 rounded-2xl shadow-lg snap-center w-56"
+          className="bg-blue-100 flex flex-col flex-none justify-between m-2 p-2 rounded-2xl shadow-lg snap-center text-sm w-56"
         >
-          <p className="my-auto text-sm whitespace-pre">{review.description}</p>
-          <p className="flex gap-1 h-fit items-center justify-center text-sm whitespace-pre">
+          <p className="whitespace-pre">{review.description}</p>
+          <p className="flex gap-1 items-center justify-center">
             <UserCircleIcon className="size-6 text-rose-400" />
             {review.areaAndUser}
           </p>

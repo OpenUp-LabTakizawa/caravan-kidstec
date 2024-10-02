@@ -287,18 +287,25 @@ export default function PrivacyPolicy(): JSX.Element {
             個人情報に関するお問い合わせ方法及び窓口
           </h2>
           <address>
-            <ul className="px-4">
+            <ul className="px-4 space-y-2">
               <li>
                 LINEトーク：
                 <p className="pl-4">LINEアカウント「こどもテックキャラバン」</p>
               </li>
               <li>
                 郵送：
-                <p className="pl-4">
-                  東京都港区虎ノ門１－３－１&nbsp;東京虎ノ門グローバルスクエア16F
-                  <br />
-                  株式会社オープンアップグループ&nbsp;サステナビリティ推進部
-                </p>
+                <div className="pl-4 space-y-1">
+                  <p>
+                    東京都港区虎ノ門１－３－１&nbsp;
+                    <br className="sm:hidden" />
+                    東京虎ノ門グローバルスクエア16F
+                  </p>
+                  <p>
+                    株式会社オープンアップグループ&nbsp;
+                    <br className="sm:hidden" />
+                    サステナビリティ推進部
+                  </p>
+                </div>
               </li>
               <li>
                 メールアドレス：
@@ -328,24 +335,20 @@ export default function PrivacyPolicy(): JSX.Element {
           <p>当社は個人情報の適正な取扱いのため、以下の措置を実施します。</p>
           <ul className="space-y-4">
             <li>
-              （基本方針の策定）
-              <ul className="list-disc pl-6">
-                <li>
-                  個人情報の適正な取扱いを確保するため、個人情報保護方針を策定します。
-                </li>
-              </ul>
+              ＜基本方針の策定＞
+              <p>
+                個人情報の適正な取扱いを確保するため、個人情報保護方針を策定します。
+              </p>
             </li>
             <li>
-              （個人情報の取扱いに関する社内規定の整備）
-              <ul className="list-disc pl-6">
-                <li>
-                  個人情報の漏えい等の防止を含む個人情報の安全管理のため、個人情報の取扱いに関する社内規定を整備します。
-                </li>
-              </ul>
+              ＜個人情報の取扱いに関する社内規定の整備＞
+              <p>
+                個人情報の漏えい等の防止を含む個人情報の安全管理のため、個人情報の取扱いに関する社内規定を整備します。
+              </p>
             </li>
             <li>
-              （組織的安全管理措置）
-              <ol className="pl-1">
+              ＜組織的安全管理措置＞
+              <ol className="pl-1 space-y-2">
                 <li className="before:content-['①'] before:mr-1">
                   組織体制：
                   <p className="px-4">
@@ -379,16 +382,14 @@ export default function PrivacyPolicy(): JSX.Element {
               </ol>
             </li>
             <li>
-              （人的安全管理措置）
-              <ul className="list-disc pl-6">
-                <li>
-                  個人情報の取扱いに関する注意・留意事項について、当社の従業者に定期的な研修や訓練を実施します。また、個人情報を含む秘密情報についての秘密保持に関する事項を就業規則や関連規定に記載するなど、当社従業者の秘密保持義務を明らかにします。
-                </li>
-              </ul>
+              ＜人的安全管理措置＞
+              <p>
+                個人情報の取扱いに関する注意・留意事項について、当社の従業者に定期的な研修や訓練を実施します。また、個人情報を含む秘密情報についての秘密保持に関する事項を就業規則や関連規定に記載するなど、当社従業者の秘密保持義務を明らかにします。
+              </p>
             </li>
             <li>
-              （物理的安全管理措置）
-              <ol className="pl-1">
+              ＜物理的安全管理措置＞
+              <ol className="pl-1 space-y-2">
                 <li className="before:content-['①'] before:mr-1">
                   取扱い区域：
                   <p className="px-4">
@@ -416,8 +417,8 @@ export default function PrivacyPolicy(): JSX.Element {
               </ol>
             </li>
             <li>
-              （技術的安全管理措置）
-              <ol className="pl-1">
+              ＜技術的安全管理措置＞
+              <ol className="pl-1 space-y-2">
                 <li className="before:content-['①'] before:mr-1">
                   アクセス制御：
                   <p className="px-4">
@@ -445,21 +446,17 @@ export default function PrivacyPolicy(): JSX.Element {
               </ol>
             </li>
             <li>
-              （委託先の監督）
-              <ul className="list-disc pl-6">
-                <li>
-                  個人情報の取扱いの全部または一部を第三者に委託する場合、委託先において個人情報を安全に管理するための措置が適切に講じられるよう、適切な委託先の選定を行います。また、選定した委託先との間では、委託契約を締結のうえ、定期的に監査を行う等により委託先における当社が委託した個人情報の取扱い状況を把握するなど、適切に委託先の管理および監督を行います。
-                </li>
-              </ul>
+              ＜委託先の監督＞
+              <p>
+                個人情報の取扱いの全部または一部を第三者に委託する場合、委託先において個人情報を安全に管理するための措置が適切に講じられるよう、適切な委託先の選定を行います。また、選定した委託先との間では、委託契約を締結のうえ、定期的に監査を行う等により委託先における当社が委託した個人情報の取扱い状況を把握するなど、適切に委託先の管理および監督を行います。
+              </p>
             </li>
             <li>
-              （外的環境の把握）
-              <ul className="list-disc pl-6">
-                <li>
-                  個人情報を保管している以下の国における個人情報に関する制度を把握したうえで、安全管理措置を実施します。
-                </li>
-              </ul>
-              <p className="pl-6">
+              ＜外的環境の把握＞
+              <p>
+                個人情報を保管している以下の国における個人情報に関する制度を把握したうえで、安全管理措置を実施します。
+              </p>
+              <p className="p-2">
                 【保有個人データの保管国】
                 <br />
                 アメリカ、シンガポール

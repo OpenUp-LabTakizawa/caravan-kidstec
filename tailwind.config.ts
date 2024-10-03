@@ -1,4 +1,3 @@
-import daisyui from "daisyui"
 import type { Config } from "tailwindcss"
 
 const config: Config = {
@@ -10,10 +9,6 @@ const config: Config = {
         zenKakuGothicNew: ["var(--font-zen-kaku-gothic-new)"],
       },
     },
-  },
-  plugins: [daisyui],
-  daisyui: {
-    themes: ["light"],
   },
 }
 export default config

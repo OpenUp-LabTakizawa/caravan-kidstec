@@ -11,11 +11,7 @@ export function QA({
   qAndAs,
   lineLink,
   menu,
-}: Readonly<{
-  qAndAs: QandA[]
-  lineLink: string
-  menu: Menu
-}>): JSX.Element {
+}: Readonly<{ qAndAs: QandA[]; lineLink: string; menu: Menu }>): JSX.Element {
   return (
     <>
       <Heading menus={[menu, Q_AND_A]} />
@@ -29,36 +25,32 @@ export function QA({
             <summary className="block bg-sky-50 p-2 relative rounded-2xl text-base text-center">
               {qAndA.title}
             </summary>
-            <div className="bg-sky-50 chat chat-start flex items-center mt-2 rounded-t-2xl">
-              <div className="chat-image avatar">
-                <div className="w-10 rounded-full">
-                  <Image
-                    src="/kai_icon.avif"
-                    width={32}
-                    height={32}
-                    alt="カイ"
-                    className="w-full"
-                  />
-                </div>
-              </div>
-              <span className="bg-teal-100 chat-bubble min-h-0 text-black whitespace-pre">
+            <div className="bg-sky-50 flex gap-3 items-end mt-2 py-1 rounded-t-2xl">
+              <Image
+                src="/kai_icon.avif"
+                width={32}
+                height={32}
+                alt="カイ"
+                className="object-cover rounded-full w-8 sm:w-10"
+              />
+              <span
+                className={`bg-teal-100 min-w-11 px-4 py-2 relative rounded-2xl rounded-es-none whitespace-pre ${styles.chatStartBubble}`}
+              >
                 {qAndA.question}
               </span>
             </div>
-            <div className="bg-sky-50 chat chat-end rounded-b-2xl">
-              <div className="chat-image avatar">
-                <div className="w-10 rounded-full">
-                  <Image
-                    src="/miku_icon.avif"
-                    width={32}
-                    height={32}
-                    alt="ミク"
-                    className="w-full"
-                    style={{ transform: "scaleX(-1)" }}
-                  />
-                </div>
-              </div>
-              <span className="bg-teal-200 chat-bubble min-h-0 text-black whitespace-pre">
+            <div className="bg-sky-50 flex flex-row-reverse gap-3 items-end py-1 rounded-b-2xl">
+              <Image
+                src="/miku_icon.avif"
+                width={32}
+                height={32}
+                alt="ミク"
+                className="object-cover rounded-full w-8 sm:w-10"
+                style={{ transform: "scaleX(-1)" }}
+              />
+              <span
+                className={`bg-teal-200 min-w-11 px-4 py-2 relative rounded-2xl rounded-ee-none text-black whitespace-pre ${styles.chatEndBubble}`}
+              >
                 {qAndA.answer}
               </span>
             </div>

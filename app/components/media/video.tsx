@@ -4,10 +4,7 @@ import type { JSX } from "react"
 export function Video({
   pathname,
   date,
-}: Readonly<{
-  pathname: string
-  date: string
-}>): JSX.Element {
+}: Readonly<{ pathname: string; date: string }>): JSX.Element {
   return (
     <video
       controls={true}

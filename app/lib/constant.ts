@@ -75,7 +75,7 @@ export const NAVIGATION: Menu[] = [
 export const SPECIAL_PARTNERS: Partner[] = [
   {
     name: "ICHI COMMONS",
-    href: "https://ichicommons.com/",
+    href: "https://corp.ichicommons.com/",
     src: "/logo/ichicommons_logo.svg",
     introduction:
       "ICHI COMMONS株式会社は、\n企業やNPO、地域、個人が\n互いを支え合いながら、社会課題の解決に\n取り組むためのプラットフォーム\n『サステナNet』を運営しています。\n\nこのプラットフォームを通じて、\n様々なステークホルダーが出会い、\n事業や社会にプラスの影響を与える\n活動を生み出しています。",

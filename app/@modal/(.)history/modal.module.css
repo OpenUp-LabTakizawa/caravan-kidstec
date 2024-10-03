@@ -1,6 +1,10 @@
-.dialog::backdrop {
-  animation: modal-pop 0.2s ease-out;
-  transition-property: transform, opacity, visibility;
+.dialog {
+  scrollbar-color: color-mix(in oklch, currentColor 35%, transparent)
+    transparent;
+  &::backdrop {
+    animation: modal-pop 0.2s ease-out;
+    transition-property: transform, opacity, visibility;
+  }
 }
 
 @keyframes modal-pop {

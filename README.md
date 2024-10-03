@@ -112,7 +112,6 @@ This software uses the following open source packages:
 - [AWS Lambda Web Adapter](https://github.com/awslabs/aws-lambda-web-adapter)
 - [Biome](https://biomejs.dev/)
 - [Bun](https://bun.sh/)
-- [daisyUI](https://daisyui.com/)
 - [HAPPY DOM](https://github.com/capricorn86/happy-dom)
 - [LINE Bot SDK](https://github.com/line/line-bot-sdk-nodejs)
 - [Next.js](https://nextjs.org/)

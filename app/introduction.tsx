@@ -24,33 +24,27 @@ export function Introduction(): JSX.Element {
       {isWebkit ? (
         <>
           <FadeInUp>
-            <p>
-              プログラミング体験と
-              <br />
-              体験学習をかけあわせた
-              <br />
-              親子参加型のイベントです。
-            </p>
+            プログラミング体験と
+            <br />
+            体験学習をかけあわせた
+            <br />
+            親子参加型のイベントです。
           </FadeInUp>
           <FadeInUp>
-            <p>
-              体験学習は毎回変わります。
-              <br />
-              過去には自然学習や結婚式体験で
-              <br />
-              楽しく学んできました。
-            </p>
+            体験学習は毎回変わります。
+            <br />
+            過去には自然学習や結婚式体験で
+            <br />
+            楽しく学んできました。
           </FadeInUp>
           <FadeInUp>
-            <p>
-              <span className="text-orange-400">
-                たくさん学び、たくさん遊び、
-              </span>
-              <br />
-              親子で新しい発見や、
-              <br />
-              楽しい思い出を作りましょう！
-            </p>
+            <span className="text-orange-400">
+              たくさん学び、たくさん遊び、
+            </span>
+            <br />
+            親子で新しい発見や、
+            <br />
+            楽しい思い出を作りましょう！
           </FadeInUp>
         </>
       ) : (

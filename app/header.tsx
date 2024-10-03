@@ -42,19 +42,17 @@ export function Header(): JSX.Element {
 
   return (
     <header
-      className={`bg-white flex items-center p-2${pathname !== "/" && headerHeight < scrollState.scrollY && scrollState.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollState.scrollY < headerHeight || !scrollState.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
+      className={`bg-white flex items-center justify-between p-2${pathname !== "/" && headerHeight < scrollState.scrollY && scrollState.isScrollDown ? " transition sticky top-0 z-20 -translate-y-20" : ""}${pathname !== "/" && (scrollState.scrollY < headerHeight || !scrollState.isScrollDown) ? " transition sticky top-0 z-20" : ""}`}
     >
-      <div className="grow">
-        <Link href="/" className="block button-pop mx-4 tilt-shaking w-fit">
-          <Image
-            src="/caravan-kidstec_logo_line.avif"
-            width={192}
-            height={23}
-            alt={SITE_TITLE}
-            priority={true}
-          />
-        </Link>
-      </div>
+      <Link href="/" className="block button-pop mx-4 tilt-shaking w-fit">
+        <Image
+          src="/caravan-kidstec_logo_line.avif"
+          width={192}
+          height={23}
+          alt={SITE_TITLE}
+          priority={true}
+        />
+      </Link>
       <nav className="font-bold w-fit z-30">
         <DropdownMenu isScrollDown={scrollState.isScrollDown} />
         <Navigation isScrollDown={scrollState.isScrollDown} />
@@ -92,20 +90,18 @@ function DropdownMenu({
       <summary className="block button-pop duration-200 ease-out p-1">
         <Bars3BottomRightIcon className="size-7" />
       </summary>
-      <nav>
-        <ul className="absolute bg-white end-0 flex flex-col gap-1 p-3 rounded-2xl shadow text-base sm:text-lg">
-          {NAVIGATION.map((menu) => (
-            <li key={menu.name}>
-              <Link
-                href={menu.pathname}
-                className="block button-pop duration-200 ease-out px-3 py-1 rounded-xl text-nowrap text-orange-400 focus:bg-gray-400 hover:bg-gray-200"
-              >
-                {menu.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <ul className="absolute bg-white end-0 flex flex-col gap-1 p-3 rounded-2xl shadow text-base sm:text-lg">
+        {NAVIGATION.map((menu) => (
+          <li key={menu.name}>
+            <Link
+              href={menu.pathname}
+              className="block button-pop duration-200 ease-out px-3 py-1 rounded-xl text-nowrap text-orange-400 focus:bg-gray-400 hover:bg-gray-200"
+            >
+              {menu.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </details>
   )
 }
@@ -146,7 +142,7 @@ function Navigation({
   }
 
   return (
-    <ul className="flex flex-nowrap gap-1 hidden lg:flex">
+    <ul className="flex-nowrap gap-1 hidden lg:flex">
       {NAVIGATION.map((menu) => (
         <li key={menu.name}>
           <Link

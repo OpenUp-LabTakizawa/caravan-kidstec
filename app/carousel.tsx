@@ -315,7 +315,7 @@ export function IndicatorCarousel(): JSX.Element {
 
   return (
     <>
-      <div className="content-end gap-1 grid grid-cols-2 px-1">
+      <div className="gap-1 grid grid-cols-2 px-1">
         {indicators.map((indicator) => (
           <button
             key={indicator.title}

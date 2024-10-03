@@ -5,7 +5,7 @@ import { NAVIGATION } from "./lib/constant.ts"
 
 export function Footer(): JSX.Element {
   return (
-    <footer className="bg-stone-200 space-y-2 text-center text-sm sm:text-base">
+    <footer className="bg-stone-200 text-center text-sm sm:text-base">
       <nav>
         <ul className="font-bold gap-1 grid grid-cols-3 justify-center mx-auto p-1 w-fit sm:gap-6 sm:grid-cols-5">
           {NAVIGATION.map((menu) => (
@@ -19,6 +19,8 @@ export function Footer(): JSX.Element {
             </li>
           ))}
         </ul>
+      </nav>
+      <aside className="pb-2 space-y-2">
         <Link
           href="https://www.instagram.com/ktc_caravan/"
           target="_blank"
@@ -32,11 +34,11 @@ export function Footer(): JSX.Element {
             alt="こどもテックキャラバン-公式インスタグラム"
           />
         </Link>
-      </nav>
-      <aside className="pb-2">
-        Copyright © こどもテックキャラバン事務局&nbsp;
-        <br className="sm:hidden" />
-        All rights reserved.
+        <p>
+          Copyright © こどもテックキャラバン事務局&nbsp;
+          <br className="sm:hidden" />
+          All rights reserved.
+        </p>
       </aside>
     </footer>
   )

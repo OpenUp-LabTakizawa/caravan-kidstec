@@ -315,7 +315,7 @@ export function IndicatorCarousel(): JSX.Element {
 
   return (
     <>
-      <div className="gap-1 grid grid-cols-2 px-1">
+      <div className="gap-1 grid grid-cols-2 px-1 text-sm sm:text-base">
         {indicators.map((indicator) => (
           <button
             key={indicator.title}
@@ -362,7 +362,7 @@ export function IndicatorCarousel(): JSX.Element {
 
 export function Attention(): JSX.Element {
   return (
-    <p className="text-center text-xs sm:text-sm">
+    <p className="text-center sm:text-sm">
       ※&nbsp;写真は過去開催時のものです。
       <br className="sm:hidden" />
       体験学習はイベントごとに異なります。

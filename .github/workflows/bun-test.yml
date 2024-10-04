@@ -5,14 +5,15 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  push:
+  pull_request:
     paths:
       - "app/**"
       - "public/**"
       - "bun.lockb"
       - "package.json"
       - "*config.*"
-  pull_request:
+  push:
+    branches: main
     paths:
       - "app/**"
       - "public/**"

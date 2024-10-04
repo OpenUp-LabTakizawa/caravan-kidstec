@@ -9,7 +9,7 @@ import { HIROSHIMA, KANTO_EVENT, SECRETARIAT } from "./lib/constant.ts"
 
 export default function Home(): JSX.Element {
   return (
-    <article className="pb-4 space-y-6 text-base text-center">
+    <article className="pb-4 space-y-6 text-center">
       {/* block className is necessary for Safari behavior */}
       <Link
         href={KANTO_EVENT.pathname}
@@ -27,11 +27,11 @@ export default function Home(): JSX.Element {
       <section>
         <TopCarousel />
       </section>
-      <section className="font-bold leading-7 space-y-4 text-center tracking-[.29em]">
+      <section className="font-bold leading-7 space-y-4 text-base text-center tracking-[.29em]">
         <Introduction />
       </section>
       <section className="bg-sky-300 mx-2 rounded-2xl pb-2 space-y-2">
-        <div className="p-4 space-y-2 text-white">
+        <div className="p-4 space-y-2 text-base text-white">
           <h1 className="mb-2">
             こどもテックキャラバンは
             <br />

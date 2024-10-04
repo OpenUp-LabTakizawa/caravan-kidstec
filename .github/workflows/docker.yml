@@ -32,6 +32,13 @@ on:
         default: false
         type: boolean
 
+permissions:
+  attestations: write
+  contents: read
+  id-token: write
+  packages: write
+  pull-requests: write
+
 env:
   REPOSITORY: marukome0743/caravan-kidstec
   GHCR_REGISTRY: ghcr.io
@@ -43,12 +50,6 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     if: github.repository_owner == 'openup-labtakizawa'
-    permissions:
-      attestations: write
-      contents: read
-      id-token: write
-      packages: write
-      pull-requests: write
 
     steps:
       - name: Checkout

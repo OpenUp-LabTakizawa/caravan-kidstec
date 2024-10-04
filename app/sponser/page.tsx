@@ -36,19 +36,19 @@ export default function SponserPage(): JSX.Element {
         {sponsers.map((sponser) => (
           <section
             key={sponser.name}
-            className="bg-gray-100 gap-1 grid grid-cols-6 items-center min-h-32 p-1 rounded-2xl shadow-lg sm:grid-cols-2"
+            className="bg-gray-100 flex gap-1 h-32 items-center p-1 rounded-2xl shadow-lg sm:h-40"
           >
-            <div className="bg-white col-span-2 flex h-full items-center rounded-2xl sm:px-0 sm:col-span-1">
+            <div className="bg-white flex grow h-full items-center justify-center rounded-2xl">
               <Image
                 loader={cloudfrontLoader}
                 src={sponser.src}
                 width={256}
                 height={256}
                 alt={sponser.name}
-                className="max-h-32 object-contain rounded-2xl p-3 w-full sm:px-0"
+                className="max-h-32 object-contain rounded-2xl p-3 sm:max-h-40"
               />
             </div>
-            <div className="col-span-4 space-y-2 text-center sm:col-span-1">
+            <div className="flex-none space-y-2 text-center basis-48 sm:basis-64">
               <h2 className="font-bold text-sm">
                 <Link
                   href={sponser.href}

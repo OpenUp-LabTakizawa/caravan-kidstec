@@ -4,7 +4,7 @@ import Home from "./page.tsx"
 
 render(<Home />)
 
-describe("Home", () => {
+describe("className test", () => {
   test("article test", () => {
     const article = document.querySelector("article")
     expect(article?.className).toEqual("pb-4 space-y-6 text-base text-center")

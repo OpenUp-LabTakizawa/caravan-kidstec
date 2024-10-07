@@ -17,7 +17,7 @@ describe("className test", () => {
       "font-bold leading-7 space-y-4 text-base text-center tracking-[.29em]",
     )
     expect(sections[2]?.className).toEqual(
-      "bg-sky-300 mx-2 rounded-2xl pb-2 space-y-2",
+      "bg-sky-300 mx-2 pb-2 rounded-2xl space-y-2",
     )
     expect(sections[3]?.className).toEqual("space-y-4")
     expect(sections[4]?.className).toEqual("relative space-y-4")

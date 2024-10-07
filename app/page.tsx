@@ -30,7 +30,7 @@ export default function Home(): JSX.Element {
       <section className="font-bold leading-7 space-y-4 text-base text-center tracking-[.29em]">
         <Introduction />
       </section>
-      <section className="bg-sky-300 mx-2 rounded-2xl pb-2 space-y-2">
+      <section className="bg-sky-300 mx-2 pb-2 rounded-2xl space-y-2">
         <div className="p-4 space-y-2 text-base text-white">
           <h1 className="mb-2">
             こどもテックキャラバンは

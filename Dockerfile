@@ -1,4 +1,4 @@
-# syntax=docker.io/docker/dockerfile-upstream:1.10.0
+# syntax=docker.io/docker/dockerfile-upstream:1.11.0-rc1-labs
 FROM oven/bun:canary AS base
 WORKDIR /usr/src/app
 
@@ -10,7 +10,7 @@ FROM base AS builder
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY . .
 RUN bun test
-RUN bun run build
+RUN npm run build
 
 FROM gcr.io/distroless/nodejs22-debian12:nonroot
 WORKDIR /app

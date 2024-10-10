@@ -16,7 +16,7 @@ export default function Home(): JSX.Element {
         className="block button-pop duration-200 ease-out sticky top-0 z-20 sm:inline sm:static"
       >
         <Image
-          src="/202410_kanto_banner_start.avif"
+          src="/202410_kanto_banner_full.avif"
           width={540}
           height={162}
           alt="こどもテックキャラバン-関東イベントバナー"

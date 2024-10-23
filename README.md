@@ -113,7 +113,7 @@ This software uses the following open source packages:
 - [Biome](https://biomejs.dev/)
 - [Bun](https://bun.sh/)
 - [HAPPY DOM](https://github.com/capricorn86/happy-dom)
-- [LINE Bot SDK](https://github.com/line/line-bot-sdk-nodejs)
+- [LINE Messaging API SDK for nodejs](https://github.com/line/line-bot-sdk-nodejs)
 - [Next.js](https://nextjs.org/)
 - [Node.js](https://nodejs.org/)
 - [React](https://react.dev/)

@@ -122,5 +122,7 @@ This software uses the following open source packages:
 
 ## ⚖️ License
 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOpenUp-LabTakizawa%2Fcaravan-kidstec.svg?type=large&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2FOpenUp-LabTakizawa%2Fcaravan-kidstec?ref=badge_large&issueType=license)
+
 The Apache License Version 2.0 (2023) - [OpenUp-LabTakizawa](https://github.com/OpenUp-LabTakizawa).  
 Please have a look at the [LICENSE](https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/LICENSE) for more details.

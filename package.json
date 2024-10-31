@@ -7,11 +7,14 @@
     "dev-win": "WATCHPACK_POLLING=true next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "bunx biome check --write"
+    "lint": "bunx biome check --write",
+    "test:app": "bun test test/app",
+    "test:e2e": "bun playwright test",
+    "test:report": "bunx playwright show-report"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
-    "@line/bot-sdk": "^9.4.2",
+    "@line/bot-sdk": "^9.4.4",
     "next": "canary",
     "react": "canary",
     "react-dom": "canary"
@@ -19,6 +22,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@happy-dom/global-registrator": "^15.7.4",
+    "@playwright/test": "next",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.0.1",
     "@types/bun": "^1.1.12",

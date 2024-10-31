@@ -30,25 +30,28 @@ From your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/OpenUp-LabTakizawa/caravan-kidstec
+git clone https://github.com/OpenUp-LabTakizawa/caravan-kidstec
 
 # Install dependencies with bun
-$ cd caravan-kidstec && bun i
+cd caravan-kidstec && bun i
 
 # Develop the app
-$ bun dev
+bun dev
 
 # Test the app
-$ bun test
+bun test:app
+
+# E2E Test
+bun test:e2e
 
 # Build the app
-$ bun run build
+bun run build
 
 # Start the app
-$ bun start
+bun start
 
 # Format and Lint the files
-$ bun lint
+bun lint
 ```
 
 ## 🆚 VSCode

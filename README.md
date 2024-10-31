@@ -39,7 +39,10 @@ $ cd caravan-kidstec && bun i
 $ bun dev
 
 # Test the app
-$ bun test
+$ bun test:app
+
+# E2E Test
+$ bun test:e2e
 
 # Build the app
 $ bun run build

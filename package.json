@@ -14,14 +14,14 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
-    "@line/bot-sdk": "^9.4.4",
+    "@line/bot-sdk": "^9.5.0",
     "next": "canary",
     "react": "canary",
     "react-dom": "canary"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@happy-dom/global-registrator": "^15.11.4",
+    "@happy-dom/global-registrator": "^15.11.6",
     "@playwright/test": "next",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.0.1",

@@ -5,21 +5,21 @@ import type { JSX } from "react"
 import { IndicatorCarousel, ReviewCarousel, TopCarousel } from "./carousel.tsx"
 import { Video } from "./components/media/video.tsx"
 import { Introduction } from "./introduction.tsx"
-import { HIROSHIMA, HISTORY, SECRETARIAT } from "./lib/constant.ts"
+import { HIROSHIMA, KANTO_EVENT, SECRETARIAT } from "./lib/constant.ts"
 
 export default function Home(): JSX.Element {
   return (
     <article className="pb-4 space-y-6 text-center">
       {/* block className is necessary for Safari behavior */}
       <Link
-        href={HISTORY.pathname}
+        href={KANTO_EVENT.pathname}
         className="block button-pop duration-200 ease-out sticky top-0 z-20 sm:inline sm:static"
       >
         <Image
-          src="/thank_you_banner.avif"
+          src="/202410_kanto_banner_full.avif"
           width={540}
           height={162}
-          alt="こどもテックキャラバン-関東終了バナー"
+          alt="こどもテックキャラバン-関東イベントバナー"
           priority={true}
           className="duration-200 ease-out w-full"
         />

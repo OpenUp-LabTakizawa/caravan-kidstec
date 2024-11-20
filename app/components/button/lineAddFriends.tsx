@@ -43,13 +43,12 @@ export function LineApply({
 }
 
 export function LineRegister({
-  areaName,
   lineLink,
-}: Readonly<{ areaName: string; lineLink: string }>): JSX.Element {
+}: Readonly<{ lineLink: string }>): JSX.Element {
   return (
     <section className="bg-amber-50 mx-auto p-4 rounded-2xl space-y-2 text-center w-fit">
       <b>
-        {areaName}LINE公式アカウントから、
+        LINE公式アカウントから、
         <br />
         次回開催の通知を受け取れます。
       </b>

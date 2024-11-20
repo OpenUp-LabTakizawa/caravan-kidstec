@@ -24,25 +24,14 @@ export function generateStaticParams(): {
   date: string
   image: string
 }[] {
-  const kantoArea: string = KANTO.pathname.split("/")[1]
-  const kantoParams: { area: string; date: string; image: string }[] =
-    KANTO_HISTORY.flatMap((eventDate) =>
-      eventDate.pictures.map((picture) => ({
-        area: kantoArea,
-        date: eventDate.date,
-        image: picture.src.split("/").reverse()[0].split(".")[0],
-      })),
-    )
   const hiroshimaArea: string = HIROSHIMA.pathname.split("/")[1]
-  const hiroshimaParams: { area: string; date: string; image: string }[] =
-    HIROSHIMA_HISTORY.flatMap((eventDate) =>
-      eventDate.pictures.map((picture) => ({
-        area: hiroshimaArea,
-        date: eventDate.date,
-        image: picture.src.split("/").reverse()[0].split(".")[0],
-      })),
-    )
-  return [...kantoParams, ...hiroshimaParams]
+  return HIROSHIMA_HISTORY.flatMap((eventDate) =>
+    eventDate.pictures.map((picture) => ({
+      area: hiroshimaArea,
+      date: eventDate.date,
+      image: picture.src.split("/").reverse()[0].split(".")[0],
+    })),
+  )
 }
 
 export default async function HistoryPicture({

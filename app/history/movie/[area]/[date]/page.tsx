@@ -18,20 +18,11 @@ export const metadata: Metadata = {
 }
 export const dynamicParams: boolean = false
 export function generateStaticParams(): { area: string; date: string }[] {
-  const kantoArea: string = KANTO.pathname.split("/")[1]
-  const kantoParams: { area: string; date: string }[] = KANTO_HISTORY.map(
-    (eventDate) => ({
-      area: kantoArea,
-      date: eventDate.date,
-    }),
-  )
   const hiroshimaArea: string = HIROSHIMA.pathname.split("/")[1]
-  const hiroshimaParams: { area: string; date: string }[] =
-    HIROSHIMA_HISTORY.map((eventDate) => ({
-      area: hiroshimaArea,
-      date: eventDate.date,
-    }))
-  return [...kantoParams, ...hiroshimaParams]
+  return HIROSHIMA_HISTORY.map((eventDate) => ({
+    area: hiroshimaArea,
+    date: eventDate.date,
+  }))
 }
 
 export default async function Movie({

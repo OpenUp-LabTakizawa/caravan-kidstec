@@ -7,11 +7,10 @@ export type Partner = {
   readonly introduction: string
 }
 
+type ColorList = "border" | "text"
+
 export type PartnerArea = {
   readonly menu: Menu
   readonly partners: Partner[]
-  readonly color: {
-    border: string
-    text: string
-  }
+  readonly color: Record<ColorList, string>
 }

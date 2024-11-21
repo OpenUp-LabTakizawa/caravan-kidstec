@@ -1,30 +1,23 @@
 import type { Picture } from "./picture.ts"
 
+type DateList = "year" | "month" | "day" | "dayOfWeek"
+type TimeList = "am" | "pm"
+
 export type Schedule = {
-  readonly date: {
-    readonly year: string
-    readonly month: string
-    readonly day: string
-    readonly dayOfWeek: string
-  }
+  readonly date: Record<DateList, string>
   readonly venue: string
   readonly address: string
   readonly googleMapLink: string
-  readonly src: { readonly am: string; readonly pm: string }
-  readonly alt: { readonly am: string; readonly pm: string }
-  readonly title: { readonly am: string; readonly pm: string }
-  readonly organization: { readonly am: string; readonly pm: string }
-  readonly url: { readonly am: string; readonly pm: string }
-  readonly tags: { readonly am: string[]; readonly pm: string[] }
+  readonly src: Record<TimeList, string>
+  readonly alt: Record<TimeList, string>
+  readonly title: Record<TimeList, string>
+  readonly organization: Record<TimeList, string>
+  readonly url: Record<TimeList, string>
+  readonly tags: Record<TimeList, string[]>
 }
 
 export type Program = {
-  readonly date: {
-    readonly year: string
-    readonly month: string
-    readonly day: string
-    readonly dayOfWeek: string
-  }
+  readonly date: Record<DateList, string>
   readonly venue: string
 }
 

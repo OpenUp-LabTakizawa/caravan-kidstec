@@ -10,14 +10,7 @@ export const DESCRIPTION: string =
 export const HIROSHIMA_LINE: string = "https://lin.ee/eYcNlkG"
 export const KANTO_LINE: string = "https://lin.ee/RHBWD7P"
 export const CLOUDFRONT_URL: string = "https://dk75m1tgsot44.cloudfront.net"
-export const KANTO_START_DATE: string = "２０２４年９月９日 １２時"
-export const KANTO_DEADLINE: string = "２０２４年１０月１０日 １２時"
 
-export const KANTO_EVENT: Menu = {
-  name: "応募・申込",
-  pathname: "/kanto_event",
-  textColor: "text-orange-400",
-}
 export const HISTORY: Menu = {
   name: "活動実績",
   pathname: "/history",
@@ -65,7 +58,6 @@ export const PRIVACY_POLICY: Menu = {
 }
 
 export const NAVIGATION: Menu[] = [
-  KANTO_EVENT,
   HISTORY,
   SPONSER,
   PARTNER,
@@ -161,28 +153,28 @@ const KANTO_FIRST_PROGRAMS: Program[] = [
 
 const KANTO_FIRST_PICTURES: Picture[] = [
   {
-    alt: "",
-    src: "/image/kanto/202410/",
+    alt: "かわいい牛の角にタッチ！",
+    src: "/image/kanto/202410/kurkku_fields/touch_cow_horn.avif",
   },
   {
-    alt: "",
-    src: "/image/kanto/202410/",
+    alt: "お父さんとはんだ付けに挑戦！",
+    src: "/image/kanto/202410/kurkku_fields/father_soldering.avif",
   },
   {
-    alt: "",
-    src: "/image/kanto/202410/",
+    alt: "ロボット走行を友達と皆で採点！",
+    src: "/image/kanto/202410/tgn/mark_score.avif",
   },
   {
-    alt: "",
-    src: "/image/kanto/202410/",
+    alt: "スマートフォンで調べて謎解き",
+    src: "/image/kanto/202410/openup/group_investigate.avif",
   },
   {
-    alt: "",
-    src: "/image/kanto/202410/",
+    alt: "ロボサバ大会に挑戦！",
+    src: "/image/kanto/202410/tgn/challenge_robosava.avif",
   },
   {
-    alt: "",
-    src: "/image/kanto/202410/",
+    alt: "結婚式場で記念撮影",
+    src: "/image/kanto/202410/tgn/weading_gathering.avif",
   },
 ] as const
 

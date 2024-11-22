@@ -7,7 +7,9 @@ export function Footer(): JSX.Element {
   return (
     <footer className="bg-stone-200 text-center text-sm sm:text-base">
       <nav>
-        <ul className="font-bold gap-1 grid grid-cols-3 justify-center mx-auto p-1 w-fit sm:gap-6 sm:grid-cols-5">
+        <ul
+          className={`font-bold gap-1 grid justify-center mx-auto p-1 w-fit sm:gap-6 ${NAVIGATION.length === 5 ? "grid-cols-3 sm:grid-cols-5" : "grid-cols-2 sm:grid-cols-4"}`}
+        >
           {NAVIGATION.map((menu) => (
             <li key={menu.name}>
               <Link

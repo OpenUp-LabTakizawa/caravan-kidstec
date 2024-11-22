@@ -5,32 +5,33 @@ import type { JSX } from "react"
 import { IndicatorCarousel, ReviewCarousel, TopCarousel } from "./carousel.tsx"
 import { Video } from "./components/media/video.tsx"
 import { Introduction } from "./introduction.tsx"
-import { HIROSHIMA, KANTO_EVENT, SECRETARIAT } from "./lib/constant.ts"
+import { HISTORY, KANTO, SECRETARIAT } from "./lib/constant.ts"
 
 export default function Home(): JSX.Element {
   return (
-    <article className="pb-4 space-y-6 text-center">
+    <article className="pb-4 text-center">
       {/* block className is necessary for Safari behavior */}
       <Link
-        href={KANTO_EVENT.pathname}
+        href={HISTORY.pathname}
         className="block button-pop duration-200 ease-out sticky top-0 z-20 sm:inline sm:static"
       >
         <Image
-          src="/202410_kanto_banner_full.avif"
+          src="/thank_you_banner.avif"
           width={540}
-          height={162}
-          alt="こどもテックキャラバン-関東イベントバナー"
+          height={134}
+          alt="こどもテックキャラバン-関東終了バナー"
           priority={true}
           className="duration-200 ease-out w-full"
         />
       </Link>
-      <section>
-        <TopCarousel />
-      </section>
-      <section className="font-bold leading-7 space-y-4 text-base text-center tracking-[.29em]">
+      <Video pathname={KANTO.pathname} date="202410" />
+      <section className="font-bold leading-7 mt-6 space-y-4 text-base text-center tracking-[.29em]">
         <Introduction />
       </section>
-      <section className="bg-sky-300 mx-2 pb-2 rounded-2xl space-y-2">
+      <section className="mt-6">
+        <TopCarousel />
+      </section>
+      <section className="bg-sky-300 mt-6 mx-2 pb-2 rounded-2xl space-y-2">
         <div className="p-4 space-y-2 text-base text-white">
           <h1 className="mb-2">
             こどもテックキャラバンは
@@ -50,12 +51,11 @@ export default function Home(): JSX.Element {
         </div>
         <IndicatorCarousel />
       </section>
-      <section className="space-y-4">
+      <section className="mt-6 space-y-4">
         <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <Video pathname={HIROSHIMA.pathname} date="202407" />
-      <section className="relative space-y-4">
+      <section className="relative mt-6">
         <Image
           src="/handshake.avif"
           alt="handshake"
@@ -71,7 +71,7 @@ export default function Home(): JSX.Element {
             事務局の想い
           </Link>
         </h2>
-        <div className="font-bold space-y-4 text-sm sm:text-base">
+        <div className="font-bold mt-4 space-y-4 text-sm sm:text-base">
           <p>
             このイベントでは新しい人や
             <br className="sm:hidden" />

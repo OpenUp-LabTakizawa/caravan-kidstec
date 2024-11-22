@@ -12,10 +12,10 @@ describe("className test", () => {
 
   test("section test", () => {
     const sections = document.querySelectorAll("section")
-    expect(sections[0]?.className).toEqual("")
-    expect(sections[1]?.className).toEqual(
+    expect(sections[0]?.className).toEqual(
       "font-bold leading-7 space-y-4 text-base text-center tracking-[.29em]",
     )
+    expect(sections[1]?.className).toEqual("")
     expect(sections[2]?.className).toEqual(
       "bg-sky-300 mx-2 pb-2 rounded-2xl space-y-2",
     )

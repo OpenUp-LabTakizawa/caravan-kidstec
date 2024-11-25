@@ -42,7 +42,7 @@ export function Modal({
         <button
           type="button"
           onClick={router.back}
-          className="bg-gray-100 button-pop flex float-right font-bold gap-2 h-12 items-center justify-center px-4 rounded-xl shadow-sm text-sm hover:bg-gray-300"
+          className="bg-gray-100 button-pop flex float-right font-bold gap-2 h-12 items-center justify-center px-4 rounded-xl shadow-xs text-sm hover:bg-gray-300"
         >
           <XMarkIcon className="size-6" />
           閉じる
@@ -52,7 +52,7 @@ export function Modal({
         type="button"
         aria-label="閉じる"
         onClick={router.back}
-        className="col-start-1 grid justify-self-stretch row-start-1 self-stretch -z-[1]"
+        className="col-start-1 grid justify-self-stretch row-start-1 self-stretch -z-1"
       />
     </dialog>
   )

@@ -97,45 +97,40 @@ export default function Secretariat(): JSX.Element {
           ビジョン
         </h2>
         <p>
-          このイベントでは、個人や単体の企業だけでは
+          こどもテックキャラバンは個人や単体の企業だけでは
           <br className="sm:hidden" />
           出来ないことをお互いに協力、共創することで、
           <br />
           社会や人、企業の可能性を広げようという
           <br className="sm:hidden" />
-          想いからこの活動はスタートしています。
+          想いからスタートしています。
         </p>
         <p>
-          主役は子どもですが、親子でプログラミング体験や
+          主役は子どもですが親子でプログラミング体験や、
           <br className="sm:hidden" />
-          自然学習などを挑戦し学ぶことで、
+          自然学習などを挑戦し学ぶことでひとりひとりに、
           <br />
-          親子それぞれで新しい気づきが
-          <br className="sm:hidden" />
-          生まれると考えています。
+          新しい気づきが 生まれると考えています。
         </p>
         <p>
-          そこでパートナーとなる、NPOや地元企業、
-          <br className="sm:hidden" />
-          大学生などと協力をして
-          <br />「<b>ここでしかできない体験</b>」を創出しています。
+          またNPOや地元企業、大学生などと協力をして
+          <br className="sm:hidden" />「<b>ここでしかできない体験</b>
+          」を創出しています。
         </p>
         <p>
-          イベントを通して参加者だけではなく、関係した
+          イベントを通して参加者だけではなく、関係する
           <br className="sm:hidden" />
-          すべての人に
+          すべての人の
           <br className="hidden sm:block" />
           心が沸き立つような瞬間があること、
           <br className="sm:hidden" />
           新しい可能性が広がることを目指しています。
         </p>
         <p>
-          さらに開催する地域を増やし、たくさんの
+          これからもたくさんのパートナーと共創し、
           <br className="sm:hidden" />
-          パートナーと共創し、
-          <br className="hidden sm:block" />
           ポジティブな社会が
-          <br className="sm:hidden" />
+          <br />
           広がるようにこの活動をを進めていきます。
         </p>
       </section>

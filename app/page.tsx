@@ -24,7 +24,7 @@ export default function Home(): JSX.Element {
           className="duration-200 ease-out w-full"
         />
       </Link>
-      <Video pathname={KANTO.pathname} date="202410" />
+      <Video className="mt-3" date="202410" pathname={KANTO.pathname} />
       <section className="font-bold leading-7 mt-6 space-y-4 text-base text-center tracking-[.29em]">
         <Introduction />
       </section>

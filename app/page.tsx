@@ -24,7 +24,35 @@ export default function Home(): JSX.Element {
           className="duration-200 ease-out w-full"
         />
       </Link>
-      <Video pathname={KANTO.pathname} date="202410" />
+      <Video date="202410" pathname={KANTO.pathname} />
+      <Link
+        href={HISTORY.pathname}
+        className="block button-pop duration-200 ease-out sticky top-0 z-20 sm:inline sm:static"
+      >
+        <Image
+          src="/thank_you_banner.avif"
+          width={540}
+          height={134}
+          alt="こどもテックキャラバン-関東終了バナー"
+          priority={true}
+          className="duration-200 ease-out w-full"
+        />
+      </Link>
+      <Video className="mt-3" date="202410" pathname={KANTO.pathname} />
+      <Link
+        href={HISTORY.pathname}
+        className="block button-pop duration-200 ease-out sticky top-0 z-20 sm:inline sm:static"
+      >
+        <Image
+          src="/thank_you_banner.avif"
+          width={540}
+          height={134}
+          alt="こどもテックキャラバン-関東終了バナー"
+          priority={true}
+          className="duration-200 ease-out w-full"
+        />
+      </Link>
+      <Video className="mt-6" date="202410" pathname={KANTO.pathname} />
       <section className="font-bold leading-7 mt-6 space-y-4 text-base text-center tracking-[.29em]">
         <Introduction />
       </section>

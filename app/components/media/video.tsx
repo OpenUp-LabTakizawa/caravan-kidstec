@@ -2,9 +2,14 @@ import { CLOUDFRONT_URL } from "@/app/lib/constant"
 import type { JSX } from "react"
 
 export function Video({
-  pathname,
   date,
-}: Readonly<{ pathname: string; date: string }>): JSX.Element {
+  pathname,
+  className = "",
+}: Readonly<{
+  date: string
+  pathname: string
+  className?: string
+}>): JSX.Element {
   return (
     <video
       controls={true}
@@ -13,7 +18,7 @@ export function Video({
       muted={true}
       playsInline={true}
       preload="auto"
-      className="mx-auto rounded-2xl shadow-lg w-full"
+      className={`mx-auto rounded-2xl shadow-lg w-full${className === "" ? "" : ` ${className}`}`}
     >
       <source
         src={`${CLOUDFRONT_URL}/movie${pathname}/${date}.webm`}

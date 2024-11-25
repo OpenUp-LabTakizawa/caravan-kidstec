@@ -29,7 +29,7 @@ export default async function Movie({
       <h2 className="font-bold font-zenMaruGothic mb-5 text-3xl text-center">
         {eventDate.title}
       </h2>
-      <Video pathname={menu.pathname} date={eventDate.date} />
+      <Video date={eventDate.date} pathname={menu.pathname} />
     </Modal>
   )
 }

@@ -56,7 +56,7 @@ export default async function Movie({
   return (
     <>
       <Heading menus={[HISTORY, menu, movie]} />
-      <Video pathname={menu.pathname} date={eventDate.date} />
+      <Video date={eventDate.date} pathname={menu.pathname} />
       <BackButton href={HISTORY.pathname} name={HISTORY.name} />
     </>
   )

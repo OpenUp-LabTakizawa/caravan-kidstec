@@ -1,6 +1,22 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+.font-zenMaruGothic {
+  font-family: var(--font-zen-maru-gothic);
+}
+
+.font-zenKakuGothicNew {
+  font-family: var(--font-zen-kaku-gothic-new);
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 /* disable hold down in order to prevent downloading images */
 img {

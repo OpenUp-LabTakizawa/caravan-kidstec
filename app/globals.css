@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-.font-zenMaruGothic {
-  font-family: var(--font-zen-maru-gothic);
-}
-
-.font-zenKakuGothicNew {
-  font-family: var(--font-zen-kaku-gothic-new);
-}
-
 @layer base {
   *,
   ::after,

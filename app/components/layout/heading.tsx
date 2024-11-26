@@ -9,7 +9,7 @@ export function Heading({ menus }: Readonly<{ menus: Menu[] }>): JSX.Element {
     <section className="px-3 space-y-6">
       <Breadcrumb menus={menus} />
       <h1
-        className={`fade-in-up font-bold font-zenMaruGothic text-4xl text-center ${menus.length === 1 ? menus[0].textColor : menus.at(-1)?.textColor}`}
+        className={`fade-in-up font-bold font-[family-name:var(--font-zen-maru-gothic)] text-4xl text-center ${menus.length === 1 ? menus[0].textColor : menus.at(-1)?.textColor}`}
       >
         {menus.at(-1)?.name}
       </h1>

@@ -41,11 +41,13 @@ export default function HistoryPage(): JSX.Element {
       <Heading menus={[HISTORY]} />
       {histories.map(({ area, history, lineLink }) => (
         <section key={area.name} className="space-y-6">
-          <h2 className="font-bold font-zenMaruGothic text-3xl">{area.name}</h2>
+          <h2 className="font-bold font-[family-name:var(--font-zen-maru-gothic)] text-3xl">
+            {area.name}
+          </h2>
           {history.map((history) => (
             <section key={history.date} className="space-y-4 px-2">
               <details className={`group w-full ${styles.details}`}>
-                <summary className="block bg-amber-50 font-bold font-zenMaruGothic p-4 relative rounded-2xl text-2xl group-open:rounded-b-none">
+                <summary className="block bg-amber-50 font-bold font-[family-name:var(--font-zen-maru-gothic)] p-4 relative rounded-2xl text-2xl group-open:rounded-b-none">
                   <p className="absolute outline outline-offset-2 rounded-sm text-rose-400 text-xs -rotate-45">
                     大好評で
                     <br />

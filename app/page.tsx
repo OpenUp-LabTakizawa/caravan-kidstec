@@ -52,7 +52,9 @@ export default function Home(): JSX.Element {
         <IndicatorCarousel />
       </section>
       <section className="mt-6 space-y-4">
-        <h2 className="font-bold font-zenMaruGothic text-3xl">参加者の声</h2>
+        <h2 className="font-bold font-[family-name:var(--font-zen-maru-gothic)] text-3xl">
+          参加者の声
+        </h2>
         <ReviewCarousel />
       </section>
       <section className="relative mt-6">
@@ -63,7 +65,7 @@ export default function Home(): JSX.Element {
           height={256}
           className="absolute object-contain opacity-10 size-full -z-10"
         />
-        <h2 className="font-bold font-zenMaruGothic text-2xl">
+        <h2 className="font-bold font-[family-name:var(--font-zen-maru-gothic)] text-2xl">
           <Link
             href={SECRETARIAT.pathname}
             className="block button-pop duration-200 ease-out text-sky-400 underline"

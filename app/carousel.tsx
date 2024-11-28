@@ -37,8 +37,8 @@ export function TopCarousel(): JSX.Element {
       src: "/image/hiroshima/202206/eda_island/sea_circle.avif",
     },
     {
-      alt: "オリーブ体験",
-      src: "/image/hiroshima/202311/eda_island/olive_smile.avif",
+      alt: "サシェ体験",
+      src: "/image/kanto/202410/tgn/sashie_pick.avif",
     },
   ] as const
   const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)

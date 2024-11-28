@@ -51,6 +51,7 @@ export function Header(): JSX.Element {
           height={23}
           alt={SITE_TITLE}
           priority={true}
+          className={pathname === "/" ? "hidden sm:block" : ""}
         />
       </Link>
       <nav className="font-bold w-fit z-30">

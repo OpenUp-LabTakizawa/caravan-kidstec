@@ -150,28 +150,28 @@ export function TopCarousel(): JSX.Element {
 export function IndicatorCarousel(): JSX.Element {
   const programmingPictures: Picture[] = [
     {
-      alt: "はんだ確認中…",
-      src: "/image/hiroshima/202311/eda_island/check_solder.avif",
+      alt: "お父さんとはんだ確認中…",
+      src: "/image/kanto/202410/kurkku_fields/pointing_ichigodake.avif",
     },
     {
       alt: "はじめてのはんだづけにどきどき",
       src: "/image/hiroshima/202407/hiroshima_university/soldering.avif",
     },
     {
-      alt: "最終日のロボサバ大会！優勝目指そう！",
-      src: "/image/hiroshima/202407/wedding/watch_robot_move.avif",
+      alt: "ロボット作りに挑戦！",
+      src: "/image/kanto/202410/kurkku_fields/assemble_insect.avif",
     },
     {
       alt: "ロボットが上手く動くコツを伝授！",
       src: "/image/hiroshima/202407/wedding/teaching.avif",
     },
     {
-      alt: "ロボサバ大会に挑戦！上手に動くかな？",
-      src: "/image/hiroshima/202407/wedding/put_robot_on_course.avif",
+      alt: "最終日のロボサバ大会！優勝目指そう！",
+      src: "/image/hiroshima/202407/wedding/watch_robot_move.avif",
     },
     {
-      alt: "ロボット作りに挑戦！",
-      src: "/image/hiroshima/202311/eda_island/using_nipper.avif",
+      alt: "ロボサバ大会に挑戦！上手に動くかな？",
+      src: "/image/hiroshima/202407/wedding/put_robot_on_course.avif",
     },
   ] as const
   const eventPictures: Picture[] = [
@@ -184,12 +184,12 @@ export function IndicatorCarousel(): JSX.Element {
       src: "/image/hiroshima/202407/hiroshima_university/checking_course.avif",
     },
     {
-      alt: "広島大学で昆虫採集！",
-      src: "/image/hiroshima/202407/hiroshima_university/insect_netting_boy.avif",
+      alt: "クルックフィールズで芋掘り体験！",
+      src: "/image/kanto/202410/kurkku_fields/digging_potato.avif",
     },
     {
-      alt: "手作りのオリーブオイル、最初はまだ赤い！",
-      src: "/image/hiroshima/202311/eda_island/olive_pouring.avif",
+      alt: "力を合わせて、レイのブログに挑戦だ！",
+      src: "/image/kanto/202410/openup/watch_phone.avif",
     },
     {
       alt: "ブーケを持って入場！",

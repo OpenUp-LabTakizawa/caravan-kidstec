@@ -2,7 +2,7 @@ import { PlusIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
-import { IndicatorCarousel, ReviewCarousel, TopCarousel } from "./carousel.tsx"
+import { IndicatorCarousel, ReviewCarousel } from "./carousel.tsx"
 import { Video } from "./components/media/video.tsx"
 import { Introduction } from "./introduction.tsx"
 import { HISTORY, KANTO, SECRETARIAT } from "./lib/constant.ts"
@@ -27,9 +27,6 @@ export default function Home(): JSX.Element {
       <Video className="mt-3" date="202410" pathname={KANTO.pathname} />
       <section className="font-bold leading-7 mt-6 space-y-4 text-base text-center tracking-[.29em]">
         <Introduction />
-      </section>
-      <section className="mt-6">
-        <TopCarousel />
       </section>
       <section className="bg-sky-300 mt-6 mx-2 pb-2 rounded-2xl space-y-2">
         <div className="p-4 space-y-2 text-base text-white">

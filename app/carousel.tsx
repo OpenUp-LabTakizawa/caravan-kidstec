@@ -10,168 +10,31 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
-export function TopCarousel(): JSX.Element {
-  const topPictures: Picture[] = [
-    {
-      alt: "自然学習",
-      src: "/image/hiroshima/202407/hiroshima_university/capture_insect.avif",
-    },
-    {
-      alt: "ロボサバ大会",
-      src: "/image/hiroshima/202407/wedding/enjoy_robot_with_family.avif",
-    },
-    {
-      alt: "結婚式体験",
-      src: "/image/hiroshima/202407/wedding/bubbles_entrance_square.avif",
-    },
-    {
-      alt: "ブーケ作成",
-      src: "/image/hiroshima/202311/wedding/select_flowers.avif",
-    },
-    {
-      alt: "プログラミング",
-      src: "/image/hiroshima/202407/wedding/typing_with_mother.avif",
-    },
-    {
-      alt: "サップ体験",
-      src: "/image/hiroshima/202206/eda_island/sea_circle.avif",
-    },
-    {
-      alt: "サシェ体験",
-      src: "/image/kanto/202410/tgn/sashie_pick.avif",
-    },
-  ] as const
-  const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
-  const imagesRef: RefObject<Map<string, HTMLImageElement>> = useRef<
-    Map<string, HTMLImageElement>
-  >(new Map<string, HTMLImageElement>())
-  const [isBusy, setIsBusy] = useState<boolean>(false)
-  let timeoutId: globalThis.Timer
-
-  useEffect(() => {
-    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
-      string,
-      HTMLImageElement
-    >
-    for (const node of [...images.values()].reverse()) {
-      const newImage = node.cloneNode(true)
-      carousel.prepend(newImage)
-    }
-  }, [])
-
-  useEffect(() => {
-    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
-      string,
-      HTMLImageElement
-    >
-    const imageNode: HTMLImageElement = images.get(
-      topPictures[0].alt,
-    ) as HTMLImageElement
-    const interval = setInterval(() => {
-      if (!isBusy) {
-        carousel.scrollLeft += imageNode.clientWidth
-      }
-    }, 3000)
-    return () => clearInterval(interval)
-  })
-
-  function ScrollEvent(): void {
-    const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
-      string,
-      HTMLImageElement
-    >
-    const imageNode: HTMLImageElement = images.get(
-      topPictures[0].alt,
-    ) as HTMLImageElement
-    const maxScrollLeft: number = carousel.scrollWidth - carousel.clientWidth
-    const scrollLeft: number = carousel.scrollLeft
-    const buffer: number = imageNode.clientWidth * 2
-
-    clearTimeout(timeoutId)
-    timeoutId = setTimeout(() => {
-      if (maxScrollLeft < scrollLeft + buffer) {
-        for (const node of images.values()) {
-          const newImage = node.cloneNode(true)
-          carousel.append(newImage)
-          // TODO: Safari works correctly with remove()
-          // carousel.firstChild?.remove()
-        }
-      }
-      // TODO: Safari works correctly with remove()
-      // if (scrollLeft < buffer) {
-      //   for (const node of [...images.values()].reverse()) {
-      //     const newImage = node.cloneNode(true)
-      //     carousel.prepend(newImage)
-      //     carousel.lastChild?.remove()
-      //   }
-      // }
-    }, 100)
-  }
-
-  return (
-    <>
-      <div
-        ref={carouselRef}
-        className="aspect-square flex overflow-x-scroll rounded-2xl scroll-smooth shadow-lg snap-mandatory snap-x w-full"
-        onMouseEnter={() => setIsBusy(true)}
-        onMouseLeave={() => setIsBusy(false)}
-        onTouchStart={() => setIsBusy(true)}
-        onTouchEnd={() => setIsBusy(false)}
-        onScroll={() => ScrollEvent()}
-        style={{ scrollbarWidth: "none" }}
-      >
-        {topPictures.map((picture, index) => (
-          <Image
-            key={picture.alt}
-            ref={(node: HTMLImageElement) => {
-              imagesRef.current?.set(picture.alt, node)
-              return () => {
-                imagesRef.current?.delete(picture.alt)
-              }
-            }}
-            loader={cloudfrontLoader}
-            src={picture.src}
-            width={256}
-            height={256}
-            alt={picture.alt}
-            priority={index === 0}
-            className="flex-none snap-start w-full"
-          />
-        ))}
-      </div>
-      <Attention />
-    </>
-  )
-}
-
 export function IndicatorCarousel(): JSX.Element {
   const programmingPictures: Picture[] = [
     {
-      alt: "はんだ確認中…",
-      src: "/image/hiroshima/202311/eda_island/check_solder.avif",
-    },
-    {
       alt: "はじめてのはんだづけにどきどき",
       src: "/image/hiroshima/202407/hiroshima_university/soldering.avif",
+    },
+    {
+      alt: "お父さんとはんだ確認中…",
+      src: "/image/kanto/202410/kurkku_fields/pointing_ichigodake.avif",
+    },
+    {
+      alt: "ロボット作りに挑戦！",
+      src: "/image/kanto/202410/kurkku_fields/assemble_insect.avif",
     },
     {
       alt: "最終日のロボサバ大会！優勝目指そう！",
       src: "/image/hiroshima/202407/wedding/watch_robot_move.avif",
     },
     {
-      alt: "ロボットが上手く動くコツを伝授！",
-      src: "/image/hiroshima/202407/wedding/teaching.avif",
+      alt: "ロボットを置く位置から勝負は始まっています",
+      src: "/image/kanto/202410/tgn/putting_robot.avif",
     },
     {
-      alt: "ロボサバ大会に挑戦！上手に動くかな？",
-      src: "/image/hiroshima/202407/wedding/put_robot_on_course.avif",
-    },
-    {
-      alt: "ロボット作りに挑戦！",
-      src: "/image/hiroshima/202311/eda_island/using_nipper.avif",
+      alt: "ロボットのプログラミングが成功してハイタッチ！",
+      src: "/image/kanto/202410/tgn/high_touch.avif",
     },
   ] as const
   const eventPictures: Picture[] = [
@@ -184,12 +47,12 @@ export function IndicatorCarousel(): JSX.Element {
       src: "/image/hiroshima/202407/hiroshima_university/checking_course.avif",
     },
     {
-      alt: "広島大学で昆虫採集！",
-      src: "/image/hiroshima/202407/hiroshima_university/insect_netting_boy.avif",
+      alt: "クルックフィールズで芋掘り体験！",
+      src: "/image/kanto/202410/kurkku_fields/digging_potato.avif",
     },
     {
-      alt: "手作りのオリーブオイル、最初はまだ赤い！",
-      src: "/image/hiroshima/202311/eda_island/olive_pouring.avif",
+      alt: "力を合わせて、レイのブログに挑戦だ！",
+      src: "/image/kanto/202410/openup/watch_phone.avif",
     },
     {
       alt: "ブーケを持って入場！",

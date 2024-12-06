@@ -8,7 +8,7 @@ import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from "next/font/google"
 import {
   CLOUDFRONT_URL,
   DESCRIPTION,
-  HIROSHIMA,
+  KANTO,
   SITE_TITLE,
   SITE_URL,
 } from "./lib/constant.ts"
@@ -43,10 +43,31 @@ export const metadata: Metadata = {
     siteName: SITE_TITLE,
     locale: "ja_JP",
     type: "website",
+    images: [
+      {
+        url: `${CLOUDFRONT_URL}/logo/opengraph.png`,
+        width: 578,
+        height: 432,
+        alt: `${SITE_TITLE} - プログラミング×体験学習`,
+      },
+    ],
     videos: [
       {
-        url: `${CLOUDFRONT_URL}/movie${HIROSHIMA.pathname}/202407.webm`,
+        url: `${CLOUDFRONT_URL}/movie${KANTO.pathname}/202410.webm`,
         type: "video/webm",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: `${CLOUDFRONT_URL}/logo/opengraph.png`,
+        width: 578,
+        height: 432,
+        alt: `${SITE_TITLE} - プログラミング×体験学習`,
       },
     ],
   },

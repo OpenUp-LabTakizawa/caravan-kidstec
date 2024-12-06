@@ -68,7 +68,8 @@ export function IndicatorCarousel(): JSX.Element {
     { title: "プログラミング体験", alt: programmingPictures[0].alt },
     { title: "体験学習", alt: eventPictures[0].alt },
   ] as const
-  const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const carouselRef: RefObject<HTMLDivElement | null> =
+    useRef<HTMLDivElement | null>(null)
   const imagesRef: RefObject<Map<string, HTMLImageElement>> = useRef<
     Map<string, HTMLImageElement>
   >(new Map<string, HTMLImageElement>())
@@ -326,7 +327,8 @@ export function ReviewCarousel(): JSX.Element {
       areaAndUser: "第4回 広島 小5、中2",
     },
   ] as const
-  const carouselRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const carouselRef: RefObject<HTMLDivElement | null> =
+    useRef<HTMLDivElement | null>(null)
   const reviewsRef: RefObject<Map<string, HTMLDivElement>> = useRef<
     Map<string, HTMLDivElement>
   >(new Map<string, HTMLDivElement>())

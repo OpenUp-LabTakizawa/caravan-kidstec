@@ -12,7 +12,9 @@ export function OpacityZero({
   children,
   className = "",
 }: Readonly<{ children: ReactNode; className?: string }>): JSX.Element {
-  const ref: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+  const ref: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(
+    null,
+  )
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {

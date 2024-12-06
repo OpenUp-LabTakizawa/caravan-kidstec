@@ -64,7 +64,8 @@ export function Header(): JSX.Element {
 function DropdownMenu({
   isScrollDown,
 }: Readonly<{ isScrollDown: boolean }>): JSX.Element {
-  const ref: RefObject<HTMLDetailsElement> = useRef<HTMLDetailsElement>(null)
+  const ref: RefObject<HTMLDetailsElement | null> =
+    useRef<HTMLDetailsElement | null>(null)
 
   useEffect(() => {
     if (isScrollDown && ref.current) {

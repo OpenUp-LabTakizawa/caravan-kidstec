@@ -10,6 +10,23 @@ import {
 } from "@/app/lib/constant"
 import type { JSX } from "react"
 
+export function generateStaticParams(): { area: string; date: string }[] {
+  const kantoArea: string = KANTO.pathname.split("/")[1]
+  const kantoParams: { area: string; date: string }[] = KANTO_HISTORY.map(
+    (eventDate) => ({
+      area: kantoArea,
+      date: eventDate.date,
+    }),
+  )
+  const hiroshimaArea: string = HIROSHIMA.pathname.split("/")[1]
+  const hiroshimaParams: { area: string; date: string }[] =
+    HIROSHIMA_HISTORY.map((eventDate) => ({
+      area: hiroshimaArea,
+      date: eventDate.date,
+    }))
+  return [...kantoParams, ...hiroshimaParams]
+}
+
 export default async function Movie({
   params,
 }: Readonly<{

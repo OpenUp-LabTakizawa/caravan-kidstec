@@ -46,8 +46,8 @@ export default function HistoryPage(): JSX.Element {
           </h2>
           {history.map((history) => (
             <section key={history.date} className="space-y-4 px-2">
-              <details className={`group w-full ${styles.details}`}>
-                <summary className="block bg-amber-50 font-bold font-[family-name:var(--font-zen-maru-gothic)] p-4 relative rounded-2xl text-2xl group-open:rounded-b-none">
+              <details className={`w-full ${styles.details}`}>
+                <summary className="block bg-amber-50 font-bold font-[family-name:var(--font-zen-maru-gothic)] p-4 relative rounded-2xl text-2xl in-open:rounded-b-none">
                   <p className="absolute outline outline-offset-2 rounded-sm text-rose-400 text-xs -rotate-45">
                     大好評で
                     <br />

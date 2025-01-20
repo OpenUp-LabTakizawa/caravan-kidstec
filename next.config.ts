@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
     inlineCss: true,
     ppr: true,
     reactCompiler: true,
+    streamingMetadata: true,
+    viewTransition: true,
   },
   images: {
     formats: ["image/avif", "image/webp"],

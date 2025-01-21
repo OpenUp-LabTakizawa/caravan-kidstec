@@ -169,8 +169,8 @@ const KANTO_FIRST_PICTURES: Picture[] = [
     src: "/image/kanto/202410/openup/group_investigate.avif",
   },
   {
-    alt: "ロボサバ大会に挑戦！",
-    src: "/image/kanto/202410/tgn/challenge_robosava.avif",
+    alt: "大切な人を想って作るサシェ",
+    src: "/image/kanto/202410/tgn/putted_in_the_bag.avif",
   },
   {
     alt: "結婚式場で記念撮影",

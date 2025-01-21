@@ -57,7 +57,7 @@ export function PictureTile({
           <MagnifyingGlassPlusIcon className="absolute right-0 size-4 stroke-2 text-white" />
           <Image
             loader={cloudfrontLoader}
-            src={picture.src}
+            src={`${picture.src.split(".")[0]}_mini.${picture.src.split(".")[1]}`}
             width={640}
             height={427}
             alt={picture.alt}

@@ -331,7 +331,7 @@ const HIROSHIMA_THIRD_PICTURES: Picture[] = [
   },
   {
     alt: "最後に集合写真をパシャリ！",
-    src: "/image/hiroshima/202311/wedding/group.avif",
+    src: "/image/hiroshima/202311/wedding/group_behind_sofa.avif",
   },
 ] as const
 const HIROSHIMA_FOURTH_PICTURES: Picture[] = [
@@ -357,7 +357,7 @@ const HIROSHIMA_FOURTH_PICTURES: Picture[] = [
   },
   {
     alt: "最後に集合写真をパシャリ！",
-    src: "/image/hiroshima/202407/wedding/group_with_sofa.avif",
+    src: "/image/hiroshima/202407/wedding/majestic_group.avif",
   },
 ] as const
 

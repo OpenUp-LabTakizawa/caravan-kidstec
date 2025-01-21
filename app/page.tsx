@@ -44,8 +44,8 @@ export default function Home(): JSX.Element {
         <Image
           src="/handshake.avif"
           alt="handshake"
-          width={256}
-          height={256}
+          width={511}
+          height={249}
           className="absolute object-contain opacity-10 size-full -z-10"
         />
         <h2 className="font-bold font-[family-name:var(--font-zen-maru-gothic)] text-2xl">

@@ -212,8 +212,8 @@ export function IndicatorCarousel(): JSX.Element {
             }}
             loader={cloudfrontLoader}
             src={picture.src}
-            width={256}
-            height={256}
+            width={640}
+            height={640}
             alt={picture.alt}
             className="flex-none snap-start w-full"
           />

@@ -74,8 +74,8 @@ export default async function HistoryPicture({
       <Image
         loader={cloudfrontLoader}
         src={picture.src}
-        width={256}
-        height={256}
+        width={640}
+        height={427}
         alt={picture.alt}
         className="w-full"
       />

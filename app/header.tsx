@@ -96,7 +96,7 @@ function DropdownMenu({
           <li key={menu.name}>
             <Link
               href={menu.pathname}
-              className="block button-pop duration-200 ease-out px-3 py-1 rounded-xl text-nowrap text-orange-400 focus:bg-gray-400 hover:bg-gray-200"
+              className="block button-pop duration-200 ease-out px-3 py-1 rounded-xl text-nowrap text-orange-400 whitespace-nowrap focus:bg-gray-400 hover:bg-gray-200"
             >
               {menu.name}
             </Link>

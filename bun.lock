@@ -63,7 +63,7 @@
 
     "@emnapi/runtime": ["@emnapi/runtime@1.3.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-kEBmG8KyqtxJZv+ygbEim+KCGtIq1fC22Ms3S4ziXmYKm8uyoLX0MHONVKwp+9opg390VaKRNt4a7A9NwmpNhw=="],
 
-    "@happy-dom/global-registrator": ["@happy-dom/global-registrator@16.7.1", "", { "dependencies": { "happy-dom": "^16.7.1" } }, "sha512-WQgMDfDR+Nzm3HcDgSP2PMTCl081UmiJNNnwOJOITapngdsrvnG6unL0P19fLUweiCuTo5qOliJgzlD7jVEiWw=="],
+    "@happy-dom/global-registrator": ["@happy-dom/global-registrator@16.7.2", "", { "dependencies": { "happy-dom": "^16.7.2" } }, "sha512-xz1OO4DNr8Wki0sGG4VF/tM7mY6/cf0y0rxBhMzfk2LXqMA0DUFOTv9hQtHSZHGEhfJ2ZUJa02WAp4Ihq1MT8Q=="],
 
     "@heroicons/react": ["@heroicons/react@2.2.0", "", { "peerDependencies": { "react": ">= 16 || ^19.0.0-rc" } }, "sha512-LMcepvRaS9LYHJGsF0zzmgKCUim/X3N/DQKc4jepAXJ7l8QxJ1PmxJzqplF2Z3FE4PqBAIGyJAQ/w4B5dsqbtQ=="],
 
@@ -125,7 +125,7 @@
 
     "@next/swc-win32-x64-msvc": ["@next/swc-win32-x64-msvc@15.2.0-canary.19", "", { "os": "win32", "cpu": "x64" }, "sha512-vsyYb4aE4GEHno4zZA+qVS9/j0ZdZIZja+RSvGr7+cZbecCwZIOKsVcY86YJgYELDFkXRn2tZwbFHQNM3BH6Aw=="],
 
-    "@playwright/test": ["@playwright/test@1.51.0-alpha-2025-01-21", "", { "dependencies": { "playwright": "1.51.0-alpha-2025-01-21" }, "bin": { "playwright": "cli.js" } }, "sha512-dn93ixzlPUBiz1Q1nreG4gCK1BYVnqc23kOvR8VWVXdnTQuvwyU/KwzWC19m2oYTOZaHy36oo1eyOQt6YzL9JQ=="],
+    "@playwright/test": ["@playwright/test@1.51.0-alpha-2025-01-22", "", { "dependencies": { "playwright": "1.51.0-alpha-2025-01-22" }, "bin": { "playwright": "cli.js" } }, "sha512-uXkw+U2J5WhJy7ID7Y0TN7ClRSFpwobB1KA3c3+1pDcQ5cmZLKR1TbgQQUYIoibw6fUXPRJpCNCuD7GAygA0cg=="],
 
     "@swc/counter": ["@swc/counter@0.1.3", "", {}, "sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ=="],
 
@@ -227,7 +227,7 @@
 
     "graceful-fs": ["graceful-fs@4.2.11", "", {}, "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ=="],
 
-    "happy-dom": ["happy-dom@16.7.1", "", { "dependencies": { "webidl-conversions": "^7.0.0", "whatwg-mimetype": "^3.0.0" } }, "sha512-VdkAsz+en07rDTepV6HmcL4sBR+86S9HNZ+nsbxsFsOOZ6mgErOMMnONGwRW8Kwg3ozeshktvAP8yp7Ol7hPIA=="],
+    "happy-dom": ["happy-dom@16.7.2", "", { "dependencies": { "webidl-conversions": "^7.0.0", "whatwg-mimetype": "^3.0.0" } }, "sha512-zOzw0xyYlDaF/ylwbAsduYZZVRTd5u7IwlFkGbEathIeJMLp3vrN3cHm3RS7PZpD9gr/IO16bHEswcgNyWTsqw=="],
 
     "has-flag": ["has-flag@4.0.0", "", {}, "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ=="],
 
@@ -271,9 +271,9 @@
 
     "picocolors": ["picocolors@1.1.1", "", {}, "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="],
 
-    "playwright": ["playwright@1.51.0-alpha-2025-01-21", "", { "dependencies": { "playwright-core": "1.51.0-alpha-2025-01-21" }, "optionalDependencies": { "fsevents": "2.3.2" }, "bin": { "playwright": "cli.js" } }, "sha512-6+anVMZO/DoUghEGhHpgN0B9+LfoGhwt9pXQy7zCAqBZVWLrZ0zDUaUhOiudwsLAYQGjDKGuwaBvYUc1xwN0Yg=="],
+    "playwright": ["playwright@1.51.0-alpha-2025-01-22", "", { "dependencies": { "playwright-core": "1.51.0-alpha-2025-01-22" }, "optionalDependencies": { "fsevents": "2.3.2" }, "bin": { "playwright": "cli.js" } }, "sha512-R8keNcRnj2Au4cfPpXMbIPnp0iRxm8wsSgndo/rGZfZNCXKTWcpzj5jRC182KElUIsOr5h+AMv1ZkGX99tz/rA=="],
 
-    "playwright-core": ["playwright-core@1.51.0-alpha-2025-01-21", "", { "bin": { "playwright-core": "cli.js" } }, "sha512-sgkSci6AXWaigjcL36kUnthbOezCTVmj9xs/8vuMbRWC9/fgc8kSs4KvYZROlpqiJvWRsChgw+MoDgJIgngddw=="],
+    "playwright-core": ["playwright-core@1.51.0-alpha-2025-01-22", "", { "bin": { "playwright-core": "cli.js" } }, "sha512-XKi98HD2hF0fYRRb+NRu7E483RZXKYeQcYjWMCp+pAIMNw0YdseCeJxxOESpGBzQSZ73BrQDoaiRor4wZxoMOg=="],
 
     "postcss": ["postcss@8.5.1", "", { "dependencies": { "nanoid": "^3.3.8", "picocolors": "^1.1.1", "source-map-js": "^1.2.1" } }, "sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ=="],
 

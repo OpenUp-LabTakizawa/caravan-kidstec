@@ -34,7 +34,7 @@ export function Modal({
         <button
           type="button"
           onClick={router.back}
-          className="absolute button-pop right-2 rounded-full size-6 top-2 hover:bg-gray-300 hover:scale-110"
+          className="absolute button-pop cursor-pointer right-2 rounded-full size-6 top-2 hover:bg-gray-300 hover:scale-110"
         >
           <XMarkIcon className="size-6" />
         </button>
@@ -42,7 +42,7 @@ export function Modal({
         <button
           type="button"
           onClick={router.back}
-          className="bg-gray-100 button-pop flex float-right font-bold gap-2 h-12 items-center justify-center px-4 rounded-xl shadow-xs text-sm hover:bg-gray-300"
+          className="bg-gray-100 button-pop cursor-pointer flex float-right font-bold gap-2 h-12 items-center justify-center px-4 rounded-xl shadow-xs text-sm hover:bg-gray-300"
         >
           <XMarkIcon className="size-6" />
           閉じる

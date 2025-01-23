@@ -88,7 +88,7 @@ function DropdownMenu({
 
   return (
     <details ref={ref} className="relative lg:hidden">
-      <summary className="block button-pop duration-200 ease-out p-1">
+      <summary className="block button-pop cursor-pointer duration-200 ease-out p-1">
         <Bars3BottomRightIcon className="size-7" />
       </summary>
       <ul className="absolute bg-white end-0 flex flex-col gap-1 p-3 rounded-2xl shadow-sm text-base sm:text-lg">

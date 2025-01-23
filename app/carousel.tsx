@@ -185,7 +185,7 @@ export function IndicatorCarousel(): JSX.Element {
             key={indicator.title}
             type="button"
             onClick={() => onClick(indicator)}
-            className={`border-b-4 duration-300 font-bold py-1 rounded-lg shadow-xl ${indicator.alt === activeTab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
+            className={`border-b-4 cursor-pointer duration-300 font-bold py-1 rounded-lg shadow-xl ${indicator.alt === activeTab ? "bg-teal-400 border-teal-700 hover:border-b-2 hover:translate-y-0.5" : "bg-gray-100 border-gray-400 hover:border-b-2 hover:translate-y-0.5"}`}
           >
             {indicator.title}
           </button>

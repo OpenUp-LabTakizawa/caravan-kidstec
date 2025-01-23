@@ -52,7 +52,7 @@ export function PictureTile({
               ref.current?.delete(picture.alt)
             }
           }}
-          className="relative"
+          className="cursor-zoom-in relative"
         >
           <MagnifyingGlassPlusIcon className="absolute right-0 size-4 stroke-2 text-white" />
           <Image

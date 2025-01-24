@@ -30,7 +30,7 @@ export function generateStaticParams(): {
       eventDate.pictures.map((picture) => ({
         area: kantoArea,
         date: eventDate.date,
-        image: picture.src.split("/").reverse()[0].split(".")[0],
+        image: picture.src.split("/")[5].split(".")[0],
       })),
     )
   const hiroshimaArea: string = HIROSHIMA.pathname.split("/")[1]
@@ -39,7 +39,7 @@ export function generateStaticParams(): {
       eventDate.pictures.map((picture) => ({
         area: hiroshimaArea,
         date: eventDate.date,
-        image: picture.src.split("/").reverse()[0].split(".")[0],
+        image: picture.src.split("/")[5].split(".")[0],
       })),
     )
   return [...kantoParams, ...hiroshimaParams]
@@ -59,8 +59,7 @@ export default async function HistoryPicture({
     (history) => history.date === syncParams.date,
   ) as EventDate
   const picture: Picture = eventDate.pictures.find(
-    (picture) =>
-      picture.src.split("/").reverse()[0].split(".")[0] === syncParams.image,
+    (picture) => picture.src.split("/")[5].split(".")[0] === syncParams.image,
   ) as Picture
   const movie: Menu = {
     name: eventDate.title,

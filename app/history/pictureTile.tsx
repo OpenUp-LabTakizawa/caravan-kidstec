@@ -45,7 +45,7 @@ export function PictureTile({
       {pictures.map((picture) => (
         <Link
           key={picture.alt}
-          href={`${HISTORY.pathname}/image${pathname}/${date}/${picture.src.split("/").reverse()[0].split(".")[0]}`}
+          href={`${HISTORY.pathname}/image${pathname}/${date}/${picture.src.split("/")[5].split(".")[0]}`}
           ref={(node: HTMLAnchorElement) => {
             ref.current?.set(picture.alt, node)
             return () => {

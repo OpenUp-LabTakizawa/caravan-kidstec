@@ -61,6 +61,8 @@ export function PictureTile({
             width={256}
             height={171}
             alt={picture.alt}
+            placeholder="blur"
+            blurDataURL={picture.blurDataUrl}
             className="w-full"
           />
         </Link>

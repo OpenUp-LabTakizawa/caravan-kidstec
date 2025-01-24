@@ -77,6 +77,8 @@ export default async function HistoryPicture({
         width={1920}
         height={1280}
         alt={picture.alt}
+        placeholder="blur"
+        blurDataURL={picture.blurDataUrl}
         className="w-full"
       />
       <BackButton href={HISTORY.pathname} name={HISTORY.name} />

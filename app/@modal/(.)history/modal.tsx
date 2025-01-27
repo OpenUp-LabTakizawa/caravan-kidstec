@@ -28,9 +28,9 @@ export function Modal({
     <dialog
       ref={dialogRef}
       onClose={router.back}
-      className={`bg-transparent duration-200 ease-out grid h-full items-center justify-items-center max-h-none max-w-none opacity-0 overflow-hidden overscroll-contain pointer-events-none text-inherit w-full z-50 backdrop:bg-[#0006] open:opacity-100 open:pointer-events-auto open:visible ${styles.dialog}`}
+      className={`bg-transparent duration-200 ease-out grid h-full items-center justify-items-center max-h-none max-w-none opacity-0 overflow-hidden overscroll-contain pointer-events-none w-full z-50 backdrop:bg-[#0006] open:opacity-100 open:pointer-events-auto open:visible ${styles.dialog}`}
     >
-      <div className="bg-white col-start-1 duration-200 ease-out max-h-[90vh] max-w-3xl overflow-y-auto overscroll-contain p-2 pt-7 rounded-2xl row-start-1 scale-90 shadow-2xl space-y-2 transition w-full in-open:scale-100 in-open:translate-y-0 sm:p-6 sm:space-y-4">
+      <div className="bg-white col-start-1 duration-200 ease-out max-h-[90vh] max-w-3xl overflow-y-auto overscroll-contain p-2 pt-7 rounded-2xl row-start-1 scale-90 shadow-2xl space-y-2 transition w-full in-open:scale-100 sm:p-6 sm:space-y-4">
         <button
           type="button"
           onClick={router.back}
@@ -52,7 +52,7 @@ export function Modal({
         type="button"
         aria-label="閉じる"
         onClick={router.back}
-        className="col-start-1 grid justify-self-stretch row-start-1 self-stretch -z-1"
+        className="col-start-1 justify-self-stretch row-start-1 self-stretch -z-1"
       />
     </dialog>
   )

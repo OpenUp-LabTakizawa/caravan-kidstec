@@ -1,4 +1,4 @@
-.dialog {
+/* .dialog {
   scrollbar-color: color-mix(in oklch, currentColor 35%, transparent)
     transparent;
   &::backdrop {
@@ -11,4 +11,4 @@
   0% {
     opacity: 0;
   }
-}
+} */

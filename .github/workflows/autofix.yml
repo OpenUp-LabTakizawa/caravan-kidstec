@@ -30,7 +30,7 @@ jobs:
         run: bun update
 
       - name: Run Biome
-        run: bun lint && bunx biome ci --reporter=github
+        run: bunx biome check --write app && bunx biome ci --reporter=github
 
       - name: Commit
         uses: autofix-ci/action@v1.3.1

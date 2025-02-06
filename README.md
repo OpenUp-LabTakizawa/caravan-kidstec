@@ -28,49 +28,49 @@
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Bun](https://bun.sh/) installed on your computer.  
 From your command line:
 
-1. Clone this repository
+### 1. Clone this repository
 
 ```bash
 git clone https://github.com/OpenUp-LabTakizawa/caravan-kidstec
 ```
 
-2. Install dependencies with bun
+### 2. Install dependencies with bun
 
 ```bash
 cd caravan-kidstec && bun i
 ```
 
-3. Develop the app
+### 3. Develop the app
 
 ```bash
 bun dev
 ```
 
-4. Test the app
+### 4. Test the app
 
 ```bash
 bun test:app
 ```
 
-5. E2E Test
+### 5. E2E Test
 
 ```bash
 bun test:e2e
 ```
 
-6. Format and Lint the files
+### 6. Format and Lint the files
 
 ```bash
 bun lint
 ```
 
-7. Build the app
+### 7. Build the app
 
 ```bash
 bun run build
 ```
 
-8. Start the app
+### 8. Start the app
 
 ```bash
 bun start

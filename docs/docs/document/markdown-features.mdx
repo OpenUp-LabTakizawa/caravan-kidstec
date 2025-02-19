@@ -1,113 +1,113 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-# マークダウンの特徴
+# Markdown の特徴
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+Docusaurus は **[Markdown](https://daringfireball.net/projects/markdown/syntax)** と幾つかの **追加機能** を有しています。
 
 ## Front Matter
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
+Markdown ドキュメントには [Front Matter](https://jekyllrb.com/docs/front-matter/) と呼ばれる最上部で宣言するメタデータがあります:
 
 ```text title="my-doc.md"
 // highlight-start
 ---
 id: my-doc-id
-title: My document title
-description: My document description
+title: ドキュメントのタイトル
+description: ドキュメントの説明
 slug: /my-custom-url
 ---
 // highlight-end
 
-## Markdown heading
+## Markdown 見出し
 
-Markdown text with [links](./hello.md)
+Markdown テキスト with [リンク](./hello.md)
 ```
 
-## Links
+## リンク
 
-Regular Markdown links are supported, using url paths or relative file paths.
+一般的な Markdown リンクは URL や相対パスをサポートしています。
 
 ```md
-Let's see how to [Create a page](/create-a-page).
+[新規ページ作成](/create-a-page)方法を見てみましょう。
 ```
 
 ```md
-Let's see how to [Create a page](./create-a-page.md).
+[新規ページ作成](./create-a-page.md)方法を見てみましょう。
 ```
 
-**Result:** Let's see how to [Create a page](./create-a-page.md).
+**結果:** [新規ページ作成](./create-a-page.md)方法を見てみましょう。
 
-## Images
+## 画像
 
-Regular Markdown images are supported.
+一般的な Markdown 画像はサポートされています。
 
-You can use absolute paths to reference images in the static directory (`static/img/caravan-kidstec.png`):
+絶対パスで静的ディレクトリの画像を参照出来ます (`static/img/caravan-kidstec.png`):
 
 ```md
-![Docusaurus logo](/img/caravan-kidstec.png)
+![caravan-kidstec logo](/img/caravan-kidstec.png)
 ```
 
-![Docusaurus logo](/img/caravan-kidstec.png)
+![caravan-kidstec logo](/img/caravan-kidstec.png)
 
-You can reference images relative to the current file as well. This is particularly useful to colocate images close to the Markdown files using them:
+相対パスでも同様に画像を参照出来ます。これは Markdown ファイルの近くに画像を保存したい時に役立ちます:
 
 ```md
-![Docusaurus logo](./img/caravan-kidstec.png)
+![caravan-kidstec logo](./img/caravan-kidstec.png)
 ```
 
-## Code Blocks
+## コードブロック
 
-Markdown code blocks are supported with Syntax highlighting.
+Markdown コードブロックはシンタックスハイライトをサポートしています。
 
 ````md
 ```jsx title="src/components/HelloDocusaurus.js"
 function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
+  return <h1>こんにちは、Docusaurus！</h1>;
 }
 ```
 ````
 
 ```jsx title="src/components/HelloDocusaurus.js"
 function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
+  return <h1>こんにちは、Docusaurus！</h1>;
 }
 ```
 
-## Admonitions
+## アラート記法
 
-Docusaurus has a special syntax to create admonitions and callouts:
+Docusaurus は特別な構文を使ってアラートとコールアウトを作成します:
 
 ```md
-:::tip My tip
+:::tip アドバイス
 
-Use this awesome feature option
+この素敵なオプション機能を使って
 
 :::
 
-:::danger Take care
+:::danger 注意
 
-This action is dangerous
+この操作は危険です
 
 :::
 ```
 
-:::tip My tip
+:::tip アドバイス
 
-Use this awesome feature option
-
-:::
-
-:::danger Take care
-
-This action is dangerous
+この素敵なオプション機能を使って
 
 :::
 
-## MDX and React Components
+:::danger 注意
 
-[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
+この操作は危険です
+
+:::
+
+## MDX と React Components
+
+[MDX](https://mdxjs.com/) はドキュメントをより **使い易く**、そして **Markdown 内での React components** の利用を可能にします:
 
 ```jsx
 export const Highlight = ({children, color}) => (
@@ -120,15 +120,15 @@ export const Highlight = ({children, color}) => (
       cursor: 'pointer',
     }}
     onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`)
+      alert(`あなたは ${color} 色の ${children} ラベルをクリックしました`)
     }}>
     {children}
   </span>
 );
 
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+これは <Highlight color="#25c2a0">Docusaurus グリーン</Highlight> !
 
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+これは <Highlight color="#1877F2">Facebook ブルー</Highlight> !
 ```
 
 export const Highlight = ({children, color}) => (
@@ -141,12 +141,12 @@ export const Highlight = ({children, color}) => (
       cursor: 'pointer',
     }}
     onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`);
+      alert(`あなたは ${color} 色の ${children} ラベルをクリックしました`);
     }}>
     {children}
   </span>
 );
 
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+これは <Highlight color="#25c2a0">Docusaurus グリーン</Highlight> !
 
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+これは <Highlight color="#1877F2">Facebook ブルー</Highlight> !

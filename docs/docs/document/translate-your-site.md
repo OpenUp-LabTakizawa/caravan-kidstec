@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# サイトの翻訳
+# 翻訳
 
 `docs/intro.md` をフランス語に翻訳しましょう。
 

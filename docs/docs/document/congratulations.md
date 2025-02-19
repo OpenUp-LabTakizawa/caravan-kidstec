@@ -8,7 +8,7 @@ sidebar_position: 6
 
 Docusaurus は **もっと沢山出来ることがあります**！
 
-**追加で 5 分**、時間はありますか？ **[バージョン管理](./manage-docs-versions.md)** と **[サイトの翻訳](./translate-your-site.md)** を見てみて下さい。
+**追加で 5 分**、時間はありますか？ **[バージョン管理](./manage-docs-versions.md)** と **[翻訳](./translate-your-site.md)** を見てみて下さい。
 
 このチュートリアルで不明瞭な点やバグを見つけましたか？ [Issue を挙げて下さい！](https://github.com/OpenUp-LabTakizawa/caravan-kidstec/issues/new?template=docs_report.yml)
 

@@ -1,6 +1,5 @@
----
-sidebar_position: 8
----
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # 翻訳
 
@@ -35,9 +34,28 @@ cp docs/intro.md i18n/fr/docusaurus-plugin-content-docs/current/intro.md
 
 フランス語サイトを始めましょう:
 
-```bash title="Terminal"
-bun run start -- --locale fr
-```
+<Tabs>
+  <TabItem value="bun" label="Bun" default>
+    ```bash title="Terminal"
+    bun start -- --locale fr
+    ```
+  </TabItem>
+  <TabItem value="deno" label="Deno">
+    ```bash title="Terminal"
+    deno task start -- --locale fr
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash title="Terminal"
+    pnpm start -- --locale fr
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```bash title="Terminal"
+    yarn start -- --locale fr
+    ```
+  </TabItem>
+</Tabs>
 
 ローカライズされたサイトは [http://localhost:3000/fr/](http://localhost:3000/fr/) でアクセスできます。`Getting Started` ページは翻訳されています。
 
@@ -77,12 +95,50 @@ export default {
 
 特定の言語でビルドする:
 
-```bash title="Terminal"
-bun run build -- --locale fr
-```
+<Tabs>
+  <TabItem value="bun" label="Bun" default>
+    ```bash title="Terminal"
+    bun run build -- --locale fr
+    ```
+  </TabItem>
+  <TabItem value="deno" label="Deno">
+    ```bash title="Terminal"
+    deno task build -- --locale fr
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash title="Terminal"
+    pnpm build -- --locale fr
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```bash title="Terminal"
+    yarn build -- --locale fr
+    ```
+  </TabItem>
+</Tabs>
 
 又は、全ての言語を含め、１回でビルドする:
 
-```bash title="Terminal"
-bun run build
-```
+<Tabs>
+  <TabItem value="bun" label="Bun" default>
+    ```bash title="Terminal"
+    bun run build
+    ```
+  </TabItem>
+  <TabItem value="deno" label="Deno">
+    ```bash title="Terminal"
+    deno task build
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash title="Terminal"
+    pnpm build
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```bash title="Terminal"
+    yarn build
+    ```
+  </TabItem>
+</Tabs>

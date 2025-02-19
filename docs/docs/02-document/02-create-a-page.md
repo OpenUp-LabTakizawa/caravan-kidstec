@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # 新規ページ作成
 
 **Markdown 又は React** ファイルを `src/pages` に追加して、**独立したページ**を作成します:

@@ -55,6 +55,11 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "img/caravan-kidstec-social-card.avif",
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     navbar: {
       title: "こどもテックキャラバン",
       logo: {

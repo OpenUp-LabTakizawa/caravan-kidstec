@@ -1,6 +1,5 @@
----
-sidebar_position: 7
----
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # バージョン管理
 
@@ -10,9 +9,28 @@ Docusaurus は複数のバージョンでドキュメント管理出来ます。
 
 バージョン 1.0 をリリースします:
 
-```bash title="Terminal"
-bun run docusaurus docs:version 1.0
-```
+<Tabs>
+  <TabItem value="bun" label="Bun" default>
+    ```bash title="Terminal"
+    bun docusaurus docs:version 1.0
+    ```
+  </TabItem>
+  <TabItem value="deno" label="Deno">
+    ```bash title="Terminal"
+    deno task docusaurus docs:version 1.0
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    ```bash title="Terminal"
+    pnpm docusaurus docs:version 1.0
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+    ```bash title="Terminal"
+    yarn docusaurus docs:version 1.0
+    ```
+  </TabItem>
+</Tabs>
 
 `docs` フォルダーは `versioned_docs/version-1.0` と `versions.json` にコピーされ、作成されます。
 

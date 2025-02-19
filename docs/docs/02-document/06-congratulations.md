@@ -1,14 +1,10 @@
----
-sidebar_position: 6
----
-
 # おめでとう!
 
 あなたは **Docusaurus の基本** を学び、幾つかの変更を**最初のテンプレート**に施しました。
 
 Docusaurus は **もっと沢山出来ることがあります**！
 
-**追加で 5 分**、時間はありますか？ **[バージョン管理](./manage-docs-versions.md)** と **[翻訳](./translate-your-site.md)** を見てみて下さい。
+**追加で 5 分**、時間はありますか？ **[バージョン管理](./07-manage-docs-versions.md)** と **[翻訳](./08-translate-your-site.md)** を見てみて下さい。
 
 このチュートリアルで不明瞭な点やバグを見つけましたか？ [Issue を挙げて下さい！](https://github.com/OpenUp-LabTakizawa/caravan-kidstec/issues/new?template=docs_report.yml)
 

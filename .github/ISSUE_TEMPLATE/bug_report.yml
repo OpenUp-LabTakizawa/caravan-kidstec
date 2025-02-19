@@ -21,6 +21,8 @@ body:
       label: 🔍 Version
       description: What version of our software are you running?
       placeholder: ex. v1.0.0
+    validations:
+      required: true
   - type: textarea
     id: what-happened
     attributes:

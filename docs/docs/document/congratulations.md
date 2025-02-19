@@ -1,23 +1,23 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # おめでとう!
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+あなたは **Docusaurus の基本** を学び、幾つかの変更を**最初のテンプレート**に施しました。
 
-Docusaurus has **much more to offer**!
+Docusaurus は **もっと沢山出来ることがあります**！
 
-Have **5 more minutes**? Take a look at **[versioning](./manage-docs-versions.md)** and **[i18n](./translate-your-site.md)**.
+**追加で 5 分**、時間はありますか？ **[バージョン管理](./manage-docs-versions.md)** と **[サイトの翻訳](./translate-your-site.md)** を見てみて下さい。
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+このチュートリアルで不明瞭な点やバグを見つけましたか？ [Issue を挙げて下さい！](https://github.com/OpenUp-LabTakizawa/caravan-kidstec/issues/new?template=bug_report.yml)
 
-## What's next?
+## 次は何をすれば？
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+- [公式ドキュメント](https://docusaurus.io/) を読んでみよう
+- [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config) からサイト設定を変更してみよう
+- ナビゲーションバーやフッターを [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration) と一緒に追加してみよう
+- 独自の [デザインとレイアウト](https://docusaurus.io/docs/styling-layout) を追加してみよう
+- [検索バー](https://docusaurus.io/docs/search) を追加してみよう
+- [Docusaurus ショーケース](https://docusaurus.io/showcase) からインスピレーションを得よう
+- [Docusaurus コミュニティ](https://docusaurus.io/community/support) で関わりを持ってみよう

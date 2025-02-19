@@ -41,15 +41,15 @@ sidebar_position: 1
 
 次のコマンドを実行することで、こどもテックキャラバンをローカルにクローン出来ます。
 
-```bash
+```bash title="Terminal"
 sl clone git@github.com:OpenUp-LabTakizawa/caravan-kidstec.git
 ```
 
-上記のコマンドは[コマンドプロンプト](https://techmania.jp/blog/cmd0001/)や [Powershell](https://learn.microsoft.com/ja-jp/powershell/scripting/overview)、[ターミナル](https://learn.microsoft.com/ja-jp/windows/terminal/)、又はターミナルが統合されたコードエディター上で実行出来ます。
+上記のコマンドは [Powershell](https://learn.microsoft.com/ja-jp/powershell/scripting/overview) や[ターミナル](https://learn.microsoft.com/ja-jp/windows/terminal/)、又はターミナルが統合されたコードエディター上で実行出来ます。
 
 クローン出来たら、プロジェクトに移動して必要な依存関係を全てインストールしましょう。
 
-```bash
+```bash title="Terminal"
 cd caravan-kidstec
 bun i
 ```
@@ -64,7 +64,7 @@ bun i
 
 開発サーバーを起動しましょう:
 
-```bash
+```bash title="Terminal"
 bun dev
 ```
 

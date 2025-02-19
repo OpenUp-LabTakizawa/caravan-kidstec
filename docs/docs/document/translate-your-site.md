@@ -1,14 +1,14 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # サイトの翻訳
 
-Let's translate `docs/intro.md` to French.
+`docs/intro.md` をフランス語に翻訳しましょう。
 
-## Configure i18n
+## i18n 設定
 
-Modify `docusaurus.config.js` to add support for the `fr` locale:
+`docusaurus.config.js` に、 `fr` locale を追加しサポートします:
 
 ```js title="docusaurus.config.js"
 export default {
@@ -19,39 +19,39 @@ export default {
 };
 ```
 
-## Translate a doc
+## ドキュメントの翻訳
 
-Copy the `docs/intro.md` file to the `i18n/fr` folder:
+`docs/intro.md` ファイルを `i18n/fr` フォルダーにコピーします:
 
-```bash
+```bash title="Terminal"
 mkdir -p i18n/fr/docusaurus-plugin-content-docs/current/
 
 cp docs/intro.md i18n/fr/docusaurus-plugin-content-docs/current/intro.md
 ```
 
-Translate `i18n/fr/docusaurus-plugin-content-docs/current/intro.md` in French.
+`i18n/fr/docusaurus-plugin-content-docs/current/intro.md` をフランス語に翻訳します。
 
-## Start your localized site
+## ローカライズしたサイトを始める
 
-Start your site on the French locale:
+フランス語サイトを始めましょう:
 
-```bash
-npm run start -- --locale fr
+```bash title="Terminal"
+bun run start -- --locale fr
 ```
 
-Your localized site is accessible at [http://localhost:3000/fr/](http://localhost:3000/fr/) and the `Getting Started` page is translated.
+ローカライズされたサイトは [http://localhost:3000/fr/](http://localhost:3000/fr/) でアクセスできます。`Getting Started` ページは翻訳されています。
 
 :::caution
 
-In development, you can only use one locale at a time.
+開発中は、1 つの言語のみ同時に使用できます。
 
 :::
 
-## Add a Locale Dropdown
+## 言語ドロップダウンの追加
 
-To navigate seamlessly across languages, add a locale dropdown.
+言語間の遷移をシームレスにする為に、言語ドロップダウンを追加します。
 
-Modify the `docusaurus.config.js` file:
+`docusaurus.config.js` ファイルを編集します:
 
 ```js title="docusaurus.config.js"
 export default {
@@ -69,20 +69,20 @@ export default {
 };
 ```
 
-The locale dropdown now appears in your navbar:
+言語ドロップダウンがナビゲーションバーに表示されます:
 
-![Locale Dropdown](./img/localeDropdown.png)
+![Locale Dropdown](/img/localeDropdown.png)
 
-## Build your localized site
+## ローカライズサイトをビルドする
 
-Build your site for a specific locale:
+特定の言語でビルドする:
 
-```bash
-npm run build -- --locale fr
+```bash title="Terminal"
+bun run build -- --locale fr
 ```
 
-Or build your site to include all the locales at once:
+又は、全ての言語を含め、１回でビルドする:
 
-```bash
-npm run build
+```bash title="Terminal"
+bun run build
 ```

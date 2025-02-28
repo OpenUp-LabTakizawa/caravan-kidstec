@@ -75,9 +75,9 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          sidebarId: "introSidebar",
           position: "left",
-          label: "チュートリアル",
+          label: "イントロ",
         },
         {
           type: "docSidebar",
@@ -99,8 +99,8 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "チュートリアル",
-              to: "/docs/tutorial/intro",
+              label: "イントロ",
+              to: "/docs/intro/what-is-caravan-kidstec",
             },
             {
               label: "ドキュメント",

@@ -74,6 +74,12 @@ const config: Config = {
           label: "チュートリアル",
         },
         {
+          type: "docSidebar",
+          sidebarId: "documentSidebar",
+          position: "left",
+          label: "ドキュメント",
+        },
+        {
           href: "https://github.com/OpenUp-LabTakizawa/caravan-kidstec",
           label: "GitHub",
           position: "right",
@@ -88,7 +94,11 @@ const config: Config = {
           items: [
             {
               label: "チュートリアル",
-              to: "/docs/tutorial",
+              to: "/docs/tutorial/intro",
+            },
+            {
+              label: "ドキュメント",
+              to: "/docs/document/what-is-docusaurus",
             },
           ],
         },

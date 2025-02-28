@@ -1,15 +1,11 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# チュートリアル
-
-こどもテックキャラバンHPを**5分以内で体験**してみよう！
-
-## 事前準備
+# 事前準備
 
 こどもテックキャラバンHPを作成する前に準備するもの。
 
-### 1. JavaScript 実行環境（以下から１つ）
+## JavaScript 実行環境（以下から１つ）
 
 - [Bun](https://bun.sh/docs/installation) オススメ！
 - [Deno](https://deno.com/)
@@ -17,13 +13,13 @@ import TabItem from '@theme/TabItem';
   - [pnpm](https://pnpm.io/ja/installation)
   - [yarn](https://yarnpkg.com/)
 
-### 2. SCM ツール（以下から１つ）
+## SCM ツール（以下から１つ）
 
 - [Sapling](https://sapling-scm.com/docs/introduction/installation) オススメ！
 - [Jujutsu](https://jj-vcs.github.io/jj/latest/install-and-setup/)
 - [Git](https://git-scm.com/downloads)
 
-### 3. コードエディター（好きなものを１つ）
+## コードエディター（好きなものを１つ）
 
 - [VSCode](https://code.visualstudio.com/) Windows の方
 - [Zed](https://zed.dev/): macOS や Linux の方
@@ -36,9 +32,9 @@ import TabItem from '@theme/TabItem';
 
 ## プロジェクトをクローン
 
-こどもテックキャラバンHPを扱う為に、先ずは[クローン](https://zenn.dev/gachigachi/articles/329952348817d7)します。
+こどもテックキャラバンHPを扱う為に、先ずは[レポジトリ](https://github.com/OpenUp-LabTakizawa/caravan-kidstec)を[クローン](https://zenn.dev/gachigachi/articles/329952348817d7)します。
 
-次のコマンドを実行することで、こどもテックキャラバンをローカルにクローン出来ます。
+次のコマンドを実行することで、GitHub レポジトリをローカルにクローン出来ます。
 
 <Tabs>
   <TabItem value="sapling" label="Sapling" default>
@@ -94,34 +90,3 @@ import TabItem from '@theme/TabItem';
 `bun i`、`deno install`、`pnpm i`、`yarn` コマンドは必要な依存関係を自動的に解決し、インストールします。
 
 これで、こどもテックキャラバンHPを実行する環境が整いました。
-
-## サイトを動かそう
-
-開発サーバーを起動しましょう:
-
-<Tabs>
-  <TabItem value="bun" label="Bun" default>
-    ```bash title="Terminal"
-    bun dev
-    ```
-  </TabItem>
-  <TabItem value="deno" label="Deno">
-    ```bash title="Terminal"
-    deno task dev
-    ```
-  </TabItem>
-  <TabItem value="pnpm" label="pnpm">
-    ```bash title="Terminal"
-    pnpm dev
-    ```
-  </TabItem>
-  <TabItem value="yarn" label="yarn">
-    ```bash title="Terminal"
-    yarn dev
-    ```
-  </TabItem>
-</Tabs>
-
-`bun dev`、`deno task dev`、`pnpm dev`、`yarn dev` コマンドはローカルでサイトを立ち上げ、開発サーバーで実行されます。 http://localhost:3000/ のアドレスから確認出来ます。
-
-`app/page.tsx` をコードエディターで開き、何行か編集してみて下さい。 サイトが自動的にリロードされて更新されます。

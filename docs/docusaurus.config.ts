@@ -31,6 +31,12 @@ const config: Config = {
     locales: ["ja"],
   },
 
+  markdown: {
+    remarkRehypeOptions: {
+      footnoteLabel: "脚注",
+    },
+  },
+
   presets: [
     [
       "classic",

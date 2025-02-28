@@ -63,7 +63,7 @@ export default {
 
 ドキュメントのバージョンドロップダウンがナビゲーションバーに表示されます:
 
-![Docs Version Dropdown](/img/docsVersionDropdown.png)
+![Docs Version Dropdown](/img/docsVersionDropdown.avif)
 
 ## 既存のバージョンを更新する
 

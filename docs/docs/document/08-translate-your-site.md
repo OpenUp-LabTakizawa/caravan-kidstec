@@ -89,7 +89,7 @@ export default {
 
 言語ドロップダウンがナビゲーションバーに表示されます:
 
-![Locale Dropdown](/img/localeDropdown.png)
+![Locale Dropdown](/img/localeDropdown.avif)
 
 ## ローカライズサイトをビルドする
 

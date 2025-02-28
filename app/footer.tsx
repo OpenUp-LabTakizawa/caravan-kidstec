@@ -37,7 +37,8 @@ export function Footer(): JSX.Element {
           />
         </Link>
         <p>
-          Copyright © こどもテックキャラバン事務局&nbsp;
+          Copyright © {new Date().getFullYear()}{" "}
+          こどもテックキャラバン事務局&nbsp;
           <br className="sm:hidden" />
           All rights reserved.
         </p>

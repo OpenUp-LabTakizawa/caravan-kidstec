@@ -36,7 +36,7 @@ body:
   - type: input
     attributes:
       label: Does the docs page already exist? Please link to it.
-      description: "Example: https://openup-labtakizawa.github.io/caravan-kidstec/docs/tutorial"
+      description: "Example: https://openup-labtakizawa.github.io/caravan-kidstec/docs/tutorial/intro"
   - type: checkboxes
     id: terms
     attributes:

@@ -81,6 +81,18 @@ const config: Config = {
         },
         {
           type: "docSidebar",
+          sidebarId: "homepageSidebar",
+          position: "left",
+          label: "ホームページ",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "infraSidebar",
+          position: "left",
+          label: "インフラ",
+        },
+        {
+          type: "docSidebar",
           sidebarId: "documentSidebar",
           position: "left",
           label: "ドキュメント",
@@ -96,11 +108,24 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "チュートリアル",
           items: [
             {
               label: "イントロ",
               to: "/docs/intro/what-is-caravan-kidstec",
+            },
+          ],
+        },
+        {
+          title: "重要な情報",
+          items: [
+            {
+              label: "ホームページ",
+              to: "/docs/homepage/services",
+            },
+            {
+              label: "インフラ",
+              to: "/docs/infra/services",
             },
             {
               label: "ドキュメント",
@@ -109,7 +134,7 @@ const config: Config = {
           ],
         },
         {
-          title: "More",
+          title: "その他",
           items: [
             {
               label: "GitHub",

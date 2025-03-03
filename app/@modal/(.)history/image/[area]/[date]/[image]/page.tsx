@@ -63,6 +63,7 @@ export default async function PictureModal({
         placeholder="blur"
         blurDataURL={picture.blurDataUrl}
         className="w-full"
+        style={{ viewTransitionName: "history" }}
       />
     </Modal>
   )

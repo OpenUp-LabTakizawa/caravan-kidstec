@@ -12,7 +12,7 @@ import {
 } from "@/app/lib/constant"
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import type { Metadata } from "next"
-import Link from "next/link"
+import { Link } from "next-view-transitions"
 import type { JSX } from "react"
 import { PictureTile } from "./pictureTile.tsx"
 import { Programs } from "./programs.tsx"

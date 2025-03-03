@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { ViewTransitions } from "next-view-transitions"
 import type { JSX, ReactNode } from "react"
 import { Footer } from "./footer.tsx"
 import { Header } from "./header.tsx"
@@ -78,19 +79,21 @@ export default function RootLayout({
   modal,
 }: Readonly<{ children: ReactNode; modal: ReactNode }>): JSX.Element {
   return (
-    <html
-      lang="ja"
-      className={`${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
-    >
-      <body className="font-[family-name:var(--font-zen-kaku-gothic-new)] text-gray-800">
-        <Header />
-        <main className="max-w-(--breakpoint-md) mx-auto text-xs sm:px-12 sm:text-sm md:text-base">
-          {children}
-          {modal}
-          <ScrollToTop />
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <ViewTransitions>
+      <html
+        lang="ja"
+        className={`${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
+      >
+        <body className="font-[family-name:var(--font-zen-kaku-gothic-new)] text-gray-800">
+          <Header />
+          <main className="max-w-(--breakpoint-md) mx-auto text-xs sm:px-12 sm:text-sm md:text-base">
+            {children}
+            {modal}
+            <ScrollToTop />
+          </main>
+          <Footer />
+        </body>
+      </html>
+    </ViewTransitions>
   )
 }

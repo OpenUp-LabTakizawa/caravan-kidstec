@@ -16,6 +16,7 @@
     "@heroicons/react": "^2.2.0",
     "@line/bot-sdk": "^9.7.1",
     "next": "canary",
+    "next-view-transitions": "^0.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

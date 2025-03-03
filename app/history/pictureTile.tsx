@@ -4,8 +4,8 @@ import type { Picture } from "@/app/interfaces/picture"
 import { HISTORY } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
+import { Link } from "next-view-transitions"
 import Image from "next/image"
-import Link from "next/link"
 import { type JSX, type RefObject, useEffect, useRef } from "react"
 
 export function PictureTile({

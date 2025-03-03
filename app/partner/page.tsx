@@ -9,7 +9,7 @@ import {
   SPECIAL,
   SPECIAL_PARTNERS,
 } from "@/app/lib/constant"
-import Link from "next/link"
+import { Link } from "next-view-transitions"
 import type { JSX } from "react"
 
 export default function SponserPage(): JSX.Element {

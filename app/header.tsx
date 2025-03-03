@@ -1,8 +1,8 @@
 "use client"
 
 import { Bars3BottomRightIcon } from "@heroicons/react/24/outline"
+import { Link } from "next-view-transitions"
 import Image from "next/image"
-import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 import { NAVIGATION, SITE_TITLE } from "./lib/constant.ts"

@@ -69,3 +69,11 @@ Object.defineProperty(global, "IntersectionObserver", {
   configurable: true,
   value: IntersectionObserver,
 })
+
+// This mock is needed for next-view-transitions
+mock.module("next-view-transitions", () => {
+  return {
+    Link: mock(),
+    useTransition: mock(),
+  }
+})

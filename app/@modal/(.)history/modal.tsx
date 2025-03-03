@@ -9,7 +9,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid"
 import { SlashIcon } from "@heroicons/react/24/solid"
-import { usePathname, useRouter } from "next/navigation"
+import { useTransitionRouter } from "next-view-transitions"
+import { usePathname } from "next/navigation"
 import {
   type JSX,
   type MouseEvent,
@@ -28,7 +29,7 @@ const edgeRegex: RegExp = /Edge/
 export function Modal({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {
-  const router = useRouter()
+  const router = useTransitionRouter()
   const pathname: string = usePathname()
   const pathParts: string[] = pathname.split("/")
   const history: EventDate[] =
@@ -113,7 +114,57 @@ export function Modal({
 
   function changePhoto(picture: Picture): void {
     pathParts[pathParts.length - 1] = picture.src.split("/")[5].split(".")[0]
-    router.replace(pathParts.join("/"))
+    const direction: "left" | "right" =
+      picture === eventDate.pictures[indexOfPicture - 1] ? "left" : "right"
+    router.replace(pathParts.join("/"), {
+      onTransitionReady: () => slideInOut(direction),
+    })
+  }
+
+  function slideInOut(direction: "left" | "right"): void {
+    document.documentElement.animate(
+      [
+        {
+          opacity: 1,
+          transform: "translate(0, 0)",
+        },
+        {
+          opacity: 0,
+          transform:
+            direction === "left"
+              ? "translate(100px, 0)"
+              : "translate(-100px, 0)",
+        },
+      ],
+      {
+        duration: 400,
+        easing: "ease",
+        fill: "forwards",
+        pseudoElement: "::view-transition-old(history)",
+      },
+    )
+
+    document.documentElement.animate(
+      [
+        {
+          opacity: 0,
+          transform:
+            direction === "left"
+              ? "translate(-100px, 0)"
+              : "translate(100px, 0)",
+        },
+        {
+          opacity: 1,
+          transform: "translate(0, 0)",
+        },
+      ],
+      {
+        duration: 400,
+        easing: "ease",
+        fill: "forwards",
+        pseudoElement: "::view-transition-new(history)",
+      },
+    )
   }
 
   return (

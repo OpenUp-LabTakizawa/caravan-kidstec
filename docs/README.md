@@ -1,8 +1,8 @@
 <div align="center">
   <a href="https://caravan-kidstec.com/">
     <picture>
-      <source srcset="../public/caravan-kidstec_logo.avif" media="(max-width: 600px)" height="128">
-      <img src="../public/caravan-kidstec_logo.avif" alt="caravan-kidstec logo" height="256">
+      <source srcset="./static/img/docusaurus.png" media="(max-width: 600px)" height="128">
+      <img src="./static/img/docusaurus.png" alt="caravan-kidstec logo" height="256">
     </picture>
   </a>
   <h1>caravan-kidstec documentation</h1>

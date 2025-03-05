@@ -9,7 +9,6 @@
 
   <a href="https://biomejs.dev/"><img src="https://img.shields.io/badge/biome-60A5FA?labelColor=000000&logo=biome&style=for-the-badge" alt="Biome"></a>
   <a href="https://bun.sh/"><img src="https://img.shields.io/badge/bun-FBF0DF?labelColor=000000&logo=bun&style=for-the-badge" alt="Bun"></a>
-  <a href="https://docusaurus.io/"><img src="https://img.shields.io/badge/docusaurus-3ECC5F?labelColor=000000&logo=docusaurus&style=for-the-badge" alt="Docusaurus"></a>
   <a href="https://line.me/"><img src="https://img.shields.io/badge/LINE-00C300.svg?labelColor=000000&logo=line&style=for-the-badge" alt="LINE"></a>
   <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/next.js-000000.svg?labelColor=000000&logo=next.js&style=for-the-badge" alt="Next.js"></a>
   <a href="https://react.dev/"><img src="https://img.shields.io/badge/react-61DAFB?labelColor=000000&logo=react&style=for-the-badge" alt="React"></a>

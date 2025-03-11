@@ -1,4 +1,4 @@
-name: Test deployment
+name: 🌐 Test Deployment
 
 on:
   pull_request:
@@ -15,16 +15,16 @@ jobs:
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: 📥 Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Install bun
+      - name: 🐣 Install bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: canary
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: bun i --frozen-lockfile
-      - name: Test build website
+      - name: 🌐 Test build website
         run: bun run build

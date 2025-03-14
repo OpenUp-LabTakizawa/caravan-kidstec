@@ -1,5 +1,5 @@
-.arrowTopRight {
-  animation: arrow-top-right 1.5s infinite;
+.scaleUp {
+  animation: scale-up 1.5s infinite;
 }
 
 .blueShine {
@@ -29,13 +29,13 @@
   transform: translateY(-50%) rotate(225deg);
 }
 
-@keyframes arrow-top-right {
+@keyframes scale-up {
   0%,
   40% {
-    transform: translate(0);
+    transform: scale(1);
   }
   20% {
-    transform: translate(8px, -8px);
+    transform: scale(1.6);
   }
 }
 

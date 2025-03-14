@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# バージョン管理
+# 🚩バージョン管理
 
 Docusaurus は複数のバージョンでドキュメント管理出来ます。
 

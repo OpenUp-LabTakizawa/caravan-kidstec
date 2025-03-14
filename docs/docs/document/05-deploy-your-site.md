@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# サイトのデプロイ
+# 🚀サイトのデプロイ
 
 Docusaurus は **静的サイトジェネレーター** (**[Jamstack](https://jamstack.org/)** とも呼ばれる)です。
 

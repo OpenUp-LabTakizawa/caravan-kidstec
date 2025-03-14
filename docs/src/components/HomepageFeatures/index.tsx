@@ -13,7 +13,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "ホームページ",
+    title: "🏠ホームページ",
     link: "/docs/homepage/services",
     Svg: require("@site/static/img/next.svg").default,
     description: (
@@ -24,7 +24,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: "インフラ",
+    title: "🧰インフラ",
     link: "/docs/infra/services",
     Svg: require("@site/static/img/docker.svg").default,
     description: (
@@ -35,7 +35,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: "ドキュメント",
+    title: "📝ドキュメント",
     link: "/docs/document/what-is-docusaurus",
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (

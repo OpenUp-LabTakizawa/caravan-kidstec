@@ -190,13 +190,19 @@ export function Modal({
           <XMarkIcon className="size-6" />
         </button>
         {children}
-        <div className="flex gap-2 items-center justify-between">
-          <strong className="flex items-center text-base sm:w-26">
+        <div
+          className={`flex gap-2 items-center justify-between${pathParts[2] === "movie" ? " flex-row-reverse" : ""}`}
+        >
+          <strong
+            className={`flex items-center text-base sm:w-26${pathParts[2] === "movie" ? " hidden" : ""}`}
+          >
             <sup>{indexOfPicture + 1}</sup>
             <SlashIcon className="size-6" />
             <sub>{eventDate.pictures.length}</sub>
           </strong>
-          <div className="flex gap-4 sm:gap-6">
+          <div
+            className={`flex gap-4 sm:gap-6${pathParts[2] === "movie" ? " hidden" : ""}`}
+          >
             <button
               type="button"
               onClick={() =>

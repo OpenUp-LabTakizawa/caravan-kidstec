@@ -4,7 +4,7 @@ export type Menu = {
   readonly textColor: string
 }
 
-type ColorList = "bg" | "shadow-sm" | "text" | "textHover"
+type ColorList = "bg" | "shadow" | "text" | "textHover"
 
 export type MenuPanel = {
   readonly name: string

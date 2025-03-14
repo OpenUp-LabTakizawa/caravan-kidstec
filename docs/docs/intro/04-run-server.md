@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# サイトを動かそう
+# ▶️サイトを動かそう
 
 開発サーバーを起動しましょう:
 

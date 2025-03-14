@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 翻訳
+# 🌍翻訳
 
 `docs/intro.md` をフランス語に翻訳しましょう。
 

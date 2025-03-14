@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 事前準備
+# 🛠️事前準備
 
 こどもテックキャラバンHPを作成する前に準備するもの。
 

@@ -1,4 +1,4 @@
-# こどもテックキャラバンとは？
+# 🤔こどもテックキャラバンとは？
 
 「[こどもテックキャラバン](https://caravan-kidstec.com/)」とは、ロボット製作やプログラミングの学習、そして自然学習を通じて、子どもたちの可能性のとびらを広げることを応援する STEAM[^1] アクティビティを取り入れたイベントです。
 
@@ -9,7 +9,7 @@ NPOやスポンサー企業にとっては、自然保全や地域活性化の�
 
 本イベントは、SDGs 目標のひとつである17「パートナーシップで目標を達成しよう」に賛同し、NPO団体、地元企業、大学生などと共創するコレクティブ・インパクトを通じて、子どもたちそして関わる全ての人々の新しい可能性をひらいていきたいと考えています。
 
-![activities](/img/activities.avif)
+[![activities](/img/activities.avif)](https://www.openupgroup.co.jp/news/assets/2024_caravan-kidstec_release.pdf)
 
 [^1]: STEAM・・・科学 Science、技術 Technology、工学 Engineering、芸術 Arts、数学Mathematicsの5分野の横断的でクリエイティブな思考や行動の学びなど
 [^2]: プロボノ（Pro Bono Public）・・・社会的・公共的な目的のために、職業上のスキルや経験を活かして取り組む社会貢献活動 

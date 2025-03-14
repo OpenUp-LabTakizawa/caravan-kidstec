@@ -1,4 +1,4 @@
-# Docusaurus とは？
+# 🤔Docusaurus とは？
 
 [Docusaurus](https://docusaurus.io/) は [Meta](https://www.meta.com/jp/) が開発した**静的サイトジェネレータ**です。
 

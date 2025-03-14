@@ -77,25 +77,25 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "introSidebar",
           position: "left",
-          label: "イントロ",
+          label: "🚀イントロ",
         },
         {
           type: "docSidebar",
           sidebarId: "homepageSidebar",
           position: "left",
-          label: "ホームページ",
+          label: "🏠ホームページ",
         },
         {
           type: "docSidebar",
           sidebarId: "infraSidebar",
           position: "left",
-          label: "インフラ",
+          label: "🧰インフラ",
         },
         {
           type: "docSidebar",
           sidebarId: "documentSidebar",
           position: "left",
-          label: "ドキュメント",
+          label: "📝ドキュメント",
         },
         {
           href: "https://github.com/OpenUp-LabTakizawa/caravan-kidstec",
@@ -111,7 +111,7 @@ const config: Config = {
           title: "チュートリアル",
           items: [
             {
-              label: "イントロ",
+              label: "🚀イントロ",
               to: "/docs/intro/what-is-caravan-kidstec",
             },
           ],
@@ -120,15 +120,15 @@ const config: Config = {
           title: "重要な情報",
           items: [
             {
-              label: "ホームページ",
+              label: "🏠ホームページ",
               to: "/docs/homepage/services",
             },
             {
-              label: "インフラ",
+              label: "🧰インフラ",
               to: "/docs/infra/services",
             },
             {
-              label: "ドキュメント",
+              label: "📝ドキュメント",
               to: "/docs/document/what-is-docusaurus",
             },
           ],

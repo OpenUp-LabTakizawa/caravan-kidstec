@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 
 # 🛠️事前準備
 
-こどもテックキャラバンHPを作成する前に準備するもの。
+このページでは[こどもテックキャラバンHP](https://caravan-kidstec.com/)の開発に必要な技術を紹介します。
 
 ## JavaScript 実行環境（以下から１つ）
 

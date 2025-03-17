@@ -120,7 +120,7 @@ const config: Config = {
           ],
         },
         {
-          title: "重要な情報",
+          title: "コンテンツ",
           items: [
             {
               label: "🏠ホームページ",
@@ -130,15 +130,15 @@ const config: Config = {
               label: "🧰インフラ",
               to: "/docs/infra/services",
             },
-            {
-              label: "📝ドキュメント",
-              to: "/docs/document/what-is-docusaurus",
-            },
           ],
         },
         {
           title: "その他",
           items: [
+            {
+              label: "📝ドキュメント",
+              to: "/docs/document/what-is-docusaurus",
+            },
             {
               label: "GitHub",
               href: "https://github.com/OpenUp-LabTakizawa/caravan-kidstec",

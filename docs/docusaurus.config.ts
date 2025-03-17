@@ -5,6 +5,9 @@ import { themes as prismThemes } from "prism-react-renderer"
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
+  future: {
+    experimental_faster: true,
+  },
   title: "こどもテックキャラバン",
   tagline: "Caravan Kidstec",
   favicon: "img/favicon.ico",

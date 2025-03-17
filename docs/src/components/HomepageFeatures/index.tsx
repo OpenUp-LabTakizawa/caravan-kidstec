@@ -14,7 +14,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "🏠ホームページ",
-    link: "/docs/homepage/services",
+    link: "/docs/homepage/foreword",
     Svg: require("@site/static/img/next.svg").default,
     description: (
       <>

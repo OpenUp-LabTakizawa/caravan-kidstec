@@ -8,7 +8,7 @@
 
 [![next](/img/next.svg)](https://nextjs.org/)
 
-Next.js は [React](https://react.dev/) を使用した高品質なウェブアプリケーションフレームワークです。
+Next.js はフルスタックウェブアプリケーションを作成する為の [React](https://react.dev/) フレームワークです。
 
 ## React
 
@@ -47,4 +47,4 @@ TypeScript は JavaScript に静的型付けやクラスベースオブジェク
 
 :::
 
-これらの技術詳細は[🏠ホームページ](../homepage/services)を参考にして下さい。
+これらの技術詳細は[🏠ホームページ](../homepage/foreword)を参考にして下さい。

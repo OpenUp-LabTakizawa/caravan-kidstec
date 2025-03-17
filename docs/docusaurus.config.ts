@@ -124,7 +124,7 @@ const config: Config = {
           items: [
             {
               label: "🏠ホームページ",
-              to: "/docs/homepage/services",
+              to: "/docs/homepage/foreword",
             },
             {
               label: "🧰インフラ",

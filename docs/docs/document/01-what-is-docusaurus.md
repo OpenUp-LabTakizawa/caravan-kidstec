@@ -2,7 +2,7 @@
 
 [Docusaurus](https://docusaurus.io/) は [Meta](https://www.meta.com/jp/) が開発した**静的サイトジェネレータ**です。
 
-![docusaurus logo](/img/docusaurus.png)
+[![docusaurus logo](/img/docusaurus.png)](https://docusaurus.io/)
 
 他の静的サイトジェネレータと比べて、以下の特徴があります。
 
@@ -16,8 +16,10 @@
 ```
 docs
 ├── docs
-│   ├── 01-tutorial.md
-│   └── 02-document
+│   ├── document
+│   ├── homepage
+│   ├── infra
+│   └── intro
 ├── src
 │   ├── components
 │   ├── css
@@ -34,7 +36,7 @@ docs
 └── tsconfig.json
 ```
 
-例えば、現在、表示しているこのページは [`docs/docs/document/what-is-docusaurus.md`](https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/docs/docs/02-document/01-what-is-docusaurus.md) です:
+例えば、現在、表示しているこのページは [`docs/docs/document/01-what-is-docusaurus.md`](https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/docs/docs/document/01-what-is-docusaurus.md) です:
 
 ## デプロイ環境
 

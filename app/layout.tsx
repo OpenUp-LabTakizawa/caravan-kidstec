@@ -79,12 +79,12 @@ export default function RootLayout({
   modal,
 }: Readonly<{ children: ReactNode; modal: ReactNode }>): JSX.Element {
   return (
-    <ViewTransitions>
-      <html
-        lang="ja"
-        className={`${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
-      >
-        <body className="font-[family-name:var(--font-zen-kaku-gothic-new)] text-gray-800">
+    <html
+      lang="ja"
+      className={`${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
+    >
+      <body className="font-[family-name:var(--font-zen-kaku-gothic-new)] text-gray-800">
+        <ViewTransitions>
           <Header />
           <main className="max-w-(--breakpoint-md) mx-auto text-xs sm:px-12 sm:text-sm md:text-base">
             {children}
@@ -92,8 +92,8 @@ export default function RootLayout({
             <ScrollToTop />
           </main>
           <Footer />
-        </body>
-      </html>
-    </ViewTransitions>
+        </ViewTransitions>
+      </body>
+    </html>
   )
 }

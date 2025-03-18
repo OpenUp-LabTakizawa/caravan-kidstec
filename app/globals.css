@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
-
 /* disable hold down in order to prevent downloading images */
 img {
   pointer-events: none;

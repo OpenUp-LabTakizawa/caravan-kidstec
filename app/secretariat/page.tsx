@@ -34,7 +34,7 @@ export default function Secretariat(): JSX.Element {
     <>
       <Heading menus={[SECRETARIAT]} />
       <section className="gap-4 grid justify-center px-2 md:text-sm">
-        <h2 className="font-bold font-[family-name:var(--font-zen-maru-gothic)] mx-auto text-2xl w-fit">
+        <h2 className="font-bold font-maru mx-auto text-2xl w-fit">
           こどもテックキャラバン
           <br className="sm:hidden" />
           事務局について
@@ -91,7 +91,7 @@ export default function Secretariat(): JSX.Element {
         </ul>
       </section>
       <section className="gap-4 grid justify-center px-2 md:text-sm">
-        <h2 className="font-bold font-[family-name:var(--font-zen-maru-gothic)] mx-auto text-2xl w-fit">
+        <h2 className="font-bold font-maru mx-auto text-2xl w-fit">
           こどもテックキャラバンの
           <br className="sm:hidden" />
           ビジョン

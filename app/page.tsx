@@ -24,16 +24,16 @@ export default function Home(): JSX.Element {
         />
       </Link>
       <Video className="mt-3" date="202410" pathname={KANTO.pathname} />
-      <section className="font-bold leading-7 mt-6 space-y-4 text-base text-center tracking-[.29em]">
+      <section className="font-bold leading-7 mt-6 space-y-4 text-center tracking-[.29em]">
         <Introduction />
       </section>
       <section className="bg-sky-300 mt-6 mx-2 pb-2 rounded-2xl space-y-2">
-        <div className="p-4 space-y-2 text-base text-white">
+        <div className="p-4 space-y-2 text-white">
           <h1 className="mb-2">
             こどもテックキャラバンは
-            <br />
+            <br className="sm:hidden" />
             <strong>プログラミング</strong>と<strong>体験学習</strong>を
-            <br />
+            <br className="sm:hidden" />
             かけ合わせた体験型イベント！
           </h1>
           <p className="border-2 border-white font-bold mx-auto p-2 rounded-2xl shadow-lg w-60">

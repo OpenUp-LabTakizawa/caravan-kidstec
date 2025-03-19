@@ -252,7 +252,7 @@ export function IndicatorCarousel(): JSX.Element {
 
 export function Attention(): JSX.Element {
   return (
-    <p className="text-center sm:text-sm">
+    <p className="text-center">
       ※&nbsp;写真は過去開催時のものです。
       <br className="sm:hidden" />
       体験学習はイベントごとに異なります。

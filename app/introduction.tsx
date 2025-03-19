@@ -51,25 +51,25 @@ export function Introduction(): JSX.Element {
         <>
           <p className="fade-in-up-timeline opacity-0">
             プログラミング体験は、
-            <br />
+            <br className="sm:hidden" />
             ロボットを作って、
-            <br />
+            <br className="sm:hidden" />
             自分で動かせるように！
           </p>
           <p className="fade-in-up-timeline opacity-0">
             体験学習は毎回変わります。
-            <br />
+            <br className="sm:hidden" />
             過去には自然学習や結婚式体験で
-            <br />
+            <br className="sm:hidden" />
             楽しく学んできました。
           </p>
           <p className="fade-in-up-timeline opacity-0">
             <span className="text-orange-400">
               たくさん学び、たくさん遊び、
             </span>
-            <br />
+            <br className="sm:hidden" />
             親子で新しい発見や、
-            <br />
+            <br className="sm:hidden" />
             楽しい思い出を作りましょう！
           </p>
         </>

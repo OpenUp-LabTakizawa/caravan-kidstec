@@ -43,7 +43,7 @@ export default async function Movie({
 
   return (
     <Modal>
-      <h2 className="font-bold font-[family-name:var(--font-zen-maru-gothic)] mb-5 text-3xl text-center">
+      <h2 className="font-bold font-maru mb-5 text-3xl text-center">
         {eventDate.title}
       </h2>
       <Video date={eventDate.date} pathname={menu.pathname} />

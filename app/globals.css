@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-maru: Zen Maru Gothic;
+  --font-kaku: Zen Kaku Gothic New;
+}
+
 /* disable hold down in order to prevent downloading images */
 img {
   pointer-events: none;

@@ -31,6 +31,13 @@ export function Introduction(): JSX.Element {
             親子参加型のイベントです。
           </FadeInUp>
           <FadeInUp>
+            プログラミング体験は、
+            <br />
+            ロボットを作って、
+            <br />
+            自分で動かせるように！
+          </FadeInUp>
+          <FadeInUp>
             体験学習は毎回変わります。
             <br />
             過去には自然学習や結婚式体験で
@@ -49,6 +56,13 @@ export function Introduction(): JSX.Element {
         </>
       ) : (
         <>
+          <p className="fade-in-up-timeline opacity-0">
+            プログラミング体験と
+            <br />
+            体験学習をかけあわせた
+            <br />
+            親子参加型のイベントです。
+          </p>
           <p className="fade-in-up-timeline opacity-0">
             プログラミング体験は、
             <br />

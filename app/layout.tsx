@@ -86,7 +86,7 @@ export default function RootLayout({
       <body className="font-kaku text-gray-800">
         <ViewTransitions>
           <Header />
-          <main className="max-w-3xl mx-auto text-xs sm:px-12 sm:text-sm md:text-base">
+          <main className="text-xs sm:px-12 sm:text-sm md:text-base">
             {children}
             {modal}
             <ScrollToTop />

@@ -121,7 +121,7 @@ export default function Secretariat(): JSX.Element {
           イベントを通して参加者だけではなく、関係する
           <br className="sm:hidden" />
           すべての人の
-          <br className="hidden sm:block" />
+          <br className="hidden sm:inline" />
           心が沸き立つような瞬間があること、
           <br className="sm:hidden" />
           新しい可能性が広がることを目指しています。

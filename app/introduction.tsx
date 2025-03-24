@@ -40,9 +40,11 @@ export function Introduction(): JSX.Element {
           <FadeInUp>
             体験学習は毎回変わります。
             <br />
-            過去には自然学習や結婚式体験で
+            自然学習や社会体験など
             <br />
-            楽しく学んできました。
+            学校ではできない
+            <br className="sm:hidden" />
+            特別な体験ができます。
           </FadeInUp>
           <FadeInUp>
             <span className="text-orange-400">
@@ -73,9 +75,11 @@ export function Introduction(): JSX.Element {
           <p className="fade-in-up-timeline opacity-0">
             体験学習は毎回変わります。
             <br />
-            過去には自然学習や結婚式体験で
+            自然学習や社会体験など
             <br />
-            楽しく学んできました。
+            学校ではできない
+            <br className="sm:hidden" />
+            特別な体験ができます。
           </p>
           <p className="fade-in-up-timeline opacity-0">
             <span className="text-orange-400">

@@ -14,7 +14,7 @@ export function Programs({
             className="border-b border-gray-200 p-2 space-y-1"
           >
             <p className="flex items-center justify-center">
-              <b className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">
+              <b className="bg-gray-100 border px-1.5 rounded-lg text-xs">
                 Day{index + 1}
               </b>
               <span className="w-56 sm:w-80">
@@ -23,7 +23,7 @@ export function Programs({
               </span>
             </p>
             <p className="flex items-center justify-center">
-              <b className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">
+              <b className="bg-gray-100 border px-1.5 rounded-lg text-xs">
                 場所
               </b>
               <span className="w-56 sm:w-80">{program.venue}</span>

@@ -7,7 +7,7 @@ export function Requirement({
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
     <section id={guideline.anchorLink} className="px-2 space-y-4 text-center">
-      <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
+      <h2 className="font-bold text-3xl">応募要項</h2>
       <section className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base text-center w-fit">
         <InformationCircleIcon className="size-10" />
         <div>
@@ -86,7 +86,7 @@ export function Requirement({
           </p>
         </div>
       </div>
-      <table className="align-middle border-2 border-sky-400 hidden mx-auto text-left text-sm sm:table">
+      <table className="border-2 border-sky-400 hidden mx-auto text-left text-sm sm:table">
         <tbody>
           <tr className="border-b-gray-200 border-b">
             <th className="px-4 py-3">募集人数</th>

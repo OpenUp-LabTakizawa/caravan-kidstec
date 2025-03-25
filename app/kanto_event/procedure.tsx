@@ -11,7 +11,7 @@ export function Procedure({
 }: Readonly<{ guideline: Guideline; procedure: string }>): JSX.Element {
   return (
     <section id={procedure} className="px-2 space-y-4 text-center">
-      <h2 className="font-bold font-zenMaruGothic text-3xl">応募手順</h2>
+      <h2 className="font-bold text-3xl">応募手順</h2>
       <ul className="max-w-lg mx-auto space-y-2 text-sm">
         <Step index={1}>
           <p>

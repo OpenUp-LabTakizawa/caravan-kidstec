@@ -8,53 +8,50 @@ export function Schedules({
 }: Readonly<{ schedules: Schedule[] }>): JSX.Element {
   return (
     <section className="mx-auto px-2 space-y-2 text-center">
-      <h2 className="font-bold font-zenMaruGothic text-3xl">スケジュール</h2>
-      <ul className="border-2 border-sky-400 mx-auto p-2 w-fit">
+      <h2 className="font-bold text-3xl">スケジュール</h2>
+      <table className="border-2 border-sky-400 font-bold mx-auto">
         {schedules.map((schedule, index) => (
-          <li
+          <tbody
             key={schedule.venue}
-            className={`p-2 space-y-2${index !== schedules.length - 1 ? " border-b border-gray-200" : ""}`}
+            className={`space-y-2${index !== schedules.length - 1 ? " border-b border-gray-200" : ""}`}
           >
-            <p className="flex items-center">
-              <span className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">
-                Day{index + 1}
-              </span>
-              <span className="decoration-4 decoration-sky-400 grow underline">
-                {schedule.date.year}年
-                <b className="text-2xl">{schedule.date.month}</b>月
-                <b className="decoration-4 decoration-sky-400 text-2xl underline">
-                  {schedule.date.day}
-                </b>
-                日(
-                <b className="text-xl">{schedule.date.dayOfWeek}</b>)
-              </span>
-            </p>
-            <p className="flex items-center">
-              <span className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">
-                開始
-              </span>
-              <b className="grow">10：00&nbsp;～&nbsp;17：00（予定）</b>
-            </p>
-            <div className="flex gap-1 items-center sm:gap-2">
-              <p className="bg-gray-100 border border-current px-1.5 rounded-3xl text-xs">
-                場所
-              </p>
-              <div className="grow">
-                <b>{schedule.venue}</b>
+            <tr className="h-10 sm:h-14">
+              <th className="pl-2">
+                <p className="bg-gray-100 border px-1.5 rounded-lg">
+                  Day{index + 1}
+                </p>
+              </th>
+              <td className="px-2">
+                {schedule.date.year} 年 {schedule.date.month} 月{" "}
+                {schedule.date.day} 日 ({schedule.date.dayOfWeek})
+              </td>
+            </tr>
+            <tr className="h-10 sm:h-14">
+              <th className="pl-2">
+                <p className="bg-gray-100 border px-1.5 rounded-lg">時間</p>
+              </th>
+              <td className="px-2">10：00&nbsp;～&nbsp;17：00（予定）</td>
+            </tr>
+            <tr className="h-10 sm:h-14">
+              <th className="pl-2">
+                <p className="bg-gray-100 border px-1.5 rounded-lg">場所</p>
+              </th>
+              <td className="px-2">
+                {schedule.venue}
                 <Link
                   href={schedule.googleMapLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex gap-1 items-center mx-auto underline w-fit"
+                  className="font-medium flex gap-1 items-center mx-auto underline w-fit"
                 >
                   {schedule.address}
                   <ArrowTopRightOnSquareIcon className="size-4" />
                 </Link>
-              </div>
-            </div>
-          </li>
+              </td>
+            </tr>
+          </tbody>
         ))}
-      </ul>
+      </table>
     </section>
   )
 }

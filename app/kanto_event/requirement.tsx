@@ -86,7 +86,7 @@ export function Requirement({
           </p>
         </div>
       </div>
-      <table className="align-middle border-2 border-sky-400 hidden mx-auto text-left text-sm sm:table">
+      <table className="border-2 border-sky-400 hidden mx-auto text-left text-sm sm:table">
         <tbody>
           <tr className="border-b-gray-200 border-b">
             <th className="px-4 py-3">募集人数</th>

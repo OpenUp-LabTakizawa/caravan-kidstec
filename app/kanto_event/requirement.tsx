@@ -7,7 +7,7 @@ export function Requirement({
 }: Readonly<{ guideline: Guideline }>): JSX.Element {
   return (
     <section id={guideline.anchorLink} className="px-2 space-y-4 text-center">
-      <h2 className="font-bold font-zenMaruGothic text-3xl">応募要項</h2>
+      <h2 className="font-bold text-3xl">応募要項</h2>
       <section className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base text-center w-fit">
         <InformationCircleIcon className="size-10" />
         <div>
@@ -24,26 +24,26 @@ export function Requirement({
           </p>
         </div>
       </section>
-      <div className="border-2 border-sky-400 mx-auto py-2 space-y-2 text-center text-sm sm:hidden">
+      <div className="border-2 border-sky-400 font-bold mx-auto py-2 space-y-2 text-center text-sm sm:hidden">
         <div className="border-b border-b-gray-200 pb-2">
-          <b>募集人数</b>
-          <p>{guideline.participantsNumber}</p>
+          <b className="text-orange-400">募集人数</b>
+          <p className="pt-2">{guideline.participantsNumber}</p>
         </div>
         <div className="border-b border-b-gray-200 pb-2">
-          <b>対象者</b>
-          <p>
+          <b className="text-orange-400">対象者</b>
+          <p className="pt-2">
             小学２年生&nbsp;～&nbsp;中学２年生のお子様とご家族
             <br />
             （全日程において親子２名以上）
           </p>
         </div>
         <div className="border-b border-b-gray-200 pb-2">
-          <b>参加費</b>
-          <p>無料（交通費、食事代は自己負担）</p>
+          <b className="text-orange-400">参加費</b>
+          <p className="pt-2">無料（交通費、食事代は自己負担）</p>
         </div>
         <div className="border-b border-b-gray-200 pb-2">
-          <b>参加条件</b>
-          <ul className="list-disc pl-7 space-y-3 text-left">
+          <b className="text-orange-400">参加条件</b>
+          <ul className="list-disc pl-7 pt-2 space-y-3 text-left">
             <li>
               ３日間で１つのイベントである為、
               <br />
@@ -56,8 +56,8 @@ export function Requirement({
           </ul>
         </div>
         <div className="border-b border-b-gray-200 pb-2">
-          <b>注意事項</b>
-          <ul className="list-disc pl-7 space-y-3 text-left">
+          <b className="text-orange-400">注意事項</b>
+          <ul className="list-disc pl-7 pt-2 space-y-3 text-left">
             <li>
               受付手続きや会場内の移動を考慮し、
               <br />
@@ -76,24 +76,24 @@ export function Requirement({
           </ul>
         </div>
         <div className="border-b border-b-gray-200 pb-2">
-          <b>応募開始</b>
-          <p>{guideline.startDate}</p>
+          <b className="text-orange-400">応募開始</b>
+          <p className="pt-2">{guideline.startDate}</p>
         </div>
         <div>
-          <b>応募締切</b>
-          <p className="decoration-4 decoration-orange-400 font-bold underline">
+          <b className="text-orange-400">応募締切</b>
+          <p className="decoration-4 decoration-orange-400 pt-2 underline">
             {guideline.deadline}
           </p>
         </div>
       </div>
-      <table className="align-middle border-2 border-sky-400 hidden mx-auto text-left text-sm sm:table">
+      <table className="border-2 border-sky-400 font-bold hidden mx-auto text-left text-sm sm:table">
         <tbody>
           <tr className="border-b-gray-200 border-b">
-            <th className="px-4 py-3">募集人数</th>
+            <th className="px-4 py-3 text-orange-400">募集人数</th>
             <td className="px-4 py-3">{guideline.participantsNumber}</td>
           </tr>
           <tr className="border-b-gray-200 border-b">
-            <th className="px-4 py-3">対象者</th>
+            <th className="px-4 py-3 text-orange-400">対象者</th>
             <td className="px-4 py-3">
               小学２年生&nbsp;～&nbsp;中学２年生のお子様とご家族
               <br className="md:hidden" />
@@ -101,11 +101,11 @@ export function Requirement({
             </td>
           </tr>
           <tr className="border-b-gray-200 border-b">
-            <th className="px-4 py-3">参加費</th>
+            <th className="px-4 py-3 text-orange-400">参加費</th>
             <td className="px-4 py-3">無料（交通費、食事代は自己負担）</td>
           </tr>
           <tr className="border-b-gray-200 border-b">
-            <th className="px-4 py-3">参加条件</th>
+            <th className="px-4 py-3 text-orange-400">参加条件</th>
             <td className="px-4 py-3">
               <ul className="list-disc pl-4 space-y-3">
                 <li>
@@ -127,7 +127,7 @@ export function Requirement({
             </td>
           </tr>
           <tr className="border-b-gray-200 border-b">
-            <th className="px-4 py-3">注意事項</th>
+            <th className="px-4 py-3 text-orange-400">注意事項</th>
             <td className="px-4 py-3">
               <ul className="list-disc pl-4 space-y-3">
                 <li>
@@ -149,12 +149,12 @@ export function Requirement({
             </td>
           </tr>
           <tr className="border-b-gray-200 border-b">
-            <th className="px-4 py-3">応募開始</th>
-            <td className="font-bold px-4 py-3">{guideline.startDate}</td>
+            <th className="px-4 py-3 text-orange-400">応募開始</th>
+            <td className="px-4 py-3">{guideline.startDate}</td>
           </tr>
           <tr className="border-b-gray-200 border-b">
-            <th className="px-4 py-3">応募締切</th>
-            <td className="decoration-4 decoration-orange-400 font-bold px-4 py-3 underline">
+            <th className="px-4 py-3 text-orange-400">応募締切</th>
+            <td className="decoration-4 decoration-orange-400 px-4 py-3 underline">
               {guideline.deadline}
             </td>
           </tr>

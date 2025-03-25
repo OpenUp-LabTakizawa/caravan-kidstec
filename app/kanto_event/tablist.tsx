@@ -140,7 +140,7 @@ function TabCard({
           {(time === "am" ? schedule.tags.am : schedule.tags.pm).map((tag) => (
             <span
               key={tag}
-              className="bg-gray-100 border border-current h-5 px-1.5 rounded-3xl"
+              className="bg-gray-100 border border-current h-5 px-1.5 rounded-lg"
             >
               {tag}
             </span>

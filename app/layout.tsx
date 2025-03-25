@@ -83,7 +83,7 @@ export default function RootLayout({
       lang="ja"
       className={`${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
     >
-      <body className="font-kaku text-gray-800">
+      <body className="font-maru text-gray-800">
         <ViewTransitions>
           <Header />
           <main className="text-xs sm:px-12 sm:text-sm md:text-base">

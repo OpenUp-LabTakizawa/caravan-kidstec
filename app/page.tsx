@@ -49,7 +49,7 @@ export default function Home(): JSX.Element {
         <h2 className="font-bold font-maru text-2xl">
           <Link
             href={SECRETARIAT.pathname}
-            className="block button-pop duration-200 ease-out text-sky-400 underline"
+            className="block button-pop text-sky-400 underline"
           >
             事務局の想い
           </Link>

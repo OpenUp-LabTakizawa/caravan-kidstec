@@ -14,7 +14,7 @@ export function LineAddFriends({
         href={linkLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="block button-pop duration-200 ease-out mx-auto w-fit"
+        className="block button-pop mx-auto w-fit"
       >
         <Image
           src="/line_add_friends.avif"
@@ -37,7 +37,7 @@ export function LineApply({
         href={lineLink}
         target="_blank"
         rel="noopener noreferrer"
-        className={`bg-[#00C300] button-pop duration-200 ease-out font-bold gap-2 h-12 inline-flex items-center justify-center px-4 rounded-xl shadow-lg text-lg text-white ${styles.greenShine}`}
+        className={`bg-[#00C300] button-pop font-bold gap-2 h-12 inline-flex items-center justify-center px-4 rounded-xl shadow-lg text-lg text-white ${styles.greenShine}`}
       >
         LINEで簡単応募する！
         <ArrowRightIcon className={`size-5 ${styles.arrowRight}`} />

@@ -15,19 +15,19 @@ export default function Home(): JSX.Element {
         <Introduction />
       </section>
       <section className="bg-sky-300 mt-6 mx-2 pb-2 rounded-2xl space-y-2">
-        <div className="p-4 space-y-2 text-base text-white">
+        <div className="font-bold p-4 space-y-2 text-base text-white">
           <h1 className="mb-2">
             こどもテックキャラバンは
             <br />
-            <strong>プログラミング</strong>と<strong>体験学習</strong>を
+            プログラミングと体験学習を
             <br />
             かけ合わせた体験型イベント！
           </h1>
-          <p className="border-2 border-white font-bold mx-auto p-2 rounded-2xl shadow-lg w-60">
+          <p className="border-2 border-white font-bold mx-auto p-2 rounded-2xl shadow-lg text-gray-800 w-60">
             プログラミング体験
           </p>
           <PlusIcon className="mx-auto size-5" />
-          <p className="border-2 border-white font-bold mx-auto p-2 rounded-2xl shadow-lg w-60">
+          <p className="border-2 border-white font-bold mx-auto p-2 rounded-2xl shadow-lg text-gray-800 w-60">
             体験学習
           </p>
           <p className="mt-2">過去の体験学習はこちら！</p>

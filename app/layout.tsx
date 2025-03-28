@@ -5,7 +5,7 @@ import { Footer } from "./footer.tsx"
 import { Header } from "./header.tsx"
 import { ScrollToTop } from "./scrollToTop.tsx"
 import "./globals.css"
-import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from "next/font/google"
+import { Zen_Maru_Gothic } from "next/font/google"
 import {
   CLOUDFRONT_URL,
   DESCRIPTION,
@@ -19,12 +19,6 @@ const zenMaruGothic = Zen_Maru_Gothic({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-zen-maru-gothic",
-})
-const zenKakuGothicNew = Zen_Kaku_Gothic_New({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-zen-kaku-gothic-new",
 })
 
 export const metadata: Metadata = {
@@ -79,11 +73,8 @@ export default function RootLayout({
   modal,
 }: Readonly<{ children: ReactNode; modal: ReactNode }>): JSX.Element {
   return (
-    <html
-      lang="ja"
-      className={`${zenMaruGothic.variable} ${zenKakuGothicNew.variable}`}
-    >
-      <body className="font-kaku text-gray-800">
+    <html lang="ja" className={zenMaruGothic.variable}>
+      <body className="font-maru text-gray-800">
         <ViewTransitions>
           <Header />
           <main className="text-xs sm:px-12 sm:text-sm md:text-base">

@@ -10,7 +10,14 @@ export const DESCRIPTION: string =
 export const HIROSHIMA_LINE: string = "https://lin.ee/eYcNlkG"
 export const KANTO_LINE: string = "https://lin.ee/RHBWD7P"
 export const CLOUDFRONT_URL: string = "https://dk75m1tgsot44.cloudfront.net"
+export const KANTO_START_DATE: string = "２０２５年４月７日 １２時"
+export const KANTO_DEADLINE: string = "２０２５年５月１２日 １２時"
 
+export const KANTO_EVENT: Menu = {
+  name: "応募・申込",
+  pathname: "/kanto_event",
+  textColor: "text-orange-400",
+}
 export const HISTORY: Menu = {
   name: "活動実績",
   pathname: "/history",
@@ -58,6 +65,7 @@ export const PRIVACY_POLICY: Menu = {
 }
 
 export const NAVIGATION: Menu[] = [
+  KANTO_EVENT,
   HISTORY,
   SPONSER,
   PARTNER,

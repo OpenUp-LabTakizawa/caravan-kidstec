@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@line/bot-sdk": "^9.7.1",
+    "@line/bot-sdk": "^9.7.3",
     "next": "canary",
     "next-view-transitions": "^0.3.4",
     "react": "^19.0.0",
@@ -27,7 +27,7 @@
     "@tailwindcss/postcss": "^4.0.17",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
-    "@types/bun": "^1.2.6",
+    "@types/bun": "^1.2.8",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "babel-plugin-react-compiler": "experimental",

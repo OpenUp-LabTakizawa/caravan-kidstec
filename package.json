@@ -17,8 +17,8 @@
     "@line/bot-sdk": "^9.7.3",
     "next": "canary",
     "next-view-transitions": "^0.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

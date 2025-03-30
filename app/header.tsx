@@ -87,23 +87,38 @@ function DropdownMenu({
   })
 
   return (
-    <details ref={ref} className="relative lg:hidden">
-      <summary className="block button-pop cursor-pointer p-1">
-        <Bars3BottomRightIcon className="size-7" />
-      </summary>
-      <ul className="absolute bg-white end-0 flex flex-col gap-1 p-3 rounded-2xl shadow-sm text-base sm:text-lg">
-        {NAVIGATION.map((menu) => (
-          <li key={menu.name}>
-            <Link
-              href={menu.pathname}
-              className="block button-pop px-3 py-1 rounded-xl text-nowrap text-orange-400 whitespace-nowrap focus:bg-gray-400 hover:bg-gray-200"
-            >
-              {menu.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </details>
+    <div className="flex gap-1 items-center lg:hidden">
+      <Link
+        href="https://www.instagram.com/ktc_caravan/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block mx-auto w-fit"
+      >
+        <Image
+          src="/Instagram_Glyph_Gradient.avif"
+          width={24}
+          height={24}
+          alt="こどもテックキャラバン-公式インスタグラム"
+        />
+      </Link>
+      <details ref={ref}>
+        <summary className="block button-pop cursor-pointer p-1">
+          <Bars3BottomRightIcon className="size-7" />
+        </summary>
+        <ul className="absolute bg-white end-0 flex flex-col gap-1 p-3 rounded-2xl shadow-sm text-base sm:text-lg">
+          {NAVIGATION.map((menu) => (
+            <li key={menu.name}>
+              <Link
+                href={menu.pathname}
+                className="block button-pop px-3 py-1 rounded-xl text-nowrap text-orange-400 whitespace-nowrap focus:bg-gray-400 hover:bg-gray-200"
+              >
+                {menu.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </div>
   )
 }
 

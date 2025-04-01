@@ -9,12 +9,12 @@ import { KANTO, SECRETARIAT } from "./lib/constant.ts"
 
 export default function Home(): JSX.Element {
   return (
-    <article className="max-w-3xl mx-auto pb-4 text-center">
-      <Video className="mt-3" date="202410" pathname={KANTO.pathname} />
-      <section className="font-bold leading-7 mt-6 space-y-4 text-base text-center tracking-[.29em]">
+    <article className="max-w-3xl mx-auto pb-4 space-y-6 text-center">
+      <Video date="202410" pathname={KANTO.pathname} />
+      <section className="font-bold leading-7 space-y-4 text-base text-center tracking-[.29em]">
         <Introduction />
       </section>
-      <section className="bg-sky-300 mt-6 mx-2 pb-2 rounded-2xl space-y-2">
+      <section className="bg-sky-300 mx-2 pb-2 rounded-2xl space-y-2">
         <div className="font-bold p-4 space-y-2 text-base text-white">
           <h1 className="mb-2">
             こどもテックキャラバンは
@@ -34,11 +34,11 @@ export default function Home(): JSX.Element {
         </div>
         <IndicatorCarousel />
       </section>
-      <section className="mt-6 space-y-4">
+      <section className="space-y-4">
         <h2 className="font-bold font-maru text-3xl">参加者の声</h2>
         <ReviewCarousel />
       </section>
-      <section className="relative mt-6">
+      <section className="relative">
         <Image
           src="/handshake.avif"
           alt="handshake"

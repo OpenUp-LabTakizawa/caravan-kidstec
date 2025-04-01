@@ -11,7 +11,7 @@ export function Programs({
         {programs.map((program, index) => (
           <li
             key={program.date.month + program.date.day + program.venue}
-            className="border-b border-gray-200 p-2 space-y-1"
+            className="border-b border-gray-300 p-2 space-y-1"
           >
             <p className="flex items-center justify-center">
               <b className="bg-gray-100 border px-1.5 rounded-lg text-xs">

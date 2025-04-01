@@ -1,4 +1,4 @@
-import { PlusIcon } from "@heroicons/react/24/solid"
+import { PlusIcon } from "@heroicons/react/24/outline"
 import { Link } from "next-view-transitions"
 import Image from "next/image"
 import type { JSX } from "react"
@@ -26,7 +26,7 @@ export default function Home(): JSX.Element {
           <p className="border-2 border-white font-bold mx-auto p-2 rounded-2xl shadow-lg text-gray-800 w-60">
             プログラミング体験
           </p>
-          <PlusIcon className="mx-auto size-5" />
+          <PlusIcon className="mx-auto size-5 stroke-4" />
           <p className="border-2 border-white font-bold mx-auto p-2 rounded-2xl shadow-lg text-gray-800 w-60">
             体験学習
           </p>

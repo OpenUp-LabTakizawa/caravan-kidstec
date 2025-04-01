@@ -48,7 +48,7 @@ export default function SponserPage(): JSX.Element {
           key={area.menu.name}
           className={`bg-amber-50 border-8 border-double mx-auto py-2 rounded-2xl shadow-lg space-y-2 text-sm w-80 sm:w-96 sm:text-base ${area.color.border}`}
         >
-          <h2 className="font-bold font-maru text-2xl sm:text-3xl">
+          <h2 className="font-bold text-2xl sm:text-3xl">
             <Link
               href={PARTNER.pathname + area.menu.pathname}
               className={`block button-pop mx-auto underline w-fit ${area.color.text}`}

@@ -25,19 +25,15 @@ export function Header(): JSX.Element {
   }, [])
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    function ScrollHandler() {
       setScrollState({
         scrollY: window.scrollY,
         isScrollDown: scrollState.scrollY < window.scrollY,
       })
-    })
-    return () =>
-      window.removeEventListener("scroll", () => {
-        setScrollState({
-          scrollY: window.scrollY,
-          isScrollDown: scrollState.scrollY < window.scrollY,
-        })
-      })
+    }
+
+    window.addEventListener("scroll", ScrollHandler)
+    return () => window.removeEventListener("scroll", ScrollHandler)
   })
 
   return (
@@ -55,7 +51,7 @@ export function Header(): JSX.Element {
       </Link>
       <nav className="font-bold w-fit z-30">
         <DropdownMenu isScrollDown={scrollState.isScrollDown} />
-        <Navigation isScrollDown={scrollState.isScrollDown} />
+        <Navigation />
       </nav>
     </header>
   )
@@ -72,17 +68,15 @@ function DropdownMenu({
       ref.current.open = false
     }
 
-    window.addEventListener("click", () => {
+    function CloseDialog() {
       if (ref.current) {
         ref.current.open = false
       }
-    })
+    }
+
+    window.addEventListener("click", CloseDialog)
     return () => {
-      window.removeEventListener("click", () => {
-        if (ref.current) {
-          ref.current.open = false
-        }
-      })
+      window.removeEventListener("click", CloseDialog)
     }
   })
 
@@ -122,41 +116,7 @@ function DropdownMenu({
   )
 }
 
-function Navigation({
-  isScrollDown,
-}: Readonly<{ isScrollDown: boolean }>): JSX.Element {
-  const ref: RefObject<Map<string, HTMLDetailsElement>> = useRef<
-    Map<string, HTMLDetailsElement>
-  >(new Map<string, HTMLDetailsElement>())
-
-  useEffect(() => {
-    if (isScrollDown && ref.current?.values()) {
-      for (const node of ref.current.values()) {
-        node.open = false
-      }
-    }
-
-    window.addEventListener("click", (event) => CloseSummary(event))
-    return () =>
-      window.removeEventListener("click", (event) => CloseSummary(event))
-  })
-
-  function CloseSummary(event: MouseEvent): void {
-    if (ref.current?.values()) {
-      for (const node of ref.current.values()) {
-        const rect = node.getBoundingClientRect()
-        if (
-          rect.left > event.clientX ||
-          rect.right < event.clientX ||
-          rect.top > event.clientY ||
-          rect.bottom < event.clientY
-        ) {
-          node.open = false
-        }
-      }
-    }
-  }
-
+function Navigation(): JSX.Element {
   return (
     <ul className="flex-nowrap gap-1 hidden lg:flex">
       {NAVIGATION.map((menu) => (

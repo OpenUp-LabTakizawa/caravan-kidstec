@@ -13,9 +13,9 @@ export function Requirement({
         <div>
           <p>
             <span className="decoration-4 decoration-orange-400 font-bold underline">
-              募集は先着順
+              キャンセル待ち受付中
             </span>
-            になります。
+            です。
           </p>
           <p>
             定員に達し次第、

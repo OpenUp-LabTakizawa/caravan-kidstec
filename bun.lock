@@ -5,7 +5,7 @@
       "name": "caravan-kidstec",
       "dependencies": {
         "@heroicons/react": "^2.2.0",
-        "@line/bot-sdk": "^9.7.3",
+        "@line/bot-sdk": "^9.8.0",
         "next": "canary",
         "next-view-transitions": "^0.3.4",
         "react": "^19.1.0",
@@ -107,7 +107,7 @@
 
     "@img/sharp-win32-x64": ["@img/sharp-win32-x64@0.33.5", "", { "os": "win32", "cpu": "x64" }, "sha512-MpY/o8/8kj+EcnxwvrP4aTJSWw/aZ7JIGR4aBeZkZw5B7/Jn+tY9/VNwtcoGmdT7GfggGIU4kygOMSbYnOrAbg=="],
 
-    "@line/bot-sdk": ["@line/bot-sdk@9.7.3", "", { "dependencies": { "@types/node": "^22.0.0" }, "optionalDependencies": { "axios": "^1.7.4" } }, "sha512-PIeteAiPK5+CAFjOiKPfcdN4aIjYZIfqOkWKPUDRus5LShZzfrF0izE2wH5+6IOoyFV/p+3OiyOE9eJhsM1PgA=="],
+    "@line/bot-sdk": ["@line/bot-sdk@9.8.0", "", { "dependencies": { "@types/node": "^22.0.0" }, "optionalDependencies": { "axios": "^1.7.4" } }, "sha512-vw4TTtkw5zwKu/FhATnm5n2sCcoKjcHEgN16Oq5NyXwGEzIcyh6RwGrYnX4SisiPO1lklAIba1DuDf9hEYZ4mg=="],
 
     "@next/env": ["@next/env@15.3.0-canary.40", "", {}, "sha512-2yMw1FiWMdFRtFy9hsL+ctMSaqlrxMS1dUH37D7qZqf3eNJfSFpE2xQg3dDwqmKT8lRaAJUCBjoY3pBzmkEToQ=="],
 

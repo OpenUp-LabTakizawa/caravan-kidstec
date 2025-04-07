@@ -12,7 +12,7 @@ import {
   PRIVACY_POLICY,
   Q_AND_A,
 } from "@/app/lib/constant"
-import thumbnail from "@/public/202505_kanto_ready.avif"
+import thumbnail from "@/public/202505_kanto_start.avif"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import type { Metadata } from "next"
 import { Link } from "next-view-transitions"

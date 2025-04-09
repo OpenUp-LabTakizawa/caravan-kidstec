@@ -135,7 +135,7 @@ export default function KantoEvent(): JSX.Element {
         width={540}
         height={383}
         alt="こどもテックキャラバン-関東イベント"
-        placeholder="blur"
+        // placeholder="blur"
         priority={true}
         className="w-full"
       />

@@ -20,7 +20,7 @@ export default function Home(): JSX.Element {
           width={540}
           height={106}
           alt="こどもテックキャラバン-関東イベントバナー"
-          placeholder="blur"
+          // placeholder="blur"
           priority={true}
           className="duration-200 ease-out mb-3 w-full"
         />

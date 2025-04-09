@@ -7,6 +7,7 @@ import { IndicatorCarousel, ReviewCarousel } from "./carousel.tsx"
 import { Video } from "./components/media/video.tsx"
 import { Introduction } from "./introduction.tsx"
 import { KANTO, KANTO_EVENT, SECRETARIAT } from "./lib/constant.ts"
+import { cloudfrontLoader } from "./lib/loader.ts"
 
 export default function Home(): JSX.Element {
   return (
@@ -17,7 +18,8 @@ export default function Home(): JSX.Element {
       >
         <Image
           // src={banner}
-          src="/202505_kanto_banner_start.avif"
+          loader={cloudfrontLoader}
+          src="/content/202505_kanto_banner_start.avif"
           width={540}
           height={106}
           alt="こどもテックキャラバン-関東イベントバナー"

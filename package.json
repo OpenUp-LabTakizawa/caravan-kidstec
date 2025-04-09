@@ -15,7 +15,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@line/bot-sdk": "^9.8.0",
-    "next": "15.3.0-canary.44",
+    "next": "15.3.0-canary.43",
     "next-view-transitions": "^0.3.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

@@ -12,7 +12,7 @@ import {
   PRIVACY_POLICY,
   Q_AND_A,
 } from "@/app/lib/constant"
-import thumbnail from "@/public/202505_kanto_start.avif"
+// import thumbnail from "@/public/202505_kanto_start.avif"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import type { Metadata } from "next"
 import { Link } from "next-view-transitions"
@@ -131,7 +131,8 @@ export default function KantoEvent(): JSX.Element {
     <>
       <Heading menus={[KANTO_EVENT]} />
       <Image
-        src={thumbnail}
+        // src={thumbnail}
+        src="/202505_kanto_start.avif"
         width={540}
         height={383}
         alt="こどもテックキャラバン-関東イベント"

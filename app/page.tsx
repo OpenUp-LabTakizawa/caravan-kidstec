@@ -2,7 +2,7 @@ import { PlusIcon } from "@heroicons/react/24/outline"
 import { Link } from "next-view-transitions"
 import Image from "next/image"
 import type { JSX } from "react"
-import banner from "../public/202505_kanto_banner_start.avif"
+// import banner from "@/public/202505_kanto_banner_start.avif"
 import { IndicatorCarousel, ReviewCarousel } from "./carousel.tsx"
 import { Video } from "./components/media/video.tsx"
 import { Introduction } from "./introduction.tsx"
@@ -16,7 +16,8 @@ export default function Home(): JSX.Element {
         className="block button-pop duration-200 ease-out mb-3 sticky top-0 z-20 sm:inline sm:static"
       >
         <Image
-          src={banner}
+          // src={banner}
+          src="/202505_kanto_banner_start.avif"
           width={540}
           height={106}
           alt="こどもテックキャラバン-関東イベントバナー"

@@ -1,4 +1,10 @@
+import { HISTORY } from "@/app/lib/constant"
+import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
+
+export const metadata: Metadata = {
+  title: HISTORY.name,
+}
 
 export default function HistoryLayout({
   children,

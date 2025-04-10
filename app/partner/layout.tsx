@@ -1,4 +1,10 @@
+import { PARTNER } from "@/app/lib/constant"
+import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
+
+export const metadata: Metadata = {
+  title: PARTNER.name,
+}
 
 export default function PartnerLayout({
   children,

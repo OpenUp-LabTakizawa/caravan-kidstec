@@ -1,11 +1,11 @@
-import { KANTO, PRIVACY_POLICY, SITE_URL } from "@/app/lib/constant"
+import { KANTO, PRIVACY_POLICY, SITE_TITLE, SITE_URL } from "@/app/lib/constant"
 import { HashtagIcon } from "@heroicons/react/24/solid"
 import type { Metadata } from "next"
 import { Link } from "next-view-transitions"
 import type { JSX } from "react"
 
 export const metadata: Metadata = {
-  title: `${PRIVACY_POLICY.name} - ${KANTO.name}イベント`,
+  title: `${PRIVACY_POLICY.name} - ${KANTO.name}イベント | ${SITE_TITLE} - プログラミング×体験学習`,
 }
 
 function Divider(): JSX.Element {

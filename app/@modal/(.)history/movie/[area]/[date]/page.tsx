@@ -32,13 +32,12 @@ export default async function Movie({
 }: Readonly<{
   params: Promise<{ area: string; date: string }>
 }>): Promise<JSX.Element> {
-  const syncParams = await params
-  const menu: Menu =
-    `/${syncParams.area}` === KANTO.pathname ? KANTO : HIROSHIMA
+  const { area, date }: { area: string; date: string } = await params
+  const menu: Menu = `/${area}` === KANTO.pathname ? KANTO : HIROSHIMA
   const history: EventDate[] =
-    `/${syncParams.area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
+    `/${area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
   const eventDate: EventDate = history.find(
-    (history) => history.date === syncParams.date,
+    (history) => history.date === date,
   ) as EventDate
 
   return (

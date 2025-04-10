@@ -42,14 +42,15 @@ export default async function PictureModal({
 }: Readonly<{
   params: Promise<{ area: string; date: string; image: string }>
 }>): Promise<JSX.Element> {
-  const syncParams = await params
+  const { area, date, image }: { area: string; date: string; image: string } =
+    await params
   const history: EventDate[] =
-    `/${syncParams.area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
+    `/${area}` === KANTO.pathname ? KANTO_HISTORY : HIROSHIMA_HISTORY
   const eventDate: EventDate = history.find(
-    (history) => history.date === syncParams.date,
+    (history) => history.date === date,
   ) as EventDate
   const picture: Picture = eventDate.pictures.find(
-    (picture) => picture.src.split("/")[5].split(".")[0] === syncParams.image,
+    (picture) => picture.src.split("/")[5].split(".")[0] === image,
   ) as Picture
 
   return (

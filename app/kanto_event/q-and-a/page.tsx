@@ -1,14 +1,20 @@
 import { LineAddFriends } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
 import type { QandA } from "@/app/interfaces/qAndA"
-import { KANTO, KANTO_EVENT, KANTO_LINE, Q_AND_A } from "@/app/lib/constant"
+import {
+  KANTO,
+  KANTO_EVENT,
+  KANTO_LINE,
+  Q_AND_A,
+  SITE_TITLE,
+} from "@/app/lib/constant"
 import type { Metadata } from "next"
 import Image from "next/image"
 import type { JSX } from "react"
 import styles from "./styles.module.css"
 
 export const metadata: Metadata = {
-  title: `${Q_AND_A.name} - ${KANTO.name}イベント`,
+  title: `${Q_AND_A.name} - ${KANTO.name}イベント | ${SITE_TITLE} - プログラミング×体験学習`,
 }
 
 export default function QandAs(): JSX.Element {

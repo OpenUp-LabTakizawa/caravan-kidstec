@@ -11,16 +11,11 @@ import {
   KANTO_LINE,
 } from "@/app/lib/constant"
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
-import type { Metadata } from "next"
 import { Link } from "next-view-transitions"
 import type { JSX } from "react"
 import { PictureTile } from "./pictureTile.tsx"
 import { Programs } from "./programs.tsx"
 import styles from "./styles.module.css"
-
-export const metadata: Metadata = {
-  title: "活動実績",
-}
 
 export default function HistoryPage(): JSX.Element {
   const histories: History[] = [

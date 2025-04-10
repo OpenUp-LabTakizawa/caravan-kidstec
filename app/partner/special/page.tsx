@@ -1,11 +1,16 @@
 import { Heading } from "@/app/components/layout/heading"
-import { PARTNER, SPECIAL, SPECIAL_PARTNERS } from "@/app/lib/constant"
+import {
+  PARTNER,
+  SITE_TITLE,
+  SPECIAL,
+  SPECIAL_PARTNERS,
+} from "@/app/lib/constant"
 import type { Metadata } from "next"
 import type { JSX } from "react"
 import { Partners } from "../partners.tsx"
 
 export const metadata: Metadata = {
-  title: SPECIAL.name + PARTNER.name,
+  title: `${SPECIAL.name}${PARTNER.name} | ${SITE_TITLE} - プログラミング×体験学習`,
 }
 
 export default function Special(): JSX.Element {

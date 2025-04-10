@@ -1,6 +1,7 @@
 import {
   CLOUDFRONT_URL,
   DESCRIPTION,
+  KANTO,
   SITE_TITLE,
   SITE_URL,
 } from "@/app/lib/constant.ts"
@@ -8,6 +9,7 @@ import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
 
 export const metadata: Metadata = {
+  title: `${KANTO.name}イベントの応募・スケジュール`,
   openGraph: {
     url: `${SITE_URL}/kanto_event`,
     siteName: SITE_TITLE,

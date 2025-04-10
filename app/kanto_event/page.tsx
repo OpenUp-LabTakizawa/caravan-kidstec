@@ -4,7 +4,6 @@ import type { Guideline } from "@/app/interfaces/guideline"
 import type { Menu, MenuPanel } from "@/app/interfaces/menu"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
-  KANTO,
   KANTO_DEADLINE,
   KANTO_EVENT,
   KANTO_LINE,
@@ -15,7 +14,6 @@ import {
 import { cloudfrontLoader } from "@/app/lib/loader.ts"
 // import thumbnail from "@/public/202505_kanto_start.avif"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
-import type { Metadata } from "next"
 import { Link } from "next-view-transitions"
 import Image from "next/image"
 import type { JSX } from "react"
@@ -24,10 +22,6 @@ import { Requirement } from "./requirement.tsx"
 import { Schedules } from "./schedules.tsx"
 import styles from "./styles.module.css"
 import { Tablist } from "./tablist.tsx"
-
-export const metadata: Metadata = {
-  title: `${KANTO.name}イベントの応募・スケジュール`,
-}
 
 export default function KantoEvent(): JSX.Element {
   const guideline: Guideline = {

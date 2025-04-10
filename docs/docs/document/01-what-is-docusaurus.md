@@ -14,18 +14,18 @@
 このドキュメントは `docs` フォルダー直下に構成されています（３階層以降は省略）。
 
 ```
-docs
-├── docs
-│   ├── document
-│   ├── homepage
-│   ├── infra
-│   └── intro
-├── src
-│   ├── components
-│   ├── css
-│   └── pages
-├── static
-│   ├── img
+docs/
+├── docs/
+│   ├── document/
+│   ├── homepage/
+│   ├── infra/
+│   └── intro/
+├── src/
+│   ├── components/
+│   ├── css/
+│   └── pages/
+├── static/
+│   ├── img/
 │   └── .nojekyll
 ├── .gitignore
 ├── bun.lock

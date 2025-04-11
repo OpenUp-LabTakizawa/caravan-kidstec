@@ -1,4 +1,4 @@
-// import banner from "@/public/202505_kanto_banner_cancel.avif"
+import banner from "@/public/202505_kanto_banner_cancel.png"
 import { PlusIcon } from "@heroicons/react/24/outline"
 import { Link } from "next-view-transitions"
 import Image from "next/image"
@@ -7,7 +7,6 @@ import { IndicatorCarousel, ReviewCarousel } from "./carousel.tsx"
 import { Video } from "./components/media/video.tsx"
 import { Introduction } from "./introduction.tsx"
 import { KANTO, KANTO_EVENT, SECRETARIAT } from "./lib/constant.ts"
-import { cloudfrontLoader } from "./lib/loader.ts"
 
 export default function Home(): JSX.Element {
   return (
@@ -17,13 +16,11 @@ export default function Home(): JSX.Element {
         className="block button-pop duration-200 ease-out mb-3 sticky top-0 z-20 sm:inline sm:static"
       >
         <Image
-          // src={banner}
-          loader={cloudfrontLoader}
-          src="/content/202505_kanto_banner_cancel.avif"
+          src={banner}
           width={540}
           height={106}
           alt="こどもテックキャラバン-関東イベントバナー"
-          // placeholder="blur"
+          placeholder="blur"
           priority={true}
           className="duration-200 ease-out mb-3 w-full"
         />

@@ -1,4 +1,4 @@
-// import banner from "@/public/202505_kanto_banner_start.avif"
+// import banner from "@/public/202505_kanto_banner_cancel.avif"
 import { PlusIcon } from "@heroicons/react/24/outline"
 import { Link } from "next-view-transitions"
 import Image from "next/image"
@@ -19,7 +19,7 @@ export default function Home(): JSX.Element {
         <Image
           // src={banner}
           loader={cloudfrontLoader}
-          src="/content/202505_kanto_banner_start.avif"
+          src="/content/202505_kanto_banner_cancel.avif"
           width={540}
           height={106}
           alt="こどもテックキャラバン-関東イベントバナー"

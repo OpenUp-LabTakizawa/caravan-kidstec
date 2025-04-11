@@ -32,7 +32,7 @@ export function Procedure({
           <p>
             トーク画面メニューの
             <br className="sm:hidden" />
-            <b>「参加申込はこちら」</b>をタップ
+            <b>「キャンセル待ち参加申込はこちら」</b>をタップ
           </p>
         </Step>
         <Step index={3}>

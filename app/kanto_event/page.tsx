@@ -12,7 +12,7 @@ import {
   Q_AND_A,
 } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader.ts"
-// import thumbnail from "@/public/202505_kanto_start.avif"
+// import thumbnail from "@/public/202505_kanto_cancel.avif"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import { Link } from "next-view-transitions"
 import Image from "next/image"
@@ -128,7 +128,7 @@ export default function KantoEvent(): JSX.Element {
       <Image
         // src={thumbnail}
         loader={cloudfrontLoader}
-        src="/content/202505_kanto_start.avif"
+        src="/content/202505_kanto_cancel.avif"
         width={540}
         height={383}
         alt="こどもテックキャラバン-関東イベント"

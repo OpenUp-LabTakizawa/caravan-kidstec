@@ -6,9 +6,9 @@ import { HIROSHIMA_HISTORY, KANTO, KANTO_HISTORY } from "@/app/lib/constant"
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
+  SlashIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid"
-import { SlashIcon } from "@heroicons/react/24/solid"
 import { useTransitionRouter } from "next-view-transitions"
 import { usePathname } from "next/navigation"
 import {

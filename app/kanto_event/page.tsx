@@ -122,7 +122,7 @@ export default function KantoEvent(): JSX.Element {
   ] as const
 
   return (
-    <>
+    <div className="max-w-3xl mx-auto pb-4 space-y-6">
       <Heading menus={[KANTO_EVENT]} />
       <Image
         src={thumbnail}
@@ -165,7 +165,7 @@ export default function KantoEvent(): JSX.Element {
       <Requirement guideline={guideline} />
       <Procedure guideline={guideline} procedure={procedureId} />
       <MenuPanels menu={KANTO_EVENT} />
-    </>
+    </div>
   )
 }
 

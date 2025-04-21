@@ -23,7 +23,7 @@ export default function PrivacyPolicy(): JSX.Element {
   const mailAddress: string = "privacy@openupgroup.co.jp"
 
   return (
-    <>
+    <div className="max-w-3xl mx-auto pb-4 space-y-6">
       <p className="px-4">
         こどもテックキャラバンの個人情報は、株式会社オープンアップグループ（以下「当社」）が代表して取得しておりますので、当社の個人情報保護方針を以下にお知らせします。
       </p>
@@ -498,6 +498,6 @@ export default function PrivacyPolicy(): JSX.Element {
         <br />
         代表取締役社長&nbsp;佐藤&nbsp;大央
       </p>
-    </>
+    </div>
   )
 }

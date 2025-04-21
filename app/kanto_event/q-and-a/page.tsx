@@ -81,7 +81,7 @@ export default function QandAs(): JSX.Element {
   ] as const
 
   return (
-    <>
+    <div className="max-w-3xl mx-auto pb-4 space-y-6">
       <Heading menus={[KANTO_EVENT, Q_AND_A]} />
       <section className="px-1 space-y-2">
         {qAndAs.map((qAndA, index) => (
@@ -132,6 +132,6 @@ export default function QandAs(): JSX.Element {
         </b>
         <LineAddFriends linkLink={KANTO_LINE} />
       </section>
-    </>
+    </div>
   )
 }

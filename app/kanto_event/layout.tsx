@@ -40,7 +40,5 @@ export const metadata: Metadata = {
 export default function EventLayout({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {
-  return (
-    <article className="max-w-3xl mx-auto pb-4 space-y-6">{children}</article>
-  )
+  return <article>{children}</article>
 }

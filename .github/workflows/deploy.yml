@@ -19,6 +19,9 @@ jobs:
     name: Build Docusaurus
     runs-on: ubuntu-latest
     if: github.repository_owner == 'openup-labtakizawa'
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
       - name: 📥 Checkout

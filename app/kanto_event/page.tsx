@@ -11,7 +11,7 @@ import {
   PRIVACY_POLICY,
   Q_AND_A,
 } from "@/app/lib/constant"
-import thumbnail from "@/public/202505_kanto_start.png"
+import thumbnail from "@/public/202505_kanto_cancel.png"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import { Link } from "next-view-transitions"
 import Image from "next/image"

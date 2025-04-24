@@ -1,4 +1,4 @@
-import banner from "@/public/202505_kanto_banner_start.png"
+import banner from "@/public/202505_kanto_banner_cancel.png"
 import { PlusIcon } from "@heroicons/react/24/outline"
 import { Link } from "next-view-transitions"
 import Image from "next/image"

@@ -1,9 +1,10 @@
-import { LineApply } from "@/app/components/button/lineAddFriends"
+import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
 import type { Guideline } from "@/app/interfaces/guideline"
 import type { Menu, MenuPanel } from "@/app/interfaces/menu"
 import type { Schedule } from "@/app/interfaces/schedule"
 import {
+  KANTO,
   KANTO_DEADLINE,
   KANTO_EVENT,
   KANTO_LINE,
@@ -11,12 +12,12 @@ import {
   PRIVACY_POLICY,
   Q_AND_A,
 } from "@/app/lib/constant"
-import thumbnail from "@/public/202505_kanto_cancel.png"
+import { cloudfrontLoader } from "@/app/lib/loader.ts"
+import { InformationCircleIcon } from "@heroicons/react/24/outline"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import { Link } from "next-view-transitions"
 import Image from "next/image"
 import type { JSX } from "react"
-import { Procedure } from "./procedure.tsx"
 import { Requirement } from "./requirement.tsx"
 import { Schedules } from "./schedules.tsx"
 import styles from "./styles.module.css"
@@ -30,7 +31,6 @@ export default function KantoEvent(): JSX.Element {
     deadline: KANTO_DEADLINE,
     lineLink: KANTO_LINE,
   }
-  const procedureId: string = "procedure"
   const schedules: Schedule[] = [
     {
       date: { year: "2025", month: "5", day: "25", dayOfWeek: "日" },
@@ -125,45 +125,31 @@ export default function KantoEvent(): JSX.Element {
     <>
       <Heading menus={[KANTO_EVENT]} />
       <Image
-        src={thumbnail}
+        loader={cloudfrontLoader}
+        src="/content/202505_kanto_full.avif"
         width={540}
         height={383}
         alt="こどもテックキャラバン-関東イベント"
-        placeholder="blur"
         priority={true}
         className="w-full"
       />
-      <Schedules schedules={schedules} />
-      <section className="mx-auto p-2 text-center text-base w-fit">
-        <b>
-          <span className="decoration-4 decoration-orange-400 text-lg underline md:text-xl">
-            全日程参加が必須
-          </span>
-          となります。
-        </b>
-        <p className="mb-3">
-          <Link
-            href={`#${guideline.anchorLink}`}
-            className="font-bold text-sky-400 underline"
-          >
-            応募要項
-          </Link>
-          をご確認の上、
-          <Link
-            href={`#${procedureId}`}
-            className="font-bold text-sky-400 underline"
-          >
-            応募手順
-          </Link>
-          、又は
-          <br className="sm:hidden" />
-          下のLINEからお申し込みください。
-        </p>
-        <LineApply lineLink={KANTO_LINE} />
+      <section className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base text-center w-fit">
+        <InformationCircleIcon className="size-10" />
+        <div>
+          <b className="decoration-4 decoration-orange-400 underline">
+            受付は終了いたしました。
+          </b>
+          <p>
+            ご応募いただき誠に
+            <br className="sm:hidden" />
+            ありがとうございました。
+          </p>
+        </div>
       </section>
+      <LineRegister areaName={KANTO.name} lineLink={KANTO_LINE} />
+      <Schedules schedules={schedules} />
       <Tablist schedules={schedules} />
       <Requirement guideline={guideline} />
-      <Procedure guideline={guideline} procedure={procedureId} />
       <MenuPanels menu={KANTO_EVENT} />
     </>
   )

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: SITE_TITLE,
     images: [
       {
-        url: `${CLOUDFRONT_URL}/content/202505_kanto_cancel.webp`,
+        url: `${CLOUDFRONT_URL}/content/202505_kanto_full.webp`,
         width: 1200,
         height: 848,
         alt: `${SITE_TITLE} - プログラミング×体験学習`,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [
       {
-        url: `${CLOUDFRONT_URL}/content/202505_kanto_cancel.webp`,
+        url: `${CLOUDFRONT_URL}/content/202505_kanto_full.webp`,
         width: 1200,
         height: 848,
         alt: `${SITE_TITLE} - プログラミング×体験学習`,

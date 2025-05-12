@@ -11,16 +11,13 @@ export function Requirement({
       <section className="bg-sky-300 flex gap-1 items-center mx-auto p-3 rounded-2xl shadow-lg text-base text-center w-fit">
         <InformationCircleIcon className="size-10" />
         <div>
-          <p>
-            <span className="decoration-4 decoration-orange-400 font-bold underline">
-              キャンセル待ち受付中
-            </span>
-            です。
+          <p className="decoration-4 decoration-orange-400 font-bold underline">
+            受付は終了いたしました。
           </p>
           <p>
-            定員に達し次第、
+            ご応募いただき誠に
             <br className="sm:hidden" />
-            募集を終了します。
+            ありがとうございました。
           </p>
         </div>
       </section>

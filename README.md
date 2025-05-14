@@ -23,7 +23,7 @@
   </p>
 </div>
 
-## 📃 Get Started!
+## 📃 Get Started
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Bun](https://bun.sh/) installed on your computer.  
 From your command line:

@@ -25,7 +25,9 @@ updates:
         patterns:
           - "*"
   - package-ecosystem: "bun"
-    directory: "/"
+    directory:
+      - "/"
+      - "/docs"
     schedule:
       interval: "daily"
     groups:

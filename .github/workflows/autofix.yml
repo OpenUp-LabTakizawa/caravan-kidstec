@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 🐣 Install bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76
         with:
           bun-version: canary
 
@@ -33,4 +33,4 @@ jobs:
         run: bun lint && bun biome ci --reporter=github
 
       - name: 💾 Commit
-        uses: autofix-ci/action@v1.3.1
+        uses: autofix-ci/action@2891949f3779a1cafafae1523058501de3d4e944

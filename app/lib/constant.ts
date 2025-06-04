@@ -1,4 +1,5 @@
 import type { Menu } from "@/app/interfaces/menu"
+import type { News } from "@/app/interfaces/news"
 import type { Partner } from "@/app/interfaces/partner"
 import type { Picture } from "@/app/interfaces/picture"
 import type { EventDate, Program } from "@/app/interfaces/schedule"
@@ -71,6 +72,26 @@ export const NAVIGATION: Menu[] = [
   PARTNER,
   SECRETARIAT,
 ] as const
+
+export const NEWS: News[] = [
+  {
+    date: "2025/03/04",
+    href: "https://www.asahi.com/sdgs/article/15651835?msockid=3c051cb5023364c603f5091b03116541/",
+    title:
+      "他のアワードでも快挙 活躍する2024年\nグランプリ受賞者 大学SDGs ACTION! AWARDS",
+  },
+  {
+    date: "2024/09/21",
+    href: "https://prtimes.jp/main/html/rd/p/000000045.000008894.html/",
+    title: "ソーシャルグッド活動5回目となる\n『こどもテックキャラバン』を開催",
+  },
+  {
+    date: "2024/07/20",
+    href: "https://www.chugoku-np.co.jp/articles/-/498326/",
+    title:
+      "親子でプログラミング、ロボット操作\n福山市で「こどもテックキャラバン」",
+  },
+]
 
 export const SPECIAL_PARTNERS: Partner[] = [
   {

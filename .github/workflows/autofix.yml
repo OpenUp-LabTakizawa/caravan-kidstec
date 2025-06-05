@@ -34,3 +34,5 @@ jobs:
 
       - name: 💾 Commit
         uses: autofix-ci/action@2891949f3779a1cafafae1523058501de3d4e944
+        with:
+          commit-message: "fix(autofix.ci): apply automated fixes"

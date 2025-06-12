@@ -123,7 +123,7 @@ jobs:
 
       - name: 🪪 Attest
         if: fromJSON(env.IS_PUSH)
-        uses: actions/attest-build-provenance@db473fddc028af60658334401dc6fa3ffd8669fd
+        uses: actions/attest-build-provenance@e8998f949152b193b063cb0ec769d69d929409be
         with:
           subject-name: ${{ env.GHCR_REGISTRY }}/${{ env.GHCR_REPOSITORY }}
           subject-digest: ${{ steps.push.outputs.digest }}

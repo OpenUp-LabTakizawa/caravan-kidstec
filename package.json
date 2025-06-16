@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "dev-win": "WATCHPACK_POLLING=true next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
     "lint": "biome check --write",
     "test:app": "bun test test/app --preload ./happydom.tsx",
@@ -31,6 +31,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "babel-plugin-react-compiler": "experimental",
+    "next-rspack": "canary",
     "postcss": "^8.5.5",
     "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3"

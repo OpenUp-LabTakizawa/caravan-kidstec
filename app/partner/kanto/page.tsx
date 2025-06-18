@@ -1,7 +1,7 @@
-import { Heading } from "@/app/components/layout/heading"
-import { KANTO, KANTO_PARTNERS, PARTNER, SITE_TITLE } from "@/app/lib/constant"
 import type { Metadata } from "next"
 import type { JSX } from "react"
+import { Heading } from "@/app/components/layout/heading"
+import { KANTO, KANTO_PARTNERS, PARTNER, SITE_TITLE } from "@/app/lib/constant"
 import { Partners } from "../partners.tsx"
 
 export const metadata: Metadata = {

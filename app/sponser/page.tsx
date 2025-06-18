@@ -1,8 +1,3 @@
-import { FadeInUp } from "@/app/components/animation/fadeInUp"
-import { Heading } from "@/app/components/layout/heading"
-import type { Sponser } from "@/app/interfaces/sponser"
-import { SPONSER } from "@/app/lib/constant"
-import { cloudfrontLoader } from "@/app/lib/loader"
 import {
   ArrowTopRightOnSquareIcon,
   BuildingOffice2Icon,
@@ -10,6 +5,11 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import { FadeInUp } from "@/app/components/animation/fadeInUp"
+import { Heading } from "@/app/components/layout/heading"
+import type { Sponser } from "@/app/interfaces/sponser"
+import { SPONSER } from "@/app/lib/constant"
+import { cloudfrontLoader } from "@/app/lib/loader"
 
 export default function SponserPage(): JSX.Element {
   const sponsers: Sponser[] = [

@@ -1,5 +1,5 @@
-import { CLOUDFRONT_URL } from "@/app/lib/constant"
 import type { JSX } from "react"
+import { CLOUDFRONT_URL } from "@/app/lib/constant"
 
 export function Video({
   date,

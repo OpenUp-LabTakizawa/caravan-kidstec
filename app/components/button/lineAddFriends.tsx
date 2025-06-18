@@ -1,8 +1,8 @@
-import { Bounce } from "@/app/components/animation/bounce"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import { Bounce } from "@/app/components/animation/bounce"
 import styles from "./lineAddFriends.module.css"
 
 export function LineAddFriends({

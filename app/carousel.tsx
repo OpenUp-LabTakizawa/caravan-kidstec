@@ -1,13 +1,13 @@
 "use client"
 
+import { ChevronRightIcon, UserCircleIcon } from "@heroicons/react/24/outline"
+import Image from "next/image"
+import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 import { OpacityZero } from "@/app/components/animation/opacityZero"
 import type { Indicator } from "@/app/interfaces/indicator"
 import type { Picture } from "@/app/interfaces/picture"
 import type { Review } from "@/app/interfaces/review"
 import { cloudfrontLoader } from "@/app/lib/loader"
-import { ChevronRightIcon, UserCircleIcon } from "@heroicons/react/24/outline"
-import Image from "next/image"
-import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
 export function IndicatorCarousel(): JSX.Element {
   const programmingPictures: Picture[] = [
@@ -216,6 +216,7 @@ export function IndicatorCarousel(): JSX.Element {
       </div>
       <div
         ref={carouselRef}
+        role="img"
         className="aspect-square flex overflow-x-scroll rounded-2xl scroll-smooth shadow-lg snap-mandatory snap-x w-full"
         onMouseEnter={() => setIsBusy(true)}
         onMouseLeave={() => setIsBusy(false)}
@@ -426,6 +427,7 @@ export function ReviewCarousel(): JSX.Element {
   return (
     <div
       ref={carouselRef}
+      role="img"
       className="flex gap-2 overflow-x-scroll relative scroll-smooth snap-mandatory snap-x w-full"
       onMouseEnter={() => setIsBusy(true)}
       onMouseLeave={() => setIsBusy(false)}

@@ -1,10 +1,10 @@
-import { client } from "@/app/lib/line"
 import {
   HTTPFetchError,
   type MessageAPIResponseBase,
   validateSignature,
   type webhook,
 } from "@line/bot-sdk"
+import { client } from "@/app/lib/line"
 
 export function GET(): Response {
   return Response.json({

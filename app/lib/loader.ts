@@ -7,7 +7,11 @@ export function cloudfrontLoader({
   src,
   width,
   quality,
-}: { src: string; width: number; quality?: number }): string {
+}: {
+  src: string
+  width: number
+  quality?: number
+}): string {
   const url = new URL(CLOUDFRONT_URL + src)
   url.searchParams.set("format", "auto")
   url.searchParams.set("width", width.toString())

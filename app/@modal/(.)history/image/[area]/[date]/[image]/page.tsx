@@ -1,3 +1,5 @@
+import Image from "next/image"
+import type { JSX } from "react"
 import { Modal } from "@/app/@modal/(.)history/modal"
 import type { Picture } from "@/app/interfaces/picture"
 import type { EventDate } from "@/app/interfaces/schedule"
@@ -8,8 +10,6 @@ import {
   KANTO_HISTORY,
 } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
-import Image from "next/image"
-import type { JSX } from "react"
 
 export function generateStaticParams(): {
   area: string

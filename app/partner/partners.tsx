@@ -1,8 +1,8 @@
-import type { Partner } from "@/app/interfaces/partner"
-import { cloudfrontLoader } from "@/app/lib/loader"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import type { Partner } from "@/app/interfaces/partner"
+import { cloudfrontLoader } from "@/app/lib/loader"
 
 export function Partners({
   partners,

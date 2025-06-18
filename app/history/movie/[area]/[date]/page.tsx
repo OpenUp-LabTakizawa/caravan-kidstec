@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+import type { JSX } from "react"
 import { BackButton } from "@/app/components/button/backButton"
 import { Heading } from "@/app/components/layout/heading"
 import { Video } from "@/app/components/media/video"
@@ -11,8 +13,6 @@ import {
   KANTO_HISTORY,
   SITE_TITLE,
 } from "@/app/lib/constant"
-import type { Metadata } from "next"
-import type { JSX } from "react"
 
 export const dynamicParams: boolean = false
 

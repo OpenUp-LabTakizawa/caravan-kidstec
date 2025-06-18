@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+import type { JSX } from "react"
 import { Heading } from "@/app/components/layout/heading"
 import {
   PARTNER,
@@ -5,8 +7,6 @@ import {
   SPECIAL,
   SPECIAL_PARTNERS,
 } from "@/app/lib/constant"
-import type { Metadata } from "next"
-import type { JSX } from "react"
 import { Partners } from "../partners.tsx"
 
 export const metadata: Metadata = {

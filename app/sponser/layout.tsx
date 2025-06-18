@@ -1,6 +1,6 @@
-import { SPONSER } from "@/app/lib/constant"
 import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
+import { SPONSER } from "@/app/lib/constant"
 
 export const metadata: Metadata = {
   title: SPONSER.name,

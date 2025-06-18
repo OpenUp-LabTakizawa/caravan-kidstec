@@ -1,3 +1,4 @@
+import type { JSX } from "react"
 import { Modal } from "@/app/@modal/(.)history/modal"
 import { Video } from "@/app/components/media/video"
 import type { Menu } from "@/app/interfaces/menu"
@@ -8,7 +9,6 @@ import {
   KANTO,
   KANTO_HISTORY,
 } from "@/app/lib/constant"
-import type { JSX } from "react"
 
 export function generateStaticParams(): { area: string; date: string }[] {
   const kantoArea: string = KANTO.pathname.split("/")[1]

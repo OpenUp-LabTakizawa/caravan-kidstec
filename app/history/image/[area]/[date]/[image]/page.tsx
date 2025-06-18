@@ -1,3 +1,6 @@
+import type { Metadata } from "next"
+import Image from "next/image"
+import type { JSX } from "react"
 import { BackButton } from "@/app/components/button/backButton"
 import { Heading } from "@/app/components/layout/heading"
 import type { Menu } from "@/app/interfaces/menu"
@@ -13,9 +16,6 @@ import {
   SITE_TITLE,
 } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
-import type { Metadata } from "next"
-import Image from "next/image"
-import type { JSX } from "react"
 
 export const dynamicParams: boolean = false
 

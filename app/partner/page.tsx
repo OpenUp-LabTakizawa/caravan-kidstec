@@ -1,3 +1,5 @@
+import { Link } from "next-view-transitions"
+import type { JSX } from "react"
 import { Heading } from "@/app/components/layout/heading"
 import type { PartnerArea } from "@/app/interfaces/partner"
 import {
@@ -9,8 +11,6 @@ import {
   SPECIAL,
   SPECIAL_PARTNERS,
 } from "@/app/lib/constant"
-import { Link } from "next-view-transitions"
-import type { JSX } from "react"
 
 export default function SponserPage(): JSX.Element {
   const partnerAreas: PartnerArea[] = [

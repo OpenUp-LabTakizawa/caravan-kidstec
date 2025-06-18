@@ -20,11 +20,11 @@ summary::-webkit-details-marker {
 
 .button-pop {
   @media (prefers-reduced-motion: no-preference) {
-    animation: button-pop .25s ease-out;
+    animation: button-pop 0.25s ease-out;
   }
   & > img {
     @media (prefers-reduced-motion: no-preference) {
-      animation: button-pop .25s ease-out;
+      animation: button-pop 0.25s ease-out;
     }
   }
   &:active:hover,

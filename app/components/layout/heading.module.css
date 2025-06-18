@@ -1,10 +1,10 @@
 .breadcrumbs > ul > li + *:before {
   content: "";
-  margin-left: .5rem;
-  margin-right: .75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.75rem;
   display: block;
-  height: .375rem;
-  width: .375rem;
+  height: 0.375rem;
+  width: 0.375rem;
   transform: rotate(45deg);
   opacity: 0.4;
   border-top: 1px solid;

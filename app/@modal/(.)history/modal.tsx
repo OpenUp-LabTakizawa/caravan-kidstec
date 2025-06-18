@@ -1,16 +1,13 @@
 "use client"
 
-import type { Picture } from "@/app/interfaces/picture"
-import type { EventDate } from "@/app/interfaces/schedule"
-import { HIROSHIMA_HISTORY, KANTO, KANTO_HISTORY } from "@/app/lib/constant"
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
   SlashIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid"
-import { useTransitionRouter } from "next-view-transitions"
 import { usePathname } from "next/navigation"
+import { useTransitionRouter } from "next-view-transitions"
 import {
   type JSX,
   type MouseEvent,
@@ -21,6 +18,9 @@ import {
   useRef,
   useState,
 } from "react"
+import type { Picture } from "@/app/interfaces/picture"
+import type { EventDate } from "@/app/interfaces/schedule"
+import { HIROSHIMA_HISTORY, KANTO, KANTO_HISTORY } from "@/app/lib/constant"
 
 const safariRegex: RegExp = /\b(iPad|iPhone|iPod)\b/
 const webkitRegex: RegExp = /WebKit/
@@ -174,6 +174,7 @@ export function Modal({
       className="bg-transparent grid h-full items-center justify-items-center max-h-none max-w-none opacity-0 overflow-hidden overscroll-contain pointer-events-none w-full z-50 backdrop:bg-[#0006] open:opacity-100 open:pointer-events-auto open:visible"
     >
       <div
+        role="img"
         onMouseDown={onTouchStart}
         onMouseMove={onTouchMove}
         onMouseUp={onTouchEnd}

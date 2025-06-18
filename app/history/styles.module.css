@@ -13,9 +13,9 @@
   &::after {
     position: absolute;
     display: block;
-    height: .5rem;
-    width: .5rem;
-    transition: all .2s ease-out;
+    height: 0.5rem;
+    width: 0.5rem;
+    transition: all 0.2s ease-out;
     top: 1.9rem;
     inset-inline-end: 1.4rem;
     content: "";

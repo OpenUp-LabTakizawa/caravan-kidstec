@@ -1,3 +1,6 @@
+import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
+import { Link } from "next-view-transitions"
+import type { JSX } from "react"
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"
 import type { History } from "@/app/interfaces/history.ts"
@@ -10,9 +13,6 @@ import {
   KANTO_HISTORY,
   KANTO_LINE,
 } from "@/app/lib/constant"
-import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
-import { Link } from "next-view-transitions"
-import type { JSX } from "react"
 import { PictureTile } from "./pictureTile.tsx"
 import { Programs } from "./programs.tsx"
 import styles from "./styles.module.css"

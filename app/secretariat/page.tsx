@@ -1,10 +1,10 @@
-import { Heading } from "@/app/components/layout/heading"
-import { SECRETARIAT } from "@/app/lib/constant"
-import { cloudfrontLoader } from "@/app/lib/loader"
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import { Heading } from "@/app/components/layout/heading"
+import { SECRETARIAT } from "@/app/lib/constant"
+import { cloudfrontLoader } from "@/app/lib/loader"
 
 export default function Secretariat(): JSX.Element {
   const organizations = [

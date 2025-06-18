@@ -1,5 +1,5 @@
-import type { Program } from "@/app/interfaces/schedule"
 import type { JSX } from "react"
+import type { Program } from "@/app/interfaces/schedule"
 
 export function Programs({
   programs,

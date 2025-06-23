@@ -10,7 +10,7 @@ import { KANTO, SECRETARIAT } from "./lib/constant.ts"
 export default function Home(): JSX.Element {
   return (
     <article className="max-w-3xl mx-auto pb-4 space-y-6 text-center">
-      <Video date="202410" pathname={KANTO.pathname} />
+      <Video date="202505" pathname={KANTO.pathname} />
       <section className="font-bold leading-7 space-y-4 text-base text-center tracking-[.29em]">
         <Introduction />
       </section>

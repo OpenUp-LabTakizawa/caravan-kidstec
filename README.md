@@ -130,6 +130,12 @@ Then check out one of our issues labeled as [😵‍💫help wanted][help] or [g
 [gfi]: https://github.com/OpenUp-LabTakizawa/caravan-kidstec/labels/good%20first%20issue
 [help]: https://github.com/OpenUp-LabTakizawa/caravan-kidstec/labels/😵%E2%80%8D💫help%20wanted
 
+## ♥️ Contributors
+
+<a href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=OpenUp-LabTakizawa/caravan-kidstec" alt="Contributors">
+</a>
+
 ## 📦 Credits
 
 This software uses the following open source packages:

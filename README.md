@@ -143,6 +143,7 @@ This software uses the following open source packages:
 - [Node.js](https://nodejs.org/)
 - [Playwright](https://playwright.dev/)
 - [React](https://react.dev/)
+- [StackBlitz Codeflow](https://stackblitz.com/codeflow/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 

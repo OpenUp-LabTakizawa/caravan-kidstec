@@ -7,16 +7,16 @@
   </a>
   <h1>caravan-kidstec</h1>
 
-  <a href="https://biomejs.dev/"><img src="https://img.shields.io/badge/biome-60A5FA?labelColor=000000&logo=biome&style=for-the-badge" alt="Biome"></a>
-  <a href="https://bun.sh/"><img src="https://img.shields.io/badge/bun-FBF0DF?labelColor=000000&logo=bun&style=for-the-badge" alt="Bun"></a>
-  <a href="https://line.me/"><img src="https://img.shields.io/badge/LINE-00C300.svg?labelColor=000000&logo=line&style=for-the-badge" alt="LINE"></a>
-  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/next.js-000000.svg?labelColor=000000&logo=next.js&style=for-the-badge" alt="Next.js"></a>
-  <a href="https://react.dev/"><img src="https://img.shields.io/badge/react-61DAFB?labelColor=000000&logo=react&style=for-the-badge" alt="React"></a>
-  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/tailwind%20css-06B6D4?labelColor=000000&logo=tailwindcss&style=for-the-badge" alt="Tailwind CSS"></a>
-  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/typescript-3178C6?labelColor=000000&logo=typescript&style=for-the-badge" alt="TypeScript"></a>
-  <a href="https://pr.new/github.com/OpenUp-LabTakizawa/caravan-kidstec"><img src="https://img.shields.io/badge/stackblitz-207BEA?labelColor=000000&logo=stackblitz&style=for-the-badge" alt="StackBlitz"></a>
-  <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/OpenUp-LabTakizawa/caravan-kidstec"><img src="https://img.shields.io/badge/open-007ACC?label=dev%20containers&labelColor=000000&style=for-the-badge" alt="Dev Container"></a>
-  <a href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/LICENSE"><img src="https://img.shields.io/github/license/OpenUp-LabTakizawa/caravan-kidstec?labelColor=000000&style=for-the-badge" alt="License"></a>
+  <a href="https://biomejs.dev/"><img src="https://img.shields.io/badge/biome-60A5FA?labelColor=000000&logo=biome&style=for-the-badge" alt="Biome" /></a>
+  <a href="https://bun.sh/"><img src="https://img.shields.io/badge/bun-FBF0DF?labelColor=000000&logo=bun&style=for-the-badge" alt="Bun" /></a>
+  <a href="https://line.me/"><img src="https://img.shields.io/badge/LINE-00C300.svg?labelColor=000000&logo=line&style=for-the-badge" alt="LINE" /></a>
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/next.js-000000.svg?labelColor=000000&logo=next.js&style=for-the-badge" alt="Next.js" /></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/react-61DAFB?labelColor=000000&logo=react&style=for-the-badge" alt="React" /></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/tailwind%20css-06B6D4?labelColor=000000&logo=tailwindcss&style=for-the-badge" alt="Tailwind CSS" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/typescript-3178C6?labelColor=000000&logo=typescript&style=for-the-badge" alt="TypeScript" /></a>
+  <a href="https://pr.new/github.com/OpenUp-LabTakizawa/caravan-kidstec"><img src="https://img.shields.io/badge/stackblitz-207BEA?labelColor=000000&logo=stackblitz&style=for-the-badge" alt="StackBlitz" /></a>
+  <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/OpenUp-LabTakizawa/caravan-kidstec"><img src="https://img.shields.io/badge/open-007ACC?label=dev%20containers&labelColor=000000&style=for-the-badge" alt="Dev Container" /></a>
+  <a href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/LICENSE"><img src="https://img.shields.io/github/license/OpenUp-LabTakizawa/caravan-kidstec?labelColor=000000&style=for-the-badge" alt="License" /></a>
 
   <p>
     Multi-experience program to learn programming with nature🌄
@@ -133,7 +133,7 @@ Then check out one of our issues labeled as [😵‍💫help wanted][help] or [g
 ## ♥️ Contributors
 
 <a href="https://github.com/OpenUp-LabTakizawa/caravan-kidstec/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=OpenUp-LabTakizawa/caravan-kidstec" alt="Contributors">
+  <img src="https://contrib.rocks/image?repo=OpenUp-LabTakizawa/caravan-kidstec" alt="Contributors" />
 </a>
 
 ## 📦 Credits

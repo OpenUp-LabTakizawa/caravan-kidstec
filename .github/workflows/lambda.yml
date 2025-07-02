@@ -25,7 +25,6 @@ on:
         type: boolean
 
 permissions:
-  contents: read
   id-token: write
 
 env:
@@ -40,9 +39,6 @@ jobs:
     if: github.repository_owner == 'openup-labtakizawa'
 
     steps:
-    - name: 📥 Checkout
-      uses: actions/checkout@v4
-
     - name: 🐦‍⬛ Set up QEMU
       uses: docker/setup-qemu-action@29109295f81e9208d7d86ff1c6c12d2833863392
 
@@ -70,7 +66,6 @@ jobs:
       with:
         cache-from: type=gha
         cache-to: type=gha,mode=max
-        context: .
         no-cache: ${{ inputs.no-cache == true }}
         platforms: linux/arm64
         provenance: false

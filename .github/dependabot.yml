@@ -1,16 +1,6 @@
 version: 2
 
 multi-ecosystem-groups:
-  frontend:
-    schedule:
-      interval: "daily"
-    commit-message:
-      prefix: "build"
-      include: "scope"
-    groups:
-      dependencies:
-        patterns:
-          - "*"
   infrastructure:
     schedule:
       interval: "daily"
@@ -22,7 +12,15 @@ updates:
     directories:
       - "/"
       - "/@caravan-kidstec/*"
-    multi-ecosystem-group: "frontend"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "build"
+      include: "scope"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
 
   - package-ecosystem: "devcontainers"
     directory: "/"

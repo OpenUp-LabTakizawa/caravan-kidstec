@@ -1,6 +1,6 @@
 {
   "name": "@caravan-kidstec/web",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "description": "Multi-experience program to learn programming with nature🌄",
   "keywords": [
@@ -15,8 +15,13 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpenUp-LabTakizawa/caravan-kidstec"
+    "url": "git+https://github.com/OpenUp-LabTakizawa/caravan-kidstec",
+    "directory": "@caravan-kidstec/web"
   },
+  "bugs": {
+    "url": "https://github.com/OpenUp-LabTakizawa/caravan-kidstec/issues"
+  },
+  "homepage": "https://openup-labtakizawa.github.io/caravan-kidstec/",
   "scripts": {
     "dev": "next dev --turbopack",
     "dev-win": "WATCHPACK_POLLING=true next dev --turbopack",

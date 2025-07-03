@@ -61,7 +61,6 @@ jobs:
       with:
         cache-from: type=gha
         cache-to: type=gha,mode=max
-        context: ./@caravan-kidstec/web
         no-cache: ${{ inputs.no-cache == true }}
         platforms: linux/arm64
         provenance: false

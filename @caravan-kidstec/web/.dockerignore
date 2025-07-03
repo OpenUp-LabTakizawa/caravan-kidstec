@@ -1,9 +1,0 @@
-.git
-.gitattributes
-.gitignore
-.jj
-.next
-.sl
-next-env.d.ts
-node_modules
-README.md

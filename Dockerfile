@@ -18,7 +18,7 @@ COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.9.1 /lambda-adapter /opt
 
 COPY --from=builder /usr/src/app/@caravan-kidstec/web/public ./@caravan-kidstec/web/public
 COPY --from=builder /usr/src/app/@caravan-kidstec/web/.next/standalone ./
-COPY --from=builder /usr/src/app/@caravan-kidstec/web/.next/static ./.next/static
+COPY --from=builder /usr/src/app/@caravan-kidstec/web/.next/static ./@caravan-kidstec/web/.next/static
 
 EXPOSE 3000
 ENV AWS_LWA_ENABLE_COMPRESSION=true AWS_LWA_INVOKE_MODE=response_stream HOSTNAME=0.0.0.0 PORT=3000

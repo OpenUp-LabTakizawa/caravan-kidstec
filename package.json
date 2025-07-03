@@ -1,12 +1,17 @@
 {
   "name": "caravan-kidstec",
-  "version": "1.4.0",
+  "version": "0.0.0",
+  "workspaces": [
+    "@caravan-kidstec/*"
+  ],
   "private": true,
   "description": "Multi-experience program to learn programming with nature🌄",
   "keywords": [
     "biome",
     "bun",
+    "docusaurus",
     "nextjs",
+    "playwright",
     "react",
     "tailwindcss",
     "typescript"
@@ -18,39 +23,19 @@
     "url": "git+https://github.com/OpenUp-LabTakizawa/caravan-kidstec"
   },
   "scripts": {
-    "dev": "next dev --turbopack",
-    "dev-win": "WATCHPACK_POLLING=true next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
+    "dev": "bun --filter @caravan-kidstec/web dev",
+    "dev-win": "bun --filter @caravan-kidstec/web dev-win",
+    "build": "bun --filter @caravan-kidstec/web build",
+    "start": "bun --filter @caravan-kidstec/web start",
+    "docs-dev": "bun --filter @caravan-kidstec/docs start",
+    "docs-build": "bun --filter @caravan-kidstec/docs build",
     "lint": "biome check --write",
-    "test:app": "bun test test/app --preload ./happydom.tsx",
-    "test:e2e": "playwright test",
-    "test:report": "playwright show-report"
-  },
-  "dependencies": {
-    "@heroicons/react": "^2.2.0",
-    "@line/bot-sdk": "^10.0.0",
-    "next": "canary",
-    "next-view-transitions": "^0.3.4",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "test:app": "bun --filter @caravan-kidstec/web test:app",
+    "test:e2e": "bun --filter @caravan-kidstec/web test:e2e",
+    "test:report": "bun --filter @caravan-kidstec/web test:report"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.6",
-    "@happy-dom/global-registrator": "^18.0.1",
-    "@playwright/test": "next",
-    "@tailwindcss/postcss": "^4.1.11",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/react": "^16.3.0",
-    "@types/bun": "^1.2.17",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "babel-plugin-react-compiler": "experimental",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5.8.3"
-  },
-  "trustedDependencies": [
-    "sharp"
-  ]
+    "@types/bun": "^1.2.17"
+  }
 }

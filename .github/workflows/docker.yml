@@ -7,25 +7,15 @@ concurrency:
 on:
   pull_request_target:
     paths:
-      - "app/**"
-      - "public/**"
-      - "test/**"
-      - ".dockerignore"
+      - "@caravan-kidstec/web/**"
       - "bun.lock"
-      - "Dockerfile"
       - "package.json"
-      - "*config.*"
   push:
     branches: main
     paths:
-      - "app/**"
-      - "public/**"
-      - "test/**"
-      - ".dockerignore"
+      - "@caravan-kidstec/web/**"
       - "bun.lock"
-      - "Dockerfile"
       - "package.json"
-      - "*config.*"
     tags:
       - "v*.*.*"
   workflow_dispatch:
@@ -55,6 +45,10 @@ env:
   GHCR_REPOSITORY: openup-labtakizawa/caravan-kidstec
   SHA: ${{ github.event.pull_request.head.sha || github.sha }}
   IS_PUSH: ${{ github.event_name == 'push' || inputs.push == true }}
+
+defaults:
+  run:
+    working-directory: "@caravan-kidstec/web"
 
 jobs:
   build:

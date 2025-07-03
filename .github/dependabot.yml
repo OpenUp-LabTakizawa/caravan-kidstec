@@ -10,6 +10,7 @@ multi-ecosystem-groups:
 updates:
   - package-ecosystem: "bun"
     directories:
+      - "/"
       - "/@caravan-kidstec/*"
     schedule:
       interval: "daily"

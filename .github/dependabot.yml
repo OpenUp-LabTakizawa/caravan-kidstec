@@ -1,16 +1,7 @@
 version: 2
 
 multi-ecosystem-groups:
-  infrastructure:
-    schedule:
-      interval: "daily"
-    commit-message:
-      prefix: "chore"
-
-updates:
-  - package-ecosystem: "bun"
-    directories:
-      - "/@caravan-kidstec/*"
+  frontend:
     schedule:
       interval: "daily"
     commit-message:
@@ -20,6 +11,18 @@ updates:
       dependencies:
         patterns:
           - "*"
+  infrastructure:
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+
+updates:
+  - package-ecosystem: "bun"
+    directories:
+      - "/"
+      - "/@caravan-kidstec/*"
+    multi-ecosystem-group: "frontend"
 
   - package-ecosystem: "devcontainers"
     directory: "/"

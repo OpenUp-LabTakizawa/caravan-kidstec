@@ -22,6 +22,10 @@
     "type": "git",
     "url": "git+https://github.com/OpenUp-LabTakizawa/caravan-kidstec"
   },
+  "bugs": {
+    "url": "https://github.com/OpenUp-LabTakizawa/caravan-kidstec/issues"
+  },
+  "homepage": "https://openup-labtakizawa.github.io/caravan-kidstec/",
   "scripts": {
     "dev": "bun --filter @caravan-kidstec/web dev",
     "dev-win": "bun --filter @caravan-kidstec/web dev-win",

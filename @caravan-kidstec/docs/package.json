@@ -1,7 +1,26 @@
 {
   "name": "@caravan-kidstec/docs",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
+  "description": "Docusaurus documentation for caravan-kidstec application",
+  "keywords": [
+    "docusaurus",
+    "bun",
+    "mdx",
+    "react",
+    "typescript"
+  ],
+  "author": "Marukome <akio.muto@bnt.benextgroup.jp> (https://github.com/Marukome0743)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenUp-LabTakizawa/caravan-kidstec",
+    "directory": "@caravan-kidstec/docs"
+  },
+  "bugs": {
+    "url": "https://github.com/OpenUp-LabTakizawa/caravan-kidstec/issues"
+  },
+  "homepage": "https://openup-labtakizawa.github.io/caravan-kidstec/",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

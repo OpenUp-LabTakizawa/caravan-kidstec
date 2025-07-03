@@ -3,6 +3,8 @@
 FROM oven/bun:canary AS builder
 WORKDIR /usr/src/app
 RUN --mount=type=bind,source=package.json,target=package.json \
+  --mount=type=bind,source=@caravan-kidstec/docs/package.json,target=@caravan-kidstec/docs/package.json \
+  --mount=type=bind,source=@caravan-kidstec/web/package.json,target=@caravan-kidstec/web/package.json \
   --mount=type=bind,source=bun.lock,target=bun.lock \
   --mount=type=cache,target=/root/.bun \
   bun i --frozen-lockfile
@@ -20,4 +22,4 @@ COPY --from=builder /usr/src/app/@caravan-kidstec/web/.next/static ./.next/stati
 
 EXPOSE 3000
 ENV AWS_LWA_ENABLE_COMPRESSION=true AWS_LWA_INVOKE_MODE=response_stream HOSTNAME=0.0.0.0 PORT=3000
-ENTRYPOINT ["/nodejs/bin/node", "server.js"]
+ENTRYPOINT ["/nodejs/bin/node", "@caravan-kidstec/web/server.js"]

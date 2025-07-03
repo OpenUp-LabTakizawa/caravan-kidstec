@@ -119,9 +119,9 @@ The [Commit Message Footer](#commit-message-footer) format describes what the fo
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: biome|bun|ci|common|css|docker|git|security|test|vscode ...
+  │       └─⫸ Commit Scope: biome|bun|common|css|docker|git|security|vscode ...
   │
-  └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
+  └─⫸ Commit Type: build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test
 ```
 
 The `<type>` and `<summary>` fields are mandatory, the `(<scope>)` field is optional.
@@ -154,7 +154,6 @@ The following is the example list of supported scopes:
 * `git`
 * `npm`
 * `security`
-* `test`
 * `vscode`
 * etc ...
 

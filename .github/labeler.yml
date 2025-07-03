@@ -1,35 +1,35 @@
 🍱asset:
 - changed-files:
-  - any-glob-to-any-file: ['app/favicon.ico', 'public/**', 'app/**/*.png', 'app/**/*.svg']
+  - any-glob-to-any-file: ['**/*.avif', '**/*.ico', '**/*.png', '**/*.svg']
 ♻️ci:
 - changed-files:
   - any-glob-to-any-file: '.github/**/*.yml'
 ⚙️config:
 - changed-files:
-  - any-glob-to-any-file: '*config.*'
+  - any-glob-to-any-file: '**/*config.*'
 📦dependencies:
 - changed-files:
-  - any-glob-to-any-file: ['bun.lock', 'package.json']
+  - any-glob-to-any-file: ['bun.lock', '**/package.json']
 docker:
 - changed-files:
   - any-glob-to-any-file: ['.dockerignore', 'Dockerfile']
 📝documentation:
 - changed-files:
-  - any-glob-to-any-file: ['docs/**', '**/*.md', '**/*.txt']
+  - any-glob-to-any-file: ['@caravan-kidstec/docs/**', '**/*.md']
 🚀enhancement:
 - all:
   - changed-files:
-    - any-glob-to-any-file: 'app/**'
-    - all-globs-to-all-files: '!app/**/*.test.tsx'
+    - any-glob-to-any-file: '@caravan-kidstec/web/app/**'
+    - all-globs-to-all-files: '!@caravan-kidstec/web/app/**/*.test.tsx'
 🪸git:
 - changed-files:
-  - any-glob-to-any-file: ['.gitattributes', '.gitignore']
+  - any-glob-to-any-file: ['.gitattributes', '**/.gitignore']
 🧰infrastructure:
 - changed-files:
-  - any-glob-to-any-file: ['.devcontainer/*', '.editorconfig', '.env*', 'biome.json', 'bunfig.toml', 'vercel.json']
+  - any-glob-to-any-file: ['.devcontainer/*', '.editorconfig', 'biome.json']
 ✅test:
 - changed-files:
-  - any-glob-to-any-file: ['happydom.ts', 'test/**']
+  - any-glob-to-any-file: ['@caravan-kidstec/web/happydom.ts', '@caravan-kidstec/web/test/**']
 🆚vscode:
 - changed-files:
   - any-glob-to-any-file: '.vscode/*'

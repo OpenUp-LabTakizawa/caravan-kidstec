@@ -4,7 +4,9 @@ on:
   pull_request:
     paths:
       - "@caravan-kidstec/web/**"
+      - ".dockerignore"
       - "bun.lock"
+      - "Dockerfile"
       - "package.json"
     types:
       - closed

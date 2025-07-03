@@ -8,12 +8,16 @@ on:
   pull_request_target:
     paths:
       - "@caravan-kidstec/web/**"
+      - ".dockerignore"
       - "bun.lock"
+      - "Dockerfile"
       - "package.json"
   push:
     paths:
       - "@caravan-kidstec/web/**"
+      - ".dockerignore"
       - "bun.lock"
+      - "Dockerfile"
       - "package.json"
   workflow_dispatch:
 

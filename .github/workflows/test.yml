@@ -7,24 +7,14 @@ concurrency:
 on:
   pull_request_target:
     paths:
-      - "app/**"
-      - "public/**"
-      - "test/**"
-      - ".dockerignore"
+      - "@caravan-kidstec/web/**"
       - "bun.lock"
-      - "Dockerfile"
       - "package.json"
-      - "*config.*"
   push:
     paths:
-      - "app/**"
-      - "public/**"
-      - "test/**"
-      - ".dockerignore"
+      - "@caravan-kidstec/web/**"
       - "bun.lock"
-      - "Dockerfile"
       - "package.json"
-      - "*config.*"
   workflow_dispatch:
 
 permissions:

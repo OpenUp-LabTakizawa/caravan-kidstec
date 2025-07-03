@@ -10,8 +10,7 @@ multi-ecosystem-groups:
 updates:
   - package-ecosystem: "bun"
     directory:
-      - "/"
-      - "/docs"
+      - "/@caravan-kidstec/*"
     schedule:
       interval: "daily"
     commit-message:
@@ -27,7 +26,7 @@ updates:
     multi-ecosystem-group: "infrastructure"
 
   - package-ecosystem: "docker"
-    directory: "/"
+    directory: "/@caravan-kidstec/web"
     multi-ecosystem-group: "infrastructure"
 
   - package-ecosystem: "github-actions"

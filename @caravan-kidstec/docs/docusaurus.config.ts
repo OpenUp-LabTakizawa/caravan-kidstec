@@ -52,7 +52,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/OpenUp-LabTakizawa/caravan-kidstec/tree/main/docs/",
+            "https://github.com/OpenUp-LabTakizawa/caravan-kidstec/tree/main/@caravan-kidstec/docs/",
           onInlineTags: "warn",
         },
         theme: {

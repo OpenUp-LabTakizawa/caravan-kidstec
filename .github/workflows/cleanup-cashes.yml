@@ -3,14 +3,9 @@ name: 🗑️ Cleanup caches by a branch
 on:
   pull_request:
     paths:
-      - "app/**"
-      - "public/**"
-      - "test/**"
-      - ".dockerignore"
+      - "@caravan-kidstec/web/**"
       - "bun.lock"
-      - "Dockerfile"
       - "package.json"
-      - "*config.*"
     types:
       - closed
 

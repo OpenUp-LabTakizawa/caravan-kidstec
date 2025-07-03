@@ -46,10 +46,6 @@ env:
   SHA: ${{ github.event.pull_request.head.sha || github.sha }}
   IS_PUSH: ${{ github.event_name == 'push' || inputs.push == true }}
 
-defaults:
-  run:
-    working-directory: "@caravan-kidstec/web"
-
 jobs:
   build:
     runs-on: ubuntu-latest

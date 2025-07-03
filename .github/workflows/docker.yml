@@ -106,7 +106,7 @@ jobs:
           annotations: ${{ steps.meta.outputs.annotations }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          context: .
+          context: ./@caravan-kidstec/web
           labels: ${{ steps.meta.outputs.labels }}
           load: ${{ !fromJSON(env.IS_PUSH) }}
           no-cache: ${{ inputs.no-cache == true }}

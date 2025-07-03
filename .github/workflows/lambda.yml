@@ -9,7 +9,9 @@ on:
     branches: main
     paths:
       - "@caravan-kidstec/web/**"
+      - ".dockerignore"
       - "bun.lock"
+      - "Dockerfile"
       - "package.json"
   workflow_dispatch:
     inputs:

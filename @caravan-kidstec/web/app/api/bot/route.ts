@@ -9,7 +9,7 @@ import { client } from "@/app/lib/line"
 export function GET(): Response {
   return Response.json({
     status: "success",
-    message: "Connected successfully!",
+  message: "Connected successfully!",
   })
 }
 
@@ -19,10 +19,13 @@ export async function POST(request: Request): Promise<Response> {
 
   const errorMessage: string = validateRequest(request, buffer)
   if (errorMessage) {
-    return Response.json({
-      status: "error",
-      message: errorMessage,
-    })
+    return Response.json(
+      {
+        status: "error",
+        message: errorMessage,
+      },
+      { status: 400 },
+    )
   }
 
   const callbackRequest: webhook.CallbackRequest = JSON.parse(buffer.toString())
@@ -34,22 +37,32 @@ export async function POST(request: Request): Promise<Response> {
         await textEventHandler(event)
       } catch (error: unknown) {
         if (error instanceof HTTPFetchError) {
-          return Response.json({
-            status: `error: ${error.status}`,
-            message: error.body,
-          })
+          return Response.json(
+            {
+              status: "error",
+              message: error.body,
+              xLineRequestId: error.headers.get("x-line-request-id"),
+            },
+            { status: error.status },
+          )
         }
 
         if (error instanceof Error) {
-          return Response.json({
-            status: "error",
-            message: error.message,
-          })
+          return Response.json(
+            {
+              status: "error",
+              message: error.message,
+            },
+            { status: 500 },
+          )
         }
 
-        return Response.json({
-          status: "error",
-        })
+        return Response.json(
+          {
+            status: "error",
+          },
+          { status: 500 },
+        )
       }
     }),
   )
@@ -95,6 +108,5 @@ async function textEventHandler(
         },
       ],
     })
-    return
   }
 }

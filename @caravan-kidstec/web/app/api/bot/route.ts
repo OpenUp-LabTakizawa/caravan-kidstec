@@ -9,7 +9,7 @@ import { client } from "@/app/lib/line"
 export function GET(): Response {
   return Response.json({
     status: "success",
-  message: "Connected successfully!",
+    message: "Connected successfully!",
   })
 }
 

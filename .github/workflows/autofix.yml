@@ -27,7 +27,10 @@ jobs:
           bun-version: canary
 
       - name: 📦 Update dependencies
-        run: bun update
+        run: |
+          cd @caravan-kidstec/docs && bun update \
+          && cd ../web && bun update \
+          && cd ../../ && bun update && bun i
 
       - name: 🔷 Run Biome
         run: bun check

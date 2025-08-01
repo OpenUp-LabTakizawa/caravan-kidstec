@@ -102,10 +102,7 @@ export function IndicatorCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
-      string,
-      HTMLImageElement
-    >
+    const images: Map<string, HTMLImageElement> = imagesRef.current
     for (const node of [...images.values()].reverse()) {
       const newImage = node.cloneNode(true)
       carousel.prepend(newImage)
@@ -354,10 +351,7 @@ export function ReviewCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const reviews: Map<string, HTMLDivElement> = reviewsRef.current as Map<
-      string,
-      HTMLDivElement
-    >
+    const reviews: Map<string, HTMLDivElement> = reviewsRef.current
     for (const node of [...reviews.values()].reverse()) {
       const newReview = node.cloneNode(true)
       carousel.prepend(newReview)
@@ -366,10 +360,7 @@ export function ReviewCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const reviewsNode: Map<string, HTMLDivElement> = reviewsRef.current as Map<
-      string,
-      HTMLDivElement
-    >
+    const reviewsNode: Map<string, HTMLDivElement> = reviewsRef.current
     const reviewNode: HTMLDivElement = reviewsNode.get(
       reviews[0].description,
     ) as HTMLDivElement
@@ -383,10 +374,7 @@ export function ReviewCarousel(): JSX.Element {
 
   function ScrollEvent(): void {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const reviewsNode: Map<string, HTMLDivElement> = reviewsRef.current as Map<
-      string,
-      HTMLDivElement
-    >
+    const reviewsNode: Map<string, HTMLDivElement> = reviewsRef.current
     const reviewNode: HTMLDivElement = reviewsNode.get(
       reviews[0].description,
     ) as HTMLDivElement
@@ -432,9 +420,9 @@ export function ReviewCarousel(): JSX.Element {
         <div
           key={review.description}
           ref={(node: HTMLDivElement) => {
-            reviewsRef.current?.set(review.description, node)
+            reviewsRef.current.set(review.description, node)
             return () => {
-              reviewsRef.current?.delete(review.description)
+              reviewsRef.current.delete(review.description)
             }
           }}
           className="bg-blue-100 flex flex-col flex-none justify-between m-2 p-2 rounded-2xl shadow-lg snap-center text-sm w-56"

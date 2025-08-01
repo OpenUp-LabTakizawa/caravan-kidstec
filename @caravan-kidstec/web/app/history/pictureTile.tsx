@@ -32,7 +32,7 @@ export function PictureTile({
       }
     })
 
-    if (ref.current?.values()) {
+    if (ref.current.values()) {
       for (const node of ref.current.values()) {
         observer.observe(node)
       }
@@ -47,9 +47,9 @@ export function PictureTile({
           key={picture.alt}
           href={`${HISTORY.pathname}/image${pathname}/${date}/${picture.src.split("/")[5].split(".")[0]}`}
           ref={(node: HTMLAnchorElement) => {
-            ref.current?.set(picture.alt, node)
+            ref.current.set(picture.alt, node)
             return () => {
-              ref.current?.delete(picture.alt)
+              ref.current.delete(picture.alt)
             }
           }}
           className="cursor-zoom-in relative"

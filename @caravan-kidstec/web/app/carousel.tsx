@@ -114,10 +114,7 @@ export function IndicatorCarousel(): JSX.Element {
 
   useEffect(() => {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
-      string,
-      HTMLImageElement
-    >
+    const images: Map<string, HTMLImageElement> = imagesRef.current
     const imageNode: HTMLImageElement = images.get(
       pictures[0].alt,
     ) as HTMLImageElement
@@ -131,10 +128,7 @@ export function IndicatorCarousel(): JSX.Element {
 
   function onClick(indicator: Indicator): void {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
-      string,
-      HTMLImageElement
-    >
+    const images: Map<string, HTMLImageElement> = imagesRef.current
     const imageNode: HTMLImageElement = images.get(
       pictures[0].alt,
     ) as HTMLImageElement
@@ -154,10 +148,7 @@ export function IndicatorCarousel(): JSX.Element {
 
   function ScrollEvent(): void {
     const carousel: HTMLDivElement = carouselRef.current as HTMLDivElement
-    const images: Map<string, HTMLImageElement> = imagesRef.current as Map<
-      string,
-      HTMLImageElement
-    >
+    const images: Map<string, HTMLImageElement> = imagesRef.current
     const imageNode: HTMLImageElement = images.get(
       pictures[0].alt,
     ) as HTMLImageElement
@@ -229,9 +220,9 @@ export function IndicatorCarousel(): JSX.Element {
           <Image
             key={picture.alt}
             ref={(node: HTMLImageElement) => {
-              imagesRef.current?.set(picture.alt, node)
+              imagesRef.current.set(picture.alt, node)
               return () => {
-                imagesRef.current?.delete(picture.alt)
+                imagesRef.current.delete(picture.alt)
               }
             }}
             loader={cloudfrontLoader}

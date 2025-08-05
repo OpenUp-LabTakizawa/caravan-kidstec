@@ -6,10 +6,6 @@ on:
     paths:
       - "@caravan-kidstec/docs/**"
 
-defaults:
-  run:
-    working-directory: "@caravan-kidstec/docs"
-
 permissions:
   contents: read
   pull-requests: write
@@ -31,4 +27,4 @@ jobs:
       - name: 📦 Install dependencies
         run: bun i --frozen-lockfile
       - name: 🌐 Test build website
-        run: bun run build
+        run: bun docs-build

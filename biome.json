@@ -9,6 +9,7 @@
   "linter": {
     "rules": {
       "correctness": {
+        "noNestedComponentDefinitions": "off",
         "noUnusedImports": "error"
       },
       "style": {

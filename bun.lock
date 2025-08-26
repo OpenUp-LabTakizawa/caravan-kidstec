@@ -969,7 +969,7 @@
 
     "babel-plugin-polyfill-regenerator": ["babel-plugin-polyfill-regenerator@0.6.5", "", { "dependencies": { "@babel/helper-define-polyfill-provider": "^0.6.5" }, "peerDependencies": { "@babel/core": "^7.4.0 || ^8.0.0-0 <8.0.0" } }, "sha512-ISqQ2frbiNU9vIJkzg7dlPpznPZ4jOiUQ1uSmB0fEHeowtN3COYRsXr/xexn64NpU13P06jc/L5TgiJXOgrbEg=="],
 
-    "babel-plugin-react-compiler": ["babel-plugin-react-compiler@0.0.0-experimental-3868508-20250825", "", { "dependencies": { "@babel/types": "^7.26.0" } }, "sha512-I8XzOV1KaAaprk8j0Sc0+4/MrHcf7Isui+iLUVX6YufReN3S6cugfYwmnwW5egoe81zBHlauKbqRaB9wl2lgDg=="],
+    "babel-plugin-react-compiler": ["babel-plugin-react-compiler@0.0.0-experimental-3868508-20250826", "", { "dependencies": { "@babel/types": "^7.26.0" } }, "sha512-ErYeTkIj/NgKOC+lYKRHYn0ESY9MmtwkLRYVJW+TakW18T/Y4+Z4+rIRgWh14RGfRB34tWa8HrwQRFDInrQUXw=="],
 
     "bail": ["bail@2.0.2", "", {}, "sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw=="],
 
@@ -2740,6 +2740,8 @@
     "micromark-util-sanitize-uri/micromark-util-symbol": ["micromark-util-symbol@2.0.1", "", {}, "sha512-vs5t8Apaud9N28kgCrRUdEed4UJ+wWNvicHLPxCa9ENlYuAY31M0ETy5y1vA33YoNPDFTghEbnh6efaE8h4x0Q=="],
 
     "micromark-util-subtokenize/micromark-util-symbol": ["micromark-util-symbol@2.0.1", "", {}, "sha512-vs5t8Apaud9N28kgCrRUdEed4UJ+wWNvicHLPxCa9ENlYuAY31M0ETy5y1vA33YoNPDFTghEbnh6efaE8h4x0Q=="],
+
+    "next/babel-plugin-react-compiler": ["babel-plugin-react-compiler@0.0.0-experimental-3868508-20250825", "", { "dependencies": { "@babel/types": "^7.26.0" } }, "sha512-I8XzOV1KaAaprk8j0Sc0+4/MrHcf7Isui+iLUVX6YufReN3S6cugfYwmnwW5egoe81zBHlauKbqRaB9wl2lgDg=="],
 
     "next/postcss": ["postcss@8.4.31", "", { "dependencies": { "nanoid": "^3.3.6", "picocolors": "^1.0.0", "source-map-js": "^1.0.2" } }, "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ=="],
 

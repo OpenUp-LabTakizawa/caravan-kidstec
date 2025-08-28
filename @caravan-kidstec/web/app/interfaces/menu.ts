@@ -1,6 +1,8 @@
+import type { Route } from "next"
+
 export type Menu = {
   readonly name: string
-  readonly pathname: string
+  readonly pathname: Route
   readonly textColor: string
 }
 

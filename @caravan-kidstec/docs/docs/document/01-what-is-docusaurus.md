@@ -30,7 +30,7 @@ docs/
 ├── .gitignore
 ├── bun.lock
 ├── docusaurus.config.ts
-├── pakage.json
+├── package.json
 ├── README.md
 ├── sidebars.ts
 └── tsconfig.json

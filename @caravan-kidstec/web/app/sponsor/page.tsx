@@ -7,12 +7,12 @@ import Link from "next/link"
 import type { JSX } from "react"
 import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { Heading } from "@/app/components/layout/heading"
-import type { Sponser } from "@/app/interfaces/sponser"
-import { SPONSER } from "@/app/lib/constant"
+import type { Sponsor } from "@/app/interfaces/sponsor"
+import { SPONSOR } from "@/app/lib/constant"
 import { cloudfrontLoader } from "@/app/lib/loader"
 
-export default function SponserPage(): JSX.Element {
-  const sponsers: Sponser[] = [
+export default function SponsorPage(): JSX.Element {
+  const sponsors: Sponsor[] = [
     {
       name: "オープンアップグループ",
       href: "https://www.openupgroup.co.jp/",
@@ -31,41 +31,41 @@ export default function SponserPage(): JSX.Element {
 
   return (
     <>
-      <Heading menus={[SPONSER]} />
+      <Heading menus={[SPONSOR]} />
       <section className="px-2 space-y-6">
-        {sponsers.map((sponser) => (
+        {sponsors.map((sponsor) => (
           <section
-            key={sponser.name}
+            key={sponsor.name}
             className="bg-gray-100 flex gap-1 h-32 items-center p-1 rounded-2xl shadow-lg sm:h-40"
           >
             <div className="bg-white flex grow h-full items-center justify-center rounded-2xl">
               <Image
                 loader={cloudfrontLoader}
-                src={sponser.src}
+                src={sponsor.src}
                 width={256}
                 height={256}
-                alt={sponser.name}
+                alt={sponsor.name}
                 className="max-h-32 object-contain rounded-2xl p-3 sm:max-h-40"
               />
             </div>
             <div className="flex-none space-y-2 text-center basis-48 sm:basis-64">
               <h2 className="font-bold text-sm">
                 <Link
-                  href={sponser.href}
+                  href={sponsor.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center underline"
                 >
-                  {sponser.name}&nbsp;
+                  {sponsor.name}&nbsp;
                   <ArrowTopRightOnSquareIcon className="size-4" />
                 </Link>
               </h2>
               <p className="flex gap-1 items-center justify-center">
                 <BuildingOffice2Icon className="size-5" />
-                {sponser.business}
+                {sponsor.business}
               </p>
               <FadeInUp className="font-bold whitespace-pre">
-                {sponser.purpose}
+                {sponsor.purpose}
               </FadeInUp>
             </div>
           </section>

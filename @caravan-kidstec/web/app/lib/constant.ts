@@ -1,3 +1,4 @@
+import type { Route } from "next"
 import type { Menu } from "@/app/interfaces/menu"
 import type { Partner } from "@/app/interfaces/partner"
 import type { Picture } from "@/app/interfaces/picture"
@@ -7,9 +8,9 @@ export const SITE_TITLE: string = "こどもテックキャラバン"
 export const SITE_URL: string = "https://caravan-kidstec.com"
 export const DESCRIPTION: string =
   "プログラミング×体験学習 親子で学ぶ体験型イベント"
-export const HIROSHIMA_LINE: string = "https://lin.ee/eYcNlkG"
-export const KANTO_LINE: string = "https://lin.ee/RHBWD7P"
-export const CLOUDFRONT_URL: string = "https://dk75m1tgsot44.cloudfront.net"
+export const HIROSHIMA_LINE: Route = "https://lin.ee/eYcNlkG"
+export const KANTO_LINE: Route = "https://lin.ee/RHBWD7P"
+export const CLOUDFRONT_URL: Route = "https://dk75m1tgsot44.cloudfront.net"
 
 export const HISTORY: Menu = {
   name: "活動実績",
@@ -33,27 +34,27 @@ export const SECRETARIAT: Menu = {
 }
 export const SPECIAL: Menu = {
   name: "スペシャル",
-  pathname: "/special",
+  pathname: "/special" as Route,
   textColor: "text-rose-400",
 }
 export const KANTO: Menu = {
   name: "関東",
-  pathname: "/kanto",
+  pathname: "/kanto" as Route,
   textColor: "",
 }
 export const HIROSHIMA: Menu = {
   name: "広島",
-  pathname: "/hiroshima",
+  pathname: "/hiroshima" as Route,
   textColor: "",
 }
 export const Q_AND_A: Menu = {
   name: "Q&A",
-  pathname: "/q-and-a",
+  pathname: "/q-and-a" as Route,
   textColor: "text-sky-400",
 }
 export const PRIVACY_POLICY: Menu = {
   name: "個人情報保護方針",
-  pathname: "/privacy-policy",
+  pathname: "/privacy-policy" as Route,
   textColor: "text-orange-400",
 }
 

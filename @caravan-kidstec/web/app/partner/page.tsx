@@ -1,3 +1,4 @@
+import type { Route } from "next"
 import { Link } from "next-view-transitions"
 import type { JSX } from "react"
 import { Heading } from "@/app/components/layout/heading"
@@ -50,7 +51,7 @@ export default function SponserPage(): JSX.Element {
         >
           <h2 className="font-bold text-2xl sm:text-3xl">
             <Link
-              href={PARTNER.pathname + area.menu.pathname}
+              href={(PARTNER.pathname + area.menu.pathname) as Route}
               className={`block button-pop mx-auto underline w-fit ${area.color.text}`}
             >
               {area.menu.name}

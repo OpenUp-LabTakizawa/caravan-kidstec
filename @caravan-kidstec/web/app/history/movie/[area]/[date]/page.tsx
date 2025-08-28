@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Route } from "next"
 import type { JSX } from "react"
 import { BackButton } from "@/app/components/button/backButton"
 import { Heading } from "@/app/components/layout/heading"
@@ -65,7 +65,7 @@ export default async function Movie({
   ) as EventDate
   const movie: Menu = {
     name: eventDate.title,
-    pathname: `/${eventDate.date}`,
+    pathname: `/${eventDate.date}` as Route,
     textColor: "text-yellow-400",
   }
 

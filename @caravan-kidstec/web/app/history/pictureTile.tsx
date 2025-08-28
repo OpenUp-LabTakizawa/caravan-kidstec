@@ -1,6 +1,7 @@
 "use client"
 
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
+import type { Route } from "next"
 import Image from "next/image"
 import { Link } from "next-view-transitions"
 import { type JSX, type RefObject, useEffect, useRef } from "react"
@@ -45,7 +46,9 @@ export function PictureTile({
       {pictures.map((picture) => (
         <Link
           key={picture.alt}
-          href={`${HISTORY.pathname}/image${pathname}/${date}/${picture.src.split("/")[5].split(".")[0]}`}
+          href={
+            `${HISTORY.pathname}/image${pathname}/${date}/${picture.src.split("/")[5].split(".")[0]}` as Route
+          }
           ref={(node: HTMLAnchorElement) => {
             ref.current.set(picture.alt, node)
             return () => {

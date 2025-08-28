@@ -1,4 +1,5 @@
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
+import type { Route } from "next"
 import { Link } from "next-view-transitions"
 import type { JSX } from "react"
 import styles from "./backButton.module.css"
@@ -6,7 +7,7 @@ import styles from "./backButton.module.css"
 export function BackButton({
   href,
   name,
-}: Readonly<{ href: string; name: string }>): JSX.Element {
+}: Readonly<{ href: Route; name: string }>): JSX.Element {
   return (
     <Link
       href={href}

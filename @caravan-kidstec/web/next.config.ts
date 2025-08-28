@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [new URL("https://dk75m1tgsot44.cloudfront.net/**")],
   },
   output: "standalone",
+  typedRoutes: true,
 }
 
 export default nextConfig

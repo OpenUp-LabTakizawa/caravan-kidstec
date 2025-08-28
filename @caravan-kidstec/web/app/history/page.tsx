@@ -1,4 +1,5 @@
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
+import type { Route } from "next"
 import { Link } from "next-view-transitions"
 import type { JSX } from "react"
 import { LineRegister } from "@/app/components/button/lineAddFriends"
@@ -55,7 +56,9 @@ export default function HistoryPage(): JSX.Element {
                   pictures={history.pictures}
                 />
                 <Link
-                  href={`${HISTORY.pathname}/movie${area.pathname}/${history.date}`}
+                  href={
+                    `${HISTORY.pathname}/movie${area.pathname}/${history.date}` as Route
+                  }
                   className={`bg-sky-400 button-pop cursor-zoom-in flex font-bold gap-2 items-center justify-center h-12 mt-2 mx-auto px-4 rounded-2xl shadow-lg text-lg text-white w-fit ${styles.blueShine}`}
                 >
                   イベントの様子はこちら！

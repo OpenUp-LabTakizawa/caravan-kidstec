@@ -1,4 +1,5 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
+import type { Route } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -76,7 +77,7 @@ export default function Secretariat(): JSX.Element {
               className="before:content-['・'] sm:flex"
             >
               <Link
-                href={organization.href}
+                href={organization.href as Route}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold inline-flex items-center text-sky-400 underline sm:mr-auto"

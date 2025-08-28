@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Route } from "next"
 import Image from "next/image"
 import type { JSX } from "react"
 import { BackButton } from "@/app/components/button/backButton"
@@ -96,7 +96,7 @@ export default async function HistoryPicture({
   ) as Picture
   const movie: Menu = {
     name: eventDate.title,
-    pathname: `/${eventDate.date}`,
+    pathname: `/${eventDate.date}` as Route,
     textColor: "text-yellow-400",
   }
 

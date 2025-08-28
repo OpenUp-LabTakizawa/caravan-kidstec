@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
+import type { Route } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -7,7 +8,7 @@ import styles from "./lineAddFriends.module.css"
 
 export function LineAddFriends({
   linkLink,
-}: Readonly<{ linkLink: string }>): JSX.Element {
+}: Readonly<{ linkLink: Route }>): JSX.Element {
   return (
     <Bounce>
       <Link
@@ -30,7 +31,7 @@ export function LineAddFriends({
 
 export function LineApply({
   lineLink,
-}: Readonly<{ lineLink: string }>): JSX.Element {
+}: Readonly<{ lineLink: Route }>): JSX.Element {
   return (
     <Bounce>
       <Link
@@ -49,7 +50,7 @@ export function LineApply({
 export function LineRegister({
   areaName,
   lineLink,
-}: Readonly<{ areaName: string; lineLink: string }>): JSX.Element {
+}: Readonly<{ areaName: string; lineLink: Route }>): JSX.Element {
   return (
     <section className="bg-amber-50 mx-auto p-4 rounded-2xl space-y-2 text-center w-fit">
       <b>

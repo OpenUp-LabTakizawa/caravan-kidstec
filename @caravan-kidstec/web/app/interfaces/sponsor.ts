@@ -1,6 +1,6 @@
 import type { Route } from "next"
 
-export type Sponser = {
+export type Sponsor = {
   readonly name: string
   readonly href: Route
   readonly src: string

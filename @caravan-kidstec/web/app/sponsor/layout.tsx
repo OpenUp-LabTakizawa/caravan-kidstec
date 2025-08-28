@@ -1,12 +1,12 @@
 import type { Metadata } from "next"
 import type { JSX, ReactNode } from "react"
-import { SPONSER } from "@/app/lib/constant"
+import { SPONSOR } from "@/app/lib/constant"
 
 export const metadata: Metadata = {
-  title: SPONSER.name,
+  title: SPONSOR.name,
 }
 
-export default function SponserLayout({
+export default function SponsorLayout({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {
   return (

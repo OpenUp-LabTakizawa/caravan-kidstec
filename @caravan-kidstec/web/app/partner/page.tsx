@@ -13,7 +13,7 @@ import {
   SPECIAL_PARTNERS,
 } from "@/app/lib/constant"
 
-export default function SponserPage(): JSX.Element {
+export default function PartnerPage(): JSX.Element {
   const partnerAreas: PartnerArea[] = [
     {
       menu: SPECIAL,

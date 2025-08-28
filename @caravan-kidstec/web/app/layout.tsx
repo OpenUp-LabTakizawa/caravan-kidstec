@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ViewTransitions } from "next-view-transitions"
-import type { JSX, ReactNode } from "react"
+import type { JSX } from "react"
 import { Footer } from "./footer.tsx"
 import { Header } from "./header.tsx"
 import { ScrollToTop } from "./scrollToTop.tsx"
@@ -68,18 +68,15 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-  modal,
-}: Readonly<{ children: ReactNode; modal: ReactNode }>): JSX.Element {
+export default function RootLayout(props: LayoutProps<"/">): JSX.Element {
   return (
     <html lang="ja" className={zenMaruGothic.variable}>
       <body className="font-maru text-gray-800">
         <ViewTransitions>
           <Header />
           <main className="text-xs sm:px-12 sm:text-sm md:text-base">
-            {children}
-            {modal}
+            {props.children}
+            {props.modal}
             <ScrollToTop />
           </main>
           <Footer />

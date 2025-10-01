@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
     inlineCss: true,
     isrFlushToDisk: false,
     ppr: true,
-    reactCompiler: true,
     viewTransition: true,
   },
   images: {
@@ -31,6 +30,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [new URL("https://dk75m1tgsot44.cloudfront.net/**")],
   },
   output: "standalone",
+  reactCompiler: true,
   typedRoutes: true,
 }
 

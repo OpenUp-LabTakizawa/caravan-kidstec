@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   experimental: {
     inlineCss: true,
     isrFlushToDisk: false,
-    ppr: true,
     viewTransition: true,
   },
   images: {

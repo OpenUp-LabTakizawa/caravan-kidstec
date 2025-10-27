@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind CSS rule */
 @theme {
   --font-maru: Zen Maru Gothic;
 }

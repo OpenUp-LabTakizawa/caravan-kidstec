@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@line/bot-sdk": "^10.4.0",
+    "@line/bot-sdk": "^10.5.0",
     "next": "canary",
     "next-view-transitions": "^0.3.4",
     "react": "^19.2.0",

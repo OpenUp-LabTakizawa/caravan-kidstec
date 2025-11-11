@@ -32,7 +32,7 @@ jobs:
         run: |
           cd @caravan-kidstec/docs && bun update \
           && cd ../web && bun update \
-          && cd ../../ && bun update && bun i
+          && cd ../../ && bun update && bun i --linker=isolated
 
       - name: 🔷 Run Biome
         run: bun check

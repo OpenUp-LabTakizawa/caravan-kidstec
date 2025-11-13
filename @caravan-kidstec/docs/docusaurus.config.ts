@@ -25,7 +25,6 @@ const config: Config = {
   projectName: "caravan-kidstec", // Usually your repo name.
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -36,6 +35,10 @@ const config: Config = {
   },
 
   markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+      onBrokenMarkdownImages: "throw",
+    },
     remarkRehypeOptions: {
       footnoteLabel: "脚注",
     },

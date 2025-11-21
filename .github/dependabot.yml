@@ -9,8 +9,7 @@ multi-ecosystem-groups:
 
 updates:
   - package-ecosystem: "bun"
-    directories:
-      - "/"
+    directory: "/"
     schedule:
       interval: "daily"
     commit-message:
@@ -31,4 +30,11 @@ updates:
 
   - package-ecosystem: "github-actions"
     directory: "/"
-    multi-ecosystem-group: "infrastructure"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "ci"
+    groups:
+      actions:
+        patterns:
+          - "*"

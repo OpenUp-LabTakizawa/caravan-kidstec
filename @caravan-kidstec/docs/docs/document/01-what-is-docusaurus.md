@@ -48,36 +48,37 @@ docs/
 <summary>デプロイのテスト</summary>
 
 ```yaml
-name: Test deployment
+name: 🌐 Test deployment
 
 on:
   pull_request:
     branches: main
     paths:
-      - "docs/**"
+      - "@caravan-kidstec/docs/**"
 
-defaults:
-  run:
-    working-directory: docs
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
   test-deploy:
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: 📥 Checkout
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: Install bun
-        uses: oven-sh/setup-bun@v2
+          persist-credentials: false
+      - name: 🐣 Install bun
+        uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76
         with:
           bun-version: canary
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: bun i --frozen-lockfile
-      - name: Test build website
-        run: bun run build
+      - name: 🌐 Test build website
+        run: bun docs-build
 ```
 
 </details>
@@ -86,7 +87,7 @@ jobs:
 <summary>GitHub Pages へデプロイ</summary>
 
 ```yaml
-name: Deploy to GitHub Pages
+name: 🐙 Deploy to GitHub Pages
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -96,42 +97,41 @@ on:
   push:
     branches: main
     paths:
-      - "docs/**"
-
-defaults:
-  run:
-    working-directory: docs
+      - "@caravan-kidstec/docs/**"
 
 jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
     if: github.repository_owner == 'openup-labtakizawa'
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
-      - name: Checkout
+      - name: 📥 Checkout
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: Install bun
-        uses: oven-sh/setup-bun@v2
+          persist-credentials: false
+      - name: 🐣 Install bun
+        uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76
         with:
           bun-version: canary
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: bun i --frozen-lockfile
-      - name: Build website
-        run: bun run build
+      - name: 🧩 Build website
+        run: bun docs-build
 
-      - name: Upload Build Artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: 🆙 Upload Build Artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: docs/build
+          path: "@caravan-kidstec/docs/build"
 
   deploy:
     name: Deploy to GitHub Pages
     needs: build
-    if: github.repository_owner == 'openup-labtakizawa'
 
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
@@ -145,7 +145,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
+      - name: 🐙 Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 ```

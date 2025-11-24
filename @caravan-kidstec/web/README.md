@@ -34,7 +34,7 @@ From your command line:
 git clone https://github.com/OpenUp-LabTakizawa/caravan-kidstec
 ```
 
-### 2. Install dependencies with bun
+### 2. Install dependencies using Bun
 
 ```bash
 cd caravan-kidstec && bun i

@@ -2752,6 +2752,8 @@
 
     "micromark-util-subtokenize/micromark-util-symbol": ["micromark-util-symbol@2.0.1", "", {}, "sha512-vs5t8Apaud9N28kgCrRUdEed4UJ+wWNvicHLPxCa9ENlYuAY31M0ETy5y1vA33YoNPDFTghEbnh6efaE8h4x0Q=="],
 
+    "next/@playwright/test": ["@playwright/test@1.58.0-alpha-2025-12-14", "", { "dependencies": { "playwright": "1.58.0-alpha-2025-12-14" }, "bin": { "playwright": "cli.js" } }, "sha512-fKFm+m5OY9VEML0JLIWKtVu9E4qnXgZdP/65Q1L89S/MEWFVxSE43Y6c2cJnA8ZK2jYdWqYVLdoZI9akl62Ecw=="],
+
     "next/postcss": ["postcss@8.4.31", "", { "dependencies": { "nanoid": "^3.3.6", "picocolors": "^1.0.0", "source-map-js": "^1.0.2" } }, "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ=="],
 
     "next-view-transitions/next": ["next@16.1.0-canary.15", "", { "dependencies": { "@next/env": "16.1.0-canary.15", "@swc/helpers": "0.5.15", "baseline-browser-mapping": "^2.8.3", "caniuse-lite": "^1.0.30001579", "postcss": "8.4.31", "styled-jsx": "5.1.6" }, "optionalDependencies": { "@next/swc-darwin-arm64": "16.1.0-canary.15", "@next/swc-darwin-x64": "16.1.0-canary.15", "@next/swc-linux-arm64-gnu": "16.1.0-canary.15", "@next/swc-linux-arm64-musl": "16.1.0-canary.15", "@next/swc-linux-x64-gnu": "16.1.0-canary.15", "@next/swc-linux-x64-musl": "16.1.0-canary.15", "@next/swc-win32-arm64-msvc": "16.1.0-canary.15", "@next/swc-win32-x64-msvc": "16.1.0-canary.15", "sharp": "^0.34.4" }, "peerDependencies": { "@opentelemetry/api": "^1.1.0", "@playwright/test": "^1.51.1", "babel-plugin-react-compiler": "*", "react": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0", "react-dom": "^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0", "sass": "^1.3.0" }, "optionalPeers": ["@opentelemetry/api", "@playwright/test", "babel-plugin-react-compiler", "sass"], "bin": { "next": "dist/bin/next" } }, "sha512-P+ng6/Q/T2b3xMvIe4rwNmK1M+Urc4c1X0mpK4CxG+VAmDiFwDZn09Wt0j4MOk4lBa63EZ5LAekBnOHADjx9lg=="],
@@ -2950,6 +2952,8 @@
 
     "next-view-transitions/next/postcss": ["postcss@8.4.31", "", { "dependencies": { "nanoid": "^3.3.6", "picocolors": "^1.0.0", "source-map-js": "^1.0.2" } }, "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ=="],
 
+    "next/@playwright/test/playwright": ["playwright@1.58.0-alpha-2025-12-14", "", { "dependencies": { "playwright-core": "1.58.0-alpha-2025-12-14" }, "optionalDependencies": { "fsevents": "2.3.2" }, "bin": { "playwright": "cli.js" } }, "sha512-pDkapABS3cgLkjjVjGOVe9/FJJU+67a/hYCAc+oFe3+uuimusNKEPvc9QAjD4IeAFsc6mZAKnZY4iUWeFHpOow=="],
+
     "null-loader/schema-utils/ajv": ["ajv@6.12.6", "", { "dependencies": { "fast-deep-equal": "^3.1.1", "fast-json-stable-stringify": "^2.0.0", "json-schema-traverse": "^0.4.1", "uri-js": "^4.2.2" } }, "sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g=="],
 
     "null-loader/schema-utils/ajv-keywords": ["ajv-keywords@3.5.2", "", { "peerDependencies": { "ajv": "^6.9.1" } }, "sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ=="],
@@ -2995,6 +2999,10 @@
     "file-loader/schema-utils/ajv/json-schema-traverse": ["json-schema-traverse@0.4.1", "", {}, "sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg=="],
 
     "next-view-transitions/next/@playwright/test/playwright": ["playwright@1.58.0-alpha-2025-12-10", "", { "dependencies": { "playwright-core": "1.58.0-alpha-2025-12-10" }, "optionalDependencies": { "fsevents": "2.3.2" }, "bin": { "playwright": "cli.js" } }, "sha512-xutpztj8pHva24Yf/oF1/+DwlT3/KzdvFq7K0CrCEUK10lEpSaKxH81dFnyGTOiSwhRTdCGkzSG13MuS39yt9w=="],
+
+    "next/@playwright/test/playwright/fsevents": ["fsevents@2.3.2", "", { "os": "darwin" }, "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="],
+
+    "next/@playwright/test/playwright/playwright-core": ["playwright-core@1.58.0-alpha-2025-12-14", "", { "bin": { "playwright-core": "cli.js" } }, "sha512-inkwK8DJ6ZTQh2RXPvgL6jpIpxue8ynUlOTb6lJzWxWhrpCoBHU4wc5CUnma+Xea753wAa65z4j3o9rMBW1uuA=="],
 
     "null-loader/schema-utils/ajv/json-schema-traverse": ["json-schema-traverse@0.4.1", "", {}, "sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg=="],
 

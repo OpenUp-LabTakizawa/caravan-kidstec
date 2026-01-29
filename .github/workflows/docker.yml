@@ -64,14 +64,14 @@ jobs:
           ref: ${{ env.SHA }}
 
       - name: 🐋 Login to Docker Hub
-        uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
         with:
           username: ${{ env.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: 🚢 Login to GitHub Container Registry
         if: fromJSON(env.IS_PUSH)
-        uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
         with:
           registry: ${{ env.GHCR_REGISTRY }}
           username: ${{ github.repository_owner }}

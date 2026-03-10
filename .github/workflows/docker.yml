@@ -126,7 +126,7 @@ jobs:
 
       - name: 🔎 Docker Scout
         if: github.event_name == 'pull_request_target'
-        uses: docker/scout-action@75ec1d410792f411fb41df7ab69a62d14d9b6884
+        uses: docker/scout-action@1128f02d1e60f339af7306e0e62b9fdc13d9fab9
         with:
           command: compare
           image: ${{ steps.meta.outputs.tags }}

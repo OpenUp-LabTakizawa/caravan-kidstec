@@ -24,7 +24,7 @@ jobs:
           persist-credentials: false
 
       - name: 🐣 Install bun
-        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: canary
 
@@ -39,6 +39,6 @@ jobs:
 
       - name: 💾 Commit
         if: success() || failure()
-        uses: autofix-ci/action@7a166d7532b277f34e16238930461bf77f9d7ed8
+        uses: autofix-ci/action@v1.3.3
         with:
           commit-message: "fix(autofix.ci): apply automated fixes"

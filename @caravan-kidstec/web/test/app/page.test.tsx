@@ -2,10 +2,9 @@ import { describe, expect, test } from "bun:test"
 import { render } from "@testing-library/react"
 import Home from "@/app/page.tsx"
 
-render(<Home />)
-
 describe("className test", () => {
   test("article test", () => {
+    render(<Home />)
     const article = document.querySelector("article")
     expect(article?.className).toEqual(
       "max-w-3xl mx-auto pb-4 space-y-6 text-center",
@@ -13,6 +12,7 @@ describe("className test", () => {
   })
 
   test("section test", () => {
+    render(<Home />)
     const sections = document.querySelectorAll("section")
     expect(sections[0]?.className).toEqual(
       "font-bold leading-7 space-y-4 text-base text-center tracking-[.29em]",

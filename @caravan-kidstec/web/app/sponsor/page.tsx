@@ -5,8 +5,8 @@ import {
 import Link from "next/link"
 import type { JSX } from "react"
 import { FadeInUp } from "@/app/components/animation/fadeInUp"
-import { CloudfrontImage } from "@/app/components/media/cloudfrontImage"
 import { Heading } from "@/app/components/layout/heading"
+import { CloudfrontImage } from "@/app/components/media/cloudfrontImage"
 import type { Sponsor } from "@/app/interfaces/sponsor"
 import { SPONSOR } from "@/app/lib/constant"
 

@@ -1,8 +1,7 @@
-import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
+import { CloudfrontImage } from "@/app/components/media/cloudfrontImage"
 import type { Partner } from "@/app/interfaces/partner"
-import { cloudfrontLoader } from "@/app/lib/loader"
 
 export function Partners({
   partners,
@@ -15,8 +14,7 @@ export function Partners({
           className="bg-gray-100 p-2 rounded-2xl shadow-lg space-y-2"
         >
           <div className="bg-white col-span-2 flex items-center rounded-2xl sm:col-span-1">
-            <Image
-              loader={cloudfrontLoader}
+            <CloudfrontImage
               src={partner.src}
               width={256}
               height={256}

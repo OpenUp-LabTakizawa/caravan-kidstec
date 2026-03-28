@@ -1,0 +1,71 @@
+name: Upload PR comment
+description: Create comment file and upload as artifact with PR number
+
+inputs:
+  is_success:
+    description: Whether the check passed
+    required: true
+  success_title:
+    description: Title for success comment
+    required: true
+  success_body:
+    description: Body for success comment (markdown)
+    required: false
+    default: ""
+  failure_title:
+    description: Title for failure comment
+    required: true
+  failure_body:
+    description: Body for failure comment (markdown)
+    required: true
+  workflow_file:
+    description: Workflow filename for generated-comment marker
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: 📝 Create comment
+      shell: bash
+      env:
+        IS_SUCCESS: ${{ inputs.is_success }}
+        SUCCESS_TITLE: ${{ inputs.success_title }}
+        SUCCESS_BODY: ${{ inputs.success_body }}
+        FAILURE_TITLE: ${{ inputs.failure_title }}
+        FAILURE_BODY: ${{ inputs.failure_body }}
+        REPO: ${{ github.repository }}
+        WORKFLOW_NAME: ${{ github.workflow }}
+        WORKFLOW_FILE: ${{ inputs.workflow_file }}
+      run: |
+        UUID=$(uuidgen)
+        if [ "$IS_SUCCESS" = "true" ]; then
+          cat <<EOF_$UUID > comment.txt
+        # ✅ $SUCCESS_TITLE
+        $SUCCESS_BODY
+        <!-- generated-comment [$WORKFLOW_NAME](https://github.com/$REPO/.github/workflows/$WORKFLOW_FILE) -->
+        EOF_$UUID
+        else
+          cat <<EOF_$UUID > comment.txt
+        # ❌ $FAILURE_TITLE
+        $FAILURE_BODY
+        <!-- generated-comment [$WORKFLOW_NAME](https://github.com/$REPO/.github/workflows/$WORKFLOW_FILE) -->
+        EOF_$UUID
+        fi
+
+    - name: 🔢 Create pull request number
+      shell: bash
+      env:
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+      run: echo "$PR_NUMBER" > pr_number.txt
+
+    - name: 🆙 Upload comment
+      uses: actions/upload-artifact@v7
+      with:
+        name: comment
+        path: comment.txt
+
+    - name: 🆙 Upload pull request number
+      uses: actions/upload-artifact@v7
+      with:
+        name: pr_number
+        path: pr_number.txt

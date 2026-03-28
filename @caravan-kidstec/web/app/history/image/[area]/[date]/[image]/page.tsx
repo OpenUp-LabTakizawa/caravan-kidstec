@@ -1,6 +1,6 @@
 import type { Metadata, Route } from "next"
-import Image from "next/image"
 import type { JSX } from "react"
+import { CloudfrontImage } from "@/app/components/media/cloudfrontImage"
 import { BackButton } from "@/app/components/button/backButton"
 import { Heading } from "@/app/components/layout/heading"
 import type { Menu } from "@/app/interfaces/menu"
@@ -15,7 +15,6 @@ import {
   KANTO_HISTORY,
   SITE_TITLE,
 } from "@/app/lib/constant"
-import { cloudfrontLoader } from "@/app/lib/loader"
 
 export const dynamicParams: boolean = false
 
@@ -103,8 +102,7 @@ export default async function HistoryPicture({
   return (
     <>
       <Heading menus={[HISTORY, menu, movie]} />
-      <Image
-        loader={cloudfrontLoader}
+      <CloudfrontImage
         src={picture.src}
         width={1920}
         height={1280}

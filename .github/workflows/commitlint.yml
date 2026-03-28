@@ -30,12 +30,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: canary
-      - name: 📦 Install commitlint
-        run: bun add -d @commitlint/cli @commitlint/config-conventional
-      - name: 📝 Create commitlint config
-        run: |
-          echo 'export default { extends: ["@commitlint/config-conventional"],
-          ignores: [(message: string) => message.includes("Signed-off-by: dependabot[bot]")] }' > commitlint.config.ts
+      - uses: ./.github/actions/setup-commitlint
 
       - name: 👀 Validate current commit (last commit) with commitlint
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
@@ -72,57 +67,38 @@ jobs:
     if: (success() || failure()) && github.event_name == 'pull_request'
 
     steps:
-      - name: 📝 Create comment
-        env:
-          ACTOR: ${{ github.actor }}
-          COMMITLINT_LOG: ${{ needs.commitlint.outputs.commitlint_log }}
-          IS_SUCCESS: ${{ needs.commitlint.outputs.is_success }}
-          REPO: ${{ github.repository }}
-          RUN_ID: ${{ github.run_id }}
-          SHA: ${{ github.event.pull_request.head.sha }}
-          WORKFLOW_NAME: ${{ github.workflow }}
-        run: |
-          UUID=$(uuidgen)
-          if [ "$IS_SUCCESS" = "true" ]; then
-            cat <<EOF_$UUID > comment.txt
-          # ✅ Commitlint Passed
-          Thank you for updating the commit message to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
-          <!-- generated-comment [$WORKFLOW_NAME](https://github.com/$REPO/.github/workflows/commitlint.yml) -->
-          EOF_$UUID
-          else
-            cat <<EOF_$UUID > comment.txt
-          # ❌ Commitlint Failed
-          @$ACTOR, your commit $SHA failed the commitlint check.
-
-          <details>
-          <summary><strong>Commitlint Log</strong></summary>
-
-          \`\`\`shell
-          $COMMITLINT_LOG
-          \`\`\`
-
-          </details>
-
-          Please update the commit message to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
-          👀[View in Actions](https://github.com/$REPO/actions/runs/$RUN_ID)
-          <!-- generated-comment [$WORKFLOW_NAME](https://github.com/$REPO/.github/workflows/commitlint.yml) -->
-          EOF_$UUID
-          fi
-
-      - name: 🔢 Create pull request number
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: |
-          echo "$PR_NUMBER" > pr_number.txt
-
-      - name: 🆙 Upload test comment
-        uses: actions/upload-artifact@v7
+      - uses: actions/checkout@v6
         with:
-          name: comment
-          path: comment.txt
-
-      - name: 🆙 Upload pull request number
-        uses: actions/upload-artifact@v7
+          persist-credentials: false
+      - uses: ./.github/actions/upload-pr-comment
         with:
-          name: pr_number
-          path: pr_number.txt
+          is_success: ${{ needs.commitlint.outputs.is_success }}
+          success_title: >-
+            Commitlint Passed
+          success_body: |
+            Thank you for updating the commit message to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
+          failure_title: >-
+            Commitlint Failed
+          failure_body: |
+            @${{ github.actor }}, your commit ${{ github.event.pull_request.head.sha }} failed the commitlint check.
+
+
+            <details>
+
+            <summary><strong>Commitlint Log</strong></summary>
+
+
+            ```shell
+
+            ${{ needs.commitlint.outputs.commitlint_log }}
+
+            ```
+
+
+            </details>
+
+
+            Please update the commit message to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
+
+            👀[View in Actions](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          workflow_file: commitlint.yml

@@ -1,0 +1,14 @@
+name: Setup commitlint
+description: Install commitlint and create config (checkout and bun must be set up beforehand)
+
+runs:
+  using: composite
+  steps:
+    - name: 📦 Install commitlint
+      shell: bash
+      run: bun add -d @commitlint/cli @commitlint/config-conventional
+    - name: 📝 Create commitlint config
+      shell: bash
+      run: |
+        echo 'export default { extends: ["@commitlint/config-conventional"],
+        ignores: [(message: string) => message.includes("Signed-off-by: dependabot[bot]")] }' > commitlint.config.ts

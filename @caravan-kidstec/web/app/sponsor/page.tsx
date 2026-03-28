@@ -2,14 +2,13 @@ import {
   ArrowTopRightOnSquareIcon,
   BuildingOffice2Icon,
 } from "@heroicons/react/24/solid"
-import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 import { FadeInUp } from "@/app/components/animation/fadeInUp"
 import { Heading } from "@/app/components/layout/heading"
+import { CloudfrontImage } from "@/app/components/media/cloudfrontImage"
 import type { Sponsor } from "@/app/interfaces/sponsor"
 import { SPONSOR } from "@/app/lib/constant"
-import { cloudfrontLoader } from "@/app/lib/loader"
 
 export default function SponsorPage(): JSX.Element {
   const sponsors: Sponsor[] = [
@@ -39,8 +38,7 @@ export default function SponsorPage(): JSX.Element {
             className="bg-gray-100 flex gap-1 h-32 items-center p-1 rounded-2xl shadow-lg sm:h-40"
           >
             <div className="bg-white flex grow h-full items-center justify-center rounded-2xl">
-              <Image
-                loader={cloudfrontLoader}
+              <CloudfrontImage
                 src={sponsor.src}
                 width={256}
                 height={256}

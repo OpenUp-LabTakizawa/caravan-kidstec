@@ -27,12 +27,7 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: canary
-      - name: 📦 Install commitlint
-        run: bun add -d @commitlint/cli @commitlint/config-conventional
-      - name: 📝 Create commitlint config
-        run: |
-          echo 'export default { extends: ["@commitlint/config-conventional"],
-          ignores: [(message: string) => message.includes("Signed-off-by: dependabot[bot]")] }' > commitlint.config.ts
+      - uses: ./.github/actions/setup-commitlint
 
       - name: 👀 Validate PR title with commitlint
         id: commitlint
@@ -62,58 +57,40 @@ jobs:
     if: success() || failure()
 
     steps:
-      - name: 📝 Create comment
-        env:
-          ACTOR: ${{ github.actor }}
-          COMMITLINT_LOG: ${{ needs.lint-title.outputs.commitlint_log }}
-          IS_SUCCESS: ${{ needs.lint-title.outputs.is_success }}
-          REPO: ${{ github.repository }}
-          RUN_ID: ${{ github.run_id }}
-          SHA: ${{ github.event.pull_request.head.sha }}
-          WORKFLOW_NAME: ${{ github.workflow }}
-        run: |
-          UUID=$(uuidgen)
-          if [ "$IS_SUCCESS" = "true" ]; then
-            cat <<EOF_$UUID > comment.txt
-          # ✅ Pull Request Title Linting Passed
-          Thank you for updating the title of this pull request to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
-          <!-- generated-comment [$WORKFLOW_NAME](https://github.com/$REPO/.github/workflows/pull-request-title-lint.yml) -->
-          EOF_$UUID
-          else
-            cat <<EOF_$UUID > comment.txt
-          # ❌ Pull Request Title Linting Failed
-          @$ACTOR, thank you for opening this pull request 👋🏼
-          We require pull request titles to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) and it looks like your proposed title needs to be adjusted.
-
-          <details>
-          <summary><strong>Commitlint Log</strong></summary>
-
-          \`\`\`shell
-          $COMMITLINT_LOG
-          \`\`\`
-
-          </details>
-
-          Please update the title of this pull request to follow the specification.
-          👀[View in Actions](https://github.com/$REPO/actions/runs/$RUN_ID)
-          <!-- generated-comment [$WORKFLOW_NAME](https://github.com/$REPO/.github/workflows/pull-request-title-lint.yml) -->
-          EOF_$UUID
-          fi
-
-      - name: 🔢 Create pull request number
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: |
-          echo "$PR_NUMBER" > pr_number.txt
-
-      - name: 🆙 Upload test comment
-        uses: actions/upload-artifact@v7
+      - uses: actions/checkout@v6
         with:
-          name: comment
-          path: comment.txt
-
-      - name: 🆙 Upload pull request number
-        uses: actions/upload-artifact@v7
+          persist-credentials: false
+      - uses: ./.github/actions/upload-pr-comment
         with:
-          name: pr_number
-          path: pr_number.txt
+          is_success: ${{ needs.lint-title.outputs.is_success }}
+          success_title: >-
+            Pull Request Title Linting Passed
+          success_body: |
+            Thank you for updating the title of this pull request to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
+          failure_title: >-
+            Pull Request Title Linting Failed
+          failure_body: |
+            @${{ github.actor }}, thank you for opening this pull request 👋🏼
+
+            We require pull request titles to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) and it looks like your proposed title needs to be adjusted.
+
+
+            <details>
+
+            <summary><strong>Commitlint Log</strong></summary>
+
+
+            ```shell
+
+            ${{ needs.lint-title.outputs.commitlint_log }}
+
+            ```
+
+
+            </details>
+
+
+            Please update the title of this pull request to follow the specification.
+
+            👀[View in Actions](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          workflow_file: pull-request-title-lint.yml

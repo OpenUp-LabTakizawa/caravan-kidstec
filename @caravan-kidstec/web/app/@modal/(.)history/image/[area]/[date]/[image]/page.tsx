@@ -1,6 +1,6 @@
-import Image from "next/image"
 import type { JSX } from "react"
 import { Modal } from "@/app/@modal/(.)history/modal"
+import { CloudfrontImage } from "@/app/components/media/cloudfrontImage"
 import type { Picture } from "@/app/interfaces/picture"
 import type { EventDate } from "@/app/interfaces/schedule"
 import {
@@ -9,7 +9,6 @@ import {
   KANTO,
   KANTO_HISTORY,
 } from "@/app/lib/constant"
-import { cloudfrontLoader } from "@/app/lib/loader"
 
 export function generateStaticParams(): {
   area: string
@@ -55,8 +54,7 @@ export default async function PictureModal({
 
   return (
     <Modal>
-      <Image
-        loader={cloudfrontLoader}
+      <CloudfrontImage
         src={picture.src}
         width={1920}
         height={1280}

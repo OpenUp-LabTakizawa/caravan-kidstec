@@ -71,56 +71,36 @@ jobs:
     if: (success() || failure()) && github.event_name == 'pull_request'
 
     steps:
-      - name: 📝 Create comment
-        env:
-          ACTOR: ${{ github.actor }}
-          IS_SUCCESS: ${{ needs.test.outputs.is_success }}
-          REPO: ${{ github.repository }}
-          RUN_ID: ${{ github.run_id }}
-          SHA: ${{ github.event.pull_request.head.sha }}
-          TEST_LOG: ${{ needs.test.outputs.test_log }}
-          WORKFLOW_NAME: ${{ github.workflow }}
-        run: |
-          UUID=$(uuidgen)
-          if [ "$IS_SUCCESS" = "true" ]; then
-            cat <<EOF_$UUID > comment.txt
-          # ✅ Test Passed
-          Failed tests were fixed.
-          <!-- generated-comment [$WORKFLOW_NAME](https://github.com/$REPO/.github/workflows/test.yml) -->
-          EOF_$UUID
-          else
-            cat <<EOF_$UUID > comment.txt
-          # ❌ Test Failed
-          @$ACTOR, your commit $SHA failed the test.
-
-          <details>
-          <summary><strong>Test Log</strong></summary>
-
-          \`\`\`shell
-          $TEST_LOG
-          \`\`\`
-
-          </details>
-
-          👀[View in Actions](https://github.com/$REPO/actions/runs/$RUN_ID)
-          <!-- generated-comment [$WORKFLOW_NAME](https://github.com/$REPO/.github/workflows/test.yml) -->
-          EOF_$UUID
-          fi
-
-      - name: 🔢 Create pull request number
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: |
-          echo "$PR_NUMBER" > pr_number.txt
-
-      - name: 🆙 Upload test comment
-        uses: actions/upload-artifact@v7
+      - uses: actions/checkout@v6
         with:
-          name: comment
-          path: comment.txt
-
-      - name: 🆙 Upload pull request number
-        uses: actions/upload-artifact@v7
+          persist-credentials: false
+      - uses: ./.github/actions/upload-pr-comment
         with:
-          name: pr_number
-          path: pr_number.txt
+          is_success: ${{ needs.test.outputs.is_success }}
+          success_title: >-
+            Test Passed
+          success_body: >-
+            Failed tests were fixed.
+          failure_title: >-
+            Test Failed
+          failure_body: >-
+            @${{ github.actor }}, your commit ${{ github.event.pull_request.head.sha }} failed the test.
+
+
+            <details>
+
+            <summary><strong>Test Log</strong></summary>
+
+
+            ```shell
+
+            ${{ needs.test.outputs.test_log }}
+
+            ```
+
+
+            </details>
+
+
+            👀[View in Actions](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          workflow_file: test.yml

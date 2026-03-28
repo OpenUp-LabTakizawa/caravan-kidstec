@@ -1,11 +1,10 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline"
 import type { Route } from "next"
-import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 import { Heading } from "@/app/components/layout/heading"
+import { CloudfrontImage } from "@/app/components/media/cloudfrontImage"
 import { SECRETARIAT } from "@/app/lib/constant"
-import { cloudfrontLoader } from "@/app/lib/loader"
 
 export default function Secretariat(): JSX.Element {
   const organizations = [
@@ -52,8 +51,7 @@ export default function Secretariat(): JSX.Element {
             <br className="sm:hidden" />
             相互に協力し合うことを示しています。
           </p>
-          <Image
-            loader={cloudfrontLoader}
+          <CloudfrontImage
             src="/content/sdg_icon_17_ja_2.avif"
             width={58}
             height={58}

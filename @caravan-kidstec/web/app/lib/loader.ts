@@ -1,5 +1,3 @@
-"use client"
-
 import { CLOUDFRONT_URL } from "./constant.ts"
 
 // Docs: https://aws.amazon.com/developer/application-security-performance/articles/image-optimization

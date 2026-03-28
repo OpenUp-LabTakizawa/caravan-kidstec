@@ -25,7 +25,7 @@
 
 ## 📃 Get Started
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Bun](https://bun.sh/) installed on your computer.  
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Mise](https://mise.jdx.dev/) installed on your computer.  
 From your command line:
 
 ### 1. Clone this repository
@@ -146,6 +146,7 @@ This software uses the following open source packages:
 - [Bun](https://bun.sh/)
 - [HAPPY DOM](https://github.com/capricorn86/happy-dom)
 - [LINE Messaging API SDK for nodejs](https://github.com/line/line-bot-sdk-nodejs)
+- [Mise](https://mise.jdx.dev/)
 - [Next.js](https://nextjs.org/)
 - [Node.js](https://nodejs.org/)
 - [Playwright](https://playwright.dev/)

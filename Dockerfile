@@ -14,7 +14,7 @@ RUN bun run build
 
 FROM gcr.io/distroless/nodejs24-debian13:nonroot
 WORKDIR /app
-COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.9.1 /lambda-adapter /opt/extensions/lambda-adapter
+COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:1.0.0 /lambda-adapter /opt/extensions/lambda-adapter
 
 COPY --from=builder /usr/src/app/@caravan-kidstec/web/public ./@caravan-kidstec/web/public
 COPY --from=builder /usr/src/app/@caravan-kidstec/web/.next/standalone ./

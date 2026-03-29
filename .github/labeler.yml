@@ -22,7 +22,6 @@ docker:
 - all:
   - changed-files:
     - any-glob-to-any-file: '@caravan-kidstec/web/app/**'
-    - all-globs-to-all-files: '!@caravan-kidstec/web/test/**/*.test.*'
 🪸git:
 - changed-files:
   - any-glob-to-any-file: ['.gitattributes', '**/.gitignore']

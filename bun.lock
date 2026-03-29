@@ -11,7 +11,7 @@
     },
     "@caravan-kidstec/docs": {
       "name": "@caravan-kidstec/docs",
-      "version": "1.5.0",
+      "version": "1.6.0",
       "dependencies": {
         "@docusaurus/core": "^3.9.2",
         "@docusaurus/faster": "^3.9.2",
@@ -31,7 +31,7 @@
     },
     "@caravan-kidstec/web": {
       "name": "@caravan-kidstec/web",
-      "version": "1.5.0",
+      "version": "1.6.0",
       "dependencies": {
         "@heroicons/react": "^2.2.0",
         "@line/bot-sdk": "^10.6.0",

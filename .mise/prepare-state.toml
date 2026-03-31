@@ -1,3 +1,3 @@
 [providers.bun]
-"bun.lock" = "45bc6960bebfee9ff860845eb6dff7bfacf276928a1957ecb04bbee5447fb516"
-"package.json" = "3d28e5da443c13b792449dc5acdbb4f047770d9515c2b07ac53e2068ef018eaf"
+"bun.lock" = "0f4eece35e9d92666ce07123903a4d223a4433b12e128ff8f5b85e3c187bc9e0"
+"package.json" = "4e3549c4b84d53a2bb94731e864d8ac77128d5432844a6e7c31ce19bd2716632"

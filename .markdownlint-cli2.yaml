@@ -4,6 +4,8 @@ config:
 fix: true
 gitignore: true
 ignores:
+  - "@caravan-kidstec/docs/**"
+  - "@caravan-kidstec/web/README.md"
   - .github/pull_request_template.md
   - CODE_OF_CONDUCT.md
   - README.md

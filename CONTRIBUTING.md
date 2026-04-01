@@ -43,7 +43,7 @@ If you would like to *implement* a new feature, please consider the size of the 
   This process allows us to better coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is successfully accepted into the project.
 
 > [!NOTE]
-> Adding a new topic to the documentation, or significantly re-writing a topic, counts as a major feature.
+> Adding a new topic to the documentation, or significantly rewriting a topic, counts as a major feature.
 
 - **Small Features** can be crafted and directly [submitted as a Pull Request](#submitting-a-pull-request-pr).
 
@@ -96,7 +96,7 @@ This format leads to **easier to read commit history**.
 
 Each commit message consists of a **header**, a **body**, and a **footer**.
 
-```
+```bash
 <header>
 <BLANK LINE>
 <body>
@@ -114,7 +114,7 @@ The [Commit Message Footer](#commit-message-footer) format describes what the fo
 
 ### Commit Message Header
 
-```
+```bash
 <type>(<scope>): <summary>
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
@@ -132,7 +132,7 @@ Must be one of the following:
 
 - **build**: Changes that affect the build system or external dependencies (example scopes: npm)
 - **chore**: Updating grunt tasks etc, no production code change
-- **ci**: Changes to our CI configuration files and scripts (examples: CircleCi, SauceLabs)
+- **ci**: Changes to our CI configuration files and scripts (examples: CircleCI, Sauce Labs)
 - **docs**: Documentation only changes
 - **feat**: A new feature
 - **fix**: A bug fix
@@ -164,7 +164,7 @@ Use the summary field to provide a succinct description of the change:
 - use the imperative, present tense: "change" not "changed" nor "changes"
 - don't capitalize the first letter
 - no dot (.) at the end
-- to be easier to understand, recommend to add emoji♥️
+- to make commits easier to understand, we recommend adding emojis♥️
 
 ### Commit Message Body
 
@@ -179,7 +179,7 @@ You can include a comparison of the previous behavior with the new behavior in o
 The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub issues, Jira tickets, and other PRs that this commit closes or is related to.
 For example:
 
-```
+```bash
 BREAKING CHANGE: <breaking change summary>
 <BLANK LINE>
 <breaking change description + migration instructions>
@@ -190,7 +190,7 @@ Fixes #<issue number>
 
 or
 
-```
+```bash
 DEPRECATED: <what is deprecated>
 <BLANK LINE>
 <deprecation description + recommended update path>

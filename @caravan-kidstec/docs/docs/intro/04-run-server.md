@@ -28,6 +28,6 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-`bun dev`、`deno task dev`、`pnpm dev`、`yarn dev` コマンドはローカルでサイトを立ち上げ、開発サーバーで実行されます。 <http://localhost:3000/> のアドレスから確認出来ます。
+`bun dev`、`deno task dev`、`pnpm dev`、`yarn dev` コマンドはローカルでサイトを立ち上げ、開発サーバーで実行されます。 http://localhost:3000/ のアドレスから確認出来ます。
 
 `app/page.tsx` をコードエディターで開き、何行か編集してみて下さい。 サイトが自動的にリロードされて更新されます。

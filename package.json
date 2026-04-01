@@ -35,8 +35,8 @@
     "docs-build": "bun --filter @caravan-kidstec/docs build",
     "lint": "biome lint --write",
     "format": "biome format --write",
-    "check": "biome check --write",
-    "test:app": "bun --filter @caravan-kidstec/web test:app",
+    "lint:fix": "biome check --write",
+    "test:unit": "bun --filter @caravan-kidstec/web test:unit",
     "test:e2e": "bun --filter @caravan-kidstec/web test:e2e",
     "test:report": "bun --filter @caravan-kidstec/web test:report"
   },

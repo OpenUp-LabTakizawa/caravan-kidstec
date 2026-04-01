@@ -33,8 +33,8 @@ bun i                # Install dependencies
 bun dev              # Start dev server
 bun run build        # Production build
 bun start            # Start production server
-bun check            # Biome lint + format
-bun test:app         # Unit tests
+bun lint:fix         # Biome lint + format
+bun test:unit        # Unit tests
 bun test:e2e         # E2E tests (Playwright)
 bun docs-dev         # Docs site dev server
 bun docs-build       # Docs site build
@@ -94,5 +94,5 @@ Follow Angular convention:
 - Next.js canary is used; experimental features (`inlineCss`, `viewTransition`) are enabled
 - React Compiler is enabled (`reactCompiler: true`)
 - Images are served via CloudFront (`dk75m1tgsot44.cloudfront.net`)
-- Tests (`bun test:app`) run during Docker build
-- Run `bun check` after code changes to execute Biome checks
+- Tests (`bun test:unit`) run during Docker build
+- Run `bun lint:fix` after code changes to execute Biome checks

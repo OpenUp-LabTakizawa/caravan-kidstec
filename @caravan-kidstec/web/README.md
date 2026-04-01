@@ -49,7 +49,7 @@ bun dev
 ### 4. Test the app
 
 ```bash
-bun test:app
+bun test:unit
 ```
 
 ### 5. E2E Test
@@ -61,7 +61,7 @@ bun test:e2e
 ### 6. Format and Lint the files
 
 ```bash
-bun check
+bun lint:fix
 ```
 
 ### 7. Build the app
@@ -97,6 +97,7 @@ GitHub Codespaces is a cloud-based development environment that allows you to wo
 You can click the badge above or [here](https://github.com/codespaces/new/?repo=OpenUp-LabTakizawa/caravan-kidstec) to get started.
 
 Follow these steps to open this project in a Codespace:  
+
 1. Click the **Code** drop-down menu.  
 2. Click on the **Codespaces** tab.  
 3. Click **Create codespace on main**.

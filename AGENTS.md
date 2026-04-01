@@ -8,7 +8,7 @@ caravan-kidstec — A web application for a multi-experience program to learn pr
 
 Monorepo using Bun workspaces.
 
-```
+```bash
 @caravan-kidstec/
 ├── web/   # Next.js (App Router) main web app
 └── docs/  # Docusaurus documentation site
@@ -57,7 +57,7 @@ bun docs-build       # Docs site build
 
 Follow Angular convention:
 
-```
+```bash
 <type>(<scope>): <summary>
 ```
 
@@ -67,7 +67,7 @@ Follow Angular convention:
 
 ## Directory Structure (web)
 
-```
+```bash
 @caravan-kidstec/web/
 ├── app/
 │   ├── api/bot/         # LINE Bot API route

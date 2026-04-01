@@ -4,7 +4,7 @@
 
 ## JSX
 
-特徴は [JSX](https://ja.react.dev/learn/writing-markup-with-jsx) という JavaScript ファイル内に HTML のようなマークアップを記述することです。   
+特徴は [JSX](https://ja.react.dev/learn/writing-markup-with-jsx) という JavaScript ファイル内に HTML のようなマークアップを記述することです。
 
 ```jsx
 export default function TodoList() {
@@ -28,10 +28,10 @@ export default function TodoList() {
 
 上記のコードの出力は次のようになります。
 
-<img 
-  src="https://i.imgur.com/yXOvdOSs.jpg" 
-  alt="Hedy Lamarr" 
-  className="photo" 
+<img
+  src="https://i.imgur.com/yXOvdOSs.jpg"
+  alt="Hedy Lamarr"
+  className="photo"
 />
 <ul>
   <li>Invent new traffic lights</li>

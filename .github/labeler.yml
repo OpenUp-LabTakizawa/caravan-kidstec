@@ -17,7 +17,7 @@ docker:
   - any-glob-to-any-file: ['.dockerignore', 'Dockerfile']
 📝documentation:
 - changed-files:
-  - any-glob-to-any-file: ['@caravan-kidstec/docs/**', '**/*.md']
+  - any-glob-to-any-file: ['@caravan-kidstec/docs/**', '.markdownlint-cli2.yaml', '**/*.md']
 🚀enhancement:
 - all:
   - changed-files:

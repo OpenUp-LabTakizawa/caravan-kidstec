@@ -35,9 +35,9 @@ sidebar_position: 3
 これは私の **初めての Docusaurus ドキュメントです**!
 ```
 
-また、`sidebars.js` を使用し、明示的にサイドバーを作成することも可能です:
+また、`sidebars.ts` を使用し、明示的にサイドバーを作成することも可能です:
 
-```js title="sidebars.js"
+```ts title="sidebars.ts"
 export default {
   tutorialSidebar: [
     'tutorial',

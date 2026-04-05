@@ -11,7 +11,7 @@ Docusaurus は **もっと沢山出来ることがあります**！
 ## 次は何をすれば？
 
 - [公式ドキュメント](https://docusaurus.io/) を読んでみよう
-- [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config) からサイト設定を変更してみよう
+- [`docusaurus.config.ts`](https://docusaurus.io/docs/api/docusaurus-config) からサイト設定を変更してみよう
 - ナビゲーションバーやフッターを [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration) と一緒に追加してみよう
 - 独自の [デザインとレイアウト](https://docusaurus.io/docs/styling-layout) を追加してみよう
 - [検索バー](https://docusaurus.io/docs/search) を追加してみよう

@@ -43,9 +43,9 @@ Docusaurus は複数のバージョンでドキュメント管理出来ます。
 
 バージョン間の移動をシームレスにする為に、バージョンドロップダウンを追加します。
 
-`docusaurus.config.js` ファイルを編集します:
+`docusaurus.config.ts` ファイルを編集します:
 
-```js title="docusaurus.config.js"
+```ts title="docusaurus.config.ts"
 export default {
   themeConfig: {
     navbar: {

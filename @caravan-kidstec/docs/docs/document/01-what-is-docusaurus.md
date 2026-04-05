@@ -28,7 +28,6 @@ docs/
 │   ├── img/
 │   └── .nojekyll
 ├── .gitignore
-├── bun.lock
 ├── docusaurus.config.ts
 ├── package.json
 ├── README.md

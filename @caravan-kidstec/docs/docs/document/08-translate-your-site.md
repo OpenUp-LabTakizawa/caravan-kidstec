@@ -7,9 +7,9 @@ import TabItem from '@theme/TabItem';
 
 ## i18n 設定
 
-`docusaurus.config.js` に、 `fr` locale を追加しサポートします:
+`docusaurus.config.ts` に、 `fr` locale を追加しサポートします:
 
-```js title="docusaurus.config.js"
+```ts title="docusaurus.config.ts"
 export default {
   i18n: {
     defaultLocale: 'en',
@@ -69,9 +69,9 @@ cp docs/intro.md i18n/fr/docusaurus-plugin-content-docs/current/intro.md
 
 言語間の遷移をシームレスにする為に、言語ドロップダウンを追加します。
 
-`docusaurus.config.js` ファイルを編集します:
+`docusaurus.config.ts` ファイルを編集します:
 
-```js title="docusaurus.config.js"
+```ts title="docusaurus.config.ts"
 export default {
   themeConfig: {
     navbar: {

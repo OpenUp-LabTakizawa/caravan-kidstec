@@ -1,6 +1,6 @@
-import { type ClientConfig, messagingApi } from "@line/bot-sdk"
+import { messagingApi } from "@line/bot-sdk"
 
-const clientConfig: ClientConfig = {
+const clientConfig = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN || "",
 }
 

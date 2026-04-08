@@ -6,7 +6,7 @@ import { themes as prismThemes } from "prism-react-renderer"
 
 const config: Config = {
   future: {
-    experimental_faster: true,
+    faster: true,
     v4: true,
   },
   title: "こどもテックキャラバン",

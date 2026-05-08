@@ -25,6 +25,25 @@ jobs:
   test:
     timeout-minutes: 30
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - project: chromium
+            browser: chromium
+            name: chromium
+          - project: firefox
+            browser: firefox
+            name: firefox
+          - project: webkit
+            browser: webkit
+            name: webkit
+          - project: Mobile Chrome
+            browser: chromium
+            name: mobile-chrome
+          - project: Mobile Safari
+            browser: webkit
+            name: mobile-safari
 
     steps:
       - name: 📥 Checkout
@@ -47,15 +66,16 @@ jobs:
         run: bun run build
 
       - name: 🎭 Install Playwright Browsers
-        run: bun playwright install --with-deps
+        run: bun playwright install --with-deps ${{ matrix.browser }}
 
       - name: 🧪 Run Playwright tests
-        run: bun test:e2e
+        working-directory: "@caravan-kidstec/web"
+        run: bun playwright test --project="${{ matrix.project }}"
 
       - name: 🆙 Upload Test Report
         uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}
         with:
-          name: playwright-report
-          path: playwright-report/
+          name: playwright-report-${{ matrix.name }}
+          path: "@caravan-kidstec/web/playwright-report/"
           retention-days: 30

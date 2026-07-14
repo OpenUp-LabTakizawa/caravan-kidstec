@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     inlineCss: true,
     isrFlushToDisk: false,
     viewTransition: true,
+    useTypeScriptCli: true,
   },
   images: {
     formats: ["image/avif", "image/webp"],

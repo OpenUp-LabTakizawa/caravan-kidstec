@@ -40,11 +40,11 @@
     "@line/bot-sdk": "^11.2.0",
     "next": "canary",
     "next-view-transitions": "^0.3.5",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.3",
+    "@biomejs/biome": "^2.5.5",
     "@happy-dom/global-registrator": "^20.11.0",
     "@playwright/test": "next",
     "@tailwindcss/postcss": "^4.3.3",
@@ -54,7 +54,7 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "babel-plugin-react-compiler": "experimental",
-    "postcss": "^8.5.20",
+    "postcss": "^8.5.21",
     "tailwindcss": "^4.2.2",
     "typescript": "^7.0.2"
   },

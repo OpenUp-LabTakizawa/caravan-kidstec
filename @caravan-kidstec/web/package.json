@@ -54,7 +54,7 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "babel-plugin-react-compiler": "experimental",
-    "postcss": "^8.5.22",
+    "postcss": "^8.5.23",
     "tailwindcss": "^4.2.2",
     "typescript": "^7.0.2"
   },

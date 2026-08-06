@@ -1,6 +1,9 @@
 # syntax=docker.io/docker/dockerfile-upstream:1.26.0-labs
 # check=error=true
-FROM oven/bun:1.3.14 AS builder
+FROM oven/bun:1.3.14 AS bun
+
+FROM node:26-trixie-slim AS builder
+COPY --from=bun /usr/local/bin/bun /usr/local/bin/bun
 WORKDIR /usr/src/app
 RUN --mount=type=bind,source=package.json,target=package.json \
   --mount=type=bind,source=@caravan-kidstec/docs/package.json,target=@caravan-kidstec/docs/package.json \
@@ -10,7 +13,9 @@ RUN --mount=type=bind,source=package.json,target=package.json \
   bun i --frozen-lockfile
 COPY . .
 RUN bun test:unit
-RUN bun run build
+# bun crashes (SIGILL) at the end of `next build` inside a container, so the
+# build runs on node. Revert to `bun run build` once bun ships the fix.
+RUN npm run build --workspace @caravan-kidstec/web
 
 FROM gcr.io/distroless/nodejs26-debian13:nonroot
 WORKDIR /app

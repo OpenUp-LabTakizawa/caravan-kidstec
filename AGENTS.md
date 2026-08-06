@@ -33,7 +33,7 @@ bun i                # Install dependencies
 bun dev              # Start dev server
 bun run build        # Production build
 bun start            # Start production server
-bun lint:fix         # Biome lint + format
+bun fix              # Biome check (auto-fix)
 bun test:unit        # Unit tests
 bun test:e2e         # E2E tests (Playwright)
 bun docs-dev         # Docs site dev server
@@ -95,4 +95,4 @@ Follow Angular convention:
 - React Compiler is enabled (`reactCompiler: true`)
 - Images are served via CloudFront (`dk75m1tgsot44.cloudfront.net`)
 - Tests (`bun test:unit`) run during Docker build
-- Run `bun lint:fix` after code changes to execute Biome checks
+- Run `bun fix` after code changes to execute Biome checks

@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   experimental: {
     inlineCss: true,
     isrFlushToDisk: false,
-    useTypeScriptCli: true,
   },
   images: {
     formats: ["image/avif", "image/webp"],

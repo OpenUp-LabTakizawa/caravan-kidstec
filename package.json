@@ -40,7 +40,7 @@
     "test:report": "bun --filter @caravan-kidstec/web test:report"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.9",
+    "@biomejs/biome": "^2.5.10",
     "@types/bun": "^1.4.0"
   }
 }

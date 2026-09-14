@@ -6,17 +6,21 @@ import {
   SlashIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid"
-import { usePathname } from "next/navigation"
-import { useTransitionRouter } from "next-view-transitions"
+import type { Route } from "next"
+import { usePathname, useRouter } from "next/navigation"
 import {
+  addTransitionType,
   type JSX,
   type MouseEvent,
   type ReactNode,
   type RefObject,
+  startTransition,
   type TouchEvent,
   useEffect,
   useRef,
   useState,
+  ViewTransition,
+  type ViewTransitionInstance,
 } from "react"
 import type { Picture } from "@/app/interfaces/picture"
 import type { EventDate } from "@/app/interfaces/schedule"
@@ -29,7 +33,7 @@ const edgeRegex: RegExp = /Edge/
 export function Modal({
   children,
 }: Readonly<{ children: ReactNode }>): JSX.Element {
-  const router = useTransitionRouter()
+  const router = useRouter()
   const pathname: string = usePathname()
   const pathParts: string[] = pathname.split("/")
   const history: EventDate[] =
@@ -116,13 +120,29 @@ export function Modal({
     pathParts[pathParts.length - 1] = picture.src.split("/")[5].split(".")[0]
     const direction: "left" | "right" =
       picture === eventDate.pictures[indexOfPicture - 1] ? "left" : "right"
-    router.replace(pathParts.join("/"), {
-      onTransitionReady: () => slideInOut(direction),
+    // The direction rides along on the Transition itself: React hands the
+    // types back to `onUpdate` below, which is where the animation runs now
+    // that there is no `onTransitionReady` callback to pass it to.
+    startTransition(() => {
+      addTransitionType(`slide-${direction}`)
+      router.replace(pathParts.join("/") as Route)
     })
   }
 
-  function slideInOut(direction: "left" | "right"): void {
-    document.documentElement.animate(
+  function onUpdate(
+    instance: ViewTransitionInstance,
+    types: string[],
+  ): (() => void) | undefined {
+    if (types.includes("slide-left")) {
+      return slideInOut(instance.name, "left")
+    }
+    if (types.includes("slide-right")) {
+      return slideInOut(instance.name, "right")
+    }
+  }
+
+  function slideInOut(name: string, direction: "left" | "right"): () => void {
+    const oldAnimation: Animation = document.documentElement.animate(
       [
         {
           opacity: 1,
@@ -140,11 +160,11 @@ export function Modal({
         duration: 400,
         easing: "ease",
         fill: "forwards",
-        pseudoElement: "::view-transition-old(history)",
+        pseudoElement: `::view-transition-old(${name})`,
       },
     )
 
-    document.documentElement.animate(
+    const newAnimation: Animation = document.documentElement.animate(
       [
         {
           opacity: 0,
@@ -162,9 +182,16 @@ export function Modal({
         duration: 400,
         easing: "ease",
         fill: "forwards",
-        pseudoElement: "::view-transition-new(history)",
+        pseudoElement: `::view-transition-new(${name})`,
       },
     )
+
+    // React cancels the animation through this when a transition is
+    // interrupted by the next one.
+    return () => {
+      oldAnimation.cancel()
+      newAnimation.cancel()
+    }
   }
 
   return (
@@ -190,7 +217,9 @@ export function Modal({
         >
           <XMarkIcon className="size-6" />
         </button>
-        {children}
+        <ViewTransition name="history" onUpdate={onUpdate}>
+          {children}
+        </ViewTransition>
         <div
           className={`flex gap-2 items-center justify-between${pathParts[2] === "movie" ? " flex-row-reverse" : ""}`}
         >

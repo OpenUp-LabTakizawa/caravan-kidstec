@@ -1,6 +1,6 @@
 import { PlusIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
-import { Link } from "next-view-transitions"
+import Link from "next/link"
 import type { JSX } from "react"
 import { IndicatorCarousel, ReviewCarousel } from "./carousel.tsx"
 import { Video } from "./components/media/video.tsx"

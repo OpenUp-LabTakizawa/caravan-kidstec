@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import { ViewTransitions } from "next-view-transitions"
-import type { JSX } from "react"
+import { type JSX, ViewTransition } from "react"
 import { Footer } from "./footer.tsx"
 import { Header } from "./header.tsx"
 import { ScrollToTop } from "./scrollToTop.tsx"
@@ -72,7 +71,7 @@ export default function RootLayout(props: LayoutProps<"/">): JSX.Element {
   return (
     <html lang="ja" className={zenMaruGothic.variable}>
       <body className="font-maru text-gray-800">
-        <ViewTransitions>
+        <ViewTransition>
           <Header />
           <main className="text-xs sm:px-12 sm:text-sm md:text-base">
             {props.children}
@@ -80,7 +79,7 @@ export default function RootLayout(props: LayoutProps<"/">): JSX.Element {
             <ScrollToTop />
           </main>
           <Footer />
-        </ViewTransitions>
+        </ViewTransition>
       </body>
     </html>
   )

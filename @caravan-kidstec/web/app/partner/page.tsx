@@ -1,5 +1,5 @@
 import type { Route } from "next"
-import { Link } from "next-view-transitions"
+import Link from "next/link"
 import type { JSX } from "react"
 import { Heading } from "@/app/components/layout/heading"
 import type { PartnerArea } from "@/app/interfaces/partner"

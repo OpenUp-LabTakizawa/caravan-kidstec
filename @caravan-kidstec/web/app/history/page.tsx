@@ -1,6 +1,6 @@
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
 import type { Route } from "next"
-import { Link } from "next-view-transitions"
+import Link from "next/link"
 import type { JSX } from "react"
 import { LineRegister } from "@/app/components/button/lineAddFriends"
 import { Heading } from "@/app/components/layout/heading"

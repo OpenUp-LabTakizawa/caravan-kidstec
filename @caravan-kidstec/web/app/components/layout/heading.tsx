@@ -1,5 +1,5 @@
 import { HomeIcon } from "@heroicons/react/24/solid"
-import { Link } from "next-view-transitions"
+import Link from "next/link"
 import type { JSX } from "react"
 import type { Menu } from "@/app/interfaces/menu"
 import styles from "./heading.module.css"

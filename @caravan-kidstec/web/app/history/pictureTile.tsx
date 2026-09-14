@@ -3,7 +3,7 @@
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/24/solid"
 import type { Route } from "next"
 import Image from "next/image"
-import { Link } from "next-view-transitions"
+import Link from "next/link"
 import { type JSX, type RefObject, useEffect, useRef } from "react"
 import type { Picture } from "@/app/interfaces/picture"
 import { HISTORY } from "@/app/lib/constant"

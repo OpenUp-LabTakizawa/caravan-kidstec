@@ -1,6 +1,6 @@
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid"
 import type { Route } from "next"
-import { Link } from "next-view-transitions"
+import Link from "next/link"
 import type { JSX } from "react"
 import styles from "./backButton.module.css"
 

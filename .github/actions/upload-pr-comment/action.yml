@@ -1,5 +1,5 @@
 name: Upload PR comment
-description: Create comment file and upload as artifact with PR number
+description: Create comment file and upload it as an artifact
 
 inputs:
   is_success:
@@ -52,20 +52,8 @@ runs:
         EOF_$UUID
         fi
 
-    - name: 🔢 Create pull request number
-      shell: bash
-      env:
-        PR_NUMBER: ${{ github.event.pull_request.number }}
-      run: echo "$PR_NUMBER" > pr_number.txt
-
     - name: 🆙 Upload comment
       uses: actions/upload-artifact@v7
       with:
         name: comment
         path: comment.txt
-
-    - name: 🆙 Upload pull request number
-      uses: actions/upload-artifact@v7
-      with:
-        name: pr_number
-        path: pr_number.txt

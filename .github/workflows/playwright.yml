@@ -6,15 +6,8 @@ concurrency:
 
 on:
   pull_request:
-    paths:
-      - "@caravan-kidstec/web/**"
-      - "bun.lock"
-      - "package.json"
   push:
-    paths:
-      - "@caravan-kidstec/web/**"
-      - "bun.lock"
-      - "package.json"
+    branches: main
   workflow_dispatch:
 
 permissions:

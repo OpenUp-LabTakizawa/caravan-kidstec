@@ -26,8 +26,7 @@ Instead, we recommend using [Stack Overflow][so] to ask support-related question
 - questions and answers stay available for public viewing so your question/answer might help someone else
 - [Stack Overflow][so]'s voting system assures that the best answers are prominently visible.
 
-To save your and our time, we will systematically close all issues that are requests for general support and redirect people to [Stack Overflow][so].  
-If you would like to chat about the question in real-time, you can reach out via [our Discord server][discord].
+To save your and our time, we will systematically close all issues that are requests for general support and redirect people to [Stack Overflow][so].
 
 ## 🐛Issues and Bugs
 
@@ -207,7 +206,6 @@ Similarly, a Deprecation section should start with "DEPRECATED: " followed by a 
 [coc]: https://github.com/OpenUp-LabTakizawa/caravan-kidstec/blob/main/CODE_OF_CONDUCT.md
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
 [caravan-kidstec-pr]: https://github.com/OpenUp-LabTakizawa/caravan-kidstec/pulls
-[discord]: https://discord.gg/tSHMqK8VDU
 [fork]: https://help.github.com/articles/fork-a-repo/
 [issue-template]: https://github.com/OpenUp-LabTakizawa/caravan-kidstec/tree/main/.github/ISSUE_TEMPLATE
 [pr]: https://help.github.com/articles/using-pull-requests/

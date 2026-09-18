@@ -6,20 +6,8 @@ concurrency:
 
 on:
   pull_request:
-    paths:
-      - "@caravan-kidstec/web/**"
-      - ".dockerignore"
-      - "bun.lock"
-      - "Dockerfile"
-      - "package.json"
   push:
     branches: main
-    paths:
-      - "@caravan-kidstec/web/**"
-      - ".dockerignore"
-      - "bun.lock"
-      - "Dockerfile"
-      - "package.json"
     tags:
       - "v*.*.*"
   workflow_dispatch:

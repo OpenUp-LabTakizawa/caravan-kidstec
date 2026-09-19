@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   test:
+    name: test (${{ matrix.project }})
     timeout-minutes: 30
     runs-on: ubuntu-latest
     strategy:
@@ -24,19 +25,19 @@ jobs:
         include:
           - project: chromium
             browser: chromium
-            name: chromium
+            artifact: chromium
           - project: firefox
             browser: firefox
-            name: firefox
+            artifact: firefox
           - project: webkit
             browser: webkit
-            name: webkit
-          - project: Mobile Chrome
+            artifact: webkit
+          - project: "Mobile Chrome"
             browser: chromium
-            name: mobile-chrome
-          - project: Mobile Safari
+            artifact: mobile-chrome
+          - project: "Mobile Safari"
             browser: webkit
-            name: mobile-safari
+            artifact: mobile-safari
 
     steps:
       - name: 📥 Checkout
@@ -71,6 +72,6 @@ jobs:
         uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}
         with:
-          name: playwright-report-${{ matrix.name }}
+          name: playwright-report-${{ matrix.artifact }}
           path: "@caravan-kidstec/web/playwright-report/"
           retention-days: 30

@@ -19,7 +19,7 @@ RUN npm run build --workspace @caravan-kidstec/web
 
 FROM gcr.io/distroless/nodejs26-debian13:nonroot
 WORKDIR /app
-COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:1.0.1 /lambda-adapter /opt/extensions/lambda-adapter
+COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:1.1.0 /lambda-adapter /opt/extensions/lambda-adapter
 
 COPY --from=builder /usr/src/app/@caravan-kidstec/web/public ./@caravan-kidstec/web/public
 COPY --from=builder /usr/src/app/@caravan-kidstec/web/.next/standalone ./

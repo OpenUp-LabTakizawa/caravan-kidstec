@@ -36,13 +36,13 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@line/bot-sdk": "^11.2.0",
+    "@line/bot-sdk": "^11.3.0",
     "next": "canary",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.14",
+    "@biomejs/biome": "^2.5.15",
     "@happy-dom/global-registrator": "^20.14.5",
     "@playwright/test": "next",
     "@tailwindcss/postcss": "^4.3.3",

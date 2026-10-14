@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 # check=error=true
-FROM oven/bun:1.4.2 AS bun
+FROM oven/bun:1.4.3 AS bun
 
 FROM node:26-trixie-slim AS builder
 COPY --from=bun /usr/local/bin/bun /usr/local/bin/bun

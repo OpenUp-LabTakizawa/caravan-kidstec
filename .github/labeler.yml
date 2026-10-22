@@ -1,36 +1,39 @@
 🍱asset:
-- changed-files:
-  - any-glob-to-any-file: ['**/*.avif', '**/*.ico', '**/*.png', '**/*.svg']
-🐛bug:
-- head-branch: ['^fix', 'fix']
-♻️ci:
-- changed-files:
-  - any-glob-to-any-file: '.github/**/*.yml'
-⚙️config:
-- changed-files:
-  - any-glob-to-any-file: '**/*config.*'
-dependencies:
-- changed-files:
-  - any-glob-to-any-file: ['bun.lock', '**/package.json']
-docker:
-- changed-files:
-  - any-glob-to-any-file: ['.dockerignore', 'Dockerfile']
-📝documentation:
-- changed-files:
-  - any-glob-to-any-file: ['@caravan-kidstec/docs/**', '.rumdl.toml', '**/*.md', '**/*.mdx']
-🚀enhancement:
-- all:
   - changed-files:
-    - any-glob-to-any-file: '@caravan-kidstec/web/app/**'
+      - any-glob-to-any-file: ["**/*.avif", "**/*.ico", "**/*.png", "**/*.svg"]
+🐛bug:
+  - head-branch: ["^fix", "fix"]
+♻️ci:
+  - changed-files:
+      - any-glob-to-any-file: ".github/**/*.yml"
+⚙️config:
+  - changed-files:
+      - any-glob-to-any-file: "**/*config.*"
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file: ["bun.lock", "**/package.json"]
+docker:
+  - changed-files:
+      - any-glob-to-any-file: [".dockerignore", "Dockerfile"]
+📝documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          ["@caravan-kidstec/docs/**", ".rumdl.toml", "**/*.md", "**/*.mdx"]
+🚀enhancement:
+  - all:
+      - changed-files:
+          - any-glob-to-any-file: "@caravan-kidstec/web/app/**"
 🪸git:
-- changed-files:
-  - any-glob-to-any-file: ['.gitattributes', '**/.gitignore']
+  - changed-files:
+      - any-glob-to-any-file: [".gitattributes", "**/.gitignore"]
 🧰infrastructure:
-- changed-files:
-  - any-glob-to-any-file: ['**/*.toml', '.devcontainer/*', '.editorconfig', 'biome.json']
+  - changed-files:
+      - any-glob-to-any-file:
+          ["**/*.toml", ".devcontainer/*", ".editorconfig", "biome.json"]
 ✅test:
-- changed-files:
-  - any-glob-to-any-file: ['@caravan-kidstec/web/happydom.tsx', '@caravan-kidstec/web/test/**']
+  - changed-files:
+      - any-glob-to-any-file:
+          ["@caravan-kidstec/web/happydom.tsx", "@caravan-kidstec/web/test/**"]
 🆚vscode:
-- changed-files:
-  - any-glob-to-any-file: '.vscode/*'
+  - changed-files:
+      - any-glob-to-any-file: ".vscode/*"

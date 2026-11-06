@@ -31,7 +31,7 @@
     "check": "biome check",
     "fix": "biome check --write",
     "test:unit": "bun test test/unit --preload ./happydom.tsx --isolate --randomize",
-    "test:e2e": "playwright test",
+    "test:e2e": "bun --bun playwright test",
     "test:report": "playwright show-report"
   },
   "dependencies": {

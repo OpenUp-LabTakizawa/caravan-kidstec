@@ -66,7 +66,7 @@ jobs:
 
       - name: 🧪 Run Playwright tests
         working-directory: "@caravan-kidstec/web"
-        run: bun playwright test --project="${{ matrix.project }}"
+        run: bun --bun playwright test --project="${{ matrix.project }}"
 
       - name: 🆙 Upload Test Report
         uses: actions/upload-artifact@v7

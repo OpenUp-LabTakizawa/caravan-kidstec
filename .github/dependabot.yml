@@ -29,7 +29,9 @@ updates:
     multi-ecosystem-group: "infrastructure"
 
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directories:
+      - "/"
+      - "/.github/actions/*"
     schedule:
       interval: "daily"
     commit-message:
